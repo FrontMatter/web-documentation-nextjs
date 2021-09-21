@@ -18,7 +18,7 @@ const fetch = require('node-fetch');
     }
 
     if (pkgJson?.contributes?.configuration) {
-        const idUrl = preview ? "https://beta.frontmatter.codes/frontmatter.schema.json" : "https://frontmatter.codes/frontmatter.schema.json";
+        const idUrl = production ? "https://frontmatter.codes/frontmatter.schema.json" : "https://beta.frontmatter.codes/frontmatter.schema.json";
 
         const schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
