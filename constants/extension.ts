@@ -3,7 +3,7 @@ export const Extension = {
   home: `The CMS running in VS Code for your static sites`,
   description: `Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.`,
 
-  githubDocs: "https://github.com/FrontMatter/web-documenation-nextjs",
+  githubDocs: "https://github.com/FrontMatter/web-documentation-nextjs",
   githubLink: "https://github.com/estruyf/vscode-front-matter",
   issueLink: "https://github.com/estruyf/vscode-front-matter/issues",
   sponsorLink: "https://github.com/sponsors/estruyf",
