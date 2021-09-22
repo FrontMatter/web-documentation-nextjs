@@ -1,9 +1,9 @@
 ---
 title: Commands
 slug: commands
-description: 
+description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-08-30T16:13:01.763Z'
+lastmod: '2021-09-22T08:00:40.856Z'
 weight: 6
 ---
 
@@ -35,6 +35,12 @@ ID: `frontMatter.init`
 Opens the dashboard with your Markdown pages overview. If you did not yet initialize your project, the welcome screen will be shown.
 
 ID: `frontMatter.dashboard`
+
+### Insert image into article
+
+Allows you to quickly insert an image reference in the Markdown file.
+
+ID: `frontMatter.insertImage`
 
 ### Create category
 

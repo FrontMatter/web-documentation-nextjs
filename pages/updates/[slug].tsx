@@ -12,7 +12,7 @@ export default function Home({ title, content, description, date }: any) {
     <>
       <Title value={title} />
       <Description value={title} />
-      <OtherMeta image={`/assets/frontmatter-preview.png`} />
+      <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">

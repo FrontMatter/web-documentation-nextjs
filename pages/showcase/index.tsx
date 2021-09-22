@@ -38,7 +38,7 @@ export default function Home({ showcases }: any) {
     <>
       <Title value={strings(`showcase_title`)} />
       <Description value={`showcase_description`} />
-      <OtherMeta image={`/assets/frontmatter-preview.png`} />
+      <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">

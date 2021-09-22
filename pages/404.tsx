@@ -10,7 +10,7 @@ const NotFound: React.FunctionComponent<INotFoundProps> = (props: React.PropsWit
     <>
       <Title value={`Page not found`} />
       <Description value={`It seems you ended up on a page that we didn't write yet.`} />
-      <OtherMeta image={`/assets/frontmatter-preview.png`} />
+      <OtherMeta image={`/assets/frontmatter-social.png`} />
       
       <Layout>
         <div className="h-full max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 flex items-center">

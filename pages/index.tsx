@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <>
       <Title value={Extension.home} />
       <Description value={Extension.description} />
-      <OtherMeta image={`/assets/frontmatter-preview.png`} />
+      <OtherMeta image={`/assets/frontmatter-social.png`} />
       
       <Layout>
         <CTA />

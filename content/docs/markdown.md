@@ -13,6 +13,26 @@ weight: 6
 
 The Front Matter extension tries to make it easy to manage your Markdown pages/content. Within a Markdown page, we allow you to fold the file's Front Matter to be less distracting when writing. Also, do we highlight the Front Matter content to create a visual difference between content and metadata.
 
+## Insert images
+
+Inserting images was never easier with the `insert image into article` command, which can also be triggered with the camera icon in the editor title bar (Markdown files only).
+
+![Insert images](/releases/v4_0_0/insert-images.gif)
+
+> **Important**: If you want, you can add your own media snippet to allow you to use your shortcodes/markdown/... In order to specify the snippet, use the `frontMatter.dashboard.mediaSnippet` setting.
+
+The `frontMatter.dashboard.mediaSnippet` setting is used similarly like the default VS Code snippets. You need to define an array of strings for multiline snippets.
+
+The example used in the GIF above looks as follows:
+
+```json
+"frontMatter.dashboard.mediaSnippet": [
+  "{{< caption \"{mediaUrl}\" \"Description\" >}}"
+]
+```
+
+> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted.
+
 ## Front Matter folding
 
 If you want to focus on the content of your page, you have the ability to fold the Front Matter section of your page.

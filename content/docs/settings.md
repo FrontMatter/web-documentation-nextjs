@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-17T07:08:17.747Z'
+lastmod: '2021-09-22T08:00:35.237Z'
 weight: 7
 ---
 
@@ -97,6 +97,19 @@ Specify if you want to open the dashboard when you start VS Code.
 
 - Type: `boolean | null`
 - Default: `null`
+
+
+### frontMatter.dashboard.mediaSnippet
+
+Specify the a snippet for your custom media insert markup.
+
+```json
+"frontMatter.dashboard.mediaSnippet": [
+  "{{< caption \"{mediaUrl}\" \"Description\" >}}"
+]
+```
+
+> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted.
 
 ### frontMatter.panel.freeform
 
