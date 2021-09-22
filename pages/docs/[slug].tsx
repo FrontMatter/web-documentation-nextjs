@@ -19,7 +19,7 @@ export default function Documentation({ page, pages }: any) {
     <>
       <Title value={strings(`documentation_title`)} />
       <Description value={`documentation_description`} />
-      <OtherMeta image={`/assets/frontmatter-preview.png`} />
+      <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
         <Page items={pages} page={page}>
