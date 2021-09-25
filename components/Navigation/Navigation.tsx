@@ -51,7 +51,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
 
               <Searchbox />
 
-              <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="85" height="20" title="GitHub"></iframe>
+              <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="95" height="20" title="GitHub"></iframe>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
             </a>
           ))}
 
-          <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="85" height="20" title="GitHub"></iframe>
+          <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="95" height="20" title="GitHub"></iframe>
         </div>
       </nav>
     </>
