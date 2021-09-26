@@ -13,5 +13,6 @@ export const Extension = {
   installLink: "vscode:extension/eliostruyf.vscode-front-matter",
   installBetaLink: "vscode:extension/eliostruyf.vscode-front-matter-beta",
   showcaseLink: "https://github.com/estruyf/vscode-front-matter/issues/new?assignees=&labels=&template=showcase.md&title=Showcase%3A+",
-  featureLink: "https://github.com/estruyf/vscode-front-matter/issues/new?assignees=&labels=&template=feature_request.md&title=Enhancement%3A+"
+  featureLink: "https://github.com/estruyf/vscode-front-matter/issues/new?assignees=&labels=&template=feature_request.md&title=Enhancement%3A+",
+  stars: "https://github.com/estruyf/vscode-front-matter/stargazers"
 }
