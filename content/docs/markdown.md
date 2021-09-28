@@ -21,17 +21,27 @@ Inserting images was never easier with the `insert image into article` command, 
 
 > **Important**: If you want, you can add your own media snippet to allow you to use your shortcodes/markdown/... In order to specify the snippet, use the `frontMatter.dashboard.mediaSnippet` setting.
 
+## Insert your own media snippet
+
 The `frontMatter.dashboard.mediaSnippet` setting is used similarly like the default VS Code snippets. You need to define an array of strings for multiline snippets.
 
 The example used in the GIF above looks as follows:
 
 ```json
 "frontMatter.dashboard.mediaSnippet": [
-  "{{< caption \"{mediaUrl}\" \"Description\" >}}"
+  "{{< caption \"{mediaUrl}\" \"{description}\" >}}"
 ]
 ```
 
-> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted.
+### Placeholders
+
+For your snippet, you can use the following placeholders:
+
+- `{mediaUrl}`: Use this to insert the relative path to the media file.
+- `{description}`: Use this placeholder where you want to insert the description.
+- `{alt}`: Use this placeholder where you want to insert the alt attribute value.
+
+> **Info**: All three placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
 
 ## Front Matter folding
 

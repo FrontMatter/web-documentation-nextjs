@@ -183,11 +183,11 @@ Front Matter its metadata section supports the following fields:
 
 A field consists out of the following properties:
 
-- `title`: The title to show in the metadata section (optional);
-- `name`: The name of your field, will be used to set in the front matter of your Markdown file;
+- `title (string)`: The title to show in the metadata section (optional);
+- `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
 - `type`: One of the above supported types;
-- `choices`: When you picked the `choice` field type, you need to return an array of choices: `["Choice 1", "Choice 2", "Choice 3"]`;
-- `single`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+- `choices (string[])`: When you picked the `choice` field type, you need to return an array of choices: `["Choice 1", "Choice 2", "Choice 3"]`;
+- `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
 
 ## Creating a template
 
