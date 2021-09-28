@@ -14,7 +14,7 @@ export const Section: React.FunctionComponent<ISectionProps> = ({title, link}: R
 
   useEffect(() => {
     const page = router.asPath;
-    setIsActive(page.includes(`${link}#`) || page.includes(`${link}index`));
+    setIsActive(page === link || link === `${page}/` || page.includes(`${link}#`) || page.includes(`${link}index`));
   }, [router.asPath, link]);
   
   return (
