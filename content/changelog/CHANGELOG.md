@@ -1,6 +1,22 @@
 # Change Log
 
-## [4.0.0] - (upcoming release) - [Release Notes](https://beta.frontmatter.codes/updates/v4_0_0)
+## [4.1.0] - 2021-XX-XX
+
+### ✨ New features
+
+- [#113](https://github.com/estruyf/vscode-front-matter/issues/113): Integrating a local DB for media metadata (description, alt)
+
+### 🎨 Enhancements
+
+- [#117](https://github.com/estruyf/vscode-front-matter/issues/117): Allow to specify a singleline of text in the metadata fields
+
+## [4.0.1] - 2021-09-24
+
+- [#114](https://github.com/estruyf/vscode-front-matter/issues/114): Fix for categories/tags provided as string in YAML
+- [#115](https://github.com/estruyf/vscode-front-matter/issues/115): Fix for updating added categories/tags
+- [#116](https://github.com/estruyf/vscode-front-matter/issues/116): Fix for not showing the `-1` limit on inputs
+
+## [4.0.0] - 2021-09-22 - [Release Notes](https://frontmatter.codes/updates/v4_0_0)
 
 - [#101](https://github.com/estruyf/vscode-front-matter/issues/101): Date picker available on the metadata section
 - [#102](https://github.com/estruyf/vscode-front-matter/issues/102): Support comma separated arrays in front matter
@@ -16,7 +32,7 @@
 
 ## [3.1.0] - 2021-09-10
 
-- BETA version available at: [beta.frontmatter.codes](https://beta.frontmatter.codes)
+- BETA version available at: [frontmatter.codes](https://frontmatter.codes)
 - [#72](https://github.com/estruyf/vscode-front-matter/issues/72): Media view on the dashboard
 - [#73](https://github.com/estruyf/vscode-front-matter/issues/73): List view option for the dashboard
 - [#77](https://github.com/estruyf/vscode-front-matter/issues/77): Dashboard grouping pages functionality integrated
