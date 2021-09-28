@@ -6,6 +6,7 @@ import { Extension } from '../../constants/extension';
 import { useRouter } from 'next/router';
 import { Searchbox } from '../Page/Searchbox';
 import { isProduction } from '../../helpers/isProduction';
+import { Stargazers } from '../GitHub/Stargazers';
 
 export interface INavigationProps {}
 
@@ -51,7 +52,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
 
               <Searchbox />
 
-              <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="85" height="20" title="GitHub"></iframe>
+              <Stargazers />
             </div>
           </div>
         </div>
@@ -70,7 +71,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
             </a>
           ))}
 
-          <iframe src="https://ghbtns.com/github-btn.html?user=estruyf&repo=vscode-front-matter&type=star&count=true" frameBorder="0" scrolling="0" width="85" height="20" title="GitHub"></iframe>
+          <Stargazers />
         </div>
       </nav>
     </>
