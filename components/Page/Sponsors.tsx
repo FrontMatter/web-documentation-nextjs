@@ -13,6 +13,12 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
           {strings(`sponsors_title`)}
         </p>
 
+        <div className="mt-6 flex justify-center space-x-4">
+          <a href="https://github.com/timschps" title="Thanks Tim Schaeps!">
+            <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src="https://avatars.githubusercontent.com/u/13098307" />
+          </a>
+        </div>
+
         <div className="mt-6">
           <a target={`_blank`}  rel={`noopener noreferrer`} href={`https://vercel.com/?utm_source=vscode-frontmatter&utm_campaign=oss`} title={`Powered by Vercel`} className="col-span-1 flex justify-center">
             <img className="h-12" src="/assets/sponsors/powered-by-vercel.svg" alt="Vercel" />

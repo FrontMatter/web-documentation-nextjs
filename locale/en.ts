@@ -55,7 +55,7 @@ export const strings = {
   feature_description_6: "All of the functionalities are configurable to your needs. You can define how you want to use Front Matter in your editor experience, but it doesn't stop there. If you are missing something or want to automate. We allow you to add your own actions with the custom scripting capability. For instance, you can use a script and hook it up to the extension to generate preview images.",
 
   // Sponsors
-  sponsors_title: "Special thanks to our sponsor",
+  sponsors_title: "Special thanks to our sponsors",
 
   // Documentation
   documentation_title: "Documentation",
