@@ -193,6 +193,12 @@ A field consists out of the following properties:
 
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
 
+**Image fields**
+
+- `isPreviewImage (boolean)`: Allows you to specify a custom preview image for your article. When you set this to `true` for an image field in your content type, it will be adopted in the dashboard.
+
+> **Important**: You can only set this on one image field per content type.
+
 **Choice fields**
 
 - `multiSelect (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
