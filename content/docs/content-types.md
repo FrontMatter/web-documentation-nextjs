@@ -185,9 +185,49 @@ A field consists out of the following properties:
 
 - `title (string)`: The title to show in the metadata section (optional);
 - `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
-- `type`: One of the above supported types;
-- `choices (string[])`: When you picked the `choice` field type, you need to return an array of choices: `["Choice 1", "Choice 2", "Choice 3"]`;
+- `type (field type - string)`: One of the above supported types.
+
+#### Additional properties
+
+**String fields**
+
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+
+**Choice fields**
+
+- `multiSelect (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
+- `choices (string[] | { id: string; title: string; })`: When you picked the `choice` field type, you need to return an array of choices.
+
+Example of using an array of string values:
+
+```json
+{
+  "title": "Choice",
+  "name": "choice",
+  "type": "choice",
+  "choices": [
+    "",
+    "Choice 1",
+    "Choice 2",
+    "Choice 3"
+  ]
+}
+```
+
+Example of using an array of { id: string; title: string; } objects:
+
+```json
+{
+  "title": "Choice",
+  "name": "choice",
+  "type": "choice",
+  "choices": [
+    { "id": "1", "title": "Choice 1" },
+    { "id": "2", "title": "Choice 2" },
+    { "id": "3", "title": "Choice 3" }
+  ]
+}
+```
 
 ## Creating a template
 
