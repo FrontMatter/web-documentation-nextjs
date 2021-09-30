@@ -29,7 +29,7 @@ The example used in the GIF above looks as follows:
 
 ```json
 "frontMatter.dashboard.mediaSnippet": [
-  "{{< caption \"{mediaUrl}\" \"{description}\" >}}"
+  "{{< imgShortCode \"{mediaUrl}\" \"{caption}\" >}}"
 ]
 ```
 
@@ -38,7 +38,7 @@ The example used in the GIF above looks as follows:
 For your snippet, you can use the following placeholders:
 
 - `{mediaUrl}`: Use this to insert the relative path to the media file.
-- `{description}`: Use this placeholder where you want to insert the description.
+- `{caption}`: Use this placeholder where you want to insert the caption.
 - `{alt}`: Use this placeholder where you want to insert the alt attribute value.
 
 > **Info**: All three placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
