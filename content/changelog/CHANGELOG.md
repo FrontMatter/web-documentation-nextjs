@@ -1,16 +1,19 @@
 # Change Log
 
-## [4.1.0] - 2021-XX-XX
+## [4.1.0] - 2021-XX-XX - [Release Notes](https://frontmatter.codes/updates/v4.1.0)
 
 ### ✨ New features
 
-- [#113](https://github.com/estruyf/vscode-front-matter/issues/113): Integrating a local DB for media metadata (description, alt)
+- [#113](https://github.com/estruyf/vscode-front-matter/issues/113): Integrating a local DB for media metadata (caption, alt)
 
 ### 🎨 Enhancements
 
+- [#110](https://github.com/estruyf/vscode-front-matter/issues/110): Add support for workspaces with multiple folders
 - [#117](https://github.com/estruyf/vscode-front-matter/issues/117): Allow to specify a singleline of text in the metadata fields
 - [#119](https://github.com/estruyf/vscode-front-matter/issues/119): Multi-select support for choice fields
 - [#121](https://github.com/estruyf/vscode-front-matter/issues/121): Choice fields support ID/title objects as well as a regular string
+- [#122](https://github.com/estruyf/vscode-front-matter/issues/122): Update the filenames of your media
+- [#124](https://github.com/estruyf/vscode-front-matter/issues/124): Add new `isPreviewImage` property to the content type field to specify custom preview images
 
 ### 🐞 Fixes
 
