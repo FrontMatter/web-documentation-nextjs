@@ -36,7 +36,7 @@ Opens the dashboard with your Markdown pages overview. If you did not yet initia
 
 ID: `frontMatter.dashboard`
 
-### Insert image into article
+### Insert image into your content
 
 Allows you to quickly insert an image reference in the Markdown file.
 
@@ -86,17 +86,17 @@ This command allows you to create a new template from the current open Markdown 
 
 ID: `frontMatter.createTemplate`
 
-### New article from template
+### Create new content from defined content type or template
 
-With this command, you can easily create content in your project within the registered folders and provided templates.
+With this command, you can easily create content in your project from the defined content types or templates.
 
 > **Info**: The command will use the `frontMatter.templates.prefix` setting in order to add a prefix (default: `yyyy-MM-dd`) on the filename.
 
 ID: `frontMatter.createContent`
 
-### Generate slug based on article title
+### Generate slug based on content title
 
-This command generates a clean slug for your article. It removes known stop words, punctuations, and special characters.
+This command generates a clean slug for your content. It removes known stop words, punctuations, and special characters.
 
 Example:
 
@@ -123,9 +123,9 @@ Sets/updates the current modified date in your Markdown file.
 
 ID: `frontMatter.setLastModifiedDate`
 
-### Preview article
+### Preview content
 
-Open the site preview of your article in VS Code.
+Open the site preview of your content in VS Code.
 
 ID: `frontMatter.preview`
 
