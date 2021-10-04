@@ -196,13 +196,14 @@ A field consists out of the following properties:
 **Image fields**
 
 - `isPreviewImage (boolean)`: Allows you to specify a custom preview image for your article. When you set this to `true` for an image field in your content type, it will be adopted in the dashboard.
+- `multiple (boolean)`: Define if you want to allow to select multiple images. By default this is `false`.
 
 > **Important**: You can only set this on one image field per content type.
 
 **Choice fields**
 
-- `multiSelect (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
 - `choices (string[] | { id: string; title: string; })`: When you picked the `choice` field type, you need to return an array of choices.
+- `multiple (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
 
 Example of using an array of string values:
 
