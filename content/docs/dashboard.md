@@ -52,7 +52,7 @@ On the image card, there are actions like setting metadata, copying the relative
 
 Setting metadata got introduced so that you can set the description and alt tag of your images. This functionality makes it easier to insert your images to your content.
 
-![Dashboard - Setting metadata](/releases/v4.1.0/metadata-media.png)
+![Dashboard - Setting metadata](/releases/v5.0.0/metadata-media.png)
 
 > **Info**: Check the [Insert images section](/docs/markdown#insert-images) for more information.
 

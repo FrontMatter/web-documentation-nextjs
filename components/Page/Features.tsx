@@ -23,7 +23,13 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
           {features.map((feature) => (
             <div key={feature.name} className="relative">
               <dt>
-                <CheckIcon className="absolute h-6 w-6 text-teal-800" aria-hidden="true" />
+                {
+                  feature.icon ? (
+                    <feature.icon />
+                  ) : (
+                    <CheckIcon className="absolute h-6 w-6 text-teal-800" aria-hidden="true" />
+                  )
+                }
                 <p className="ml-9 text-lg leading-6 font-medium text-vulcan-320">{strings(feature.name)}</p>
               </dt>
               <dd className="mt-2 ml-9 text-base text-vulcan-100">{strings(feature.description)}</dd>

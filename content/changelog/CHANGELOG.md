@@ -1,10 +1,11 @@
 # Change Log
 
-## [4.1.0] - 2021-XX-XX - [Release Notes](https://frontmatter.codes/updates/v4.1.0)
+## [5.0.0] - 2021-XX-XX - [Release Notes](https://frontmatter.codes/updates/v5.0.0)
 
 ### ✨ New features
 
 - [#113](https://github.com/estruyf/vscode-front-matter/issues/113): Integrating a local DB for media metadata (caption, alt)
+- [#132](https://github.com/estruyf/vscode-front-matter/issues/132): Major changes to the media dashboard which allows you to navigate through all folders
 
 ### 🎨 Enhancements
 
@@ -14,6 +15,10 @@
 - [#121](https://github.com/estruyf/vscode-front-matter/issues/121): Choice fields support ID/title objects as well as a regular string
 - [#122](https://github.com/estruyf/vscode-front-matter/issues/122): Update the filenames of your media
 - [#124](https://github.com/estruyf/vscode-front-matter/issues/124): Add new `isPreviewImage` property to the content type field to specify custom preview images
+- [#126](https://github.com/estruyf/vscode-front-matter/issues/126): Create new content from the available content types
+- [#127](https://github.com/estruyf/vscode-front-matter/issues/127): Title bar action added to open the dashboard
+- [#128](https://github.com/estruyf/vscode-front-matter/issues/128): Support for multi-select on image fields added
+- [#131](https://github.com/estruyf/vscode-front-matter/issues/131): Folder creation support added on media dashboard
 
 ### 🐞 Fixes
 

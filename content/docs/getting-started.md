@@ -67,7 +67,7 @@ If you are using workspaces with multiple folders in Visual Studio Code. Front M
 
 When Front Matter cannot find a `frontmatter.json` file in any of your folders (means that it is not initiated yet), it will ask you to pick the folder.
 
-![Select your workspace folder for Front Matter](/releases/v4.1.0/workspace-folder.png)
+![Select your workspace folder for Front Matter](/releases/v5.0.0/workspace-folder.png)
 
 Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
 

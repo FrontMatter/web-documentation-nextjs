@@ -36,11 +36,11 @@ export const strings = {
   features_cta_button: "Tell us what you need",
 
   // Feature
-  feature_title_1: "Content Types",
-  feature_description_1: "A Content Management System wouldn't be a CMS if you cannot define your type of content to use. Front Matter provides a default content mapping, but you can extend it or change it to your needs. It is your content, and Front Matter will change its behavior to your needs.",
+  feature_title_1: "100% secure CMS",
+  feature_description_1: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API, so you do not have to be afraid of DDoS attacks. Write wherever you are, even when you are offline. Commit you changes when you are online.",
 
-  feature_title_2: "Offline management",
-  feature_description_2: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API. Write wherever you are, commit when you are online.",
+  feature_title_2: "Content Types",
+  feature_description_2: "A Content Management System wouldn't be a CMS if you cannot define your type of content to use. Front Matter provides a default content mapping, but you can extend it or change it to your needs. It is your content, and Front Matter will change its behavior to your needs.",
 
   feature_title_3: "Full site/page preview",
   feature_description_3: "Allow showing your site and page previews within Visual Studio Code without the need of opening a browser.",
