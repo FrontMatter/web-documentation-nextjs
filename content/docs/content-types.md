@@ -186,6 +186,7 @@ A field consists out of the following properties:
 - `title (string)`: The title to show in the metadata section (optional);
 - `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
 - `type (field type - string)`: One of the above supported types.
+- `hidden (boolean - optional)`: Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.
 
 #### Additional properties
 
