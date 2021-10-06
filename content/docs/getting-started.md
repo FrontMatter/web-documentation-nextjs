@@ -49,9 +49,9 @@ On the welcome screen, there are two tasks to complete before you can take full 
 
 ### Step 1: Initialize the project
 
-In this step, a `.templates` folder and `article.md` file template will be created in the current project.
+In this step, a `.frontmatter/templates` folder and `article.md` file template will be created in the current project.
 
-The `.templates` folder, is a folder that can be used to place all sort of Markdown templates. It will be used when you want to let Front Matter generate new pages/articles/...
+The `.frontmatter/templates` folder, is a folder that can be used to place all sort of Markdown templates. It will be used when you want to let Front Matter generate new pages/articles/...
 
 ### Step 2: Register content folder(s)
 

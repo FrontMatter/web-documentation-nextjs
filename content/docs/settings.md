@@ -267,7 +267,9 @@ Specifies the name of the SEO description field for your page.
 Specify the folder to use for your article templates.
 
 - Type: `string`
-- Default: `.templates`
+- Default: `.frontmatter/templates`
+
+> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to `.frontmatter/templates`.
 
 ### frontMatter.templates.prefix
 

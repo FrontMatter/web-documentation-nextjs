@@ -131,7 +131,7 @@ In most cases, you'll work with multiple types of content where each type will h
 
 Instead of overriding the default content type, you can also define a new content type. It requires you to specify the `name` and `fields`.
 
-> **Important**: The `name` property value needs to be equal to the `type` value you set in your Markdown front matter. You best define it via a template so that it's always defined. A default template will be available when initializing Front Matter in your project in the `.templates` folder.
+> **Important**: The `name` property value needs to be equal to the `type` value you set in your Markdown front matter. You best define it via a template so that it's always defined. A default template will be available when initializing Front Matter in your project in the `.frontmatter/templates` folder.
 
 Sample:
 
@@ -241,7 +241,7 @@ Example of using an array of { id: string; title: string; } objects:
 
 To make sure that your type of content is already defined when creating a new Markdown file. It will be easier to set the type of content within a template.
 
-You can create Markdown templates in your project's `.templates` folder (or defined differently).
+You can create Markdown templates in your project's `.frontmatter/templates` folder (or defined differently).
 
 ```markdown
 ---

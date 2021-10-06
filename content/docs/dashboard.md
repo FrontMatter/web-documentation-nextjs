@@ -56,7 +56,7 @@ Setting metadata got introduced so that you can set the description and alt tag 
 
 > **Info**: Check the [Insert images section](/docs/markdown#insert-images) for more information.
 
-> **Important**: Data is stored in a local JSON file which you can find under: `<project>/.frontmatter/mediaDb.json`. Please do not remove this file, or you will lose your metadata.
+> **Important**: Data is stored in a local JSON file which you can find under: `<project>/.frontmatter/content/mediaDb.json`. Please do not remove this file, or you will lose your metadata.
 
 **Deleting a media file**
 
