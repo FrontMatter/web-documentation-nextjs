@@ -24,7 +24,9 @@ As you do not typically share your `.vscode/settings.json` configuration, we wen
 
 ## Migrate local settings to team settings
 
-To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command.
+To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command. The very first time, it will also ask you if there are settings that can be promoted.
+
+![On startup, Front Matter checks if settings can be promoted](/releases/v5.0.0/ask-to-promote-settings.png)
 
 ## Available settings
 

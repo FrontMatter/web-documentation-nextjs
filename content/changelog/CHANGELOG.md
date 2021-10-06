@@ -19,10 +19,12 @@
 - [#127](https://github.com/estruyf/vscode-front-matter/issues/127): Title bar action added to open the dashboard
 - [#128](https://github.com/estruyf/vscode-front-matter/issues/128): Support for multi-select on image fields added
 - [#131](https://github.com/estruyf/vscode-front-matter/issues/131): Folder creation support added on media dashboard
+- [#134](https://github.com/estruyf/vscode-front-matter/issues/134): On startup, the extension checks if local settings can be promoted
 
 ### 🐞 Fixes
 
 - [#120](https://github.com/estruyf/vscode-front-matter/issues/120): Choice and number field not updating when set manually in front matter of the file
+- [#133](https://github.com/estruyf/vscode-front-matter/issues/133): Fix for overriding default content type settings
 
 ## [4.0.1] - 2021-09-24
 
