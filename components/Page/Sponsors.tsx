@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import sponsors from '../../sponsors.json';
 
 export interface ISponsorsProps {}
 
@@ -13,17 +14,33 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
           {strings(`sponsors_title`)}
         </p>
 
-        <div className="mt-6 flex justify-center space-x-4">
-          <a href="https://github.com/timschps" title="Thanks Tim Schaeps!">
-            <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src="https://avatars.githubusercontent.com/u/13098307" />
-          </a>
-        </div>
+        {
+          sponsors && sponsors.individuals && sponsors.individuals.length > 0 && (
+            <div className="mt-6 flex justify-center space-x-4">
+              {
+                sponsors.individuals.map((sponsor) => (
+                  <a key={sponsor.url} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={`Thanks ${sponsor.name}!`}>
+                    <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatar} />
+                  </a>
+                ))
+              }
+            </div>
+          )
+        }
 
-        <div className="mt-6">
-          <a target={`_blank`}  rel={`noopener noreferrer`} href={`https://vercel.com/?utm_source=vscode-frontmatter&utm_campaign=oss`} title={`Powered by Vercel`} className="col-span-1 flex justify-center">
-            <img className="h-12" src="/assets/sponsors/powered-by-vercel.svg" alt="Vercel" />
-          </a>
-        </div>
+        {
+          sponsors && sponsors.companies && sponsors.companies.length > 0 && (
+            <div className="mt-6">
+              {
+                sponsors.companies.map((sponsor) => (
+                  <a key={sponsor.id} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={sponsor.title} className="col-span-1 flex justify-center">
+                    <img className="h-12" src={sponsor.image} alt={sponsor.alt} />
+                  </a>
+                ))
+              }
+            </div>
+          )
+        }
       </div>
     </div>
   );
