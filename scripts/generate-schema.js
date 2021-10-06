@@ -23,10 +23,10 @@ const fetch = require('node-fetch');
         const schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": idUrl,
-            ...pkgJson.contributes.configuration,
-            "title": "Front Matter - Team Settings",
             "description": "Defines the settings for Front Matter",
-            "type": "object"
+            "type": "object",
+            ...pkgJson.contributes.configuration,
+            "title": "Front Matter - Team Settings"
         }
 
         fs.writeFileSync(path.join(path.resolve('.'), '/public/frontmatter.schema.json'), JSON.stringify(schema, null, 2));
