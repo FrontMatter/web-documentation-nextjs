@@ -5,7 +5,7 @@ export const strings = {
   // CTA
   cta_title: "Headless CMS running in VS Code",
   cta_title_sr: " that helps managing your static sites and Markdown based sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.",
-  cta_description: "Why leave your editor if it can give you all power to manage your static sites? Front Matter is a headless CMS that lets you create, edit, and preview your Markdown based content straight within Visual Studio Code.",
+  cta_description: "Front Matter is a CMS that runs within Visual Studio Code. It gives you the power and control of a full-blown CMS while also providing you the flexibility and speed of the static site generator of your choice. Jump right into editing and creating content with Front Matter and be able to preview it straight in VS Code.",
   cta_button_primary: "Get the extension",
   cta_button_beta_primary: "Get the BETA extension",
   cta_button_secondary: "Read our docs",
