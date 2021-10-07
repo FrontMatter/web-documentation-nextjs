@@ -49,9 +49,9 @@ On the welcome screen, there are two tasks to complete before you can take full 
 
 ### Step 1: Initialize the project
 
-In this step, a `.templates` folder and `article.md` file template will be created in the current project.
+In this step, a `.frontmatter/templates` folder and `article.md` file template will be created in the current project.
 
-The `.templates` folder, is a folder that can be used to place all sort of Markdown templates. It will be used when you want to let Front Matter generate new pages/articles/...
+The `.frontmatter/templates` folder, is a folder that can be used to place all sort of Markdown templates. It will be used when you want to let Front Matter generate new pages/articles/...
 
 ### Step 2: Register content folder(s)
 
@@ -60,5 +60,15 @@ As Front Matter is **not** created to only support one static site generator, yo
 You can register a folder by right-clicking on a folder name in the explorer panel from Visual Studio Code and selecting **Front Matter: Register folder**.
 
 ![Register a folder](/assets/register-folder.png)
+
+## Workspaces with multiple folders
+
+If you are using workspaces with multiple folders in Visual Studio Code. Front Matter will try to figure out for which folder it needs to be activated. It does this by searching for the `frontmatter.json` file in the workspace folders.
+
+When Front Matter cannot find a `frontmatter.json` file in any of your folders (means that it is not initiated yet), it will ask you to pick the folder.
+
+![Select your workspace folder for Front Matter](/releases/v5.0.0/workspace-folder.png)
+
+Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
 
 ## Enjoy using Front Matter

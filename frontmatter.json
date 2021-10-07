@@ -6,6 +6,7 @@
       "path": "[[workspace]]/docs/content/docs"
     }
   ],
+  "frontMatter.content.publicFolder": "public",
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",

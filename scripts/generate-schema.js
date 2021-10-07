@@ -23,6 +23,8 @@ const fetch = require('node-fetch');
         const schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": idUrl,
+            "description": "Defines the settings for Front Matter",
+            "type": "object",
             ...pkgJson.contributes.configuration,
             "title": "Front Matter - Team Settings"
         }

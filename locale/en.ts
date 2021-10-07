@@ -5,7 +5,7 @@ export const strings = {
   // CTA
   cta_title: "Headless CMS running in VS Code",
   cta_title_sr: " that helps managing your static sites and Markdown based sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.",
-  cta_description: "Why leave your editor if it can give you all power to manage your static sites? Front Matter is a headless CMS that lets you create, edit, and preview your Markdown based content straight within Visual Studio Code.",
+  cta_description: "Front Matter is a CMS that runs within Visual Studio Code. It gives you the power and control of a full-blown CMS while also providing you the flexibility and speed of the static site generator of your choice. Jump right into editing and creating content with Front Matter and be able to preview it straight in VS Code.",
   cta_button_primary: "Get the extension",
   cta_button_beta_primary: "Get the BETA extension",
   cta_button_secondary: "Read our docs",
@@ -36,11 +36,11 @@ export const strings = {
   features_cta_button: "Tell us what you need",
 
   // Feature
-  feature_title_1: "Content Types",
-  feature_description_1: "A Content Management System wouldn't be a CMS if you cannot define your type of content to use. Front Matter provides a default content mapping, but you can extend it or change it to your needs. It is your content, and Front Matter will change its behavior to your needs.",
+  feature_title_1: "100% secure CMS",
+  feature_description_1: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API, so you do not have to be afraid of DDoS attacks. Write wherever you are, even when you are offline. Commit you changes when you are online.",
 
-  feature_title_2: "Offline management",
-  feature_description_2: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API. Write wherever you are, commit when you are online.",
+  feature_title_2: "Content Types",
+  feature_description_2: "A Content Management System wouldn't be a CMS if you cannot define your type of content to use. Front Matter provides a default content mapping, but you can extend it or change it to your needs. It is your content, and Front Matter will change its behavior to your needs.",
 
   feature_title_3: "Full site/page preview",
   feature_description_3: "Allow showing your site and page previews within Visual Studio Code without the need of opening a browser.",
@@ -55,7 +55,7 @@ export const strings = {
   feature_description_6: "All of the functionalities are configurable to your needs. You can define how you want to use Front Matter in your editor experience, but it doesn't stop there. If you are missing something or want to automate. We allow you to add your own actions with the custom scripting capability. For instance, you can use a script and hook it up to the extension to generate preview images.",
 
   // Sponsors
-  sponsors_title: "Special thanks to our sponsor",
+  sponsors_title: "Special thanks to our sponsors",
 
   // Documentation
   documentation_title: "Documentation",

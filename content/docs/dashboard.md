@@ -46,7 +46,19 @@ The media view has been created to make it easier to look at all media files ava
 
 ### Media actions
 
-On the image card, there are actions like copying the relative path or deleting the media file.
+On the image card, there are actions like setting metadata, copying the relative path, and deleting the media file.
+
+**Setting metadata**
+
+Setting metadata got introduced so that you can set the description and alt tag of your images. This functionality makes it easier to insert your images to your content.
+
+![Dashboard - Setting metadata](/releases/v5.0.0/metadata-media.png)
+
+> **Info**: Check the [Insert images section](/docs/markdown#insert-images) for more information.
+
+> **Important**: Data is stored in a local JSON file which you can find under: `<project>/.frontmatter/content/mediaDb.json`. Please do not remove this file, or you will lose your metadata.
+
+**Deleting a media file**
 
 ![Dashboard - Delete media file](/assets/delete-media.png)
 

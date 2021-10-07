@@ -8,7 +8,7 @@ export interface ISidebarProps {
 }
 
 export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React.PropsWithChildren<ISidebarProps>) => {
-  
+
   const sorted = items?.sort((a, b) => { return (a.weight || 99) - (b.weight || 99); }) || [];
 
   const getLinks = (item: PageFrontMatter) => {
@@ -23,7 +23,10 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
       <ul className={`mt-2 space-y-2`}>
         {links.map((link, index) => (
           <li key={index}>
-            <Link title={link[1]} link={`/docs/${item.slug}#${link[1].toLowerCase().replace(/\s/g, '-')}`} />
+            <Link 
+              title={link[1]} 
+              link={`/docs/${item.slug}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
+               />
           </li>
         ))}
       </ul>

@@ -24,7 +24,9 @@ As you do not typically share your `.vscode/settings.json` configuration, we wen
 
 ## Migrate local settings to team settings
 
-To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command.
+To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command. The very first time, it will also ask you if there are settings that can be promoted.
+
+![On startup, Front Matter checks if settings can be promoted](/releases/v5.0.0/ask-to-promote-settings.png)
 
 ## Available settings
 
@@ -265,7 +267,9 @@ Specifies the name of the SEO description field for your page.
 Specify the folder to use for your article templates.
 
 - Type: `string`
-- Default: `.templates`
+- Default: `.frontmatter/templates`
+
+> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to `.frontmatter/templates`.
 
 ### frontMatter.templates.prefix
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Extension } from '../../constants/extension';
 import { isProduction } from '../../helpers/isProduction';
+const Slide = require('react-reveal/Slide');
 
 export interface ICTAProps {}
 
@@ -38,11 +39,13 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
       <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
         <div className={`py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2`}>
           <div className={`relative sm:mx-auto sm:max-w-3xl sm:px-0 lg:-mr-40 lg:max-w-none lg:h-full lg:pl-12`}>
-            <img 
-              className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
-              src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
-              alt={`Front Matter - Headless CMS - Live page preview`}
-              loading={`lazy`} />
+            <Slide right>
+              <img 
+                className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
+                src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
+                alt={`Front Matter - Headless CMS - Live page preview`}
+                loading={`lazy`} />
+            </Slide>
           </div>
         </div>
       </div>

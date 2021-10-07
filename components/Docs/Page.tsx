@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
+import { PageActions } from './PageActions';
 import { PageInfo } from './PageInfo';
 import { Sidebar } from './Sidebar';
 
@@ -13,13 +14,15 @@ export const Page: React.FunctionComponent<IPageProps> = ({items, page, children
   
   return (
     <div className={`mb-6 py-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
-      <div className={`lg:flex`}>
+      <div className={`relative lg:flex`}>
 
         <aside className={`h-screen top-16 lg:block hidden lg:w-80 xl:w-96`}>
           <Sidebar items={items} />
         </aside>
 
         <div className={`min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible`}>
+          <PageActions page={page} />
+
           {children}
 
           <PageInfo page={page} />

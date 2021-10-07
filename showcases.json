@@ -33,5 +33,19 @@
     "description": "Personal blog of Michael Fasani, content stored as markdown in GitHub, built with Gatsby, managed with Front Matter.",
     "image": "www.michaelfasani.com.png",
     "generator": "Gatsby"
+  },
+  {
+    "title": "Emanuele Bartolesi",
+    "link": "https://www.emanuelebartolesi.com",
+    "description": "Personal blog of Emanuele Bartolesi. Content stored as markdown files on GitHub, built with Gatsby. All content are managed with Front Matter.",
+    "image": "emanuelebartolesi.com.png",
+    "generator": "Gatsby"
+  },
+  {
+    "title": "SelectedTech",
+    "link": "https://www.selectedtech.show",
+    "description": "SelectedTech is a group of four MVP's doing sessions on Microsoft 365 and the AI ecosystem. Build on Hugo and Front Matter and hosted in Azure.",
+    "image": "www.selectedtech.show_.png",
+    "generator": "Hugo"
   }
 ]

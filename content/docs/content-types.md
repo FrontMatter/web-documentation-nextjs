@@ -131,7 +131,7 @@ In most cases, you'll work with multiple types of content where each type will h
 
 Instead of overriding the default content type, you can also define a new content type. It requires you to specify the `name` and `fields`.
 
-> **Important**: The `name` property value needs to be equal to the `type` value you set in your Markdown front matter. You best define it via a template so that it's always defined. A default template will be available when initializing Front Matter in your project in the `.templates` folder.
+> **Important**: The `name` property value needs to be equal to the `type` value you set in your Markdown front matter. You best define it via a template so that it's always defined. A default template will be available when initializing Front Matter in your project in the `.frontmatter/templates` folder.
 
 Sample:
 
@@ -183,16 +183,65 @@ Front Matter its metadata section supports the following fields:
 
 A field consists out of the following properties:
 
-- `title`: The title to show in the metadata section (optional);
-- `name`: The name of your field, will be used to set in the front matter of your Markdown file;
-- `type`: One of the above supported types;
-- `choices`: When you picked the `choice` field type, you need to return an array of choices: `["Choice 1", "Choice 2", "Choice 3"]`.
+- `title (string)`: The title to show in the metadata section (optional);
+- `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
+- `type (field type - string)`: One of the above supported types.
+- `hidden (boolean - optional)`: Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.
+
+#### Additional properties
+
+**String fields**
+
+- `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+
+**Image fields**
+
+- `isPreviewImage (boolean)`: Allows you to specify a custom preview image for your article. When you set this to `true` for an image field in your content type, it will be adopted in the dashboard.
+- `multiple (boolean)`: Define if you want to allow to select multiple images. By default this is `false`.
+
+> **Important**: You can only set this on one image field per content type.
+
+**Choice fields**
+
+- `choices (string[] | { id: string; title: string; })`: When you picked the `choice` field type, you need to return an array of choices.
+- `multiple (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
+
+Example of using an array of string values:
+
+```json
+{
+  "title": "Choice",
+  "name": "choice",
+  "type": "choice",
+  "choices": [
+    "",
+    "Choice 1",
+    "Choice 2",
+    "Choice 3"
+  ]
+}
+```
+
+Example of using an array of { id: string; title: string; } objects:
+
+```json
+{
+  "title": "Choice",
+  "name": "choice",
+  "type": "choice",
+  "choices": [
+    { "id": "1", "title": "Choice 1" },
+    { "id": "2", "title": "Choice 2" },
+    { "id": "3", "title": "Choice 3" }
+  ]
+}
+```
 
 ## Creating a template
 
 To make sure that your type of content is already defined when creating a new Markdown file. It will be easier to set the type of content within a template.
 
-You can create Markdown templates in your project's `.templates` folder (or defined differently).
+You can create Markdown templates in your project's `.frontmatter/templates` folder (or defined differently).
 
 ```markdown
 ---

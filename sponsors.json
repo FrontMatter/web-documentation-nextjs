@@ -1,0 +1,23 @@
+{
+  "individuals": [
+    {
+      "url": "https://github.com/timschps",
+      "name": "Tim Schaeps",
+      "avatar": "https://avatars.githubusercontent.com/u/13098307"
+    },
+    {
+      "url": "https://github.com/flikteoh",
+      "name": "FlikTeoh",
+      "avatar": "https://avatars.githubusercontent.com/u/1472065"
+    }
+  ],
+  "companies": [
+    {
+      "url": "https://vercel.com/?utm_source=vscode-frontmatter&utm_campaign=oss",
+      "title": "Powered by Vercel",
+      "image": "/assets/sponsors/powered-by-vercel.svg",
+      "id": "Vercel",
+      "alt": "Vercel"
+    }
+  ]
+}

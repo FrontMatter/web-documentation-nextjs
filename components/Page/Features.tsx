@@ -4,6 +4,7 @@ import { features } from '../../constants/features';
 import { CheckIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { Extension } from '../../constants/extension';
+const HeadShake = require('react-reveal/HeadShake');
 
 export interface IFeaturesProps {}
 
@@ -23,7 +24,13 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
           {features.map((feature) => (
             <div key={feature.name} className="relative">
               <dt>
-                <CheckIcon className="absolute h-6 w-6 text-teal-800" aria-hidden="true" />
+                {
+                  feature.icon ? (
+                    <feature.icon />
+                  ) : (
+                    <CheckIcon className="absolute h-6 w-6 text-teal-800" aria-hidden="true" />
+                  )
+                }
                 <p className="ml-9 text-lg leading-6 font-medium text-vulcan-320">{strings(feature.name)}</p>
               </dt>
               <dd className="mt-2 ml-9 text-base text-vulcan-100">{strings(feature.description)}</dd>
@@ -36,13 +43,15 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
             {strings(`features_cta_title`)}
           </p>
           <p className="mt-4">
-            <Link href={Extension.featureLink} >
-              <a className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-opacity-70 sm:px-8`}
-                 target={`_blank`}
-                 rel={`noopener noreferrer`}>
-                {strings(`features_cta_button`)}
-              </a>
-            </Link>
+            <HeadShake>
+              <Link href={Extension.featureLink} >
+                <a className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-opacity-70 sm:px-8`}
+                  target={`_blank`}
+                  rel={`noopener noreferrer`}>
+                  {strings(`features_cta_button`)}
+                </a>
+              </Link>
+            </HeadShake>
           </p>
         </div>
       </div>
