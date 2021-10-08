@@ -46,7 +46,7 @@ const Home: NextPage = () => {
           imgAlt={"Front Matter CMS - media management was never easier in VS Code"}
           link={`/docs/dashboard`}
           linkText={strings(`hero_media_button_primary`)}
-          className={`-mt-12 sm:-mt-16`} />
+          className={`lg:-mt-16`} />
 
         <Features />
       </Layout> 
