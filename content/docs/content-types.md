@@ -35,7 +35,7 @@ We'll use the default one when you start writing your markdown content, and no o
 
 ## Changing the default content type
 
-If you want to change the default content type, open your `.vscode/settings.json` and write an entry for the `frontMatter.taxonomy.contentTypes` setting. Visual Studio Code will automatically autocomplete it with the default content type fields.
+If you want to change the default content type, open your `frontmatter.json` and write an entry for the `frontMatter.taxonomy.contentTypes` setting. Visual Studio Code will automatically autocomplete it with the default content type fields.
 
 If in some case it wouldn't do this, here is the default content type structure:
 
@@ -124,6 +124,14 @@ Adapt the fields to your needs. For our documentation it looks as follows:
 The metadata section on the editor panel will render the following fields:
 
 ![Adapted default content type fields](/assets/adapted-default-ct.png)
+
+### Content type properties
+
+For the content type you can configure the following properties:
+
+- `name (string)`: Name of the content type
+- `fields (Field[])`: Check the [supported field types](/docs/content-types#supported-field-types)
+- `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
 
 ## Define your own type
 
