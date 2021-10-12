@@ -29,6 +29,8 @@ Our default content type consists of the following fields:
 - tags: `tags`
 - categories: `categories`
 
+> **Info**: The default content type will create an individual Markdown file when creating content. If you want to use page bundles, make sure to specify this on the content type level.
+
 We'll use the default one when you start writing your markdown content, and no other content type is defined.
 
 ![Default content type fields](/assets/default-contenttype.png)
@@ -43,6 +45,7 @@ If in some case it wouldn't do this, here is the default content type structure:
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "default",
+    "pageBundle": false,
     "fields": [
       {
         "title": "Title",
@@ -90,6 +93,7 @@ Adapt the fields to your needs. For our documentation it looks as follows:
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "default",
+    "pageBundle": false,
     "fields": [
       {
         "title": "Title",
@@ -243,6 +247,46 @@ Example of using an array of { id: string; title: string; } objects:
     { "id": "3", "title": "Choice 3" }
   ]
 }
+```
+
+## Page and leaf bundles
+
+The page or leaf bundles, are a way to group your pages and resouces together in a single folder.
+
+```
+content/
+├── about
+│   ├── index.md
+├── posts
+│   ├── leaf-bundle
+│   │   ├── image1.jpg
+│   │   ├── image2.png
+│   │   └── index.md
+│   └── leaf-bundle
+│       └── index.md
+│
+└── another-section
+    ├── ..
+    └── leaf-bundle
+        └── index.md
+```
+
+In the above section you can see the `leaf-bundle` folders. These bundles consist of a `index.md` file and possibly also the resouces related to it like images.
+
+By default, Front Matter will create individual Markdown files, but you can also create a leaf bundle. In order to do so, you need to set the `pageBundle` property in your content type to `true`.
+
+Here is an example of configuring the page bundles for the `default` content type:
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "default",
+    "pageBundle": true,
+    "fields": [
+      ...
+    ]
+  }
+]
 ```
 
 ## Creating a template
