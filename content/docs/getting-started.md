@@ -72,3 +72,5 @@ When Front Matter cannot find a `frontmatter.json` file in any of your folders (
 Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
 
 ## Enjoy using Front Matter
+
+<iframe src="https://player.vimeo.com/video/630150787?h=9988cff4f0&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=56727" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Front Matter - Installation"></iframe>

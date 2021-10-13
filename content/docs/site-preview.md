@@ -17,6 +17,6 @@ The Markdown preview is not consistently delivering the same result as the one y
 
 ## Configuration
 
-In order to use the site preview, you will first have to set the `frontMatter.preview.host` setting. You can set it via the `Global Settings` section in the Front Matter panel or in your `.vscode/settings.json` file. 
+In order to use the site preview, you will first have to set the `frontMatter.preview.host` setting. You can set it via the `Global Settings` section in the Front Matter panel or in your `frontmatter.json` file. 
 
 For example, with Hugo, the local server spins up on `http://localhost:1313`. When you set this URL as the value of the `frontMatter.preview.host` setting. You can click on the open preview button and the site preview will be shown.
