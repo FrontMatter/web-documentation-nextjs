@@ -35,7 +35,7 @@ If you have the courage to test out the beta features, we made available a beta 
 
 Once installed, Front Matter will open the **welcome screen** the first time Visual Studio Code gets reloaded.
 
-![Welcome screen](/assets/welcome-progress.png)
+![Welcome screen](/releases/v5.2.0/welcome-screen.png)
 
 It also supports light themes:
 
@@ -53,7 +53,11 @@ In this step, a `.frontmatter/templates` folder and `article.md` file template w
 
 The `.frontmatter/templates` folder, is a folder that can be used to place all sort of Markdown templates. It will be used when you want to let Front Matter generate new pages/articles/...
 
-### Step 2: Register content folder(s)
+### Step 2: Configure the site-generator or framework you use
+
+In this step, you will need to configure the site-generator or framework you use. If your static-site-generator is known by Front Matter, it will automatically set some configuration options. If not, you will need to configure these settings manually. You can continue by selecting `other` from the dropdown.
+
+### Step 3: Register content folder(s)
 
 As Front Matter is **not** created to only support one static site generator, you will be able to specify where your Markdown content lives. From the moment you register a folder, it will be used on the dashboard to show an overview of all files.
 

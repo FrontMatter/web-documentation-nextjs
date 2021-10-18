@@ -58,3 +58,36 @@ In order to use this functionality, you will need to configure the `frontMatter.
 Once a custom action has been configured, it will appear on the Front Matter panel. The output of the script will be passed as a notification in VS Code. This output allows you to copy the output, useful when you generate additional content.
 
 ![Custom action output](/assets/custom-action-output.png)
+
+
+## Bulk script execution
+
+If you want, you can run a script for multiple files at once. This is useful when you want to generate a social image for all your markdown files or perform any other bulk operation.
+
+To enable bulk script execution, you need to configure the `frontMatter.custom.scripts` setting for your project as follows:
+
+```json
+{
+  "frontMatter.custom.scripts": [{
+    "title": "Generate social image",
+    "script": "./scripts/social-img.js",
+    "nodeBin": "~/.nvm/versions/node/v14.15.5/bin/node",
+    "bulk": true,
+    "output": "editor"
+  }]
+}
+```
+
+> **Important**: The `bulk` property is what specifies if it is a script that should be executed for multiple files.
+
+### Additional configuration
+
+There are additional configuration options for script execution:
+
+- `output`: Specifies the output type. The default value is `notification`. The available values are:
+  - `notification`: The output will be passed as a notification.
+  - `editor`: The output will be passed to the editor.
+- `outputType`: Specifies the output type. The default value is `text`. The available values the editor values from VS Code like:
+  - `text`: The output will be passed as a text file.
+  - `html`: The output will be passed as an HTML file.
+  - `markdown`: The output will be passed as an Markdown file.
