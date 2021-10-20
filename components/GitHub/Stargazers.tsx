@@ -10,7 +10,6 @@ export interface IStargazersProps {}
 export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: React.PropsWithChildren<IStargazersProps>) => {
   const [ stars, setStars ] = useState<number | null>(null);
   const [ calling, setCalling ] = useState<boolean>(false);
-  console.log('Stargazers', calling);
 
   useEffect(() => {
     const getStars = async () => {
