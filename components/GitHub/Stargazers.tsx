@@ -2,26 +2,26 @@ import Link from 'next/link';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Extension } from '../../constants/extension';
+import { StarService } from '../../services/StarService';
 import { GitHub } from '../Images/GitHub';
 
 export interface IStargazersProps {}
 
 export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: React.PropsWithChildren<IStargazersProps>) => {
   const [ stars, setStars ] = useState<number | null>(null);
+  const [ calling, setCalling ] = useState<boolean>(false);
+  console.log('Stargazers', calling);
 
   useEffect(() => {
     const getStars = async () => {
-      const response = await fetch(`/api/stars`);
-      if (response && response.ok) {
-        const data = await response.json();
-        if (data && data.stars) {
-          setStars(data.stars);
-        }
-      }
+      setStars(await StarService.get());
     };
 
-    getStars();
-  }, ['']);
+    if (!calling) {
+      setCalling(true);
+      getStars();
+    }
+  }, [calling]);
 
   if (!stars) {
     return null;
