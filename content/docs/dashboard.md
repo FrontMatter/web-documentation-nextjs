@@ -27,6 +27,18 @@ In order to start using the dashboard, you will have to let the extension know i
 
 ## Contents view
 
+### Draft status navigation
+
+By default, the contents view will show all your pages, and will you will be able to filter by **draft** and **published** pages.
+
+![Draft filters](/releases/v5.3.0/draft-status-original.png)
+
+If you want to use other statuses, you can do so by specifying your own draft field and value.
+
+> **Info**: [Set a custom draft field](/docs/content-types#custom-draft-field).
+
+![Draft filters](/releases/v5.3.0/draft-status.png)
+
 ### Supported filters
 
 - Tag filter

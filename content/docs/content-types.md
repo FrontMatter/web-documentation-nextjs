@@ -206,6 +206,10 @@ Sample of custom draft field with:
 }
 ```
 
+When using a custom draft status, the content dashboard will make use of it as well:
+
+![Draft filters](/releases/v5.3.0/draft-status.png)
+
 ### Field properties
 
 A field consists out of the following properties:
