@@ -1,20 +1,23 @@
 import * as React from 'react';
+import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Navigation } from '../Navigation';
 import { Footer } from './Footer';
 import { Sponsors } from './Sponsors';
 
-export interface ILayoutProps {}
+export interface ILayoutProps {
+  navItems?: PageFrontMatter[];
+}
 
-export const Layout: React.FunctionComponent<ILayoutProps> = (props: React.PropsWithChildren<ILayoutProps>) => {
+export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
 
   return (
     <div className={`flex flex-col h-screen`}>
       <header className={`lg:sticky w-full lg:top-0 z-50 bg-vulcan-500 bg-opacity-80 backdrop-blur-lg`}>
-        <Navigation />
+        <Navigation navItems={navItems} />
       </header>
 
       <main className={`flex-grow`}>
-        {props.children}
+        {children}
       </main>
 
       <Sponsors />

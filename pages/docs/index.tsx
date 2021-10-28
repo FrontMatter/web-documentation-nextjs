@@ -20,7 +20,7 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
       <Description value={`documentation_description`} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
-      <Layout>
+      <Layout navItems={pages} >
         <Page items={pages} page={welcome}>
           <Markdown content={welcome?.content} />
         </Page>

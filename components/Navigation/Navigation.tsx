@@ -7,10 +7,14 @@ import { useRouter } from 'next/router';
 import { Searchbox } from '../Page/Searchbox';
 import { isProduction } from '../../helpers/isProduction';
 import { Stargazers } from '../GitHub/Stargazers';
+import { PageFrontMatter } from '../../models/PageFrontMatter';
+import { MobileMenu } from './MobileMenu';
 
-export interface INavigationProps {}
+export interface INavigationProps {
+  navItems?: PageFrontMatter[];
+}
 
-export const Navigation: React.FunctionComponent<INavigationProps> = (props: React.PropsWithChildren<INavigationProps>) => {
+export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}: React.PropsWithChildren<INavigationProps>) => {
   const router = useRouter();
   
   return (
@@ -26,14 +30,27 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
       }
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="w-full py-6 flex items-center justify-center lg:justify-between border-b border-teal-500 lg:border-none">
+        <div className="relative w-full py-6 flex items-center justify-center lg:justify-between border-b border-teal-500 lg:border-none">
           <div className="flex items-center">
+
+            <div className="lg:hidden absolute left-0">
+              {
+                navItems && navItems.length > 0 && (
+                  <MobileMenu navItems={navItems} />
+                )
+              }
+            </div>
+
             <Link href="/">
               <a title={Extension.name}>
                 <span className="sr-only">{Extension.name}</span>
                 <Logo className={`text-whisper-500 h-12 w-auto`} />
               </a>
             </Link>
+
+            <div className="lg:hidden absolute right-0">
+              <Searchbox />
+            </div>
           </div>
           <div className="space-x-4">
             <div className="hidden ml-10 space-x-8 lg:flex justify-center items-center">
