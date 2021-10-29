@@ -1,5 +1,6 @@
 {
   "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.site.baseURL": "https://frontmatter.codes",
   "frontMatter.content.pageFolders": [
     {
       "title": "documentation",
@@ -53,5 +54,6 @@
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.framework.id": "next"
 }

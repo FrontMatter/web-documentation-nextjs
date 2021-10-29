@@ -37,6 +37,24 @@ Specify if you want to automatically update the modified date of your article/pa
 - Type: `boolean`
 - Default: `false`
 
+### frontMatter.content.draftField
+
+Define the draft field you want to use to manage your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontMatter.content.draftField)
+
+- Type: `object` 
+  - name: Define the type of field
+  - type: `boolean` or `choice`
+  - choices: Define the choices of the draft field `string[]` 
+
+- Default: 
+
+```json
+{
+  "name": "draft",
+  "type": "boolean"
+}
+```
+
 ### frontMatter.content.fmHighlight
 
 Specify if you want to highlight the Front Matter in the Markdown file.
@@ -73,7 +91,6 @@ Specify the folder name where all your assets are located. For instance in Hugo 
 - Type: `string`
 - Default: `""`
 
-
 ### frontMatter.custom.scripts
 
 Specify the path to a Node.js script to execute. The current file path will be provided as an argument."
@@ -93,14 +110,6 @@ Sample:
 }
 ```
 
-### frontMatter.dashboard.openOnStart
-
-Specify if you want to open the dashboard when you start VS Code.
-
-- Type: `boolean | null`
-- Default: `null`
-
-
 ### frontMatter.dashboard.mediaSnippet
 
 Specify the a snippet for your custom media insert markup.
@@ -112,6 +121,20 @@ Specify the a snippet for your custom media insert markup.
 ```
 
 > **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted.
+
+### frontMatter.dashboard.openOnStart
+
+Specify if you want to open the dashboard when you start VS Code.
+
+- Type: `boolean | null`
+- Default: `null`
+
+### frontMatter.framework.id
+
+Specify the ID of your static site generator or framework you are using for your website.
+
+- Type: `string`
+- Default: `""`
 
 ### frontMatter.panel.freeform
 
@@ -136,30 +159,28 @@ Specify the path you want to add after the host and before your slug. This can b
 
 > **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you wan to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
 
-### frontMatter.taxonomy.dateField
+### frontMatter.site.baseURL
 
-This setting is used to define the publishing date field of your articles.
-
-- Type: `string`
-- Default: `date`
-
-> **Important**: if you would use another field in your content types, be sure to remap this setting.
-
-### frontMatter.taxonomy.modifiedField
-
-This setting is used to define the modified date field of your articles.
+Specify the base URL of your site, this will be used for SEO checks.
 
 - Type: `string`
-- Default: `lastmod`
+- Default: `""`
 
-> **Important**: if you would use another field in your content types, be sure to remap this setting.
+> **Info**: Example for this site it would be: `https://frontmatter.codes`.
 
-### frontMatter.taxonomy.dateFormat
+### frontMatter.taxonomy.alignFilename
 
-Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
+Align the filename with the new slug when it gets generated.
 
-- Type: `string`
-- Default: `iso`
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.taxonomy.categories
+
+Specifies the categories which can be used in the Front Matter.
+
+- Type: `string[]`
+- Default: `[]`
 
 ### frontMatter.taxonomy.commaSeparatedFields
 
@@ -170,40 +191,35 @@ Specify the fields names that Front Matter should treat as a comma-separated arr
 
 > **Info**: As some site generators expect arrays in `YAML` to be comma-separated like Pelican. You can use this setting to define which of the front matter properties should be treated as an comma-separated array.
 
-### frontMatter.taxonomy.tags
+### frontMatter.taxonomy.contentTypes
 
-Specifies the tags which can be used in the Front Matter.
+Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter.
 
-- Type: `string[]`
-- Default: `[]`
-### frontMatter.taxonomy.categories
+- Type: `array, null` 
+- Default: check [default content type](/docs/content-types#changing-the-default-content-type)
 
-Specifies the categories which can be used in the Front Matter.
+### frontMatter.taxonomy.dateField
 
-- Type: `string[]`
-- Default: `[]`
-
-### frontMatter.taxonomy.slugPrefix
-
-Specify a prefix for the slug.
+This setting is used to define the publishing date field of your articles.
 
 - Type: `string`
-- Default: `""`
+- Default: `date`
 
-### frontMatter.taxonomy.slugSuffix
+> **Important**: if you would use another field in your content types, be sure to remap this setting.
 
-Specify a suffix for the slug.
+### frontMatter.taxonomy.dateFormat
+
+Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
 
 - Type: `string`
-- Default: `""`
+- Default: `iso`
 
-### frontMatter.taxonomy.alignFilename
+### frontMatter.taxonomy.frontMatterType
 
-Align the filename with the new slug when it gets generated.
+Specify which Front Matter language you want to use. The extension supports `YAML` (default) and `TOML`.
 
-- Type: `boolean`
-- Default: `false`
-
+- Type: `enum: YAML | TOML`
+- Default: `YAML`
 
 ### frontMatter.taxonomy.indentArrays
 
@@ -211,6 +227,15 @@ Specify if arrays in front matter of the markdown files are indented.
 
 - Type: `boolean`
 - Default: `true`
+
+### frontMatter.taxonomy.modifiedField
+
+This setting is used to define the modified date field of your articles.
+
+- Type: `string`
+- Default: `lastmod`
+
+> **Important**: if you would use another field in your content types, be sure to remap this setting.
 
 ### frontMatter.taxonomy.noPropertyValueQuotes
 
@@ -224,27 +249,6 @@ Specify the property names of which you want to remove the quotes in the output 
 
 - Type: `string[]`
 - Default: `[]`
-
-### frontMatter.taxonomy.frontMatterType
-
-Specify which Front Matter language you want to use. The extension supports `YAML` (default) and `TOML`.
-
-- Type: `enum: YAML | TOML`
-- Default: `YAML`
-
-### frontMatter.taxonomy.seoTitleLength
-
-Specifies the optimal title length for SEO (set to `-1` to turn it off).
-
-- Type: `number`
-- Default: `60`
-
-### frontMatter.taxonomy.seoDescriptionLength
-
-Specifies the optimal description length for SEO (set to `-1` to turn it off).
-
-- Type: `number`
-- Default: `160`
 
 ### frontMatter.taxonomy.seoContentLengh
 
@@ -261,6 +265,48 @@ Specifies the name of the SEO description field for your page.
 - Default: `description`
 
 > **Important**: if you would use another field in your content types, be sure to remap this setting.
+
+### frontMatter.taxonomy.seoDescriptionLength
+
+Specifies the optimal description length for SEO (set to `-1` to turn it off).
+
+- Type: `number`
+- Default: `160`
+
+### frontMatter.taxonomy.seoSlugLength
+
+Specifies the optimal slug length for SEO (set to `-1` to turn it off).
+
+- Type: `number` 
+- Default: `75`
+
+### frontMatter.taxonomy.seoTitleLength
+
+Specifies the optimal title length for SEO (set to `-1` to turn it off).
+
+- Type: `number`
+- Default: `60`
+
+### frontMatter.taxonomy.slugPrefix
+
+Specify a prefix for the slug.
+
+- Type: `string`
+- Default: `""`
+
+### frontMatter.taxonomy.slugSuffix
+
+Specify a suffix for the slug.
+
+- Type: `string`
+- Default: `""`
+
+### frontMatter.taxonomy.tags
+
+Specifies the tags which can be used in the Front Matter.
+
+- Type: `string[]`
+- Default: `[]`
 
 ### frontMatter.templates.folder
 

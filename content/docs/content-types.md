@@ -25,7 +25,7 @@ Our default content type consists of the following fields:
 - description: `string`
 - date: `datetime`
 - preview: `image`
-- draft: `boolean`
+- draft: `draft`
 - tags: `tags`
 - categories: `categories`
 
@@ -70,7 +70,7 @@ If in some case it wouldn't do this, here is the default content type structure:
       {
         "title": "Is in draft",
         "name": "draft",
-        "type": "boolean"
+        "type": "draft"
       },
       {
         "title": "Tags",
@@ -188,8 +188,27 @@ Front Matter its metadata section supports the following fields:
 - `boolean`
 - `image`
 - `choice`
+- `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
 - `tags`: mapped to the tags defined in your settings.
 - `categories`: mapped to the categories defined in your settings.
+
+### Custom draft field
+
+By default, the draft field is a boolean field. If you want to use your own status values, you can configure it via the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
+
+Sample of custom draft field with:
+
+```json
+"frontMatter.content.draftField": {
+  "name": "draft",
+  "type": "choice",
+  "choices": ["draft", "in progress", "published"]
+}
+```
+
+When using a custom draft status, the content dashboard will make use of it as well:
+
+![Draft filters](/releases/v5.3.0/draft-status.png)
 
 ### Field properties
 

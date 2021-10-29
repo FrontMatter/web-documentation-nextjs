@@ -42,16 +42,19 @@ Supports the following:
 - Keyword validation on title, description, slug, and content
 - More content details
 
-![SEO](/assets/seo.png)
+![SEO](/releases/v5.3.0/seo-status.png)
 
 ### Settings
 
 In case you want to change the SEO settings, you can use the following settings: 
 
+- `frontMatter.taxonomy.seoSlugLength`: Specifies the optimal title length for SEO (set to `-1` to turn it off).
 - `frontMatter.taxonomy.seoTitleLength`: Specifies the optimal title length for SEO (set to `-1` to turn it off).
 - `frontMatter.taxonomy.seoDescriptionLength`: Specifies the optimal description length for SEO (set to `-1` to turn it off).
 - `frontMatter.taxonomy.seoContentLengh`: Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off).
 - `frontMatter.taxonomy.seoDescriptionField`: Specifies the name of the SEO description field for your page. Default is 'description'.
+
+To discover your internal links, you can specify your base URL with the `frontMatter.site.baseURL` setting.
 
 ## Actions
 

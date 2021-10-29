@@ -21,7 +21,7 @@ export default function Documentation({ page, pages }: any) {
       <Description value={`documentation_description`} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
-      <Layout>
+      <Layout navItems={pages}>
         <Page items={pages} page={page}>
           <Markdown content={page?.content} />
         </Page>
