@@ -45,6 +45,7 @@ If in some case it wouldn't do this, here is the default content type structure:
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "default",
+    "previewPath": null,
     "pageBundle": false,
     "fields": [
       {
@@ -93,6 +94,7 @@ Adapt the fields to your needs. For our documentation it looks as follows:
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "default",
+    "previewPath": null,
     "pageBundle": false,
     "fields": [
       {
@@ -136,6 +138,7 @@ For the content type you can configure the following properties:
 - `name (string)`: Name of the content type
 - `fields (Field[])`: Check the [supported field types](/docs/content-types#supported-field-types)
 - `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
+- `previewPath (string)`: Defines a custom preview path for the content type. Default: `null`. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used.
 
 ## Define your own type
 
@@ -266,6 +269,30 @@ Example of using an array of { id: string; title: string; } objects:
     { "id": "3", "title": "Choice 3" }
   ]
 }
+```
+
+## Preview path
+
+When you want to show the live site/page previews in Visual Studio Code, you can specify a custom preview path/prefix. For instance, if you create blog articles, and you want to prefix it with `blog/2021/11`, you can set this with the `previewPath` property.
+
+There are two ways to set this:
+
+1. Via the global [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting. This will be used as the default value for all content types.
+2. Define a path per content type can be done via the `previewPath` property. Once set, it will ignore the `frontMatter.preview.pathName` setting.
+
+> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you wan to skip some characters or all of them, you need to wrap that part between **two single quotes**. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/11`.
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "default",
+    "previewPath": "'blog/'yyyy/MM",
+    "pageBundle": false,
+    "fields": [
+      ...
+    ]
+  }
+]
 ```
 
 ## Page and leaf bundles
