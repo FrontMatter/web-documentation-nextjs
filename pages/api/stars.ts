@@ -3,11 +3,17 @@ import fetch from 'node-fetch';
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
-  const response = await fetch(`https://api.github.com/repos/estruyf/vscode-front-matter`, {
-    headers: {
+  let headers = {};
+
+  if (process.env.GITHUB_AUTH) {
+    headers = {
       "Authorization": `token ${process.env.GITHUB_AUTH}`,
       "user-agent": "frontmatter"
-    }
+    };
+  }
+
+  const response = await fetch(`https://api.github.com/repos/estruyf/vscode-front-matter`, {
+    headers
   });
 
   if (response && response.ok) {

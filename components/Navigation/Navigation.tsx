@@ -67,9 +67,9 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
                 </a>
               ))}
 
-              <Searchbox />
-
               <Stargazers />
+
+              <Searchbox />
             </div>
           </div>
         </div>
