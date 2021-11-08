@@ -20,7 +20,7 @@ const stickers = [
   }
 ];
 
-export default function Home({ showcases }: any) {
+export default function Home({ }: any) {
   const { t: strings } = useTranslation();
   
   return (
