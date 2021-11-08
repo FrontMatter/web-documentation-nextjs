@@ -46,6 +46,10 @@ export default function Home({ showcases }: any) {
             <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_title`)}</h1>
             
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_description`)}</p>
+
+            <div className="mt-8 text-sm">
+              <p>Want to add your site to our showcase? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
+            </div>
           </div>
 
           <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>

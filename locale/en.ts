@@ -70,4 +70,10 @@ export const strings = {
   changelog_description: "Check out the updates for Front Matter.",
   changelog_page_title: `Latest updates`,
   changelog_page_description: `An overview of all updates from the ${Extension.name} extension`,
+
+  // SWAG
+  swag_title: "Show your support with our SWAG",
+  swag_description: "We are a small team of developers who love to create software. We are always looking for new ideas and ways to improve our product. If you like Front Matter, we would appreciate your support and your contribution to the project.",
+  swag_page_title: "Show your support",
+  swag_page_description: "Show your support for Front Matter by purchasing a stickers",
 };
