@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Description, OtherMeta, Title } from '../../components/Meta';
 import { Layout } from '../../components/Page/Layout';
-import { Extension } from '../../constants/extension';
 import showcases from '../../showcases.json';
 import Image from 'next/image';
 
@@ -46,7 +45,7 @@ export default function Home({ showcases }: any) {
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {
                 stickers.map(sticker => (
-                  <div className="flex flex-col justify-center items-center">
+                  <div key={sticker.title} className="flex flex-col justify-center items-center">
                     <div className="flex flex-col justify-center items-center">
                       <Image
                         src={sticker.image}
