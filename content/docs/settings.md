@@ -75,12 +75,23 @@ Sample:
 {
   "frontMatter.content.pageFolders": [
     {
+      "title": "Pages",
+      "path": "[[workspace]]/content",
+      "excludeSubdir": true
+    },
+    {
       "title": "Blog posts",
       "path": "[[workspace]]/content/posts"
     }
   ]
 }
 ```
+
+Properties:
+
+- `title`: Give a title for the content folder path
+- `path`: The path to the content folder, important is to use the `[[workspace]]` placeholder
+- `excludeSubdir`: Optional, specify if you want to exclude subdirectories from the content folder. Default: `false`.
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace path. The reason why we choose to use this, is because some do not keep the original folder name.
 

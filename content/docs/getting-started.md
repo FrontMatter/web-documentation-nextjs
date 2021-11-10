@@ -65,6 +65,8 @@ You can register a folder by right-clicking on a folder name in the explorer pan
 
 ![Register a folder](/assets/register-folder.png)
 
+> **Info**: Be default, the extension will include content from the current folder and its sub-folders. If you wish to exclude the sub-folders, you can do this by updating the [frontMatter.content.pageFolders](/docs/settings#frontmatter.content.pagefolders) configuration setting and specifying the `excludeSubDir` property with the value as `true`.
+
 ## Workspaces with multiple folders
 
 If you are using workspaces with multiple folders in Visual Studio Code. Front Matter will try to figure out for which folder it needs to be activated. It does this by searching for the `frontmatter.json` file in the workspace folders.
