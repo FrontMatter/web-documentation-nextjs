@@ -69,6 +69,14 @@ This array of folders defines where the extension can find your content and crea
 - Type: `object[]`
 - Default: `[]`
 
+Properties:
+
+- `title`: Give a title for the content folder path
+- `path`: The path to the content folder, important is to use the `[[workspace]]` placeholder
+- `excludeSubdir`: Optional, specify if you want to exclude subdirectories from the content folder. Default: `false`.
+
+> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace path. The reason why we choose to use this, is because some do not keep the original folder name.
+
 Sample:
 
 ```json
@@ -87,20 +95,47 @@ Sample:
 }
 ```
 
-Properties:
-
-- `title`: Give a title for the content folder path
-- `path`: The path to the content folder, important is to use the `[[workspace]]` placeholder
-- `excludeSubdir`: Optional, specify if you want to exclude subdirectories from the content folder. Default: `false`.
-
-> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace path. The reason why we choose to use this, is because some do not keep the original folder name.
-
 ### frontMatter.content.publicFolder
 
 Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder.
 
 - Type: `string`
 - Default: `""`
+
+### frontMatter.content.sorting
+
+Define the sorting options for your dashboard content.
+
+- Type: `object[]`
+- Default: `[]`
+
+Properties:
+
+- `title`: The title of the sorting option
+- `name`: The name of the field to sort by (needs to be present in your content its front matter)
+- `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or `desc`.
+- `type`: The type of field value. Option values to use: `string`, `date`.
+
+Sample:
+
+```json
+{
+  "frontMatter.content.sorting": [
+    {
+      "title": "Date (asc)",
+      "name": "date",
+      "order": "asc",
+      "type": "date"
+    },
+    {
+      "title": "Date (desc)",
+      "name": "date",
+      "order": "desc",
+      "type": "date"
+    }
+  ]
+}
+```
 
 ### frontMatter.custom.scripts
 

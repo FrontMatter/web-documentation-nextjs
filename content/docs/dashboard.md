@@ -50,6 +50,8 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 - Last modified
 - Filename (asc/desc)
 
+> **Info**: You can define custom sorting options by specifying these within the [frontMatter.content.sorting](/docs/settings#frontMatter.content.sorting) setting.
+
 ## Media view
 
 The media view has been created to make it easier to look at all media files available for your articles. When you click on an image, it will show a lightbox, so that it is easier to glance at small images.
