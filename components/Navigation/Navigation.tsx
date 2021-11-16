@@ -73,9 +73,9 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
             </div>
           </div>
         </div>
-        <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+        <div className="py-4 flex flex-wrap justify-center md:space-x-6 lg:hidden">
           {navigation.main.map((link) => (
-            <a key={link.name} href={link.href} title={link.title} className="text-base font-medium text-whisper-500 hover:text-whisper-900">
+            <a key={link.name} href={link.href} title={link.title} className="mx-3 md:mx-0 text-base font-medium text-whisper-500 hover:text-whisper-900">
               {link.name}
             </a>
           ))}
