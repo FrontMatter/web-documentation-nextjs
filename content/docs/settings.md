@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-22T08:00:35.237Z'
+lastmod: '2021-11-18T15:43:45.984Z'
 weight: 7
 ---
 
@@ -166,7 +166,7 @@ Specify the a snippet for your custom media insert markup.
 ]
 ```
 
-> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted.
+> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted. Check [placeholders](/docs/markdown#placeholders) for more information.
 
 ### frontMatter.dashboard.openOnStart
 
