@@ -1,6 +1,37 @@
 # Change Log
 
-## [5.3.0] - 2021-10-XX
+## [5.6.0] - 2021-11-xx
+
+### 🎨 Enhancements
+
+- Updated camera icon from VS Code to media icon
+- Updated `check` icon on media inserts to `plus` icon
+- [#178](https://github.com/estruyf/vscode-front-matter/issues/178): Sorting added to the media dashboard
+- [#179](https://github.com/estruyf/vscode-front-matter/issues/179): Updated the `open dashboard` icon to make it easier to spot it
+
+## [5.5.0] - 2021-11-15
+
+As from this version onwards, the extension will be published to [open-vsx.org](https://open-vsx.org/).
+
+### 🎨 Enhancements
+
+- [#173](https://github.com/estruyf/vscode-front-matter/issues/173): Allow to specify your own sorting for the content dashboard
+- [#174](https://github.com/estruyf/vscode-front-matter/issues/174): Added option to exclude sub-directories from page/markdown content retrieval 
+
+## [5.4.0] - 2021-11-05
+
+### 🎨 Enhancements
+
+- [#166](https://github.com/estruyf/vscode-front-matter/issues/166): Added preview button to the panel base view
+- [#167](https://github.com/estruyf/vscode-front-matter/issues/167): Allow to set the preview path per content type
+
+## [5.3.1] - 2021-10-29
+
+### 🐞 Fixes
+
+- [#163](https://github.com/estruyf/vscode-front-matter/issues/163): Setting workspace state instead of global state for the media view
+
+## [5.3.0] - 2021-10-28 - [Release Notes](https://frontmatter.codes/updates/v5.3.0)
 
 ### 🎨 Enhancements
 
