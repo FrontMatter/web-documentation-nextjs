@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-11-18T15:43:45.984Z'
+lastmod: '2021-11-19T15:39:44.975Z'
 weight: 7
 ---
 
@@ -155,6 +155,8 @@ Sample:
   }]
 }
 ```
+
+> **Info**: Check the [create your own custom scripts](/docs/custom-actions#creating-a-script) section for more information.
 
 ### frontMatter.dashboard.mediaSnippet
 
