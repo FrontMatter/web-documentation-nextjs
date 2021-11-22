@@ -194,6 +194,7 @@ Front Matter its metadata section supports the following fields:
 - `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
 - `tags`: mapped to the tags defined in your settings.
 - `categories`: mapped to the categories defined in your settings.
+- `taxonomy`: if you want to define your own custom taxonomy fields.
 
 ### Custom draft field
 
@@ -224,18 +225,18 @@ A field consists out of the following properties:
 
 #### Additional properties
 
-**String fields**
+##### String fields
 
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
 
-**Image fields**
+##### Image fields
 
 - `isPreviewImage (boolean)`: Allows you to specify a custom preview image for your article. When you set this to `true` for an image field in your content type, it will be adopted in the dashboard.
 - `multiple (boolean)`: Define if you want to allow to select multiple images. By default this is `false`.
 
 > **Important**: You can only set this on one image field per content type.
 
-**Choice fields**
+##### Choice fields
 
 - `choices (string[] | { id: string; title: string; })`: When you picked the `choice` field type, you need to return an array of choices.
 - `multiple (boolean)`: Define if you want to allow multiple choice selection. By default this is `false`.
@@ -269,6 +270,38 @@ Example of using an array of { id: string; title: string; } objects:
     { "id": "3", "title": "Choice 3" }
   ]
 }
+```
+
+##### Custom taxonomy field
+
+- `taxonomyId`: The id of the taxonomy you want to use, it will need to be defined in the `frontMatter.taxonomy.customTaxonomy` setting.
+
+Example of a custom taxonomy field definition:
+
+```json
+{
+  "title": "Custom taxonomy",
+  "name": "customTaxonomy",
+  "type": "taxonomy",
+  "taxonomyId": "customTags"
+}
+```
+
+The `frontMatter.taxonomy.customTaxonomy` setting allows you to provide a list of custom taxonomy data. Each of the taxonomy data contains a `id` and an array of `options`.
+
+Here is an example of the custom taxonomy setting definition:
+
+```json
+"frontMatter.taxonomy.customTaxonomy": [
+  {
+    "id": "customTaxonomy",
+    "options": [
+      "Option 1",
+      "Option 2",
+      "Option 3"
+    ]
+  }
+]
 ```
 
 ## Preview path

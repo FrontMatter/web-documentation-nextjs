@@ -274,6 +274,31 @@ Specify the type of contents you want to use for your articles/pages/etc. Make s
 - Type: `array, null` 
 - Default: check [default content type](/docs/content-types#changing-the-default-content-type)
 
+
+### frontMatter.taxonomy.customTaxonomy
+
+Specify the custom taxonomy field data.
+
+- Type: `array[object]`
+- Default: `[]`
+
+Sample:
+
+```json
+"frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "customTaxonomy",
+      "options": [
+        "Option 1",
+        "Option 2",
+        "Option 3"
+      ]
+    }
+  ]
+```
+
+> **Info**: Check the [custom taxonomy](/docs/content-types#custom-taxonomy-field) section for more information.
+
 ### frontMatter.taxonomy.dateField
 
 This setting is used to define the publishing date field of your articles.
