@@ -3,7 +3,7 @@ title: Markdown
 slug: markdown
 description: null
 date: '2021-08-31T05:59:58.852Z'
-lastmod: '2021-11-18T15:44:02.257Z'
+lastmod: '2021-11-22T09:08:23.587Z'
 weight: 6
 ---
 
@@ -15,7 +15,7 @@ The Front Matter extension tries to make it easy to manage your Markdown pages/c
 
 ## Insert images
 
-Inserting images was never easier with the `insert image into article` command, which can also be triggered with the camera icon in the editor title bar (Markdown files only).
+Inserting images was never easier with the `insert image into article` command, which can also be triggered with the image icon in the editor title bar (Markdown files only).
 
 ![Insert images](/releases/v4_0_0/insert-images.gif)
 

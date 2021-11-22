@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-11-19T15:39:44.975Z'
+lastmod: '2021-11-22T08:35:18.992Z'
 weight: 7
 ---
 
@@ -14,7 +14,6 @@ weight: 7
 Most of Front Matter is configurable to your needs. In this part of the documentation all settings are explained.
 
 ## Team settings and local settings
-
 
 Since version 4 of Front Matter, Team settings got introduced. Teams settings allow you to have all settings on the project/solution level. You will be able to override them on user/local level (`.vscode/settings.json`).
 
@@ -36,6 +35,21 @@ Specify if you want to automatically update the modified date of your article/pa
 
 - Type: `boolean`
 - Default: `false`
+
+### frontMatter.content.defaultSorting
+
+Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID.
+
+- Type: `string` 
+- Default: `""`
+
+Options:
+
+- LastModifiedAsc
+- LastModifiedDesc
+- FileNameAsc
+- FileNameDesc
+- `ID of your custom sorting option`
 
 ### frontMatter.content.draftField
 
@@ -139,7 +153,7 @@ Sample:
 
 ### frontMatter.custom.scripts
 
-Specify the path to a Node.js script to execute. The current file path will be provided as an argument."
+Specify the path to a Node.js script to execute. The current file path will be provided as an argument.
 
 - Type: `object[]`
 - Default: `[]`
@@ -156,7 +170,7 @@ Sample:
 }
 ```
 
-> **Info**: Check the [create your own custom scripts](/docs/custom-actions#creating-a-script) section for more information.
+> **Info**: Check the [create your own custom scripts](/docs/custom-actions) section for more information.
 
 ### frontMatter.dashboard.mediaSnippet
 
@@ -183,6 +197,20 @@ Specify the ID of your static site generator or framework you are using for your
 
 - Type: `string`
 - Default: `""`
+
+### frontMatter.media.defaultSorting
+
+Specify the default sorting option for the media dashboard.
+
+- Type: `string` 
+- Default: `""`
+
+Options:
+
+- LastModifiedAsc
+- LastModifiedDesc
+- FileNameAsc
+- FileNameDesc
 
 ### frontMatter.panel.freeform
 
