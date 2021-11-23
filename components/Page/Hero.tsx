@@ -20,7 +20,7 @@ export const Hero: React.FunctionComponent<IHeroProps> = ({view, title, descript
       <div className={`${className || ""} mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24`}>
         <div className={`max-w-3xl mx-auto lg:py-48 lg:max-w-none lg:mx-0 lg:px-0 ${view === "left" ? `lg:col-start-2` : `lg:col-start-1`}`}>
           <div>
-            <h2 className="text-3xl lg:text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none">
+            <h2 className="text-3xl lg:text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-teal-700">
               {title}
             </h2>
             {

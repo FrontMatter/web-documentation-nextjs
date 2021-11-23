@@ -56,6 +56,10 @@ html, body {height: 100%;}
     @apply tracking-tight font-extrabold sm:leading-none text-lg xl:text-xl;
   }
 
+  h5 {
+    @apply tracking-tight font-extrabold sm:leading-none text-base;
+  }
+
   img {
     @apply mx-auto my-8;
   }

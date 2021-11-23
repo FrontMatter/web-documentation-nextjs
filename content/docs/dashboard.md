@@ -1,9 +1,9 @@
 ---
 title: Dashboard
 slug: dashboard
-description: 
+description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-08-30T16:13:01.763Z'
+lastmod: '2021-11-22T09:08:12.205Z'
 weight: 3
 ---
 
@@ -52,6 +52,8 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 
 > **Info**: You can define custom sorting options by specifying these within the [frontMatter.content.sorting](/docs/settings#frontMatter.content.sorting) setting.
 
+You are also able to define your default sorting options by setting the `frontMatter.content.defaultSorting` setting for the content view, and the `frontMatter.media.defaultSorting` setting for the media view.
+
 ## Media view
 
 The media view has been created to make it easier to look at all media files available for your articles. When you click on an image, it will show a lightbox, so that it is easier to glance at small images.
@@ -75,6 +77,19 @@ Setting metadata got introduced so that you can set the description and alt tag 
 **Deleting a media file**
 
 ![Dashboard - Delete media file](/assets/delete-media.png)
+
+**Custom media actions**
+
+In version `5.6.0` of the extension, you can now define your own media actions. This extensibility option is very useful for adding your own optimizations, functionality, or anything else you want.
+
+For instance, you can use it to optimize the image(s) size.
+
+Custom actions for media files can be defined on two levels:
+
+- File level: Single file action
+- Folder level: Multiple files action
+
+> **Info**: Check out [creating media scripts](/docs/custom-actions#creating-a-media-script) for more information.
 
 ### Drag and Drop
 
