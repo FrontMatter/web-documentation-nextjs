@@ -47,5 +47,12 @@
     "description": "SelectedTech is a group of four MVP's doing sessions on Microsoft 365 and the AI ecosystem. Build on Hugo and Front Matter and hosted in Azure.",
     "image": "www.selectedtech.show_.png",
     "generator": "Hugo"
+  },
+  {
+    "title": "Maxim Orlov",
+    "link": "https://maximorlov.com/",
+    "description": "Helping Node.js developers write better applications 🚀. Created with Eleventy & Tailwind. Content managed with Front Matter.",
+    "image": "maximorlov.com.png",
+    "generator": "Eleventy"
   }
 ]
