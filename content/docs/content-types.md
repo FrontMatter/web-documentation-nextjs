@@ -330,7 +330,7 @@ There are two ways to set this:
 
 ## Page and leaf bundles
 
-The page or leaf bundles, are a way to group your pages and resouces together in a single folder.
+The page or leaf bundles, are a way to group your pages and resources together in a single folder.
 
 ```
 content/
