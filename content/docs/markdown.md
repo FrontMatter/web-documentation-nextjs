@@ -21,6 +21,14 @@ All the controls can be found on the top right of the opened file title bar.
 
 ![WYSIWYG controls](/releases/v5.7.0/wysiwyg_controls.png)
 
+Currently supported are:
+
+- Bold
+- Italic
+- Strikethrough
+- Code snippet
+- Code block
+
 If you want, you can disable these controls with the following setting `frontMatter.content.wysiwyg`. By default, this is set to `true`. When changed to `false`, these controls will disappear.
 
 ## Insert images
