@@ -3,7 +3,7 @@ title: Markdown
 slug: markdown
 description: null
 date: '2021-08-31T05:59:58.852Z'
-lastmod: '2021-11-22T09:08:23.587Z'
+lastmod: '2021-12-01T14:21:23.114Z'
 weight: 6
 ---
 
@@ -20,6 +20,16 @@ Inserting images was never easier with the `insert image into article` command, 
 ![Insert images](/releases/v4_0_0/insert-images.gif)
 
 > **Important**: If you want, you can add your own media snippet to allow you to use your shortcodes/markdown/... In order to specify the snippet, use the `frontMatter.dashboard.mediaSnippet` setting.
+
+## WYSIWYG
+
+To help out content editors write their content in Markdown. Front Matter provides a couple of helpful, what you see is what you get (WYSIWYG), controls while working in a Markdown file.
+
+All the controls can be found on the top right of the opened file title bar.
+
+![WYSIWYG controls](/releases/v5.7.0/wysiwyg_controls.png)
+
+If you want, you can disable these controls with the following setting `frontMatter.content.wysiwyg`. By default, this is set to `true`. When changed to `false`, these controls will disappear.
 
 ## Insert your own media snippet
 
