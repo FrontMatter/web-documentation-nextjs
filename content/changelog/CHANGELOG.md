@@ -1,6 +1,6 @@
 # Change Log
 
-## [5.7.0] - 2021-12-xx
+## [5.7.0] - 2021-12-xx - [Release Notes](https://frontmatter.codes/updates/v5.7.0)
 
 ### 🎨 Enhancements
 
@@ -11,6 +11,9 @@
 ### 🐞 Fixes
 
 - [#191](https://github.com/estruyf/vscode-front-matter/issues/191): Fix beta settings page
+- [#200](https://github.com/estruyf/vscode-front-matter/issues/200): Fix last modified date sorting for media files
+- [#201](https://github.com/estruyf/vscode-front-matter/issues/201): Fix overflow issue with the media filename
+- [#202](https://github.com/estruyf/vscode-front-matter/issues/202): Fix checkbox label color for light themes
 
 ## [5.6.0] - 2021-11-23
 

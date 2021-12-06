@@ -23,13 +23,30 @@ All the controls can be found on the top right of the opened file title bar.
 
 Currently supported are:
 
+- Headings
 - Bold
 - Italic
 - Strikethrough
+- Block quote
 - Code snippet
 - Code block
+- Ordered list
+- Unordered list
+- Task list
 
 If you want, you can disable these controls with the following setting `frontMatter.content.wysiwyg`. By default, this is set to `true`. When changed to `false`, these controls will disappear.
+
+### Inserting headings
+
+When you click on the headings in the WYSIWYG controls, you will be asked which level of heading you want to insert.
+
+![WYSIWYG headings](/releases/v5.7.0/wysiwyg_headings.png)
+
+### Other WYSIWYG options
+
+When you click on the elipsis icon in the WYSIWYG controls, you will be asked which of the advanced markup you want to insert.
+
+![WYSIWYG options](/releases/v5.7.0/wysiwyg_options.png)
 
 ## Insert images
 
