@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-11-22T08:35:18.992Z'
+lastmod: '2021-12-01T14:22:16.164Z'
 weight: 7
 ---
 
@@ -150,6 +150,13 @@ Sample:
   ]
 }
 ```
+
+### frontMatter.content.wysiwyg
+
+Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls.
+
+- Type: `boolean`
+- Default: `true`
 
 ### frontMatter.custom.scripts
 
