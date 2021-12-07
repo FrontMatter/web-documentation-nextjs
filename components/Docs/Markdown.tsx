@@ -4,6 +4,7 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import { CodeHighlighting } from './CodeHighlighting';
 
 export interface IMarkdownProps {
   content: string | undefined;
@@ -46,7 +47,7 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
   return (
     <div className={`markdown`}>
       {/* eslint-disable react/no-children-prop */}
-      <ReactMarkdown 
+      <ReactMarkdown
         components={{
           a: ({node, ...props}) => {
             const url = props?.href || "";
@@ -62,6 +63,7 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
           h3: ({node, ...props}) => (<h3 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h3>),
           h4: ({node, ...props}) => (<h4 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h4>),
           h5: ({node, ...props}) => (<h5 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h5>),
+          code: ({...props}) => <CodeHighlighting {...props} />,
         }}
         rehypePlugins={[rehypeRaw]} 
         children={content} />

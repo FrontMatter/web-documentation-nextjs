@@ -93,7 +93,11 @@ html, body {height: 100%;}
   }
 
   pre {
-    @apply p-4 my-4 bg-vulcan-200 break-all whitespace-pre-wrap;
+    @apply p-1 my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
+  }
+
+  pre.shiki {
+    @apply my-0 p-4;
   }
 }
 
