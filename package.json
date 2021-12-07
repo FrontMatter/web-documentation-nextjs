@@ -11,6 +11,7 @@
     "schema": "node scripts/generate-schema.js"
   },
   "dependencies": {
+    "@antfu/shiki": "^0.6.2",
     "@docsearch/js": "^3.0.0-alpha.40",
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.4",
@@ -27,7 +28,8 @@
     "react-reveal": "^1.2.2",
     "rehype-raw": "^6.1.0",
     "remark-autolink-headings": "7.0.1",
-    "remark-heading-id": "1.0.0"
+    "remark-heading-id": "1.0.0",
+    "shiki": "^0.9.14"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.12",
