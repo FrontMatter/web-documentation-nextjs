@@ -54,5 +54,12 @@
     "description": "Helping Node.js developers write better applications 🚀. Created with Eleventy & Tailwind. Content managed with Front Matter.",
     "image": "maximorlov.com.png",
     "generator": "Eleventy"
+  },
+  {
+    "title": "Jahir Fiquitiva",
+    "link": "https://jahir.dev/",
+    "description": "Personal website and blog from Jahir Fiquitiva created with NextJS, TypeScript and Styled Components. Blog content managed by Front Matter.",
+    "image": "jahir.dev.png",
+    "generator": "Next.js"
   }
 ]
