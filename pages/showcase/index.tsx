@@ -58,8 +58,8 @@ export default function Home({ showcases, featured }: any) {
 
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {featured.sort(sortTitle).map((feature: any) => (
-                <div>
-                  <a key={feature.title} className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
+                <div key={feature.title}>
+                  <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
                     <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
                       <Image 
                         className={`w-full object-cover object-left-top`} 
