@@ -35,8 +35,6 @@ const sortTitle = (a: { title: string }, b: { title: string }) => {
 export default function Home({ showcases, featured }: any) {
   const { t: strings } = useTranslation();
   
-  console.log(featured)
-  
   return (
     <>
       <Title value={strings(`showcase_title`)} />
