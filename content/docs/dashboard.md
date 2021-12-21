@@ -25,6 +25,13 @@ In order to start using the dashboard, you will have to let the extension know i
 
 > **Important**: If your preview images are not loading, it might be that you need to configure the `publicFolder` where the extension can find them. For instance, in Hugo, this is the static folder. You can configure this by updating the `frontMatter.content.publicFolder` setting.
 
+## Commands
+
+There are two commands to open the dashboard:
+
+- `frontMatter.dashboard` aka `Front matter: Open dashboard` - Opens the dashboard on the contents view.
+- `frontMatter.dashboard.media` aka `Front matter: Open media dashboard` - Opens the dashboard on the media view.
+
 ## Contents view
 
 ### Draft status navigation
