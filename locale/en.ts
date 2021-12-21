@@ -55,15 +55,18 @@ export const strings = {
   feature_description_6: "All of the functionalities are configurable to your needs. You can define how you want to use Front Matter in your editor experience, but it doesn't stop there. If you are missing something or want to automate. We allow you to add your own actions with the custom scripting capability. For instance, you can use a script and hook it up to the extension to generate preview images.",
 
   // Sponsors
-  sponsors_title: "Special thanks to our sponsors",
+  sponsors_title: "Special thanks to our backers & sponsors",
 
   // Documentation
   documentation_title: "Documentation",
   documentation_description: `Get to know more about how you can use ${Extension.name} with our documentation.`,
 
   // Showcase
-  showcase_title: "Showcase",
-  showcase_description: "Check out our showcase of sites using Front Matter.",
+  showcase_page_title: "Featured & showcases",
+  showcase_page_description: "Check out where Front Matter got featured and for which sites its used.",
+
+  showcase_title: "Showcases",
+  showcase_featured_title: "Featured",
 
   // Changelog
   changelog_title: "Updates",
