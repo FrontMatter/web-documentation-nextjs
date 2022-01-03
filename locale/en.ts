@@ -51,7 +51,7 @@ export const strings = {
   feature_title_5: "SEO Checks",
   feature_description_5: "Our search engine optimization checks allow you to write better articles. We show you more information about your title, description, content, keywords, and more.",
 
-  feature_title_6: "Use it the way you want it",
+  feature_title_6: "Use it the way you want it", 
   feature_description_6: "All of the functionalities are configurable to your needs. You can define how you want to use Front Matter in your editor experience, but it doesn't stop there. If you are missing something or want to automate. We allow you to add your own actions with the custom scripting capability. For instance, you can use a script and hook it up to the extension to generate preview images.",
 
   // Sponsors
