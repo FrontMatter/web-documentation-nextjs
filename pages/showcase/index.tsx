@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Description, OtherMeta, Title } from '../../components/Meta';
 import { Layout } from '../../components/Page/Layout';
 import { Extension } from '../../constants/extension';
+import featured from '../../featured.json';
 import showcases from '../../showcases.json';
 import Image from 'next/image';
 
@@ -31,7 +32,7 @@ const sortTitle = (a: { title: string }, b: { title: string }) => {
   return 0;
 };
 
-export default function Home({ showcases }: any) {
+export default function Home({ showcases, featured }: any) {
   const { t: strings } = useTranslation();
   
   return (
@@ -43,41 +44,86 @@ export default function Home({ showcases }: any) {
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
-            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_title`)}</h1>
+            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_page_title`)}</h1>
             
-            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_description`)}</p>
+            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_page_description`)}</p>
 
             <div className="mt-8 text-sm">
-              <p>Want to add your site to our showcase? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
+              <p>Want to add your site or article/video/... to our showcase page? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
             </div>
           </div>
 
-          <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
-            {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (
-              <a key={showcase.title} className="group space-y-2 md:space-y-5 relative" href={showcase.link} title={showcase.title} rel={`noopener noreferrer`}>
-                <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
-                  <Image 
-                    className={`w-full object-cover object-left-top`} 
-                    src={`/showcases/${showcase.image}`}
-                    alt={showcase.title} 
-                    loading={`lazy`}
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
-                    width={592}
-                    height={400}
-                     />
-                </figure>
+          <div>
+            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`)}</h2>
 
-                <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{showcase.title}</h2>
+            <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
+              {featured.sort(sortTitle).map((feature: any) => (
+                <div key={feature.title}>
+                  <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
+                    <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
+                      <Image 
+                        className={`w-full object-cover object-left-top`} 
+                        src={`${feature.preview}`}
+                        alt={feature.title} 
+                        loading={`lazy`}
+                        placeholder="blur"
+                        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
+                        width={592}
+                        height={400}
+                        />
+                    </figure>
 
-                <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{showcase.description}</p>
-              </a>
-            ))}
+                    <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{feature.title}</h2>
+                  </a>
+                  
+                  {
+                    feature.author && (
+                      <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                        {
+                          feature.author?.link ? (
+                            <a className="text-teal-500 hover:text-teal-900" href={feature.author.link} title={feature.author.name} target="_blank" rel="noopener noreferrer">{feature.author.name}</a>
+                          ) : (
+                            feature.author.name
+                          )
+                        }
+                      </p>
+                    )
+                  }
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
+            
+            <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
+              {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (
+                <a key={showcase.title} className="group space-y-2 md:space-y-5 relative" href={showcase.link} title={showcase.title} target="_blank" rel={`noopener noreferrer`}>
+                  <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
+                    <Image 
+                      className={`w-full object-cover object-left-top`} 
+                      src={`/showcases/${showcase.image}`}
+                      alt={showcase.title} 
+                      loading={`lazy`}
+                      placeholder="blur"
+                      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
+                      width={592}
+                      height={400}
+                      />
+                  </figure>
+
+                  <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{showcase.title}</h2>
+
+                  <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{showcase.description}</p>
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="">
             <div className="mt-8 text-sm">
-              <p>Want to add your site to our showcase? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
+              <p>Want to add your site or article/video/... to our showcase page? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
             </div>
           </div>
         </div>
@@ -88,6 +134,6 @@ export default function Home({ showcases }: any) {
 
 export const getStaticProps = async () => {
   return {
-    props: { showcases }
+    props: { showcases, featured }
   }
 }

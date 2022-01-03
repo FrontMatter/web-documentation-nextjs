@@ -62,8 +62,11 @@ export const strings = {
   documentation_description: `Get to know more about how you can use ${Extension.name} with our documentation.`,
 
   // Showcase
-  showcase_title: "Showcase",
-  showcase_description: "Check out our showcase of sites using Front Matter.",
+  showcase_page_title: "Featured & showcases",
+  showcase_page_description: "Check out where Front Matter got featured and for which sites its used.",
+
+  showcase_title: "Showcases",
+  showcase_featured_title: "Featured",
 
   // Changelog
   changelog_title: "Updates",

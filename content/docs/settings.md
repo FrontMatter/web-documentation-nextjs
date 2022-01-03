@@ -4,7 +4,7 @@ slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2021-12-01T14:22:16.164Z'
-weight: 7
+weight: 8
 ---
 
 # Settings
@@ -204,6 +204,13 @@ Specify the ID of your static site generator or framework you are using for your
 
 - Type: `string`
 - Default: `""`
+
+### frontMatter.global.notifications
+
+Specifies which type of notifications you want to see or which you want to hide.
+
+- Type: `array<string>`
+- Default: `["info", "warning", "error"]`
 
 ### frontMatter.media.defaultSorting
 
