@@ -42,7 +42,8 @@ const Home: NextPage = () => {
           view={"right"}
           title={strings(`hero_media_title`)}
           description={strings(`hero_media_description`)}
-          imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256//v1633417514/frontmatter/media_dashboard_v5.0.0.png"}
+          // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1633417514/frontmatter/media_dashboard_v5.0.0.png"}
+          imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1641373114/frontmatter/media-dashboard-5.9.0.png"}
           imgAlt={"Front Matter CMS - media management was never easier in VS Code"}
           link={`/docs/dashboard`}
           linkText={strings(`hero_media_button_primary`)}

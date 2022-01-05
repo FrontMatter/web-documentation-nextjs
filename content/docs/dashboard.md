@@ -19,7 +19,7 @@ On the contents view, you can **search**, **filter**, **sort** your pages and mu
 
 On the media view, you can quickly glance all the available media files in your project and perform quick actions like copying the relative path.
 
-![Dashboard - Media view](https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631520508/frontmatter/media.png)
+![Dashboard - Media view](https://res.cloudinary.com/estruyf/image/upload/v1641373114/frontmatter/media-dashboard-5.9.0.png)
 
 In order to start using the dashboard, you will have to let the extension know in which folder(s) it can find your pages. Be sure to follow our [getting started](/docs/getting-started) guide.
 
@@ -65,7 +65,7 @@ You are also able to define your default sorting options by setting the `frontMa
 
 The media view has been created to make it easier to look at all media files available for your articles. When you click on an image, it will show a lightbox, so that it is easier to glance at small images.
 
-![Dashboard - Media view - Lightbox](/assets/lightbox.png)
+![Dashboard - Media view - Lightbox](/releases/v5.9.0/media-lightbox.png)
 
 ### Media actions
 
@@ -83,7 +83,7 @@ Setting metadata got introduced so that you can set the description and alt tag 
 
 **Deleting a media file**
 
-![Dashboard - Delete media file](/assets/delete-media.png)
+![Dashboard - Delete media file](/releases/v5.9.0/media-deletion.png)
 
 **Custom media actions**
 
@@ -102,7 +102,7 @@ Custom actions for media files can be defined on two levels:
 
 On the media view, we enabled drag and drop for your media files. You can easily drop any image from your explorer/finder window into one of your folders.
 
-![Dashboard - Upload media file](/assets/upload-media.png)
+![Dashboard - Upload media file](/releases/v5.9.0/media-upload.png)
 
 ## Show on startup
 
