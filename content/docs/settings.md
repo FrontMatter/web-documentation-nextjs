@@ -36,6 +36,20 @@ Specify if you want to automatically update the modified date of your article/pa
 - Type: `boolean`
 - Default: `false`
 
+### frontMatter.content.defaultFileType
+
+Specify the default file type for the content to create.
+
+- Type: `emum`
+- Default: `md`
+
+Options:
+
+- `md`
+- `mdx`
+
+> For more information how and when this is used, check [content creation](/docs/content-types#before-you-start)
+
 ### frontMatter.content.defaultSorting
 
 Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID.
