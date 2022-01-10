@@ -1,5 +1,5 @@
 ---
-title: Content Types
+title: Content creation
 slug: content-types
 description: null
 date: '2021-09-17T07:36:26.654Z'
@@ -7,13 +7,24 @@ lastmod: '2019-08-22T15:20:28.000Z'
 weight: 3
 ---
 
-# Content Types
+# Content creation
 
 ## Overview
 
-As each website is different, we allow you to define your types of content to use with Front Matter. Front Matter will adapt the metadata fields to show in its editor panel depending on the type of content.
+As each website is different, Front Matter allows you to create content by using content types or templates. 
 
-Front Matter comes with a default content type definition which you can adapt to your needs or add your types next to it.
+When using content types or templates, Front Matter adapts the metadata fields shown in the editor panel to the corresponding fields in your content type or template.
+
+Front Matter comes with a default content type and template definition which you can adapt to your needs or add your types next to it.
+
+## Before you start
+
+Front Matter supports both `md` and `mdx` files. If you use the templating functionality, the CMS will automatically use the file extension of the template.
+
+When using content types, the CMS will create the new content based on the following rules:
+
+1. The extension checks if the content type has the `fileType` property defined. If set, the CMS uses the file type set in the property.
+2. If the content type has no `fileType` property defined, the CMS uses the default file type defined in the `frontMatter.content.defaultFileType` setting. By default, the CMS uses `md`. If you want to use `mdx`, you need to set the `frontMatter.content.defaultFileType` setting to `mdx`.
 
 ## How it works
 
@@ -137,6 +148,7 @@ For the content type you can configure the following properties:
 
 - `name (string)`: Name of the content type
 - `fields (Field[])`: Check the [supported field types](/docs/content-types#supported-field-types)
+- `fileType (enum: 'md' | 'mdx')`: File type of for the content type you define. The type will be used to create the file when creating content.
 - `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
 - `previewPath (string)`: Defines a custom preview path for the content type. Default: `null`. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used.
 

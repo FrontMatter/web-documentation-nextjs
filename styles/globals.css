@@ -72,6 +72,10 @@ html, body {height: 100%;}
     @apply list-disc pl-5 my-4;
   }
 
+  ol {
+    @apply list-decimal pl-5 my-4;
+  }
+
   a, a:visited {
     @apply text-teal-500;
   }
