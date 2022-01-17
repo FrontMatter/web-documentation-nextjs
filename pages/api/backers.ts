@@ -25,7 +25,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  res.status(200).send(`Thanks for your support ${backer}! 🤘`);
+  res.status(200).send(`Thanks for your support ${backer}!`);
 }
 
 export default api;
