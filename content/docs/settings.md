@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-12-01T14:22:16.164Z'
+lastmod: '2022-01-20T18:33:29.944Z'
 weight: 8
 ---
 
@@ -122,6 +122,20 @@ Sample:
   ]
 }
 ```
+
+### frontMatter.content.placeholders
+
+Allows you to specify custom placeholders to use in your content creation process.
+
+- Type: `object[]`
+- Default: `[]`
+
+Properties:
+
+- `id`: The id of the placeholder
+- `value`: The value of the placeholder
+
+> More information on how you can use it can be found here: [placeholders](/docs/content-types#placeholders).
 
 ### frontMatter.content.publicFolder
 
@@ -345,9 +359,9 @@ Specify the date format for your articles. Check [date-fns formating](https://da
 
 ### frontMatter.taxonomy.frontMatterType
 
-Specify which Front Matter language you want to use. The extension supports `YAML` (default) and `TOML`.
+Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
 
-- Type: `enum: YAML | TOML`
+- Type: `enum: YAML | TOML | JSON`
 - Default: `YAML`
 
 ### frontMatter.taxonomy.indentArrays

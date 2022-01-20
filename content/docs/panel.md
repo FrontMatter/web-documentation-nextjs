@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-17T16:13:01.763Z'
+lastmod: '2022-01-20T18:46:39.732Z'
 weight: 4
 ---
 
@@ -96,7 +96,7 @@ The tags and categories inputs allow you to insert known and unknown tags/catego
 ### Settings
 
 - `frontMatter.panel.freeform`: Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: `true`.
-
+- `frontMatter.taxonomy.frontMatterType`: Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
 ## Recently modified
 
 Navigate quickly to a recently modified file. In the recently modified section, the latest 10 modified files get shown. 
