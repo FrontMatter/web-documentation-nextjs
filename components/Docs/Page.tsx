@@ -11,16 +11,15 @@ export interface IPageProps {
 
 export const Page: React.FunctionComponent<IPageProps> = ({items, page, children}: React.PropsWithChildren<IPageProps>) => {
   
-  
   return (
     <div className={`mb-6 py-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
       <div className={`relative lg:flex`}>
 
-        <aside className={`top-16 hidden lg:block lg:w-80 xl:w-96 mr-4`}>
+        <aside className={`top-16 hidden lg:block lg:w-80 xl:w-96`}>
           <Sidebar items={items} />
         </aside>
 
-        <div className={`min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible`}>
+        <div className={`min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible lg:pl-8 lg:border-l lg:border-vulcan-300`} style={{marginLeft: '-1px'}}>
           <PageActions page={page} />
 
           {children}

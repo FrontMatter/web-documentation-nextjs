@@ -1,9 +1,9 @@
 ---
 title: Getting started
 slug: getting-started
-description: 
+description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-08-30T16:13:01.763Z'
+lastmod: '2022-01-21T15:21:11.716Z'
 weight: 2
 ---
 
@@ -76,6 +76,24 @@ When Front Matter cannot find a `frontmatter.json` file in any of your folders (
 ![Select your workspace folder for Front Matter](/releases/v5.0.0/workspace-folder.png)
 
 Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
+
+## Backers & supporters
+
+If you are one of the Front Matter supporterrs/backers, you can hide the support links from the UI. We know it is not much, but we want to just give something small back and what is better than a bit of empty space? 🤓
+
+By default, you'll see the following support links:
+
+![Support links shown by default](/releases/v6.0.0/support-links.png)
+
+When you logged in via GitHub, you'll see the following:
+
+![Hidden support links](/releases/v6.0.0/support-links-hidden.png)
+
+Simply start by clicking on the **Accounts** button, and select **Sign in with GitHub to use Front Matter** or lauch the same flow by using the `Front Matter: Authenticate` command.
+
+![Sign in with GitHub for Front Matter](/releases/v6.0.0/signin-github.png)
+
+Follow the proposed steps from Visual Studio Code.
 
 ## Enjoy using Front Matter
 

@@ -3,7 +3,7 @@ title: Content creation
 slug: content-types
 description: null
 date: '2021-09-17T07:36:26.654Z'
-lastmod: '2022-01-20T18:33:34.084Z'
+lastmod: '2022-01-21T15:21:27.390Z'
 weight: 3
 ---
 
@@ -381,7 +381,7 @@ Example:
             {
               "title": "URL",
               "name": "url",
-              "type": "string"
+              "type": "image"
             }
           ]
         }
@@ -390,6 +390,10 @@ Example:
   ]
 }
 ```
+
+This will render the following output:
+
+![Multi-dimensional content type fields](/releases/v6.0.0/multi-dimensional-content-type-fields.png)
 
 ## Preview path
 

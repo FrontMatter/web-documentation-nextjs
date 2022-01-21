@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-20T18:33:29.944Z'
+lastmod: '2022-01-21T15:21:07.210Z'
 weight: 8
 ---
 
@@ -67,7 +67,7 @@ Options:
 
 ### frontMatter.content.draftField
 
-Define the draft field you want to use to manage your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontMatter.content.draftField)
+Define the draft field you want to use to manage your content.
 
 - Type: `object` 
   - name: Define the type of field
@@ -179,6 +179,13 @@ Sample:
 }
 ```
 
+### frontMatter.content.supportedFileTypes
+
+Specify the file types that you want to use in Front Matter.
+
+- Type: `array` 
+- Default: `[md, mdx, markdown]`
+
 ### frontMatter.content.wysiwyg
 
 Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls.
@@ -225,6 +232,33 @@ Specify if you want to open the dashboard when you start VS Code.
 
 - Type: `boolean | null`
 - Default: `null`
+
+### frontMatter.data.files
+
+Specify the data files you want to use for your website. 
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.data.folders
+
+Specify the data files you want to use for your website.
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.data.types
+
+Specify the data types. These types can be used in for your data files.
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
 
 ### frontMatter.framework.id
 
