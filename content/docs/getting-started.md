@@ -79,13 +79,13 @@ Once you selected the folder, it will create the `frontmatter.json` file and rel
 
 ## Backers & supporters
 
-If you are one of the Front Matter supporterrs/backers, you can hide the support links from the UI. We know it is not much, but we want to just give something small back and what is better than a bit of empty space? 🤓
+If you are one of the Front Matter supporters/backers, you can hide the support links from the UI. We know it is not much, but we want to give something small back, and what is better than a bit of space? 🤓
 
 By default, you'll see the following support links:
 
 ![Support links shown by default](/releases/v6.0.0/support-links.png)
 
-When you logged in via GitHub, you'll see the following:
+When you log in via GitHub, you'll see the following:
 
 ![Hidden support links](/releases/v6.0.0/support-links-hidden.png)
 
