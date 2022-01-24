@@ -53,5 +53,23 @@
       "link": "https://podcast.betatalks.nl"
     },
     "type": "article"
+  },
+  {
+    "title": "How to move your blog from Wordpress to Hugo",
+    "link": "https://www.m365princess.com/blogs/move-blog-wordpress-hugo/",
+    "author": {
+      "name": "Luise Freese",
+      "link": "https://www.m365princess.com"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Front Matter - CMS für statische Website-Generatoren",
+    "link": "https://fryboyter.de/front-matter-cms-fuer-statische-website-generatoren/",
+    "author": {
+      "name": "fryboyter",
+      "link": "https://fryboyter.de"
+    },
+    "type": "article"
   }
 ]

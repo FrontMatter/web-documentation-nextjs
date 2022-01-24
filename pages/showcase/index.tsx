@@ -63,7 +63,7 @@ export default function Home({ showcases, featured }: any) {
               {videos.sort(sortTitle).map((feature: any) => (
                 <div key={feature.title}>
                   <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
-                    <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
+                    <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
                       <Image 
                         className={`w-full object-cover object-left-top`} 
                         src={`${feature.preview}`}
@@ -100,23 +100,25 @@ export default function Home({ showcases, featured }: any) {
           <div className='py-8'>
             <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles</h3>
               
-            <ul className={`list-disc pl-6 space-y-2 mt-8`}>
+            <ul className={`list-disc pl-6 mt-8`}>
               {
                 articles.sort(sortTitle).map((feature: any) => (
                   <li key={feature.title}>
-                    <a className="group space-y-2 md:space-y-5 relative hover:text-whisper-900" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
-                      <p className={`text-xl tracking-tight font-extrabold sm:leading-none`}>
-                        <span>{feature.title}</span>
-                        <span className={`text-whisper-900`}> @ </span>
-                        {
-                          feature.author?.link ? (
-                            <a className="text-teal-500 hover:text-teal-900" href={feature.author.link} title={feature.author.name} target="_blank" rel="noopener noreferrer">{feature.author.name}</a>
-                          ) : (
-                            feature.author.name
-                          )
-                        }
-                      </p>
+                    <a className="group relative hover:text-yellow-700 leading-loose" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
+                      <span className={`text-base tracking-tight`}>
+                        {feature.title}
+                      </span>
                     </a>
+                    <span className={`text-whisper-900`}> @ </span>
+                    <span>
+                      {
+                        feature.author?.link ? (
+                          <a className="text-teal-500 hover:text-teal-200 font-bold" href={feature.author.link} title={feature.author.name} target="_blank" rel="noopener noreferrer">{feature.author.name}</a>
+                        ) : (
+                          feature.author.name
+                        )
+                      }
+                    </span>
                   </li>
                 ))
               }
@@ -129,7 +131,7 @@ export default function Home({ showcases, featured }: any) {
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (
                 <a key={showcase.title} className="group space-y-2 md:space-y-5 relative" href={showcase.link} title={showcase.title} target="_blank" rel={`noopener noreferrer`}>
-                  <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0`}>
+                  <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
                     <Image 
                       className={`w-full object-cover object-left-top`} 
                       src={`/showcases/${showcase.image}`}
