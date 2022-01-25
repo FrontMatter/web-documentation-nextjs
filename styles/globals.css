@@ -57,7 +57,7 @@ html, body {height: 100%;}
   }
 
   h5 {
-    @apply tracking-tight font-extrabold sm:leading-none text-base;
+    @apply tracking-tight font-extrabold sm:leading-none text-lg;
   }
 
   img {

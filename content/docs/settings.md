@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-12-01T14:22:16.164Z'
+lastmod: '2022-01-21T15:21:07.210Z'
 weight: 8
 ---
 
@@ -67,7 +67,7 @@ Options:
 
 ### frontMatter.content.draftField
 
-Define the draft field you want to use to manage your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontMatter.content.draftField)
+Define the draft field you want to use to manage your content.
 
 - Type: `object` 
   - name: Define the type of field
@@ -123,6 +123,20 @@ Sample:
 }
 ```
 
+### frontMatter.content.placeholders
+
+Allows you to specify custom placeholders to use in your content creation process.
+
+- Type: `object[]`
+- Default: `[]`
+
+Properties:
+
+- `id`: The id of the placeholder
+- `value`: The value of the placeholder
+
+> More information on how you can use it can be found here: [placeholders](/docs/content-types#placeholders).
+
 ### frontMatter.content.publicFolder
 
 Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder.
@@ -164,6 +178,13 @@ Sample:
   ]
 }
 ```
+
+### frontMatter.content.supportedFileTypes
+
+Specify the file types that you want to use in Front Matter.
+
+- Type: `array` 
+- Default: `[md, mdx, markdown]`
 
 ### frontMatter.content.wysiwyg
 
@@ -211,6 +232,33 @@ Specify if you want to open the dashboard when you start VS Code.
 
 - Type: `boolean | null`
 - Default: `null`
+
+### frontMatter.data.files
+
+Specify the data files you want to use for your website. 
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.data.folders
+
+Specify the data files you want to use for your website.
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.data.types
+
+Specify the data types. These types can be used in for your data files.
+
+- Type: `array` 
+- Default: ``
+
+> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
 
 ### frontMatter.framework.id
 
@@ -345,9 +393,9 @@ Specify the date format for your articles. Check [date-fns formating](https://da
 
 ### frontMatter.taxonomy.frontMatterType
 
-Specify which Front Matter language you want to use. The extension supports `YAML` (default) and `TOML`.
+Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
 
-- Type: `enum: YAML | TOML`
+- Type: `enum: YAML | TOML | JSON`
 - Default: `YAML`
 
 ### frontMatter.taxonomy.indentArrays

@@ -3,7 +3,7 @@ title: Content creation
 slug: content-types
 description: null
 date: '2021-09-17T07:36:26.654Z'
-lastmod: '2019-08-22T15:20:28.000Z'
+lastmod: '2022-01-21T15:21:27.390Z'
 weight: 3
 ---
 
@@ -148,7 +148,7 @@ For the content type you can configure the following properties:
 
 - `name (string)`: Name of the content type
 - `fields (Field[])`: Check the [supported field types](/docs/content-types#supported-field-types)
-- `fileType (enum: 'md' | 'mdx')`: File type of for the content type you define. The type will be used to create the file when creating content.
+- `fileType (enum: 'md' | 'mdx' | 'markdown' | '<your choice>')`: File type of for the content type you define. The type will be used to create the file when creating content.
 - `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
 - `previewPath (string)`: Defines a custom preview path for the content type. Default: `null`. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used.
 
@@ -207,6 +207,7 @@ Front Matter its metadata section supports the following fields:
 - `tags`: mapped to the tags defined in your settings.
 - `categories`: mapped to the categories defined in your settings.
 - `taxonomy`: if you want to define your own custom taxonomy fields.
+- `fields`: allows you to define another object and its fields.
 
 ### Custom draft field
 
@@ -233,7 +234,44 @@ A field consists out of the following properties:
 - `title (string)`: The title to show in the metadata section (optional);
 - `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
 - `type (field type - string)`: One of the above supported types.
+- `default`: Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-types#placeholders).
 - `hidden (boolean - optional)`: Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.
+
+### Placeholders
+
+Placeholders can be used in content type fields or templates. The placeholders allow you to automatically fill in values when creating a new content.
+
+There are known placeholders from Front Matter:
+
+- `{{title}}`
+- `{{slug}}`
+- `{{now}}`
+
+You can define you own placeholders within the `frontMatter.content.placeholders` setting.
+
+For instance, you can define a custom `permalink` placeholder as follows:
+
+```json
+"frontMatter.content.placeholders": [
+  {
+    "id": "permalink",
+    "value": "/blog/{{slug}}.html"
+  }
+]
+```
+
+To use the `permalink` placeholder, you need to define the `{{permalink}}` value in your content type or template.
+
+```json
+{
+  "title": "Permalink",
+  "name": "permalink",
+  "type": "string",
+  "default": "{{permalink}}"
+}
+```
+
+> In the custom placeholders, you can also use the known placeholders from Front Matter, so that they are more dynamic to your content.
 
 #### Additional properties
 
@@ -315,6 +353,47 @@ Here is an example of the custom taxonomy setting definition:
   }
 ]
 ```
+
+##### Sub-fields / objects
+
+If you want to create multi-dimensional content type fields (sub-fields), you can use specify the field type as `fields` and define sub-fields within the `fields` property.
+
+Example:
+
+```json
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "multi-dimensional",
+      "pageBundle": false,
+      "fields": [
+        ...
+        {
+          "title": "Photo",
+          "type": "fields",
+          "name": "photo",
+          "fields": [
+            {
+              "title": "Title",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "title": "URL",
+              "name": "url",
+              "type": "image"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+This will render the following output:
+
+![Multi-dimensional content type fields](/releases/v6.0.0/multi-dimensional-content-type-fields.png)
 
 ## Preview path
 

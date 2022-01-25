@@ -3,7 +3,7 @@ title: Dashboard
 slug: dashboard
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-11-22T09:08:12.205Z'
+lastmod: '2022-01-21T15:21:21.469Z'
 weight: 3
 ---
 
@@ -31,6 +31,7 @@ There are two commands to open the dashboard:
 
 - `frontMatter.dashboard` aka `Front matter: Open dashboard` - Opens the dashboard on the contents view.
 - `frontMatter.dashboard.media` aka `Front matter: Open media dashboard` - Opens the dashboard on the media view.
+- `frontMatter.dashboard.data` aka `Front matter: Open data dashboard` - Opens the dashboard on the data view.
 
 ## Contents view
 
@@ -60,6 +61,10 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 > **Info**: You can define custom sorting options by specifying these within the [frontMatter.content.sorting](/docs/settings#frontMatter.content.sorting) setting.
 
 You are also able to define your default sorting options by setting the `frontMatter.content.defaultSorting` setting for the content view, and the `frontMatter.media.defaultSorting` setting for the media view.
+
+### Show on startup
+
+If you want, you can check on the `Open on startup?` checkbox. This setting will allow the dashboard to automatically open when you launch the project in VS Code. It will only apply to the current project, not for all of them.
 
 ## Media view
 
@@ -104,6 +109,117 @@ On the media view, we enabled drag and drop for your media files. You can easily
 
 ![Dashboard - Upload media file](/releases/v5.9.0/media-upload.png)
 
-## Show on startup
+## Data files view
 
-If you want, you can check on the `Open on startup?` checkbox. This setting will allow the dashboard to automatically open when you launch the project in VS Code. It will only apply to the current project, not for all of them.
+Data files/folders are pieces of content that do not belong to any markdown content, but live on their own. Most of the time, these data files are used to store additional information about your project/blog/website that will be used to render the content.
+
+For example: navigation, social media links, contacts, etc.
+
+The data files dashboard allows you to quickly manage your data files.
+
+![Data files dashboard](/releases/v6.0.0/data-files-dashboard.png)
+
+### Configuration
+
+In order to use the data files dashboard, you will need to configure the extension with the following settings:
+
+- `frontMatter.data.types`: This only defines the object and its fields. Use this setting, if you want to re-use a data type in various files/folders.
+- `frontMatter.data.files`: Defines how a single data file.
+- `frontMatter.data.folders`: Defines that all files of a folder need to be treated the same.
+
+### Creating a data file
+
+To create a data file, you can use the `frontMatter.data.files` setting. 
+
+```json
+"frontMatter.data.files": [
+  {
+    "id": "sponsors",
+    "title": "Sponsors",
+    "file": "[[workspace]]/data/sponsors.json",
+    "fileType": "json",
+    "labelField": "name",
+    "schema": {
+      "title": "Sponsors",
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "url": {
+          "type": "string",
+          "title": "URL"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      }
+    }
+  }
+]
+```
+
+The above sample can be used to create a sponsor data file which contains an array of sponsor object with url, name, and description as properties.
+
+![Data dashboard - Sponsor example](/releases/v6.0.0/data-dashboard-sample.png)
+
+> **Info**: Use the `[[workspace]]` placeholder to define the workspace folder. The extension will automatically replace this with the workspace folder path.
+
+> **Important**: In the `schema` property we use the [JSON Schema](https://json-schema.org/) standard to define the structure of the data file.
+
+### Re-using a data type for files or folders
+
+In some cases, you might want to re-use a data type for files or folders. You can do so by using the `frontMatter.data.types` setting in combination with the `frontMatter.data.files` and/or `frontMatter.data.folders` settings.
+
+First the data type, this is an object containing the `id` and `schema` properties.
+
+```json
+"frontMatter.data.files": [
+  {
+    "id": "sponsors",
+    "schema": {
+      "title": "Sponsors",
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "url": {
+          "type": "string",
+          "title": "URL"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      }
+    }
+  }
+]
+```
+
+In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, instead of defining the `schema` property, you can use the `type` property to reference the data type.
+
+```json
+"frontMatter.data.files": [
+  {
+    "id": "all-sponsors",
+    "path": "[[workspace]]/data/sponsors",
+    "labelField": "name",
+    "type": "sponsors"
+  }
+]
+```
+
+> **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files in the folder.

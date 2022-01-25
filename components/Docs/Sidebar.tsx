@@ -34,7 +34,7 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
   }
 
   return (
-    <nav role={`navigation`} className={`space-y-8`}>
+    <nav role={`navigation`} className={`space-y-8 lg:pr-8 lg:border-r lg:border-vulcan-300`}>
       {sorted.map((item, index) => {
         return (
           <div key={index}>
