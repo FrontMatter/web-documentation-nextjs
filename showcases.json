@@ -61,5 +61,12 @@
     "description": "Personal website and blog from Jahir Fiquitiva created with NextJS, TypeScript and Styled Components. Blog content managed by Front Matter.",
     "image": "jahir.dev.png",
     "generator": "Next.js"
+  },
+  {
+    "title": "The Chris and Andre Show",
+    "link": "https://chrisandandreshow.com",
+    "description": "We created \"The Chris and Andre Show \" with Pelican. Managed in part with Front Matter.",
+    "image": "chrisandandreshow.com_.png",
+    "generator": "Pelican"
   }
 ]

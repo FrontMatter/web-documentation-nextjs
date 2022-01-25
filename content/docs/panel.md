@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-17T16:13:01.763Z'
+lastmod: '2022-01-21T15:21:33.808Z'
 weight: 4
 ---
 
@@ -27,9 +27,11 @@ Once you installed the extension, you will notice a Front Matter icon on the act
 
 In this section of the panel, you can modify a couple of the useful settings to have close to hand.
 
-![Global settings](/assets/global-settings.png)
+![Global settings](/releases/v6.0.0/local-server.png)
 
 > **Info**: The global settings section will also be shown when you have the panel open on other types of files.
+
+> **Local server command**: If you already defined your framework or SSG via the `frontMatter.framework.id` setting, we provide a default start command for you. You can override this by providing your own start command.
 
 ## SEO status
 
@@ -65,7 +67,7 @@ When writing articles, there are always a couple of actions you need/want to per
 - Setting the modified date
 - Publish or revert to draft
 
-![Actions](/assets/actions.png)
+![Actions](/releases/v6.0.0/local-server-start.png)
 
 > **Important**: You are able to add your own actions, more information about this you can read in our [custom actions](/docs/custom-actions) section.
 
@@ -96,7 +98,7 @@ The tags and categories inputs allow you to insert known and unknown tags/catego
 ### Settings
 
 - `frontMatter.panel.freeform`: Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: `true`.
-
+- `frontMatter.taxonomy.frontMatterType`: Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
 ## Recently modified
 
 Navigate quickly to a recently modified file. In the recently modified section, the latest 10 modified files get shown. 

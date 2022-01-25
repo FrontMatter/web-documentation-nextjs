@@ -6,6 +6,70 @@
       "name": "Christina Warren",
       "link": "https://twitter.com/film_girl"
     },
-    "preview": "/featured/the-download_dec21.png"
+    "preview": "/featured/the-download_dec21.png",
+    "type": "video"
+  },
+  {
+    "title": "Front Matter Headless CMS for Visual Studio Code",
+    "link": "https://chrisandandreshow.com/front-matter-headless-cms-visual-studio-code/",
+    "author": {
+      "name": "The Chris and Andre Show",
+      "link": "https://chrisandandreshow.com"
+    },
+    "type": "article"
+  },
+  {
+    "title": "A look at the features and benefits of the Front Matter CMS",
+    "link": "https://www.eliostruyf.com/features-benefits-front-matter-cms/",
+    "author": {
+      "name": "Elio Struyf",
+      "link": "https://www.eliostruyf.com"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Front Matter CMS for VSCode",
+    "link": "https://maximorlov.com/tips/front-matter-cms-for-vscode/",
+    "author": {
+      "name": "Maxim Orlov",
+      "link": "https://maximorlov.com/"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Goodbye WordPress, Hello Hugo",
+    "link": "https://mjcb.io/blog/2021/12/23/goodbye-wordpress-hello-hugo/",
+    "author": {
+      "name": "Matthew Burr",
+      "link": "https://mjcb.io"
+    },
+    "type": "article"
+  },
+  {
+    "title": "21. Front Matter, VS Code extensions & Pimp Your Own Device - with Elio Struyf",
+    "link": "https://podcast.betatalks.nl/1622272/9739689-21-front-matter-vs-code-extensions-pimp-your-own-device-with-elio-struyf",
+    "author": {
+      "name": "Betatalks podcast",
+      "link": "https://podcast.betatalks.nl"
+    },
+    "type": "article"
+  },
+  {
+    "title": "How to move your blog from Wordpress to Hugo",
+    "link": "https://www.m365princess.com/blogs/move-blog-wordpress-hugo/",
+    "author": {
+      "name": "Luise Freese",
+      "link": "https://www.m365princess.com"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Front Matter - CMS für statische Website-Generatoren",
+    "link": "https://fryboyter.de/front-matter-cms-fuer-statische-website-generatoren/",
+    "author": {
+      "name": "fryboyter",
+      "link": "https://fryboyter.de"
+    },
+    "type": "article"
   }
 ]

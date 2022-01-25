@@ -57,7 +57,7 @@ html, body {height: 100%;}
   }
 
   h5 {
-    @apply tracking-tight font-extrabold sm:leading-none text-base;
+    @apply tracking-tight font-extrabold sm:leading-none text-lg;
   }
 
   img {
@@ -70,6 +70,10 @@ html, body {height: 100%;}
 
   ul {
     @apply list-disc pl-5 my-4;
+  }
+
+  ol {
+    @apply list-decimal pl-5 my-4;
   }
 
   a, a:visited {
