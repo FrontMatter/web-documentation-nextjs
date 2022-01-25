@@ -1,6 +1,6 @@
 # Change Log
 
-## [6.0.0] - 2022-01-xx
+## [6.0.0] - 2022-01-xx - [Release Notes](https://frontmatter.codes/updates/v6.0.0)
 
 ### ✨ New features
 
@@ -16,10 +16,16 @@
 
 - Added default field value for content type fields
 - HMR support for panel webview development
+- Added reveal media file action
 - [#187](https://github.com/estruyf/vscode-front-matter/issues/187): Svelte support with the [#227](https://github.com/estruyf/vscode-front-matter/issues/227) features has been added.
 - [#198](https://github.com/estruyf/vscode-front-matter/issues/198): Additional media sort options (alt, caption, and size).
 - [#230](https://github.com/estruyf/vscode-front-matter/issues/230): JSON front matter support added.
 - [#233](https://github.com/estruyf/vscode-front-matter/issues/233): Partial update when a page is updated.
+
+### 🐞 Fixes
+
+- [#234](https://github.com/estruyf/vscode-front-matter/issues/234): Fix for multi-word keywords
+- [#235](https://github.com/estruyf/vscode-front-matter/issues/235): Fix for reselecting the previously removed value from a choice field
 
 ## [5.10.0] - 2022-01-10
 

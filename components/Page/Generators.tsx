@@ -9,8 +9,20 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
   return (
     <div className="bg-whisper-100">
       <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-sm font-semibold uppercase text-vulcan-500 tracking-wide">
-          {strings(`generators_title`)}
+        <h2 className="text-3xl lg:text-3xl xl:text-4xl font-extrabold sm:leading-none text-center mb-8">
+          {
+            strings(`generators_title`).split(` `).map(word => {
+              if (word === 'loves') {
+                return (
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-rose-500 to-rose-900">{word} </span>
+                )
+              }
+
+              return (
+                <span key={word} className={`text-vulcan-500`}> {word} </span>
+              );
+            })
+          }
         </h2>
 
         <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6">
@@ -37,6 +49,11 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
         <div className="mt-6 flex justify-center">
           <p className={`text-2xl tracking-tight font-bold sm:leading-none text-vulcan-500`}>
             {strings(`generators_more`)}
+          </p>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <p className={`text-xl tracking-tight sm:leading-none text-vulcan-500`}>
+            {strings(`generators_more2`)}
           </p>
         </div>
       </div>
