@@ -11,8 +11,9 @@ export const strings = {
   cta_button_secondary: "Read our docs",
 
   // Generators
-  generators_title: "Built for any static-site generator you might like",
+  generators_title: "A CMS that loves any static-site generator",
   generators_more: "and many more...",
+  generators_more2: "Pick your generator and start managing your static site in minutes",
 
   // Hero
   hero_title: "Bringing the CMS to your editor",
