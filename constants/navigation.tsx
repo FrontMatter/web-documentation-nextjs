@@ -1,15 +1,102 @@
-import { HeartIcon, StarIcon } from "@heroicons/react/outline";
-import React from "react";
+import { Dialog } from "@headlessui/react";
+import { HeartIcon, StarIcon, XIcon } from "@heroicons/react/outline";
+import { useState } from "react";
+import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
 
 export const navigation = {
   main: [
     { name: 'Documentation', title: '', href: '/docs' },
     { name: 'Showcase', href: '/showcase' },
-    { name: 'Updates', href: '/updates' },
+    { name: 'Changelog', href: '/updates' },
     { name: 'SWAG', href: '/swag' },
   ],
   social: [
+    { 
+      name: 'Become a sponsor', 
+      title: 'Become a sponsor, and get mentioned', 
+      href: Extension.sponsorLink,
+      icon: ({ className, ...rest}: any) => {
+        const [open, setOpen] = useState(false);
+
+        const onSponsorClick = (e: React.MouseEvent<HTMLElement>) => {
+          e.preventDefault();
+
+          setOpen(true);
+        };
+      
+        return (
+          <>
+            <button className={`flex items-center`} onClick={onSponsorClick}>
+              <span className="mr-2 group-hover:text-rose-500">Sponsor</span>
+              <HeartIcon className={`${className} group-hover:text-rose-500 group-hover:fill-current`} {...rest} />
+            </button>
+
+            {
+              open && (
+                <Modal isOpen={open} onClose={() => setOpen(false)}>
+                  <div className="relative">
+                    <div className="hidden sm:block absolute top-0 right-0 pr-4">
+                      <button
+                        type="button"
+                        className="bg-vulcan-50 rounded-md text-whisper-900 hover:text-whisper-300 focus:outline-none"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="sr-only">Close</span>
+                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                      </button>
+                    </div>
+                      
+                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-vulcan-300 bg-opacity-60">
+                      <HeartIcon className="h-6 w-6 text-rose-900 fill-current" aria-hidden="true" />
+                    </div>
+                    <div className="mt-3 text-center sm:mt-5">
+                      <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-whisper-900">
+                        Become a sponsor
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className="text-sm text-whisper-500">
+                          It is great to see you want to sponsor us. We have a couple of ways to do this. Please select the one you prefer.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-5 sm:mt-6 space-y-4">
+                    <a
+                      className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500  focus:outline-none sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      href={Extension.sponsorLink}
+                      target={`_blank`}
+                      rel={`noopener noreferrer`}
+                    >
+                      GitHub Sponsor
+                    </a>
+                    <a
+                      className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      href={Extension.sponsorOpenCollective}
+                      target={`_blank`}
+                      rel={`noopener noreferrer`}
+                    >
+                      Open Collective
+                    </a>
+                    <a
+                      className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      href={Extension.sponsorCoffee}
+                      target={`_blank`}
+                      rel={`noopener noreferrer`}
+                    >
+                      Buy us a coffee or LEGO
+                    </a>
+                  </div>
+                </Modal>
+              )
+            }
+          </>
+        );
+      }
+    },
     { 
       name: 'GitHub', 
       title: 'Check out our GitHub repository', 
@@ -25,19 +112,11 @@ export const navigation = {
       )
     },
     { 
-      name: 'Become a sponsor', 
-      title: 'Become a sponsor, and get mentioned', 
-      href: Extension.sponsorLink,
-      icon: (props: any) => (
-        <HeartIcon {...props} />
-      )
-    },
-    { 
       name: 'Review', 
       title: 'Write a review on the marketplace', 
       href: Extension.reviewLink,
-      icon: (props: any) => (
-        <StarIcon {...props} />
+      icon: ({ className, ...rest}: any) => (
+        <StarIcon className={`${className} group-hover:fill-current`} {...rest} />
       )
     }
   ]

@@ -44,7 +44,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
             <Link href="/">
               <a title={Extension.name}>
                 <span className="sr-only">{Extension.name}</span>
-                <Logo className={`text-whisper-500 h-12 w-auto`} />
+                <Logo className={`text-whisper-500 hover:text-teal-500 h-12 w-auto`} />
               </a>
             </Link>
 
@@ -53,15 +53,15 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
             </div>
           </div>
           <div className="space-x-4">
-            <div className="hidden ml-10 space-x-8 lg:flex justify-center items-center">
+            <div className="hidden ml-10 space-x-6 lg:flex justify-center items-center">
               {navigation.main.map((link) => (
-                <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-whisper-900 ${link.href === router.asPath ? `text-teal-800` : ``}`}>
+                <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-teal-500 ${link.href === router.asPath ? `text-teal-800` : ``}`}>
                   {link.name}
                 </a>
               ))}
 
               {navigation.social.map((link) => (
-                <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-whisper-900`} rel={`noopener noreferrer`}>
+                <a key={link.name} href={link.href} title={link.title} className={`group flex items-center text-base font-medium text-whisper-500 hover:text-teal-500`} rel={`noopener noreferrer`}>
                   <span className="sr-only">{link.name}</span>
                   <link.icon className="inline-block h-6 w-6" aria-hidden="true" />
                 </a>

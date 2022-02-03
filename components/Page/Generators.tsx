@@ -14,7 +14,7 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
             strings(`generators_title`).split(` `).map(word => {
               if (word === 'loves') {
                 return (
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-rose-500 to-rose-900">{word} </span>
+                  <span key={word} className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-rose-500 to-rose-900">{word} </span>
                 )
               }
 

@@ -7,6 +7,8 @@ export const Extension = {
   githubLink: "https://github.com/estruyf/vscode-front-matter",
   issueLink: "https://github.com/estruyf/vscode-front-matter/issues",
   sponsorLink: "https://github.com/sponsors/estruyf",
+  sponsorOpenCollective: "https://opencollective.com/frontmatter",
+  sponsorCoffee: "https://www.buymeacoffee.com/zMeFRy9",
   extensionLink: "https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter",
   extensionBetaLink: "https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter-beta",
   reviewLink: "https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter&ssr=false#review-details",

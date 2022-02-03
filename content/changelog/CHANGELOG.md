@@ -1,5 +1,14 @@
 # Change Log
 
+## [6.1.0] - 2022-02-xx
+
+### 🎨 Enhancements
+
+- Updated the activity bar icon for better visibility
+
+### 🐞 Fixes
+
+
 ## [6.0.0] - 2022-01-25 - [Release Notes](https://frontmatter.codes/updates/v6.0.0)
 
 ### ✨ New features
