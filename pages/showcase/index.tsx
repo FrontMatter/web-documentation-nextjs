@@ -35,8 +35,8 @@ const sortTitle = (a: { title: string }, b: { title: string }) => {
 export default function Home({ showcases, featured }: any) {
   const { t: strings } = useTranslation();
 
-  const videos = featured.filter((f: any) => f.type === 'video');
-  const articles = featured.filter((f: any) => f.type === 'article');
+  const allFeatured = featured.filter((f: any) => f.featured);
+  const links = featured.filter((f: any) => !f.featured);
   
   return (
     <>
@@ -60,7 +60,7 @@ export default function Home({ showcases, featured }: any) {
             <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`)}</h2>
 
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
-              {videos.sort(sortTitle).map((feature: any) => (
+              {allFeatured.sort(sortTitle).map((feature: any) => (
                 <div key={feature.title}>
                   <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
                     <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
@@ -102,7 +102,7 @@ export default function Home({ showcases, featured }: any) {
               
             <ul className={`list-disc pl-6 mt-8`}>
               {
-                articles.sort(sortTitle).map((feature: any) => (
+                links.sort(sortTitle).map((feature: any) => (
                   <li key={feature.title}>
                     <a className="group relative hover:text-yellow-700 leading-loose" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
                       <span className={`text-base tracking-tight`}>
