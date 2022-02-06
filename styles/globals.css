@@ -6,6 +6,22 @@
 
 html, body {height: 100%;}
 
+@keyframes fadeIn {
+  from {
+      opacity: 0.25;
+      transform: rotateY(-10deg);
+  }
+
+  to {
+      opacity: 1;
+      transform: rotateY(0deg);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s;
+}
+
 .header__offset:before {
   content: "";
   display: block;

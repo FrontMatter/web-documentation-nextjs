@@ -31,7 +31,7 @@ class MyDocument extends Document {
             });`}} />
         </Head>
 
-        <body className={`bg-vulcan-500 text-whisper-500`}>
+        <body className={`fadeIn bg-vulcan-500 text-whisper-500`}>
           <Main />
           
           <NextScript />
