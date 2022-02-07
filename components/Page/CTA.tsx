@@ -13,10 +13,12 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
     <div className="px-4 sm:px-0 py-8 overflow-hidden lg:relative lg:py-48">
       <div className="mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
         <div className={`my-4 sm:my-5 lg:my-6`}>
-          <h1 className="text-5xl lg:text-5xl xl:text-6xl tracking-tight font-extrabold sm:leading-none">
-            <span className="md:block text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-teal-700">{Extension.name}</span>{' '}
-            <span className="block">{strings(`cta_title`)}</span>
-            <span className={`sr-only`}>{strings(`cta_title_sr`)}</span>
+          <h1 className="text-6xl xl:text-7xl tracking-tight font-extrabold sm:leading-none">
+            <span className="md:block text-transparent bg-clip-text bg-gradient-to-br from-teal-200 via-teal-800 to-teal-900">{Extension.name}</span>{' '}
+            <span className={`text-5xl xl:text-6xl`}>
+              <span className="block">{strings(`cta_title`)}</span>
+              <span className={`sr-only`}>{strings(`cta_title_sr`)}</span>
+            </span>
           </h1>
 
           <h2 className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
