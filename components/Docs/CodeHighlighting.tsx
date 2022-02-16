@@ -19,6 +19,10 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
         theme: `the-unnamed`
       }).then((highlighter: shiki.Highlighter) => {
         setCode(highlighter.codeToHtml(children.toString(), getLanguage(className)));
+      }).then(() => {
+        if (location.hash) {
+          location.href = location.href;
+        }
       });
     }
   }, [className, children]);

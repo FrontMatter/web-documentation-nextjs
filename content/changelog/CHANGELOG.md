@@ -2,12 +2,26 @@
 
 ## [6.1.0] - 2022-02-xx
 
+### ✨ New features
+
+- [#176](https://github.com/estruyf/vscode-front-matter/issues/176): New `data collection` field type
+
 ### 🎨 Enhancements
 
 - Updated the activity bar icon for better visibility
+- Storing the panel collapse section states
+- [#248](https://github.com/estruyf/vscode-front-matter/issues/248): Added support for front matter highlighting to all file types specified in `frontMatter.content.supportedFileTypes`
+
+### ⚡️ Optimizations
+
+- Show the data item its details when clicking on the record
+- Refactoring of the explorer view panel listeners
+- Added `{{now}}` placeholder to the publishing date for content creation
+- [#243](https://github.com/estruyf/vscode-front-matter/issues/243): Refactoring front matter parsing
 
 ### 🐞 Fixes
 
+- [#247](https://github.com/estruyf/vscode-front-matter/issues/247): Fix the front matter highlighting in markdown documents
 
 ## [6.0.0] - 2022-01-25 - [Release Notes](https://frontmatter.codes/updates/v6.0.0)
 
