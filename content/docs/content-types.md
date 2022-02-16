@@ -3,7 +3,7 @@ title: Content creation
 slug: content-types
 description: null
 date: '2021-09-17T07:36:26.654Z'
-lastmod: '2022-01-21T15:21:27.390Z'
+lastmod: '2022-02-16T17:38:39.379Z'
 weight: 3
 ---
 
@@ -72,7 +72,8 @@ If in some case it wouldn't do this, here is the default content type structure:
       {
         "title": "Publishing date",
         "name": "date",
-        "type": "datetime"
+        "type": "datetime",
+        "default": "{{now}}"
       },
       {
         "title": "Article preview",
@@ -121,7 +122,8 @@ Adapt the fields to your needs. For our documentation it looks as follows:
       {
         "title": "Publishing date",
         "name": "date",
-        "type": "datetime"
+        "type": "datetime",
+        "default": "{{now}}"
       },
       {
         "title": "Last modified date",
