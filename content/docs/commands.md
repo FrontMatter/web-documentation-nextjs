@@ -3,7 +3,7 @@ title: Commands
 slug: commands
 description: null
 date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-22T08:00:40.856Z'
+lastmod: '2022-02-16T17:44:06.752Z'
 weight: 6
 ---
 
@@ -13,7 +13,7 @@ weight: 6
 
 Front Matter actions are also available as commands. In this section of the documentation all commands will be explained.
 
-![Commands](/assets/commands.png)
+![Commands](/assets/commands-v6.1.0.png)
 
 ## Using commands
 
