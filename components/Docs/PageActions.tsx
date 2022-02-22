@@ -15,7 +15,7 @@ export const PageActions: React.FunctionComponent<IPageActionsProps> = ({page}: 
   return (
     <div className={`absolute right-0`}>
       <a 
-        className={`flex items-center text-whisper-500 hover:text-whisper-900`} 
+        className={`flex items-center text-whisper-500 hover:text-whisper-900 -mt-4`} 
         href={`${Extension.githubDocs}/edit/${process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "main" : "dev"}/content/docs/${page.fileName}.md`} 
         target="_blank" 
         rel={`noopener noreferrer`}>

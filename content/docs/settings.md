@@ -4,7 +4,7 @@ slug: settings
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2022-01-21T15:21:07.210Z'
-weight: 8
+weight: 11
 ---
 
 # Settings
