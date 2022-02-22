@@ -1,5 +1,16 @@
 [
   {
+    "title": "Front Matter #49 in the Top 100+ Developer Tools 2021",
+    "link": "https://stackshare.io/posts/top-developer-tools-2021",
+    "author": {
+      "name": "stackshare",
+      "link": "https://stackshare.io"
+    },
+    "preview": "/featured/stackshare-top-100.jpg",
+    "type": "article",
+    "featured": true
+  },
+  {
     "title": "Release Radar · January 2022 Edition",
     "link": "https://github.blog/2022-02-04-release-radar-jan-2022/",
     "author": {

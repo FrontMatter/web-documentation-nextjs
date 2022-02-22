@@ -3,7 +3,7 @@ title: Static Site Generators
 slug: ssg-and-frameworks
 description: null
 date: '2021-11-26T09:04:50.405Z'
-lastmod: '2022-01-21T15:21:24.619Z'
+lastmod: '2022-02-22T09:02:29.858Z'
 weight: 6
 ---
 
@@ -26,6 +26,10 @@ By default, Front Matter supports: `md`, `markdown`, and `mdx`. If you want to s
   "frontMatter.content.supportedFileTypes": [ "md", "markdown", "mdx", "svx" ]
 }
 ```
+
+### Hugo
+
+Check out our Hugo configuration documentation to get you started using Front Matter: [Front Matter configuration with Hugo](/docs/hugo-configuration).
 
 ### Eleventy
 

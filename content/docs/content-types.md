@@ -3,7 +3,7 @@ title: Content creation
 slug: content-types
 description: null
 date: '2021-09-17T07:36:26.654Z'
-lastmod: '2022-02-16T17:38:39.379Z'
+lastmod: '2022-02-10T18:27:52.214Z'
 weight: 3
 ---
 
@@ -333,9 +333,9 @@ Example of a custom taxonomy field definition:
 ```json
 {
   "title": "Custom taxonomy",
-  "name": "customTaxonomy",
+  "name": "customTags",
   "type": "taxonomy",
-  "taxonomyId": "customTags"
+  "taxonomyId": "customTaxonomy"
 }
 ```
 

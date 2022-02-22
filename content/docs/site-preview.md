@@ -4,7 +4,7 @@ slug: site-preview
 description: null
 date: '2021-08-31T08:24:02.613Z'
 lastmod: '2021-08-31T08:24:02.613Z'
-weight: 6
+weight: 7
 ---
 
 # Site preview
