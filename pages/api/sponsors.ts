@@ -29,7 +29,7 @@ const mockData = {
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
-  if (process.env.GITHUB_AUTH) {
+  if (!process.env.GITHUB_AUTH) {
     return res.status(200).json(mockData);
   }
 
