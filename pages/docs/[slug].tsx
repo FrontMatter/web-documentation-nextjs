@@ -53,7 +53,7 @@ export async function getStaticProps({ params }: any) {
     'weight',
     'content',
     'fileName'
-  ])
+  ]);
 
   return {
     props: {

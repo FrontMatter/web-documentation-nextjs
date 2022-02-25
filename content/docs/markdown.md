@@ -2,8 +2,8 @@
 title: Markdown
 slug: markdown
 description: null
-date: '2021-08-31T05:59:58.852Z'
-lastmod: '2021-12-01T14:21:23.114Z'
+date: 2021-08-31T05:59:58.852Z
+lastmod: 2022-02-25T13:51:27.391Z
 weight: 8
 ---
 
@@ -73,6 +73,8 @@ The example used in the GIF above looks as follows:
 For your snippet, you can use the following placeholders:
 
 - `{mediaUrl}`: Use this to insert the relative path to the media file.
+- `{mediaHeight}`: Provides the height (dimension) of the media file.
+- `{mediaWidth}`: Provides the width (dimension) of the media file.
 - `{caption}`: Use this placeholder where you want to insert the caption.
 - `{alt}`: Use this placeholder where you want to insert the alt attribute value.
 - `{filename}`: Name of the file.

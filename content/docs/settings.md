@@ -2,8 +2,8 @@
 title: Settings
 slug: settings
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-21T15:21:07.210Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-02-25T13:51:37.253Z
 weight: 11
 ---
 
@@ -224,7 +224,7 @@ Specify the a snippet for your custom media insert markup.
 ]
 ```
 
-> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted. Check [placeholders](/docs/markdown#placeholders) for more information.
+> **Important**: Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information. Check [placeholders](/docs/markdown#placeholders) for more information.
 
 ### frontMatter.dashboard.openOnStart
 
@@ -259,6 +259,15 @@ Specify the data types. These types can be used in for your data files.
 - Default: ``
 
 > More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.file.preserveCasing
+
+Specify if you want to preserve the casing of your file names from the title.
+
+- Type: `boolean` 
+- Default: `false`
+
+> More information on how to use it can be found in the [preserve the casing for your file names](docs/content-types#preserve-the-casing-for-your-file-names) section.
 
 ### frontMatter.framework.id
 
