@@ -418,7 +418,7 @@ This will render the following output:
 
 ##### Block field
 
-The `block` field type allows you to define a group of fields which can be used to create an list of data.
+The `block` field type allows you to define a group of fields which can be used to create a list of data.
 
 ![Block field type rendering](/assets/block-field-type.png)
 
