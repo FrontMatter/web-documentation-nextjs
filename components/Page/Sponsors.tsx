@@ -27,8 +27,6 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
     getSponsors();
   }, []);
-
-  console.log(individuals);
   
   return (
     <div className="bg-vulcan-600">

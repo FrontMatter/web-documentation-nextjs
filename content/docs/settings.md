@@ -400,6 +400,15 @@ Specify the date format for your articles. Check [date-fns formating](https://da
 - Type: `string`
 - Default: `iso`
 
+### frontMatter.taxonomy.fieldGroups
+
+Define the field groups you want to use for your block fields.
+
+- Type: `array[object]`
+- Default: `[]`
+
+> More information on how to use this setting can be found on the [block field](/docs/content-types#block) section of content creation. 
+
 ### frontMatter.taxonomy.frontMatterType
 
 Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.

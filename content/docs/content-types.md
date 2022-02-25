@@ -212,6 +212,7 @@ Front Matter its metadata section supports the following fields:
 - `categories`: mapped to the categories defined in your settings.
 - `taxonomy`: if you want to define your own custom taxonomy fields.
 - `fields`: allows you to define another object and its fields.
+- `block`: allows you to define a group of fields which can be used to create an list of data. 
 
 ### Custom draft field
 
@@ -373,7 +374,7 @@ Here is an example of the custom taxonomy setting definition:
 
 Similar to the `tags` and `categories` fields, you can also use the `taxonomyLimit` property to limit the number of items that can be selected.
 
-##### Sub-fields / objects
+##### Fields - Sub-fields
 
 If you want to create multi-dimensional content type fields (sub-fields), you can use specify the field type as `fields` and define sub-fields within the `fields` property.
 
@@ -413,6 +414,73 @@ Example:
 This will render the following output:
 
 ![Multi-dimensional content type fields](/releases/v6.0.0/multi-dimensional-content-type-fields.png)
+
+
+##### Block field
+
+The `block` field type allows you to define a group of fields which can be used to create an list of data.
+
+![Block field type rendering](/assets/block-field-type.png)
+
+To work with the `block` field type, you need to perform some actions:
+
+- Define a field group (a set of fields for your data) in the `frontMatter.taxonomy.fieldGroups` setting.
+
+```json
+"frontMatter.taxonomy.fieldGroups": [
+  {
+    "id": "author",
+    "labelField": "name",
+    "fields": [
+      {
+        "title": "Author Name",
+        "name": "name",
+        "type": "string",
+        "single": true
+      },
+      {
+        "title": "Social link",
+        "name": "social",
+        "type": "string",
+        "single": true
+      }
+    ]
+  }
+]
+```
+
+> **Info**: You can use the same field types as you would use in the regular content types.
+
+- Once you defined a field group, you can use it in the `block` field type.
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "page",
+    "fields": [
+      {
+        "title": "Authors",
+        "name": "authors",
+        "type": "block",
+        "fieldGroup": [
+          "author"
+        ]
+      },
+      ...
+  }
+]
+```
+
+> **Important**: If you want, you can also create field groupings within the field grouping. This is useful when you want to create sub-groups of data.
+
+The front matter YAML output for the above example will look like this:
+
+```yaml
+authors:
+  - name: Elio Struyf
+    social: https://twitter.com/eliostruyf
+    fieldGroup: author
+```
 
 ## Preview path
 
