@@ -1,11 +1,34 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Sponsor, SponsorData } from '../../models/SponsorData';
 import sponsors from '../../sponsors.json';
 
 export interface ISponsorsProps {}
 
 export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.PropsWithChildren<ISponsorsProps>) => {
   const { t: strings } = useTranslation();
+  const [ individuals, setIndividuals ] = useState<any>(null);
+
+  useEffect(() => {
+    const getSponsors = async () => {
+      const response = await fetch('/api/sponsors');
+
+      if (!response.ok) {
+        setIndividuals(null);
+        return;
+      }
+
+      const data: SponsorData = await response.json();
+      const sponsors = data.data.viewer.sponsors.edges.map(edge => edge.node);
+
+      setIndividuals(sponsors);
+    };
+
+    getSponsors();
+  }, []);
+
+  console.log(individuals);
   
   return (
     <div className="bg-vulcan-600">
@@ -15,12 +38,17 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
         </p>
 
         {
-          sponsors && sponsors.individuals && sponsors.individuals.length > 0 && (
+          individuals && individuals.length > 0 && (
             <div className="mt-6 flex justify-center space-x-4">
               {
-                sponsors.individuals.map((sponsor) => (
-                  <a key={sponsor.url} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={`Thanks ${sponsor.name}!`}>
-                    <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatar} />
+                individuals.map((sponsor: Sponsor) => (
+                  <a 
+                    key={sponsor.id} 
+                    target={`_blank`}  
+                    rel={`noopener noreferrer`} 
+                    href={sponsor.url} 
+                    title={`Thanks ${sponsor.name}!`}>
+                    <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
                   </a>
                 ))
               }
