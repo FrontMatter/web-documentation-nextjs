@@ -4,11 +4,11 @@ import { Navigation } from '../Navigation';
 import { Footer } from './Footer';
 import { Sponsors } from './Sponsors';
 
-export interface ILayoutProps {
+export interface IPageLayoutProps {
   navItems?: PageFrontMatter[];
 }
 
-export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
+export const PageLayout: React.FunctionComponent<IPageLayoutProps> = ({navItems, children}: React.PropsWithChildren<IPageLayoutProps>) => {
 
   return (
     <div className={`flex flex-col h-screen`}>

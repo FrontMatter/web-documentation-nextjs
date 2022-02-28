@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+
+
+const nextra = require('nextra');
+
+
+module.exports = nextra('./components/layout.tsx')({
   reactStrictMode: false
-}
+})

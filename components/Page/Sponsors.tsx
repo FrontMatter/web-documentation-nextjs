@@ -59,7 +59,13 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
             <div className="mt-6">
               {
                 sponsors.companies.map((sponsor) => (
-                  <a key={sponsor.id} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={sponsor.title} className="col-span-1 flex justify-center">
+                  <a 
+                    key={sponsor.id} 
+                    target={`_blank`}  
+                    rel={`noopener noreferrer`} 
+                    href={sponsor.url} 
+                    title={sponsor.title} 
+                    className="col-span-1 flex justify-center">
                     <img className="h-12" src={sponsor.image} alt={sponsor.alt} />
                   </a>
                 ))
