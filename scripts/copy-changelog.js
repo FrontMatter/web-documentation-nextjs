@@ -14,7 +14,9 @@ const fetch = require('node-fetch');
 
   let changelog = await response.text();
 
-  changelog = changelog.replace(/beta.frontmatter.codes/g, "frontmatter.codes");
+  if (production) {
+    changelog = changelog.replace(/beta.frontmatter.codes/g, "frontmatter.codes");
+  }
 
   fs.writeFileSync(path.resolve(__dirname, '../content/changelog/CHANGELOG.md'), changelog, 'utf8');
 })();
