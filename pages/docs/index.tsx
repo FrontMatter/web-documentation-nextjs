@@ -17,7 +17,7 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
   return (
     <>
       <Title value={strings(`documentation_title`)} />
-      <Description value={`documentation_description`} />
+      <Description value={strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout navItems={pages} >

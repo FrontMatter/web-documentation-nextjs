@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '../../components/Docs/Page';
 import { Markdown } from '../../components/Docs/Markdown';
 
-export default function Documentation({ page, pages }: any) {
+export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
   const router = useRouter();
 
@@ -17,8 +17,8 @@ export default function Documentation({ page, pages }: any) {
 
   return (
     <>
-      <Title value={strings(`documentation_title`)} />
-      <Description value={`documentation_description`} />
+      <Title value={page.title} />
+      <Description value={page.description || strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout navItems={pages}>

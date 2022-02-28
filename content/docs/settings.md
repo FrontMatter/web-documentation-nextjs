@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-02-25T13:51:37.253Z
+lastmod: 2022-02-28T12:52:19.786Z
 weight: 11
 ---
 
@@ -502,6 +502,15 @@ Specifies the tags which can be used in the Front Matter.
 
 - Type: `string[]`
 - Default: `[]`
+
+### frontMatter.telemetry.disable
+
+Specify if you want to disable the telemetry.
+
+> **Important**: No user data is tracked, we only use telemetry to see what is used, and what isn't. This allows us to make accurate decisions on what to add or enhance to the extension.
+
+- Type: `boolean`
+- Default: `false`
 
 ### frontMatter.templates.folder
 

@@ -26,7 +26,7 @@ export default function Home({ }: any) {
   return (
     <>
       <Title value={strings(`swag_title`)} />
-      <Description value={`swag_description`} />
+      <Description value={strings(`swag_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>

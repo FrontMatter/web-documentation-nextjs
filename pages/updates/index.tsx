@@ -12,7 +12,7 @@ export default function Home({ content }: any) {
   return (
     <>
       <Title value={strings(`changelog_title`)} />
-      <Description value={`changelog_description`} />
+      <Description value={strings(`changelog_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
