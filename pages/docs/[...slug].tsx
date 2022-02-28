@@ -42,7 +42,7 @@ export async function getStaticProps({ params }: any) {
     'fileName'
   ]);
 
-  const article: any = pages.find((b: any) => b.slug === params.slug);
+  const article: any = pages.find((b: any) => b.slug === params.slug.join('/'));
 
   const doc: any = getPostByFilename('docs', article.fileName, [
     'title',
@@ -68,13 +68,15 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const pages = getAllPosts('docs', ['slug', 'fileName']);
 
+  const paths = pages.map((page: any) => ({
+    params: {
+      slug: page.slug.split('/'),
+      fileName: page.fileName
+    }
+  }));
+
   return {
-    paths: pages.map((page: any) => ({
-      params: {
-        slug: page.slug,
-        fileName: page.fileName
-      }
-    })),
+    paths,
     fallback: false
   }
 }

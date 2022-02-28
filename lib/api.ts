@@ -1,13 +1,14 @@
-import fs from 'fs'
-import { join } from 'path'
-import matter from 'gray-matter'
+import fs from 'fs';
+import glob from 'glob';
+import { join } from 'path';
+import matter from 'gray-matter';
 
 type ContentType = "docs" | "changelog";
 
 const postsDirectory = join(process.cwd(), 'content');
 
 export function getPostSlugs(type: ContentType) {
-  return fs.readdirSync(join(postsDirectory, type)).filter(f => f.endsWith(`.md`))
+  return glob.sync(join(postsDirectory, type, '**/*.md')).map(file => file.replace(join(postsDirectory, type, '/'), ''));
 }
 
 export function getPostByFilename(type: ContentType, crntFile: string, fields: string[] = []) {

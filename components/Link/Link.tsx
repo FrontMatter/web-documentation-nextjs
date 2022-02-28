@@ -7,20 +7,23 @@ import { useEffect, useState } from 'react';
 export interface ILinkProps {
   title: string;
   link: string;
+  hideDot?: boolean;
 }
 
-export const Link: React.FunctionComponent<ILinkProps> = ({title, link}: React.PropsWithChildren<ILinkProps>) => {
+export const Link: React.FunctionComponent<ILinkProps> = ({title, link, hideDot}: React.PropsWithChildren<ILinkProps>) => {
   const router = useRouter();
   const [ isActive, setIsActive ] = useState(false);
 
   useEffect(() => {
-    setIsActive(router.asPath === link);
+    const crntPath = router.asPath.replace(/\/#/, '#');
+    setIsActive(crntPath === link.replace(/\/#/, '#'));
   }, [router.asPath]);
 
   return (
     <NextLink href={link}>
-      <a className={`transition-colors duration-200 relative block hover:text-teal-900 ${isActive ? `text-teal-800 inline-flex items-center` : `text-whisper-500`}`} title={title}>
-        {isActive && <ChevronRightIcon className='mr-2 h-4 -ml-2' />}{title}
+      <a className={`inline-flex items-center transition-colors duration-200 relative hover:text-teal-900 ${isActive ? `text-teal-800` : `text-whisper-500`}`} title={title}>
+        { !hideDot && <div className='w-1 h-1 rounded-full bg-current mr-2'></div> }
+        {title}
       </a>
     </NextLink>
   );

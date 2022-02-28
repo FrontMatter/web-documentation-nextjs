@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Link } from '../Link/Link';
+import { ParentLink } from '../Link/ParentLink';
 import { Section } from '../Link/Section';
 
 export interface ISidebarProps {
@@ -13,6 +14,8 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
 
   // Retrieve only the root sections, not the sub-sections
   sorted = sorted.filter((item) => (item.weight || 99) % 1 === 0);
+
+  
 
   const getLinks = (item: PageFrontMatter) => {
     const { content } = item;
@@ -31,16 +34,17 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
           <li key={index}>
             <Link 
               title={link[1]} 
-              link={`/docs/${item.slug}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
+              link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
                />
           </li>
         ))}
 
         {subItems.map((subItem, index) => (
-          <li key={subItem.slug}>
-            <Link 
+          <li key={subItem.slug} className={`group`}>
+            <ParentLink 
               title={subItem.title} 
               link={`/docs/${subItem.slug}`}
+              item={subItem}
                />
           </li>
         ))}
