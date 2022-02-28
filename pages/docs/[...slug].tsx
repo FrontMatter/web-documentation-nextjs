@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '../../components/Docs/Page';
 import { Markdown } from '../../components/Docs/Markdown';
 
-export default function Documentation({ page, pages }: any) {
+export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
   const router = useRouter();
 
@@ -17,8 +17,8 @@ export default function Documentation({ page, pages }: any) {
 
   return (
     <>
-      <Title value={strings(`documentation_title`)} />
-      <Description value={`documentation_description`} />
+      <Title value={page.title} />
+      <Description value={page.description || strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout navItems={pages}>
@@ -42,7 +42,7 @@ export async function getStaticProps({ params }: any) {
     'fileName'
   ]);
 
-  const article: any = pages.find((b: any) => b.slug === params.slug);
+  const article: any = pages.find((b: any) => b.slug === params.slug.join('/'));
 
   const doc: any = getPostByFilename('docs', article.fileName, [
     'title',
@@ -53,7 +53,7 @@ export async function getStaticProps({ params }: any) {
     'weight',
     'content',
     'fileName'
-  ])
+  ]);
 
   return {
     props: {
@@ -68,13 +68,15 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const pages = getAllPosts('docs', ['slug', 'fileName']);
 
+  const paths = pages.map((page: any) => ({
+    params: {
+      slug: page.slug.split('/'),
+      fileName: page.fileName
+    }
+  }));
+
   return {
-    paths: pages.map((page: any) => ({
-      params: {
-        slug: page.slug,
-        fileName: page.fileName
-      }
-    })),
+    paths,
     fallback: false
   }
 }

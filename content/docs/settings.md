@@ -2,8 +2,8 @@
 title: Settings
 slug: settings
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-21T15:21:07.210Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-02-28T12:52:19.786Z
 weight: 11
 ---
 
@@ -224,7 +224,7 @@ Specify the a snippet for your custom media insert markup.
 ]
 ```
 
-> **Important**: Use the `{mediaUrl}` placeholder where you want the relative image path to be inserted. Check [placeholders](/docs/markdown#placeholders) for more information.
+> **Important**: Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information. Check [placeholders](/docs/markdown#placeholders) for more information.
 
 ### frontMatter.dashboard.openOnStart
 
@@ -259,6 +259,15 @@ Specify the data types. These types can be used in for your data files.
 - Default: ``
 
 > More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+
+### frontMatter.file.preserveCasing
+
+Specify if you want to preserve the casing of your file names from the title.
+
+- Type: `boolean` 
+- Default: `false`
+
+> More information on how to use it can be found in the [preserve the casing for your file names](docs/content-types#preserve-the-casing-for-your-file-names) section.
 
 ### frontMatter.framework.id
 
@@ -391,6 +400,15 @@ Specify the date format for your articles. Check [date-fns formating](https://da
 - Type: `string`
 - Default: `iso`
 
+### frontMatter.taxonomy.fieldGroups
+
+Define the field groups you want to use for your block fields.
+
+- Type: `array[object]`
+- Default: `[]`
+
+> More information on how to use this setting can be found on the [block field](/docs/content-types#block) section of content creation. 
+
 ### frontMatter.taxonomy.frontMatterType
 
 Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
@@ -484,6 +502,15 @@ Specifies the tags which can be used in the Front Matter.
 
 - Type: `string[]`
 - Default: `[]`
+
+### frontMatter.telemetry.disable
+
+Specify if you want to disable the telemetry.
+
+> **Important**: No user data is tracked, we only use telemetry to see what is used, and what isn't. This allows us to make accurate decisions on what to add or enhance to the extension.
+
+- Type: `boolean`
+- Default: `false`
 
 ### frontMatter.templates.folder
 

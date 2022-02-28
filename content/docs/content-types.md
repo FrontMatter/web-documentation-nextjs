@@ -2,9 +2,11 @@
 title: Content creation
 slug: content-types
 description: null
-date: '2021-09-17T07:36:26.654Z'
-lastmod: '2022-02-10T18:27:52.214Z'
+date: 2021-09-17T07:36:26.654Z
+lastmod: 2022-02-25T14:06:32.318Z
 weight: 3
+tags:
+  - documentation
 ---
 
 # Content creation
@@ -72,7 +74,8 @@ If in some case it wouldn't do this, here is the default content type structure:
       {
         "title": "Publishing date",
         "name": "date",
-        "type": "datetime"
+        "type": "datetime",
+        "default": "{{now}}"
       },
       {
         "title": "Article preview",
@@ -121,7 +124,8 @@ Adapt the fields to your needs. For our documentation it looks as follows:
       {
         "title": "Publishing date",
         "name": "date",
-        "type": "datetime"
+        "type": "datetime",
+        "default": "{{now}}"
       },
       {
         "title": "Last modified date",
@@ -208,6 +212,7 @@ Front Matter its metadata section supports the following fields:
 - `categories`: mapped to the categories defined in your settings.
 - `taxonomy`: if you want to define your own custom taxonomy fields.
 - `fields`: allows you to define another object and its fields.
+- `block`: allows you to define a group of fields which can be used to create an list of data. 
 
 ### Custom draft field
 
@@ -236,6 +241,7 @@ A field consists out of the following properties:
 - `type (field type - string)`: One of the above supported types.
 - `default`: Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-types#placeholders).
 - `hidden (boolean - optional)`: Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.
+- `taxonomyLimit (number - optional)`: Specifies the maximum number of items that can be selected for this field. If set to `0` it will allow unlimited items.
 
 ### Placeholders
 
@@ -322,6 +328,18 @@ Example of using an array of { id: string; title: string; } objects:
 }
 ```
 
+##### Tags and categories
+
+The `tags` and `categories` fields are mapped to the tags and categories defined in your settings (by default, none existing). When adding a tag/category that does not exist in your settings, you will have to option to create it:
+
+![Add a new tag](/assets/tag-creation.png)
+
+With the `taxonomyLimit` property on the field, you can limit the number of items that can be selected. By default set to `0` which allows unlimited items to be selected.
+
+When a limit is defined, this will get reflected in the UI as well:
+
+![Taxonomy limit](/assets/tags-limit.png)
+
 ##### Custom taxonomy field
 
 - `taxonomyId`: The id of the taxonomy you want to use, it will need to be defined in the `frontMatter.taxonomy.customTaxonomy` setting.
@@ -354,7 +372,9 @@ Here is an example of the custom taxonomy setting definition:
 ]
 ```
 
-##### Sub-fields / objects
+Similar to the `tags` and `categories` fields, you can also use the `taxonomyLimit` property to limit the number of items that can be selected.
+
+##### Fields - Sub-fields
 
 If you want to create multi-dimensional content type fields (sub-fields), you can use specify the field type as `fields` and define sub-fields within the `fields` property.
 
@@ -394,6 +414,73 @@ Example:
 This will render the following output:
 
 ![Multi-dimensional content type fields](/releases/v6.0.0/multi-dimensional-content-type-fields.png)
+
+
+##### Block field
+
+The `block` field type allows you to define a group of fields which can be used to create a list of data.
+
+![Block field type rendering](/assets/block-field-type.png)
+
+To work with the `block` field type, you need to perform some actions:
+
+- Define a field group (a set of fields for your data) in the `frontMatter.taxonomy.fieldGroups` setting.
+
+```json
+"frontMatter.taxonomy.fieldGroups": [
+  {
+    "id": "author",
+    "labelField": "name",
+    "fields": [
+      {
+        "title": "Author Name",
+        "name": "name",
+        "type": "string",
+        "single": true
+      },
+      {
+        "title": "Social link",
+        "name": "social",
+        "type": "string",
+        "single": true
+      }
+    ]
+  }
+]
+```
+
+> **Info**: You can use the same field types as you would use in the regular content types.
+
+- Once you defined a field group, you can use it in the `block` field type.
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "page",
+    "fields": [
+      {
+        "title": "Authors",
+        "name": "authors",
+        "type": "block",
+        "fieldGroup": [
+          "author"
+        ]
+      },
+      ...
+  }
+]
+```
+
+> **Important**: If you want, you can also create field groupings within the field grouping. This is useful when you want to create sub-groups of data.
+
+The front matter YAML output for the above example will look like this:
+
+```yaml
+authors:
+  - name: Elio Struyf
+    social: https://twitter.com/eliostruyf
+    fieldGroup: author
+```
 
 ## Preview path
 
@@ -480,3 +567,14 @@ type: documentation
 If you already have an existing page, you can automatically create a template from it by running the `Front Matter: Create a template from the current file` command.
 
 The create template command will ask you the template's name and if you want to include the content. The front matter data is included by default.
+
+## Preserve the casing for your file names
+
+When you create a new page, the file name will be created based on the sanitized `title` property. During the sanitization, the `title` property will be converted to lowercase and all spaces will be replaced with dashes.
+
+If you want to preserve the casing of the file name, you can set the `frontMatter.file.preserveCasing` setting to `true`.
+
+```json
+{
+  "frontMatter.file.preserveCasing": true
+}
