@@ -1,6 +1,6 @@
 # Change Log
 
-## [6.1.0] - 2022-02-xx
+## [6.1.0] - 2022-02-28 - [Release notes](https://beta.frontmatter.codes/updates/v6.1.0)
 
 ### ✨ New features
 
@@ -31,7 +31,7 @@
 - [#264](https://github.com/estruyf/vscode-front-matter/issues/264): Fix for Windows paths on content folder registration
 - [#268](https://github.com/estruyf/vscode-front-matter/issues/268): Fix for panel which only shows loading indicator
 
-## [6.0.0] - 2022-01-25 - [Release Notes](https://frontmatter.codes/updates/v6.0.0)
+## [6.0.0] - 2022-01-25 - [Release Notes](https://beta.frontmatter.codes/updates/v6.0.0)
 
 ### ✨ New features
 
@@ -100,7 +100,7 @@
 - [#207](https://github.com/estruyf/vscode-front-matter/issues/207): Fix the quick picks for content creation
 - [#208](https://github.com/estruyf/vscode-front-matter/issues/208): Fix for the collapse sections action so that it is not available everywhere, but only on the Front Matter panel
 
-## [5.7.0] - 2021-12-07 - [Release Notes](https://frontmatter.codes/updates/v5.7.0)
+## [5.7.0] - 2021-12-07 - [Release Notes](https://beta.frontmatter.codes/updates/v5.7.0)
 
 ### 🎨 Enhancements
 
@@ -153,7 +153,7 @@ As from this version onwards, the extension will be published to [open-vsx.org](
 
 - [#163](https://github.com/estruyf/vscode-front-matter/issues/163): Setting workspace state instead of global state for the media view
 
-## [5.3.0] - 2021-10-28 - [Release Notes](https://frontmatter.codes/updates/v5.3.0)
+## [5.3.0] - 2021-10-28 - [Release Notes](https://beta.frontmatter.codes/updates/v5.3.0)
 
 ### 🎨 Enhancements
 
@@ -202,7 +202,7 @@ As from this version onwards, the extension will be published to [open-vsx.org](
 - [#144](https://github.com/estruyf/vscode-front-matter/issues/144): Fix for `toISOString` does not exist on object
 - [#146](https://github.com/estruyf/vscode-front-matter/issues/146): Date parsing logic added with fallbacks
 
-## [5.0.0] - 2021-10-07 - [Release Notes](https://frontmatter.codes/updates/v5.0.0)
+## [5.0.0] - 2021-10-07 - [Release Notes](https://beta.frontmatter.codes/updates/v5.0.0)
 
 ### ✨ New features
 
@@ -236,7 +236,7 @@ As from this version onwards, the extension will be published to [open-vsx.org](
 - [#115](https://github.com/estruyf/vscode-front-matter/issues/115): Fix for updating added categories/tags
 - [#116](https://github.com/estruyf/vscode-front-matter/issues/116): Fix for not showing the `-1` limit on inputs
 
-## [4.0.0] - 2021-09-22 - [Release Notes](https://frontmatter.codes/updates/v4_0_0)
+## [4.0.0] - 2021-09-22 - [Release Notes](https://beta.frontmatter.codes/updates/v4_0_0)
 
 - [#101](https://github.com/estruyf/vscode-front-matter/issues/101): Date picker available on the metadata section
 - [#102](https://github.com/estruyf/vscode-front-matter/issues/102): Support comma separated arrays in front matter
@@ -252,7 +252,7 @@ As from this version onwards, the extension will be published to [open-vsx.org](
 
 ## [3.1.0] - 2021-09-10
 
-- BETA version available at: [frontmatter.codes](https://frontmatter.codes)
+- BETA version available at: [beta.frontmatter.codes](https://beta.frontmatter.codes)
 - [#72](https://github.com/estruyf/vscode-front-matter/issues/72): Media view on the dashboard
 - [#73](https://github.com/estruyf/vscode-front-matter/issues/73): List view option for the dashboard
 - [#77](https://github.com/estruyf/vscode-front-matter/issues/77): Dashboard grouping pages functionality integrated
