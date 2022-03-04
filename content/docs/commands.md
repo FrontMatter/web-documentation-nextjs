@@ -4,7 +4,7 @@ slug: commands
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2021-09-22T08:00:40.856Z'
-weight: 9
+weight: 10
 ---
 
 # Commands

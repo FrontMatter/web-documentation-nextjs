@@ -4,7 +4,7 @@ slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
 lastmod: 2022-02-28T12:52:19.786Z
-weight: 11
+weight: 12
 ---
 
 # Settings

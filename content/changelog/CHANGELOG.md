@@ -1,5 +1,24 @@
 # Change Log
 
+## [7.0.0] - 2022-03-xx
+
+### ✨ Features
+
+- [#175](https://github.com/estruyf/vscode-front-matter/issues/175): New snippet support + dashboard
+
+### 🎨 Enhancements
+
+- Light color theme enhancements to media cards
+- Light color theme enhancements to folder cards
+- [#272](https://github.com/estruyf/vscode-front-matter/issues/272): New slide over panel for showing details of media files
+- [#276](https://github.com/estruyf/vscode-front-matter/issues/276): Add a Front Matter walkthrough for VS Code
+
+## [6.1.1] - 2022-03-02
+
+### 🐞 Fixes
+
+- [#275](https://github.com/estruyf/vscode-front-matter/issues/275): Fix for rendering the panel when content contains an invalid markdown syntax tree
+
 ## [6.1.0] - 2022-02-28 - [Release notes](https://beta.frontmatter.codes/updates/v6.1.0)
 
 ### ✨ New features
