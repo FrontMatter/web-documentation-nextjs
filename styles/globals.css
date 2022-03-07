@@ -109,7 +109,8 @@ html, body {height: 100%;}
   }
 
   code {
-    @apply text-rose-500;
+    @apply bg-vulcan-300 rounded text-yellow-900;
+    padding: 2px 4px;
   }
 
   pre {

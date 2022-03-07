@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-02-28T12:52:19.786Z
+lastmod: 2022-03-07T10:06:37.081Z
 weight: 12
 ---
 
@@ -384,15 +384,6 @@ Sample:
 
 > **Info**: Check the [custom taxonomy](/docs/content-types#custom-taxonomy-field) section for more information.
 
-### frontMatter.taxonomy.dateField
-
-This setting is used to define the publishing date field of your articles.
-
-- Type: `string`
-- Default: `date`
-
-> **Important**: if you would use another field in your content types, be sure to remap this setting.
-
 ### frontMatter.taxonomy.dateFormat
 
 Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
@@ -422,15 +413,6 @@ Specify if arrays in front matter of the markdown files are indented.
 
 - Type: `boolean`
 - Default: `true`
-
-### frontMatter.taxonomy.modifiedField
-
-This setting is used to define the modified date field of your articles.
-
-- Type: `string`
-- Default: `lastmod`
-
-> **Important**: if you would use another field in your content types, be sure to remap this setting.
 
 ### frontMatter.taxonomy.noPropertyValueQuotes
 
@@ -528,6 +510,26 @@ Specify the prefix you want to add for your new article filenames.
 - Type: `string`
 - Default: `yyyy-MM-dd`
 
+
+## Deprecated settings
+
+### frontMatter.taxonomy.dateField
+
+This setting is used to define the publishing date field of your articles.
+
+- Type: `string`
+- Default: `date`
+
+> **Important**: Use the new `isPublishDate` datetime field setting for content types instead.
+
+### frontMatter.taxonomy.modifiedField
+
+This setting is used to define the modified date field of your articles.
+
+- Type: `string`
+- Default: `lastmod`
+
+> **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
 
 ## Removed settings
 

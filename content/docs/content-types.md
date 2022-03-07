@@ -3,7 +3,7 @@ title: Content creation
 slug: content-types
 description: null
 date: 2021-09-17T07:36:26.654Z
-lastmod: 2022-02-25T14:06:32.318Z
+lastmod: 2022-03-07T10:09:15.751Z
 weight: 3
 tags:
   - documentation
@@ -75,7 +75,8 @@ If in some case it wouldn't do this, here is the default content type structure:
         "title": "Publishing date",
         "name": "date",
         "type": "datetime",
-        "default": "{{now}}"
+        "default": "{{now}}",
+        "isPublishDate": true
       },
       {
         "title": "Article preview",
@@ -125,12 +126,14 @@ Adapt the fields to your needs. For our documentation it looks as follows:
         "title": "Publishing date",
         "name": "date",
         "type": "datetime",
-        "default": "{{now}}"
+        "default": "{{now}}",
+        "isPublishDate": true
       },
       {
         "title": "Last modified date",
         "name": "lastmod",
-        "type": "datetime"
+        "type": "datetime",
+        "isModifiedDate": true
       },
       {
         "title": "Navigation weight",
@@ -284,6 +287,13 @@ To use the `permalink` placeholder, you need to define the `{{permalink}}` value
 ##### String fields
 
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+
+##### Datetime fields
+
+- `isPublishDate`: Specifies if the field is a publish date. When set to `true`, the field will be used to set the publish date for the content (this will be reflected on the content dashboard). 
+- `isModifiedDate`: Specifies if the field is a modified date. When using the `frontMatter.content.autoUpdateDate` setting to automatically update the modified date of the article, this field will be used.
+
+> The format of your date can be defined in the `frontMatter.taxonomy.dateFormat` setting. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
 
 ##### Image fields
 
