@@ -32,7 +32,7 @@ Internally we use the `[[` as opening tags and `]]` as closing tags. These tags 
 
 **Example:**
 
-```text
+```html
 {{< highlight [[type]] \"linenos=table,noclasses=false\" >}}
   [[selection]]
 {{< / highlight >}}

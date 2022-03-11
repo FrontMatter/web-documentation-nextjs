@@ -115,6 +115,10 @@ html, body {height: 100%;}
 
   pre {
     @apply p-1 my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
+
+    code {
+      background: inherit;
+    }
   }
 
   pre.shiki {
