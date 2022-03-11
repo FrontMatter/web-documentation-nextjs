@@ -24,21 +24,70 @@ All snippets can be found on the snippets dashboard.
 - Setting: title, description, body
 - UI: how to create
 
-## Variables
+## Placeholders
 
-The snippet logic is based on that of Visual Studio Code / Textmate, with the difference that Front Matter makes use of actual variable names instead of index numbers. We choose to use variable names, in order to present the editor with meaningful input forms.
+In your snippets, you will be able to use placeholders to insert content from the Front Matter dashboard. To use a placeholder, you will need to add them via the following notation: `[[placeholder_name]]`.
 
-Defining variables in you snippets can be done in the following ways:
+Internally we use the `[[` as opening tags and `]]` as closing tags. These tags can be defined per snippet. In case of conflicts, you can define your own opening and closing tags.
 
-- `${variable}`: Creates a variable with the name of `variable`.
-- `${variable:default}`: Creates a variable with the name of `variable` and sets the default value to `default`.
-- `${variable|choice 1,choice 2,choice 3|}`: Creates a choice variable with the name of `variable` and sets the choices to `choice 1`, `choice 2` and `choice 3`.
+**Example:**
 
-There are also special placeholders for your variables:
+```text
+{{< highlight [[type]] \"linenos=table,noclasses=false\" >}}
+  [[selection]]
+{{< / highlight >}}
+```
 
-- `FM_SELECTED_TEXT`: This placeholder can be used to insert the selected text from the editor. It can be used as the variable name (`${FM_SELECTED_TEXT}`) or value (`${selection:FM_SELECTED_TEXT}`).
-- `FM_TEXT_`: This is a prefix placeholder for your variable name to define if it needs to render a single line input field on the form. Use it as follows: `${FM_TEXT_variable}`.
-- `FM_MULTILINE_`: Similar to the previous placeholder, but for multi-line input fields (textarea). Use it as follows: `${FM_MULTILINE_variable}`.
+In the above example, we the `type` and `selection` are the defined placeholders.
+
+## Fields
+
+Each placeholder defined, will have a corresponding field definition. If no field definition is defined for a placeholder, it will be shown as a input field when inserting the snippet.
+
+The field definition is the same as the one we use for our content types (more information at [defining your own content type](/docs/content-types#define-your-own-type)).
+
+At this moment, we only support the following field types:
+
+- `string`
+- `choice`
+
+To prepopulate a field, you can use the following special placeholders in the `default` property of your field:
+
+- `FM_SELECTED_TEXT`: This placeholder can be used to insert the selected text from the editor.
+
+**Example:**
+
+```json
+"frontMatter.content.snippets": {
+  "Highlight": {
+    "description": "Creates a code highlighting box",
+    "body": [
+      "{{< highlight \"[[type]]\" \"linenos=table,noclasses=false\" >}}",
+      "  [[selection]]",
+      "{{< / highlight >}}"
+    ],
+    "fields": [
+      {
+        "name": "type",
+        "title": "Language",
+        "type": "choice",
+        "choices": [
+          "html",
+          "css",
+          "typescript"
+        ],
+        "default": "typescript"
+      },
+      {
+        "name": "selection",
+        "title": "Selection",
+        "type": "string",
+        "default": "FM_SELECTED_TEXT"
+      }
+    ]
+  }
+}
+```
 
 ## Using a snippet
 
