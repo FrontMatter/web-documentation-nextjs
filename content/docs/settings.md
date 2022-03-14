@@ -4,7 +4,7 @@ slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
 lastmod: 2022-03-07T10:06:37.081Z
-weight: 12
+weight: 1100
 ---
 
 # Settings
@@ -48,7 +48,7 @@ Options:
 - `md`
 - `mdx`
 
-> For more information how and when this is used, check [content creation](/docs/content-types#before-you-start)
+> For more information how and when this is used, check [content creation](/docs/content-creation#before-you-start)
 
 ### frontMatter.content.defaultSorting
 
@@ -135,7 +135,7 @@ Properties:
 - `id`: The id of the placeholder
 - `value`: The value of the placeholder
 
-> More information on how you can use it can be found here: [placeholders](/docs/content-types#placeholders).
+> More information on how you can use it can be found here: [placeholders](/docs/content-creation/placeholders).
 
 ### frontMatter.content.publicFolder
 
@@ -267,7 +267,7 @@ Specify if you want to preserve the casing of your file names from the title.
 - Type: `boolean` 
 - Default: `false`
 
-> More information on how to use it can be found in the [preserve the casing for your file names](docs/content-types#preserve-the-casing-for-your-file-names) section.
+> More information on how to use it can be found in the [preserve the casing for your file names](/docs/content-creation/additional-config#preserve-casing-of-file-names) section.
 
 ### frontMatter.framework.id
 
@@ -357,7 +357,7 @@ Specify the fields names that Front Matter should treat as a comma-separated arr
 Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter.
 
 - Type: `array, null` 
-- Default: check [default content type](/docs/content-types#changing-the-default-content-type)
+- Default: check [default content type](/docs/content-creation/content-types#changing-the-default-content-type)
 
 
 ### frontMatter.taxonomy.customTaxonomy
@@ -382,7 +382,7 @@ Sample:
   ]
 ```
 
-> **Info**: Check the [custom taxonomy](/docs/content-types#custom-taxonomy-field) section for more information.
+> **Info**: Check the [custom taxonomy](/docs/content-creation/fields#taxonomy) section for more information.
 
 ### frontMatter.taxonomy.dateFormat
 
@@ -398,7 +398,7 @@ Define the field groups you want to use for your block fields.
 - Type: `array[object]`
 - Default: `[]`
 
-> More information on how to use this setting can be found on the [block field](/docs/content-types#block) section of content creation. 
+> More information on how to use this setting can be found on the [block field](/docs/content-creation/fields#block) section of content creation. 
 
 ### frontMatter.taxonomy.frontMatterType
 

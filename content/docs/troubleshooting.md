@@ -4,7 +4,7 @@ slug: troubleshooting
 description: null
 date: 2021-12-21T09:53:30.176Z
 lastmod: 2022-03-07T10:44:47.318Z
-weight: 11
+weight: 1000
 ---
 
 # Troubleshooting
@@ -44,7 +44,7 @@ Follow the next steps in order to migrate your settings to the new properties:
 
 When you use the default content type from Front Matter, you will already use the `isPublishDate` property. In case you were using the `frontMatter.taxonomy.modifiedField`, you will need to define your own content type and use the `isModifiedDate` property.
 
-Check the [change the default content type](/docs/content-types#changing-the-default-content-type) section for more information.
+Check the [change the default content type](/docs/content-creation/content-types#changing-the-default-content-type) section for more information.
 
 **When using a custom content type**
 

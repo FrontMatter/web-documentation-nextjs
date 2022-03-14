@@ -52,8 +52,17 @@ export async function getStaticProps({ params }: any) {
     'lastmod',
     'weight',
     'content',
-    'fileName'
+    'fileName',
+    'redirect'
   ]);
+
+  if (doc.redirect) {
+    return {
+      redirect: {
+        destination: doc.redirect
+      },
+    }
+  }
 
   return {
     props: {

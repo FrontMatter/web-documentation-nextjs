@@ -4,7 +4,7 @@ slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
 lastmod: 2022-03-07T10:07:23.933Z
-weight: 4
+weight: 400
 ---
 
 # Editor panel
@@ -88,7 +88,7 @@ In the metadata section, you can manage the front matter of your Markdown file. 
 
 ![Metadata section](/assets/metadata.png)
 
-> **Info**: More information about content types can be read at [content type section](/docs/content-types).
+> **Info**: More information about content creation/content types/fields can be read at [content creation section](/docs/content-creation).
 
 The tags and categories inputs allow you to insert known and unknown tags/categories. When an unknown tag/category gets added, it will show a `+` sign that allows you to add it to your configuration so that it will appear in the known tags/categories next time.
 

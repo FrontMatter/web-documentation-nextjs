@@ -25,12 +25,14 @@
         {
           "title": "Publishing date",
           "name": "date",
-          "type": "datetime"
+          "type": "datetime",
+          "isPublishDate": true
         },
         {
           "title": "Last modified date",
           "name": "lastmod",
-          "type": "datetime"
+          "type": "datetime",
+          "isModifiedDate": true
         },
         {
           "title": "Article preview",
@@ -55,5 +57,49 @@
       ]
     }
   ],
-  "frontMatter.framework.id": "next"
+  "frontMatter.framework.id": "next",
+  "frontMatter.content.snippets": {
+    "Field definition": {
+      "description": "Definition of a field for documentation",
+      "body": [
+        "## [[name]]",
+        "",
+        "[[&description]]",
+        "",
+        "### Properties",
+        "",
+        "",
+        "",
+        "### Usage",
+        "",
+        "```json",
+        "",
+        "```",
+        "",
+        "### Outcome",
+        "",
+        "```markdown",
+        "---",
+        "",
+        "---",
+        "```"
+      ],
+      "fields": [
+        {
+          "name": "name",
+          "title": "name",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "description",
+          "title": "description",
+          "type": "string",
+          "single": false,
+          "default": ""
+        }
+      ]
+    }
+  }
 }

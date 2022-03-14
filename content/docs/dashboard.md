@@ -4,7 +4,7 @@ slug: dashboard
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2022-01-21T15:21:21.469Z'
-weight: 3
+weight: 300
 ---
 
 # Dashboard
@@ -43,7 +43,7 @@ By default, the contents view will show all your pages, and will you will be abl
 
 If you want to use other statuses, you can do so by specifying your own draft field and value.
 
-> **Info**: [Set a custom draft field](/docs/content-types#custom-draft-field).
+> **Info**: [Set a custom draft field](/docs/content-creation/fields#draft).
 
 ![Draft filters](/releases/v5.3.0/draft-status.png)
 

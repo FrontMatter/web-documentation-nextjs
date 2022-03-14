@@ -40,11 +40,13 @@ Internally we use the `[[` as opening tags and `]]` as closing tags. These tags 
 
 In the above example, we the `type` and `selection` are the defined placeholders.
 
+> **Important**: All variables are HTML-excaped by default, if you want to add unescaped HTML content, you need to add an `&` before your variable name. Example: `[[&selection]]`.
+
 ## Fields
 
 Each placeholder defined, will have a corresponding field definition. If no field definition is defined for a placeholder, it will be shown as a input field when inserting the snippet.
 
-The field definition is the same as the one we use for our content types (more information at [defining your own content type](/docs/content-types#define-your-own-type)).
+The field definition is the same as the one we use for our content types (more information at [defining your own content type](/docs/content-creation/content-types#define-your-own-type)).
 
 At this moment, we only support the following field types:
 

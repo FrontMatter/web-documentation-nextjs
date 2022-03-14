@@ -4,7 +4,7 @@ slug: custom-actions
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2021-11-22T09:07:59.402Z'
-weight: 5
+weight: 500
 ---
 
 # Custom actions
