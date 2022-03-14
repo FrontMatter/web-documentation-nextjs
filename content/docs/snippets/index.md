@@ -28,11 +28,29 @@ Follow the next steps in order to create a snippet:
 
 Once you clicked on the **Save** button, the snippet is added to the `frontMatter.content.snippets` setting. All your placeholders will be automatically extracted and added to the `fields` property.
 
+The snippet definition contains the following fields:
+
+```json
+"<snippet title>": {
+  "description": "Description",
+  "body": [],
+  "fields": [],
+  "openingTags": "[[",
+  "closingTags": "]]"
+}
+```
+
+- `description`: A short description of the snippet (optional);
+- `body`: The snippet body, each string defined in the array is a new line;
+- `fields`: The snippet fields;
+- `openingTags`: The opening tags for the snippet (optional);
+- `closingTags`: The closing tags for the snippet (optional).
+
 ## Placeholders
 
 In your snippets, you will be able to use placeholders to insert content from the Front Matter dashboard. To use a placeholder, you will need to add them via the following notation: `[[placeholder_name]]`.
 
-Internally we use the `[[` as opening tags and `]]` as closing tags. These tags can be defined per snippet. In case of conflicts, you can define your own opening and closing tags.
+Internally we use the `[[` as opening tags and `]]` as closing tags. These tags can be defined per snippet. In case of conflicts, you can define your own opening and closing tags on the snippet definition.
 
 **Example:**
 
