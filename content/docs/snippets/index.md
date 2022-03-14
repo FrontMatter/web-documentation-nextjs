@@ -19,10 +19,14 @@ All snippets can be found on the snippets dashboard.
 
 ## Create a snippet
 
-*Todo*
+Follow the next steps in order to create a snippet:
 
-- Setting: title, description, body
-- UI: how to create
+- Open the Front Matter dashboard, and navigate to the Snippets tab;
+- Click on the **Create new snippet** button;
+- Fill in the required fields;
+- Click on the **Save** button.
+
+Once you clicked on the **Save** button, the snippet is added to the `frontMatter.content.snippets` setting. All your placeholders will be automatically extracted and added to the `fields` property.
 
 ## Placeholders
 
@@ -93,4 +97,23 @@ To prepopulate a field, you can use the following special placeholders in the `d
 
 ## Using a snippet
 
-*Todo*
+- Open one of your content files;
+- Select your text (optional);
+- Click on the **Insert snippet** button (or use the **Front Matter: Insert snippet into your content** command);
+
+![Insert a snippet](/releases/v7.0.0/insert-snippet.png)
+
+- Select the snippet you want to use;
+- Fill in the fields;
+
+![Fill in the snippet form](/releases/v7.0.0/insert-snippet-form.png)
+
+- Click on insert.
+
+The following steps generate the following outcome in the content (based on the above snippet example):
+
+```markdown
+{{< highlight typescript "linenos=table,noclasses=false" >}}
+  Selected text from content
+{{< / highlight >}}
+```
