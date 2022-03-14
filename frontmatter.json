@@ -4,7 +4,7 @@
   "frontMatter.content.pageFolders": [
     {
       "title": "documentation",
-      "path": "[[workspace]]/docs/content/docs"
+      "path": "[[workspace]]/content/docs"
     }
   ],
   "frontMatter.content.publicFolder": "public",
