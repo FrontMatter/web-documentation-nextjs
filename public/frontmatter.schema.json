@@ -149,6 +149,37 @@
       "markdownDescription": "Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.publicfolder)",
       "scope": "Content"
     },
+    "frontMatter.content.snippets": {
+      "type": "object",
+      "markdownDescription": "Define the snippets you want to use in your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.snippets)",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "body",
+          "fields"
+        ],
+        "properties": {
+          "body": {
+            "markdownDescription": "The snippet content.",
+            "type": [
+              "string",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "description": "The snippet description.",
+            "type": "string"
+          },
+          "fields": {
+            "$ref": "#contenttypefield"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "frontMatter.content.sorting": {
       "type": "array",
       "default": [],
@@ -274,7 +305,7 @@
       "markdownDescription": "Specify the a snippet for your custom media insert markup. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.mediasnippet)",
       "items": {
         "type": "string",
-        "description": "The parts of your snippet. Use `{mediaUrl}` as placeholder where the path of the image needs to be inserted."
+        "description": "Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information."
       },
       "scope": "dashboard"
     },
@@ -431,6 +462,12 @@
       },
       "scope": "Data"
     },
+    "frontMatter.file.preserveCasing": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to preserve the casing of your file names from the title. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.file.preservecasing)",
+      "scope": "File"
+    },
     "frontMatter.framework.id": {
       "type": "string",
       "default": "",
@@ -565,7 +602,9 @@
                     "tags",
                     "categories",
                     "draft",
-                    "fields"
+                    "fields",
+                    "json",
+                    "block"
                   ],
                   "description": "Define the type of field"
                 },
@@ -631,6 +670,43 @@
                 },
                 "fields": {
                   "$ref": "#contenttypefield"
+                },
+                "fieldGroup": {
+                  "type": [
+                    "string",
+                    "array"
+                  ],
+                  "default": [],
+                  "description": "The ID(s) of your field group(s) defined in the `frontMatter.taxonomy.fieldGroups` setting",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "dataType": {
+                  "type": [
+                    "string",
+                    "array"
+                  ],
+                  "default": [],
+                  "description": "The ID(s) of your data type(s) defined in the `frontMatter.data.types` setting",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "taxonomyLimit": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Limit the number of taxonomies to select. Set to 0 to allow unlimited."
+                },
+                "isPublishDate": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the field is the publish date field"
+                },
+                "isModifiedDate": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the field is the modified date field"
                 }
               },
               "additionalProperties": false,
@@ -680,6 +756,34 @@
                       "fields"
                     ]
                   }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "block"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "fieldGroup"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "json"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "dataType"
+                    ]
+                  }
                 }
               ]
             }
@@ -722,7 +826,9 @@
             {
               "title": "Publishing date",
               "name": "date",
-              "type": "datetime"
+              "type": "datetime",
+              "default": "{{now}}",
+              "isPublishDate": true
             },
             {
               "title": "Content preview",
@@ -778,12 +884,35 @@
     "frontMatter.taxonomy.dateField": {
       "type": "string",
       "default": "date",
-      "markdownDescription": "This setting is used to define the publishing date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.datefield)"
+      "markdownDescription": "This setting is used to define the publishing date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.datefield)",
+      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please use the new `isPublishDate` settings instead in your content types date fields."
     },
     "frontMatter.taxonomy.dateFormat": {
       "type": "string",
       "markdownDescription": "Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.dateformat)",
       "scope": "Taxonomy"
+    },
+    "frontMatter.taxonomy.fieldGroups": {
+      "type": "array",
+      "markdownDescription": "Define the field groups you want to use for your block fields. [Check in the docs](https://frontmatter.codes/docs/settings#frontMatter.taxonomy.fieldgroups)",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The name of the field group"
+          },
+          "fields": {
+            "$ref": "#contenttypefield"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "fields"
+        ]
+      }
     },
     "frontMatter.taxonomy.frontMatterType": {
       "type": "string",
@@ -810,7 +939,8 @@
     "frontMatter.taxonomy.modifiedField": {
       "type": "string",
       "default": "lastmod",
-      "markdownDescription": "This setting is used to define the modified date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.modifiedfield)"
+      "markdownDescription": "This setting is used to define the modified date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.modifiedfield)",
+      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please use the new `isModifiedDate` settings instead in your content types date fields."
     },
     "frontMatter.taxonomy.noPropertyValueQuotes": {
       "type": "array",
@@ -870,6 +1000,11 @@
       },
       "scope": "Taxonomy"
     },
+    "frontMatter.telemetry.disable": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to disable the telemetry. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.telemetry.disable)"
+    },
     "frontMatter.templates.folder": {
       "type": "string",
       "default": ".frontmatter/templates",
@@ -881,11 +1016,6 @@
       "default": "yyyy-MM-dd",
       "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.templates.prefix)",
       "scope": "Templates"
-    },
-    "frontMatter.telemetry.disable": {
-      "type": "boolean",
-      "default": false,
-      "markdownDescription": "Specify if you want to disable the telemetry. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.telemetry.disable)"
     }
   }
 }
