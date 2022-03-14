@@ -100,6 +100,48 @@
           "default": ""
         }
       ]
+    },
+    "New version": {
+      "description": "Insert a new version to the changelog",
+      "body": [
+        "## [{{version}}] - {{year}}-{{month}}-{{day}}",
+        "",
+        "### ✨ New features",
+        "",
+        "### 🎨 Enhancements",
+        "",
+        "### ⚡️ Optimizations",
+        "",
+        "### 🐞 Fixes"
+      ],
+      "fields": [
+        {
+          "type": "string",
+          "name": "version",
+          "title": "Version",
+          "single": true
+        },
+        {
+          "type": "string",
+          "name": "year",
+          "title": "Year",
+          "default": "{{year}}"
+        },
+        {
+          "type": "string",
+          "name": "month",
+          "title": "Month",
+          "default": "{{month}}"
+        },
+        {
+          "type": "string",
+          "name": "day",
+          "title": "Day",
+          "default": "{{day}}"
+        }
+      ],
+      "openingTags": "{{",
+      "closingTags": "}}"
     }
   }
 }

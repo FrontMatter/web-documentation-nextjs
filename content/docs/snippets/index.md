@@ -77,6 +77,7 @@ At this moment, we only support the following field types:
 
 To prepopulate a field, you can use the following special placeholders in the `default` property of your field:
 
+- Standard placeholders are available like `{{year}}`, `{{month}}`, ... (see [Placeholders](/docs/content-creation/placeholders))
 - `FM_SELECTED_TEXT`: This placeholder can be used to insert the selected text from the editor.
 
 **Example:**
