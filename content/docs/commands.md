@@ -4,7 +4,7 @@ slug: commands
 description: null
 date: '2021-08-30T16:13:00.546Z'
 lastmod: '2021-09-22T08:00:40.856Z'
-weight: 9
+weight: 900
 ---
 
 # Commands
@@ -41,6 +41,12 @@ ID: `frontMatter.dashboard`
 Allows you to quickly insert an image reference in the Markdown file.
 
 ID: `frontMatter.insertImage`
+
+### Insert snippet into your content
+
+Allows you to quickly insert a snippet in the Markdown file.
+
+ID: `frontMatter.insertSnippet`
 
 ### Create category
 
@@ -129,7 +135,7 @@ Open the site preview of your content in VS Code.
 
 ID: `frontMatter.preview`
 
-## Promote settings from local to team level
+### Promote settings from local to team level
 
 This command allows you to promote all local settings from within your `.vscode/settings.json` file to be promoted to the projects team configuration `frontmatter.json` file.
 

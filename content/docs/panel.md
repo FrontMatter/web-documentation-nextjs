@@ -2,9 +2,9 @@
 title: Editor panel
 slug: panel
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-21T15:21:33.808Z'
-weight: 4
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-03-07T10:07:23.933Z
+weight: 400
 ---
 
 # Editor panel
@@ -78,9 +78,6 @@ When writing articles, there are always a couple of actions you need/want to per
 The following settings are related to these actions:
 
 - `frontMatter.preview.host`: Specify the host URL (example: http://localhost:1313) to be used when opening the preview.
-- `frontMatter.taxonomy.dateField`: Specifies the date field name to use in your Front Matter. Default: `date`.
-- `frontMatter.taxonomy.modifiedField`: Specifies the modified date field name to use in your Front Matter. Default: `lastmod`.
-- `frontMatter.taxonomy.dateFormat`: Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
 - `frontMatter.taxonomy.slugPrefix`: Specify a prefix for the slug.
 - `frontMatter.taxonomy.slugSuffix`: Specify a suffix for the slug.
 - `frontMatter.taxonomy.alignFilename`: Align the filename with the new slug when it gets generated.
@@ -91,7 +88,7 @@ In the metadata section, you can manage the front matter of your Markdown file. 
 
 ![Metadata section](/assets/metadata.png)
 
-> **Info**: More information about content types can be read at [content type section](/docs/content-types).
+> **Info**: More information about content creation/content types/fields can be read at [content creation section](/docs/content-creation).
 
 The tags and categories inputs allow you to insert known and unknown tags/categories. When an unknown tag/category gets added, it will show a `+` sign that allows you to add it to your configuration so that it will appear in the known tags/categories next time.
 
