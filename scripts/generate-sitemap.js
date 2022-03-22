@@ -1,3 +1,4 @@
+const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
@@ -25,9 +26,11 @@ const matter = require('gray-matter');
   }));
 
   const mdDir = path.join(process.cwd(), 'content');
-  const mdFiles = fs.readdirSync(path.join(mdDir, 'docs')).filter(f => f.endsWith(`.md`));
-  const mdPages = mdFiles.map((fileName) => {
-    const fullPath = path.join(mdDir, 'docs', `${fileName}`)
+  // const mdFiles = fs.readdirSync(path.join(mdDir, 'docs')).filter(f => f.endsWith(`.md`));
+
+  const mdFiles = glob.sync(path.join(mdDir, 'docs/**/*.md'));
+  const mdPages = mdFiles.map((fullPath) => {
+    const fileName = path.basename(fullPath);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
     return {
