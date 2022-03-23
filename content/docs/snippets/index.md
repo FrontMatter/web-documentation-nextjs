@@ -62,7 +62,7 @@ Internally we use the `[[` as opening tags and `]]` as closing tags. These tags 
 
 In the above example, we the `type` and `selection` are the defined placeholders.
 
-> **Important**: All variables are HTML-excaped by default, if you want to add unescaped HTML content, you need to add an `&` before your variable name. Example: `[[&selection]]`.
+> **Important**: All variables are HTML-escaped by default, if you want to add unescaped HTML content, you need to add an `&` before your variable name. Example: `[[&selection]]`.
 
 ## Fields
 
