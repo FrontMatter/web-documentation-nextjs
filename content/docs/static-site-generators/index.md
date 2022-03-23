@@ -4,7 +4,7 @@ slug: ssg-and-frameworks
 description: null
 date: '2021-11-26T09:04:50.405Z'
 lastmod: '2022-02-22T09:02:29.858Z'
-weight: 6
+weight: 600
 ---
 
 # Static Site Generator and Frameworks

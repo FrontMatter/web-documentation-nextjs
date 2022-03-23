@@ -2,9 +2,9 @@
 title: Troubleshooting
 slug: troubleshooting
 description: null
-date: '2021-12-21T09:53:30.176Z'
-lastmod: '2021-12-21T09:53:30.668Z'
-weight: 10
+date: 2021-12-21T09:53:30.176Z
+lastmod: 2022-03-07T10:44:47.318Z
+weight: 1000
 ---
 
 # Troubleshooting
@@ -26,3 +26,26 @@ The extension uses a YAML or TOML parser, depending on the type of front matter 
 The extension logs information, warnings, and errors into the Visual Studio Code output tab. You can find the log stream by selecting the `vscode-front-matter` or `vscode-front-matter-beta` extension from the output dropdown.
 
 ![Troubleshooting - Show the output of what the extension has been performing](/releases/v5.8.0/troubleshooting-output.png)
+
+## Feature migrations
+
+Sometimes it happens features get renamed or removed, under this section we will show you how to migrate your configuration to the new version.
+
+### Publish and modified date migration
+
+In version 7, the `frontMatter.taxonomy.dateField` and `frontMatter.taxonomy.modifiedField` settings have been deprecated. These settings are now replaced by two new content type field properties:
+
+- `isPublishDate`: defines the publish date
+- `isModifiedDate`: define the modified date
+
+Follow the next steps in order to migrate your settings to the new properties:
+
+**No custom content type**
+
+When you use the default content type from Front Matter, you will already use the `isPublishDate` property. In case you were using the `frontMatter.taxonomy.modifiedField`, you will need to define your own content type and use the `isModifiedDate` property.
+
+Check the [change the default content type](/docs/content-creation/content-types#changing-the-default-content-type) section for more information.
+
+**When using a custom content type**
+
+When you already have a custom content type defined, you can set the `isPublishDate` and `isModifiedDate` properties for the `datetime` fields.
