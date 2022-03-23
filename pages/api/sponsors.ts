@@ -53,6 +53,12 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
                   url
                   avatarUrl
                 }
+                ... on Organization {
+                  id
+                  name
+                  url
+                  avatarUrl
+                }
               }
             }
           }
