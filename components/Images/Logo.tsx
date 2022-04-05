@@ -7,8 +7,8 @@ export interface ILogoProps {
 export const Logo: React.FunctionComponent<ILogoProps> = ({className}: React.PropsWithChildren<ILogoProps>) => {
   return (
     <svg className={className || ""} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1201 1201" enableBackground="new 0 0 1201 1201">
-      <rect x="1" y="1" display="none" fill="none" stroke="#01AEB7" stroke-width="50" stroke-miterlimit="10" width="1200" height="1200"/>
-      <g enable-background="new    ">
+      <rect x="1" y="1" display="none" fill="none" stroke="#01AEB7" strokeWidth="50" strokeMiterlimit="10" width="1200" height="1200"/>
+      <g enableBackground="new    ">
         <path fill="currentcolor" d="M173.4,576.8H96.9V214.5h135.2v85.2h-58.7v52.8H228v81.9h-54.7V576.8z"/>
         <path fill="currentcolor" d="M463.3,576.8h-82.7l-37.8-129.1c-0.4-2.2-1-5.1-1.9-8.7c-0.9-3.6-2-7.9-3.4-12.9l0.6,23.9v126.7h-76.1
           V214.5h78.3c34.5,0,60.3,8.7,77.4,26.1c21.8,22.2,32.7,53.8,32.7,94.8c0,43.8-14.6,74.1-43.9,90.8L463.3,576.8z M338.3,382.3h5.1
@@ -23,7 +23,7 @@ export const Logo: React.FunctionComponent<ILogoProps> = ({className}: React.Pro
           c-3.2-12.4-6.1-24.3-8.5-35.6c1.6,25.5,2.8,47.7,3.5,66.7c0.7,18.9,1.1,35.5,1.1,49.8v92.5H725.8z"/>
         <path fill="currentcolor" d="M1063.8,576.8h-76.5V301.3h-42.2v-86.8h162.6v86.8h-43.9V576.8z"/>
       </g>
-      <g enable-background="new    ">
+      <g enableBackground="new    ">
         <path fill="currentcolor" d="M123,657.8h35.8l27.4,133.7c3.4,16.7,6.4,33.4,9.2,50.2c2.7,16.8,5.3,34.4,7.5,52.7
           c0.3-2.4,0.5-4.3,0.6-5.6c0.1-1.3,0.3-2.3,0.4-2.9l5.8-37.6l5.2-35.7l4.6-23.6L244,657.8h36.2l28.6,327.7h-40l-7-111.2
           c-0.3-5.7-0.5-10.5-0.7-14.6c-0.2-4.1-0.3-7.5-0.3-10.2l-1.8-43.9l-1-40.3c0-0.3,0-0.9-0.1-1.8c-0.1-0.9-0.2-2.2-0.3-3.7l-1,6.6
