@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-03-07T10:07:23.933Z
+lastmod: 2022-04-06T14:56:37.361Z
 weight: 400
 ---
 
@@ -115,3 +115,55 @@ This section provides a couple of other useful actions, like opening the current
 > **Info**: The `writing settings enabled / enable write settings` action allows you to make Markdown specific changes to optimize the writing of your articles. It will change settings like the `fontSize`, `lineHeight`, `wordWrap`, `lineNumbers` and more.
 
 > **Info**: The other actions section will also be shown when you have the panel open on other types of files.
+
+
+## View modes
+
+By default, Front Matter will show all its potential and functionalities to the end-user. As you do not always require all functionality, Front Matter allows you to create view modes. 
+
+You can define what functionality you want to show and use in a view mode.
+
+The creation of a view mode can be done in the `frontMatter.global.modes` setting and the by default activated mode, can be set in the `frontMatter.global.activeMode` setting.
+
+You define a mode with an `id` and a set of features. The allowed features are the following:
+
+**Panel**
+
+- panel.globalSettings: Show the global settings section.
+- panel.seo: Show the SEO status section.
+- panel.actions: Show the actions section.
+- panel.metadata: Show the metadata section.
+- panel.recentlyModified: Show the recently modified files section.
+- panel.otherActions: Show the other actions section.
+
+**Dashboards**
+
+- dashboard.snippets.view
+- dashboard.snippets.manage
+- dashboard.data.view
+
+Here is an example of a custom view mode:
+
+```json
+"frontMatter.global.activeMode": "",
+"frontMatter.global.modes": [
+  {
+    "id": "minimal",
+    "features": [
+      "panel.metadata",
+      "panel.globalSettings",
+      "panel.seo",
+      "dashboard.data.view",
+      "dashboard.snippets.view"
+    ]
+  }
+]
+```
+
+Once you created a new view mode, you can change between the default and custom ones. You find the mode switch in the panel:
+
+![Switch view mode](/releases/v7.1.0/panel-mode-switch.png)
+
+Or in the status bar:
+
+![Status bar mode switch](/releases/v7.1.0/status-bar-mode-switch.png)

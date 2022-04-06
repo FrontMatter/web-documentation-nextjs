@@ -2,8 +2,8 @@
 title: Dashboard
 slug: dashboard
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-21T15:21:21.469Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-04-06T14:38:17.759Z
 weight: 300
 ---
 
@@ -15,11 +15,11 @@ Managing your Markdown pages/media has never been easier in VS Code. With the Fr
 
 On the contents view, you can **search**, **filter**, **sort** your pages and much more.
 
-![Dashboard - Contents view](https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631520508/frontmatter/dashboard.png)
+![Dashboard - Contents view](/releases/v7.1.0/dashboard-7.1.0.png)
 
 On the media view, you can quickly glance all the available media files in your project and perform quick actions like copying the relative path.
 
-![Dashboard - Media view](https://res.cloudinary.com/estruyf/image/upload/v1641373114/frontmatter/media-dashboard-5.9.0.png)
+![Dashboard - Media view](/releases/v7.1.0/dashboard-media.png)
 
 In order to start using the dashboard, you will have to let the extension know in which folder(s) it can find your pages. Be sure to follow our [getting started](/docs/getting-started) guide.
 
@@ -31,15 +31,22 @@ There are two commands to open the dashboard:
 
 - `frontMatter.dashboard` aka `Front matter: Open dashboard` - Opens the dashboard on the contents view.
 - `frontMatter.dashboard.media` aka `Front matter: Open media dashboard` - Opens the dashboard on the media view.
+- `frontMatter.dashboard.snippets` aka `Front matter: Open snippets dashboard` - Opens the dashboard on the snippets view.
 - `frontMatter.dashboard.data` aka `Front matter: Open data dashboard` - Opens the dashboard on the data view.
 
 ## Contents view
+
+### Card tags
+
+The tags underneath the content abstract/description is changable. By default, the card will show the value of the `tags` field, but you can update the field by specifying the value in the `frontMatter.dashboard.content.cardTags` setting.
+
+![Card tags](/releases/v7.1.0/card-tags.png)
 
 ### Draft status navigation
 
 By default, the contents view will show all your pages, and will you will be able to filter by **draft** and **published** pages.
 
-![Draft filters](/releases/v5.3.0/draft-status-original.png)
+![Draft filters](/releases/v7.1.0/draft-filters.png)
 
 If you want to use other statuses, you can do so by specifying your own draft field and value.
 
@@ -71,6 +78,20 @@ If you want, you can check on the `Open on startup?` checkbox. This setting will
 The media view has been created to make it easier to look at all media files available for your articles. When you click on an image, it will show a lightbox, so that it is easier to glance at small images.
 
 ![Dashboard - Media view - Lightbox](/releases/v5.9.0/media-lightbox.png)
+
+### Supported files
+
+By default, the media dashboard supports audio, image, and video files to be displayed and uploaded (drag&drop).
+
+If you want that the media dashboard supports additional file types, you can define these in the `frontMatter.media.supportedMimeTypes` setting.
+
+```json
+"frontMatter.media.supportedMimeTypes": [
+  "image/*",
+  "video/*",
+  "audio/*"
+]
+```
 
 ### Media actions
 
