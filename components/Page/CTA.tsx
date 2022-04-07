@@ -51,7 +51,7 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
               <img 
                 className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
                 // src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
-                src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649326739/frontmatter/7.1.0/panel-preview.png"}
+                src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649328023/frontmatter/7.1.0/Screenshot_2022-04-07_at_12.40.12_h9kqv0.png"}
                 alt={`Front Matter - Headless CMS - Live page preview`}
                 loading={`lazy`} />
             </Slide>
