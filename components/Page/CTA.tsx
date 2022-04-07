@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Extension } from '../../constants/extension';
 import { isProduction } from '../../helpers/isProduction';
+import { FrontMatterLines } from './FrontMatterLines';
 const Slide = require('react-reveal/Slide');
 
 export interface ICTAProps {}
@@ -13,6 +14,9 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
     <div className="px-4 sm:px-0 py-8 overflow-hidden lg:relative lg:py-48">
       <div className="mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
         <div className={`my-4 sm:my-5 lg:my-6`}>
+
+          <FrontMatterLines />
+
           <h1 className="text-6xl xl:text-7xl tracking-tight font-extrabold sm:leading-none">
             <span className="md:block text-transparent bg-clip-text bg-gradient-to-br from-teal-200 via-teal-800 to-teal-900">{Extension.name}</span>{' '}
             <span className={`text-5xl xl:text-6xl`}>
@@ -20,6 +24,8 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
               <span className={`sr-only`}>{strings(`cta_title_sr`)}</span>
             </span>
           </h1>
+
+          <FrontMatterLines />
 
           <h2 className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
             {strings(`cta_description`)}
@@ -44,7 +50,8 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
             <Slide right>
               <img 
                 className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
-                src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
+                // src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
+                src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649326739/frontmatter/7.1.0/panel-preview.png"}
                 alt={`Front Matter - Headless CMS - Live page preview`}
                 loading={`lazy`} />
             </Slide>
