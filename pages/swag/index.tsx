@@ -43,9 +43,7 @@ export default function Home({ }: any) {
             <h2 className={`mt-8 text-xl xl:text-2xl`}>Get them at <a href={`https://pimpyourowndevice.com/categories/frontmatter/`} title={`Get your Front Matter sticker`} className={`text-rose-600 hover:text-rose-800`} target="_blank" rel="noopener noreferrer">Front Matter Stickers @ PimpYourOwnDevice</a></h2>
 
             <div className={`text-center`}>
-              <h3 className={`mt-8 text-2xl`}>❤️ Thanks so much all of you for your support! ❤️</h3> 
-              <h3 className={`mt-2 text-2xl`}>To thank you, I wanted to share a discount code to get a free sticker.</h3>
-              <h3 className={`mt-2 text-2xl`}>Use the following code during the checkout: 🏷 <pre className={`text-teal-600 inline-block`}>FrontMatterSupporter</pre></h3>
+              <h3 className={`mt-8 text-2xl`}>❤️ Thanks so much all of you for your support! ❤️</h3>
             </div>
 
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
