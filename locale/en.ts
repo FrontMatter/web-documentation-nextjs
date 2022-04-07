@@ -46,8 +46,8 @@ export const strings = {
   feature_title_3: "Full site/page preview",
   feature_description_3: "Allow showing your site and page previews within Visual Studio Code without the need of opening a browser.",
 
-  feature_title_4: "Content/media dashboard",
-  feature_description_4: "One of the most powerful features is our dashboard, from where you get an overview of all your content and media files. We tightly integrate with our editor panel so that you can use it, for example, to insert media files into your articles.",
+  feature_title_4: "Content, media, snippets, and data dashboard",
+  feature_description_4: "Our dashboard helps you manage your content, media, snippets, and data files. You can easily filter by your content folders and perform quick actions. We tightly integrate with our editor panel so that you can use it, for example, to insert media files or snippets into your articles.",
 
   feature_title_5: "SEO Checks",
   feature_description_5: "Our search engine optimization checks allow you to write better articles. We show you more information about your title, description, content, keywords, and more.",

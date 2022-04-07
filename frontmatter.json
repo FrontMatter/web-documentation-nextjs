@@ -11,6 +11,7 @@
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
+      "previewPath": "'docs'",
       "fields": [
         {
           "title": "Title",
@@ -45,14 +46,14 @@
           "type": "boolean"
         },
         {
+          "title": "Weight",
+          "name": "weight",
+          "type": "number"
+        },
+        {
           "title": "Tags",
           "name": "tags",
           "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
         }
       ]
     }

@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-03-14T08:42:22.364Z
+lastmod: 2022-04-06T14:44:05.039Z
 weight: 200.2
 ---
 
@@ -302,6 +302,8 @@ The `tags` field allows you to create or use tags from your `frontMatter.taxonom
 ![Add a new tag](/assets/tag-creation.png)
 
 When the tag is created, you will be able to re-use it for other content.
+
+> **Info**: You can add multiple tags at once by entering them as **comma-separated** values and pressing the **ENTER** key.
 
 ### Properties
 
