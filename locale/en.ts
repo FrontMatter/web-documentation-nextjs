@@ -38,7 +38,7 @@ export const strings = {
 
   // Feature
   feature_title_1: "100% secure CMS",
-  feature_description_1: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API, so you do not have to be afraid of DDoS attacks. Write wherever you are, even when you are offline. Commit you changes when you are online.",
+  feature_description_1: "A Content Management System built to run within Visual Studio Code. You do not require an account or any dependencies on a website or API, so you do not have to be afraid of DDoS attacks. Write wherever you are, even when you are offline. Commit your changes when you are online.",
 
   feature_title_2: "Content Types",
   feature_description_2: "A Content Management System wouldn't be a CMS if you cannot define your type of content to use. Front Matter provides a default content mapping, but you can extend it or change it to your needs. It is your content, and Front Matter will change its behavior to your needs.",
