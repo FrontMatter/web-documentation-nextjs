@@ -25,7 +25,9 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           <a href={Extension.extensionLink} title={`Extension installs`} rel={`noopener noreferrer`}>
             <img src={`https://vsmarketplacebadge.apphb.com/installs-short/eliostruyf.vscode-front-matter.svg?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
           </a>
-
+        </div>
+        
+        <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" rel={`noopener noreferrer`}>
               <span className="sr-only">{item.name}</span>
