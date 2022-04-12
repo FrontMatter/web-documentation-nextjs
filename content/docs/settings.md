@@ -351,7 +351,7 @@ Specify the path you want to add after the host and before your slug. This can b
 - Type: `string`
 - Default: `""`
 
-> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you wan to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
+> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you want to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
 
 ### frontMatter.site.baseURL
 
