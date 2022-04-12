@@ -1,6 +1,18 @@
 # Change Log
 
-## [7.1.0] - 2022-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v7.1.0)
+## [7.1.2] - 2022-04-11
+
+### 🐞 Fixes
+
+- [#315](https://github.com/estruyf/vscode-front-matter/issues/315): Fix draft tab navigation
+
+## [7.1.1] - 2022-04-08
+
+### 🐞 Fixes
+
+- Fix in menu item with `stopPropagation` not defined.
+
+## [7.1.0] - 2022-04-07 - [Release notes](https://beta.frontmatter.codes/updates/v7.1.0)
 
 ### 🎨 Enhancements
  

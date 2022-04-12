@@ -3,6 +3,8 @@ import { HeartIcon, StarIcon, XIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
+import { VscTwitter } from "react-icons/vsc";
+import { SiVisualstudiocode } from "react-icons/si";
 
 export const navigation = {
   main: [
@@ -112,11 +114,19 @@ export const navigation = {
       )
     },
     { 
-      name: 'Review', 
-      title: 'Write a review on the marketplace', 
+      name: 'Visual Studio Marketplace', 
+      title: 'Checkout the extension on Visual Studio Marketplace', 
       href: Extension.reviewLink,
       icon: ({ className, ...rest}: any) => (
-        <StarIcon className={`${className} group-hover:fill-current`} {...rest} />
+        <SiVisualstudiocode className={`${className} group-hover:fill-current`} {...rest} />
+      )
+    },
+    { 
+      name: 'Twitter', 
+      title: 'Follow us on Twitter', 
+      href: `https://twitter.com/frontmattercms`,
+      icon: ({ className, ...rest}: any) => (
+        <VscTwitter className={`${className} group-hover:fill-current`} {...rest} />
       )
     }
   ]
