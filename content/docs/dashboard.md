@@ -201,7 +201,7 @@ In some cases, you might want to re-use a data type for files or folders. You ca
 First the data type, this is an object containing the `id` and `schema` properties.
 
 ```json
-"frontMatter.data.files": [
+"frontMatter.data.types": [
   {
     "id": "sponsors",
     "schema": {
