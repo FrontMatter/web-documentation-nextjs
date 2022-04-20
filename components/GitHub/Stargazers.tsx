@@ -23,7 +23,7 @@ export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: Rea
   }, [calling]);
 
   return (
-    <div className={`group flex items-center`} style={{height:"36px"}}>
+    <div className={`stargazers group flex items-center`} style={{height:"36px"}}>
       <Link href={Extension.stars}>
         <a className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`} title={`Give the project a star on GitHub`}>
           <GitHub className={`h-4 w-4 mr-1`} />
