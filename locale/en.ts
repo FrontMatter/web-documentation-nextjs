@@ -8,7 +8,7 @@ export const strings = {
   cta_description: "Front Matter is a CMS that runs within Visual Studio Code. It gives you the power and control of a full-blown CMS while also providing you the flexibility and speed of the static site generator of your choice. Jump right into editing and creating content with Front Matter and be able to preview it straight in VS Code.",
   cta_button_primary: "Get the extension",
   cta_button_beta_primary: "Get the BETA extension",
-  cta_button_secondary: "Read our docs",
+  cta_button_secondary: "Get started",
 
   // Generators
   generators_title: "A CMS that loves any static-site generator",

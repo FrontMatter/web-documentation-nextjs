@@ -36,7 +36,7 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
               <a href={isProduction() ? Extension.installLink : Extension.installBetaLink} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8" rel={`noopener noreferrer`}>
                 {isProduction() ? strings(`cta_button_primary`) : strings(`cta_button_beta_primary`)}
               </a>
-              <a href={`/docs`} title={`Read our documentation`} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70 sm:px-8">
+              <a href={`/docs/getting-started`} title={`Read our documentation`} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70 sm:px-8">
                 {strings(`cta_button_secondary`)}
               </a>
             </div>
