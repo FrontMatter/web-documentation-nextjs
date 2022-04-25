@@ -21,7 +21,7 @@ const fetch = require('node-fetch');
         const idUrl = production ? "https://frontmatter.codes/frontmatter.schema.json" : "https://beta.frontmatter.codes/frontmatter.schema.json";
 
         const schema = {
-            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$schema": "http://json-schema.org/draft-07/schema",
             "$id": idUrl,
             "description": "Defines the settings for Front Matter",
             "type": "object",
