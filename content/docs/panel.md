@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-04-06T14:56:37.361Z
+lastmod: 2022-05-02T17:17:25.953Z
 weight: 400
 ---
 
@@ -92,6 +92,16 @@ In the metadata section, you can manage the front matter of your Markdown file. 
 
 The tags and categories inputs allow you to insert known and unknown tags/categories. When an unknown tag/category gets added, it will show a `+` sign that allows you to add it to your configuration so that it will appear in the known tags/categories next time.
 
+### Content type actions
+
+When Front Matter notices a difference between your content and the content type defined, it will show you a list of actions.
+
+![Content type actions](/releases/7.2.0/content-type-actions.png)
+
+- **Create content type**: This will generate a new content type based on the fields in your front matter.
+- **Update missing fields**: Adds the fields that are missing in your content type.
+- **Set content type**: Allows you to set a content type (which you already defined) for your content.
+
 ### Settings
 
 - `frontMatter.panel.freeform`: Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: `true`.
@@ -129,18 +139,19 @@ You define a mode with an `id` and a set of features. The allowed features are t
 
 **Panel**
 
-- panel.globalSettings: Show the global settings section.
-- panel.seo: Show the SEO status section.
-- panel.actions: Show the actions section.
-- panel.metadata: Show the metadata section.
-- panel.recentlyModified: Show the recently modified files section.
-- panel.otherActions: Show the other actions section.
+- `panel.globalSettings`: Show the global settings section.
+- `panel.seo`: Show the SEO status section.
+- `panel.actions`: Show the actions section.
+- `panel.metadata`: Show the metadata section.
+- `panel.contentType`: Show the content type create, update, and set actions underneath the metadata panel section.
+- `panel.recentlyModified`: Show the recently modified files section.
+- `panel.otherActions`: Show the other actions section.
 
 **Dashboards**
 
-- dashboard.snippets.view
-- dashboard.snippets.manage
-- dashboard.data.view
+- `dashboard.snippets.view`: Show the snippets dashboard.
+- `dashboard.snippets.manage`: Show the snippets management actions.
+- `dashboard.data.view`: Show the data dashboard.
 
 Here is an example of a custom view mode:
 

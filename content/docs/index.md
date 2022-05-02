@@ -1,9 +1,11 @@
 ---
 title: Introduction
-slug: ''
-description: Create, edit, and preview your pages within Visual Studio Code. Front Matter allows you to keep control of your static site without any external tools.
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-08-30T16:13:01.763Z'
+slug: ""
+description: <p>Create, edit, and preview your pages within Visual Studio Code. Front
+  Matter allows you to keep control of your static site without any external
+  tools.</p>
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-05-02T17:13:47.033Z
 weight: 1
 ---
 
@@ -19,7 +21,7 @@ The extension brings CMS capabilities straight among Visual Studio Code. For exa
 
 Our main extension features are:
 
--Page dashboard in which you can get an overview of all of your markdown pages. You can use it to search, filter, type your contents.
+- Page dashboard in which you can get an overview of all of your markdown pages. You can use it to search, filter, type your contents.
 - Site preview within Visual Studio Code
 - SEO checks for title, description, and keywords
 - Support for custom actions/scripts
