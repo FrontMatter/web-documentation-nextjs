@@ -44,7 +44,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
             <Link href="/">
               <a title={Extension.name}>
                 <span className="sr-only">{Extension.name}</span>
-                <Logo className={`text-whisper-500 hover:text-teal-500 h-12 w-auto`} />
+                <Logo className={`text-whisper-500 hover:text-teal-500 h-16 w-auto`} />
               </a>
             </Link>
 

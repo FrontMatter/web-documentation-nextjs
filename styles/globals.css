@@ -181,3 +181,10 @@ html[data-theme=dark] {
 .DocSearch--active {
   overflow: auto !important;
 }
+
+/* create css media query */
+@media (max-width: 410px) {
+  .stargazers {
+    @apply mt-4;
+  }
+}

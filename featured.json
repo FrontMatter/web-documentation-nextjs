@@ -1,5 +1,16 @@
 [
   {
+    "title": "Release Radar · March 2022 Edition",
+    "link": "https://github.blog/2022-04-08-release-radar-mar-2022/",
+    "author": {
+      "name": "GitHub Blog",
+      "link": "https://github.blog"
+    },
+    "preview": "/featured/github-release-202203.jpg",
+    "type": "article",
+    "featured": true
+  },
+  {
     "title": "Front Matter #49 in the Top 100+ Developer Tools 2021",
     "link": "https://stackshare.io/posts/top-developer-tools-2021",
     "author": {

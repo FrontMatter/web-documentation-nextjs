@@ -1,6 +1,69 @@
 # Change Log
 
-## [7.0.0] - 2022-03-xx - [Release notes](https://beta.frontmatter.codes/updates/v7.0.0)
+## [7.2.0] - 2022-05-02 - [Release notes](https://beta.frontmatter.codes/updates/v7.2.0)
+
+### 🎨 Enhancements
+
+- New tag design for the tags, category, and taxonomy fields
+- [#263](https://github.com/estruyf/vscode-front-matter/issues/263): WYSIWYG string field option
+- [#308](https://github.com/estruyf/vscode-front-matter/issues/308): New `File` field
+- [#314](https://github.com/estruyf/vscode-front-matter/issues/314): New preview actions to open the page in the browser and refresh the preview
+- [#322](https://github.com/estruyf/vscode-front-matter/issues/322): Show parent folder name when file is an index page (`index.md` / `_index.md`)
+- [#323](https://github.com/estruyf/vscode-front-matter/issues/323): Added 11ty, jekyll, and docusaurus to the framework selection list
+- [#325](https://github.com/estruyf/vscode-front-matter/issues/325): Better welcome experience that allows you to add content folders straight from the welcome view
+- [#326](https://github.com/estruyf/vscode-front-matter/issues/326): Content type actions to create, update, or set according to the current file
+
+### ⚡️ Optimizations
+
+- [#316](https://github.com/estruyf/vscode-front-matter/issues/316): Suppress file parsing errors when closing the dashboard
+
+### 🐞 Fixes
+
+- Updated JSON schema link to supported version by VS Code (draft-07)
+- Hide the view mode action from the Front Matter panel if no custom modes are defined
+- Fix in decode base64 uploaded video files
+- Fix for a lightbox on other types of documents (pdf, etc.)
+- Fix for hiding the image preview on slide-over for none image documents
+- [#324](https://github.com/estruyf/vscode-front-matter/issues/324): Fix for the framework selection on the welcome screen
+
+## [7.1.2] - 2022-04-11
+
+### 🐞 Fixes
+
+- [#315](https://github.com/estruyf/vscode-front-matter/issues/315): Fix draft tab navigation
+
+## [7.1.1] - 2022-04-08
+
+### 🐞 Fixes
+
+- Fix in menu item with `stopPropagation` not defined.
+
+## [7.1.0] - 2022-04-07 - [Release notes](https://beta.frontmatter.codes/updates/v7.1.0)
+
+### 🎨 Enhancements
+ 
+- [#240](https://github.com/estruyf/vscode-front-matter/issues/240): Capability added to define display modes
+- [#246](https://github.com/estruyf/vscode-front-matter/issues/246): Support to add multiple tags/keywords/taxonomy via comma separated values
+- [#293](https://github.com/estruyf/vscode-front-matter/issues/293): Support added for setting preview images in block fields
+- [#294](https://github.com/estruyf/vscode-front-matter/issues/294): Full-text search allows you to search through all your page content
+- [#297](https://github.com/estruyf/vscode-front-matter/issues/297): SEO Keywords input got moved to the SEO section
+- [#301](https://github.com/estruyf/vscode-front-matter/issues/301): Show tags on the content cards
+- [#303](https://github.com/estruyf/vscode-front-matter/issues/303): Content card actions to quickly view, delete, or run custom scripts
+- [#310](https://github.com/estruyf/vscode-front-matter/issues/310): Supported mime types for media dashboard
+
+### ⚡️ Optimizations
+
+- [#296](https://github.com/estruyf/vscode-front-matter/issues/296): Loading optimization of the content dashboard
+
+### 🐞 Fixes
+
+- [#302](https://github.com/estruyf/vscode-front-matter/issues/302): Fix for spinner when navigating between tabs
+- [#304](https://github.com/estruyf/vscode-front-matter/issues/304): Fix yaml stringify which caused additional fields to be added
+- [#305](https://github.com/estruyf/vscode-front-matter/issues/305): Fix for overflow issue in taxonomy picker
+- [#306](https://github.com/estruyf/vscode-front-matter/issues/306): Fix for default value of content type fields
+- [#311](https://github.com/estruyf/vscode-front-matter/issues/311): Fix for updating snippets 
+
+## [7.0.0] - 2022-03-21 - [Release notes](https://beta.frontmatter.codes/updates/v7.0.0)
 
 ### ✨ New Features
 
@@ -21,6 +84,7 @@
 - [#283](https://github.com/estruyf/vscode-front-matter/issues/283): Added published date sorting options for the content dashboard
 - [#286](https://github.com/estruyf/vscode-front-matter/issues/286): Refresh button added for the content page
 - [#287](https://github.com/estruyf/vscode-front-matter/issues/287): Show folder name on `index.md` files for recently modified files
+- [#292](https://github.com/estruyf/vscode-front-matter/issues/292): Lower fuzzy search threshold for the content dashboard
 
 ### 🐞 Fixes
 

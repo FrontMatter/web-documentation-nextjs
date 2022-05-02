@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-03-07T10:06:37.081Z
+lastmod: 2022-04-06T14:24:45.093Z
 weight: 1100
 ---
 
@@ -214,6 +214,15 @@ Sample:
 
 > **Info**: Check the [create your own custom scripts](/docs/custom-actions) section for more information.
 
+### frontMatter.dashboard.content.cardTags
+
+Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card.
+
+- Type: `string` 
+- Default: `tags`
+
+> **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
+
 ### frontMatter.dashboard.mediaSnippet
 
 Specify the a snippet for your custom media insert markup.
@@ -276,6 +285,23 @@ Specify the ID of your static site generator or framework you are using for your
 - Type: `string`
 - Default: `""`
 
+### frontMatter.global.activeMode
+
+Specify the activated mode of Front Matter.
+
+- Type: `string, null`
+
+> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more information.
+
+### frontMatter.global.modes
+
+Specify the modes you want to use for Front Matter.
+
+- Type: `array` 
+- Default: ``
+
+> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more information.
+
 ### frontMatter.global.notifications
 
 Specifies which type of notifications you want to see or which you want to hide.
@@ -296,6 +322,13 @@ Options:
 - LastModifiedDesc
 - FileNameAsc
 - FileNameDesc
+
+### frontMatter.media.supportedMimeTypes
+
+Specify the mime types to support for the media files.
+
+- Type: `array` 
+- Default: `image/*, video/*, audio/*`
 
 ### frontMatter.panel.freeform
 
@@ -318,7 +351,7 @@ Specify the path you want to add after the host and before your slug. This can b
 - Type: `string`
 - Default: `""`
 
-> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you wan to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
+> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you want to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
 
 ### frontMatter.site.baseURL
 

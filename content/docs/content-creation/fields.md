@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-03-14T08:42:22.364Z
+lastmod: 2022-05-02T16:46:15.826Z
 weight: 200.2
 ---
 
@@ -18,6 +18,7 @@ Front Matter its metadata section supports the following fields:
 - `datetime`
 - `boolean`
 - `image`
+- `file`
 - `choice`
 - `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
 - `tags`: mapped to the tags defined in your settings.
@@ -45,6 +46,9 @@ The `string` field type is used to store a single-line or multiline of text. For
 ### Properties
 
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+- `wysiwyg (boolean)`: When you set this value to `true`, the field will be rendered as a WYSIWYG editor. The output of the WYSIWYG editor will be HTML.
+
+![WYSIWYG controls](/releases/7.2.0/wysiwyg-controls.png)
 
 ### Usage
 
@@ -295,6 +299,41 @@ preview: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
 
 
 
+
+## File
+
+The `file` field can be used to reference single or multiple files to your content.
+
+### Properties
+
+- `multiple (boolean)`: Define if you want to allow to select multiple files. By default this is `false`.
+- `fileExtensions (string array)`: Define the file extensions that are allowed to be selected. By default this is an empty array `[]`.
+
+### Usage
+
+```json
+{
+  "title": "Attachments",
+  "name": "attachments",
+  "type": "file",
+  "multiple": true,
+  "fileExtensions": ["pdf", "mp4", "wav"]
+}
+```
+
+### Outcome
+
+```markdown
+---
+attachments:
+- /uploads/file1.pdf
+- /uploads/file2.mp4
+---
+```
+
+
+
+
 ## Tags
 
 The `tags` field allows you to create or use tags from your `frontMatter.taxonomy.tags` setting (by default, none existing). When adding a tag which does not yet exist, you will have the option to create it. 
@@ -302,6 +341,8 @@ The `tags` field allows you to create or use tags from your `frontMatter.taxonom
 ![Add a new tag](/assets/tag-creation.png)
 
 When the tag is created, you will be able to re-use it for other content.
+
+> **Info**: You can add multiple tags at once by entering them as **comma-separated** values and pressing the **ENTER** key.
 
 ### Properties
 

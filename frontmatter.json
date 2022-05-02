@@ -11,6 +11,7 @@
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
+      "previewPath": "'docs'",
       "fields": [
         {
           "title": "Title",
@@ -20,7 +21,8 @@
         {
           "title": "Description",
           "name": "description",
-          "type": "string"
+          "type": "string",
+          "wysiwyg": true
         },
         {
           "title": "Publishing date",
@@ -45,14 +47,14 @@
           "type": "boolean"
         },
         {
+          "title": "Weight",
+          "name": "weight",
+          "type": "number"
+        },
+        {
           "title": "Tags",
           "name": "tags",
           "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
         }
       ]
     }

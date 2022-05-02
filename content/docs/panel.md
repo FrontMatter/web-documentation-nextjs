@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-03-07T10:07:23.933Z
+lastmod: 2022-05-02T17:17:25.953Z
 weight: 400
 ---
 
@@ -92,6 +92,16 @@ In the metadata section, you can manage the front matter of your Markdown file. 
 
 The tags and categories inputs allow you to insert known and unknown tags/categories. When an unknown tag/category gets added, it will show a `+` sign that allows you to add it to your configuration so that it will appear in the known tags/categories next time.
 
+### Content type actions
+
+When Front Matter notices a difference between your content and the content type defined, it will show you a list of actions.
+
+![Content type actions](/releases/7.2.0/content-type-actions.png)
+
+- **Create content type**: This will generate a new content type based on the fields in your front matter.
+- **Update missing fields**: Adds the fields that are missing in your content type.
+- **Set content type**: Allows you to set a content type (which you already defined) for your content.
+
 ### Settings
 
 - `frontMatter.panel.freeform`: Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: `true`.
@@ -115,3 +125,56 @@ This section provides a couple of other useful actions, like opening the current
 > **Info**: The `writing settings enabled / enable write settings` action allows you to make Markdown specific changes to optimize the writing of your articles. It will change settings like the `fontSize`, `lineHeight`, `wordWrap`, `lineNumbers` and more.
 
 > **Info**: The other actions section will also be shown when you have the panel open on other types of files.
+
+
+## View modes
+
+By default, Front Matter will show all its potential and functionalities to the end-user. As you do not always require all functionality, Front Matter allows you to create view modes. 
+
+You can define what functionality you want to show and use in a view mode.
+
+The creation of a view mode can be done in the `frontMatter.global.modes` setting and the by default activated mode, can be set in the `frontMatter.global.activeMode` setting.
+
+You define a mode with an `id` and a set of features. The allowed features are the following:
+
+**Panel**
+
+- `panel.globalSettings`: Show the global settings section.
+- `panel.seo`: Show the SEO status section.
+- `panel.actions`: Show the actions section.
+- `panel.metadata`: Show the metadata section.
+- `panel.contentType`: Show the content type create, update, and set actions underneath the metadata panel section.
+- `panel.recentlyModified`: Show the recently modified files section.
+- `panel.otherActions`: Show the other actions section.
+
+**Dashboards**
+
+- `dashboard.snippets.view`: Show the snippets dashboard.
+- `dashboard.snippets.manage`: Show the snippets management actions.
+- `dashboard.data.view`: Show the data dashboard.
+
+Here is an example of a custom view mode:
+
+```json
+"frontMatter.global.activeMode": "",
+"frontMatter.global.modes": [
+  {
+    "id": "minimal",
+    "features": [
+      "panel.metadata",
+      "panel.globalSettings",
+      "panel.seo",
+      "dashboard.data.view",
+      "dashboard.snippets.view"
+    ]
+  }
+]
+```
+
+Once you created a new view mode, you can change between the default and custom ones. You find the mode switch in the panel:
+
+![Switch view mode](/releases/v7.1.0/panel-mode-switch.png)
+
+Or in the status bar:
+
+![Status bar mode switch](/releases/v7.1.0/status-bar-mode-switch.png)

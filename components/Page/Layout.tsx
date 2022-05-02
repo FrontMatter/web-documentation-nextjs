@@ -11,7 +11,7 @@ export interface ILayoutProps {
 export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
 
   return (
-    <div className={`flex flex-col h-screen`}>
+    <div className={`flex flex-col h-full`}>
       <header className={`lg:sticky w-full lg:top-0 z-50 bg-vulcan-500 bg-opacity-80 backdrop-blur-lg`}>
         <Navigation navItems={navItems} />
       </header>
