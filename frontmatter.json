@@ -21,8 +21,7 @@
         {
           "title": "Description",
           "name": "description",
-          "type": "string",
-          "wysiwyg": true
+          "type": "string"
         },
         {
           "title": "Publishing date",
