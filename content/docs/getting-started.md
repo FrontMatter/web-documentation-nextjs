@@ -31,6 +31,8 @@ If you have the courage to test out the beta features, we made available a beta 
 
 > **Info**: The BETA docs can be found on [beta.frontmatter.codes](https://beta.frontmatter.codes).
 
+> **Important**: As there can only be one version running of the extension, you will need to uninstall the main version before installing the beta version.
+
 ## Welcome screen
 
 Once installed, Front Matter will open the **welcome screen** the first time Visual Studio Code gets reloaded.
