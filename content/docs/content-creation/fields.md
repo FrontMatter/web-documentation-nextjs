@@ -227,6 +227,8 @@ When using a custom draft status, the content dashboard will make use of it as w
 
 ![Draft filters](/releases/v5.3.0/draft-status.png)
 
+> **Important**: If you use Jekyll, you do not have to use the draft field, as Front Matter supports the `_drafts`, `_posts` folders and collections from Jekyll. If you use Jekyll, make sure to set the `frontMatter.framework.id` setting to `jekyll`.
+
 ### Example 1
 
 #### Usage
