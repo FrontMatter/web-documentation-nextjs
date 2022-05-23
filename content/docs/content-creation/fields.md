@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-05-02T16:46:15.826Z
+lastmod: 2022-05-23T17:28:57.704Z
 weight: 200.2
 ---
 
@@ -227,7 +227,9 @@ When using a custom draft status, the content dashboard will make use of it as w
 
 ![Draft filters](/releases/v5.3.0/draft-status.png)
 
-### Usage
+### Example 1
+
+#### Usage
 
 ```json
 {
@@ -236,6 +238,54 @@ When using a custom draft status, the content dashboard will make use of it as w
   "type": "draft"
 }
 ```
+
+#### Outcome
+
+Default draft field outcome:
+
+```markdown
+---
+draft: true
+---
+```
+
+### Example 2
+
+#### Usage
+
+In case you want to use a published field, instead of a draft field. You can invert the logic by setting the `invert` property to `true`:
+
+```json
+"frontMatter.content.draftField": {
+  "name": "draft",
+  "type": "boolean",
+  "invert": true
+}
+```
+
+The field is configured as follows:
+
+```json
+{
+  "title": "Published",
+  "name": "published",
+  "type": "draft"
+}
+```
+
+#### Outcome
+
+Default draft field outcome:
+
+```markdown
+---
+published: false
+---
+```
+
+### Example 3
+
+#### Usage
 
 If you want to use your own status values, you can define it by specifying these in the `frontMatter.content.draftField` setting:
 
@@ -247,15 +297,17 @@ If you want to use your own status values, you can define it by specifying these
 }
 ```
 
-### Outcome
+The field is configured as follows:
 
-Default draft field outcome:
-
-```markdown
----
-draft: true
----
+```json
+{
+  "title": "Draft",
+  "name": "draft",
+  "type": "draft"
+}
 ```
+
+#### Outcome
 
 When using your own status values:
 

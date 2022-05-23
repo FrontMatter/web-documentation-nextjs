@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-04-06T14:24:45.093Z
+lastmod: 2022-05-23T17:29:03.225Z
 weight: 1100
 ---
 
@@ -70,9 +70,10 @@ Options:
 Define the draft field you want to use to manage your content.
 
 - Type: `object` 
-  - name: Define the type of field
-  - type: `boolean` or `choice`
-  - choices: Define the choices of the draft field `string[]` 
+  - **name**: Define the type of field
+  - **type**: `boolean` or `choice`
+  - **invert**: `true` if you want to invert the value. This inversion is only applied if the field is a boolean field and can be used to change the draft to published content behaviou.
+  - **choices**: Define the choices of the draft field `string[]`
 
 - Default: 
 
