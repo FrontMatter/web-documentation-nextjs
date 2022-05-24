@@ -96,7 +96,7 @@ The tags and categories inputs allow you to insert known and unknown tags/catego
 
 When Front Matter notices a difference between your content and the content type defined, it will show you a list of actions.
 
-![Content type actions](/releases/7.2.0/content-type-actions.png)
+![Content type actions](/releases/v7.2.0/content-type-actions.png)
 
 - **Create content type**: This will generate a new content type based on the fields in your front matter.
 - **Update missing fields**: Adds the fields that are missing in your content type.

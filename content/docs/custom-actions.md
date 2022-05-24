@@ -2,8 +2,8 @@
 title: Custom actions
 slug: custom-actions
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-11-22T09:07:59.402Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-05-24T09:49:46.921Z
 weight: 500
 ---
 
@@ -23,12 +23,22 @@ Not every website is the same. That is why we want to give you the ability to ex
 
 The content and media custom actions can be defined by using the `frontMatter.custom.scripts` setting.
 
-The following properties will be used for all your custom actions:
+Custom actions can be configured with the following properties:
 
 - `title`: The title of the custom action
 - `script`: The path to the script to execute
-- `nodeBin`: The path to your node executable. In case of using `nvm` this might need to be defined. (default: `node` - optional).
+- `command`: The command to execute. Example: `node`, `path to your node executable`, `bash`, `python`, ... (default: `node` - optional).
 - `type`: The type for which the script will be used. Can be `content` or `mediaFile` or `mediaFolder`. (default: `content` - optional).
+- `bulk`: Run the script for one file or multiple files. .
+- `output`: Specifies the output type (default: `notification` - optional). Available values are:
+  - `notification`: The output will be passed as a notification.
+  - `editor`: The output will be passed to the editor.
+- `outputType`: Specifies the output type (default: `text` - optional). Available values the editor values from VS Code like:
+  - `text`: The output will be passed as a text file.
+  - `html`: The output will be passed as an HTML file.
+  - `markdown`: The output will be passed as an Markdown file.
+
+> **Important**: Previously, you could define the `nodeBin` property to define the path to your node executable. This path was needed when you are working with for instance `nvm` and have multiple versions of node installed. You can now use the `command` property instead.
 
 ## Creating a content script
 
@@ -61,16 +71,26 @@ In order to use this functionality, you will need to configure the `frontMatter.
   "frontMatter.custom.scripts": [{
     "title": "Generate social image",
     "script": "./scripts/social-img.js",
-    "nodeBin": "~/.nvm/versions/node/v14.15.5/bin/node"
+    "command": "~/.nvm/versions/node/v14.15.5/bin/node"
   }]
 }
 ```
 
-> **Important**: When the command execution would fail when it cannot find the node command. You are able to specify your path to the node app. Command execution might for instance fail when using `nvm`. You can use the `nodeBin` property to specify the path to your node executable. **This property is optional**.
+> **Important**: When the command execution would fail when it cannot find the node command. You are able to specify your path to the node app. Command execution might for instance fail when using `nvm`. You can use the `command` property to specify the path to your node executable (*this is optional*).
 
 Once a custom action has been configured, it will appear on the Front Matter panel. The output of the script will be passed as a notification in VS Code. This output allows you to copy the output, useful when you generate additional content.
 
 ![Custom action output](/assets/custom-action-output.png)
+
+### Updating the front matter
+
+By default, once a custom action executed, it will show the output in a notification. In case you want to update the front matter of your content, you need to provide the data in the following JSON format.
+
+```json
+{ "frontmatter": { "<field name>": "field value" }}
+```
+
+When data is passed in the above format, the Front Matter will parse the JSON and update the contents of you file accordingly.
 
 ## Bulk script execution
 
@@ -83,7 +103,7 @@ To enable bulk script execution, you need to configure the `frontMatter.custom.s
   "frontMatter.custom.scripts": [{
     "title": "Generate social image",
     "script": "./scripts/social-img.js",
-    "nodeBin": "~/.nvm/versions/node/v16.13.0/bin/node",
+    "command": "~/.nvm/versions/node/v16.13.0/bin/node",
     "bulk": true,
     "output": "editor"
   }]
@@ -106,13 +126,13 @@ Here is a sample on how you can define a media script:
     {
       "title": "Optimize media",
       "script": "./scripts/media.js",
-      "nodeBin": "~/.nvm/versions/node/v16.13.0/bin/node",
+      "command": "~/.nvm/versions/node/v16.13.0/bin/node",
       "type": "mediaFile"
     },
     {
       "title": "Optimize images",
       "script": "./scripts/media-all.js",
-      "nodeBin": "~/.nvm/versions/node/v16.13.0/bin/node",
+      "command": "~/.nvm/versions/node/v16.13.0/bin/node",
       "type": "mediaFolder"
     }
   ]
@@ -136,19 +156,27 @@ When you defined a media folder script, you will be able to execute it for all m
 
 ![Custom action for a media folder](/releases/v5.6.0/media-folder-custom-script.png)
 
-## Additional output configuration
-
-There are additional configuration options for script execution:
-
-- `output`: Specifies the output type. The default value is `notification`. The available values are:
-  - `notification`: The output will be passed as a notification.
-  - `editor`: The output will be passed to the editor.
-- `outputType`: Specifies the output type. The default value is `text`. The available values the editor values from VS Code like:
-  - `text`: The output will be passed as a text file.
-  - `html`: The output will be passed as an HTML file.
-  - `markdown`: The output will be passed as an Markdown file.
-
 ## Sample scripts
+
+### Bash starter
+
+```bash
+echo "workspaceArg: $1"
+echo "fileArg: $2"
+echo "frontMatterArg: $3"
+```
+
+### Python starter
+
+```python
+#!/usr/bin/python3
+
+import sys
+
+print(f'workspaceArg: {sys.argv[1]}')
+print(f'fileArg: {sys.argv[2]}')
+print(f'frontMatterArg: {sys.argv[3]}')
+```
 
 ### Optimize image (media file script)
 

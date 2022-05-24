@@ -27,8 +27,6 @@ By default, Front Matter supports: `md`, `markdown`, and `mdx`. If you want to s
 }
 ```
 
-## Configuration
-
 ### Hugo
 
 Check out our Hugo configuration documentation to get you started using Front Matter: [Front Matter configuration with Hugo](/docs/hugo-configuration).

@@ -37,7 +37,7 @@ If you have the courage to test out the beta features, we made available a beta 
 
 Once installed, Front Matter will open the **welcome screen** the first time Visual Studio Code gets reloaded.
 
-![Welcome screen to configure your website](/releases/7.2.0/welcome-screen-7.2.0.png)
+![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
 
 > **Important**: Front Matter supports light and dark mode. It will be automatically detected based on the theme you are using.
 
@@ -63,7 +63,7 @@ As Front Matter is created to support many (or all) static site generator, you w
 
 Registering a folder can be done from the list of folders Front Matter has found that already contains supported files.
 
-![Content folders](/releases/7.2.0/content-list.png)
+![Content folders](/releases/v7.2.0/content-list.png)
 
 If one of your folders is not shown, you can register it by right-clicking on a folder name in the explorer panel from Visual Studio Code and selecting **Front Matter: Register folder**.
 

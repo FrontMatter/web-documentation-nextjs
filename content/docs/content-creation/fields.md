@@ -48,7 +48,7 @@ The `string` field type is used to store a single-line or multiline of text. For
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
 - `wysiwyg (boolean)`: When you set this value to `true`, the field will be rendered as a WYSIWYG editor. The output of the WYSIWYG editor will be HTML.
 
-![WYSIWYG controls](/releases/7.2.0/wysiwyg-controls.png)
+![WYSIWYG controls](/releases/v7.2.0/wysiwyg-controls.png)
 
 ### Usage
 

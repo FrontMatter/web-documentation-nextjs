@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-23T17:29:03.225Z
+lastmod: 2022-05-24T07:09:30.132Z
 weight: 1100
 ---
 
@@ -223,18 +223,6 @@ Specify the name of the metadata field that will be used to show the tags on the
 - Default: `tags`
 
 > **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
-
-### frontMatter.dashboard.mediaSnippet
-
-Specify the a snippet for your custom media insert markup.
-
-```json
-"frontMatter.dashboard.mediaSnippet": [
-  "{{< caption \"{mediaUrl}\" \"Description\" >}}"
-]
-```
-
-> **Important**: Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information. Check [placeholders](/docs/markdown#placeholders) for more information.
 
 ### frontMatter.dashboard.openOnStart
 
@@ -528,6 +516,13 @@ Specify if you want to disable the telemetry.
 - Type: `boolean`
 - Default: `false`
 
+### frontMatter.templates.enabled
+
+Specify if you want to use templates functionality.
+
+- Type: `boolean`
+- Default: `false`
+
 ### frontMatter.templates.folder
 
 Specify the folder to use for your article templates.
@@ -564,6 +559,12 @@ This setting is used to define the modified date field of your articles.
 - Default: `lastmod`
 
 > **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
+
+### frontMatter.dashboard.mediaSnippet
+
+This setting is deprecated in version 7.3.0 and and will be removed in the next major version. Please define your media snippet in the `frontMatter.content.snippet` setting.
+
+
 
 ## Removed settings
 
