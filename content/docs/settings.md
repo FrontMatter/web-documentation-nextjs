@@ -570,4 +570,4 @@ This setting is deprecated in version 7.3.0 and and will be removed in the next 
 
 ### frontMatter.content.folders
 
-This setting has been deprecated since version `3.1.0` in favor of the newly introduced `frontMatter.content.pageFolders` setting.
+This setting has been deprecated since version `3.1.0` in favour of the newly introduced `frontMatter.content.pageFolders` setting.

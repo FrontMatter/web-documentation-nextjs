@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-05-23T17:28:57.704Z
+lastmod: 2022-05-25T07:48:46.845Z
 weight: 200.2
 ---
 
@@ -26,6 +26,7 @@ Front Matter its metadata section supports the following fields:
 - `taxonomy`: if you want to define your own custom taxonomy fields.
 - `fields`: allows you to define another object and its fields.
 - `block`: allows you to define a group of fields which can be used to create an list of data.
+- `dataFile`: allows you to use a data file reference to create a choice field
 
 ### Standard field properties
 
@@ -259,7 +260,7 @@ In case you want to use a published field, instead of a draft field. You can inv
 
 ```json
 "frontMatter.content.draftField": {
-  "name": "draft",
+  "name": "published",
   "type": "boolean",
   "invert": true
 }
@@ -635,5 +636,84 @@ authors:
   - name: Elio Struyf
     social: https://twitter.com/eliostruyf
     fieldGroup: author
+---
+```
+
+
+
+## Data file
+
+The `dataFile` field type allows you to use a data file to populate the field with a list of options. For instance, if you have a data file with all the authors of your site, you can use the `dataFile` field type to populate the `authors` field with the data from the authors data file.
+
+![dataFile field](/releases/v7.3.0/datafile-field.png)
+
+### Prerequisites
+
+To use the `dataFile` field type, you need to have a definition for a data file in place. Here is an example of the authors sample:
+
+```json
+{
+  "frontMatter.data.files": [{
+    "id": "authors",
+    "schema": {
+      "title": "Author",
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "slug": {
+          "title": "slug",
+          "type": "string"
+        },
+        "name": {
+          "title": "name",
+          "type": "string"
+        },
+        "url": {
+          "title": "url",
+          "type": "string"
+        }
+      }
+    }
+  }]
+}
+```
+
+### Properties
+
+- `dataFileId`: Specify the ID of the data file to use for this field (required).
+- `dataFileKey`: Specify the key of the data file to use for this field (required).
+- `dataFileValue`: Specify the property name that will be used to show the value for the field (optional).
+- `multiple`: Specify if you want to select one or multiple records (optional).
+
+### Usage
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "page",
+    "fields": [
+      {
+        "title": "Author",
+        "name": "author",
+        "type": "dataFile",
+        "dataFileId": "authors",
+        "dataFileKey": "slug",
+        "dataFileValue": "name",
+        "multiple": true
+      },
+      ...
+  }
+]
+```
+
+### Outcome
+
+```markdown
+---
+author:
+  - dorothy-parker
 ---
 ```
