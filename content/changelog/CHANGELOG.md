@@ -1,13 +1,38 @@
 # Change Log
 
-## [7.2.0] - 2022-04-xx
+## [7.3.x] - 2022-05-xx
 
 ### 🎨 Enhancements
 
+- JSON schema enhancements for working with data files
+- [#330](https://github.com/estruyf/vscode-front-matter/issues/330): Allow custom scripts to easily update front matter
+- [#331](https://github.com/estruyf/vscode-front-matter/issues/331): Added functionality to run other type of scripts
+- [#332](https://github.com/estruyf/vscode-front-matter/issues/332): New `dataFile` field which allows you to create data file references
+- [#333](https://github.com/estruyf/vscode-front-matter/issues/333): Automatically mark Jekyll posts in `_drafts` folder as draft
+- [#335](https://github.com/estruyf/vscode-front-matter/issues/335): Merge media snippets with content snippets to allow you to define multiple media snippets and use these in your content
+- [#336](https://github.com/estruyf/vscode-front-matter/issues/336): Support added for inverting the draft field so that SSGs/authors can use a published field instead
+- [#337](https://github.com/estruyf/vscode-front-matter/issues/337): Allow multiple front matter types to be used
+- [#338](https://github.com/estruyf/vscode-front-matter/issues/338): Ability to disable the templates functionality (default is disabled)
+- [#340](https://github.com/estruyf/vscode-front-matter/issues/340): Show an error message when there is a content folder registered that does not exist in the project
+
+### 🐞 Fixes
+
+- [#334](https://github.com/estruyf/vscode-front-matter/issues/334): Fix for locked content folders retrieval
+- [#339](https://github.com/estruyf/vscode-front-matter/issues/339): Fix for content folders without a title
+
+
+## [7.2.0] - 2022-05-02 - [Release notes](https://beta.frontmatter.codes/updates/v7.2.0)
+
+### 🎨 Enhancements
+
+- New tag design for the tags, category, and taxonomy fields
 - [#263](https://github.com/estruyf/vscode-front-matter/issues/263): WYSIWYG string field option
 - [#308](https://github.com/estruyf/vscode-front-matter/issues/308): New `File` field
 - [#314](https://github.com/estruyf/vscode-front-matter/issues/314): New preview actions to open the page in the browser and refresh the preview
 - [#322](https://github.com/estruyf/vscode-front-matter/issues/322): Show parent folder name when file is an index page (`index.md` / `_index.md`)
+- [#323](https://github.com/estruyf/vscode-front-matter/issues/323): Added 11ty, jekyll, and docusaurus to the framework selection list
+- [#325](https://github.com/estruyf/vscode-front-matter/issues/325): Better welcome experience that allows you to add content folders straight from the welcome view
+- [#326](https://github.com/estruyf/vscode-front-matter/issues/326): Content type actions to create, update, or set according to the current file
 
 ### ⚡️ Optimizations
 
@@ -15,10 +40,12 @@
 
 ### 🐞 Fixes
 
+- Updated JSON schema link to supported version by VS Code (draft-07)
 - Hide the view mode action from the Front Matter panel if no custom modes are defined
 - Fix in decode base64 uploaded video files
 - Fix for a lightbox on other types of documents (pdf, etc.)
 - Fix for hiding the image preview on slide-over for none image documents
+- [#324](https://github.com/estruyf/vscode-front-matter/issues/324): Fix for the framework selection on the welcome screen
 
 ## [7.1.2] - 2022-04-11
 

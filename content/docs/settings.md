@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-04-06T14:24:45.093Z
+lastmod: 2022-05-24T07:09:30.132Z
 weight: 1100
 ---
 
@@ -70,9 +70,10 @@ Options:
 Define the draft field you want to use to manage your content.
 
 - Type: `object` 
-  - name: Define the type of field
-  - type: `boolean` or `choice`
-  - choices: Define the choices of the draft field `string[]` 
+  - **name**: Define the type of field
+  - **type**: `boolean` or `choice`
+  - **invert**: `true` if you want to invert the value. This inversion is only applied if the field is a boolean field and can be used to change the draft to published content behaviou.
+  - **choices**: Define the choices of the draft field `string[]`
 
 - Default: 
 
@@ -222,18 +223,6 @@ Specify the name of the metadata field that will be used to show the tags on the
 - Default: `tags`
 
 > **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
-
-### frontMatter.dashboard.mediaSnippet
-
-Specify the a snippet for your custom media insert markup.
-
-```json
-"frontMatter.dashboard.mediaSnippet": [
-  "{{< caption \"{mediaUrl}\" \"Description\" >}}"
-]
-```
-
-> **Important**: Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information. Check [placeholders](/docs/markdown#placeholders) for more information.
 
 ### frontMatter.dashboard.openOnStart
 
@@ -527,6 +516,13 @@ Specify if you want to disable the telemetry.
 - Type: `boolean`
 - Default: `false`
 
+### frontMatter.templates.enabled
+
+Specify if you want to use templates functionality.
+
+- Type: `boolean`
+- Default: `false`
+
 ### frontMatter.templates.folder
 
 Specify the folder to use for your article templates.
@@ -564,8 +560,14 @@ This setting is used to define the modified date field of your articles.
 
 > **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
 
+### frontMatter.dashboard.mediaSnippet
+
+This setting is deprecated in version 7.3.0 and and will be removed in the next major version. Please define your media snippet in the `frontMatter.content.snippet` setting.
+
+
+
 ## Removed settings
 
 ### frontMatter.content.folders
 
-This setting has been deprecated since version `3.1.0` in favor of the newly introduced `frontMatter.content.pageFolders` setting.
+This setting has been deprecated since version `3.1.0` in favour of the newly introduced `frontMatter.content.pageFolders` setting.

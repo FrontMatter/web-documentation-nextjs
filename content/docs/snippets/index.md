@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2022-03-04T14:40:11.495Z
+lastmod: 2022-05-24T07:09:24.733Z
 weight: 850
 ---
 
@@ -44,7 +44,7 @@ The snippet definition contains the following fields:
 - `body`: The snippet body, each string defined in the array is a new line;
 - `fields`: The snippet fields;
 - `openingTags`: The opening tags for the snippet (optional);
-- `closingTags`: The closing tags for the snippet (optional).
+- `isMediaSnippet`: Specify if the snippet is to be used for media files (optional).
 
 ## Placeholders
 
@@ -136,3 +136,38 @@ The following steps generate the following outcome in the content (based on the 
   Selected text from content
 {{< / highlight >}}
 ```
+
+## Media snippets
+
+Media snippets are intended to be used when you want to insert a media file in your content. Media snippets are defined in the `frontMatter.content.snippets` setting, with the `isMediaSnippet` property set to `true`.
+
+```json
+"frontMatter.content.snippets": {
+  "Image snippet": {
+    "description": "Image with caption",
+    "body": "{{< caption \"[[&mediaUrl]]\" \"[[caption]]\" >}}",
+    "isMediaSnippet": true
+  }
+}
+```
+
+> **Info**: Instead of using the snippets its `fields` property, like in your content snippets, you can make use of placeholders that are automatically passed to your media snippet when inserting it.
+
+Media snippets will appear on your snippets dashboard, but can only be edited or deleted. You cannot insert media snippets into your content like you can with content snippets. Instead, you will find them on the media cards.
+
+![Media snippet](/releases/v7.3.0/media-snippets.png)
+
+### Placeholders
+
+The available placeholders for your media snippets are the following:
+
+- `{mediaUrl}`: Use this to insert the relative path to the media file.
+- `{mediaHeight}`: Provides the height (dimension) of the media file.
+- `{mediaWidth}`: Provides the width (dimension) of the media file.
+- `{caption}`: Use this placeholder where you want to insert the caption.
+- `{alt}`: Use this placeholder where you want to insert the alt attribute value.
+- `{filename}`: Name of the file.
+- `{title}`: Title of the file.
+
+> **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
+

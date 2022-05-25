@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-04-06T14:44:05.039Z
+lastmod: 2022-05-25T07:48:46.845Z
 weight: 200.2
 ---
 
@@ -18,6 +18,7 @@ Front Matter its metadata section supports the following fields:
 - `datetime`
 - `boolean`
 - `image`
+- `file`
 - `choice`
 - `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
 - `tags`: mapped to the tags defined in your settings.
@@ -25,6 +26,7 @@ Front Matter its metadata section supports the following fields:
 - `taxonomy`: if you want to define your own custom taxonomy fields.
 - `fields`: allows you to define another object and its fields.
 - `block`: allows you to define a group of fields which can be used to create an list of data.
+- `dataFile`: allows you to use a data file reference to create a choice field
 
 ### Standard field properties
 
@@ -45,6 +47,9 @@ The `string` field type is used to store a single-line or multiline of text. For
 ### Properties
 
 - `single (boolean)`: When you picked the `string` field type, you can specify if it is a single line. By default it will render as a multiline field (optional).
+- `wysiwyg (boolean)`: When you set this value to `true`, the field will be rendered as a WYSIWYG editor. The output of the WYSIWYG editor will be HTML.
+
+![WYSIWYG controls](/releases/v7.2.0/wysiwyg-controls.png)
 
 ### Usage
 
@@ -223,7 +228,11 @@ When using a custom draft status, the content dashboard will make use of it as w
 
 ![Draft filters](/releases/v5.3.0/draft-status.png)
 
-### Usage
+> **Important**: If you use Jekyll, you do not have to use the draft field, as Front Matter supports the `_drafts`, `_posts` folders and collections from Jekyll. If you use Jekyll, make sure to set the `frontMatter.framework.id` setting to `jekyll`.
+
+### Example 1
+
+#### Usage
 
 ```json
 {
@@ -232,6 +241,54 @@ When using a custom draft status, the content dashboard will make use of it as w
   "type": "draft"
 }
 ```
+
+#### Outcome
+
+Default draft field outcome:
+
+```markdown
+---
+draft: true
+---
+```
+
+### Example 2
+
+#### Usage
+
+In case you want to use a published field, instead of a draft field. You can invert the logic by setting the `invert` property to `true`:
+
+```json
+"frontMatter.content.draftField": {
+  "name": "published",
+  "type": "boolean",
+  "invert": true
+}
+```
+
+The field is configured as follows:
+
+```json
+{
+  "title": "Published",
+  "name": "published",
+  "type": "draft"
+}
+```
+
+#### Outcome
+
+Default draft field outcome:
+
+```markdown
+---
+published: false
+---
+```
+
+### Example 3
+
+#### Usage
 
 If you want to use your own status values, you can define it by specifying these in the `frontMatter.content.draftField` setting:
 
@@ -243,15 +300,17 @@ If you want to use your own status values, you can define it by specifying these
 }
 ```
 
-### Outcome
+The field is configured as follows:
 
-Default draft field outcome:
-
-```markdown
----
-draft: true
----
+```json
+{
+  "title": "Draft",
+  "name": "draft",
+  "type": "draft"
+}
 ```
+
+#### Outcome
 
 When using your own status values:
 
@@ -292,6 +351,41 @@ The `image` field can be used to reference single or multiple images to your con
 preview: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
 ---
 ```
+
+
+
+
+## File
+
+The `file` field can be used to reference single or multiple files to your content.
+
+### Properties
+
+- `multiple (boolean)`: Define if you want to allow to select multiple files. By default this is `false`.
+- `fileExtensions (string array)`: Define the file extensions that are allowed to be selected. By default this is an empty array `[]`.
+
+### Usage
+
+```json
+{
+  "title": "Attachments",
+  "name": "attachments",
+  "type": "file",
+  "multiple": true,
+  "fileExtensions": ["pdf", "mp4", "wav"]
+}
+```
+
+### Outcome
+
+```markdown
+---
+attachments:
+- /uploads/file1.pdf
+- /uploads/file2.mp4
+---
+```
+
 
 
 
@@ -542,5 +636,84 @@ authors:
   - name: Elio Struyf
     social: https://twitter.com/eliostruyf
     fieldGroup: author
+---
+```
+
+
+
+## Data file
+
+The `dataFile` field type allows you to use a data file to populate the field with a list of options. For instance, if you have a data file with all the authors of your site, you can use the `dataFile` field type to populate the `authors` field with the data from the authors data file.
+
+![dataFile field](/releases/v7.3.0/datafile-field.png)
+
+### Prerequisites
+
+To use the `dataFile` field type, you need to have a definition for a data file in place. Here is an example of the authors sample:
+
+```json
+{
+  "frontMatter.data.files": [{
+    "id": "authors",
+    "schema": {
+      "title": "Author",
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "slug": {
+          "title": "slug",
+          "type": "string"
+        },
+        "name": {
+          "title": "name",
+          "type": "string"
+        },
+        "url": {
+          "title": "url",
+          "type": "string"
+        }
+      }
+    }
+  }]
+}
+```
+
+### Properties
+
+- `dataFileId`: Specify the ID of the data file to use for this field (required).
+- `dataFileKey`: Specify the key of the data file to use for this field (required).
+- `dataFileValue`: Specify the property name that will be used to show the value for the field (optional).
+- `multiple`: Specify if you want to select one or multiple records (optional).
+
+### Usage
+
+```json
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "page",
+    "fields": [
+      {
+        "title": "Author",
+        "name": "author",
+        "type": "dataFile",
+        "dataFileId": "authors",
+        "dataFileKey": "slug",
+        "dataFileValue": "name",
+        "multiple": true
+      },
+      ...
+  }
+]
+```
+
+### Outcome
+
+```markdown
+---
+author:
+  - dorothy-parker
 ---
 ```

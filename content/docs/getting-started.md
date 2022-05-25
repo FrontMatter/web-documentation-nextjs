@@ -2,8 +2,8 @@
 title: Getting started
 slug: getting-started
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2022-01-21T15:21:11.716Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2022-05-02T16:49:38.065Z
 weight: 100
 ---
 
@@ -31,15 +31,15 @@ If you have the courage to test out the beta features, we made available a beta 
 
 > **Info**: The BETA docs can be found on [beta.frontmatter.codes](https://beta.frontmatter.codes).
 
+> **Important**: As there can only be one version running of the extension, you will need to uninstall the main version before installing the beta version.
+
 ## Welcome screen
 
 Once installed, Front Matter will open the **welcome screen** the first time Visual Studio Code gets reloaded.
 
-![Welcome screen](/releases/v5.2.0/welcome-screen.png)
+![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
 
-It also supports light themes:
-
-![Welcome screen](/assets/welcome-light.png)
+> **Important**: Front Matter supports light and dark mode. It will be automatically detected based on the theme you are using.
 
 > **Info**: The welcome screen will also be shown when Front Matter is not yet fully configured.
 
@@ -59,9 +59,13 @@ In this step, you will need to configure the site-generator or framework you use
 
 ### Step 3: Register content folder(s)
 
-As Front Matter is **not** created to only support one static site generator, you will be able to specify where your Markdown content lives. From the moment you register a folder, it will be used on the dashboard to show an overview of all files.
+As Front Matter is created to support many (or all) static site generator, you will need to specify where your Markdown/content lives. From the moment you register a folder, it will be used on the dashboard to show an overview of all files.
 
-You can register a folder by right-clicking on a folder name in the explorer panel from Visual Studio Code and selecting **Front Matter: Register folder**.
+Registering a folder can be done from the list of folders Front Matter has found that already contains supported files.
+
+![Content folders](/releases/v7.2.0/content-list.png)
+
+If one of your folders is not shown, you can register it by right-clicking on a folder name in the explorer panel from Visual Studio Code and selecting **Front Matter: Register folder**.
 
 ![Register a folder](/assets/register-folder.png)
 
