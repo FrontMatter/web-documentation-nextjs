@@ -3,7 +3,7 @@ title: Dashboard
 slug: dashboard
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-04-06T14:38:17.759Z
+lastmod: 2022-05-26T16:43:39.784Z
 weight: 300
 ---
 
@@ -235,8 +235,9 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 ```json
 "frontMatter.data.files": [
   {
+    "title": "All sponsors",
     "id": "all-sponsors",
-    "path": "[[workspace]]/data/sponsors",
+    "file": "[[workspace]]/data/sponsors",
     "labelField": "name",
     "type": "sponsors"
   }
