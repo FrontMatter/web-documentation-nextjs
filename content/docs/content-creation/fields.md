@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-05-25T07:48:46.845Z
+lastmod: 2022-05-26T16:48:51.327Z
 weight: 200.2
 ---
 
@@ -581,7 +581,6 @@ To work with the `block` field type, you need to define a field group (a set of 
 "frontMatter.taxonomy.fieldGroups": [
   {
     "id": "author",
-    "labelField": "name",
     "fields": [
       {
         "title": "Author Name",
