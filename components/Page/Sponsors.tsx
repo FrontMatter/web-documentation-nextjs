@@ -46,7 +46,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
                     rel={`noopener noreferrer`} 
                     href={sponsor.url} 
                     title={`Thanks ${sponsor.name}!`}>
-                    <img className="h-12 rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                    <img className="h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
                   </a>
                 ))
               }

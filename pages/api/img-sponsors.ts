@@ -48,6 +48,7 @@ const generateImage = async (sponsors: typeof mockData["data"]["viewer"]["sponso
   <circle cx="32" cy="32" fill="url('#fill${i}')" r="32" stroke="#c0c0c0" stroke-width="1"/>
   <defs>
     <pattern height="64" id="fill${i}" patternUnits="userSpaceOnUse" width="64" x="0" y="0">
+      <circle cx="32" cy="32" r="32" fill="white" />
       <image href="data:${image.headers.get('content-type')};base64,${(imageData).toString('base64')}" height="64" width="64"/>
     </pattern>
   </defs>
