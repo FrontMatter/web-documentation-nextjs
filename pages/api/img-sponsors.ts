@@ -27,12 +27,11 @@ const mockData = {
   }
 }
 
-const generateImage = async (data: typeof mockData) => {
-  if (!data) {
+const generateImage = async (sponsors: typeof mockData["data"]["viewer"]["sponsors"]["edges"][0]["node"][]) => {
+  if (!sponsors) {
     return null;
   }
 
-  const sponsors = data.data.viewer.sponsors.edges.map(edge => edge.node);
   const images: string[] = [];
 
   let x = 0;
@@ -65,10 +64,10 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.setHeader('Content-Type', 'image/svg+xml');
 
-  if (!process.env.GITHUB_AUTH) {
-    const image = await generateImage(mockData);
-    return res.status(200).send(image);
-  }
+  // if (!process.env.GITHUB_AUTH) {
+  //   const image = await generateImage(mockData);
+  //   return res.status(200).send(image);
+  // }
 
   const response = await fetch(`https://api.github.com/graphql`, {
     method: 'POST',
@@ -104,9 +103,26 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   });
 
+  let sponsors = [];
+
   if (response && response.ok) {
     const data = await response.json();
-    const image = await generateImage(data);
+    sponsors = data.data.viewer.sponsors.edges.map((edge: any) => edge.node);
+  }
+
+  const ocResponse = await fetch(`https://opencollective.com/frontmatter/members.json`);
+  if (ocResponse && ocResponse.ok) {
+    const data = await ocResponse.json();
+    sponsors = [...sponsors, ...data.filter((s: any) => s.role === "BACKER" && s.isActive).map((s: any) => ({
+      id: s.MemberId,
+      name: s.name,
+      url: s.website,
+      avatarUrl: s.image
+    }))]
+  }
+
+  if (sponsors && sponsors.length > 0) {
+    const image = await generateImage(sponsors);
     return res.status(200).send(image);
   }
 
