@@ -67,9 +67,32 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   });
 
+
+
+  // id: string;
+  // name: string;
+  // url: string;
+  // avatarUrl: string;
+  let sponsors = [];
+
   if (response && response.ok) {
     const data = await response.json();
-    return res.status(200).json(data);
+    sponsors = data.data.viewer.sponsors.edges.map((edge: any) => edge.node);
+  }
+
+  const ocResponse = await fetch(`https://opencollective.com/frontmatter/members.json`);
+  if (ocResponse && ocResponse.ok) {
+    const data = await ocResponse.json();
+    sponsors = [...sponsors, ...data.filter((s: any) => s.role === "BACKER" && s.isActive).map((s: any) => ({
+      id: s.MemberId,
+      name: s.name,
+      url: s.website,
+      avatarUrl: s.image
+    }))]
+  }
+
+  if (sponsors && sponsors.length > 0) {
+    return res.status(200).json(sponsors);
   }
 
   res.status(200).json(null);
