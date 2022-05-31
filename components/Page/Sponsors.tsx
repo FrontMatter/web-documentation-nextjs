@@ -19,8 +19,8 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
         return;
       }
 
-      const data: SponsorData = await response.json();
-      const sponsors = data.data.viewer.sponsors.edges.map(edge => edge.node);
+      const sponsors: SponsorData = await response.json();
+      // const sponsors = data.data.viewer.sponsors.edges.map(edge => edge.node);
 
       setIndividuals(sponsors);
     };
