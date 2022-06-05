@@ -10,6 +10,9 @@ export const strings = {
   cta_button_secondary: "Install the extension",
   cta_button_beta_secondary: "Install the BETA extension",
 
+  cta_button_bottom_primary: "Install Front Matter",
+  cta_button_bottom_secondary: "Learn more",
+
   // Generators
   generators_title: "A CMS that loves any static-site generator",
   generators_more: "and many more...",

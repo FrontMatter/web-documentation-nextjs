@@ -2,6 +2,7 @@ import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Navigation } from '../Navigation';
 import { Footer } from './Footer';
+import { GetStarted } from './GetStarted';
 import { Sponsors } from './Sponsors';
 
 export interface ILayoutProps {
@@ -19,6 +20,8 @@ export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, childre
       <main className={`flex-grow`}>
         {children}
       </main>
+      
+      <GetStarted />
 
       <Sponsors />
 

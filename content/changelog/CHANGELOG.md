@@ -1,5 +1,24 @@
 # Change Log
 
+## [7.4.0] - 2022-06-xx
+
+### 🎨 Enhancements
+
+- [#307](https://github.com/estruyf/vscode-front-matter/issues/307): New `list` field which allows to create a list of items
+- [#345](https://github.com/estruyf/vscode-front-matter/issues/345): Media dashboard UI improvements to visualize the content and public folders
+- [#349](https://github.com/estruyf/vscode-front-matter/issues/349): New `slug` field which allows you to manage the slug of your post from the Front Matter panel
+
+### 🐞 Fixes
+
+- [#348](https://github.com/estruyf/vscode-front-matter/issues/348): Fix media dashboard breadcrumb when multiple page folders are in use
+
+## [7.3.2] - 2022-06-01
+
+### 🐞 Fixes
+
+- [#346](https://github.com/estruyf/vscode-front-matter/issues/346): Fix media dashboard refresh action
+
+
 ## [7.3.1] - 2022-05-26
 
 ### 🐞 Fixes
