@@ -1,16 +1,42 @@
 # Change Log
 
-## [7.4.0] - 2022-06-xx
+## [8.0.0] - 2022-06-xx
+
+### ✨ New Features
+
+- [#291](https://github.com/estruyf/vscode-front-matter/issues/291): New taxonomy dashboard for managing tags, categories, and custom taxonomies
 
 ### 🎨 Enhancements
 
+- Ignore the SEO `keywords` field for missing content type field
 - [#307](https://github.com/estruyf/vscode-front-matter/issues/307): New `list` field which allows to create a list of items
 - [#345](https://github.com/estruyf/vscode-front-matter/issues/345): Media dashboard UI improvements to visualize the content and public folders
 - [#349](https://github.com/estruyf/vscode-front-matter/issues/349): New `slug` field which allows you to manage the slug of your post from the Front Matter panel
+- [#350](https://github.com/estruyf/vscode-front-matter/issues/350): New `previewPath` property for the `frontMatter.content.pageFolders` setting. This allows you to specify a section prefix for all content created in that directory.
+- [#351](https://github.com/estruyf/vscode-front-matter/issues/351): New `template` property for content types which allows you to combine templates and content types for content creation
+- [#353](https://github.com/estruyf/vscode-front-matter/issues/353): Add the default content type on project initialization
+- [#366](https://github.com/estruyf/vscode-front-matter/issues/366): Better support for using block fields in another block field
 
 ### 🐞 Fixes
 
 - [#348](https://github.com/estruyf/vscode-front-matter/issues/348): Fix media dashboard breadcrumb when multiple page folders are in use
+- [#356](https://github.com/estruyf/vscode-front-matter/issues/356): Re-introduce the `labelField` to the `frontMatter.taxonomy.fieldGroups` setting
+- [#358](https://github.com/estruyf/vscode-front-matter/issues/358): Fix for relative path of the public folder
+- [#364](https://github.com/estruyf/vscode-front-matter/issues/364): Honour file ending rules in data files
+- [#365](https://github.com/estruyf/vscode-front-matter/issues/365): Show spinner on the initial load of the content dashboard
+
+## [7.3.4] - 2022-06-13
+
+### 🐞 Fixes
+
+- [#354](https://github.com/estruyf/vscode-front-matter/issues/354): Fix Windows file path parsing for inserting media files
+
+## [7.3.3] - 2022-06-11
+
+### 🐞 Fixes
+
+- Card render when taxonomy is not an array value
+- Double pages on contents dashboard
 
 ## [7.3.2] - 2022-06-01
 

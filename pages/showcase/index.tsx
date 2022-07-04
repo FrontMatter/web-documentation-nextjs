@@ -98,7 +98,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div className='py-8'>
-            <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles</h3>
+            <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles / videos / etc.</h3>
               
             <ul className={`list-disc pl-6 mt-8`}>
               {

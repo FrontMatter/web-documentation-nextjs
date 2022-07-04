@@ -1,5 +1,15 @@
 [
   {
+    "title": "OSS Maintainer Interview | Front Matter",
+    "link": "https://www.youtube.com/watch?v=Db_s_XTJMqE",
+    "author": {
+      "name": "GitKraken",
+      "link": "https://www.gitkraken.com/"
+    },
+    "type": "video",
+    "featured": false
+  },
+  {
     "title": "Release Radar · March 2022 Edition",
     "link": "https://github.blog/2022-04-08-release-radar-mar-2022/",
     "author": {
