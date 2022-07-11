@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-05-26T16:48:51.327Z
+lastmod: 2022-07-11T12:08:36.980Z
 weight: 200.2
 ---
 
@@ -20,6 +20,7 @@ Front Matter its metadata section supports the following fields:
 - `image`
 - `file`
 - `choice`
+- `list`
 - `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
 - `tags`: mapped to the tags defined in your settings.
 - `categories`: mapped to the categories defined in your settings.
@@ -27,6 +28,7 @@ Front Matter its metadata section supports the following fields:
 - `fields`: allows you to define another object and its fields.
 - `block`: allows you to define a group of fields which can be used to create an list of data.
 - `dataFile`: allows you to use a data file reference to create a choice field
+- `slug`: allows you to manage the slug of the current page
 
 ### Standard field properties
 
@@ -215,6 +217,36 @@ Outcome when using id/title objects:
 ```markdown
 ---
 choice: "1"
+---
+```
+
+
+
+## List
+
+The `list` field allows you to add multiple text values.
+
+### Usage
+
+Example of using the list field:
+
+```json
+{
+  "title": "Alias",
+  "name": "alias",
+  "type": "list"
+}
+```
+
+### Outcome
+
+The previous example will give you the following outcome:
+
+```markdown
+---
+alias:
+  - release-notes-v8
+  - changelog-v8
 ---
 ```
 
@@ -581,6 +613,7 @@ To work with the `block` field type, you need to define a field group (a set of 
 "frontMatter.taxonomy.fieldGroups": [
   {
     "id": "author",
+    "labelField": "name",
     "fields": [
       {
         "title": "Author Name",
@@ -716,3 +749,41 @@ author:
   - dorothy-parker
 ---
 ```
+
+
+
+## Slug
+
+The `slug` field allows you to create/update the slug of the current page.
+
+![Slug field](/releases/v8.0.0/slug-field.png)
+
+### Properties
+
+- `editable`: Specify if you allow manual changes, or if the slug is generated automatically (optional - default: `true`).
+
+
+### Usage
+
+The field is configured as follows:
+
+```json
+{
+  "title": "Slug",
+  "name": "slug",
+  "type": "slug",
+  "editable": true
+}
+```
+
+### Outcome
+
+The above configuration gives you the following outcome:
+
+```markdown
+---
+slug: version-8-0-0-release-notes
+---
+```
+
+> **Info**: The slug is generated based on the title of the page. More information about it can be found in the [generate slug](/docs/commands#generate-slug-based-on-content-title) command section.
