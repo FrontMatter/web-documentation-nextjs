@@ -27,12 +27,13 @@ In order to start using the dashboard, you will have to let the extension know i
 
 ## Commands
 
-There are two commands to open the dashboard:
+There are the following commands to open the dashboards:
 
 - `frontMatter.dashboard` aka `Front matter: Open dashboard` - Opens the dashboard on the contents view.
 - `frontMatter.dashboard.media` aka `Front matter: Open media dashboard` - Opens the dashboard on the media view.
 - `frontMatter.dashboard.snippets` aka `Front matter: Open snippets dashboard` - Opens the dashboard on the snippets view.
 - `frontMatter.dashboard.data` aka `Front matter: Open data dashboard` - Opens the dashboard on the data view.
+- `frontMatter.dashboard.taxonomy` aka `Front matter: Open taxonomy dashboard` - Opens the dashboard on the taxonomy view.
 
 ## Contents view
 
@@ -245,3 +246,24 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 ```
 
 > **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files in the folder.
+
+
+## Taxonomy view
+
+The taxonomy view is a powerful way to manage your taxonomy like categories, tags, or any other taxonomy. 
+
+On the taxonomy view, you can create, edit, delete, and move taxonomy terms from one type to another.
+
+![Taxonomy dashboard view](/releases/v8.0.0/taxonomy-view.png)
+
+### Actions
+
+![Taxonomy actions](/releases/v8.0.0/taxonomy-actions.png)
+
+You can perform the following actions on the taxonomy view:
+
+- **Add**: If a taxonomy value is not yet stored in your settings, the `+` add action is shown to allow you a quick way to store the value;
+- **Edit**: Edit the taxonomy value in the settings + all the files where it is used;
+- **Merge**: Merge two taxonomy values into one. For instance, if you have `dev` and `development` you can merge `dev` into `development` and it will update all the files where it is used;
+- **Move**: Move a taxonomy value to another type. For instance, if you want to move a tag to a category;
+- **Delete**: Delete a taxonomy value.

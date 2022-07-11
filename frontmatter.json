@@ -74,6 +74,12 @@
           "default": "Version {version} release notes"
         },
         {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug",
+          "editable": true
+        },
+        {
           "title": "Description",
           "name": "description",
           "type": "string"
@@ -89,17 +95,6 @@
           "name": "lastmod",
           "type": "datetime",
           "isModifiedDate": true
-        },
-        {
-          "title": "Alias",
-          "name": "alias",
-          "type": "list"
-        },
-        {
-          "title": "Slug",
-          "name": "slug",
-          "type": "slug",
-          "editable": true
         }
       ]
     }

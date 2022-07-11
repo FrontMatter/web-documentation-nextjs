@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2022-03-14T08:43:17.898Z
+lastmod: 2022-07-11T12:46:02.606Z
 weight: 200.1
 ---
 
@@ -119,6 +119,7 @@ For the content type you can configure the following properties:
 - `fileType (enum: 'md' | 'mdx' | 'markdown' | '<your choice>')`: File type of for the content type you define. The type will be used to create the file when creating content.
 - `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
 - `previewPath (string)`: Defines a custom preview path for the content type. Default: `null`. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used.
+- `template (string)`: Specify a path to a template file that will be used when creating new content with the content type. Default: `null`.
 
 ## Define your own type
 
@@ -162,3 +163,22 @@ type: documentation
 ```
 
 > **Fields**: Check out the [fields](/docs/content-creation/fields) section to learn which fields are supported.
+
+
+## Using a template with the content type
+
+When creating content that requires a pre-defined structure, you can use the `template` property. The `template` property allows you to link a template file. On content creation, the contents of the template file will be used to create the new content.
+
+You can use the `template` property on any of your content types, even on the default content type from Front Matter.
+
+```json
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "template": "[[workspace]]/.frontmatter/templates/article.md",
+      "fields": [...]
+    }
+}
+```
