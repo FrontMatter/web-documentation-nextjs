@@ -13,9 +13,9 @@ weight: 1
 
 ## Overview
 
-Front Matter is an integral Visual Studio Code extension that simplifies operating and managing your markdown articles. we have created the extension to support several static-site generators and frameworks parallel to Hugo, Jekyll, Hexo, NextJs, Gatsby, and more which provides you the power and control of a full-blown Content Management System (CMS)
+Front Matter is an integral Visual Studio Code extension that simplifies operating and managing your markdown articles. We created the extension to support several static-site generators and frameworks parallel to Hugo, Jekyll, Hexo, NextJs, Gatsby, and more which provides you the power and control of a full-blown Content Management System (CMS)
 
-The extension brings CMS capabilities straight among Visual Studio Code. For example, you can keep a list of the used tags, categories, create content, and so much more.
+The extension brings CMS capabilities straight to Visual Studio Code. For example, you can keep a list of the used tags, categories, create content, and so much more.
 
 ![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
 
@@ -31,7 +31,7 @@ Our main extension features are:
 
 ## Why Front Matter?
 
-Initially, the Front Matter extension was created when [Elio Struyf](https://twitter.com/eliostruyf) migrated from WordPress to Hugo (Static web site Generator). to create content management more straightforward, he began to develop the Front Matter extension and  superimposed more options regularly, and eventually, it became a headless CMS that runs among Visual Studio Code.
+Initially, the Front Matter extension was created when [Elio Struyf](https://twitter.com/eliostruyf) migrated from WordPress to Hugo (Static web site Generator). To make content management more straightforward, he began to develop the Front Matter extension and developed more options regularly, until eventually, it became a headless CMS that runs on Visual Studio Code.
 
 ## Advantages
 
@@ -43,14 +43,14 @@ It simply runs on your machine. There are no servers/websites/APIs involved in t
 
 ### Use it within Visual Studio Code
 
-You do not ought to jump from tool to tool. simply use the one that you simply just like the most, that is, of course, Visual Studio Code.
+Don't jump from tool to tool. Use the tool that you like the most: of course, that's Visual Studio Code.
 
 ### Customizable
 
-Almost all of the Front Matter features are customizable by the extension of its settings. These settings ensure that you just will tweak it to your needs.
+Almost all of the Front Matter features are customizable in its settings. These settings ensure that you can tweak Front Matter to your needs.
 
 ### Extensibility
 
-We recognize that now no longer each website is the same. That is why we permit you to upload your custom scripts. These scripts will display up as actions in our panel and will take your content material control to the next level. 
+We recognize that each website is different. That is why you can upload your custom scripts. These scripts will display as actions in the Front Matter panel and take your content material control to the next level. 
 
 > **Example**: [Generate open graph preview image in Code with Front Matter](https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/)
