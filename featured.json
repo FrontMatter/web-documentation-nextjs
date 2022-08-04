@@ -115,5 +115,23 @@
       "link": "https://fryboyter.de"
     },
     "type": "article"
+  },
+  {
+    "title": "Publier un blog HYPER simplement!",
+    "link": "https://yoandev.co/publier-un-blog-hyper-simplement/",
+    "author": {
+      "name": "YeanDev",
+      "link": "https://yoandev.co/"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Publier un BLOG GRATUITEMENT avec HUGO, Front Matter et Netlify en MOINS D'UNE HEURE",
+    "link": "https://www.youtube.com/watch?v=Lt024O2fJdE",
+    "author": {
+      "name": "YeanDev",
+      "link": "https://yoandev.co/"
+    },
+    "type": "video"
   }
 ]
