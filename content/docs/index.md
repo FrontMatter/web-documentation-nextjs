@@ -1,7 +1,7 @@
 ---
 title: Introduction
 slug: ""
-description: Create, edit, and preview your pages within Visual Studio Code. Front
+description: Create, edit, and preview your pages within Visual Studio Code/GitPod/... Front
   Matter allows you to keep control of your static site without any external
   tools.
 date: 2021-08-30T16:13:00.546Z
