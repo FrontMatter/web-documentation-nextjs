@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-24T09:49:46.921Z
+lastmod: 2022-08-04T13:24:10.740Z
 weight: 500
 ---
 
@@ -25,10 +25,11 @@ The content and media custom actions can be defined by using the `frontMatter.cu
 
 Custom actions can be configured with the following properties:
 
+- `id`: The id of the custom action/script
 - `title`: The title of the custom action
 - `script`: The path to the script to execute
 - `command`: The command to execute. Example: `node`, `path to your node executable`, `bash`, `python`, ... (default: `node` - optional).
-- `type`: The type for which the script will be used. Can be `content` or `mediaFile` or `mediaFolder`. (default: `content` - optional).
+- `type`: The type for which the script will be used. Can be `content`, `mediaFile`, or `mediaFolder`. (default: `content` - optional).
 - `bulk`: Run the script for one file or multiple files. .
 - `output`: Specifies the output type (default: `notification` - optional). Available values are:
   - `notification`: The output will be passed as a notification.
@@ -37,6 +38,7 @@ Custom actions can be configured with the following properties:
   - `text`: The output will be passed as a text file.
   - `html`: The output will be passed as an HTML file.
   - `markdown`: The output will be passed as an Markdown file.
+- `hidden`: Hide the action from the UI. This is mostly used when creating a content script that will be used to post process new content (default: `false` - optional).
 
 > **Important**: Previously, you could define the `nodeBin` property to define the path to your node executable. This path was needed when you are working with for instance `nvm` and have multiple versions of node installed. You can now use the `command` property instead.
 
