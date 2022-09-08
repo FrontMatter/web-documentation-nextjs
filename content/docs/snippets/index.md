@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2022-05-24T07:09:24.733Z
+lastmod: 2022-09-08T18:48:52.767Z
 weight: 850
 ---
 
@@ -161,13 +161,13 @@ Media snippets will appear on your snippets dashboard, but can only be edited or
 
 The available placeholders for your media snippets are the following:
 
-- `{mediaUrl}`: Use this to insert the relative path to the media file.
-- `{mediaHeight}`: Provides the height (dimension) of the media file.
-- `{mediaWidth}`: Provides the width (dimension) of the media file.
-- `{caption}`: Use this placeholder where you want to insert the caption.
-- `{alt}`: Use this placeholder where you want to insert the alt attribute value.
-- `{filename}`: Name of the file.
-- `{title}`: Title of the file.
+- `mediaUrl`: Use this to insert the relative path to the media file.
+- `mediaHeight`: Provides the height (dimension) of the media file.
+- `mediaWidth`: Provides the width (dimension) of the media file.
+- `caption`: Use this placeholder where you want to insert the caption.
+- `alt`: Use this placeholder where you want to insert the alt attribute value.
+- `filename`: Name of the file.
+- `title`: Title of the file.
 
 > **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
 
