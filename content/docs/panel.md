@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-02T17:17:25.953Z
+lastmod: 2022-09-12T08:39:13.419Z
 weight: 400
 ---
 
@@ -152,6 +152,7 @@ You define a mode with an `id` and a set of features. The allowed features are t
 - `dashboard.snippets.view`: Show the snippets dashboard.
 - `dashboard.snippets.manage`: Show the snippets management actions.
 - `dashboard.data.view`: Show the data dashboard.
+- `dashboard.taxonomy.view`: Show the data dashboard.
 
 Here is an example of a custom view mode:
 

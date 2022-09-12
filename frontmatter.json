@@ -32,7 +32,8 @@
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
-          "isPublishDate": true
+          "isPublishDate": true,
+          "hidden": true
         },
         {
           "title": "Last modified date",
