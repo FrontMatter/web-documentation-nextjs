@@ -152,7 +152,7 @@ You define a mode with an `id` and a set of features. The allowed features are t
 - `dashboard.snippets.view`: Show the snippets dashboard.
 - `dashboard.snippets.manage`: Show the snippets management actions.
 - `dashboard.data.view`: Show the data dashboard.
-- `dashboard.taxonomy.view`: Show the data dashboard.
+- `dashboard.taxonomy.view`: Show the taxonomy dashboard.
 
 Here is an example of a custom view mode:
 
