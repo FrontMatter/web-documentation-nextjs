@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-07-11T12:08:36.980Z
+lastmod: 2022-09-14T09:54:43.379Z
 weight: 200.2
 ---
 
@@ -687,6 +687,8 @@ To use the `dataFile` field type, you need to have a definition for a data file 
 {
   "frontMatter.data.files": [{
     "id": "authors",
+    "title": "Authors",
+    "file": "[[workspace]]/data/authors.json", // Adapt to your needs
     "schema": {
       "title": "Author",
       "type": "object",
