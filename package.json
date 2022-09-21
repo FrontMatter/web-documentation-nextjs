@@ -30,6 +30,7 @@
     "react-reveal": "^1.2.2",
     "rehype-raw": "^6.1.0",
     "remark-autolink-headings": "7.0.1",
+    "remark-gfm": "^3.0.1",
     "remark-heading-id": "1.0.0",
     "shiki": "^0.9.14"
   },

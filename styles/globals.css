@@ -188,3 +188,16 @@ html[data-theme=dark] {
     @apply mt-4;
   }
 }
+
+/* Tables */
+table {
+  @apply table-auto w-full;
+
+  th {
+    @apply text-left;
+  }
+
+  th, td {
+    @apply border-b border-vulcan-50 p-4;
+  }
+}
