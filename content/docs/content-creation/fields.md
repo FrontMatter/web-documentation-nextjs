@@ -782,7 +782,8 @@ The field is configured as follows:
   "title": "Slug",
   "name": "slug",
   "type": "slug",
-  "editable": true
+  "editable": true,
+  "default": "{{slug}}"
 }
 ```
 
