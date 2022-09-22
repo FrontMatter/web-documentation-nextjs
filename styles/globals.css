@@ -54,7 +54,11 @@ html, body {height: 100%;}
 }
 
 .markdown {
-  @apply space-y-4;
+  @apply space-y-4 text-whisper-900;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-whisper-500;
+  }
 
   h1 {
     @apply text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl;

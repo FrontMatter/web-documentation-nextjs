@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2022-07-11T12:46:02.606Z
+lastmod: 2022-09-22T07:21:54.904Z
 weight: 200.1
 ---
 
@@ -114,12 +114,15 @@ The metadata section on the editor panel will render the following fields:
 
 For the content type you can configure the following properties:
 
-- `name (string)`: Name of the content type
-- `fields (Field[])`: Check the [supported field types](/docs/content-creation/fields#supported-field-types)
-- `fileType (enum: 'md' | 'mdx' | 'markdown' | '<your choice>')`: File type of for the content type you define. The type will be used to create the file when creating content.
-- `pageBundle (boolean)`: Specify if for the content a folder will be created. Default: `false`.
-- `previewPath (string)`: Defines a custom preview path for the content type. Default: `null`. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used.
-- `template (string)`: Specify a path to a template file that will be used when creating new content with the content type. Default: `null`.
+| Property | Type | Description | Default value |
+| --- | --- | --- | --- |
+| `name` | `string` | Name of the content type | `""`  |
+| `fields` | `array` | Check the [supported field types](/docs/content-creation/fields#supported-field-types) | `[]` |
+| `fileType` | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content. | `md` |
+| `pageBundle` | `boolean` | If set to `true`, the content will be created as a page bundle (folder). | `false` |
+| `previewPath` | `string` | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used. | `null` |
+| `template` | `string` | Specify a path to a template file that will be used when creating new content with the content type. | `null` |
+| `postScript` | `string` | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script](/docs/custom-actions/#content-script). | `null` |
 
 ## Define your own type
 
@@ -182,3 +185,37 @@ You can use the `template` property on any of your content types, even on the de
     }
 }
 ```
+
+## Run a script after your content is created
+
+To run a custom script after your content is created, you can use the `postScript` property. The `postScript` property allows you to link a script file by referencing its `id`. The script will be executed after the content is created which gives you access to the whole front matter object.
+
+```json
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "template": "[[workspace]]/.frontmatter/templates/article.md",
+      "fields": [...],
+      "postScript": "generate-social-image"
+    }
+  ]
+}
+```
+
+In your custom script setting, you need to make sure that this script is available:
+
+```json
+{
+  "frontMatter.custom.scripts": [
+    {
+      "id": "generate-social-image",
+      "title": "Generate social image",
+      "script": "./scripts/social-img.js",
+    }
+  ]
+}
+```
+
+> **Info**: More information about custom scripts can be found in the [custom actions](/docs/custom-actions) section.

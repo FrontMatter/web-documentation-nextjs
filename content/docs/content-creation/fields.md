@@ -46,7 +46,7 @@ All fields share the following field properties:
 | `title` | `string` | The title to show in the metadata section | *Optional* |
 | `description` | `string` | The description to show underneath the field | *Optional* |
 | `default` | `string` | Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-creation/placeholders). | *Optional* |
-| `required` | `boolean` | Defines if the field is required or not | *Optional* |
+| `required` | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications](/docs/settings#frontmatter.global.disablednotifications) setting. | *Optional* |
 | `hidden` | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter. | *Optional* |
 
 

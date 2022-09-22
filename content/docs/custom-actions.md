@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-08-04T13:24:10.740Z
+lastmod: 2022-09-22T07:41:47.344Z
 weight: 500
 ---
 
@@ -92,7 +92,25 @@ By default, once a custom action executed, it will show the output in a notifica
 { "frontmatter": { "<field name>": "field value" }}
 ```
 
-When data is passed in the above format, the Front Matter will parse the JSON and update the contents of you file accordingly.
+Example:
+
+```javascript
+(async () => {
+    // Your script logic
+
+    // Finally, update the front matter of your content by passing the data in the following format
+    const output = JSON.stringify({
+      "frontmatter": {
+        "title": "My new title"
+      }
+    });
+
+    console.log(output);
+  }
+})();
+```
+
+When data is passed in the above format, it will automatically get parse the JSON data and the file its front matter gets updated accordingly.
 
 ## Bulk script execution
 

@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2022-09-08T18:48:52.767Z
+lastmod: 2022-09-22T08:18:09.725Z
 weight: 850
 ---
 
@@ -151,7 +151,7 @@ Media snippets are intended to be used when you want to insert a media file in y
 }
 ```
 
-> **Info**: Instead of using the snippets its `fields` property, like in your content snippets, you can make use of placeholders that are automatically passed to your media snippet when inserting it.
+> **Info**: The media snippets provide you with a couple of media placeholders that you can use in your snippet body.
 
 Media snippets will appear on your snippets dashboard, but can only be edited or deleted. You cannot insert media snippets into your content like you can with content snippets. Instead, you will find them on the media cards.
 
@@ -171,3 +171,24 @@ The available placeholders for your media snippets are the following:
 
 > **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
 
+### Fields
+
+Like the content snippets, you can also define fields for your media snippets. These fields will be shown when you insert the snippet into your content.
+
+```json
+"frontMatter.content.snippets": {
+  "Image snippet": {
+    "description": "Image with caption",
+    "body": "{{< caption src=\"[[&mediaUrl]]\" caption=\"[[caption]]\" class=\"[[className]]\" >}}",
+    "isMediaSnippet": true,
+    "fields": [
+      {
+        "name": "className",
+        "title": "Class name",
+        "type": "string",
+        "default": "image__caption"
+      }
+    ]
+  }
+}
+```

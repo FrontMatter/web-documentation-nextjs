@@ -3,7 +3,7 @@ title: Markdown
 slug: markdown
 description: null
 date: 2021-08-31T05:59:58.852Z
-lastmod: 2022-05-24T07:09:27.890Z
+lastmod: 2022-09-22T08:07:15.584Z
 weight: 800
 ---
 
@@ -26,6 +26,7 @@ Currently supported are:
 - Headings
 - Bold
 - Italic
+- Hyperlink
 - Strikethrough
 - Block quote
 - Code snippet
@@ -56,16 +57,37 @@ Inserting images was never easier with the `insert image into article` command, 
 
 > **Info**: You can also use media snippets to insert your images. More information can be found in the [Media Snippets](/docs/snippets#media-snippets) section.
 
-## Front Matter folding
+## Front matter folding
 
 If you want to focus on the content of your page, you have the ability to fold the Front Matter section of your page.
 
 ![Folding range](/assets/folding.png)
 
-## Front Matter highlighting
+## Front matter highlighting
 
-The extension will automatically highlight the Front Matter of you document to create a visual difference between metadata and content.
+The extension will automatically highlight the front matter of you document to create a visual difference between metadata and content.
 
 ![Highlighting](/assets/fm-highlight.png)
 
 > **Info**: If you do not want this feature, you can disable it in the extension settings -> `Highlight Front Matter` or by setting the `frontMatter.content.fmHighlight` setting to `false`.
+
+## Hiding front matter
+
+Hiding the front matter in the editing experience can be done by the `frontMatter.content.hideFm` setting. By default, this is set to `false`. When changed to `true`, the front matter will be hidden in the editor.
+
+In combination with this setting, you can also set a message to highlight that the front matter is hidden and the Front Matter panel needs to be used to edit the metadata of your page.
+
+### Example
+
+```json
+{
+  "frontMatter.content.hideFm": true,
+  "frontMatter.content.hideFmMessage":"Use the editor panel to make front matter changes"
+}
+```
+
+### Result
+
+![Hide front matter](/releases/v8.1.0/hide-fm.png)
+
+
