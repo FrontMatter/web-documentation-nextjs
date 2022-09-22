@@ -54,7 +54,11 @@ html, body {height: 100%;}
 }
 
 .markdown {
-  @apply space-y-4;
+  @apply space-y-4 text-whisper-900;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-whisper-500;
+  }
 
   h1 {
     @apply text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl;
@@ -186,5 +190,18 @@ html[data-theme=dark] {
 @media (max-width: 410px) {
   .stargazers {
     @apply mt-4;
+  }
+}
+
+/* Tables */
+table {
+  @apply table-auto w-full;
+
+  th {
+    @apply text-left;
+  }
+
+  th, td {
+    @apply border-b border-vulcan-50 p-4;
   }
 }

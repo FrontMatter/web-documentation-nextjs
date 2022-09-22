@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-07-11T12:08:36.980Z
+lastmod: 2022-09-21T07:27:52.012Z
 weight: 200.2
 ---
 
@@ -11,35 +11,43 @@ weight: 200.2
 
 ## Supported field types
 
-Front Matter its metadata section supports the following fields:
+Front Matter supports the following fields to be used in the content-types:
 
-- `string`
-- `number`
-- `datetime`
-- `boolean`
-- `image`
-- `file`
-- `choice`
-- `list`
-- `draft`: specifies the kind of draft field you want to use: `boolean` or `choice`. This field, can be configured with the [frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
-- `tags`: mapped to the tags defined in your settings.
-- `categories`: mapped to the categories defined in your settings.
-- `taxonomy`: if you want to define your own custom taxonomy fields.
-- `fields`: allows you to define another object and its fields.
-- `block`: allows you to define a group of fields which can be used to create an list of data.
-- `dataFile`: allows you to use a data file reference to create a choice field
-- `slug`: allows you to manage the slug of the current page
+- [string](#string)
+- [number](#number)
+- [datetime](#datetime)
+- [boolean](#boolean)
+- [image](#image)
+- [file](#file)
+- [choice](#choice)
+- [list](#list)
+- [draft](#draft)
+- [tags](#tags)
+- [categories](#categories)
+- [taxonomy](#taxonomy)
+- [fields](#fields)
+- [block](#block)
+- [dataFile](#data-file)
+- [slug](#slug)
+
+There are also the following section fields:
+
+- [divider](#divider)
+- [heading](#heading)
 
 ### Standard field properties
 
 All fields share the following field properties:
 
-- `title (string)`: The title to show in the metadata section (optional);
-- `name (string)`: The name of your field, will be used to set in the front matter of your Markdown file;
-- `type (field type - string)`: One of the above supported types.
-- `default`: Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-creation/placeholders).
-- `hidden (boolean - optional)`: Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.
-
+| Property | Type | Description | Optional / Required |
+| ----- | ----- | ----- | ----- |
+| `name` | `string` | The name of your field, will be used to set in the front matter of your Markdown file. | **Required** |
+| `type` | `string` | The type of the field. Use one of the supported field types. | **Required** |
+| `title` | `string` | The title to show in the metadata section | *Optional* |
+| `description` | `string` | The description to show underneath the field | *Optional* |
+| `default` | `string` | Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-creation/placeholders). | *Optional* |
+| `required` | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications](/docs/settings#frontmatter.global.disablednotifications) setting. | *Optional* |
+| `hidden` | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter. | *Optional* |
 
 
 ## String
@@ -687,6 +695,8 @@ To use the `dataFile` field type, you need to have a definition for a data file 
 {
   "frontMatter.data.files": [{
     "id": "authors",
+    "title": "Authors",
+    "file": "[[workspace]]/data/authors.json", // Adapt to your needs
     "schema": {
       "title": "Author",
       "type": "object",
@@ -772,7 +782,8 @@ The field is configured as follows:
   "title": "Slug",
   "name": "slug",
   "type": "slug",
-  "editable": true
+  "editable": true,
+  "default": "{{slug}}"
 }
 ```
 
@@ -787,3 +798,52 @@ slug: version-8-0-0-release-notes
 ```
 
 > **Info**: The slug is generated based on the title of the page. More information about it can be found in the [generate slug](/docs/commands#generate-slug-based-on-content-title) command section.
+
+
+
+## Divider
+
+The `divider` field type allows you to add a divider to your content type. This is useful when you want to group fields together.
+
+### Properties
+
+You only need to specify the `type` property and name:
+
+### Usage
+
+```json
+{
+  "name": "divider",
+  "type": "divider"
+}
+```
+
+### Outcome
+
+![Section divider field](/releases/v8.1.0/section-divider.png)
+
+
+
+## Heading
+
+The `heading` field type allows you to add a heading to your content type. This is useful when you want to group fields together.
+
+### Usage
+
+```json
+{
+  "title": "Section title",
+  "name": "sectionTitleWithDescription",
+  "description": "This is just a dummy description to test out the field description",
+  "type": "heading"
+},
+{
+  "title": "Section title without description",
+  "name": "sectionTitleWithoutDescription",
+  "type": "heading"
+}
+```
+
+### Outcome
+
+![Section heading field](/releases/v8.1.0/section-heading.png)

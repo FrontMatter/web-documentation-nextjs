@@ -3,7 +3,7 @@ title: Dashboard
 slug: dashboard
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-26T16:43:39.784Z
+lastmod: 2022-09-22T06:31:23.818Z
 weight: 300
 ---
 
@@ -29,11 +29,13 @@ In order to start using the dashboard, you will have to let the extension know i
 
 There are the following commands to open the dashboards:
 
-- `frontMatter.dashboard` aka `Front matter: Open dashboard` - Opens the dashboard on the contents view.
-- `frontMatter.dashboard.media` aka `Front matter: Open media dashboard` - Opens the dashboard on the media view.
-- `frontMatter.dashboard.snippets` aka `Front matter: Open snippets dashboard` - Opens the dashboard on the snippets view.
-- `frontMatter.dashboard.data` aka `Front matter: Open data dashboard` - Opens the dashboard on the data view.
-- `frontMatter.dashboard.taxonomy` aka `Front matter: Open taxonomy dashboard` - Opens the dashboard on the taxonomy view.
+| Command title | Command id | Description |
+| --- | --- | --- |
+| Front matter: Open dashboard | `frontMatter.dashboard` | Opens the dashboard on the contents view. |
+| Front matter: Open media dashboard | `frontMatter.dashboard.media` | Opens the dashboard on the media view. |
+| Front matter: Open snippets dashboard | `frontMatter.dashboard.snippets` | Opens the dashboard on the snippets view. |
+| Front matter: Open data dashboard | `frontMatter.dashboard.data` | Opens the dashboard on the data view. |
+| Front matter: Open taxonomies dashboard | `frontMatter.dashboard.taxonomy` | Opens the dashboard on the taxonomies view. |
 
 ## Contents view
 
@@ -66,13 +68,17 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 - Last modified
 - Filename (asc/desc)
 
-> **Info**: You can define custom sorting options by specifying these within the [frontMatter.content.sorting](/docs/settings#frontMatter.content.sorting) setting.
+> **Info**: You can define custom sorting options by specifying these within the [frontMatter.content.sorting](/docs/settings#frontmatter.content.sorting) setting.
 
 You are also able to define your default sorting options by setting the `frontMatter.content.defaultSorting` setting for the content view, and the `frontMatter.media.defaultSorting` setting for the media view.
 
 ### Show on startup
 
 If you want, you can check on the `Open on startup?` checkbox. This setting will allow the dashboard to automatically open when you launch the project in VS Code. It will only apply to the current project, not for all of them.
+
+### Content pagination
+
+By default, the content is paginated by 16 items. If you want, you can disable the pagination by setting the `frontMatter.dashboard.content.pagination` setting to `false`.
 
 ## Media view
 
@@ -248,19 +254,19 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 > **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files in the folder.
 
 
-## Taxonomy view
+## Taxonomies view
 
-The taxonomy view is a powerful way to manage your taxonomy like categories, tags, or any other taxonomy. 
+The taxonomies view is a powerful way to manage your taxonomy like categories, tags, or any other taxonomy. 
 
-On the taxonomy view, you can create, edit, delete, and move taxonomy terms from one type to another.
+On the taxonomies view, you can create, edit, delete, and move taxonomy terms from one type to another.
 
-![Taxonomy dashboard view](/releases/v8.0.0/taxonomy-view.png)
+![Taxonomies view](/releases/v8.1.0/taxonomies-view.png)
 
 ### Actions
 
 ![Taxonomy actions](/releases/v8.0.0/taxonomy-actions.png)
 
-You can perform the following actions on the taxonomy view:
+You can perform the following actions on the taxonomies view:
 
 - **Add**: If a taxonomy value is not yet stored in your settings, the `+` add action is shown to allow you a quick way to store the value;
 - **Edit**: Edit the taxonomy value in the settings + all the files where it is used;

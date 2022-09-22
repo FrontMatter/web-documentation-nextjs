@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-12T08:41:00.916Z
+lastmod: 2022-09-12T08:39:13.419Z
 weight: 400
 ---
 

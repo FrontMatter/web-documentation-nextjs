@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-24T07:09:30.132Z
+lastmod: 2022-09-22T07:47:41.719Z
 weight: 1100
 ---
 
@@ -91,6 +91,23 @@ Specify if you want to highlight the Front Matter in the Markdown file.
 - Type: `boolean`
 - Default: `true`
 
+
+### frontMatter.content.hideFm
+
+Specify if you want to hide the Front Matter in the Markdown file.
+
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.content.hideFmMessage
+
+Specify the message to display when the Front Matter is hidden.
+
+- Type: `string`
+- Default: `""`
+
+![Hide front matter from the content](/releases/v8.1.0/hide-fm.png)
+
 ### frontMatter.content.pageFolders
 
 This array of folders defines where the extension can find your content and create new content by running the create article command.
@@ -157,7 +174,7 @@ Properties:
 - `title`: The title of the sorting option
 - `name`: The name of the field to sort by (needs to be present in your content its front matter)
 - `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or `desc`.
-- `type`: The type of field value. Option values to use: `string`, `date`.
+- `type`: The type of field value. Option values to use: `string`, `date`, and `number`.
 
 Sample:
 
@@ -224,6 +241,13 @@ Specify the name of the metadata field that will be used to show the tags on the
 
 > **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
 
+### frontMatter.dashboard.content.pagination
+
+Specify if you want to enable/disable pagination for your content.
+
+- Type: `boolean` 
+- Default: `true`
+
 ### frontMatter.dashboard.openOnStart
 
 Specify if you want to open the dashboard when you start VS Code.
@@ -274,6 +298,21 @@ Specify the ID of your static site generator or framework you are using for your
 - Type: `string`
 - Default: `""`
 
+### frontMatter.git.enabled
+
+Specify if you want to use the Git actions for your website.
+
+- Type: `boolean`
+- Default: `false`
+
+
+### frontMatter.git.commitMessage
+
+Specify the commit message you want to use for the sync.
+
+- Type: `string`
+- Default: `Synced by Front Matter`
+
 ### frontMatter.global.activeMode
 
 Specify the activated mode of Front Matter.
@@ -290,6 +329,15 @@ Specify the modes you want to use for Front Matter.
 - Default: ``
 
 > **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more information.
+
+### frontMatter.global.disabledNotifications
+
+This is an array with the notifications types that can be disabled for Front Matter CMS.
+
+- Type: `array<string>`
+- Default: `[]`
+- Options:
+  - `requiredFieldValidation`
 
 ### frontMatter.global.notifications
 
