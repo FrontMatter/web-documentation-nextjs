@@ -117,9 +117,12 @@ This array of folders defines where the extension can find your content and crea
 
 Properties:
 
-- `title`: Give a title for the content folder path
-- `path`: The path to the content folder, important is to use the `[[workspace]]` placeholder
-- `excludeSubdir`: Optional, specify if you want to exclude subdirectories from the content folder. Default: `false`.
+| Title | Type | Description | Default | Required / Optional |
+| --- | --- | --- | --- | --- |
+| `title` | `string` | A title for the content folder path | `""` | Optional |
+| `path` | `string` | The path to the content folder, important is to use the `[[workspace]]` placeholder | `""` | Required |
+| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder | | Optional |
+| `previewPath` | `string` | Allows you to set a prefix path for the page preview. Check the [preview path configuration](/docs/site-preview#configuration) section to learn more. |  | Optional |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace path. The reason why we choose to use this, is because some do not keep the original folder name.
 
@@ -131,7 +134,8 @@ Sample:
     {
       "title": "Pages",
       "path": "[[workspace]]/content",
-      "excludeSubdir": true
+      "excludeSubdir": true,
+      "previewPath": "post" // Prefixes all files with "/post/" for the page preview
     },
     {
       "title": "Blog posts",
