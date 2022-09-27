@@ -93,7 +93,7 @@ When you log in via GitHub, you'll see the following:
 
 ![Hidden support links](/releases/v6.0.0/support-links-hidden.png)
 
-Simply start by clicking on the **Accounts** button, and select **Sign in with GitHub to use Front Matter** or lauch the same flow by using the `Front Matter: Authenticate` command.
+Simply start by clicking on the **Accounts** button, and select **Sign in with GitHub to use Front Matter** or launch the same flow by using the `Front Matter: Authenticate` command.
 
 ![Sign in with GitHub for Front Matter](/releases/v6.0.0/signin-github.png)
 
