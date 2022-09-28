@@ -58,6 +58,13 @@ export const strings = {
   feature_title_6: "Use it the way you want it",
   feature_description_6: "All of the functionalities are configurable to your needs. You can define how you want to use Front Matter in your editor experience, but it doesn't stop there. If you are missing something or want to automate. We allow you to add your own actions with the custom scripting capability. For instance, you can use a script and hook it up to the extension to generate preview images.",
 
+  // Pricing
+  pricing_title: "Pricing",
+  pricing_description: `### Front Matter CMS is **free** and **open-source**. 
+
+  We are committed to making Front Matter CMS one of the best CMSs for your static-site generator. If you want to support us, you can do this by becoming one of our sponsors. When you become a sponsor, you will get highlighted on our website.`,
+  pricing_cta_title: "Become a sponsor",
+
   // Sponsors
   sponsors_title: "Special thanks to our backers & sponsors",
 
