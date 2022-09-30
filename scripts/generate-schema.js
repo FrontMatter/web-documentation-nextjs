@@ -1,6 +1,51 @@
+// @ts-check
 const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
+
+/**
+ * 
+ * @param {any} vscodeProps 
+ * @param {string} baseUrl 
+ * @param {string} configFolder 
+ * @param {string} schemaName 
+ * @param {string} settingName 
+ * @param {string} propertyName 
+ * @param {{ value: string, ref: string } | undefined} reference 
+ */
+ const generateSchemaForArray = (vscodeProps, baseUrl, configFolder, schemaName, settingName, propertyName, reference) => {
+  const schemaObject = vscodeProps[settingName];
+  if (schemaObject) {
+    const schema = {
+      "$schema": "http://json-schema.org/draft-07/schema",
+      "$id": `${baseUrl}/config/${schemaName}`,
+      "description": `Defines the settings for Front Matter ${propertyName}`,
+      "lastModified": new Date().toISOString(),
+      "type": "object",
+      "title": `Front Matter - ${propertyName}`,
+      properties: {
+        ...schemaObject.items.properties
+      }
+    }
+
+    if (schemaObject.items.additionalProperties) {
+      schema.additionalProperties = schemaObject.items.additionalProperties;
+    }
+
+    if (schemaObject.items.required) {
+      schema.required = schemaObject.items.required;
+    }
+
+    if (reference) {
+      let schemaString = JSON.stringify(schema, null, 2);
+      // Replace the #scriptCommand reference
+      schemaString = schemaString.replace(reference.value, reference.ref);
+      fs.writeFileSync(path.join(configFolder, schemaName), schemaString);
+    } else {
+      fs.writeFileSync(path.join(configFolder, schemaName), JSON.stringify(schema, null, 2));
+    } 
+  }
+}
 
 (async () => {
   const production = process.env.VERCEL_ENV === "production";
@@ -48,33 +93,26 @@ const fetch = require('node-fetch');
     const snippetSchemaName = "content.snippets.schema.json";
     const placeholderSchemaName = "content.placeholders.schema.json";
     const customScriptsSchemaName = "custom.scripts.schema.json";
+    const dataFilesSchemaName = "data.files.schema.json";
+    const dataFoldersSchemaName = "data.folders.schema.json";
+    const dataTypesSchemaName = "data.types.schema.json";
 
     // Create the content type schema
-    const contentTypeObject = pkgJson.contributes.configuration.properties[`frontMatter.taxonomy.contentTypes`];
-    if (contentTypeObject) {
-      const contentTypeSchema = {
-        "$schema": "http://json-schema.org/draft-07/schema",
-        "$id": `${baseUrl}/config/${ctSchemaName}`,
-        "description": "Defines the settings for Front Matter content types",
-        "lastModified": new Date().toISOString(),
-        "type": "object",
-        "title": "Front Matter - Content-Type",
-        properties: {
-          ...contentTypeObject.items.properties
-        }
-      }
-      
-      if (contentTypeObject.items.additionalProperties) {
-        contentTypeSchema.additionalProperties = contentTypeObject.items.additionalProperties;
-      }
-
-      if (contentTypeObject.items.required) {
-        contentTypeSchema.required = contentTypeObject.items.required;
-      }
-
-      fs.writeFileSync(path.join(configFolderPath, ctSchemaName), JSON.stringify(contentTypeSchema, null, 2));
-    }
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, ctSchemaName, "frontMatter.taxonomy.contentTypes", "content type", undefined);
     
+    // Create the custom script schema
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, customScriptsSchemaName, "frontMatter.custom.scripts", "custom script", undefined);
+
+    // Create the page folders schema
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, pageFoldersSchemaName, "frontMatter.content.pageFolders", "page folder", undefined);
+    
+    // Create the placeholder schema
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, placeholderSchemaName, "frontMatter.content.placeholders", "placeholder", { value: "#scriptCommand", ref: `${baseUrl}/config/${customScriptsSchemaName}#/properties/command` });
+
+    // Create the data schemas
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFilesSchemaName, "frontMatter.data.files", "data file", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFoldersSchemaName, "frontMatter.data.folders", "data folder", { value: "#dataFileSchema", ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema` });
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataTypesSchemaName, "frontMatter.data.types", "data type", { value: "#dataFileSchema", ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema` });
 
     // Create the snippet schema
     const snippetObject = pkgJson.contributes.configuration.properties[`frontMatter.content.snippets`];
@@ -85,7 +123,7 @@ const fetch = require('node-fetch');
         "description": "Defines the settings for Front Matter snippet",
         "lastModified": new Date().toISOString(),
         "type": "object",
-        "title": "Front Matter - Snippet",
+        "title": "Front Matter - snippet",
         ...snippetObject.additionalProperties
       }
 
@@ -94,91 +132,6 @@ const fetch = require('node-fetch');
       schemaString = schemaString.replace(/#contenttypefield/g, `${baseUrl}/config/${ctSchemaName}#/properties/fields`);
 
       fs.writeFileSync(path.join(configFolderPath, snippetSchemaName), schemaString);
-    }
-
-    
-    // Create the custom script schema
-    const customScriptsSchemaObject = pkgJson.contributes.configuration.properties[`frontMatter.custom.scripts`];
-    if (customScriptsSchemaObject) {
-      const schema = {
-        "$schema": "http://json-schema.org/draft-07/schema",
-        "$id": `${baseUrl}/config/${customScriptsSchemaName}`,
-        "description": "Defines the settings for Front Matter custom script",
-        "lastModified": new Date().toISOString(),
-        "type": "object",
-        "title": "Front Matter - Custom Script",
-        properties: {
-          ...customScriptsSchemaObject.items.properties
-        }
-      }
-
-      if (customScriptsSchemaObject.items.additionalProperties) {
-        schema.additionalProperties = customScriptsSchemaObject.items.additionalProperties;
-      }
-
-      if (customScriptsSchemaObject.items.required) {
-        schema.required = customScriptsSchemaObject.items.required;
-      }
-
-      fs.writeFileSync(path.join(configFolderPath, customScriptsSchemaName), JSON.stringify(schema, null, 2));
-    }
-    
-
-    // Create the page folders schema
-    const pageFoldersObject = pkgJson.contributes.configuration.properties[`frontMatter.content.pageFolders`];
-    if (pageFoldersObject) {
-      const schema = {
-        "$schema": "http://json-schema.org/draft-07/schema",
-        "$id": `${baseUrl}/config/${pageFoldersSchemaName}`,
-        "description": "Defines the settings for Front Matter page folder",
-        "lastModified": new Date().toISOString(),
-        "type": "object",
-        "title": "Front Matter - Page Folder",
-        properties: {
-          ...pageFoldersObject.items.properties
-        }
-      }
-
-      if (pageFoldersObject.items.additionalProperties) {
-        schema.additionalProperties = pageFoldersObject.items.additionalProperties;
-      }
-
-      if (pageFoldersObject.items.required) {
-        schema.required = pageFoldersObject.items.required;
-      }
-
-      fs.writeFileSync(path.join(configFolderPath, pageFoldersSchemaName), JSON.stringify(schema, null, 2));
-    }
-
-    
-    // Create the placeholder schema
-    const placeholderObject = pkgJson.contributes.configuration.properties[`frontMatter.content.placeholders`];
-    if (placeholderObject) {
-      const schema = {
-        "$schema": "http://json-schema.org/draft-07/schema",
-        "$id": `${baseUrl}/config/${placeholderSchemaName}`,
-        "description": "Defines the settings for Front Matter placeholder",
-        "lastModified": new Date().toISOString(),
-        "type": "object",
-        "title": "Front Matter - Placeholder",
-        properties: {
-          ...placeholderObject.items.properties
-        }
-      }
-
-      if (placeholderObject.items.additionalProperties) {
-        schema.additionalProperties = placeholderObject.items.additionalProperties;
-      }
-
-      if (placeholderObject.items.required) {
-        schema.required = placeholderObject.items.required;
-      }
-
-      let schemaString = JSON.stringify(schema, null, 2);
-      // Replace the #scriptCommand reference
-      schemaString = schemaString.replace(/#scriptCommand/g, `${baseUrl}/config/${customScriptsSchemaName}#/properties/command`);
-
-      fs.writeFileSync(path.join(configFolderPath, placeholderSchemaName), schemaString);
     }
   }
 })();
