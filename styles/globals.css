@@ -211,3 +211,7 @@ table {
     @apply text-xl;
   }
 }
+
+.table__wrapper {
+  @apply overflow-x-auto;
+}

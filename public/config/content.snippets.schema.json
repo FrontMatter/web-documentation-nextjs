@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/content.snippets.schema.json",
+  "description": "Defines the settings for Front Matter snippet",
+  "lastModified": "2022-09-30T12:44:50.264Z",
+  "type": "object",
+  "title": "Front Matter - snippet",
+  "required": [
+    "body"
+  ],
+  "properties": {
+    "body": {
+      "markdownDescription": "The snippet content.",
+      "type": [
+        "string",
+        "array"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "description": "The snippet description.",
+      "type": "string"
+    },
+    "fields": {
+      "$ref": "https://beta.frontmatter.codes/config/taxonomy.contenttype.schema.json#/properties/fields"
+    },
+    "openingTags": {
+      "description": "The snippet opening tags.",
+      "type": "string",
+      "default": "[["
+    },
+    "closingTags": {
+      "description": "The snippet closing tags.",
+      "type": "string",
+      "default": "]]"
+    },
+    "isMediaSnippet": {
+      "description": "Specify if the snippet is to be used for media files.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "additionalProperties": false
+}

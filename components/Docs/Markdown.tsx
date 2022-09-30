@@ -64,6 +64,7 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
           h3: ({node, ...props}) => (<h3 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h3>),
           h4: ({node, ...props}) => (<h4 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h4>),
           h5: ({node, ...props}) => (<h5 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h5>),
+          table: ({node, ...props}) => (<div className='table__wrapper'><table>{props.children}</table></div>),
           code: ({...props}) => <CodeHighlighting {...props} />,
         }}
         rehypePlugins={[rehypeRaw, remarkGfm]} 

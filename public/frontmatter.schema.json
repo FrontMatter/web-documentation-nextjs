@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2022-09-30T07:24:50.935Z",
+  "lastModified": "2022-09-30T12:44:50.262Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {

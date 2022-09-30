@@ -1,6 +1,26 @@
 # Change Log
 
-## [8.1.0] - 2022-xx-xx
+## [8.2.0] - 2022-xx-xx
+
+### ✨ New features
+
+- [#412](https://github.com/estruyf/vscode-front-matter/issues/412): Allow `frontmatter.json` to be split in multiple files
+
+### 🎨 Enhancements
+
+- [#406](https://github.com/estruyf/vscode-front-matter/issues/406): Added support for single data entries in the data dashboard
+
+### ⚡️ Optimizations
+
+### 🐞 Fixes
+
+## [8.1.1] - 2022-09-23
+
+### 🐞 Fixes
+
+- [#422](https://github.com/estruyf/vscode-front-matter/issues/422): Fix in panel initialization logic
+
+## [8.1.0] - 2022-09-22 - [Release notes](https://beta.frontmatter.codes/updates/v8.1.0) 
 
 ### ✨ New features
 

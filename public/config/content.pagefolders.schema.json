@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
+  "description": "Defines the settings for Front Matter page folder",
+  "lastModified": "2022-09-30T12:44:50.263Z",
+  "type": "object",
+  "title": "Front Matter - page folder",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name of the folder"
+    },
+    "path": {
+      "type": "string",
+      "description": "Path of the folder"
+    },
+    "excludeSubdir": {
+      "type": "boolean",
+      "default": false,
+      "description": "Exclude sub-directories"
+    },
+    "previewPath": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "description": "Defines a custom preview path for the folder."
+    }
+  },
+  "required": [
+    "title",
+    "path"
+  ]
+}

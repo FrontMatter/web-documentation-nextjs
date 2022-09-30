@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-22T07:47:41.719Z
+lastmod: 2022-09-30T12:52:52.270Z
 weight: 1100
 ---
 
@@ -26,6 +26,49 @@ As you do not typically share your `.vscode/settings.json` configuration, we wen
 To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command. The very first time, it will also ask you if there are settings that can be promoted.
 
 ![On startup, Front Matter checks if settings can be promoted](/releases/v5.0.0/ask-to-promote-settings.png)
+
+## Splitting your settings in multiple files
+
+Some of the Front Matter settings can be split in multiple files to make management of these easier. For example, in case you are using multiple content-types for your site, you can now split each content-type to its own file. This allows you to easily manage the settings for each content-type.
+
+### Supported settings to split
+
+The following settings are supported to be split in multiple files:
+
+| Setting name | Folder path | Information | JSON Schema |
+| --- | --- | --- | --- |
+| `frontMatter.content.pageFolders` |`./frontmatter/config/content/pagefolders/` | | `https://beta.frontmatter.codes/config/content.pagefolders.schema.json` | 
+| `frontMatter.content.placeholders` | `./frontmatter/config/content/placeholders/` | | `https://beta.frontmatter.codes/config/content.placeholders.schema.json` |
+| `frontMatter.content.snippets` | `./frontmatter/config/content/snippets/` | The file name will be used as the ID/title of the snippet. | `https://beta.frontmatter.codes/config/content.snippets.schema.json` |
+| `frontMatter.custom.scripts` | `./frontmatter/config/custom/scripts/` | | `https://beta.frontmatter.codes/config/custom.scripts.schema.json` |
+| `frontMatter.data.files` | `./frontmatter/config/data/files/` | | `https://beta.frontmatter.codes/config/data.files.schema.json` |
+| `frontMatter.data.folders` | `./frontmatter/config/data/folders/` | | `https://beta.frontmatter.codes/config/data.folders.schema.json` |
+| `frontMatter.data.types` | `./frontmatter/config/data/types/` | | `https://beta.frontmatter.codes/config/data.types.schema.json` |
+| `frontMatter.taxonomy.contentTypes` | `./frontmatter/config/taxonomy/contenttypes/` | | `https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
+
+> **Important**: The folder path is relative to the root of your project/solution and you create the files in their corresponding folder. The file name is the same as the `id` of the setting.
+
+### Example of splitting a setting
+
+Example of specifying a page folder in a separate file:
+
+```
+| .frontmatter
+| - config
+| -- content
+| --- pagefolders
+| ---- blog.json
+```
+
+Contents of the `blog.json` file:
+
+```json
+{
+  "$schema": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
+  "title": "blog",
+  "path": "[[workspace]]/blog"
+}
+```
 
 ## Available settings
 
