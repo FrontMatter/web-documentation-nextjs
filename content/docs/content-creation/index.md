@@ -30,7 +30,7 @@ When using content types, the CMS will create the new content based on the follo
 
 ## How it works
 
-Behind the scenes, Front Matter uses the `frontMatter.taxonomy.contentTypes` setting to understand which type of content you'll use for your website.
+Behind the scenes, Front Matter uses the `frontMatter.taxonomy.contentTypes` setting (in the `frontmatter.json`) to understand which type of content you'll use for your website.
 
 Our default content type consists of the following fields:
 
