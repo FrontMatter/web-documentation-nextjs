@@ -29,7 +29,7 @@ The extension logs information, warnings, and errors into the Visual Studio Code
 
 ## Inspecting configuration behavior
 
-With the [diagnostic logging](commands.md#diagnostic-logging) command, you can see your current configuration and related information in a virtual Markdown document.
+With the [diagnostic logging](/docs/commands#diagnostic-logging) command, you can see your current configuration and related information in a virtual Markdown document.
 
 The document has several sections:
 
@@ -37,7 +37,7 @@ The document has several sections:
 - **Workspace folder** notes the full path to your project's workspace.
 - **Total files** notes the total file count for your workspace.
 - **Folders to search files** lists the count for discovered files by type in your content folders and includes the search glob used.
-- **Complete frontmatter.json config** shows the current configuration JSON. If you [split your configuration settings](settings.md#splitting-your-settings-in-multiple-files), it shows the fully composed configuration.
+- **Complete frontmatter.json config** shows the current configuration JSON. If you [split your configuration settings](/docs/settings#splitting-your-settings-in-multiple-files), it shows the fully composed configuration.
 
 ## Feature migrations
 

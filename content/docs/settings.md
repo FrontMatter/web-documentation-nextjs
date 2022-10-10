@@ -72,7 +72,7 @@ Contents of the `blog.json` file:
 
 ### Reviewing composed settings
 
-You can inspect your composed settings with the [diagnostic logging](commands.md#diagnostic-logging) command, which shows you the [Complete `frontmatter.json` config](troubleshooting.md#inspecting-configuration-behavior) in a virtual Markdown document. Use that output to verify that your split configuration settings are applied the way you expect.
+You can inspect your composed settings with the [diagnostic logging](/docs/commands#diagnostic-logging) command, which shows you the [Complete frontmatter.json config](/docs/troubleshooting#inspecting-configuration-behavior) in a virtual Markdown document. Use that output to verify that your split configuration settings are applied the way you expect.
 
 ## Available settings
 
