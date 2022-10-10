@@ -36,6 +36,12 @@ Opens the dashboard with your Markdown pages overview. If you did not yet initia
 
 ID: `frontMatter.dashboard`
 
+### Diagnostic logging
+
+Opens a virtual Markdown document with detailed information about your Front Matter configuration.
+
+ID: `frontMatter.diagnostics`
+
 ### Insert image into your content
 
 Allows you to quickly insert an image reference in the Markdown file.

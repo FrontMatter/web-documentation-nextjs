@@ -27,6 +27,18 @@ The extension logs information, warnings, and errors into the Visual Studio Code
 
 ![Troubleshooting - Show the output of what the extension has been performing](/releases/v5.8.0/troubleshooting-output.png)
 
+## Inspecting configuration behavior
+
+With the [diagnostic logging](commands.md#diagnostic-logging) command, you can see your current configuration and related information in a virtual Markdown document.
+
+The document has several sections:
+
+- **Folders** lists the entries defined in `frontMatter.content.pageFolders` by their title and the full path to each folder.
+- **Workspace folder** notes the full path to your project's workspace.
+- **Total files** notes the total file count for your workspace.
+- **Folders to search files** lists the count for discovered files by type in your content folders and includes the search glob used.
+- **Complete frontmatter.json config** shows the current configuration JSON. If you [split your configuration settings](settings.md#splitting-your-settings-in-multiple-files), it shows the fully composed configuration.
+
 ## Feature migrations
 
 Sometimes it happens features get renamed or removed, under this section we will show you how to migrate your configuration to the new version.
