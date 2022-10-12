@@ -11,15 +11,20 @@ weight: 600
 
 ## Overview
 
-Front Matter's goal is not to be opinionated on which static site generator or framework you are using. We want to support all of them out there, but they can have their requirements, configurations, ...
+Front Matter's goal is not to be opinionated on which static site generator or framework you are
+using. We want to support all of them out there, but they can have their requirements,
+configurations, ...
 
 In this section of the documentation, we will list them up and tell more about how you can get started.
 
 ## Support additional file types
 
-As there are many static site generators out there, we probably do not support all the file types by default. However, you do not have to worry, if there is a file type you want to support, you can easily add it to the `frontMatter.content.supportedFileTypes` setting.
+As there are many static site generators out there, we probably do not support all the file types by
+default. However, you do not have to worry, if there is a file type you want to support, you can
+easily add it to the `frontMatter.content.supportedFileTypes` setting.
 
-By default, Front Matter supports: `md`, `markdown`, and `mdx`. If you want to support other types, just add these to the `frontMatter.content.supportedFileTypes` setting.
+By default, Front Matter supports: `md`, `markdown`, and `mdx`. If you want to support other types,
+just add these to the `frontMatter.content.supportedFileTypes` setting.
 
 ```json
 {
@@ -29,34 +34,36 @@ By default, Front Matter supports: `md`, `markdown`, and `mdx`. If you want to s
 
 ### Hugo
 
-Check out our Hugo configuration documentation to get you started using Front Matter: [Front Matter configuration with Hugo](/docs/ssg-and-frameworks/hugo-configuration).
+Check out our Hugo configuration documentation to get you started using Front Matter:
+[Front Matter configuration with Hugo](/docs/ssg-and-frameworks/hugo-configuration).
 
 ### Eleventy
 
-*Are you up for the challenge of writing this part of the documentation?*
+_Are you up for the challenge of writing this part of the documentation?_
 
 [Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
 
 ### Gatsby
 
-*Are you up for the challenge of writing this part of the documentation?*
+_Are you up for the challenge of writing this part of the documentation?_
 
 [Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
 
 ### Next.js
 
-*Are you up for the challenge of writing this part of the documentation?*
+_Are you up for the challenge of writing this part of the documentation?_
 
 [Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
 
 ### SvelteKit
 
-*Are you up for the challenge of writing this part of the documentation?*
+_Are you up for the challenge of writing this part of the documentation?_
 
 [Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
 
+<!-- markdownlint-disable-next-line MD026 -->
 ### ...
 
-*Are you using one which hasn't been referenced yet? Feel free to add it here.*
+_Are you using one which hasn't been referenced yet? Feel free to add it here._
 
 [Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
