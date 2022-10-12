@@ -19,7 +19,7 @@ You can get the extension via:
 
 <!-- markdownlint-disable MD033 MD013 MD028 -->
 
-- The VS Code marketplace: [VS Code Marketplace - Front Matter](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter).
+- The VS Code marketplace: [VS Code Marketplace - Front Matter][01].
 - The extension CLI: `ext install eliostruyf.vscode-front-matter`
 - Or by clicking on the following link: <a href="" title="open extension in VS Code" data-vscode="vscode:extension/eliostruyf.vscode-front-matter">open extension in VS Code</a>
 
@@ -28,11 +28,11 @@ You can get the extension via:
 If you have the courage to test out the beta features, we made available a beta version as well. You
 can install this via:
 
-- The VS Code marketplace: [VS Code Marketplace - Front Matter BETA](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter-beta).
+- The VS Code marketplace: [VS Code Marketplace - Front Matter BETA][02].
 - The extension CLI: `ext install eliostruyf.vscode-front-matter-beta`
 - Or by clicking on the following link: <a href="" title="open extension in VS Code" data-vscode="vscode:extension/eliostruyf.vscode-front-matter-beta">open extension in VS Code</a>
 
-> **Info**: The BETA docs can be found on [beta.frontmatter.codes](https://beta.frontmatter.codes).
+> **Info**: The BETA docs can be found on [beta.frontmatter.codes][03].
 
 > **Important**: As there can only be one version running of the extension, you will need to
 > uninstall the main version before installing the beta version.
@@ -42,7 +42,7 @@ can install this via:
 Once installed, Front Matter will open the **welcome screen** the first time Visual Studio Code gets
 reloaded.
 
-![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
+![Welcome screen to configure your website][04]
 
 > **Important**: Front Matter supports light and dark mode. It will be automatically detected based
 > on the theme you are using.
@@ -77,17 +77,17 @@ dashboard to show an overview of all files.
 Registering a folder can be done from the list of folders Front Matter has found that already
 contains supported files.
 
-![Content folders](/releases/v7.2.0/content-list.png)
+![Content folders][05]
 
 If one of your folders is not shown, you can register it by right-clicking on a folder name in the
 explorer panel from Visual Studio Code and selecting **Front Matter: Register folder**.
 
-![Register a folder](/assets/register-folder.png)
+![Register a folder][06]
 
 > **Info**: Be default, the extension will include content from the current folder and its
 > sub-folders. If you wish to exclude the sub-folders, you can do this by updating the
-> [frontMatter.content.pageFolders](/docs/settings#frontmatter.content.pagefolders) configuration
-> setting and specifying the `excludeSubDir` property with the value as `true`.
+> [frontMatter.content.pageFolders][07] configuration setting and specifying the `excludeSubDir`
+> property with the value as `true`.
 
 ## Workspaces with multiple folders
 
@@ -98,7 +98,7 @@ figure out for which folder it needs to be activated. It does this by searching 
 When Front Matter cannot find a `frontmatter.json` file in any of your folders (means that it is not
 initiated yet), it will ask you to pick the folder.
 
-![Select your workspace folder for Front Matter](/releases/v5.0.0/workspace-folder.png)
+![Select your workspace folder for Front Matter][08]
 
 Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
 
@@ -110,19 +110,32 @@ space? 🤓
 
 By default, you'll see the following support links:
 
-![Support links shown by default](/releases/v6.0.0/support-links.png)
+![Support links shown by default][09]
 
 When you log in via GitHub, you'll see the following:
 
-![Hidden support links](/releases/v6.0.0/support-links-hidden.png)
+![Hidden support links][10]
 
 Simply start by clicking on the **Accounts** button, and select **Sign in with GitHub to use Front
 Matter** or launch the same flow by using the `Front Matter: Authenticate` command.
 
-![Sign in with GitHub for Front Matter](/releases/v6.0.0/signin-github.png)
+![Sign in with GitHub for Front Matter][11]
 
 Follow the proposed steps from Visual Studio Code.
 
 ## Enjoy using Front Matter
 
 <iframe src="https://player.vimeo.com/video/630150787?h=9988cff4f0&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=56727" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Front Matter - Installation"></iframe>
+
+<!-- Link References -->
+[01]: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter
+[02]: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter-beta
+[03]: https://beta.frontmatter.codes
+[04]: /releases/v7.2.0/welcome-screen-7.2.0.png
+[05]: /releases/v7.2.0/content-list.png
+[06]: /assets/register-folder.png
+[07]: /docs/settings#frontmatter.content.pagefolders
+[08]: /releases/v5.0.0/workspace-folder.png
+[09]: /releases/v6.0.0/support-links.png
+[10]: /releases/v6.0.0/support-links-hidden.png
+[11]: /releases/v6.0.0/signin-github.png

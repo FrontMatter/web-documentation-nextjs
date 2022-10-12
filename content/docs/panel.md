@@ -25,13 +25,13 @@ slug optimization, updating the date, and publish/drafting the article.
 Once you installed the extension, you will notice a Front Matter icon on the activity bar (by
 default on the left side). Clicking this icon will open the Front Matter panel.
 
-![Activity bar action](/assets/activitybar-action.png)
+![Activity bar action][01]
 
 ## Global settings
 
 In this section of the panel, you can modify a couple of the useful settings to have close to hand.
 
-![Global settings](/releases/v6.0.0/local-server.png)
+![Global settings][02]
 
 <!-- markdownlint-disable MD028 -->
 > **Info**: The global settings section will also be shown when you have the panel open on other
@@ -53,7 +53,7 @@ Supports the following:
 - Keyword validation on title, description, slug, and content
 - More content details
 
-![SEO](/releases/v5.3.0/seo-status.png)
+![SEO][03]
 
 ### Settings
 
@@ -84,10 +84,10 @@ section, we provide you the most used/requested actions like:
 - Setting the modified date
 - Publish or revert to draft
 
-![Actions](/releases/v6.0.0/local-server-start.png)
+![Actions][04]
 
 > **Important**: You are able to add your own actions, more information about this you can read in
-> our [custom actions](/docs/custom-actions) section.
+> our [custom actions][05] section.
 
 > **Info**: In version `3.2.0` a couple of actions were moved to the metadata section like changing
 > the draft state and date time properties.
@@ -107,10 +107,10 @@ The following settings are related to these actions:
 In the metadata section, you can manage the front matter of your Markdown file. This section is
 fully customizable to your needs with our `content type` support.
 
-![Metadata section](/assets/metadata.png)
+![Metadata section][06]
 
 > **Info**: More information about content creation/content types/fields can be read at
-> [content creation section](/docs/content-creation).
+> [content creation section][07].
 
 The tags and categories inputs allow you to insert known and unknown tags/categories. When an
 unknown tag/category gets added, it will show a `+` sign that allows you to add it to your
@@ -121,7 +121,7 @@ configuration so that it will appear in the known tags/categories next time.
 When Front Matter notices a difference between your content and the content type defined, it will
 show you a list of actions.
 
-![Content type actions](/releases/v7.2.0/content-type-actions.png)
+![Content type actions][08]
 
 - **Create content type**: This will generate a new content type based on the fields in your front
   matter.
@@ -140,10 +140,10 @@ show you a list of actions.
 Navigate quickly to a recently modified file. In the recently modified section, the latest 10
 modified files get shown.
 
-![Recently modified](/assets/recent-files.png)
+![Recently modified][09]
 
 > **Important**: In order to use this functionality, a registered content folder needs to be
-> present. More information in our [getting started](/docs/getting-started) section.
+> present. More information in our [getting started][10] section.
 
 > **Info**: The recently modified section will also be shown when you have the panel open on other
 > types of files.
@@ -153,7 +153,7 @@ modified files get shown.
 This section provides a couple of other useful actions, like opening the current project in your
 explorer/finder.
 
-![Other actions](/assets/other-actions.png)
+![Other actions][11]
 
 > **Info**: The `writing settings enabled / enable write settings` action allows you to make
 > Markdown specific changes to optimize the writing of your articles. It will change settings like
@@ -213,8 +213,23 @@ Here is an example of a custom view mode:
 Once you created a new view mode, you can change between the default and custom ones. You find the
 mode switch in the panel:
 
-![Switch view mode](/releases/v7.1.0/panel-mode-switch.png)
+![Switch view mode][12]
 
 Or in the status bar:
 
-![Status bar mode switch](/releases/v7.1.0/status-bar-mode-switch.png)
+![Status bar mode switch][13]
+
+<!-- Link References -->
+[01]: /assets/activitybar-action.png
+[02]: /releases/v6.0.0/local-server.png
+[03]: /releases/v5.3.0/seo-status.png
+[04]: /releases/v6.0.0/local-server-start.png
+[05]: /docs/custom-actions
+[06]: /assets/metadata.png
+[07]: /docs/content-creation
+[08]: /releases/v7.2.0/content-type-actions.png
+[09]: /assets/recent-files.png
+[10]: /docs/getting-started
+[11]: /assets/other-actions.png
+[12]: /releases/v7.1.0/panel-mode-switch.png
+[13]: /releases/v7.1.0/status-bar-mode-switch.png

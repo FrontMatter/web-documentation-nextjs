@@ -14,7 +14,7 @@ weight: 900
 Front Matter actions are also available as commands. In this section of the documentation all
 commands will be explained.
 
-![Commands](/assets/commands-v6.1.0.png)
+![Commands][01]
 
 ## Using commands
 
@@ -172,3 +172,6 @@ ID: `frontMatter.promoteSettings`
 This command has been removed, as it became obsolete since the introduction of Content Types.
 
 ID: `frontMatter.setDate`
+
+<!-- Link References -->
+[01]: /assets/commands-v6.1.0.png

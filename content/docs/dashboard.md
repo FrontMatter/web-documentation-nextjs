@@ -16,15 +16,15 @@ dashboard, you will be able to view all your pages and media.
 
 On the contents view, you can **search**, **filter**, **sort** your pages and much more.
 
-![Dashboard - Contents view](/releases/v7.1.0/dashboard-7.1.0.png)
+![Dashboard - Contents view][01]
 
 On the media view, you can quickly glance all the available media files in your project and perform
 quick actions like copying the relative path.
 
-![Dashboard - Media view](/releases/v7.1.0/dashboard-media.png)
+![Dashboard - Media view][02]
 
 In order to start using the dashboard, you will have to let the extension know in which folder(s) it
-can find your pages. Be sure to follow our [getting started](/docs/getting-started) guide.
+can find your pages. Be sure to follow our [getting started][03] guide.
 
 > **Important**: If your preview images are not loading, it might be that you need to configure the
 > `publicFolder` where the extension can find them. For instance, in Hugo, this is the static
@@ -50,20 +50,20 @@ The tags underneath the content abstract/description is changable. By default, t
 the value of the `tags` field, but you can update the field by specifying the value in the
 `frontMatter.dashboard.content.cardTags` setting.
 
-![Card tags](/releases/v7.1.0/card-tags.png)
+![Card tags][04]
 
 ### Draft status navigation
 
 By default, the contents view will show all your pages, and will you will be able to filter by
 **draft** and **published** pages.
 
-![Draft filters](/releases/v7.1.0/draft-filters.png)
+![Draft filters][05]
 
 If you want to use other statuses, you can do so by specifying your own draft field and value.
 
-> **Info**: [Set a custom draft field](/docs/content-creation/fields#draft).
+> **Info**: [Set a custom draft field][06].
 
-![Draft filters](/releases/v5.3.0/draft-status.png)
+![Draft filters][07]
 
 ### Supported filters
 
@@ -77,7 +77,7 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 - Filename (asc/desc)
 
 > **Info**: You can define custom sorting options by specifying these within the
-> [frontMatter.content.sorting](/docs/settings#frontmatter.content.sorting) setting.
+> [frontMatter.content.sorting][08] setting.
 
 You are also able to define your default sorting options by setting the
 `frontMatter.content.defaultSorting` setting for the content view, and the
@@ -100,7 +100,7 @@ The media view has been created to make it easier to look at all media files ava
 articles. When you click on an image, it will show a lightbox, so that it is easier to glance at
 small images.
 
-![Dashboard - Media view - Lightbox](/releases/v5.9.0/media-lightbox.png)
+![Dashboard - Media view - Lightbox][09]
 
 ### Supported files
 
@@ -128,10 +128,10 @@ the media file.
 Setting metadata got introduced so that you can set the description and alt tag of your images. This
 functionality makes it easier to insert your images to your content.
 
-![Dashboard - Setting metadata](/releases/v5.0.0/metadata-media.png)
+![Dashboard - Setting metadata][10]
 
 <!-- markdownlint-disable MD028 -->
-> **Info**: Check the [Insert images section](/docs/markdown#insert-images) for more information.
+> **Info**: Check the [Insert images section][11] for more information.
 
 > **Important**: Data is stored in a local JSON file which you can find under:
 > `<project>/.frontmatter/content/mediaDb.json`. Please do not remove this file, or you will lose
@@ -140,7 +140,7 @@ functionality makes it easier to insert your images to your content.
 
 #### Deleting a media file
 
-![Dashboard - Delete media file](/releases/v5.9.0/media-deletion.png)
+![Dashboard - Delete media file][12]
 
 #### Custom media actions
 
@@ -154,15 +154,14 @@ Custom actions for media files can be defined on two levels:
 - File level: Single file action
 - Folder level: Multiple files action
 
-> **Info**: Check out [creating media scripts](/docs/custom-actions#creating-a-media-script) for
-> more information.
+> **Info**: Check out [creating media scripts][13] for more information.
 
 ### Drag and Drop
 
 On the media view, we enabled drag and drop for your media files. You can easily drop any image from
 your explorer/finder window into one of your folders.
 
-![Dashboard - Upload media file](/releases/v5.9.0/media-upload.png)
+![Dashboard - Upload media file][14]
 
 ## Data files view
 
@@ -174,7 +173,7 @@ For example: navigation, social media links, contacts, etc.
 
 The data files dashboard allows you to quickly manage your data files.
 
-![Data files dashboard](/releases/v6.0.0/data-files-dashboard.png)
+![Data files dashboard][15]
 
 ### Configuration
 
@@ -227,14 +226,14 @@ To create a data file, you can use the `frontMatter.data.files` setting.
 The above sample can be used to create a sponsor data file which contains an array of sponsor object
 with url, name, and description as properties.
 
-![Data dashboard - Sponsor example](/releases/v6.0.0/data-dashboard-sample.png)
+![Data dashboard - Sponsor example][16]
 
 <!-- markdownlint-disable MD028 -->
 > **Info**: Use the `[[workspace]]` placeholder to define the workspace folder. The extension will
 > automatically replace this with the workspace folder path.
 
-> **Important**: In the `schema` property we use the [JSON Schema](https://json-schema.org/)
-> standard to define the structure of the data file.
+> **Important**: In the `schema` property we use the [JSON Schema][17] standard to define the
+> structure of the data file.
 <!-- markdownlint-enable MD028 -->
 ### Re-using a data type for files or folders
 
@@ -300,11 +299,11 @@ taxonomy.
 On the taxonomies view, you can create, edit, delete, and move taxonomy terms from one type to
 another.
 
-![Taxonomies view](/releases/v8.1.0/taxonomies-view.png)
+![Taxonomies view][18]
 
 ### Actions
 
-![Taxonomy actions](/releases/v8.0.0/taxonomy-actions.png)
+![Taxonomy actions][19]
 
 You can perform the following actions on the taxonomies view:
 
@@ -316,3 +315,24 @@ You can perform the following actions on the taxonomies view:
 - **Move**: Move a taxonomy value to another type. For instance, if you want to move a tag to a
   category;
 - **Delete**: Delete a taxonomy value.
+
+<!-- Link References -->
+[01]: /releases/v7.1.0/dashboard-7.1.0.png
+[02]: /releases/v7.1.0/dashboard-media.png
+[03]: /docs/getting-started
+[04]: /releases/v7.1.0/card-tags.png
+[05]: /releases/v7.1.0/draft-filters.png
+[06]: /docs/content-creation/fields#draft
+[07]: /releases/v5.3.0/draft-status.png
+[08]: /docs/settings#frontmatter.content.sorting
+[09]: /releases/v5.9.0/media-lightbox.png
+[10]: /releases/v5.0.0/metadata-media.png
+[11]: /docs/markdown#insert-images
+[12]: /releases/v5.9.0/media-deletion.png
+[13]: /docs/custom-actions#creating-a-media-script
+[14]: /releases/v5.9.0/media-upload.png
+[15]: /releases/v6.0.0/data-files-dashboard.png
+[16]: /releases/v6.0.0/data-dashboard-sample.png
+[17]: https://json-schema.org/
+[18]: /releases/v8.1.0/taxonomies-view.png
+[19]: /releases/v8.0.0/taxonomy-actions.png

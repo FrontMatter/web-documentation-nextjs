@@ -39,15 +39,15 @@ There are also the following section fields:
 
 All fields share the following field properties:
 
-| Property      | Type      | Description                                                                                                                                                                                                                                                                        | Optional / Required |
-| ------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| `name`        | `string`  | The name of your field, will be used to set in the front matter of your Markdown file.                                                                                                                                                                                             | **Required**        |
-| `type`        | `string`  | The type of the field. Use one of the supported field types.                                                                                                                                                                                                                       | **Required**        |
-| `title`       | `string`  | The title to show in the metadata section                                                                                                                                                                                                                                          | _Optional_          |
-| `description` | `string`  | The description to show underneath the field                                                                                                                                                                                                                                       | _Optional_          |
-| `default`     | `string`  | Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders](/docs/content-creation/placeholders).                                             | _Optional_          |
-| `required`    | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications](/docs/settings#frontmatter.global.disablednotifications) setting. | _Optional_          |
-| `hidden`      | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.                                                                                                                                                                    | _Optional_          |
+| Property      | Type      | Description                                                                                                                                                                                                                   | Optional / Required |
+| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `name`        | `string`  | The name of your field, will be used to set in the front matter of your Markdown file.                                                                                                                                        | **Required**        |
+| `type`        | `string`  | The type of the field. Use one of the supported field types.                                                                                                                                                                  | **Required**        |
+| `title`       | `string`  | The title to show in the metadata section                                                                                                                                                                                     | _Optional_          |
+| `description` | `string`  | The description to show underneath the field                                                                                                                                                                                  | _Optional_          |
+| `default`     | `string`  | Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders][01].                         | _Optional_          |
+| `required`    | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications][02] setting. | _Optional_          |
+| `hidden`      | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.                                                                                                               | _Optional_          |
 
 ## String
 
@@ -61,7 +61,7 @@ use if for the title, description, or any other text field.
 - `wysiwyg (boolean)`: When you set this value to `true`, the field will be rendered as a WYSIWYG
   editor. The output of the WYSIWYG editor will be HTML.
 
-![WYSIWYG controls](/releases/v7.2.0/wysiwyg-controls.png)
+![WYSIWYG controls][03]
 
 ### Usage
 
@@ -119,7 +119,7 @@ other types of dates for you content.
   article, this field will be used.
 
 > The format of your date can be defined in the `frontMatter.taxonomy.dateFormat` setting. Check
-> [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
+> [date-fns formating][04] for more information.
 
 ### Usage
 
@@ -264,12 +264,11 @@ alias:
 
 The `draft` field defines the state of your content. This is used for the content dashboard as well.
 By default, the draft field is a boolean. If you want to use your own status values, you can
-configure it via the
-[frontmatter.content.draftfield](/docs/settings#frontmatter.content.draftfield) setting.
+configure it via the [frontmatter.content.draftfield][05] setting.
 
 When using a custom draft status, the content dashboard will make use of it as well:
 
-![Draft filters](/releases/v5.3.0/draft-status.png)
+![Draft filters][06]
 
 > **Important**: If you use Jekyll, you do not have to use the draft field, as Front Matter supports
 > the `_drafts`, `_posts` folders and collections from Jekyll. If you use Jekyll, make sure to set
@@ -439,7 +438,7 @@ The `tags` field allows you to create or use tags from your `frontMatter.taxonom
 default, none existing). When adding a tag which does not yet exist, you will have the option to
 create it.
 
-![Add a new tag](/assets/tag-creation.png)
+![Add a new tag][07]
 
 When the tag is created, you will be able to re-use it for other content.
 
@@ -453,7 +452,7 @@ When the tag is created, you will be able to re-use it for other content.
 
 > **Info**: When a limit is defined, this will get reflected in the UI as well:
 
-![Taxonomy limit](/assets/tags-limit.png)
+![Taxonomy limit][08]
 
 ### Usage
 
@@ -479,9 +478,8 @@ tags:
 
 ## Categories
 
-The `categories` field is similar to the [tags](/docs/content-creation/fields#tags) field. The
-difference is that it uses the `frontMatter.taxonomy.categories` setting (by default, none
-existing).
+The `categories` field is similar to the [tags][09] field. The difference is that it uses the
+`frontMatter.taxonomy.categories` setting (by default, none existing).
 
 ### Properties
 
@@ -563,7 +561,7 @@ customTags:
 
 The `fields` field, allows you to create multi-dimensional content type fields (sub-fields). This is
 useful when you want to create a complex content type. In case you want to define a list data, you
-will have to use the [block](/docs/content-creation/fields#block) field.
+will have to use the [block][10] field.
 
 When you specify the field type as `fields`, you need to define sub-fields within the `fields`
 property.
@@ -607,7 +605,7 @@ property.
 
 ### Outcome
 
-![Multi-dimensional content type fields](/releases/v6.0.0/multi-dimensional-content-type-fields.png)
+![Multi-dimensional content type fields][11]
 
 ```markdown
 ---
@@ -621,7 +619,7 @@ photo:
 
 The `block` field type allows you to define a group of fields which can be used to create a list of data.
 
-![Block field type rendering](/assets/block-field-type.png)
+![Block field type rendering][12]
 
 ### Prerequisites
 
@@ -697,7 +695,7 @@ The `dataFile` field type allows you to use a data file to populate the field wi
 options. For instance, if you have a data file with all the authors of your site, you can use the
 `dataFile` field type to populate the `authors` field with the data from the authors data file.
 
-![dataFile field](/releases/v7.3.0/datafile-field.png)
+![dataFile field][13]
 
 ### Prerequisites
 
@@ -778,7 +776,7 @@ author:
 
 The `slug` field allows you to create/update the slug of the current page.
 
-![Slug field](/releases/v8.0.0/slug-field.png)
+![Slug field][14]
 
 ### Properties
 
@@ -810,7 +808,7 @@ slug: version-8-0-0-release-notes
 ```
 
 > **Info**: The slug is generated based on the title of the page. More information about it can be
-> found in the [generate slug](/docs/commands#generate-slug-based-on-content-title) command section.
+> found in the [generate slug][15] command section.
 
 ## Divider
 
@@ -832,7 +830,7 @@ You only need to specify the `type` property and name:
 
 ### Outcome
 
-![Section divider field](/releases/v8.1.0/section-divider.png)
+![Section divider field][16]
 
 ## Heading
 
@@ -857,4 +855,23 @@ want to group fields together.
 
 ### Outcome
 
-![Section heading field](/releases/v8.1.0/section-heading.png)
+![Section heading field][17]
+
+<!-- Link References -->
+[01]: /docs/content-creation/placeholders
+[02]: /docs/settings#frontmatter.global.disablednotifications
+[03]: /releases/v7.2.0/wysiwyg-controls.png
+[04]: https://date-fns.org/v2.0.1/docs/format
+[05]: /docs/settings#frontmatter.content.draftfield
+[06]: /releases/v5.3.0/draft-status.png
+[07]: /assets/tag-creation.png
+[08]: /assets/tags-limit.png
+[09]: /docs/content-creation/fields#tags
+[10]: /docs/content-creation/fields#block
+[11]: /releases/v6.0.0/multi-dimensional-content-type-fields.png
+[12]: /assets/block-field-type.png
+[13]: /releases/v7.3.0/datafile-field.png
+[14]: /releases/v8.0.0/slug-field.png
+[15]: /docs/commands#generate-slug-based-on-content-title
+[16]: /releases/v8.1.0/section-divider.png
+[17]: /releases/v8.1.0/section-heading.png

@@ -23,7 +23,7 @@ helpful, what you see is what you get (WYSIWYG), controls while working in a Mar
 
 All the controls can be found on the top right of the opened file title bar.
 
-![WYSIWYG controls](/releases/v5.7.0/wysiwyg_controls.png)
+![WYSIWYG controls][01]
 
 Currently supported are:
 
@@ -48,38 +48,38 @@ controls will disappear.
 When you click on the headings in the WYSIWYG controls, you will be asked which level of heading you
 want to insert.
 
-![WYSIWYG headings](/releases/v5.7.0/wysiwyg_headings.png)
+![WYSIWYG headings][02]
 
 ### Other WYSIWYG options
 
 When you click on the elipsis icon in the WYSIWYG controls, you will be asked which of the advanced
 markup you want to insert.
 
-![WYSIWYG options](/releases/v5.7.0/wysiwyg_options.png)
+![WYSIWYG options][03]
 
 ## Insert images
 
 Inserting images was never easier with the `insert image into article` command, which can also be
 triggered with the image icon in the editor title bar (Markdown files only).
 
-![Insert images](/releases/v4_0_0/insert-images.gif)
+![Insert images][04]
 
 > **Info**: You can also use media snippets to insert your images. More information can be found in
-> the [Media Snippets](/docs/snippets#media-snippets) section.
+> the [Media Snippets][05] section.
 
 ## Front matter folding
 
 If you want to focus on the content of your page, you have the ability to fold the Front Matter
 section of your page.
 
-![Folding range](/assets/folding.png)
+![Folding range][06]
 
 ## Front matter highlighting
 
 The extension will automatically highlight the front matter of you document to create a visual
 difference between metadata and content.
 
-![Highlighting](/assets/fm-highlight.png)
+![Highlighting][07]
 
 > **Info**: If you do not want this feature, you can disable it in the extension settings ->
 > `Highlight Front Matter` or by setting the `frontMatter.content.fmHighlight` setting to `false`.
@@ -106,4 +106,14 @@ hidden and the Front Matter panel needs to be used to edit the metadata of your 
 
 ### Result
 
-![Hide front matter](/releases/v8.1.0/hide-fm.png)
+![Hide front matter][08]
+
+<!-- Link References -->
+[01]: /releases/v5.7.0/wysiwyg_controls.png
+[02]: /releases/v5.7.0/wysiwyg_headings.png
+[03]: /releases/v5.7.0/wysiwyg_options.png
+[04]: /releases/v4_0_0/insert-images.gif
+[05]: /docs/snippets#media-snippets
+[06]: /assets/folding.png
+[07]: /assets/fm-highlight.png
+[08]: /releases/v8.1.0/hide-fm.png

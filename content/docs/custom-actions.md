@@ -15,11 +15,10 @@ Not every website is the same. That is why we want to give you the ability to ex
 and you can do this by adding your custom actions to the Front Matter panel. A custom action is
 nothing more than a Node.js script which is referenced from within your project.
 
-![Custom action](/assets/custom-action.png)
+![Custom action][01]
 
 <!-- markdownlint-disable MD028 -->
-> **Sample**:
-> [Generate open graph preview image in Code with Front Matter](https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/)
+> **Sample**: [Generate open graph preview image in Code with Front Matter][02]
 
 > **Important**: You can add custom actions for your content and media files.
 <!-- markdownlint-enable MD028 -->
@@ -69,8 +68,7 @@ if (arguments && arguments.length > 0) {
 }
 ```
 
-> **Info**: The sample script can be found here
-> [sample-script.js](https://github.com/estruyf/vscode-front-matter/blob/HEAD/sample/script-sample.js)
+> **Info**: The sample script can be found here [sample-script.js][03]
 
 The current workspace-, file-path, and front matter data will be passed as a arguments. Like you can
 see in the above sample script, you can fetch these argument values as follows:
@@ -101,7 +99,7 @@ Once a custom action has been configured, it will appear on the Front Matter pan
 the script will be passed as a notification in VS Code. This output allows you to copy the output,
 useful when you generate additional content.
 
-![Custom action output](/assets/custom-action-output.png)
+![Custom action output][04]
 
 ### Updating the front matter
 
@@ -199,14 +197,14 @@ The current workspace-, file/folder-path will be passed as a arguments.
 When you defined a media file script, you will be able to execute it for a single media file from
 its menu.
 
-![Custom action for a media file](/releases/v5.6.0/media-file-custom-script.png)
+![Custom action for a media file][05]
 
 ### Media folder script
 
 When you defined a media folder script, you will be able to execute it for all media files in the
 menu next to the **create new folder** button.
 
-![Custom action for a media folder](/releases/v5.6.0/media-folder-custom-script.png)
+![Custom action for a media folder][06]
 
 ## Sample scripts
 
@@ -296,3 +294,11 @@ const arguments = process.argv;
 **Prerequisites**:
 
 - `npm i imagemin imagemin-jpegtran imagemin-pngquant`
+
+<!-- Link References -->
+[01]: /assets/custom-action.png
+[02]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
+[03]: https://github.com/estruyf/vscode-front-matter/blob/HEAD/sample/script-sample.js
+[04]: /assets/custom-action-output.png
+[05]: /releases/v5.6.0/media-file-custom-script.png
+[06]: /releases/v5.6.0/media-folder-custom-script.png

@@ -35,35 +35,39 @@ just add these to the `frontMatter.content.supportedFileTypes` setting.
 ### Hugo
 
 Check out our Hugo configuration documentation to get you started using Front Matter:
-[Front Matter configuration with Hugo](/docs/ssg-and-frameworks/hugo-configuration).
+[Front Matter configuration with Hugo][01].
 
 ### Eleventy
 
 _Are you up for the challenge of writing this part of the documentation?_
 
-[Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
+[Update the docs][02]
 
 ### Gatsby
 
 _Are you up for the challenge of writing this part of the documentation?_
 
-[Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
+[Update the docs][02]
 
 ### Next.js
 
 _Are you up for the challenge of writing this part of the documentation?_
 
-[Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
+[Update the docs][02]
 
 ### SvelteKit
 
 _Are you up for the challenge of writing this part of the documentation?_
 
-[Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
+[Update the docs][02]
 
 <!-- markdownlint-disable-next-line MD026 -->
 ### ...
 
 _Are you using one which hasn't been referenced yet? Feel free to add it here._
 
-[Update the docs](https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md)
+[Update the docs][02]
+
+<!-- Link Reference -->
+[01]: /docs/ssg-and-frameworks/hugo-configuration
+[02]: https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md

@@ -21,7 +21,7 @@ a full-blown Content Management System (CMS)
 The extension brings CMS capabilities straight to Visual Studio Code. For example, you can keep a
 list of the used tags, categories, create content, and so much more.
 
-![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
+![Welcome screen to configure your website][01]
 
 Our main extension features are:
 
@@ -32,15 +32,14 @@ Our main extension features are:
 - Support for custom actions/scripts
 - and many more
 
-![Site preview](https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png)
+![Site preview][02]
 
 ## Why Front Matter?
 
-Initially, the Front Matter extension was created when
-[Elio Struyf](https://twitter.com/eliostruyf) migrated from WordPress to Hugo (Static web site
-Generator). To make content management more straightforward, he began to develop the Front Matter
-extension and developed more options regularly, until eventually, it became a headless CMS that runs
-on Visual Studio Code.
+Initially, the Front Matter extension was created when [Elio Struyf][03] migrated from WordPress to
+Hugo (Static web site Generator). To make content management more straightforward, he began to
+develop the Front Matter extension and developed more options regularly, until eventually, it became
+a headless CMS that runs on Visual Studio Code.
 
 ## Advantages
 
@@ -68,4 +67,10 @@ scripts will display as actions in the Front Matter panel and take your content 
 the next level.
 
 > **Example**:
-> [Generate open graph preview image in Code with Front Matter](https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/)
+> [Generate open graph preview image in Code with Front Matter][04]
+
+<!-- Link References -->
+[01]: /releases/v7.2.0/welcome-screen-7.2.0.png
+[02]: https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png
+[03]: https://twitter.com/eliostruyf
+[04]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/

@@ -14,7 +14,7 @@ weight: 700
 The Markdown preview is not consistently delivering the same result as the one you will see on your
 site. The Front Matter extension provides you a way to show the actual site instead.
 
-![Site preview](/assets/site-preview.png)
+![Site preview][01]
 
 ## Configuration
 
@@ -88,3 +88,6 @@ type level will override what is defined on page folder level and globally.
   }
 ]
 ```
+
+<!-- Link References -->
+[01]: /assets/site-preview.png

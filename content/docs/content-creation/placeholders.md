@@ -98,14 +98,12 @@ if (arguments && arguments.length > 0) {
 > **Info**: Like the other content scripts, you can use other types of scripts like Python, Bash,
 > and more.
 
-The base script for a dynamic placeholder similar to the
-[content script](/docs/custom-actions/#content-script). The difference is that instead of retrieving
-the whole front matter object, you will receive the title. The reason is that the file is still not
-completely processed, and not all front matter fields are available.
+The base script for a dynamic placeholder similar to the [content script][01]. The difference is
+that instead of retrieving the whole front matter object, you will receive the title. The reason is
+that the file is still not completely processed, and not all front matter fields are available.
 
 > **Important**: In case you need to retrieve the whole front matter object, you can make use of the
-> `postScript` property on your content type in combination with a
-> [content script](/docs/custom-actions/#content-script).
+> `postScript` property on your content type in combination with a [content script][01].
 
 #### Placeholder usage
 
@@ -120,3 +118,6 @@ follows:
   "default": "{{uniqueId}}"
 }
 ```
+
+<!-- Link References -->
+[01]: /docs/custom-actions/#content-script

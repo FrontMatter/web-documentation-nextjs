@@ -17,7 +17,7 @@ project/website.
 
 All snippets can be found on the snippets dashboard.
 
-![Snippet dashboard](/releases/v7.0.0/snippet-dashboard.png)
+![Snippet dashboard][01]
 
 ## Create a snippet
 
@@ -78,7 +78,7 @@ Each placeholder defined, will have a corresponding field definition. If no fiel
 defined for a placeholder, it will be shown as a input field when inserting the snippet.
 
 The field definition is the same as the one we use for our content types (more information at
-[defining your own content type](/docs/content-creation/content-types#define-your-own-type)).
+[defining your own content type][02]).
 
 At this moment, we only support the following field types:
 
@@ -88,8 +88,7 @@ At this moment, we only support the following field types:
 To prepopulate a field, you can use the following special placeholders in the `default` property of
 your field:
 
-- Standard placeholders are available like `{{year}}`, `{{month}}`, ... (see
-  [Placeholders](/docs/content-creation/placeholders))
+- Standard placeholders are available like `{{year}}`, `{{month}}`, ... (see [Placeholders][03])
 - `FM_SELECTED_TEXT`: This placeholder can be used to insert the selected text from the editor.
 
 **Example:**
@@ -133,12 +132,12 @@ your field:
 - Click on the **Insert snippet** button (or use the **Front Matter: Insert snippet into your
   content** command);
 
-![Insert a snippet](/releases/v7.0.0/insert-snippet.png)
+![Insert a snippet][04]
 
 - Select the snippet you want to use;
 - Fill in the fields;
 
-![Fill in the snippet form](/releases/v7.0.0/insert-snippet-form.png)
+![Fill in the snippet form][05]
 
 - Click on insert.
 
@@ -174,7 +173,7 @@ Media snippets will appear on your snippets dashboard, but can only be edited or
 insert media snippets into your content like you can with content snippets. Instead, you will find
 them on the media cards.
 
-![Media snippet](/releases/v7.3.0/media-snippets.png)
+![Media snippet][06]
 
 ### Placeholders
 
@@ -215,3 +214,11 @@ shown when you insert the snippet into your content.
 }
 ```
 <!-- markdownlint-enable MD013 -->
+
+<!-- Link References -->
+[01]: /releases/v7.0.0/snippet-dashboard.png
+[02]: /docs/content-creation/content-types#define-your-own-type
+[03]: /docs/content-creation/placeholders
+[04]: /releases/v7.0.0/insert-snippet.png
+[05]: /releases/v7.0.0/insert-snippet-form.png
+[06]: /releases/v7.3.0/media-snippets.png

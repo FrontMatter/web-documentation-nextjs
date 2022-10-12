@@ -34,7 +34,7 @@ To allow you to easily migrate already defined settings, you can run the
 `Promote settings from local to team level` command. The very first time, it will also ask you if
 there are settings that can be promoted.
 
-![On startup, Front Matter checks if settings can be promoted](/releases/v5.0.0/ask-to-promote-settings.png)
+![On startup, Front Matter checks if settings can be promoted][01]
 
 ## Splitting your settings in multiple files
 
@@ -84,11 +84,9 @@ Contents of the `blog.json` file:
 
 ### Reviewing composed settings
 
-You can inspect your composed settings with the
-[diagnostic logging](/docs/commands#diagnostic-logging) command, which shows you the
-[Complete frontmatter.json config](/docs/troubleshooting#inspecting-configuration-behavior) in a
-virtual Markdown document. Use that output to verify that your split configuration settings are
-applied the way you expect.
+You can inspect your composed settings with the [diagnostic logging][02] command, which shows you
+the [Complete frontmatter.json config][03] in a virtual Markdown document. Use that output to verify
+that your split configuration settings are applied the way you expect.
 
 ## Available settings
 
@@ -111,7 +109,7 @@ Options:
 - `md`
 - `mdx`
 
-> For more information how and when this is used, check [content creation](/docs/content-creation#before-you-start)
+> For more information how and when this is used, check [content creation][04]
 
 ### frontMatter.content.defaultSorting
 
@@ -170,7 +168,7 @@ Specify the message to display when the Front Matter is hidden.
 - Type: `string`
 - Default: `""`
 
-![Hide front matter from the content](/releases/v8.1.0/hide-fm.png)
+![Hide front matter from the content][05]
 
 ### frontMatter.content.pageFolders
 
@@ -182,12 +180,12 @@ running the create article command.
 
 Properties:
 
-| Title           | Type      | Description                                                                                                                                           | Default | Required / Optional |
-| --------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
-| `title`         | `string`  | A title for the content folder path                                                                                                                   | `""`    | Optional            |
-| `path`          | `string`  | The path to the content folder, important is to use the `[[workspace]]` placeholder                                                                   | `""`    | Required            |
-| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder                                                                                                        |         | Optional            |
-| `previewPath`   | `string`  | Allows you to set a prefix path for the page preview. Check the [preview path configuration](/docs/site-preview#configuration) section to learn more. |         | Optional            |
+| Title           | Type      | Description                                                                                                             | Default | Required / Optional |
+| --------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
+| `title`         | `string`  | A title for the content folder path                                                                                     | `""`    | Optional            |
+| `path`          | `string`  | The path to the content folder, important is to use the `[[workspace]]` placeholder                                     | `""`    | Required            |
+| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder                                                                          |         | Optional            |
+| `previewPath`   | `string`  | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more. |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
@@ -223,8 +221,7 @@ Properties:
 - `id`: The id of the placeholder
 - `value`: The value of the placeholder
 
-> **Info**: More information on how you can use it can be found here:
-> [placeholders](/docs/content-creation/placeholders).
+> **Info**: More information on how you can use it can be found here: [placeholders][07].
 
 ### frontMatter.content.publicFolder
 
@@ -305,7 +302,7 @@ Sample:
 }
 ```
 
-> **Info**: Check the [create your own custom scripts](/docs/custom-actions) section for more information.
+> **Info**: Check the [create your own custom scripts][08] section for more information.
 
 ### frontMatter.dashboard.content.cardTags
 
@@ -315,7 +312,7 @@ empty or null, it will hide the tags from the card.
 - Type: `string`
 - Default: `tags`
 
-> **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
+> **Info**: Check the [card tags][09] section for more information.
 
 ### frontMatter.dashboard.content.pagination
 
@@ -339,7 +336,7 @@ Specify the data files you want to use for your website.
 - Default: ``
 
 > More information on how to use it can be found in the
-> [data files view](/docs/dashboard#data-files-view) section.
+> [data files view][10] section.
 
 ### frontMatter.data.folders
 
@@ -349,7 +346,7 @@ Specify the data files you want to use for your website.
 - Default: ``
 
 > More information on how to use it can be found in the
-> [data files view](/docs/dashboard#data-files-view) section.
+> [data files view][10] section.
 
 ### frontMatter.data.types
 
@@ -359,7 +356,7 @@ Specify the data types. These types can be used in for your data files.
 - Default: ``
 
 > More information on how to use it can be found in the
-> [data files view](/docs/dashboard#data-files-view) section.
+> [data files view][10] section.
 
 ### frontMatter.file.preserveCasing
 
@@ -368,9 +365,8 @@ Specify if you want to preserve the casing of your file names from the title.
 - Type: `boolean`
 - Default: `false`
 
-> More information on how to use it can be found in the
-> [preserve the casing for your file names](/docs/content-creation/additional-config#preserve-casing-of-file-names)
-> section.
+> **Info**: More information on how to use it can be found in the
+> [preserve the casing for your file names][11] section.
 
 ### frontMatter.framework.id
 
@@ -399,7 +395,7 @@ Specify the activated mode of Front Matter.
 
 - Type: `string, null`
 
-> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more
+> **Info**: Check the [view mode][12] documentation section for more
 > information.
 
 ### frontMatter.global.modes
@@ -409,7 +405,7 @@ Specify the modes you want to use for Front Matter.
 - Type: `array`
 - Default: ``
 
-> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more
+> **Info**: Check the [view mode][12] documentation section for more
 > information.
 
 ### frontMatter.global.disabledNotifications
@@ -517,7 +513,7 @@ Specify the type of contents you want to use for your articles/pages/etc. Make s
 correctly set in your front matter.
 
 - Type: `array, null`
-- Default: check [default content type](/docs/content-creation/content-types#changing-the-default-content-type)
+- Default: check [default content type][13]
 
 ### frontMatter.taxonomy.customTaxonomy
 
@@ -541,13 +537,11 @@ Sample:
   ]
 ```
 
-> **Info**: Check the [custom taxonomy](/docs/content-creation/fields#taxonomy) section for more
-> information.
+> **Info**: Check the [custom taxonomy][14] section for more information.
 
 ### frontMatter.taxonomy.dateFormat
 
-Specify the date format for your articles. Check
-[date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
+Specify the date format for your articles. Check [date-fns formating][15] for more information.
 
 - Type: `string`
 - Default: `iso`
@@ -559,8 +553,8 @@ Define the field groups you want to use for your block fields.
 - Type: `array[object]`
 - Default: `[]`
 
-> More information on how to use this setting can be found on the
-> [block field](/docs/content-creation/fields#block) section of content creation.
+> More information on how to use this setting can be found on the [block field][16] section of
+> content creation.
 
 ### frontMatter.taxonomy.frontMatterType
 
@@ -716,3 +710,22 @@ Please define your media snippet in the `frontMatter.content.snippet` setting.
 
 This setting has been deprecated since version `3.1.0` in favour of the newly introduced
 `frontMatter.content.pageFolders` setting.
+
+<!-- Link References -->
+[01]: /releases/v5.0.0/ask-to-promote-settings.png
+[02]: /docs/commands#diagnostic-logging
+[03]: /docs/troubleshooting#inspecting-configuration-behavior
+[04]: /docs/content-creation#before-you-start
+[05]: /releases/v8.1.0/hide-fm.png
+[06]: /docs/site-preview#configuration
+[07]: /docs/content-creation/placeholders
+[08]: /docs/custom-actions
+[09]: /docs/dashboard#card-tags
+[10]: /docs/dashboard#data-files-view
+<!-- markdownlint-disable-next-line MD053 - mistakenly marked as invalid -->
+[11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
+[12]: /docs/panel#define-view-modes
+[13]: /docs/content-creation/content-types#changing-the-default-content-type
+[14]: /docs/content-creation/fields#taxonomy
+[15]: https://date-fns.org/v2.0.1/docs/format
+[16]: /docs/content-creation/fields#block

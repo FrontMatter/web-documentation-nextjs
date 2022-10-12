@@ -110,21 +110,21 @@ Adapt the fields to your needs. For our documentation it looks as follows:
 
 The metadata section on the editor panel will render the following fields:
 
-![Adapted default content type fields](/assets/adapted-default-ct.png)
+![Adapted default content type fields][01]
 
 ### Content type properties
 
 For the content type you can configure the following properties:
 
-| Property      | Type                                     | Description                                                                                                                                                                                                                         | Default value |
-| ------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `name`        | `string`                                 | Name of the content type                                                                                                                                                                                                            | `""`          |
-| `fields`      | `array`                                  | Check the [supported field types](/docs/content-creation/fields#supported-field-types)                                                                                                                                              | `[]`          |
-| `fileType`    | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content.                                                                                                                       | `md`          |
-| `pageBundle`  | `boolean`                                | If set to `true`, the content will be created as a page bundle (folder).                                                                                                                                                            | `false`       |
-| `previewPath` | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName](https://frontmatter.codes/docs/settings#frontmatter.preview.pathname) setting will be used. | `null`        |
-| `template`    | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type.                                                                                                                                | `null`        |
-| `postScript`  | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script](/docs/custom-actions/#content-script).                                 | `null`        |
+| Property      | Type                                     | Description                                                                                                                                                       | Default value |
+| ------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `name`        | `string`                                 | Name of the content type                                                                                                                                          | `""`          |
+| `fields`      | `array`                                  | Check the [supported field types][02]                                                                                                                             | `[]`          |
+| `fileType`    | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content.                                                     | `md`          |
+| `pageBundle`  | `boolean`                                | If set to `true`, the content will be created as a page bundle (folder).                                                                                          | `false`       |
+| `previewPath` | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName][03] setting will be used. | `null`        |
+| `template`    | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type.                                                              | `null`        |
+| `postScript`  | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04]. | `null`        |
 
 ## Define your own type
 
@@ -175,8 +175,7 @@ type: documentation
 ---
 ```
 
-> **Fields**: Check out the [fields](/docs/content-creation/fields) section to learn which fields
-> are supported.
+> **Fields**: Check out the [fields][05] section to learn which fields are supported.
 
 ## Using a template with the content type
 
@@ -234,4 +233,12 @@ In your custom script setting, you need to make sure that this script is availab
 ```
 
 > **Info**: More information about custom scripts can be found in the
-> [custom actions](/docs/custom-actions) section.
+> [custom actions][06] section.
+
+<!-- Link References -->
+[01]: /assets/adapted-default-ct.png
+[02]: /docs/content-creation/fields#supported-field-types
+[03]: https://frontmatter.codes/docs/settings#frontmatter.preview.pathname
+[04]: /docs/custom-actions/#content-script
+[05]: /docs/content-creation/fields
+[06]: /docs/custom-actions

@@ -57,4 +57,7 @@ Our default content type consists of the following fields:
 We'll use the default one when you start writing your markdown content, and no other content type is
 defined.
 
-![Default content type fields](/assets/default-contenttype.png)
+![Default content type fields][01]
+
+<!-- Link References -->
+[01]: /assets/default-contenttype.png

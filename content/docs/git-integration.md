@@ -12,7 +12,7 @@ weight: 450
 If you are using git to manage your content, Front Matter can be used to sync your changes from and
 to your git repository.
 
-![Sync your changes with GIT](/releases/v8.1.0/git-integration.png)
+![Sync your changes with GIT][01]
 
 ## Enable GIT integration
 
@@ -22,3 +22,6 @@ To enable this feature, you will need to set the `frontMatter.git.enabled` setti
 
 The commit message can be customized via the `frontMatter.git.commitMessage` setting (default is
 `Synced by Front Matter`).
+
+<!-- Link References -->
+[01]: /releases/v8.1.0/git-integration.png
