@@ -11,48 +11,60 @@ weight: 1100
 
 ## Overview
 
-Most of Front Matter is configurable to your needs. In this part of the documentation all settings are explained.
+Most of Front Matter is configurable to your needs. In this part of the documentation all settings
+are explained.
 
 ## Team settings and local settings
 
-Since version 4 of Front Matter, Team settings got introduced. Teams settings allow you to have all settings on the project/solution level. You will be able to override them on user/local level (`.vscode/settings.json`).
+Since version 4 of Front Matter, Team settings got introduced. Teams settings allow you to have all
+settings on the project/solution level. You will be able to override them on user/local level
+(`.vscode/settings.json`).
 
-The purpose of team settings is to share the global configuration of your CMS configuration. This way, your whole team can use the same tags/categories but apply their changes locally.
+The purpose of team settings is to share the global configuration of your CMS configuration. This
+way, your whole team can use the same tags/categories but apply their changes locally.
 
-As you do not typically share your `.vscode/settings.json` configuration, we went for a `frontmatter.json` file on the root of your project/solution. The settings you provide in this JSON file are the same as you can configure on a local level. This allows you to easily copy, move settings from team to local level and vice versa.
+As you do not typically share your `.vscode/settings.json` configuration, we went for a
+`frontmatter.json` file on the root of your project/solution. The settings you provide in this JSON
+file are the same as you can configure on a local level. This allows you to easily copy, move
+settings from team to local level and vice versa.
 
 ## Migrate local settings to team settings
 
-To allow you to easily migrate already defined settings, you can run the `Promote settings from local to team level` command. The very first time, it will also ask you if there are settings that can be promoted.
+To allow you to easily migrate already defined settings, you can run the
+`Promote settings from local to team level` command. The very first time, it will also ask you if
+there are settings that can be promoted.
 
-![On startup, Front Matter checks if settings can be promoted](/releases/v5.0.0/ask-to-promote-settings.png)
+![On startup, Front Matter checks if settings can be promoted][01]
 
 ## Splitting your settings in multiple files
 
-Some of the Front Matter settings can be split in multiple files to make management of these easier. For example, in case you are using multiple content-types for your site, you can now split each content-type to its own file. This allows you to easily manage the settings for each content-type.
+Some of the Front Matter settings can be split in multiple files to make management of these easier.
+For example, in case you are using multiple content-types for your site, you can now split each
+content-type to its own file. This allows you to easily manage the settings for each content-type.
 
 ### Supported settings to split
 
 The following settings are supported to be split in multiple files:
 
-| Setting name | Folder path | Information | JSON Schema |
-| --- | --- | --- | --- |
-| `frontMatter.content.pageFolders` |`./frontmatter/config/content/pagefolders/` | | `https://beta.frontmatter.codes/config/content.pagefolders.schema.json` | 
-| `frontMatter.content.placeholders` | `./frontmatter/config/content/placeholders/` | | `https://beta.frontmatter.codes/config/content.placeholders.schema.json` |
-| `frontMatter.content.snippets` | `./frontmatter/config/content/snippets/` | The file name will be used as the ID/title of the snippet. | `https://beta.frontmatter.codes/config/content.snippets.schema.json` |
-| `frontMatter.custom.scripts` | `./frontmatter/config/custom/scripts/` | | `https://beta.frontmatter.codes/config/custom.scripts.schema.json` |
-| `frontMatter.data.files` | `./frontmatter/config/data/files/` | | `https://beta.frontmatter.codes/config/data.files.schema.json` |
-| `frontMatter.data.folders` | `./frontmatter/config/data/folders/` | | `https://beta.frontmatter.codes/config/data.folders.schema.json` |
-| `frontMatter.data.types` | `./frontmatter/config/data/types/` | | `https://beta.frontmatter.codes/config/data.types.schema.json` |
-| `frontMatter.taxonomy.contentTypes` | `./frontmatter/config/taxonomy/contenttypes/` | | `https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
+| Setting name                        | Folder path                                   | Information                                                | JSON Schema                                                               |
+| ----------------------------------- | --------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `frontMatter.content.pageFolders`   | `./frontmatter/config/content/pagefolders/`   |                                                            | `https://beta.frontmatter.codes/config/content.pagefolders.schema.json`   |
+| `frontMatter.content.placeholders`  | `./frontmatter/config/content/placeholders/`  |                                                            | `https://beta.frontmatter.codes/config/content.placeholders.schema.json`  |
+| `frontMatter.content.snippets`      | `./frontmatter/config/content/snippets/`      | The file name will be used as the ID/title of the snippet. | `https://beta.frontmatter.codes/config/content.snippets.schema.json`      |
+| `frontMatter.custom.scripts`        | `./frontmatter/config/custom/scripts/`        |                                                            | `https://beta.frontmatter.codes/config/custom.scripts.schema.json`        |
+| `frontMatter.data.files`            | `./frontmatter/config/data/files/`            |                                                            | `https://beta.frontmatter.codes/config/data.files.schema.json`            |
+| `frontMatter.data.folders`          | `./frontmatter/config/data/folders/`          |                                                            | `https://beta.frontmatter.codes/config/data.folders.schema.json`          |
+| `frontMatter.data.types`            | `./frontmatter/config/data/types/`            |                                                            | `https://beta.frontmatter.codes/config/data.types.schema.json`            |
+| `frontMatter.taxonomy.contentTypes` | `./frontmatter/config/taxonomy/contenttypes/` |                                                            | `https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
 
-> **Important**: The folder path is relative to the root of your project/solution and you create the files in their corresponding folder. The file name is the same as the `id` of the setting.
+> **Important**: The folder path is relative to the root of your project/solution and you create the
+> files in their corresponding folder. The file name is the same as the `id` of the setting.
 
 ### Example of splitting a setting
 
 Example of specifying a page folder in a separate file:
 
-```
+```text
 | .frontmatter
 | - config
 | -- content
@@ -72,7 +84,9 @@ Contents of the `blog.json` file:
 
 ### Reviewing composed settings
 
-You can inspect your composed settings with the [diagnostic logging](/docs/commands#diagnostic-logging) command, which shows you the [Complete frontmatter.json config](/docs/troubleshooting#inspecting-configuration-behavior) in a virtual Markdown document. Use that output to verify that your split configuration settings are applied the way you expect.
+You can inspect your composed settings with the [diagnostic logging][02] command, which shows you
+the [Complete frontmatter.json config][03] in a virtual Markdown document. Use that output to verify
+that your split configuration settings are applied the way you expect.
 
 ## Available settings
 
@@ -95,13 +109,14 @@ Options:
 - `md`
 - `mdx`
 
-> For more information how and when this is used, check [content creation](/docs/content-creation#before-you-start)
+> For more information how and when this is used, check [content creation][04]
 
 ### frontMatter.content.defaultSorting
 
-Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID.
+Specify the default sorting option for the content dashboard. You can use one of the values from the
+enum or define your own ID.
 
-- Type: `string` 
+- Type: `string`
 - Default: `""`
 
 Options:
@@ -116,13 +131,14 @@ Options:
 
 Define the draft field you want to use to manage your content.
 
-- Type: `object` 
+- Type: `object`
   - **name**: Define the type of field
   - **type**: `boolean` or `choice`
-  - **invert**: `true` if you want to invert the value. This inversion is only applied if the field is a boolean field and can be used to change the draft to published content behaviou.
+  - **invert**: `true` if you want to invert the value. This inversion is only applied if the field
+    is a boolean field and can be used to change the draft to published content behaviou.
   - **choices**: Define the choices of the draft field `string[]`
 
-- Default: 
+- Default:
 
 ```json
 {
@@ -138,7 +154,6 @@ Specify if you want to highlight the Front Matter in the Markdown file.
 - Type: `boolean`
 - Default: `true`
 
-
 ### frontMatter.content.hideFm
 
 Specify if you want to hide the Front Matter in the Markdown file.
@@ -153,25 +168,27 @@ Specify the message to display when the Front Matter is hidden.
 - Type: `string`
 - Default: `""`
 
-![Hide front matter from the content](/releases/v8.1.0/hide-fm.png)
+![Hide front matter from the content][05]
 
 ### frontMatter.content.pageFolders
 
-This array of folders defines where the extension can find your content and create new content by running the create article command.
+This array of folders defines where the extension can find your content and create new content by
+running the create article command.
 
 - Type: `object[]`
 - Default: `[]`
 
 Properties:
 
-| Title | Type | Description | Default | Required / Optional |
-| --- | --- | --- | --- | --- |
-| `title` | `string` | A title for the content folder path | `""` | Optional |
-| `path` | `string` | The path to the content folder, important is to use the `[[workspace]]` placeholder | `""` | Required |
-| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder | | Optional |
-| `previewPath` | `string` | Allows you to set a prefix path for the page preview. Check the [preview path configuration](/docs/site-preview#configuration) section to learn more. |  | Optional |
+| Title           | Type      | Description                                                                                                             | Default | Required / Optional |
+| --------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
+| `title`         | `string`  | A title for the content folder path                                                                                     | `""`    | Optional            |
+| `path`          | `string`  | The path to the content folder, important is to use the `[[workspace]]` placeholder                                     | `""`    | Required            |
+| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder                                                                          |         | Optional            |
+| `previewPath`   | `string`  | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more. |         | Optional            |
 
-> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace path. The reason why we choose to use this, is because some do not keep the original folder name.
+> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
+> path. The reason why we choose to use this, is because some do not keep the original folder name.
 
 Sample:
 
@@ -204,11 +221,12 @@ Properties:
 - `id`: The id of the placeholder
 - `value`: The value of the placeholder
 
-> More information on how you can use it can be found here: [placeholders](/docs/content-creation/placeholders).
+> **Info**: More information on how you can use it can be found here: [placeholders][07].
 
 ### frontMatter.content.publicFolder
 
-Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder.
+Specify the folder name where all your assets are located. For instance in Hugo this is the `static`
+folder.
 
 - Type: `string`
 - Default: `""`
@@ -224,7 +242,8 @@ Properties:
 
 - `title`: The title of the sorting option
 - `name`: The name of the field to sort by (needs to be present in your content its front matter)
-- `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or `desc`.
+- `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or
+  `desc`.
 - `type`: The type of field value. Option values to use: `string`, `date`, and `number`.
 
 Sample:
@@ -252,19 +271,21 @@ Sample:
 
 Specify the file types that you want to use in Front Matter.
 
-- Type: `array` 
+- Type: `array`
 - Default: `[md, mdx, markdown]`
 
 ### frontMatter.content.wysiwyg
 
-Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls.
+Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown
+controls.
 
 - Type: `boolean`
 - Default: `true`
 
 ### frontMatter.custom.scripts
 
-Specify the path to a Node.js script to execute. The current file path will be provided as an argument.
+Specify the path to a Node.js script to execute. The current file path will be provided as an
+argument.
 
 - Type: `object[]`
 - Default: `[]`
@@ -281,22 +302,23 @@ Sample:
 }
 ```
 
-> **Info**: Check the [create your own custom scripts](/docs/custom-actions) section for more information.
+> **Info**: Check the [create your own custom scripts][08] section for more information.
 
 ### frontMatter.dashboard.content.cardTags
 
-Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card.
+Specify the name of the metadata field that will be used to show the tags on the content card. When
+empty or null, it will hide the tags from the card.
 
-- Type: `string` 
+- Type: `string`
 - Default: `tags`
 
-> **Info**: Check the [card tags](/docs/dashboard#card-tags) section for more information.
+> **Info**: Check the [card tags][09] section for more information.
 
 ### frontMatter.dashboard.content.pagination
 
 Specify if you want to enable/disable pagination for your content.
 
-- Type: `boolean` 
+- Type: `boolean`
 - Default: `true`
 
 ### frontMatter.dashboard.openOnStart
@@ -308,39 +330,43 @@ Specify if you want to open the dashboard when you start VS Code.
 
 ### frontMatter.data.files
 
-Specify the data files you want to use for your website. 
+Specify the data files you want to use for your website.
 
-- Type: `array` 
+- Type: `array`
 - Default: ``
 
-> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+> More information on how to use it can be found in the
+> [data files view][10] section.
 
 ### frontMatter.data.folders
 
 Specify the data files you want to use for your website.
 
-- Type: `array` 
+- Type: `array`
 - Default: ``
 
-> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+> More information on how to use it can be found in the
+> [data files view][10] section.
 
 ### frontMatter.data.types
 
 Specify the data types. These types can be used in for your data files.
 
-- Type: `array` 
+- Type: `array`
 - Default: ``
 
-> More information on how to use it can be found in the [data files view](/docs/dashboard#data-files-view) section.
+> More information on how to use it can be found in the
+> [data files view][10] section.
 
 ### frontMatter.file.preserveCasing
 
 Specify if you want to preserve the casing of your file names from the title.
 
-- Type: `boolean` 
+- Type: `boolean`
 - Default: `false`
 
-> More information on how to use it can be found in the [preserve the casing for your file names](/docs/content-creation/additional-config#preserve-casing-of-file-names) section.
+> **Info**: More information on how to use it can be found in the
+> [preserve the casing for your file names][11] section.
 
 ### frontMatter.framework.id
 
@@ -356,7 +382,6 @@ Specify if you want to use the Git actions for your website.
 - Type: `boolean`
 - Default: `false`
 
-
 ### frontMatter.git.commitMessage
 
 Specify the commit message you want to use for the sync.
@@ -370,16 +395,18 @@ Specify the activated mode of Front Matter.
 
 - Type: `string, null`
 
-> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more information.
+> **Info**: Check the [view mode][12] documentation section for more
+> information.
 
 ### frontMatter.global.modes
 
 Specify the modes you want to use for Front Matter.
 
-- Type: `array` 
+- Type: `array`
 - Default: ``
 
-> **Info**: Check the [view mode](/docs/panel#define-view-modes) documentation section for more information.
+> **Info**: Check the [view mode][12] documentation section for more
+> information.
 
 ### frontMatter.global.disabledNotifications
 
@@ -401,7 +428,7 @@ Specifies which type of notifications you want to see or which you want to hide.
 
 Specify the default sorting option for the media dashboard.
 
-- Type: `string` 
+- Type: `string`
 - Default: `""`
 
 Options:
@@ -415,31 +442,36 @@ Options:
 
 Specify the mime types to support for the media files.
 
-- Type: `array` 
+- Type: `array`
 - Default: `image/*, video/*, audio/*`
 
 ### frontMatter.panel.freeform
 
-Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards).
+Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker
+(when enabled, you will have the option to store them afterwards).
 
 - Type: `boolean`
 - Default: `true`
 
 ### frontMatter.preview.host
 
-Specify the host URL (example: http://localhost:1313) to be used when opening the preview.
+Specify the host URL (example: `http://localhost:1313`) to be used when opening the preview.
 
 - Type: `string`
 - Default: `""`
 
 ### frontMatter.preview.pathName
 
-Specify the path you want to add after the host and before your slug. This can be used for instance to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date field value.
+Specify the path you want to add after the host and before your slug. This can be used for instance
+to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date
+field value.
 
 - Type: `string`
 - Default: `""`
 
-> **Important**: As the value will be formatted with the article's date, it will try to convert all characters you enter. In case you want to skip some characters or all of them, you need to wrap that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
+> **Important**: As the value will be formatted with the article's date, it will try to convert all
+> characters you enter. In case you want to skip some characters or all of them, you need to wrap
+> that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
 
 ### frontMatter.site.baseURL
 
@@ -471,15 +503,17 @@ Specify the fields names that Front Matter should treat as a comma-separated arr
 - Type: `string[]`
 - Default: `[]`
 
-> **Info**: As some site generators expect arrays in `YAML` to be comma-separated like Pelican. You can use this setting to define which of the front matter properties should be treated as an comma-separated array.
+> **Info**: As some site generators expect arrays in `YAML` to be comma-separated like Pelican. You
+> can use this setting to define which of the front matter properties should be treated as an
+> comma-separated array.
 
 ### frontMatter.taxonomy.contentTypes
 
-Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter.
+Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is
+correctly set in your front matter.
 
-- Type: `array, null` 
-- Default: check [default content type](/docs/content-creation/content-types#changing-the-default-content-type)
-
+- Type: `array, null`
+- Default: check [default content type][13]
 
 ### frontMatter.taxonomy.customTaxonomy
 
@@ -503,11 +537,11 @@ Sample:
   ]
 ```
 
-> **Info**: Check the [custom taxonomy](/docs/content-creation/fields#taxonomy) section for more information.
+> **Info**: Check the [custom taxonomy][14] section for more information.
 
 ### frontMatter.taxonomy.dateFormat
 
-Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information.
+Specify the date format for your articles. Check [date-fns formating][15] for more information.
 
 - Type: `string`
 - Default: `iso`
@@ -519,11 +553,13 @@ Define the field groups you want to use for your block fields.
 - Type: `array[object]`
 - Default: `[]`
 
-> More information on how to use this setting can be found on the [block field](/docs/content-creation/fields#block) section of content creation. 
+> More information on how to use this setting can be found on the [block field][16] section of
+> content creation.
 
 ### frontMatter.taxonomy.frontMatterType
 
-Specify which Front Matter language you want to use. The extension supports `YAML` (default), `TOML`, and `JSON`.
+Specify which Front Matter language you want to use. The extension supports `YAML` (default),
+`TOML`, and `JSON`.
 
 - Type: `enum: YAML | TOML | JSON`
 - Default: `YAML`
@@ -537,7 +573,9 @@ Specify if arrays in front matter of the markdown files are indented.
 
 ### frontMatter.taxonomy.noPropertyValueQuotes
 
-Specify the property names of which you want to remove the quotes in the output value. Warning: only use this when you know what you are doing. If you're going to, for instance, remove the quotes from the date property, you can add the following:
+Specify the property names of which you want to remove the quotes in the output value. Warning: only
+use this when you know what you are doing. If you're going to, for instance, remove the quotes from
+the date property, you can add the following:
 
 ```json
 {
@@ -550,7 +588,8 @@ Specify the property names of which you want to remove the quotes in the output 
 
 ### frontMatter.taxonomy.seoContentLengh
 
-Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off).
+Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute
+ideal article length for SEO in 2021. (set to `-1` to turn it off).
 
 - Type: `number`
 - Default: `1760`
@@ -575,7 +614,7 @@ Specifies the optimal description length for SEO (set to `-1` to turn it off).
 
 Specifies the optimal slug length for SEO (set to `-1` to turn it off).
 
-- Type: `number` 
+- Type: `number`
 - Default: `75`
 
 ### frontMatter.taxonomy.seoTitleLength
@@ -610,7 +649,8 @@ Specifies the tags which can be used in the Front Matter.
 
 Specify if you want to disable the telemetry.
 
-> **Important**: No user data is tracked, we only use telemetry to see what is used, and what isn't. This allows us to make accurate decisions on what to add or enhance to the extension.
+> **Important**: No user data is tracked, we only use telemetry to see what is used, and what isn't.
+> This allows us to make accurate decisions on what to add or enhance to the extension.
 
 - Type: `boolean`
 - Default: `false`
@@ -629,7 +669,8 @@ Specify the folder to use for your article templates.
 - Type: `string`
 - Default: `.frontmatter/templates`
 
-> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to `.frontmatter/templates`.
+> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to
+> `.frontmatter/templates`.
 
 ### frontMatter.templates.prefix
 
@@ -637,7 +678,6 @@ Specify the prefix you want to add for your new article filenames.
 
 - Type: `string`
 - Default: `yyyy-MM-dd`
-
 
 ## Deprecated settings
 
@@ -661,12 +701,31 @@ This setting is used to define the modified date field of your articles.
 
 ### frontMatter.dashboard.mediaSnippet
 
-This setting is deprecated in version 7.3.0 and and will be removed in the next major version. Please define your media snippet in the `frontMatter.content.snippet` setting.
-
-
+This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
+Please define your media snippet in the `frontMatter.content.snippet` setting.
 
 ## Removed settings
 
 ### frontMatter.content.folders
 
-This setting has been deprecated since version `3.1.0` in favour of the newly introduced `frontMatter.content.pageFolders` setting.
+This setting has been deprecated since version `3.1.0` in favour of the newly introduced
+`frontMatter.content.pageFolders` setting.
+
+<!-- Link References -->
+[01]: /releases/v5.0.0/ask-to-promote-settings.png
+[02]: /docs/commands#diagnostic-logging
+[03]: /docs/troubleshooting#inspecting-configuration-behavior
+[04]: /docs/content-creation#before-you-start
+[05]: /releases/v8.1.0/hide-fm.png
+[06]: /docs/site-preview#configuration
+[07]: /docs/content-creation/placeholders
+[08]: /docs/custom-actions
+[09]: /docs/dashboard#card-tags
+[10]: /docs/dashboard#data-files-view
+<!-- markdownlint-disable-next-line MD053 - mistakenly marked as invalid -->
+[11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
+[12]: /docs/panel#define-view-modes
+[13]: /docs/content-creation/content-types#changing-the-default-content-type
+[14]: /docs/content-creation/fields#taxonomy
+[15]: https://date-fns.org/v2.0.1/docs/format
+[16]: /docs/content-creation/fields#block
