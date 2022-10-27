@@ -57,7 +57,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div>
-            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`)}</h2>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`)}</h2>
 
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {allFeatured.sort(sortTitle).map((feature: any) => (
@@ -126,7 +126,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div>
-            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
             
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (

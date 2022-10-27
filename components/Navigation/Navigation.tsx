@@ -30,10 +30,10 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
       }
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="relative w-full py-6 flex items-center justify-center lg:justify-between border-b border-teal-500 lg:border-none">
+        <div className="relative w-full py-6 flex items-center justify-between border-b border-teal-500 xl:border-none">
           <div className="flex items-center">
 
-            <div className="lg:hidden absolute left-0">
+            <div className="xl:hidden absolute left-0">
               {
                 navItems && navItems.length > 0 && (
                   <MobileMenu navItems={navItems} />
@@ -48,12 +48,12 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
               </a>
             </Link>
 
-            <div className="lg:hidden absolute right-0">
+            <div className="xl:hidden absolute right-0">
               <Searchbox />
             </div>
           </div>
           <div className="space-x-4">
-            <div className="hidden ml-10 space-x-6 lg:flex justify-center items-center">
+            <div className="hidden ml-10 space-x-6 xl:flex justify-center items-center">
               {navigation.main.map((link) => (
                 <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-teal-500 ${link.href === router.asPath ? `text-teal-800` : ``}`}>
                   {link.name}
@@ -75,14 +75,14 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
             </div>
           </div>
         </div>
-        <div className="py-4 flex flex-wrap justify-center md:space-x-6 lg:hidden">
+        <div className="py-4 flex flex-wrap justify-center md:space-x-6 xl:hidden">
           {navigation.main.map((link) => (
             <a key={link.name} href={link.href} title={link.title} className="mx-3 md:mx-0 text-base font-medium text-whisper-500 hover:text-whisper-900">
               {link.name}
             </a>
           ))}
         </div>
-        <div className="py-4 flex flex-wrap justify-center items-center space-x-6 lg:hidden">
+        <div className="py-4 flex flex-wrap justify-center items-center space-x-6 xl:hidden">
 
           <navigation.sponsor.icon className="inline-block h-6 w-6" aria-hidden="true" />
 
