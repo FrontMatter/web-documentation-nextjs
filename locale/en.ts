@@ -85,6 +85,12 @@ export const strings = {
   changelog_page_title: `Latest updates`,
   changelog_page_description: `An overview of all updates from the ${Extension.name} extension`,
 
+  // Community
+  community_title: "Community",
+  community_description: "Join our community and get to know more about Front Matter.",
+  community_page_title: "Join our community",
+  community_page_description: "Join our community and get to know more about Front Matter.",
+
   // SWAG
   swag_title: "Show your support with our SWAG",
   swag_description: "We are a small team of developers who love to create software. We are always looking for new ideas and ways to improve our product. If you like Front Matter, we would appreciate your support and your contribution to the project.",

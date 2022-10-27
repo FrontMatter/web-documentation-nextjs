@@ -4,14 +4,15 @@ import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
 import { VscTwitter } from "react-icons/vsc";
-import { SiVisualstudiocode } from "react-icons/si";
+import { SiDiscord, SiVisualstudiocode } from "react-icons/si";
 
 export const navigation = {
   main: [
-    { name: 'Documentation', title: '', href: '/docs' },
-    { name: 'Showcase', href: '/showcase' },
-    { name: 'Changelog', href: '/updates' },
-    { name: 'SWAG', href: '/swag' },
+    { name: 'Docs', title: 'Documentation', href: '/docs' },
+    { name: 'Community', title: 'Community', href: '/community' },
+    { name: 'Showcase', title: 'Showcase', href: '/showcase' },
+    { name: 'Changelog', title: 'Changelog', href: '/updates' },
+    // { name: 'SWAG', href: '/swag' },
   ],
   sponsor: { 
     name: 'Become a sponsor', 
@@ -124,9 +125,17 @@ export const navigation = {
     { 
       name: 'Twitter', 
       title: 'Follow us on Twitter', 
-      href: `https://twitter.com/frontmattercms`,
+      href: Extension.twitter,
       icon: ({ className, ...rest}: any) => (
         <VscTwitter className={`${className} group-hover:fill-current`} {...rest} />
+      )
+    },
+    { 
+      name: 'Discord', 
+      title: 'Join us on Discord', 
+      href: Extension.discord,
+      icon: ({ className, ...rest}: any) => (
+        <SiDiscord className={`${className} group-hover:fill-current`} {...rest} />
       )
     }
   ]

@@ -19,4 +19,6 @@ export const Extension = {
   stars: "https://github.com/estruyf/vscode-front-matter/stargazers",
   mainSite: "https://frontmatter.codes",
   betaSite: "https://beta.frontmatter.codes",
+  twitter: "https://twitter.com/frontmattercms",
+  discord: "https://discord.gg/JBVtNMsJFB"
 }
