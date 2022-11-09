@@ -9,6 +9,7 @@ import { isProduction } from '../../helpers/isProduction';
 import { Stargazers } from '../GitHub/Stargazers';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { MobileMenu } from './MobileMenu';
+import { useMemo } from 'react';
 
 export interface INavigationProps {
   navItems?: PageFrontMatter[];
@@ -16,6 +17,10 @@ export interface INavigationProps {
 
 export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}: React.PropsWithChildren<INavigationProps>) => {
   const router = useRouter();
+
+  const isDocs = useMemo(() => {
+    return router.pathname.startsWith('/docs');
+  }, [router.pathname]);
   
   return (
     <>
@@ -30,7 +35,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = ({navItems}
       }
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="relative w-full py-6 flex items-center justify-between border-b border-teal-500 xl:border-none">
+        <div className={`relative w-full py-6 flex items-center ${ isDocs ? "justify-center lg:justify-between" : "justify-between" }  border-b border-teal-500 xl:border-none`}>
           <div className="flex items-center">
 
             <div className="xl:hidden absolute left-0">
