@@ -186,6 +186,8 @@ Properties:
 | `path`          | `string`  | The path to the content folder, important is to use the `[[workspace]]` placeholder                                     | `""`    | Required            |
 | `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder                                                                          |         | Optional            |
 | `previewPath`   | `string`  | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more. |         | Optional            |
+| `filePrefix`    | `string`  | Defines a prefix for the file name.                                                                                     |         | Optional            |
+| `contentTypes`  | `string[]`| An array of content types to use for this folder. If not specified, all content types are used.                         |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
@@ -204,6 +206,12 @@ Sample:
     {
       "title": "Blog posts",
       "path": "[[workspace]]/content/posts"
+    },
+    {
+      "title": "docs",
+      "path": "[[workspace]]/docs",
+      "filePrefix": "",
+      "contentTypes": ["doc"]
     }
   ]
 }
@@ -230,6 +238,11 @@ folder.
 
 - Type: `string`
 - Default: `""`
+
+In case you are using Hexo in combinations with the [asset folders](https://hexo.io/docs/asset-folders), you can use the following settings:
+
+- `source/images`: If you want to use the default image location of Hexo;
+- `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
 
 ### frontMatter.content.sorting
 
@@ -318,8 +331,9 @@ empty or null, it will hide the tags from the card.
 
 Specify if you want to enable/disable pagination for your content.
 
-- Type: `boolean`
+- Type: `boolean` or `number`
 - Default: `true`
+- Maximum: `52`
 
 ### frontMatter.dashboard.openOnStart
 

@@ -23,5 +23,8 @@ To enable this feature, you will need to set the `frontMatter.git.enabled` setti
 The commit message can be customized via the `frontMatter.git.commitMessage` setting (default is
 `Synced by Front Matter`).
 
+> **Info**: You can make use of the placeholders available in Front Matter for 
+> your commit messages. For example: `Synced by Front Matter {{hour24}}:{{minute}}`.
+
 <!-- Link References -->
 [01]: /releases/v8.1.0/git-integration.png

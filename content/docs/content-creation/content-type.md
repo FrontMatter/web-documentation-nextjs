@@ -235,6 +235,23 @@ In your custom script setting, you need to make sure that this script is availab
 > **Info**: More information about custom scripts can be found in the
 > [custom actions][06] section.
 
+## Link to content folders
+
+In case you want to make sure that a content type is only available for specific folders, 
+you can use the `contentTypes` property on the `frontMatter.content.pageFolders` setting. 
+
+```json
+{
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Documentation",
+      "path": "[[workspace]]/content/docs",
+      "contentTypes": ["documentation"]
+    }
+  ]
+}
+```
+
 <!-- Link References -->
 [01]: /assets/adapted-default-ct.png
 [02]: /docs/content-creation/fields#supported-field-types

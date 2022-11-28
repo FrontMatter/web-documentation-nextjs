@@ -43,6 +43,7 @@ The snippet definition contains the following fields:
 }
 ```
 
+- `title`: A title for your snippet (optional);
 - `description`: A short description of the snippet (optional);
 - `body`: The snippet body, each string defined in the array is a new line;
 - `fields`: The snippet fields;

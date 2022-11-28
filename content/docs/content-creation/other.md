@@ -14,11 +14,27 @@ weight: 200.4
 For more information on how to use the preview path, see the
 [preview configuration](/docs/site-preview#configuration) section.
 
+## File prefixes
+
+By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix. You can change this per page folder. You can change this in your `frontMatter.content.pageFolders` setting by adding the `filePrefix` property to your page folder.
+
+```json
+{
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Blog",
+      "path": "[[workspace]]/content/blog",
+      "filePrefix": "yyyy"
+    }
+  ]
+}
+```
+
 ## Page and leaf bundles
 
 The page or leaf bundles, are a way to group your pages and resources together in a single folder.
 
-```text
+```markdown
 content/
 ├── about
 │   ├── index.md

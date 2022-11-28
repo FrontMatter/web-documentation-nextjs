@@ -21,6 +21,10 @@ There are known placeholders from Front Matter:
 - `{{year}}`: Current year
 - `{{month}}`: Current month
 - `{{day}}`: Current day
+- `{{hour12}}`: Current hour in 12-hour format
+- `{{hour24}}`: Current hour in 24-hour format
+- `{{ampm}}`: Show AM/PM
+- `{{minute}}`: Current minute
 
 ## Custom placeholders
 
