@@ -64,7 +64,7 @@ The following settings are supported to be split in multiple files:
 
 Example of specifying a page folder in a separate file:
 
-```text
+```markdown
 | .frontmatter
 | - config
 | -- content
