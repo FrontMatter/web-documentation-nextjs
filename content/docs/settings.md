@@ -42,6 +42,9 @@ Some of the Front Matter settings can be split in multiple files to make managem
 For example, in case you are using multiple content-types for your site, you can now split each
 content-type to its own file. This allows you to easily manage the settings for each content-type.
 
+> **Important**: The configuration of the `frontmatter.json` file will override the settings which
+> you might have splitted.
+
 ### Supported settings to split
 
 The following settings are supported to be split in multiple files:
@@ -62,6 +65,8 @@ The following settings are supported to be split in multiple files:
 
 ### Example of splitting a setting
 
+#### Example 1: Specify a blog page folder
+
 Example of specifying a page folder in a separate file:
 
 ```markdown
@@ -79,6 +84,41 @@ Contents of the `blog.json` file:
   "$schema": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
   "title": "blog",
   "path": "[[workspace]]/blog"
+}
+```
+
+#### Example 2: Specify a custom data type
+
+You are also able to define sub-folders for your settings, that way, you can easily group your 
+settings. For example, in this case we'll create a `baz` data type in its own folder.
+
+```markdown
+| .frontmatter
+| - config
+| -- data
+| --- types
+| ---- bar
+| ----- baz.json
+```
+
+Contents of the `baz.json` file:
+
+```json
+{
+  "$schema": "https://beta.frontmatter.codes/config/data.types.schema.json",
+  "id": "hugo.params.baz",
+  "schema": {
+    "title": "Baz Site Parameters for hugo-toroidal",
+    "type": "object",
+    "properties": {
+      "First": {
+        "title": "First Property",
+        "description": "First Baz",
+        "type": "string",
+        "default": ""
+      }
+    }
+  }
 }
 ```
 
