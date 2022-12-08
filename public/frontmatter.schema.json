@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2022-09-30T12:44:50.262Z",
+  "lastModified": "2022-12-08T15:44:28.295Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -133,6 +133,20 @@
             ],
             "default": null,
             "description": "Defines a custom preview path for the folder."
+          },
+          "filePrefix": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Defines a prefix for the file name."
+          },
+          "contentTypes": {
+            "type": "array",
+            "description": "Defines which content types can be used for the current location. If not defined, all content types will be available.",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false,
@@ -197,6 +211,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "title": {
+            "description": "The snippet title.",
+            "type": "string"
           },
           "description": {
             "description": "The snippet description.",
@@ -374,9 +392,12 @@
       "scope": "Custom scripts"
     },
     "frontMatter.dashboard.content.pagination": {
-      "type": "boolean",
+      "type": [
+        "boolean",
+        "number"
+      ],
       "default": true,
-      "markdownDescription": "Specify if you want to enable/disable pagination for your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.content.pagination)",
+      "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.content.pagination)",
       "scope": "Dashboard"
     },
     "frontMatter.dashboard.content.cardTags": {

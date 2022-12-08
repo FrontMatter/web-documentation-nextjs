@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/data.files.schema.json",
   "description": "Defines the settings for Front Matter data file",
-  "lastModified": "2022-09-30T12:44:50.263Z",
+  "lastModified": "2022-12-08T15:44:28.298Z",
   "type": "object",
   "title": "Front Matter - data file",
   "properties": {

@@ -4,7 +4,7 @@ slug: content-creation/additional-config
 description: null
 date: 2022-03-14T08:42:21.626Z
 lastmod: 2022-07-11T13:34:50.810Z
-weight: 200.4
+weight: 200.5
 ---
 
 # Additional configuration

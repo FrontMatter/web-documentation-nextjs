@@ -4,7 +4,7 @@ slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
 lastmod: 2022-09-22T07:08:36.014Z
-weight: 200.3
+weight: 200.4
 ---
 
 # Placeholders
