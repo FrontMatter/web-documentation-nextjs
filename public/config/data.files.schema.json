@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/data.files.schema.json",
+  "description": "Defines the settings for Front Matter data file",
+  "lastModified": "2022-12-08T15:44:28.298Z",
+  "type": "object",
+  "title": "Front Matter - data file",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Your unique ID you want to use for your data file."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title you want to give to your data file."
+    },
+    "labelField": {
+      "type": "string",
+      "description": "The field you want to use as label for your data entries."
+    },
+    "file": {
+      "type": "string",
+      "description": "Path to the file to load. Only JSON or YAML files are supported.",
+      "default": "[[workspace]]/"
+    },
+    "fileType": {
+      "type": "string",
+      "default": "json",
+      "enum": [
+        "json",
+        "yaml"
+      ],
+      "description": "Defines how you want to parse the file. JSON is the default."
+    },
+    "schema": {
+      "$id": "#dataFileSchema",
+      "type": "object",
+      "default": {},
+      "description": "The JSON schema for your data which will be used to render the data form.",
+      "additionalProperties": true,
+      "required": [
+        "type",
+        "properties"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the form."
+        },
+        "type": {
+          "type": "string",
+          "description": "Defines the type of the form. Default is 'object'.",
+          "default": "object"
+        },
+        "required": {
+          "type": "array",
+          "description": "Defines the required fields for the form.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "properties": {
+          "type": "object",
+          "description": "Defines the fields of the form.",
+          "additionalProperties": true
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "default": "content",
+      "description": "If you are using data types, you can specify your type ID."
+    },
+    "singleEntry": {
+      "type": "boolean",
+      "description": "If you want to use a single entry for your data file.",
+      "default": false
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "file"
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttype.schema.json",
+  "description": "Defines the settings for Front Matter content type",
+  "lastModified": "2022-12-08T15:44:28.297Z",
+  "type": "object",
+  "title": "Front Matter - content type",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Define the type of field"
+    },
+    "fileType": {
+      "type": "string",
+      "default": "",
+      "enum": [
+        "md",
+        "mdx"
+      ],
+      "description": "Specifies the type of content you want to create."
+    },
+    "fields": {
+      "$id": "#contenttypefield",
+      "type": "array",
+      "description": "Define the fields of the content type",
+      "items": {
+        "type": "object",
+        "description": "Define the content types you want to use in Front Matter.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "string",
+              "number",
+              "datetime",
+              "boolean",
+              "image",
+              "file",
+              "choice",
+              "taxonomy",
+              "tags",
+              "categories",
+              "draft",
+              "fields",
+              "json",
+              "block",
+              "list",
+              "dataFile",
+              "slug",
+              "divider",
+              "heading"
+            ],
+            "description": "Define the type of field"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the field to use"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title to show in the UI"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description to show in the UI"
+          },
+          "default": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "array",
+              "object",
+              "null"
+            ],
+            "description": "Default value"
+          },
+          "choices": {
+            "type": "array",
+            "description": "Define your choices",
+            "items": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "properties": {
+                "id": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "The choice ID"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "The choice title"
+                }
+              }
+            }
+          },
+          "single": {
+            "type": "boolean",
+            "default": false,
+            "description": "Is a single line field"
+          },
+          "wysiwyg": {
+            "type": "boolean",
+            "default": false,
+            "description": "Is a WYSIWYG field (HTML output)"
+          },
+          "multiple": {
+            "type": "boolean",
+            "default": false,
+            "description": "Do you allow to select multiple values?"
+          },
+          "isPreviewImage": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the image field can be used as preview. Be aware, you can only have one preview image per content type."
+          },
+          "hidden": {
+            "type": "boolean",
+            "default": false,
+            "description": "Do you want to hide the field from the metadata section?"
+          },
+          "taxonomyId": {
+            "type": "string",
+            "default": "",
+            "description": "The ID of your taxonomy field. It cannot contain the \"tags\" or \"categories\" value.",
+            "not": {
+              "anyOf": [
+                {
+                  "const": ""
+                },
+                {
+                  "const": "tags"
+                },
+                {
+                  "const": "categories"
+                }
+              ]
+            }
+          },
+          "fileExtensions": {
+            "type": "array",
+            "description": "Specify the file extensions to allow for the file picker",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fields": {
+            "$ref": "#contenttypefield"
+          },
+          "fieldGroup": {
+            "type": [
+              "string",
+              "array"
+            ],
+            "default": [],
+            "description": "The ID(s) of your field group(s) defined in the `frontMatter.taxonomy.fieldGroups` setting",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dataType": {
+            "type": [
+              "string",
+              "array"
+            ],
+            "default": [],
+            "description": "The ID(s) of your data type(s) defined in the `frontMatter.data.types` setting",
+            "items": {
+              "type": "string"
+            }
+          },
+          "taxonomyLimit": {
+            "type": "number",
+            "default": 0,
+            "description": "Limit the number of taxonomies to select. Set to 0 to allow unlimited."
+          },
+          "isPublishDate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the field is the publish date field"
+          },
+          "isModifiedDate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the field is the modified date field"
+          },
+          "dataFileId": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the ID of the data file to use for this field"
+          },
+          "dataFileKey": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the key of the data file to use for this field"
+          },
+          "dataFileValue": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the property name that will be used to show the value for the field"
+          },
+          "editable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Specify if the field is editable"
+          },
+          "required": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the field is required"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "name"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "divider"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "type"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "dataFile"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "dataFileId",
+                "dataFileKey"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "file"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fileExtensions"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "taxonomy"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "taxonomyId"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "choice"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "choices"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "fields"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fields"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "block"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fieldGroup"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "json"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "dataType"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "pageBundle": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specify if you want to create a folder when creating new content."
+    },
+    "previewPath": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "description": "Defines a custom preview path for the content type."
+    },
+    "template": {
+      "type": "string",
+      "default": "",
+      "description": "An optional template that can be used for creating new content."
+    },
+    "postScript": {
+      "type": "string",
+      "default": "",
+      "description": "An optional post script that can be used after new content creation."
+    }
+  },
+  "required": [
+    "name",
+    "fields"
+  ]
+}

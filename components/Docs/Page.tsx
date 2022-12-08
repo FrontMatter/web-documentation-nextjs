@@ -24,7 +24,7 @@ export const Page: React.FunctionComponent<IPageProps> = ({items, page, children
 
           {children}
 
-          <PageInfo page={page} />
+          <PageInfo page={page} items={items} />
         </div>
       </div>
     </div>

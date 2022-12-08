@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2022-09-12T08:29:41.941Z",
+  "lastModified": "2022-12-08T15:44:28.295Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -97,13 +97,13 @@
     },
     "frontMatter.content.hideFm": {
       "type": "boolean",
-      "markdownDescription": "Specify if you want to hide the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefrontmatter)",
+      "markdownDescription": "Specify if you want to hide the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefm)",
       "scope": "Content"
     },
     "frontMatter.content.hideFmMessage": {
       "type": "string",
       "default": "Use the editor panel to make front matter changes",
-      "markdownDescription": "Specify the message to display when the Front Matter is hidden. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefrontmatter.message)",
+      "markdownDescription": "Specify the message to display when the Front Matter is hidden. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefmMessage)",
       "scope": "Content"
     },
     "frontMatter.content.pageFolders": {
@@ -133,6 +133,20 @@
             ],
             "default": null,
             "description": "Defines a custom preview path for the folder."
+          },
+          "filePrefix": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Defines a prefix for the file name."
+          },
+          "contentTypes": {
+            "type": "array",
+            "description": "Defines which content types can be used for the current location. If not defined, all content types will be available.",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false,
@@ -197,6 +211,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "title": {
+            "description": "The snippet title.",
+            "type": "string"
           },
           "description": {
             "description": "The snippet description.",
@@ -374,9 +392,12 @@
       "scope": "Custom scripts"
     },
     "frontMatter.dashboard.content.pagination": {
-      "type": "boolean",
+      "type": [
+        "boolean",
+        "number"
+      ],
       "default": true,
-      "markdownDescription": "Specify if you want to enable/disable pagination for your content. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.content.pagination)",
+      "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.content.pagination)",
       "scope": "Dashboard"
     },
     "frontMatter.dashboard.content.cardTags": {
@@ -477,6 +498,11 @@
             "type": "string",
             "default": "content",
             "description": "If you are using data types, you can specify your type ID."
+          },
+          "singleEntry": {
+            "type": "boolean",
+            "description": "If you want to use a single entry for your data file.",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -528,6 +554,11 @@
             "type": "string",
             "default": "content",
             "description": "If you are using data types, you can specify your type ID."
+          },
+          "singleEntry": {
+            "type": "boolean",
+            "description": "If you want to use a single entry for your data files in the folder.",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -597,9 +628,9 @@
       "markdownDescription": "Specify if you want to use the Git actions for your website. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.git.enabled)",
       "default": false
     },
-    "frontMatter.git.commitMsg": {
+    "frontMatter.git.commitMessage": {
       "type": "string",
-      "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.git.commitmsg)",
+      "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.git.commitmessage)",
       "default": "Synced by Front Matter"
     },
     "frontMatter.global.activeMode": {
@@ -639,7 +670,8 @@
                 "panel.otherActions",
                 "dashboard.snippets.view",
                 "dashboard.snippets.manage",
-                "dashboard.data.view"
+                "dashboard.data.view",
+                "dashboard.taxonomy.view"
               ]
             }
           }
@@ -668,6 +700,14 @@
       ],
       "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.global.notifications)",
       "scope": "Templates"
+    },
+    "frontMatter.global.disabledNotificaitons": {
+      "type": "array",
+      "default": [],
+      "markdownDescription": "This is an array with the notifications types that can be disabled for Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.global.disablednotifications)",
+      "enum": [
+        "requiredFieldValidation"
+      ]
     },
     "frontMatter.media.defaultSorting": {
       "type": "string",
@@ -791,7 +831,9 @@
                     "block",
                     "list",
                     "dataFile",
-                    "slug"
+                    "slug",
+                    "divider",
+                    "heading"
                   ],
                   "description": "Define the type of field"
                 },
@@ -802,6 +844,10 @@
                 "title": {
                   "type": "string",
                   "description": "Title to show in the UI"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description to show in the UI"
                 },
                 "default": {
                   "type": [
@@ -946,6 +992,11 @@
                   "type": "boolean",
                   "default": true,
                   "description": "Specify if the field is editable"
+                },
+                "required": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the field is required"
                 }
               },
               "additionalProperties": false,
@@ -954,6 +1005,20 @@
                 "name"
               ],
               "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "divider"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
                 {
                   "if": {
                     "properties": {

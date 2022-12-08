@@ -205,3 +205,13 @@ table {
     @apply border-b border-vulcan-50 p-4;
   }
 }
+
+.sponsor__block {
+  h3 {
+    @apply text-xl;
+  }
+}
+
+.table__wrapper {
+  @apply overflow-x-auto;
+}
