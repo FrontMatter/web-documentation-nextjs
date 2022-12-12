@@ -49,28 +49,6 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
                     <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
                   </a>
                 ))
-              }{
-                individuals.map((sponsor: Sponsor) => (
-                  <a 
-                    key={sponsor.id} 
-                    target={`_blank`}  
-                    rel={`noopener noreferrer`} 
-                    href={sponsor.url} 
-                    title={`Thanks ${sponsor.name}!`}>
-                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
-                  </a>
-                ))
-              }{
-                individuals.map((sponsor: Sponsor) => (
-                  <a 
-                    key={sponsor.id} 
-                    target={`_blank`}  
-                    rel={`noopener noreferrer`} 
-                    href={sponsor.url} 
-                    title={`Thanks ${sponsor.name}!`}>
-                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
-                  </a>
-                ))
               }
             </div>
           )
