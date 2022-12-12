@@ -28,6 +28,13 @@
       "image": "/assets/sponsors/powered-by-vercel.svg",
       "id": "Vercel",
       "alt": "Vercel"
+    },
+    {
+      "url": "http://bejs.io",
+      "title": "Supported by the BEJS Community",
+      "image": "/assets/sponsors/bejs-community.png",
+      "id": "BEJS Community",
+      "alt": "BEJS Community"
     }
   ]
 }

@@ -37,7 +37,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
         {
           individuals && individuals.length > 0 && (
-            <div className="mt-6 flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4 flex-wrap">
               {
                 individuals.map((sponsor: Sponsor) => (
                   <a 
@@ -46,7 +46,29 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
                     rel={`noopener noreferrer`} 
                     href={sponsor.url} 
                     title={`Thanks ${sponsor.name}!`}>
-                    <img className="h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                  </a>
+                ))
+              }{
+                individuals.map((sponsor: Sponsor) => (
+                  <a 
+                    key={sponsor.id} 
+                    target={`_blank`}  
+                    rel={`noopener noreferrer`} 
+                    href={sponsor.url} 
+                    title={`Thanks ${sponsor.name}!`}>
+                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                  </a>
+                ))
+              }{
+                individuals.map((sponsor: Sponsor) => (
+                  <a 
+                    key={sponsor.id} 
+                    target={`_blank`}  
+                    rel={`noopener noreferrer`} 
+                    href={sponsor.url} 
+                    title={`Thanks ${sponsor.name}!`}>
+                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
                   </a>
                 ))
               }
@@ -56,10 +78,10 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
         {
           sponsors && sponsors.companies && sponsors.companies.length > 0 && (
-            <div className="mt-6">
+            <div className="flex justify-center space-x-4 flex-wrap">
               {
                 sponsors.companies.map((sponsor) => (
-                  <a key={sponsor.id} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={sponsor.title} className="col-span-1 flex justify-center">
+                  <a key={sponsor.id} target={`_blank`}  rel={`noopener noreferrer`} href={sponsor.url} title={sponsor.title} className="mt-6 col-span-1 flex justify-center">
                     <img className="h-12" src={sponsor.image} alt={sponsor.alt} />
                   </a>
                 ))
