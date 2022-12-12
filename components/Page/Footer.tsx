@@ -23,7 +23,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           </a>
           
           <a href={Extension.extensionLink} title={`Extension installs`} rel={`noopener noreferrer`}>
-            <img src={`https://vsmarketplacebadge.apphb.com/installs-short/eliostruyf.vscode-front-matter.svg?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
+            <img src={`https://vsmarketplacebadges.dev/installs-short/eliostruyf.vscode-front-matter.svg?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
           </a>
         </div>
         
