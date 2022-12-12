@@ -88,7 +88,7 @@ const fetch = require('node-fetch');
     }
 
     // Sub-schema's filenames
-    const ctSchemaName = "taxonomy.contenttype.schema.json";
+    const ctSchemaName = "taxonomy.contenttypes.schema.json";
     const pageFoldersSchemaName = "content.pagefolders.schema.json";
     const snippetSchemaName = "content.snippets.schema.json";
     const placeholderSchemaName = "content.placeholders.schema.json";
