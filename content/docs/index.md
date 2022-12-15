@@ -11,14 +11,6 @@ weight: 1
 
 # Introduction
 
-```json {{ "title": "testing", "description": "How does this work?" }}
-{
-  "title": "test",
-  "slug": "",
-  "description": "Create, edit, and preview your pages within Visual Studio Code/GitPod/... Front Matter allows you to keep control of your static site without any external tools.",
-}
-```
-
 ## Overview
 
 Front Matter is an integral Visual Studio Code extension that simplifies operating and managing your
