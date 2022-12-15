@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import { CodeHighlighting } from './CodeHighlighting';
+import { CodeBlock, CodeHighlighting } from './CodeHighlighting';
+import { mdxAnnotations } from 'mdx-annotations'
 
 export interface IMarkdownProps {
   content: string | undefined;
@@ -66,8 +67,10 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
           h5: ({node, ...props}) => (<h5 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h5>),
           table: ({node, ...props}) => (<div className='table__wrapper'><table>{props.children}</table></div>),
           code: ({...props}) => <CodeHighlighting {...props} />,
+          pre: ({...props}) => <CodeBlock {...props} />,
         }}
-        rehypePlugins={[rehypeRaw, remarkGfm]} 
+        rehypePlugins={[rehypeRaw, remarkGfm, mdxAnnotations.rehype]}
+        remarkPlugins={[mdxAnnotations.remark]}
         children={content} />
     </div>
   );

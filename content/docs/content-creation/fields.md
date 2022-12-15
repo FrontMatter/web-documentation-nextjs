@@ -63,9 +63,7 @@ use if for the title, description, or any other text field.
 
 ![WYSIWYG controls][03]
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Title",
   "name": "title",
@@ -74,9 +72,7 @@ use if for the title, description, or any other text field.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 title: "My title"
 ---
