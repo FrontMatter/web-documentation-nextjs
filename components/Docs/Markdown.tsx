@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { CodeBlock, CodeHighlighting } from './CodeHighlighting';
-import { mdxAnnotations } from 'mdx-annotations'
+const mdxAnnotations = require('mdx-annotations');
 
 export interface IMarkdownProps {
   content: string | undefined;
