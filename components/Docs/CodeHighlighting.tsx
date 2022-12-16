@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as shiki from '@antfu/shiki';
+import * as shiki from 'shiki';
 import { Children, useMemo } from 'react';
 import { CopyButton } from './CopyButton';
 
@@ -87,7 +87,17 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
         langs: [language as any],
         theme: `the-unnamed`
       }).then((highlighter: shiki.Highlighter) => {
-        setCode(highlighter.codeToHtml(children.toString(), getLanguage(className)));
+        let code = children.toString();
+
+        if (code.endsWith(`\n`)) {
+          code = code.slice(0, -1);
+        }
+
+        setCode(
+          highlighter.codeToHtml(code, {
+            lang: getLanguage(className)
+          })
+        );
       }).then(() => {
         if (location.hash) {
           location.href = location.href;
