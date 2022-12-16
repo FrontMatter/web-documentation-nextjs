@@ -1,11 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
 import { Markdown } from '../../components/Docs/Markdown';
 import { Page } from '../../components/Docs/Page';
 import { Description, OtherMeta, Title } from '../../components/Meta';
-import { Layout } from '../../components/Page/Layout';
+import { DocsLayout } from '../../components/Page/DocsLayout';
 import { getAllPosts } from '../../lib/api';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 
@@ -20,11 +18,11 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
       <Description value={strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
-      <Layout navItems={pages} >
+      <DocsLayout navItems={pages} >
         <Page items={pages} page={welcome}>
           <Markdown content={welcome?.content} />
         </Page>
-      </Layout>
+      </DocsLayout>
     </>
   )
 }

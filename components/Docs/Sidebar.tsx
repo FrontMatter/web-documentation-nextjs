@@ -15,8 +15,6 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
   // Retrieve only the root sections, not the sub-sections
   sorted = sorted.filter((item) => (item.weight || 99) % 1 === 0);
 
-  
-
   const getLinks = (item: PageFrontMatter) => {
     const { content } = item;
     const links = Array.from(content.matchAll(/^## (.*$)/gim));
@@ -53,7 +51,7 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
   }
 
   return (
-    <nav role={`navigation`} className={`space-y-8 lg:pr-8 lg:border-r lg:border-vulcan-300`}>
+    <nav role={`navigation`} className={`hidden lg:mt-8 lg:block space-y-8`}>
       {sorted.map((item, index) => {
         return (
           <div key={index}>

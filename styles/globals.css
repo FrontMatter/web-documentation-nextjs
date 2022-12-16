@@ -22,12 +22,14 @@ html, body {height: 100%;}
   animation: fadeIn 0.5s;
 }
 
+/*
 .header__offset:before {
   content: "";
   display: block;
   height: 100px;
   margin: -100px 0 0;
 }
+*/
 
 h3.header__offset,
 h4.header__offset,
