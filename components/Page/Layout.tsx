@@ -14,13 +14,9 @@ export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, childre
 
   return (
     <div className={`flex flex-col h-full`}>
-      <header className={`lg:sticky w-full lg:top-0 z-50 bg-vulcan-500 bg-opacity-80 backdrop-blur-lg`}>
-        <BetaBanner />
+      <Header navItems={navItems} />
 
-        <Header navItems={navItems} />
-      </header>
-
-      <main className={`flex-grow`}>
+      <main className={`flex-grow pt-16`}>
         {children}
       </main>
       

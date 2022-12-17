@@ -198,9 +198,6 @@ html[data-theme=dark] {
 
 /* create css media query */
 @media (max-width: 410px) {
-  .stargazers {
-    @apply mt-4;
-  }
 }
 
 /* Tables */
@@ -224,4 +221,12 @@ table {
 
 .table__wrapper {
   @apply overflow-x-auto;
+}
+
+/* Search */
+.DocSearch-Button {
+  .DocSearch-Button-Placeholder,
+  .DocSearch-Button-Keys {
+    display: none;
+  }
 }

@@ -1,3 +1,4 @@
+import { UserIcon } from '@heroicons/react/outline';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -46,7 +47,13 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
                     rel={`noopener noreferrer`} 
                     href={sponsor.url} 
                     title={`Thanks ${sponsor.name}!`}>
-                    <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                    {
+                      sponsor.avatarUrl ? (
+                        <img className="mt-6 h-12 bg-white rounded-full border-2 border-transparent hover:border-whisper-500" src={sponsor.avatarUrl} />
+                      ) : (
+                        <UserIcon className='mt-6 h-12 p-2 bg-white rounded-full border-2 border-transparent hover:border-whisper-500 text-vulcan-500/50' />
+                      )
+                    }
                   </a>
                 ))
               }
