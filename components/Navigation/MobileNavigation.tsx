@@ -93,7 +93,7 @@ export const MobileNavigation: React.FunctionComponent<IMobileNavigationProps> =
                       <>
                         <Divider className={`block md:hidden`} />
 
-                        <DocsNavigation />
+                        <DocsNavigation navItems={navItems} />
                       </>
                     )
                   }

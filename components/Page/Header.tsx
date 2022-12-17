@@ -12,6 +12,7 @@ import { ForwardedRef, forwardRef, useMemo } from 'react';
 import { Navigation } from '../Navigation';
 import { MobileNavigation } from '../Navigation/MobileNavigation';
 import { GlobalNavigation } from '../Navigation/GlobalNavigation';
+import { SocialNavigation } from '../Navigation/SocialNavigation';
 
 export interface IHeaderProps {
   navItems?: PageFrontMatter[];
@@ -29,11 +30,13 @@ export const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navIte
     <>
       <header
         ref={ref} 
-        className={`fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-md`}>
+        className={`fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-md`}>
 
         <div className="flex items-center justify-between lg:hidden w-full">
           <Link href="/" aria-label="Home">
-            <Logo className="h-12" />
+            <a title='Home'>
+              <Logo className="h-12" />
+            </a>
           </Link>
 
           <GlobalNavigation
@@ -46,11 +49,19 @@ export const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navIte
             <MobileNavigation />
           </div>
         </div>
-        <div className="flex items-center">
-          <div className="hidden md:block md:h-5 md:w-px md:bg-vulcan-900/10 md:dark:bg-white/15" />
-          <div className="flex gap-4">
-            {/* <MobileSearch />
-            <ModeToggle /> */}
+
+        <div className="hidden lg:flex items-center w-full">
+          <div className="flex items-center justify-between w-full">
+            <Link href="/" aria-label="Home">
+              <Logo className="h-16" />
+            </Link>
+
+            <div className="flex items-center gap-6">
+              <GlobalNavigation 
+                listClassName='flex gap-6'/>
+
+              <SocialNavigation />
+            </div>
           </div>
         </div>
       </header>

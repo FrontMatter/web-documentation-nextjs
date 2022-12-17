@@ -7,7 +7,7 @@ export interface ISocialNavigationProps {}
 export const SocialNavigation: React.FunctionComponent<ISocialNavigationProps> = (props: React.PropsWithChildren<ISocialNavigationProps>) => {
   return (
     <nav
-      className='flex flex-col items-center justify-center gap-6'
+      className='flex flex-col lg:flex-row items-center justify-center gap-6'
       role={`list`}>
 
       <navigation.sponsor.icon className="inline-block h-6 w-6" aria-hidden="true" />

@@ -16,7 +16,7 @@ export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, childre
     <div className={`flex flex-col h-full`}>
       <Header navItems={navItems} />
 
-      <main className={`flex-grow pt-16`}>
+      <main className={`flex-grow pt-16 lg:pt-20`}>
         {children}
       </main>
       

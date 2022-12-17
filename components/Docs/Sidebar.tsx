@@ -6,9 +6,10 @@ import { Section } from '../Link/Section';
 
 export interface ISidebarProps {
   items: PageFrontMatter[];
+  className?: string;
 }
 
-export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React.PropsWithChildren<ISidebarProps>) => {
+export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items, className }: React.PropsWithChildren<ISidebarProps>) => {
 
   let sorted = items?.sort((a, b) => { return (a.weight || 99) - (b.weight || 99); }) || [];
 
@@ -51,7 +52,7 @@ export const Sidebar: React.FunctionComponent<ISidebarProps> = ({ items }: React
   }
 
   return (
-    <nav role={`navigation`} className={`hidden lg:mt-8 lg:block space-y-8`}>
+    <nav role={`navigation`} className={className || ""}>
       {sorted.map((item, index) => {
         return (
           <div key={index}>

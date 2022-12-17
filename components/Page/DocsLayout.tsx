@@ -23,13 +23,13 @@ export const DocsLayout: React.FunctionComponent<IDocsLayoutProps> = ({navItems,
           <div className='ml-auto'>
             <Navigation />
 
-            <MobileNavigation />
+            <MobileNavigation navItems={navItems} />
           </div>
         </div>
 
         <Home className={`hidden lg:flex`} />
         
-        <Sidebar items={navItems || []} />
+        <Sidebar className={`hidden lg:mt-8 lg:block space-y-8`} items={navItems || []} />
       </aside>
 
       <div className='relative flex flex-col pt-16 lg:pt-32 xl:pt-16 h-full overflow-y-auto'>
