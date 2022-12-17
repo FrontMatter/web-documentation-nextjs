@@ -179,7 +179,7 @@ html[data-theme=dark] {
 }
 
 .DocSearch-Button {
-  @apply border border-transparent !important;
+  @apply border border-transparent ml-0 !important;
   border-radius: 0;
   box-shadow: none !important;
 
