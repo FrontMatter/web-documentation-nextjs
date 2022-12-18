@@ -7,7 +7,7 @@ export interface IModalProps {
   onClose: () => void;
 }
 
-export const Modal: React.FunctionComponent<IModalProps> = ({ isOpen, onClose, children }: React.PropsWithChildren<IModalProps>) => {
+export const Modal: React.FunctionComponent<React.PropsWithChildren<IModalProps>> = ({ isOpen, onClose, children }: React.PropsWithChildren<IModalProps>) => {
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>

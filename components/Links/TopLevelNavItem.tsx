@@ -6,15 +6,15 @@ export interface ITopLevelNavItemProps {
   title: string;
 }
 
-export const TopLevelNavItem: React.FunctionComponent<ITopLevelNavItemProps> = ({ href, title, children }: React.PropsWithChildren<ITopLevelNavItemProps>) => {
+export const TopLevelNavItem: React.FunctionComponent<React.PropsWithChildren<ITopLevelNavItemProps>> = ({ href, title, children }: React.PropsWithChildren<ITopLevelNavItemProps>) => {
   return (
     <li>
       <Link
         href={href}
+        title={title}
+        className="text-base font-medium text-whisper-500 hover:text-whisper-900"
       >
-        <a title={title} className="text-base font-medium text-whisper-500 hover:text-whisper-900">
-          {children}
-        </a>
+        {children}
       </Link>
     </li>
   );

@@ -10,7 +10,7 @@ export interface ILayoutProps {
   navItems?: PageFrontMatter[];
 }
 
-export const Layout: React.FunctionComponent<ILayoutProps> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
+export const Layout: React.FunctionComponent<React.PropsWithChildren<ILayoutProps>> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
 
   return (
     <div className={`flex flex-col h-full`}>

@@ -8,7 +8,7 @@ export interface IPageProps {
   page: PageFrontMatter | undefined;
 }
 
-export const Page: React.FunctionComponent<IPageProps> = ({items, page, children}: React.PropsWithChildren<IPageProps>) => {
+export const Page: React.FunctionComponent<React.PropsWithChildren<IPageProps>> = ({items, page, children}: React.PropsWithChildren<IPageProps>) => {
   
   return (
     <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>

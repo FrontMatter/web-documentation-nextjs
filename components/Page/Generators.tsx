@@ -48,12 +48,12 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
 
         <div className="mt-6 flex justify-center">
           <p className={`text-2xl tracking-tight font-bold sm:leading-none text-vulcan-500`}>
-            {strings(`generators_more`)}
+            {strings(`generators_more`) as string}
           </p>
         </div>
         <div className="mt-6 flex justify-center">
           <p className={`text-xl tracking-tight sm:leading-none text-vulcan-500`}>
-            {strings(`generators_more2`)}
+            {strings(`generators_more2`) as string}
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/content.snippets.schema.json",
   "description": "Defines the settings for Front Matter snippet",
-  "lastModified": "2022-12-12T14:13:34.449Z",
+  "lastModified": "2022-12-18T12:02:22.869Z",
   "type": "object",
   "title": "Front Matter - snippet",
   "required": [
@@ -28,7 +28,7 @@
       "type": "string"
     },
     "fields": {
-      "$ref": "https://beta.frontmatter.codes/config/taxonomy.contenttype.schema.json#/properties/fields"
+      "$ref": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json#/properties/fields"
     },
     "openingTags": {
       "description": "The snippet opening tags.",

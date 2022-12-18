@@ -14,7 +14,7 @@ export interface IDocsLayoutProps {
   navItems?: PageFrontMatter[];
 }
 
-export const DocsLayout: React.FunctionComponent<IDocsLayoutProps> = ({navItems, children}: React.PropsWithChildren<IDocsLayoutProps>) => {
+export const DocsLayout: React.FunctionComponent<React.PropsWithChildren<IDocsLayoutProps>> = ({navItems, children}: React.PropsWithChildren<IDocsLayoutProps>) => {
 
   return (
     <div className={`lg:ml-72 xl:ml-80`}>

@@ -35,9 +35,9 @@ export default function Home({ content }: any) {
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
-            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`community_page_title`)}</h1>
+            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`community_page_title`) as string}</h1>
             
-            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`community_page_description`)}</p>
+            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`community_page_description`) as string}</p>
           </div>
 
           <div className={`community`}>

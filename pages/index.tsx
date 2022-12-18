@@ -26,10 +26,10 @@ const Home: NextPage = () => {
           description={(
             <>
               <p className="my-6 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                {strings(`hero_description`)}
+                {strings(`hero_description`) as string}
               </p>
               <p className="my-6 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                {strings(`hero_description_second`)}
+                {strings(`hero_description_second`) as string}
               </p>
             </>
           )}

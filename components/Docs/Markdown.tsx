@@ -56,9 +56,9 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
             const vscodeUrl = props && (props as any)["data-vscode"] ? (props as any)["data-vscode"] : "";
             const title = getTitle(props);
             if (vscodeUrl) {
-              return <Link key={vscodeUrl as string} href={vscodeUrl as string}><a title={title}>{title}</a></Link>;
+              return <Link key={vscodeUrl as string} href={vscodeUrl as string} title={title}>{title}</Link>;
             }
-            return <Link key={url as string} href={url as string}><a title={title}>{title}</a></Link>;
+            return <Link key={url as string} href={url as string} title={title}>{title}</Link>;
           },
           h1: ({node, ...props}) => (<h1 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h1>),
           h2: ({node, ...props}) => (<h2 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h2>),

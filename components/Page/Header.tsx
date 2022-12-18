@@ -12,7 +12,7 @@ export interface IHeaderProps {
   navItems?: PageFrontMatter[];
 }
 
-export const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: React.PropsWithChildren<IHeaderProps>, ref: ForwardedRef<HTMLElement>
+const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: React.PropsWithChildren<IHeaderProps>, ref: ForwardedRef<HTMLElement>
   ) => {
   const router = useRouter();
 
@@ -62,3 +62,6 @@ export const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navIte
     </>
   );
 });
+
+Header.displayName = 'Header';
+export { Header };

@@ -33,7 +33,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
     <div className="bg-vulcan-600">
       <div className="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-semibold uppercase text-whisper-900 tracking-wide">
-          {strings(`sponsors_title`)}
+          {strings(`sponsors_title`) as string}
         </p>
 
         {
