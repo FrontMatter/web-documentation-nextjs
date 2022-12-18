@@ -16,6 +16,13 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
               </a>
             </div>
           ))}
+          {navigation.footer.map((item) => (
+            <div key={item.name} className="px-5 py-2">
+              <a href={item.href} title={item.title} className="text-base text-gray-400 hover:text-gray-500">
+                {item.name}
+              </a>
+            </div>
+          ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} rel={`noopener noreferrer`}>
@@ -35,7 +42,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-whisper-900">&copy; 2021 {Extension.name}. All rights reserved.</p>
+        <p className="mt-8 text-center text-base text-whisper-900">&copy; 2023 {Extension.name}. All rights reserved.</p>
       </div>
     </footer>
   );

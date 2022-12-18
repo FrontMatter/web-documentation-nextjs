@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import { CodeHighlighting } from './CodeHighlighting';
+import { CodeBlock, CodeHighlighting } from './CodeHighlighting';
+import { mdxAnnotations } from 'mdx-annotations';
 
 export interface IMarkdownProps {
   content: string | undefined;
@@ -55,19 +56,21 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
             const vscodeUrl = props && (props as any)["data-vscode"] ? (props as any)["data-vscode"] : "";
             const title = getTitle(props);
             if (vscodeUrl) {
-              return <Link key={vscodeUrl as string} href={vscodeUrl as string}><a title={title}>{title}</a></Link>;
+              return <Link key={vscodeUrl as string} href={vscodeUrl as string} title={title}>{title}</Link>;
             }
-            return <Link key={url as string} href={url as string}><a title={title}>{title}</a></Link>;
+            return <Link key={url as string} href={url as string} title={title}>{title}</Link>;
           },
-          h1: ({node, ...props}) => (<h1 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h1>),
-          h2: ({node, ...props}) => (<h2 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h2>),
-          h3: ({node, ...props}) => (<h3 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h3>),
-          h4: ({node, ...props}) => (<h4 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h4>),
-          h5: ({node, ...props}) => (<h5 id={generateId(props)} className={`header__offset group`}>{getTitle(props)}{generateLink(props)}</h5>),
+          h1: ({node, ...props}) => (<h1 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h1>),
+          h2: ({node, ...props}) => (<h2 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h2>),
+          h3: ({node, ...props}) => (<h3 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h3>),
+          h4: ({node, ...props}) => (<h4 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h4>),
+          h5: ({node, ...props}) => (<h5 id={generateId(props)} className={`header__offset scroll-mt-24 group`}>{getTitle(props)}{generateLink(props)}</h5>),
           table: ({node, ...props}) => (<div className='table__wrapper'><table>{props.children}</table></div>),
           code: ({...props}) => <CodeHighlighting {...props} />,
+          pre: ({...props}) => <CodeBlock {...props} />,
         }}
-        rehypePlugins={[rehypeRaw, remarkGfm]} 
+        rehypePlugins={[rehypeRaw, remarkGfm, mdxAnnotations.rehype]}
+        remarkPlugins={[mdxAnnotations.remark]}
         children={content} />
     </div>
   );

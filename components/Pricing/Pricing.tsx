@@ -12,7 +12,7 @@ export const Pricing: React.FunctionComponent<IPricingProps> = (props: React.Pro
     <div className={`sponsor__block bg-whisper-50 text-vulcan-500 border-t-2 border-b-2 border-whisper-600`}>
       <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold">{strings(`pricing_title`)}</h2>
+          <h2 className="text-3xl font-extrabold">{strings(`pricing_title`) as string}</h2>
           <div className="mt-4 text-lg text-vulcan-300 space-y-4">
             <ReactMarkdown>
               {strings(`pricing_description`)}

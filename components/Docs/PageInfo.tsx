@@ -42,8 +42,22 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
       {
         (prevPage || nextPage) && (
           <div className={`mt-16 w-full flex justify-between text-xl`}>
-            { (prevPage && prevPage.slug && prevPage.title) && ( <a href={`/docs/${(prevPage as PageFrontMatter).slug}`} title={prevPage.title} className={`text-teal-500 hover:text-teal-900`}>&larr; {(prevPage as PageFrontMatter).title}</a> ) }
-            { (nextPage && nextPage.slug && nextPage.title) && ( <a href={`/docs/${(nextPage as PageFrontMatter).slug}`} title={nextPage.title} className={`text-teal-500 hover:text-teal-900`}>{(nextPage as PageFrontMatter).title} &rarr;</a> ) }
+            { (prevPage && prevPage.slug && prevPage.title) && (
+              <a href={`/docs/${(prevPage as PageFrontMatter).slug}`} 
+                 title={prevPage.title} 
+                 className={`items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">&larr; Previous</span>
+                <span>{(prevPage as PageFrontMatter).title}</span>
+              </a>
+            ) }
+            { (nextPage && nextPage.slug && nextPage.title) && (
+              <a href={`/docs/${(nextPage as PageFrontMatter).slug}`} 
+                 title={nextPage.title} 
+                 className={`items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                 <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">Next &rarr;</span>
+                <span>{(nextPage as PageFrontMatter).title}</span>
+              </a> 
+            ) }
           </div>
         )
       }

@@ -20,24 +20,24 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
           <h1 className="text-6xl xl:text-7xl tracking-tight font-extrabold sm:leading-none">
             <span className="md:block text-transparent bg-clip-text bg-gradient-to-br from-teal-200 via-teal-800 to-teal-900">{Extension.name}</span>{' '}
             <span className={`text-5xl xl:text-6xl`}>
-              <span className="block">{strings(`cta_title`)}</span>
-              <span className={`sr-only`}>{strings(`cta_title_sr`)}</span>
+              <span className="block">{strings(`cta_title`) as string}</span>
+              <span className={`sr-only`}>{strings(`cta_title_sr`) as string}</span>
             </span>
           </h1>
 
           <FrontMatterLines />
 
           <h2 className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-            {strings(`cta_description`)}
+            {strings(`cta_description`) as string}
           </h2>
 
           <div className="mt-10 max-w-sm mx-auto sm:max-w-none">
             <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
               <a href={`/docs/getting-started`} title={`Read our documentation`}  className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8" rel={`noopener noreferrer`}>
-                {strings(`cta_button_primary`)}
+                {strings(`cta_button_primary`) as string}
               </a>
               <a href={isProduction() ? Extension.installLink : Extension.installBetaLink} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70 sm:px-8">
-                {isProduction() ? strings(`cta_button_secondary`) : strings(`cta_button_beta_secondary`)}
+                {isProduction() ? strings(`cta_button_secondary`) as string : strings(`cta_button_beta_secondary`) as string}
               </a>
             </div>
           </div>

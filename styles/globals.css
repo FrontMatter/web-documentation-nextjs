@@ -22,11 +22,21 @@ html, body {height: 100%;}
   animation: fadeIn 0.5s;
 }
 
+/*
 .header__offset:before {
   content: "";
   display: block;
   height: 100px;
   margin: -100px 0 0;
+}
+*/
+
+h3.header__offset,
+h4.header__offset,
+h5.header__offset {
+  svg {
+    @apply h-4;
+  }
 }
 
 .changelog {
@@ -118,7 +128,7 @@ html, body {height: 100%;}
   }
 
   pre {
-    @apply p-1 my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
+    @apply p-[1px] my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
 
     code {
       background: inherit;
@@ -169,7 +179,7 @@ html[data-theme=dark] {
 }
 
 .DocSearch-Button {
-  @apply border border-transparent !important;
+  @apply border border-transparent ml-0 !important;
   border-radius: 0;
   box-shadow: none !important;
 
@@ -188,9 +198,6 @@ html[data-theme=dark] {
 
 /* create css media query */
 @media (max-width: 410px) {
-  .stargazers {
-    @apply mt-4;
-  }
 }
 
 /* Tables */
@@ -214,4 +221,12 @@ table {
 
 .table__wrapper {
   @apply overflow-x-auto;
+}
+
+/* Search */
+.DocSearch-Button {
+  .DocSearch-Button-Placeholder,
+  .DocSearch-Button-Keys {
+    display: none;
+  }
 }
