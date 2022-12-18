@@ -24,7 +24,7 @@ const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: Re
     <>
       <header
         ref={ref} 
-        className={`fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-md`}>
+        className={`w-full fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-md`}>
 
         <div className="flex items-center justify-between lg:hidden w-full">
           <Home className='h-12' />
@@ -40,7 +40,7 @@ const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: Re
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center w-full">
+        <div className={`hidden lg:flex items-center w-full ${ isDocs ? "" : "max-w-7xl mx-auto"}`}>
           <div className="flex items-center justify-between w-full">
             {
               !isDocs && (
