@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import { HeartIcon, StarIcon, XIcon } from "@heroicons/react/outline";
+import { HeartIcon, XIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
@@ -10,9 +10,11 @@ export const navigation = {
   main: [
     { name: 'Docs', title: 'Documentation', href: '/docs' },
     { name: 'Community', title: 'Community', href: '/community' },
-    { name: 'Showcase', title: 'Showcase', href: '/showcase' },
     { name: 'Changelog', title: 'Changelog', href: '/updates' },
     // { name: 'SWAG', href: '/swag' },
+  ],
+  footer: [
+    { name: 'Showcase', title: 'Showcase', href: '/showcase' },
   ],
   sponsor: { 
     name: 'Become a sponsor', 
@@ -29,7 +31,7 @@ export const navigation = {
     
       return (
         <>
-          <button className={`${btnClassName || "group flex items-center"}`} onClick={onSponsorClick}>
+          <button type="button" className={`${btnClassName || "group flex items-center"}`} onClick={onSponsorClick}>
             <span className="mr-2 group-hover:text-rose-500">{ title || "Sponsor" }</span>
             <HeartIcon className={`${className} group-hover:text-rose-500 group-hover:fill-current`} {...rest} />
           </button>
