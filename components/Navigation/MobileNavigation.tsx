@@ -89,16 +89,18 @@ export const MobileNavigation: React.FunctionComponent<IMobileNavigationProps> =
                     listClassName='flex flex-col gap-2' />
 
                   {
-                    navItems && navItems.length > 0 && (
+                    navItems && navItems.length > 0 ? (
                       <>
                         <Divider className={`block md:hidden`} />
 
                         <DocsNavigation navItems={navItems} />
+
+                        <Divider className={`block`} />
                       </>
+                    ) : (
+                      <Divider className={`block md:hidden`} />
                     )
                   }
-
-                  <Divider className={`block md:hidden`} />
 
                   <SocialNavigation />
                 </div>

@@ -14,8 +14,8 @@ export const SocialNavigation: React.FunctionComponent<ISocialNavigationProps> =
 
       <ul className='flex justify-center gap-6'>
         {navigation.social.map((item) => (
-          <li>
-            <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" rel={`noopener noreferrer`}>
+          <li key={item.name}>
+            <a title={item.title} href={item.href} className="text-base font-medium text-whisper-500 hover:text-whisper-900" rel={`noopener noreferrer`}>
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
