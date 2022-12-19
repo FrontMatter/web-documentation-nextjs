@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Extension } from '../../constants/extension';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { GitHub } from '../Images/GitHub';
+import Giscus from "@giscus/react";
 
 export interface IPageInfoProps {
   items: PageFrontMatter[];
@@ -63,15 +64,31 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
       }
 
       <div className={`mt-16`}>
-        <h2 className={`tracking-tight font-extrabold sm:leading-none text-3xl xl:text-4xl`}>Feedback</h2>
+        <h2 className={`tracking-tight font-extrabold sm:leading-none text-3xl xl:text-4xl`}>Feedback/comments</h2>
 
-        <div className={`my-4 bg-vulcan-100 p-4`}>
+        {/* <div className={`my-4 bg-vulcan-100 p-4`}>
           <p>Do you want to provide feedback about this page/content?</p>
 
           <a href={feedbackUrl} className={`py-4 px-2 mt-4 inline-flex items-center h-5 bg-vulcan-300 hover:bg-vulcan-400`}>
             <GitHub className={`w-5 h-5 mr-2 inline`} />
             <span>Provide feedback</span>
           </a> 
+        </div> */}
+
+        <div className={`my-4`}>
+          <Giscus 
+            repo="FrontMatter/feedback"
+            repoId="R_kgDOIo5HTQ"
+            category="Comments"
+            categoryId="DIC_kwDOIo5HTc4CTI9X"
+            mapping="pathname"
+            strict="0"
+            reactionsEnabled="0"
+            emitMetadata="0"
+            inputPosition="top"
+            theme={process.env.NEXT_PUBLIC_GISCUS_THEME}
+            lang="en"
+            loading="lazy" />
         </div>
 
         {
