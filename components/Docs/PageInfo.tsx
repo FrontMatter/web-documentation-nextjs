@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Extension } from '../../constants/extension';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { GitHub } from '../Images/GitHub';
+import Giscus from "@giscus/react";
 
 export interface IPageInfoProps {
   items: PageFrontMatter[];
@@ -42,22 +43,52 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
       {
         (prevPage || nextPage) && (
           <div className={`mt-16 w-full flex justify-between text-xl`}>
-            { (prevPage && prevPage.slug && prevPage.title) && ( <a href={`/docs/${(prevPage as PageFrontMatter).slug}`} title={prevPage.title} className={`text-teal-500 hover:text-teal-900`}>&larr; {(prevPage as PageFrontMatter).title}</a> ) }
-            { (nextPage && nextPage.slug && nextPage.title) && ( <a href={`/docs/${(nextPage as PageFrontMatter).slug}`} title={nextPage.title} className={`text-teal-500 hover:text-teal-900`}>{(nextPage as PageFrontMatter).title} &rarr;</a> ) }
+            { (prevPage && prevPage.slug && prevPage.title) && (
+              <a href={`/docs/${(prevPage as PageFrontMatter).slug}`} 
+                 title={prevPage.title} 
+                 className={`items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">&larr; Previous</span>
+                <span>{(prevPage as PageFrontMatter).title}</span>
+              </a>
+            ) }
+            { (nextPage && nextPage.slug && nextPage.title) && (
+              <a href={`/docs/${(nextPage as PageFrontMatter).slug}`} 
+                 title={nextPage.title} 
+                 className={`items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                 <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">Next &rarr;</span>
+                <span>{(nextPage as PageFrontMatter).title}</span>
+              </a> 
+            ) }
           </div>
         )
       }
 
       <div className={`mt-16`}>
-        <h2 className={`tracking-tight font-extrabold sm:leading-none text-3xl xl:text-4xl`}>Feedback</h2>
+        <h2 className={`tracking-tight font-extrabold sm:leading-none text-3xl xl:text-4xl`}>Feedback/comments</h2>
 
-        <div className={`my-4 bg-vulcan-100 p-4`}>
+        {/* <div className={`my-4 bg-vulcan-100 p-4`}>
           <p>Do you want to provide feedback about this page/content?</p>
 
           <a href={feedbackUrl} className={`py-4 px-2 mt-4 inline-flex items-center h-5 bg-vulcan-300 hover:bg-vulcan-400`}>
             <GitHub className={`w-5 h-5 mr-2 inline`} />
             <span>Provide feedback</span>
           </a> 
+        </div> */}
+
+        <div className={`my-4`}>
+          <Giscus 
+            repo="FrontMatter/feedback"
+            repoId="R_kgDOIo5HTQ"
+            category="Comments"
+            categoryId="DIC_kwDOIo5HTc4CTI9X"
+            mapping="pathname"
+            strict="0"
+            reactionsEnabled="0"
+            emitMetadata="0"
+            inputPosition="top"
+            theme={process.env.NEXT_PUBLIC_GISCUS_THEME}
+            lang="en"
+            loading="lazy" />
         </div>
 
         {

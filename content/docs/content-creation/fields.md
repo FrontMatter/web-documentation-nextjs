@@ -63,9 +63,7 @@ use if for the title, description, or any other text field.
 
 ![WYSIWYG controls][03]
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Title",
   "name": "title",
@@ -74,9 +72,7 @@ use if for the title, description, or any other text field.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 title: "My title"
 ---
@@ -87,9 +83,7 @@ title: "My title"
 The `number` field allows you to insert integer values, like for instance setting the weight of your
 content.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Weight",
   "name": "weight",
@@ -97,9 +91,7 @@ content.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 weight: 1
 ---
@@ -121,9 +113,8 @@ other types of dates for you content.
 > The format of your date can be defined in the `frontMatter.taxonomy.dateFormat` setting. Check
 > [date-fns formating][04] for more information.
 
-### Usage
 
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Publishing date",
   "name": "date",
@@ -138,9 +129,7 @@ other types of dates for you content.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 date: 2022-03-14T08:42:21.626Z
 lastmod: 2022-03-14T08:42:22.364Z
@@ -152,9 +141,7 @@ lastmod: 2022-03-14T08:42:22.364Z
 The `boolean` field can be used to set a value of `true` or `false` into your markdown. It will be
 rendered as a toggle.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Published",
   "name": "isPublished",
@@ -162,9 +149,7 @@ rendered as a toggle.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 isPublished: true
 ---
@@ -181,11 +166,9 @@ The `choice` field allows you to define a set of options.
 - `multiple (boolean)`: Define if you want to allow multiple choice selection. By default this is
   `false`.
 
-### Usage
+#### Example 1
 
-Example of using an array of string values:
-
-```json
+```json {{ "title": "Usage", "description": "Example of using an array of string values" }}
 {
   "title": "Choice",
   "name": "choice",
@@ -199,9 +182,15 @@ Example of using an array of string values:
 }
 ```
 
-Example of using an array of { id: string; title: string; } objects:
+```markdown {{ "title": "Outcome", "description": "Outcome when using string values" }}
+---
+choice: "Choice 1"
+---
+```
 
-```json
+#### Example 2
+
+```json {{ "title": "Usage", "description": "Example of using an array of { id: string; title: string; } objects" }}
 {
   "title": "Choice",
   "name": "choice",
@@ -214,19 +203,7 @@ Example of using an array of { id: string; title: string; } objects:
 }
 ```
 
-### Outcome
-
-Outcome when using string values:
-
-```markdown
----
-choice: "Choice 1"
----
-```
-
-Outcome when using id/title objects:
-
-```markdown
+```markdown {{ "title": "Outcome", "description": "Outcome when using id/title objects" }}
 ---
 choice: "1"
 ---
@@ -236,11 +213,7 @@ choice: "1"
 
 The `list` field allows you to add multiple text values.
 
-### Usage
-
-Example of using the list field:
-
-```json
+```json {{ "title": "Usage", "description": "Example of using the list field" }}
 {
   "title": "Alias",
   "name": "alias",
@@ -248,11 +221,7 @@ Example of using the list field:
 }
 ```
 
-### Outcome
-
-The previous example will give you the following outcome:
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 alias:
   - release-notes-v8
@@ -276,9 +245,7 @@ When using a custom draft status, the content dashboard will make use of it as w
 
 ### Example 1
 
-#### Usage
-
-```json
+```json {{ "title": "Usage", "description": "Using the default draft experience" }}
 {
   "title": "Draft",
   "name": "draft",
@@ -286,11 +253,7 @@ When using a custom draft status, the content dashboard will make use of it as w
 }
 ```
 
-#### Outcome
-
-Default draft field outcome:
-
-```markdown
+```markdown {{ "title": "Outcome", "description": "Default draft field outcome" }}
 ---
 draft: true
 ---
@@ -298,12 +261,10 @@ draft: true
 
 ### Example 2
 
-#### Usage
-
 In case you want to use a published field, instead of a draft field. You can invert the logic by
 setting the `invert` property to `true`:
 
-```json
+```json {{ "title": "Draft field setting", "description": "Example of how to invert the field value" }}
 "frontMatter.content.draftField": {
   "name": "published",
   "type": "boolean",
@@ -311,9 +272,7 @@ setting the `invert` property to `true`:
 }
 ```
 
-The field is configured as follows:
-
-```json
+```json {{ "title": "Usage", "description": "Draft field configuration" }}
 {
   "title": "Published",
   "name": "published",
@@ -321,11 +280,7 @@ The field is configured as follows:
 }
 ```
 
-#### Outcome
-
-Default draft field outcome:
-
-```markdown
+```markdown {{ "title": "Outcome", "description": "Outcome of using a inverted field value" }}
 ---
 published: false
 ---
@@ -333,12 +288,10 @@ published: false
 
 ### Example 3
 
-#### Usage
-
 If you want to use your own status values, you can define it by specifying these in the
 `frontMatter.content.draftField` setting:
 
-```json
+```json {{ "title": "Draft field setting", "description": "Change the field type to a choice list" }}
 "frontMatter.content.draftField": {
   "name": "draft",
   "type": "choice",
@@ -346,9 +299,7 @@ If you want to use your own status values, you can define it by specifying these
 }
 ```
 
-The field is configured as follows:
-
-```json
+```json {{ "title": "Usage", "description": "The field definition" }}
 {
   "title": "Draft",
   "name": "draft",
@@ -356,11 +307,7 @@ The field is configured as follows:
 }
 ```
 
-#### Outcome
-
-When using your own status values:
-
-```markdown
+```markdown {{ "title": "Outcome", "description": "Outcome of using your own status values" }}
 ---
 draft: "in progress"
 ---
@@ -380,9 +327,7 @@ The `image` field can be used to reference single or multiple images to your con
 
 > **Important**: You can only set this on one image field per content type.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Article preview",
   "name": "preview",
@@ -391,9 +336,7 @@ The `image` field can be used to reference single or multiple images to your con
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 preview: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
 ---
@@ -410,9 +353,7 @@ The `file` field can be used to reference single or multiple files to your conte
 - `fileExtensions (string array)`: Define the file extensions that are allowed to be selected. By
   default this is an empty array `[]`.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Attachments",
   "name": "attachments",
@@ -422,9 +363,7 @@ The `file` field can be used to reference single or multiple files to your conte
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 attachments:
 - /uploads/file1.pdf
@@ -454,9 +393,7 @@ When the tag is created, you will be able to re-use it for other content.
 
 ![Taxonomy limit][08]
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Tags",
   "name": "tags",
@@ -464,9 +401,7 @@ When the tag is created, you will be able to re-use it for other content.
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 tags:
   - Development
@@ -486,9 +421,7 @@ The `categories` field is similar to the [tags][09] field. The difference is tha
 - `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
   which allows unlimited items to be selected.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Categories",
   "name": "categories",
@@ -496,9 +429,7 @@ The `categories` field is similar to the [tags][09] field. The difference is tha
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 categories:
   - Development
@@ -524,7 +455,7 @@ data. Each of the taxonomy data contains a `id` and an array of `options`.
 
 Here is an example of the custom taxonomy setting definition:
 
-```json
+```json {{ "title": "Custom taxonomy", "description": "Define your custom taxonomy options" }}
 "frontMatter.taxonomy.customTaxonomy": [
   {
     "id": "customTaxonomy",
@@ -537,9 +468,7 @@ Here is an example of the custom taxonomy setting definition:
 ]
 ```
 
-### Usage
-
-```json
+```json {{ "title": "Usage", "description": "Custom taxonomy field definition" }}
 {
   "title": "Custom taxonomy",
   "name": "customTags",
@@ -548,9 +477,7 @@ Here is an example of the custom taxonomy setting definition:
 }
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 customTags:
   - custom-development
@@ -570,9 +497,7 @@ property.
 
 - `fields`: Define the sub-fields of your content type. All the above types are supported.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "frontMatter.taxonomy.contentTypes": [
     {
@@ -603,11 +528,9 @@ property.
 }
 ```
 
-### Outcome
-
 ![Multi-dimensional content type fields][11]
 
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 photo:
   title: "Photo 1"
@@ -626,7 +549,7 @@ The `block` field type allows you to define a group of fields which can be used 
 To work with the `block` field type, you need to define a field group (a set of fields for your
 data) in the `frontMatter.taxonomy.fieldGroups` setting.
 
-```json
+```json {{ "title": "Field group definition" }}
 "frontMatter.taxonomy.fieldGroups": [
   {
     "id": "author",
@@ -655,9 +578,7 @@ data) in the `frontMatter.taxonomy.fieldGroups` setting.
 
 - `fieldGroup`: Define the field group(s) that will be used to create a list of data.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "page",
@@ -678,9 +599,7 @@ data) in the `frontMatter.taxonomy.fieldGroups` setting.
 > **Important**: If you want, you can also create field groupings within the field grouping. This is
 > useful when you want to create sub-groups of data.
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 authors:
   - name: Elio Struyf
@@ -702,7 +621,7 @@ options. For instance, if you have a data file with all the authors of your site
 To use the `dataFile` field type, you need to have a definition for a data file in place. Here is an
 example of the authors sample:
 
-```json
+```json {{ "title": "Data file definition" }}
 {
   "frontMatter.data.files": [{
     "id": "authors",
@@ -742,9 +661,7 @@ example of the authors sample:
   (optional).
 - `multiple`: Specify if you want to select one or multiple records (optional).
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 "frontMatter.taxonomy.contentTypes": [
   {
     "name": "page",
@@ -763,9 +680,7 @@ example of the authors sample:
 ]
 ```
 
-### Outcome
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 author:
   - dorothy-parker
@@ -783,11 +698,7 @@ The `slug` field allows you to create/update the slug of the current page.
 - `editable`: Specify if you allow manual changes, or if the slug is generated automatically
   (optional - default: `true`).
 
-### Usage
-
-The field is configured as follows:
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Slug",
   "name": "slug",
@@ -797,11 +708,7 @@ The field is configured as follows:
 }
 ```
 
-### Outcome
-
-The above configuration gives you the following outcome:
-
-```markdown
+```markdown {{ "title": "Outcome" }}
 ---
 slug: version-8-0-0-release-notes
 ---
@@ -819,9 +726,7 @@ want to group fields together.
 
 You only need to specify the `type` property and name:
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "name": "divider",
   "type": "divider"
@@ -837,9 +742,7 @@ You only need to specify the `type` property and name:
 The `heading` field type allows you to add a heading to your content type. This is useful when you
 want to group fields together.
 
-### Usage
-
-```json
+```json {{ "title": "Usage" }}
 {
   "title": "Section title",
   "name": "sectionTitleWithDescription",

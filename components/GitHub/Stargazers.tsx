@@ -24,11 +24,12 @@ export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: Rea
 
   return (
     <div className={`stargazers group flex items-center`} style={{height:"36px"}}>
-      <Link href={Extension.githubLink}>
-        <a className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`} title={`Give the project a star on GitHub`}>
-          <GitHub className={`h-4 w-4 mr-1`} />
-          <span>Star</span>
-        </a>
+      <Link 
+        href={Extension.githubLink}
+        className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`} 
+        title={`Give the project a star on GitHub`}>
+        <GitHub className={`h-4 w-4 mr-1`} />
+        <span>Star</span>
       </Link>
 
       {
@@ -38,10 +39,11 @@ export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: Rea
               <div className="h-4 bg-whisper-500 group-hover:bg-whisper-700 -rotate-45 transform origin-top-right"></div>
             </div>
 
-            <Link href={Extension.stars}>
-              <a className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`} title={`Give the project a star on GitHub`}>
-                {stars}
-              </a>
+            <Link
+              href={Extension.stars}
+              className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`}
+              title={`Give the project a star on GitHub`}>
+              {stars}
             </Link>
           </>
         )

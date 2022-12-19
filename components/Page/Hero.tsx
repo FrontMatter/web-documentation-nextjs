@@ -34,10 +34,11 @@ export const Hero: React.FunctionComponent<IHeroProps> = ({view, title, descript
             }
             {
               link && linkText && (
-                <Link href={link} >
-                  <a className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8`}>
-                    {linkText}
-                  </a>
+                <Link 
+                  href={link}
+                  title={linkText}
+                  className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8`}>
+                  {linkText}
                 </Link>
               )
             }
