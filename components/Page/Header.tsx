@@ -24,7 +24,7 @@ const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: Re
     <>
       <header
         ref={ref} 
-        className={`w-full fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-md`}>
+        className={`fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-lg ${isDocs ? "right-0 lg:left-72 xl:left-80" : ""}`}>
 
         <div className="flex items-center justify-between lg:hidden w-full">
           <Home className='h-12' />

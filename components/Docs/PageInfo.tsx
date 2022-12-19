@@ -86,7 +86,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
             reactionsEnabled="0"
             emitMetadata="0"
             inputPosition="top"
-            theme="https://eae3a37d71db.eu.ngrok.io/giscus/theme.css"
+            theme={process.env.NEXT_PUBLIC_GISCUS_THEME}
             lang="en"
             loading="lazy" />
         </div>

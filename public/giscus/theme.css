@@ -29,6 +29,7 @@
   --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+
   --color-btn-text: #c9d1d9;
   --color-btn-bg: #21262d;
   --color-btn-border: rgb(240 246 252 / 10%);
@@ -44,38 +45,41 @@
   --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
-  --color-btn-primary-hover-bg: #2ea043;
+  --color-btn-primary-hover-bg: rgb(21 194 203 / 70%);
   --color-btn-primary-hover-border: rgb(240 246 252 / 10%);
-  --color-btn-primary-selected-bg: #238636;
+  --color-btn-primary-selected-bg: rgb(21 194 203 / 70%);
   --color-btn-primary-selected-shadow: 0 0 transparent;
   --color-btn-primary-disabled-text: rgb(255 255 255 / 50%);
-  --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
+  --color-btn-primary-disabled-bg: rgb(21 194 203 / 50%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
-  --color-fg-default: #c9d1d9;
+
+  --color-fg-default: #f3eff5;
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #6e7681;
-  --color-canvas-default: #0d1117;
+
+  --color-canvas-default: #040915;
+  --color-canvas-subtle: #2c313d;
+  --color-border-default: #222733;
+
   --color-canvas-overlay: #161b22;
-  --color-canvas-inset: #010409;
-  --color-canvas-subtle: #161b22;
-  --color-border-default: #30363d;
+  --color-canvas-inset: #00000b;
   --color-border-muted: #21262d;
   --color-neutral-muted: rgb(110 118 129 / 40%);
-  --color-accent-fg: #58a6ff;
-  --color-accent-emphasis: #1f6feb;
-  --color-accent-muted: rgb(56 139 253 / 40%);
-  --color-accent-subtle: rgb(56 139 253 / 15%);
-  --color-success-fg: #3fb950;
-  --color-attention-fg: #d29922;
+  --color-accent-fg: #29d6df;
+  --color-accent-emphasis: #009aa3;
+  --color-accent-muted: rgb(0 154 163 / 40%);
+  --color-accent-subtle: rgb(0 154 163 / 15%);
+  --color-success-fg: #009aa3;
+  --color-attention-fg: #d7bc36;
   --color-attention-muted: rgb(187 128 9 / 40%);
   --color-attention-subtle: rgb(187 128 9 / 15%);
-  --color-danger-fg: #f85149;
+  --color-danger-fg: #fe4a49;
   --color-danger-muted: rgb(248 81 73 / 40%);
   --color-danger-subtle: rgb(248 81 73 / 15%);
   --color-primer-shadow-inset: 0 0 transparent;
-  --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
+  --color-primer-shadow-focus: 0 0 0 1px rgb(0 154 163 / 60%);
   --color-scale-gray-7: #21262d;
-  --color-scale-blue-8: #0c2d6b;
+  --color-scale-blue-8: #009aa3;
 
   /*! Extensions from @primer/css/alerts/flash.scss */
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
