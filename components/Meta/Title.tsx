@@ -7,12 +7,15 @@ export interface ITitleProps {
 }
 
 export const Title: React.FunctionComponent<ITitleProps> = ({value}: React.PropsWithChildren<ITitleProps>) => {
+
+  const message = React.useMemo(() => `${value} | ${Extension.name}`, [value]);
+
   return (
     <Head>
-      <title>{value} | {Extension.name}</title>
-      <meta name="title" content={`${value} | ${Extension.name}`} />
-      <meta property="og:title" content={`${value} | ${Extension.name}`} />
-      <meta property="twitter:title" content={`${value} | ${Extension.name}`} />
+      <title>{message}</title>
+      <meta name="title" content={message} />
+      <meta property="og:title" content={message} />
+      <meta property="twitter:title" content={message} />
     </Head>
   );
 };
