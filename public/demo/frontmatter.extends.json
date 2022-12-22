@@ -1,0 +1,40 @@
+{
+  "frontMatter.framework.id": "frontmatter",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "external",
+      "path": "[[workspace]]/external"
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "external",
+      "pageBundle": true,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "default": "{{title}}"
+        },
+        {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug",
+          "editable": true,
+          "default": "{{slug}}"
+        },
+        {
+          "title": "Created On",
+          "name": "date",
+          "type": "datetime",
+          "isPublishDate": true,
+          "default": "{{now}}"
+        }
+      ]
+    }
+  ]
+}
