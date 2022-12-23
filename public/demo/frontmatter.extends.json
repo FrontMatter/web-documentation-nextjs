@@ -1,10 +1,32 @@
 {
-  "frontMatter.framework.id": "frontmatter",
+  "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.git.enabled": true,
+  "frontMatter.git.actions": true,
+  "frontMatter.dashboard.openOnStart": false,
+  "frontMatter.framework.id": "frontmattercms",
   "frontMatter.content.publicFolder": "static",
+  "frontMatter.dashboard.contentTags": "tags",
+  "frontMatter.content.wysiwyg": true,
+  "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.pageFolders": [
     {
       "title": "external",
       "path": "[[workspace]]/external"
+    }
+  ],
+  "frontMatter.content.defaultSorting": "DateDesc",
+  "frontMatter.content.sorting": [
+    {
+      "title": "Date (asc)",
+      "name": "date",
+      "order": "asc",
+      "type": "date"
+    },
+    {
+      "title": "Date (desc)",
+      "name": "date",
+      "order": "desc",
+      "type": "date"
     }
   ],
   "frontMatter.taxonomy.contentTypes": [
@@ -17,24 +39,128 @@
           "title": "Title",
           "name": "title",
           "type": "string",
-          "single": true,
-          "default": "{{title}}"
+          "required": true
+        },
+        {
+          "title": "Title (long)",
+          "name": "longTitle",
+          "type": "string"
         },
         {
           "title": "Slug",
           "name": "slug",
           "type": "slug",
-          "editable": true,
-          "default": "{{slug}}"
+          "required": true
         },
         {
-          "title": "Created On",
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Publishing date",
           "name": "date",
           "type": "datetime",
-          "isPublishDate": true,
-          "default": "{{now}}"
+          "required": true
+        },
+        {
+          "title": "Modified date",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "default": "{{ogImage}}",
+          "required": true
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft",
+          "default": false
+        },
+        {
+          "title": "Comments",
+          "name": "comments",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags",
+          "default": [],
+          "required": true
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string",
+          "default": "post",
+          "hidden": true
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.content.placeholders": [
+    {
+      "id": "ogImage",
+      "value": "https://frontmatter.codes/{{slug}}"
+    }
+  ],
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Generate social image",
+      "script": "./scripts/social-img.js",
+      "command": "~/.nvm/versions/node/v16.11.1/bin/node"
+    },
+    {
+      "title": "Bash script",
+      "script": "./scripts/bash-test.sh",
+      "command": "bash"
+    },
+    {
+      "title": "Python script",
+      "script": "./scripts/python-test.py",
+      "command": "python3"
+    }
+  ],
+  "frontMatter.taxonomy.categories": [
+    "docs",
+    "community",
+    "showcase",
+    "changelog",
+    "sponsor"
+  ],
+  "frontMatter.taxonomy.tags": [
+    "getting-started",
+    "content-creation",
+    "dashboard",
+    "editor-panel"
+  ],
+  "frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "customTags",
+      "options": [
+        "frontmatter",
+        "cms"
+      ]
+    }
+  ],
+  "frontMatter.content.snippets": {
+    "Image snippet": {
+      "body": "{{< image \"[[&mediaUrl]]\" \"[[caption]]\" >}}",
+      "isMediaSnippet": true,
+      "description": ""
+    },
+    "Video snippet": {
+      "body": [
+        "{{< video \"[[&mediaUrl]]\" \"[[caption]]\" >}}"
+      ],
+      "isMediaSnippet": true
+    }
+  }
 }
