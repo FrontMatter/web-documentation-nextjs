@@ -4,14 +4,18 @@
 
 ### ✨ New features
 
+- [#407](https://github.com/estruyf/vscode-front-matter/issues/407): External config support
+
 ### 🎨 Enhancements
 
+- [#474](https://github.com/estruyf/vscode-front-matter/issues/474): Allow to define the file prefix on content types
 - [#484](https://github.com/estruyf/vscode-front-matter/issues/484): Support for overriding scripts per environment type
 
 ### ⚡️ Optimizations
 
 ### 🐞 Fixes
 
+- [#469](https://github.com/estruyf/vscode-front-matter/issues/469): Fix for using the root folder as content folder
 - [#470](https://github.com/estruyf/vscode-front-matter/issues/470): Fix `initialize project` dashboard description
 - [#482](https://github.com/estruyf/vscode-front-matter/issues/482): Update the description when you want to overwrite the default content type description
 

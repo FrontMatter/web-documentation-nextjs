@@ -12,14 +12,15 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
 
   return (
     <div className="px-4 sm:px-0 py-8 overflow-hidden lg:relative lg:py-48">
-      <div className="mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-16">
         <div className={`my-4 sm:my-5 lg:my-6`}>
 
           <FrontMatterLines />
 
-          <h1 className="text-6xl xl:text-7xl tracking-tight font-extrabold sm:leading-none">
-            <span className="md:block text-transparent bg-clip-text bg-gradient-to-br from-teal-200 via-teal-800 to-teal-900">{Extension.name}</span>{' '}
-            <span className={`text-5xl xl:text-6xl`}>
+          <h1 className="text-6xl xl:text-7xl tracking-tight font-extrabold sm:leading-none block space-y-4">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-br from-teal-200 via-teal-800 to-teal-900">{Extension.name}</span>
+
+            <span className={`block text-5xl xl:text-6xl`}>
               <span className="block">{strings(`cta_title`) as string}</span>
               <span className={`sr-only`}>{strings(`cta_title_sr`) as string}</span>
             </span>
