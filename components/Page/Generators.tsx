@@ -12,7 +12,7 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
         <h2 className="text-3xl lg:text-3xl xl:text-4xl font-extrabold sm:leading-none text-center mb-8">
           {
             strings(`generators_title`).split(` `).map(word => {
-              if (word === 'loves') {
+              if (word === 'seamlessly') {
                 return (
                   <span key={word} className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-rose-500 to-rose-900">{word} </span>
                 )
