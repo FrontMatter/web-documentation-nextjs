@@ -13,33 +13,30 @@ weight: 1
 
 ## Overview
 
-Front Matter is an integral Visual Studio Code extension that simplifies operating and managing your
-markdown articles. We created the extension to support several static-site generators and frameworks
-parallel to Hugo, Jekyll, Hexo, NextJs, Gatsby, and more which provides you the power and control of
-a full-blown Content Management System (CMS)
-
-The extension brings CMS capabilities straight to Visual Studio Code. For example, you can keep a
-list of the used tags, categories, create content, and so much more.
+The Front Matter extension for Visual Studio Code is an ideal choice for developers who want to
+simplify the process of operating and managing their markdown articles. It provides users with
+the power and control of a full-blown CMS, allowing them to keep a list of used tags, categories,
+create content, preview posts before publishing, and more. The extension supports several
+static-site generators and frameworks, including Hugo, Jekyll, Hexo, NextJs, Gatsby, and more.
 
 ![Welcome screen to configure your website][01]
 
-Our main extension features are:
+We present our extension which provides the following features to a technical audience: 
 
-- Page dashboard in which you can get an overview of all of your markdown pages. You can use it to
-  search, filter, type your contents.
-- Site preview within Visual Studio Code
-- SEO checks for title, description, and keywords
-- Support for custom actions/scripts
-- and many more
+- a page dashboard providing an overview of markdown pages with the ability to search, filter and type content; 
+- a site preview within Visual Studio Code; 
+- SEO checks for title, description and keywords; 
+- support for custom actions/scripts; 
+- and many more features.
 
 ![Site preview][02]
 
 ## Why Front Matter?
 
-Initially, the Front Matter extension was created when [Elio Struyf][03] migrated from WordPress to
-Hugo (Static web site Generator). To make content management more straightforward, he began to
-develop the Front Matter extension and developed more options regularly, until eventually, it became
-a headless CMS that runs on Visual Studio Code.
+Initially, [Elio Struyf][03] developed the Front Matter extension when migrating from WordPress to 
+Hugo (Static web site Generator), in order to facilitate content management. 
+Over time, he expanded the extension's capabilities, until it eventually evolved into a headless 
+CMS that runs in Visual Studio Code.
 
 ## Advantages
 
