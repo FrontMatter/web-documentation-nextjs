@@ -19,7 +19,7 @@ export const strings = {
   generators_more2: "Pick your generator and start managing your static site in minutes",
 
   // Hero
-  hero_title: "Bringing the CMS directly to your editor",
+  hero_title: "Bringing the CMS to your editor",
   hero_description: "Why waste time switching between tools when you can do it all in one place?",
   hero_description_second: "With Front Matter, you can stay in your preferred editor and easily create, manage, and publish content. Our unique features transform your editor into a powerful content management system, so you can focus on what matters most - creating great content. Give Front Matter a try and see how easy it is to streamline your content creation process.",
   hero_button_primary: "Get started",
