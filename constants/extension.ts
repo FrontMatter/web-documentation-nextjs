@@ -1,6 +1,6 @@
 export const Extension = {
-  name: `Front Matter CMS`,
-  home: `The CMS running in VS Code for your static sites`,
+  name: `Front Matter`,
+  home: `Headless CMS right in your code editor`,
   description: `Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.`,
 
   githubDocs: "https://github.com/FrontMatter/web-documentation-nextjs",
