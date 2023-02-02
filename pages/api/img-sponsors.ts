@@ -39,6 +39,10 @@ const generateImage = async (sponsors: typeof mockData["data"]["viewer"]["sponso
   let i = 0;
 
   for (const sponsor of sponsors) {
+    if (!sponsor.avatarUrl) {
+      continue;
+    }
+    
     const image = await fetch(sponsor.avatarUrl);
 
     // Fetch image and convert to base64
