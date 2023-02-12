@@ -3,7 +3,7 @@ title: Site preview
 slug: site-preview
 description: null
 date: 2021-08-31T08:24:02.613Z
-lastmod: 2022-07-11T13:34:52.800Z
+lastmod: 2023-02-12T15:48:22.708Z
 weight: 700
 ---
 
@@ -15,6 +15,9 @@ The Markdown preview is not consistently delivering the same result as the one y
 site. The Front Matter extension provides you a way to show the actual site instead.
 
 ![Site preview][01]
+
+> **Info**: Once a preview is opened, you will be able to manually change the URL. Something to note
+> is that the URL will not be updated when navigating to other pages.
 
 ## Configuration
 
@@ -39,6 +42,46 @@ preview path/prefix. For instance, if you create blog articles, and you want to 
 > means that the engine will try to convert all characters you enter to a date formatted string. In
 > case you wan to skip some characters or all of them to be converted, you need to wrap that part
 > between **two single quotes**. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/11`.
+
+### Usage of placeholders
+
+Since version `8.3.0`, the you can use placeholders in the `previewPath` property and there are a
+couple of additional placeholders available which can be used for your preview paths.
+
+> **Info**: You can find these placeholders in the [placeholders section](/docs/content-creation/placeholders#special-placeholders).
+
+#### Usage of a placeholder
+
+```json
+"frontMatter.content.pageFolders": [
+  {
+    "title": "post",
+    "filePrefix": null,
+    "previewPath": "/{{fm.type}}/{{pathToken.3}}/{{pathToken.4}}",
+    "path": "[[workspace]]/content/{{year}}/{{month}}",
+    "contentTypes": ["post"]
+  }
+]
+```
+
+The preview path will generate the following path: `/post/2023/02/<slug>`.
+
+#### Usage of a placeholder with the publishing date
+
+```json
+"frontMatter.content.pageFolders": [
+  {
+    "title": "post",
+    "filePrefix": null,
+    "previewPath": "'/{{fm.type}}/'yyyy",
+    "contentTypes": ["post"]
+  }
+]
+```
+
+The preview path will generate the following path: `/post/2023/<slug>`.
+
+### Configuration levels
 
 #### Globally
 
@@ -65,11 +108,13 @@ defined globally and can be used to specify a preview path per page folder.
     {
       "title": "post",
       "path": "[[workspace]]/content/post",
-      "previewPath": "'blog/'yyyy/MM",
+      "previewPath": "'blog/'yyyy/MM"
     }
   ]
 }
 ```
+
+> **Info**: The `previewPath` property can contain
 
 #### Content type
 
@@ -90,4 +135,5 @@ type level will override what is defined on page folder level and globally.
 ```
 
 <!-- Link References -->
-[01]: /assets/site-preview.png
+
+[01]: /releases/v8.3.0/site-preview.png

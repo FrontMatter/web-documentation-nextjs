@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-12T08:39:13.419Z
+lastmod: 2023-02-12T14:41:03.541Z
 weight: 400
 ---
 
@@ -34,6 +34,7 @@ In this section of the panel, you can modify a couple of the useful settings to 
 ![Global settings][02]
 
 <!-- markdownlint-disable MD028 -->
+
 > **Info**: The global settings section will also be shown when you have the panel open on other
 > types of files.
 
@@ -59,17 +60,14 @@ Supports the following:
 
 In case you want to change the SEO settings, you can use the following settings:
 
-- `frontMatter.taxonomy.seoSlugLength`: Specifies the optimal title length for SEO (set to `-1` to
-  turn it off).
-- `frontMatter.taxonomy.seoTitleLength`: Specifies the optimal title length for SEO (set to `-1` to
-  turn it off).
-- `frontMatter.taxonomy.seoDescriptionLength`: Specifies the optimal description length for SEO (set
-  to `-1` to turn it off).
-- `frontMatter.taxonomy.seoContentLengh`: Specifies the optimal minimum length for your articles.
-  Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to
-  turn it off).
-- `frontMatter.taxonomy.seoDescriptionField`: Specifies the name of the SEO description field for
-  your page. Default is 'description'.
+| Setting                                     | Description                                                                                                                                                             | Default       |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `frontMatter.taxonomy.seoContentLengh`      | Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off). | `1760`        |
+| `frontMatter.taxonomy.seoDescriptionField`  | Specifies the name of the SEO description field for your page.                                                                                                          | `description` |
+| `frontMatter.taxonomy.seoDescriptionLength` | Specifies the optimal description length for SEO (set to `-1` to turn it off).                                                                                          | `160`         |
+| `frontMatter.taxonomy.seoSlugLength`        | Specifies the optimal title length for SEO (set to `-1` to turn it off).                                                                                                | `75`          |
+| `frontMatter.taxonomy.seoTitleField`        | Specifies the name of the title field for your page                                                                                                                     | `title`       |
+| `frontMatter.taxonomy.seoTitleLength`       | Specifies the optimal title length for SEO (set to `-1` to turn it off).                                                                                                | `60`          |
 
 To discover your internal links, you can specify your base URL with the `frontMatter.site.baseURL`
 setting.
@@ -220,6 +218,7 @@ Or in the status bar:
 ![Status bar mode switch][13]
 
 <!-- Link References -->
+
 [01]: /assets/activitybar-action.png
 [02]: /releases/v6.0.0/local-server.png
 [03]: /releases/v5.3.0/seo-status.png

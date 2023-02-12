@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2022-09-22T07:21:54.904Z
+lastmod: 2023-02-12T14:40:45.378Z
 weight: 200.1
 ---
 
@@ -116,15 +116,17 @@ The metadata section on the editor panel will render the following fields:
 
 For the content type you can configure the following properties:
 
-| Property      | Type                                     | Description                                                                                                                                                       | Default value |
-| ------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `name`        | `string`                                 | Name of the content type                                                                                                                                          | `""`          |
-| `fields`      | `array`                                  | Check the [supported field types][02]                                                                                                                             | `[]`          |
-| `fileType`    | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content.                                                     | `md`          |
-| `pageBundle`  | `boolean`                                | If set to `true`, the content will be created as a page bundle (folder).                                                                                          | `false`       |
-| `previewPath` | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName][03] setting will be used. | `null`        |
-| `template`    | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type.                                                              | `null`        |
-| `postScript`  | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04]. | `null`        |
+| Property          | Type                                     | Description                                                                                                                                                       | Default value                       |
+| ----------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------ |
+| `name`            | `string`                                 | Name of the content type                                                                                                                                          | `""`                                |
+| `fields`          | `array`                                  | Check the [supported field types][02]                                                                                                                             | `[]`                                |
+| `filePrefix`      | `string                                  | null`                                                                                                                                                             | Defines a prefix for the file name. | `null` |
+| `fileType`        | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content.                                                     | `md`                                |
+| `defaultFileName` | `string`                                 | Default file name to use when creating new content.                                                                                                               | `index`                             |
+| `pageBundle`      | `boolean`                                | If set to `true`, the content will be created as a page bundle (folder).                                                                                          | `false`                             |
+| `previewPath`     | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName][03] setting will be used. | `null`                              |
+| `template`        | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type.                                                              | `null`                              |
+| `postScript`      | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04]. | `null`                              |
 
 ## Define your own type
 
@@ -168,8 +170,8 @@ which fields to show.
 title: Content Types
 slug: content-types
 description: null
-date: '2021-09-17T07:36:26.654Z'
-lastmod: '2019-08-22T15:20:28.000Z'
+date: "2021-09-17T07:36:26.654Z"
+lastmod: "2019-08-22T15:20:28.000Z"
 weight: 4
 type: documentation
 ---
@@ -226,7 +228,7 @@ In your custom script setting, you need to make sure that this script is availab
     {
       "id": "generate-social-image",
       "title": "Generate social image",
-      "script": "./scripts/social-img.js",
+      "script": "./scripts/social-img.js"
     }
   ]
 }
@@ -237,8 +239,8 @@ In your custom script setting, you need to make sure that this script is availab
 
 ## Link to content folders
 
-In case you want to make sure that a content type is only available for specific folders, 
-you can use the `contentTypes` property on the `frontMatter.content.pageFolders` setting. 
+In case you want to make sure that a content type is only available for specific folders,
+you can use the `contentTypes` property on the `frontMatter.content.pageFolders` setting.
 
 ```json
 {
@@ -253,6 +255,7 @@ you can use the `contentTypes` property on the `frontMatter.content.pageFolders`
 ```
 
 <!-- Link References -->
+
 [01]: /assets/adapted-default-ct.png
 [02]: /docs/content-creation/fields#supported-field-types
 [03]: https://frontmatter.codes/docs/settings#frontmatter.preview.pathname

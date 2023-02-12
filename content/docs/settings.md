@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-30T12:52:52.270Z
+lastmod: 2023-02-12T14:40:56.662Z
 weight: 1100
 ---
 
@@ -49,8 +49,8 @@ content-type to its own file. This allows you to easily manage the settings for 
 
 The following settings are supported to be split in multiple files:
 
-| Setting name                        | Folder path                                   | Information                                                | JSON Schema                                                               |
-| ----------------------------------- | --------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Setting name                        | Folder path                                    | Information                                                | JSON Schema                                                          |
+| ----------------------------------- | ---------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------- |
 | `frontMatter.content.pageFolders`   | `./.frontmatter/config/content/pagefolders/`   |                                                            | `https://frontmatter.codes/config/content.pagefolders.schema.json`   |
 | `frontMatter.content.placeholders`  | `./.frontmatter/config/content/placeholders/`  |                                                            | `https://frontmatter.codes/config/content.placeholders.schema.json`  |
 | `frontMatter.content.snippets`      | `./.frontmatter/config/content/snippets/`      | The file name will be used as the ID/title of the snippet. | `https://frontmatter.codes/config/content.snippets.schema.json`      |
@@ -97,7 +97,7 @@ Contents of the `blog.json` file:
 
 #### Example 2: Specify a custom data type
 
-You are also able to define sub-folders for your settings, that way, you can easily group your 
+You are also able to define sub-folders for your settings, that way, you can easily group your
 settings. For example, in this case we'll create a `baz` data type in its own folder.
 
 ```markdown
@@ -180,6 +180,7 @@ Options:
 Define the draft field you want to use to manage your content.
 
 - Type: `object`
+
   - **name**: Define the type of field
   - **type**: `boolean` or `choice`
   - **invert**: `true` if you want to invert the value. This inversion is only applied if the field
@@ -228,14 +229,14 @@ running the create article command.
 
 Properties:
 
-| Title           | Type      | Description                                                                                                             | Default | Required / Optional |
-| --------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
-| `title`         | `string`  | A title for the content folder path                                                                                     | `""`    | Optional            |
-| `path`          | `string`  | The path to the content folder, important is to use the `[[workspace]]` placeholder                                     | `""`    | Required            |
-| `excludeSubdir` | `boolean` | Exclude subdirectories from the content folder                                                                          |         | Optional            |
-| `previewPath`   | `string`  | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more. |         | Optional            |
-| `filePrefix`    | `string`  | Defines a prefix for the file name.                                                                                     |         | Optional            |
-| `contentTypes`  | `string[]`| An array of content types to use for this folder. If not specified, all content types are used.                         |         | Optional            |
+| Title           | Type       | Description                                                                                                                                          | Default | Required / Optional |
+| --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
+| `title`         | `string`   | A title for the content folder path                                                                                                                  | `""`    | Optional            |
+| `path`          | `string`   | The path to the content folder, important is to use the `[[workspace]]` placeholder. You can also make use of placeholder to generate dynamic paths. | `""`    | Required            |
+| `excludeSubdir` | `boolean`  | Exclude subdirectories from the content folder                                                                                                       |         | Optional            |
+| `previewPath`   | `string`   | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more.                              |         | Optional            |
+| `filePrefix`    | `string`   | Defines a prefix for the file name.                                                                                                                  |         | Optional            |
+| `contentTypes`  | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
@@ -355,11 +356,13 @@ Sample:
 
 ```json
 {
-  "frontMatter.custom.scripts": [{
-    "title": "Generate social image",
-    "script": "./scripts/social-img.js",
-    "nodeBin": "~/.nvm/versions/node/v14.15.5/bin/node"
-  }]
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Generate social image",
+      "script": "./scripts/social-img.js",
+      "nodeBin": "~/.nvm/versions/node/v14.15.5/bin/node"
+    }
+  ]
 }
 ```
 
@@ -679,6 +682,13 @@ Specifies the optimal slug length for SEO (set to `-1` to turn it off).
 - Type: `number`
 - Default: `75`
 
+### frontMatter.taxonomy.seoTitleField
+
+Specifies the name of the SEO title field for your page.
+
+- Type: `string`
+- Default: `title`
+
 ### frontMatter.taxonomy.seoTitleLength
 
 Specifies the optimal title length for SEO (set to `-1` to turn it off).
@@ -774,6 +784,7 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 `frontMatter.content.pageFolders` setting.
 
 <!-- Link References -->
+
 [01]: /releases/v5.0.0/ask-to-promote-settings.png
 [02]: /docs/commands#diagnostic-logging
 [03]: /docs/troubleshooting#inspecting-configuration-behavior
@@ -784,7 +795,9 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [08]: /docs/custom-actions
 [09]: /docs/dashboard#card-tags
 [10]: /docs/dashboard#data-files-view
+
 <!-- markdownlint-disable-next-line MD053 - mistakenly marked as invalid -->
+
 [11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
 [12]: /docs/panel#define-view-modes
 [13]: /docs/content-creation/content-types#changing-the-default-content-type

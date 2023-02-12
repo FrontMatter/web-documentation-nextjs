@@ -2,8 +2,8 @@
 title: Commands
 slug: commands
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-22T08:00:40.856Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2023-02-12T15:41:40.983Z
 weight: 900
 ---
 
@@ -11,16 +11,26 @@ weight: 900
 
 ## Overview
 
-Front Matter actions are also available as commands. In this section of the documentation all
-commands will be explained.
+Front Matter actions can also be done using commands. This section of the documentation will
+provide an explanation of all the available commands.
 
-![Commands][01]
+<img src="/assets/commands-v6.1.0.png" alt="Commands" style="max-width: 60%" />
+
+Some of the commands do also have a default keyboard binding for quick access.
+
+## Keyboard bindings
+
+| Command                     | Description                           | Windows                                           | Mac                                              | Linux                                             |
+| --------------------------- | ------------------------------------- | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------- |
+| `frontMatter.dashboard`     | Open the Front Matter dashboard       | <kbd>alt</kbd> + d                                | <kbd>option</kbd> + d                            | <kbd>alt</kbd> + d                                |
+| `frontMatter.insertMedia`   | Insert a media file into your content | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> |
+| `frontMatter.insertSnippet` | Insert a snippet into your content    | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd>  | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd>  |
 
 ## Using commands
 
 - Start by opening the command prompt:
-  - Windows: ⇧+ctrl+P
-  - Mac: ⇧+⌘+P
+  - Linux & Windows: <kbd>shift</kbd> + <kbd>ctrl</kbd> + <kbd>P</kbd>
+  - Mac: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>P</kbd>
 - Use one of the following commands
 
 ## Available commands
@@ -45,11 +55,11 @@ Opens a virtual Markdown document with detailed information about your Front Mat
 
 ID: `frontMatter.diagnostics`
 
-### Insert image into your content
+### Insert media into your content
 
-Allows you to quickly insert an image reference in the Markdown file.
+Allows you to quickly insert an media reference in the Markdown file.
 
-ID: `frontMatter.insertImage`
+ID: `frontMatter.insertMedia`
 
 ### Insert snippet into your content
 
@@ -172,6 +182,3 @@ ID: `frontMatter.promoteSettings`
 This command has been removed, as it became obsolete since the introduction of Content Types.
 
 ID: `frontMatter.setDate`
-
-<!-- Link References -->
-[01]: /assets/commands-v6.1.0.png

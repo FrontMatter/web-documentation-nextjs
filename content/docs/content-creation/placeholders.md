@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-09-22T07:08:36.014Z
+lastmod: 2023-02-12T14:40:30.774Z
 weight: 200.4
 ---
 
@@ -12,19 +12,43 @@ weight: 200.4
 Placeholders can be used in content type fields or templates. The placeholders allow you to
 automatically fill in values when creating a new content.
 
-There are known placeholders from Front Matter:
+## Default placeholders
 
-- `{{title}}`: Title of the page
-- `{{slug}}`: Slug of the page
-- `{{now}}`: Current date formatted with the value defined in `frontMatter.taxonomy.dateFormat` or
-  ISO string
-- `{{year}}`: Current year
-- `{{month}}`: Current month
-- `{{day}}`: Current day
-- `{{hour12}}`: Current hour in 12-hour format
-- `{{hour24}}`: Current hour in 24-hour format
-- `{{ampm}}`: Show AM/PM
-- `{{minute}}`: Current minute
+| Placeholder  | Description                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------ |
+| `{{title}}`  | Title of the page                                                                                |
+| `{{slug}}`   | Slug of the page                                                                                 |
+| `{{now}}`    | Current date formatted with the value defined in `frontMatter.taxonomy.dateFormat` or ISO string |
+| `{{year}}`   | Current year                                                                                     |
+| `{{month}}`  | Current month                                                                                    |
+| `{{day}}`    | Current day                                                                                      |
+| `{{hour12}}` | Current hour in 12-hour format                                                                   |
+| `{{hour24}}` | Current hour in 24-hour format                                                                   |
+| `{{ampm}}`   | Show AM/PM                                                                                       |
+| `{{minute}}` | Current minute                                                                                   |
+
+## Special placeholders
+
+| Placeholder             | Description                                | Works for                                             |
+| ----------------------- | ------------------------------------------ | ----------------------------------------------------- |
+| `{{fm.<field name>}}`   | The value of the field in the front matter | `previewPath` on the page folder or the content-type. |
+| `{{pathToken.<index>}}` | The value of the path token at the index   | `previewPath` on the page folder or the content-type. |
+
+Example of how you can use the special placeholders:
+
+```json
+"frontMatter.content.pageFolders": [
+  {
+    "title": "post",
+    "filePrefix": null,
+    "previewPath": "/{{fm.type}}/{{pathToken.3}}/{{pathToken.4}}",
+    "path": "[[workspace]]/content/{{year}}/{{month}}",
+    "contentTypes": ["post"]
+  }
+]
+```
+
+The preview path will generate the following path: `/post/2023/02/<slug>`.
 
 ## Custom placeholders
 
@@ -124,4 +148,5 @@ follows:
 ```
 
 <!-- Link References -->
+
 [01]: /docs/custom-actions/#content-script

@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-05-02T16:49:38.065Z
+lastmod: 2023-02-12T14:41:08.770Z
 weight: 100
 ---
 
@@ -89,6 +89,10 @@ explorer panel from Visual Studio Code and selecting **Front Matter: Register fo
 > [frontMatter.content.pageFolders][07] configuration setting and specifying the `excludeSubDir`
 > property with the value as `true`.
 
+Since version `8.3.0` you can use [placeholders](/docs/content-creation/placeholders) in the folder
+path. This functionality allows you to generate dynamic content paths based for example on the
+current date.
+
 ## Workspaces with multiple folders
 
 If you are using workspaces with multiple folders in Visual Studio Code. Front Matter will try to
@@ -128,6 +132,7 @@ Follow the proposed steps from Visual Studio Code.
 <iframe src="https://player.vimeo.com/video/630150787?h=9988cff4f0&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=56727" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Front Matter - Installation"></iframe>
 
 <!-- Link References -->
+
 [01]: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter
 [02]: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter-beta
 [03]: https://beta.frontmatter.codes

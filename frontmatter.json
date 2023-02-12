@@ -1,6 +1,7 @@
 {
   "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "frontMatter.templates.enabled": false,
+  "frontMatter.content.autoUpdateDate": true,
   "frontMatter.site.baseURL": "https://frontmatter.codes",
   "frontMatter.content.pageFolders": [
     {

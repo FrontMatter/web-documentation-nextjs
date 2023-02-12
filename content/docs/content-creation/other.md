@@ -3,7 +3,7 @@ title: Additional configuration
 slug: content-creation/additional-config
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-07-11T13:34:50.810Z
+lastmod: 2023-02-12T14:40:40.022Z
 weight: 200.5
 ---
 
@@ -16,7 +16,11 @@ For more information on how to use the preview path, see the
 
 ## File prefixes
 
-By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix. You can change this per page folder. You can change this in your `frontMatter.content.pageFolders` setting by adding the `filePrefix` property to your page folder.
+By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix. You can change this per page folder or per content-type.
+
+### Page folder level
+
+To change the file prefix for a specific page folder, you can add the `filePrefix` property to your page folder in the `frontMatter.content.pageFolders` setting.
 
 ```json
 {
@@ -30,6 +34,26 @@ By default, Front Matter will use the `yyyy-MM-dd` date format for the file pref
 }
 ```
 
+### Content-type level
+
+Similarly, you can change the file prefix for a specific content type by adding the `filePrefix` property to your content type in the `frontMatter.taxonomy.contentTypes` setting.
+
+> **Important**: The `filePrefix` from the content-type will override the `filePrefix` property from the page folder.
+
+```json
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "filePrefix": "yyyy-MM",
+      "fields": [
+        ...
+      ]
+    }
+  ]
+}
+```
+
 ## Page and leaf bundles
 
 The page or leaf bundles, are a way to group your pages and resources together in a single folder.
@@ -37,19 +61,19 @@ The page or leaf bundles, are a way to group your pages and resources together i
 ```markdown
 content/
 ├── about
-│   ├── index.md
+│ ├── index.md
 ├── posts
-│   ├── leaf-bundle
-│   │   ├── image1.jpg
-│   │   ├── image2.png
-│   │   └── index.md
-│   └── leaf-bundle
-│       └── index.md
+│ ├── leaf-bundle
+│ │ ├── image1.jpg
+│ │ ├── image2.png
+│ │ └── index.md
+│ └── leaf-bundle
+│ └── index.md
 │
 └── another-section
-    ├── ..
-    └── leaf-bundle
-        └── index.md
+├── ..
+└── leaf-bundle
+└── index.md
 ```
 
 In the above section you can see the `leaf-bundle` folders. These bundles consist of a `index.md`
