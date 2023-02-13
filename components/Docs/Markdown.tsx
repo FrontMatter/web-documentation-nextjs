@@ -10,9 +10,10 @@ import { mdxAnnotations } from 'mdx-annotations';
 
 export interface IMarkdownProps {
   content: string | undefined;
+  slug: string | undefined;
 }
 
-export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: React.PropsWithChildren<IMarkdownProps>) => {
+export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content, slug}: React.PropsWithChildren<IMarkdownProps>) => {
 
   const getTitle = (props: any) => {
     const title = props?.children.length > 0 ? `${props?.children[0] as string}` : "";
@@ -47,7 +48,7 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({content}: Rea
   }
 
   return (
-    <div className={`markdown`}>
+    <div className={`markdown ${slug}`}>
       {/* eslint-disable react/no-children-prop */}
       <ReactMarkdown
         components={{

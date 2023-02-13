@@ -230,3 +230,13 @@ table {
     display: none;
   }
 }
+
+.settings-overview {
+  h3 {
+    @apply mt-16 !important;
+  }
+
+  h2 + h3 {
+    @apply mt-4 !important;
+  }
+}

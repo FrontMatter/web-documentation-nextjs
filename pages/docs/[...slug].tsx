@@ -23,7 +23,7 @@ export default function Documentation({ page, pages, title }: any) {
       
       <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
-          <Markdown content={page?.content} />
+          <Markdown content={page?.content} slug={page.slug.replace(/\//g, '-')} />
         </Page>
       </DocsLayout>
     </>

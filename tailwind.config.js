@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       colors: {
         white: colors.white,
-        gray: colors.trueGray,
+        gray: colors.neutral,
         "red": {
           "50": "#ff7c7b",
           "100": "#ff7271",

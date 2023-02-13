@@ -18,34 +18,30 @@ nothing more than a Node.js script which is referenced from within your project.
 ![Custom action][01]
 
 <!-- markdownlint-disable MD028 -->
+
 > **Sample**: [Generate open graph preview image in Code with Front Matter][02]
 
 > **Important**: You can add custom actions for your content and media files.
+
 <!-- markdownlint-enable MD028 -->
+
 ## The custom action setting
 
 The content and media custom actions can be defined by using the `frontMatter.custom.scripts` setting.
 
 Custom actions can be configured with the following properties:
 
-- `id`: The id of the custom action/script
-- `title`: The title of the custom action
-- `script`: The path to the script to execute
-- `command`: The command to execute. Example: `node`, `path to your node executable`, `bash`,
-  `python`, ... (default: `node` - optional).
-- `type`: The type for which the script will be used. Can be `content`, `mediaFile`, or
-  `mediaFolder`. (default: `content` - optional).
-- `bulk`: Run the script for one file or multiple files. .
-- `output`: Specifies the output type (default: `notification` - optional). Available values are:
-  - `notification`: The output will be passed as a notification.
-  - `editor`: The output will be passed to the editor.
-- `outputType`: Specifies the output type (default: `text` - optional). Available values the editor
-  values from VS Code like:
-  - `text`: The output will be passed as a text file.
-  - `html`: The output will be passed as an HTML file.
-  - `markdown`: The output will be passed as an Markdown file.
-- `hidden`: Hide the action from the UI. This is mostly used when creating a content script that
-  will be used to post process new content (default: `false` - optional).
+| Title        | Description                                                                                                                                                                                                                                                                                        | Default        |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `id`         | The id of the custom action/script                                                                                                                                                                                                                                                                 | `""`             |
+| `title`      | The title of the custom action                                                                                                                                                                                                                                                                     | `""`             |
+| `script`     | The path to the script to execute                                                                                                                                                                                                                                                                  | `""`             |
+| `command`    | The command to execute (optional). Example: `node`, `path to your node executable`, `bash`, `python`, ...                                                                                                                                                                                          | `node`         |
+| `type`       | The type for which the script will be used (optional). <br /><br /> Use one of the following types: `content`, `mediaFile`, or `mediaFolder`.                                                                                                                                                      | `content`      |
+| `bulk`       | Run the script for one file or multiple files.                                                                                                                                                                                                                                                     | `false`        |
+| `output`     | Specifies the output type (optional). <br /><br /> Available values are: `notification` and `editor`. <br /><br /> `notification`: The output will be passed as a notification. <br /> `editor`: The output will be passed to the editor.                                                          | `notification` |
+| `outputType` | Specifies the output type (optional). <br /><br /> Available values the editor values from VS Code like: <br /><br /> `text`: The output will be passed as a text file. <br /> `html`: The output will be passed as an HTML file. <br /> `markdown`: The output will be passed as a Markdown file. | `text`         |
+| `hidden`     | Hide the action from the UI. This is mostly used when creating a content script that will be used to post process new content (optional).                                                                                                                                                          | `false`        |
 
 > **Important**: Previously, you could define the `nodeBin` property to define the path to your node
 > executable. This path was needed when you are working with for instance `nvm` and have multiple
@@ -82,11 +78,13 @@ setting for your project as follows:
 
 ```json
 {
-  "frontMatter.custom.scripts": [{
-    "title": "Generate social image",
-    "script": "./scripts/social-img.js",
-    "command": "~/.nvm/versions/node/v14.15.5/bin/node"
-  }]
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Generate social image",
+      "script": "./scripts/social-img.js",
+      "command": "~/.nvm/versions/node/v14.15.5/bin/node"
+    }
+  ]
 }
 ```
 
@@ -108,7 +106,7 @@ want to update the front matter of your content, you need to provide the data in
 format.
 
 ```json
-{ "frontmatter": { "<field name>": "field value" }}
+{ "frontmatter": { "<field name>": "field value" } }
 ```
 
 Example:
@@ -143,13 +141,15 @@ your project as follows:
 
 ```json
 {
-  "frontMatter.custom.scripts": [{
-    "title": "Generate social image",
-    "script": "./scripts/social-img.js",
-    "command": "~/.nvm/versions/node/v16.13.0/bin/node",
-    "bulk": true,
-    "output": "editor"
-  }]
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Generate social image",
+      "script": "./scripts/social-img.js",
+      "command": "~/.nvm/versions/node/v16.13.0/bin/node",
+      "bulk": true,
+      "output": "editor"
+    }
+  ]
 }
 ```
 
@@ -231,28 +231,25 @@ print(f'frontMatterArg: {sys.argv[3]}')
 ### Optimize image (media file script)
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 const arguments = process.argv;
 
 (async () => {
   if (arguments && arguments.length > 0) {
-    const imagemin = (await import('imagemin')).default;
-    const imageminJpegtran = (await import('imagemin-jpegtran')).default;
-    const imageminPngquant = (await import('imagemin-pngquant')).default;
+    const imagemin = (await import("imagemin")).default;
+    const imageminJpegtran = (await import("imagemin-jpegtran")).default;
+    const imageminPngquant = (await import("imagemin-pngquant")).default;
 
     const fileArg = arguments[3]; // The file path
 
     await imagemin([fileArg], {
       destination: path.dirname(fileArg),
       glob: false,
-      plugins: [
-        imageminJpegtran(),
-        imageminPngquant()
-      ]
+      plugins: [imageminJpegtran(), imageminPngquant()],
     });
 
-    console.log(`Optimized image ${path.basename(fileArg)}`)
+    console.log(`Optimized image ${path.basename(fileArg)}`);
   }
 })();
 ```
@@ -264,29 +261,26 @@ const arguments = process.argv;
 ### Optimize images in the current folder (media folder script)
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 const arguments = process.argv;
 
 (async () => {
   if (arguments && arguments.length > 0) {
-    const imagemin = (await import('imagemin')).default;
-    const imageminJpegtran = (await import('imagemin-jpegtran')).default;
-    const imageminPngquant = (await import('imagemin-pngquant')).default;
+    const imagemin = (await import("imagemin")).default;
+    const imageminJpegtran = (await import("imagemin-jpegtran")).default;
+    const imageminPngquant = (await import("imagemin-pngquant")).default;
 
     const workspaceArg = arguments[2]; // The workspace path
     const folderArg = arguments[3]; // The folder path
 
-    const files = await imagemin([path.join(folderArg, '*.{jpg,png}')], {
+    const files = await imagemin([path.join(folderArg, "*.{jpg,png}")], {
       destination: folderArg,
       glob: true,
-      plugins: [
-        imageminJpegtran(),
-        imageminPngquant()
-      ]
+      plugins: [imageminJpegtran(), imageminPngquant()],
     });
 
-    console.log(`Optimized images: ${files.length}`)
+    console.log(`Optimized images: ${files.length}`);
   }
 })();
 ```
@@ -296,6 +290,7 @@ const arguments = process.argv;
 - `npm i imagemin imagemin-jpegtran imagemin-pngquant`
 
 <!-- Link References -->
+
 [01]: /assets/custom-action.png
 [02]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
 [03]: https://github.com/estruyf/vscode-front-matter/blob/HEAD/sample/script-sample.js

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Extension } from '../../constants/extension';
 import { isProduction } from '../../helpers/isProduction';
 import { FrontMatterLines } from './FrontMatterLines';
-const Slide = require('react-reveal/Slide');
 
 export interface ICTAProps {}
 
@@ -48,15 +47,13 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
       <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
         <div className={`py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2`}>
           <div className={`relative sm:mx-auto sm:max-w-3xl sm:px-0 lg:-mr-40 lg:max-w-none lg:h-full lg:pl-12`}>
-            <Slide right>
-              <img 
-                className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
-                // src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
-                // src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649328023/frontmatter/7.1.0/panel-preview-light.png"}
-                src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649335002/frontmatter/7.1.0/fm-doc-screenshot.png"}
-                alt={`Front Matter - Headless CMS - Live page preview`}
-                loading={`lazy`} />
-            </Slide>
+            <img 
+              className={`w-full lg:h-full lg:w-auto lg:max-w-none`} 
+              // src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
+              // src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649328023/frontmatter/7.1.0/panel-preview-light.png"}
+              src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649335002/frontmatter/7.1.0/fm-doc-screenshot.png"}
+              alt={`Front Matter - Headless CMS - Live page preview`}
+              loading={`lazy`} />
           </div>
         </div>
       </div>

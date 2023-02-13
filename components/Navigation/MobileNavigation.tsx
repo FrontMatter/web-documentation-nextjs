@@ -3,7 +3,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import * as React from 'react';
 import { createContext, Fragment, useContext, useState } from 'react';
 import { Header } from '../Page/Header';
-import create from 'zustand';
+import { create } from 'zustand';
 import { GlobalNavigation } from './GlobalNavigation';
 import { SocialNavigation } from './SocialNavigation';
 import { DocsNavigation } from './DocsNavigation';
