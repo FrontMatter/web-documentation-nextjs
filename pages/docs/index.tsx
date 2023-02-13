@@ -11,7 +11,7 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
   const { t: strings } = useTranslation();
 
   const welcome = pages?.find(p => p.slug === "index");
-  
+
   return (
     <>
       <Title value={strings(`documentation_title`)} />
@@ -20,7 +20,7 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
 
       <DocsLayout navItems={pages} >
         <Page items={pages} page={welcome}>
-          <Markdown content={welcome?.content} />
+          <Markdown content={welcome?.content} slug={welcome?.slug} />
         </Page>
       </DocsLayout>
     </>
