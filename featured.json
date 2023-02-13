@@ -54,6 +54,15 @@
     "featured": true
   },
   {
+    "title": "Front Matter: a headless CMS for Hugo that runs in VS Code",
+    "link": "https://www.nickgracilla.com/posts/front-matter-headless-cms-for-hugo/",
+    "author": {
+      "name": "Nick Gracilla",
+      "link": "https://www.nickgracilla.com/"
+    },
+    "type": "article"
+  },
+  {
     "title": "Front Matter Headless CMS for Visual Studio Code",
     "link": "https://chrisandandreshow.com/front-matter-headless-cms-visual-studio-code/",
     "author": {

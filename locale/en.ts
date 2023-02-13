@@ -3,7 +3,7 @@ import { Extension } from "../constants/extension";
 
 export const strings = {
   // CTA
-  cta_title: "Effortless content management, right in your code editor",
+  cta_title: "Headless CMS right in your code editor",
   cta_title_sr: " that helps managing your static sites and Markdown based sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.",
   cta_description: "Experience the best of both worlds with Front Matter, the CMS that runs within Visual Studio Code,  GitPod, and many more. Get the control over your static generator's content by bringing in the CMS features from Front Matter. Start creating and previewing content in real-time - no complicated setup - choose Front Matter CMS and start creating amazing content today.",
   cta_button_primary: "Get started",
@@ -19,7 +19,7 @@ export const strings = {
   generators_more2: "Pick your generator and start managing your static site in minutes",
 
   // Hero
-  hero_title: "Bringing the CMS directly to your editor",
+  hero_title: "Bringing the CMS to your editor",
   hero_description: "Why waste time switching between tools when you can do it all in one place?",
   hero_description_second: "With Front Matter, you can stay in your preferred editor and easily create, manage, and publish content. Our unique features transform your editor into a powerful content management system, so you can focus on what matters most - creating great content. Give Front Matter a try and see how easy it is to streamline your content creation process.",
   hero_button_primary: "Get started",
