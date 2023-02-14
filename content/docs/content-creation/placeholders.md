@@ -29,10 +29,13 @@ automatically fill in values when creating a new content.
 
 ## Special placeholders
 
-| Placeholder             | Description                                | Works for                                             |
-| ----------------------- | ------------------------------------------ | ----------------------------------------------------- |
-| `{{fm.<field name>}}`   | The value of the field in the front matter | `previewPath` on the page folder or the content-type. |
-| `{{pathToken.<index>}}` | The value of the path token at the index   | `previewPath` on the page folder or the content-type. |
+| Placeholder             | Description                                                | Works for                                             |
+| ----------------------- | ---------------------------------------------------------- | ----------------------------------------------------- |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                 | `previewPath` on the page folder or the content-type. |
+| `{{pathToken.<index>}}` | The value of the path token at the index                   | `previewPath` on the page folder or the content-type. |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type. |
+
+### Example 1
 
 Example of how you can use the special placeholders:
 
@@ -49,6 +52,22 @@ Example of how you can use the special placeholders:
 ```
 
 The preview path will generate the following path: `/post/2023/02/<slug>`.
+
+### Example 2
+
+```json
+"frontMatter.content.pageFolders": [
+  {
+    "title": "post",
+    "filePrefix": null,
+    "previewPath": "/{{pathToken.relPath}}/",
+    "path": "[[workspace]]/content"
+  }
+]
+```
+
+If a file would exist in: `./content/docs/settings.md`. The preview path will generate the following
+path: `/docs/settings/`.
 
 ## Custom placeholders
 
