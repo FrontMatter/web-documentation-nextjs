@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/data.folders.schema.json",
+  "description": "Defines the settings for Front Matter data folder",
+  "lastModified": "2023-02-13T18:29:32.829Z",
+  "type": "object",
+  "title": "Front Matter - data folder",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Your unique ID you want to use for your data folder."
+    },
+    "labelField": {
+      "type": "string",
+      "description": "The field you want to use as label for your data entries."
+    },
+    "path": {
+      "type": "string",
+      "description": "Path to the folder to load files.",
+      "default": "[[workspace]]/"
+    },
+    "schema": {
+      "$ref": "https://beta.frontmatter.codes/config/data.files.schema.json#/properties/schema"
+    },
+    "type": {
+      "type": "string",
+      "default": "content",
+      "description": "If you are using data types, you can specify your type ID."
+    },
+    "singleEntry": {
+      "type": "boolean",
+      "description": "If you want to use a single entry for your data files in the folder.",
+      "default": false
+    }
+  },
+  "required": [
+    "id",
+    "path"
+  ]
+}

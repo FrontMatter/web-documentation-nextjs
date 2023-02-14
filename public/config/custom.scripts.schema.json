@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/custom.scripts.schema.json",
+  "description": "Defines the settings for Front Matter custom script",
+  "lastModified": "2023-02-13T18:29:32.829Z",
+  "type": "object",
+  "title": "Front Matter - custom script",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the script."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title you want to give to your script. Will be shown as the title of the button."
+    },
+    "script": {
+      "type": "string",
+      "description": "Path to the script to execute"
+    },
+    "nodeBin": {
+      "type": "string",
+      "description": "Path to the node executable. This is required when using NVM, so that there is no confusion of which node version to use. (deprecated: use the command property instead)"
+    },
+    "bulk": {
+      "type": "boolean",
+      "description": "Run the script for all content files"
+    },
+    "output": {
+      "type": "string",
+      "enum": [
+        "editor",
+        "notification"
+      ],
+      "description": "Define where you want to output your script output. Default is a notification, but you can specify to show it in an editor panel."
+    },
+    "outputType": {
+      "type": "string",
+      "description": "The type of output for the editor panel. Can be used to change it to 'markdown' for example"
+    },
+    "type": {
+      "type": "string",
+      "default": "content",
+      "enum": [
+        "content",
+        "mediaFolder",
+        "mediaFile"
+      ],
+      "description": "The type for which the script will be used."
+    },
+    "command": {
+      "$id": "#scriptCommand",
+      "type": "string",
+      "oneOf": [
+        {
+          "enum": [
+            "node",
+            "bash",
+            "powershell",
+            "python",
+            "python3"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "The type of script you want to execute.",
+      "default": "node"
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "Hide the action from the UI",
+      "default": false
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "macos",
+              "linux",
+              "windows"
+            ],
+            "description": "The environment type for which the script needs to be used"
+          },
+          "script": {
+            "type": "string",
+            "description": "Path to the script to execute"
+          },
+          "command": {
+            "$ref": "#scriptCommand"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "script"
+  ]
+}

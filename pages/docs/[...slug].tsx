@@ -2,10 +2,10 @@ import React from 'react';
 import { getAllPosts, getPostByFilename } from '../../lib/api';
 import { useRouter } from 'next/router';
 import { Description, OtherMeta, Title } from '../../components/Meta';
-import { Layout } from '../../components/Page/Layout';
 import { useTranslation } from 'react-i18next';
 import { Page } from '../../components/Docs/Page';
 import { Markdown } from '../../components/Docs/Markdown';
+import { DocsLayout } from '../../components/Page/DocsLayout';
 
 export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
@@ -20,12 +20,12 @@ export default function Documentation({ page, pages, title }: any) {
       <Title value={page.title} />
       <Description value={page.description || strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
-
-      <Layout navItems={pages}>
+      
+      <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
-          <Markdown content={page?.content} />
+          <Markdown content={page?.content} slug={page.slug.replace(/\//g, '-')} />
         </Page>
-      </Layout>
+      </DocsLayout>
     </>
   )
 }

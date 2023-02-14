@@ -1,5 +1,15 @@
 [
   {
+    "title": "OSS Maintainer Interview | Front Matter",
+    "link": "https://www.youtube.com/watch?v=Db_s_XTJMqE",
+    "author": {
+      "name": "GitKraken",
+      "link": "https://www.gitkraken.com/"
+    },
+    "type": "video",
+    "featured": false
+  },
+  {
     "title": "Release Radar · March 2022 Edition",
     "link": "https://github.blog/2022-04-08-release-radar-mar-2022/",
     "author": {
@@ -42,6 +52,15 @@
     "preview": "/featured/the-download_dec21.png",
     "type": "video",
     "featured": true
+  },
+  {
+    "title": "Front Matter: a headless CMS for Hugo that runs in VS Code",
+    "link": "https://www.nickgracilla.com/posts/front-matter-headless-cms-for-hugo/",
+    "author": {
+      "name": "Nick Gracilla",
+      "link": "https://www.nickgracilla.com/"
+    },
+    "type": "article"
   },
   {
     "title": "Front Matter Headless CMS for Visual Studio Code",
@@ -105,5 +124,32 @@
       "link": "https://fryboyter.de"
     },
     "type": "article"
+  },
+  {
+    "title": "Publier un blog HYPER simplement!",
+    "link": "https://yoandev.co/publier-un-blog-hyper-simplement/",
+    "author": {
+      "name": "YeanDev",
+      "link": "https://yoandev.co/"
+    },
+    "type": "article"
+  },
+  {
+    "title": "Publier un BLOG GRATUITEMENT avec HUGO, Front Matter et Netlify en MOINS D'UNE HEURE",
+    "link": "https://www.youtube.com/watch?v=Lt024O2fJdE",
+    "author": {
+      "name": "YeanDev",
+      "link": "https://yoandev.co/"
+    },
+    "type": "video"
+  },
+  {
+    "title": "Marketing and Documentation Site with Gitpod, Frontmatter CMS and Hugo SSG",
+    "link": "https://www.youtube.com/watch?v=T7neqUfnVvo",
+    "author": {
+      "name": "Bryan Klein",
+      "link": "https://github.com/bwklein"
+    },
+    "type": "video"
   }
 ]

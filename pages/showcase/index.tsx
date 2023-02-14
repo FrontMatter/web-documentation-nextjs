@@ -47,9 +47,9 @@ export default function Home({ showcases, featured }: any) {
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
-            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_page_title`)}</h1>
+            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_page_title`) as string}</h1>
             
-            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_page_description`)}</p>
+            <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_page_description`) as string}</p>
 
             <div className="mt-8 text-sm">
               <p>Want to add your site or article/video/... to our showcase page? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
@@ -57,7 +57,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div>
-            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`)}</h2>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`) as string}</h2>
 
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {allFeatured.sort(sortTitle).map((feature: any) => (
@@ -98,7 +98,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div className='py-8'>
-            <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles</h3>
+            <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles / videos / etc.</h3>
               
             <ul className={`list-disc pl-6 mt-8`}>
               {
@@ -126,7 +126,7 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div>
-            <h2 className="text-3xl xl:text-4xl mt-4 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
             
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (

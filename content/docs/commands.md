@@ -2,8 +2,8 @@
 title: Commands
 slug: commands
 description: null
-date: '2021-08-30T16:13:00.546Z'
-lastmod: '2021-09-22T08:00:40.856Z'
+date: 2021-08-30T16:13:00.546Z
+lastmod: 2023-02-12T15:41:40.983Z
 weight: 900
 ---
 
@@ -11,36 +11,55 @@ weight: 900
 
 ## Overview
 
-Front Matter actions are also available as commands. In this section of the documentation all commands will be explained.
+Front Matter actions can also be done using commands. This section of the documentation will
+provide an explanation of all the available commands.
 
-![Commands](/assets/commands-v6.1.0.png)
+<img src="/assets/commands-v6.1.0.png" alt="Commands" style="max-width: 60%" />
+
+Some of the commands do also have a default keyboard binding for quick access.
+
+## Keyboard bindings
+
+| Command                     | Description                           | Windows                                           | Mac                                              | Linux                                             |
+| --------------------------- | ------------------------------------- | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------- |
+| `frontMatter.dashboard`     | Open the Front Matter dashboard       | <kbd>alt</kbd> + d                                | <kbd>option</kbd> + d                            | <kbd>alt</kbd> + d                                |
+| `frontMatter.insertMedia`   | Insert a media file into your content | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> |
+| `frontMatter.insertSnippet` | Insert a snippet into your content    | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd>  | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> | <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>v</kbd>  |
 
 ## Using commands
 
 - Start by opening the command prompt:
-  - Windows: ⇧+ctrl+P
-  - Mac: ⇧+⌘+P
+  - Linux & Windows: <kbd>shift</kbd> + <kbd>ctrl</kbd> + <kbd>P</kbd>
+  - Mac: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>P</kbd>
 - Use one of the following commands
 
 ## Available commands
 
 ### Initialize project
 
-This command will initialize the project with a template folder and an article template. It makes it easier to get you started with the extension and creating your content.
+This command will initialize the project with a template folder and an article template. It makes it
+easier to get you started with the extension and creating your content.
 
 ID: `frontMatter.init`
 
 ### Open dashboard
 
-Opens the dashboard with your Markdown pages overview. If you did not yet initialize your project, the welcome screen will be shown.
+Opens the dashboard with your Markdown pages overview. If you did not yet initialize your project,
+the welcome screen will be shown.
 
 ID: `frontMatter.dashboard`
 
-### Insert image into your content
+### Diagnostic logging
 
-Allows you to quickly insert an image reference in the Markdown file.
+Opens a virtual Markdown document with detailed information about your Front Matter configuration.
 
-ID: `frontMatter.insertImage`
+ID: `frontMatter.diagnostics`
+
+### Insert media into your content
+
+Allows you to quickly insert an media reference in the Markdown file.
+
+ID: `frontMatter.insertMedia`
 
 ### Insert snippet into your content
 
@@ -62,13 +81,15 @@ ID: `frontMatter.createTag`
 
 ### Insert categories
 
-Inserts a selected categories into the front matter of your article/post/... - When using this command, the Front Matter panel opens and focuses on the specified type.
+Inserts a selected categories into the front matter of your article/post/... - When using this
+command, the Front Matter panel opens and focuses on the specified type.
 
 ID: `frontMatter.insertCategories`
 
 ### Insert tags
 
-Inserts a selected tags into the front matter of your article/post/... - When using this command, the Front Matter panel opens and focuses on the specified type.
+Inserts a selected tags into the front matter of your article/post/... - When using this command,
+the Front Matter panel opens and focuses on the specified type.
 
 ID: `frontMatter.insertTags`
 
@@ -80,29 +101,37 @@ ID: `frontMatter.exportTaxonomy`
 
 ### Remap or remove tag/category in all articles
 
-This command helps you quickly update/remap or delete a tag or category in your markdown files. The extension will ask you to select the taxonomy type (tag or category), the old taxonomy value, and the new one (leave the input field blank to remove the tag/category).
+This command helps you quickly update/remap or delete a tag or category in your markdown files. The
+extension will ask you to select the taxonomy type (tag or category), the old taxonomy value, and
+the new one (leave the input field blank to remove the tag/category).
 
-> **Info**: Once the remapping/deleting process completes, your VS Code settings update with all new taxonomy tags/categories.
+> **Info**: Once the remapping/deleting process completes, your VS Code settings update with all new
+> taxonomy tags/categories.
 
 ID: `frontMatter.remap`
 
 ### Create a template from current file
 
-This command allows you to create a new template from the current open Markdown file. It will ask you for the name of the template and if you want to keep the current file its content in the template.
+This command allows you to create a new template from the current open Markdown file. It will ask
+you for the name of the template and if you want to keep the current file its content in the
+template.
 
 ID: `frontMatter.createTemplate`
 
 ### Create new content from defined content type or template
 
-With this command, you can easily create content in your project from the defined content types or templates.
+With this command, you can easily create content in your project from the defined content types or
+templates.
 
-> **Info**: The command will use the `frontMatter.templates.prefix` setting in order to add a prefix (default: `yyyy-MM-dd`) on the filename.
+> **Info**: The command will use the `frontMatter.templates.prefix` setting in order to add a prefix
+> (default: `yyyy-MM-dd`) on the filename.
 
 ID: `frontMatter.createContent`
 
 ### Generate slug based on content title
 
-This command generates a clean slug for your content. It removes known stop words, punctuations, and special characters.
+This command generates a clean slug for your content. It removes known stop words, punctuations, and
+special characters.
 
 Example:
 
@@ -113,13 +142,17 @@ slug: sample-page-title
 ---
 ```
 
-You can also specify a prefix and suffix, which can be added to the slug if you want. Use the following settings to do this: `frontMatter.taxonomy.slugPrefix` and `frontMatter.taxonomy.slugSuffix`. 
+You can also specify a prefix and suffix, which can be added to the slug if you want. Use the
+following settings to do this: `frontMatter.taxonomy.slugPrefix` and
+`frontMatter.taxonomy.slugSuffix`.
 
-By default, both prefix and suffix settings are not provided, which mean it would not add anything extra to the slug. 
+By default, both prefix and suffix settings are not provided, which mean it would not add anything
+extra to the slug.
 
-Another setting is to allow you to sync the filename with the generated slug. The setting you need to turn on enable for this is `frontMatter.taxonomy.alignFilename`.
+Another setting is to allow you to sync the filename with the generated slug. The setting you need
+to turn on enable for this is `frontMatter.taxonomy.alignFilename`.
 
-> **Info**: At the moment, the extension only supports English stopwords. 
+> **Info**: At the moment, the extension only supports English stopwords.
 
 ID: `frontMatter.generateSlug`
 
@@ -137,7 +170,8 @@ ID: `frontMatter.preview`
 
 ### Promote settings from local to team level
 
-This command allows you to promote all local settings from within your `.vscode/settings.json` file to be promoted to the projects team configuration `frontmatter.json` file.
+This command allows you to promote all local settings from within your `.vscode/settings.json` file
+to be promoted to the projects team configuration `frontmatter.json` file.
 
 ID: `frontMatter.promoteSettings`
 

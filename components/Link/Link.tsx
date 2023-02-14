@@ -20,11 +20,12 @@ export const Link: React.FunctionComponent<ILinkProps> = ({title, link, hideDot}
   }, [router.asPath]);
 
   return (
-    <NextLink href={link}>
-      <a className={`inline-flex items-center transition-colors duration-200 relative hover:text-teal-900 ${isActive ? `text-teal-800` : `text-whisper-500`}`} title={title}>
-        { !hideDot && <div className='w-1 h-1 rounded-full bg-current mr-2'></div> }
-        {title}
-      </a>
+    <NextLink 
+      href={link}
+      title={title}
+      className={`inline-flex items-center transition-colors duration-200 relative hover:text-teal-900 ${isActive ? `text-teal-800` : `text-whisper-900`}`}>
+      { !hideDot && <div className='w-1 h-1 rounded-full bg-current mr-2'></div> }
+      {title}
     </NextLink>
   );
 };

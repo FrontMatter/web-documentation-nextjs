@@ -1,6 +1,6 @@
 export const Extension = {
   name: `Front Matter`,
-  home: `The CMS running in VS Code for your static sites`,
+  home: `Headless CMS right in your code editor`,
   description: `Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.`,
 
   githubDocs: "https://github.com/FrontMatter/web-documentation-nextjs",
@@ -19,4 +19,6 @@ export const Extension = {
   stars: "https://github.com/estruyf/vscode-front-matter/stargazers",
   mainSite: "https://frontmatter.codes",
   betaSite: "https://beta.frontmatter.codes",
+  twitter: "https://twitter.com/frontmattercms",
+  discord: "https://discord.gg/JBVtNMsJFB"
 }

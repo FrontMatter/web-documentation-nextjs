@@ -1,7 +1,7 @@
 ---
 title: Introduction
 slug: ""
-description: Create, edit, and preview your pages within Visual Studio Code. Front
+description: Create, edit, and preview your pages within Visual Studio Code/Gitpod/... Front
   Matter allows you to keep control of your static site without any external
   tools.
 date: 2021-08-30T16:13:00.546Z
@@ -13,25 +13,30 @@ weight: 1
 
 ## Overview
 
-Front Matter is an integral Visual Studio Code extension that simplifies operating and managing your markdown articles. we have created the extension to support several static-site generators and frameworks parallel to Hugo, Jekyll, Hexo, NextJs, Gatsby, and more which provides you the power and control of a full-blown Content Management System (CMS)
+The Front Matter extension for Visual Studio Code is an ideal choice for developers who want to
+simplify the process of operating and managing their markdown articles. It provides users with
+the power and control of a full-blown CMS, allowing them to keep a list of used tags, categories,
+create content, preview posts before publishing, and more. The extension supports several
+static-site generators and frameworks, including Hugo, Jekyll, Hexo, NextJs, Gatsby, and more.
 
-The extension brings CMS capabilities straight among Visual Studio Code. For example, you can keep a list of the used tags, categories, create content, and so much more.
+![Welcome screen to configure your website][01]
 
-![Welcome screen to configure your website](/releases/v7.2.0/welcome-screen-7.2.0.png)
+We present our extension which provides the following features to a technical audience: 
 
-Our main extension features are:
+- a page dashboard providing an overview of markdown pages with the ability to search, filter and type content; 
+- a site preview within Visual Studio Code; 
+- SEO checks for title, description and keywords; 
+- support for custom actions/scripts; 
+- and many more features.
 
-- Page dashboard in which you can get an overview of all of your markdown pages. You can use it to search, filter, type your contents.
-- Site preview within Visual Studio Code
-- SEO checks for title, description, and keywords
-- Support for custom actions/scripts
-- and many more
-
-![Site preview](https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png)
+![Site preview][02]
 
 ## Why Front Matter?
 
-Initially, the Front Matter extension was created when [Elio Struyf](https://twitter.com/eliostruyf) migrated from WordPress to Hugo (Static web site Generator). to create content management more straightforward, he began to develop the Front Matter extension and  superimposed more options regularly, and eventually, it became a headless CMS that runs among Visual Studio Code.
+Initially, [Elio Struyf][03] developed the Front Matter extension when migrating from WordPress to 
+Hugo (Static web site Generator), in order to facilitate content management. 
+Over time, he expanded the extension's capabilities, until it eventually evolved into a headless 
+CMS that runs in Visual Studio Code.
 
 ## Advantages
 
@@ -39,18 +44,30 @@ We believe that Front Matter gives you the subsequent advantages:
 
 ### Speed
 
-It simply runs on your machine. There are no servers/websites/APIs involved in the process. Nothing can beat this.
+It simply runs on your machine. There are no servers/websites/APIs involved in the process. Nothing
+can beat this.
 
 ### Use it within Visual Studio Code
 
-You do not ought to jump from tool to tool. simply use the one that you simply just like the most, that is, of course, Visual Studio Code.
+Don't jump from tool to tool. Use the tool that you like the most: of course, that's Visual Studio
+Code.
 
 ### Customizable
 
-Almost all of the Front Matter features are customizable by the extension of its settings. These settings ensure that you just will tweak it to your needs.
+Almost all of the Front Matter features are customizable in its settings. These settings ensure that
+you can tweak Front Matter to your needs.
 
 ### Extensibility
 
-We recognize that now no longer each website is the same. That is why we permit you to upload your custom scripts. These scripts will display up as actions in our panel and will take your content material control to the next level. 
+We recognize that each website is different. That is why you can upload your custom scripts. These
+scripts will display as actions in the Front Matter panel and take your content material control to
+the next level.
 
-> **Example**: [Generate open graph preview image in Code with Front Matter](https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/)
+> **Example**:
+> [Generate open graph preview image in Code with Front Matter][04]
+
+<!-- Link References -->
+[01]: /releases/v7.2.0/welcome-screen-7.2.0.png
+[02]: https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png
+[03]: https://twitter.com/eliostruyf
+[04]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/

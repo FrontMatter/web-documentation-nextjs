@@ -2,63 +2,77 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
   <loc>https://frontmatter.codes</loc>
-  <lastmod>2022-04-05T13:34:16.820Z</lastmod>
+  <lastmod>2023-02-13T18:29:32.349Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
   </url>
   
       <url>
       <loc>https://frontmatter.codes/404.tsx</loc>
-      <lastmod>2022-04-05T13:34:16.805Z</lastmod>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/community</loc>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs</loc>
-      <lastmod>2022-04-05T13:34:16.805Z</lastmod>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/showcase</loc>
-      <lastmod>2022-04-05T13:34:16.805Z</lastmod>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/swag</loc>
-      <lastmod>2022-04-05T13:34:16.805Z</lastmod>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/updates</loc>
-      <lastmod>2022-04-05T13:34:16.805Z</lastmod>
+      <lastmod>2023-02-13T18:29:32.327Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/commands</loc>
-      <lastmod>2021-09-22T08:00:40.856Z</lastmod>
+      <lastmod>Sun Feb 12 2023 16:41:40 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/content-creation/content-types</loc>
-      <lastmod>Mon Mar 14 2022 09:43:17 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Sun Feb 12 2023 15:40:45 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/content-creation/field-conditions</loc>
+      <lastmod>Thu Dec 08 2022 16:30:17 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/content-creation/fields</loc>
-      <lastmod>Mon Mar 14 2022 09:42:22 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Wed Sep 21 2022 09:27:52 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
@@ -72,77 +86,126 @@
       
       <url>
       <loc>https://frontmatter.codes/docs/content-creation/additional-config</loc>
-      <lastmod>Mon Mar 14 2022 09:42:22 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Sun Feb 12 2023 15:40:40 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/content-creation/placeholders</loc>
-      <lastmod>Mon Mar 14 2022 16:45:56 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Sun Feb 12 2023 15:40:30 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/custom-actions</loc>
-      <lastmod>2021-11-22T09:07:59.402Z</lastmod>
+      <lastmod>Thu Sep 22 2022 09:41:47 GMT+0200 (Central European Summer Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/content-view</loc>
+      <lastmod>Mon Nov 28 2022 15:55:04 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/datafiles-view</loc>
+      <lastmod>Mon Nov 28 2022 15:55:04 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/dashboard</loc>
-      <lastmod>2022-01-21T15:21:21.469Z</lastmod>
+      <lastmod>Thu Sep 22 2022 08:31:23 GMT+0200 (Central European Summer Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/media-view</loc>
+      <lastmod>Mon Nov 28 2022 15:55:04 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/taxonomy-view</loc>
+      <lastmod>Mon Nov 28 2022 15:55:04 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/experimental</loc>
+      <lastmod>Sun Feb 12 2023 16:41:37 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/getting-started</loc>
-      <lastmod>2022-01-21T15:21:11.716Z</lastmod>
+      <lastmod>Sun Feb 12 2023 15:41:08 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/git-integration</loc>
+      <lastmod>Thu Sep 22 2022 11:31:04 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/index</loc>
-      <lastmod>2021-08-30T16:13:01.763Z</lastmod>
+      <lastmod>Mon May 02 2022 19:13:47 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/markdown</loc>
-      <lastmod>Fri Feb 25 2022 14:51:27 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Thu Sep 22 2022 10:07:15 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/panel</loc>
-      <lastmod>Mon Mar 07 2022 11:07:23 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Sun Feb 12 2023 15:41:03 GMT+0100 (Central European Standard Time)</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+      </url>
+      
+      <url>
+      <loc>https://frontmatter.codes/docs/settings/overview</loc>
+      <lastmod>Mon Feb 13 2023 17:44:09 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/settings</loc>
-      <lastmod>Mon Mar 07 2022 11:06:37 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Sun Feb 12 2023 15:40:56 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/site-preview</loc>
-      <lastmod>2021-08-31T08:24:02.613Z</lastmod>
+      <lastmod>Sun Feb 12 2023 16:48:22 GMT+0100 (Central European Standard Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
       
       <url>
       <loc>https://frontmatter.codes/docs/snippets</loc>
-      <lastmod>Fri Mar 04 2022 15:40:11 GMT+0100 (Central European Standard Time)</lastmod>
+      <lastmod>Thu Sep 22 2022 10:18:09 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>
@@ -156,7 +219,7 @@
       
       <url>
       <loc>https://frontmatter.codes/docs/ssg-and-frameworks</loc>
-      <lastmod>2022-02-22T09:02:29.858Z</lastmod>
+      <lastmod>Wed Sep 21 2022 09:03:55 GMT+0200 (Central European Summer Time)</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
       </url>

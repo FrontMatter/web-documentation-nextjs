@@ -22,11 +22,21 @@ html, body {height: 100%;}
   animation: fadeIn 0.5s;
 }
 
+/*
 .header__offset:before {
   content: "";
   display: block;
   height: 100px;
   margin: -100px 0 0;
+}
+*/
+
+h3.header__offset,
+h4.header__offset,
+h5.header__offset {
+  svg {
+    @apply h-4;
+  }
 }
 
 .changelog {
@@ -54,7 +64,11 @@ html, body {height: 100%;}
 }
 
 .markdown {
-  @apply space-y-4;
+  @apply space-y-4 text-whisper-900;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-whisper-500;
+  }
 
   h1 {
     @apply text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl;
@@ -114,7 +128,7 @@ html, body {height: 100%;}
   }
 
   pre {
-    @apply p-1 my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
+    @apply p-[1px] my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
 
     code {
       background: inherit;
@@ -165,7 +179,7 @@ html[data-theme=dark] {
 }
 
 .DocSearch-Button {
-  @apply border border-transparent !important;
+  @apply border border-transparent ml-0 !important;
   border-radius: 0;
   box-shadow: none !important;
 
@@ -184,7 +198,45 @@ html[data-theme=dark] {
 
 /* create css media query */
 @media (max-width: 410px) {
-  .stargazers {
-    @apply mt-4;
+}
+
+/* Tables */
+table {
+  @apply table-auto w-full;
+
+  th {
+    @apply text-left;
+  }
+
+  th, td {
+    @apply border-b border-vulcan-50 p-4;
+  }
+}
+
+.sponsor__block {
+  h3 {
+    @apply text-xl;
+  }
+}
+
+.table__wrapper {
+  @apply overflow-x-auto;
+}
+
+/* Search */
+.DocSearch-Button {
+  .DocSearch-Button-Placeholder,
+  .DocSearch-Button-Keys {
+    display: none;
+  }
+}
+
+.settings-overview {
+  h3 {
+    @apply mt-16 !important;
+  }
+
+  h2 + h3 {
+    @apply mt-4 !important;
   }
 }

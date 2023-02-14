@@ -1,10 +1,16 @@
 {
   "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.templates.enabled": false,
+  "frontMatter.content.autoUpdateDate": true,
   "frontMatter.site.baseURL": "https://frontmatter.codes",
   "frontMatter.content.pageFolders": [
     {
       "title": "documentation",
       "path": "[[workspace]]/content/docs"
+    },
+    {
+      "title": "changelog",
+      "path": "[[workspace]]/content/changelog"
     }
   ],
   "frontMatter.content.publicFolder": "public",
@@ -27,7 +33,8 @@
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
-          "isPublishDate": true
+          "isPublishDate": true,
+          "hidden": true
         },
         {
           "title": "Last modified date",
@@ -54,6 +61,42 @@
           "title": "Tags",
           "name": "tags",
           "type": "tags"
+        }
+      ]
+    },
+    {
+      "name": "changelog",
+      "previewPath": "'docs'",
+      "template": "[[workspace]]/.frontmatter/templates/release-notes.md",
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "default": "Version {version} release notes"
+        },
+        {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug",
+          "editable": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "isPublishDate": true
+        },
+        {
+          "title": "Last modified date",
+          "name": "lastmod",
+          "type": "datetime",
+          "isModifiedDate": true
         }
       ]
     }

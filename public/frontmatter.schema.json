@@ -1,14 +1,28 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
+  "lastModified": "2023-02-13T18:29:32.827Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
+    "frontMatter.experimental": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to enable the experimental features. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.experimental)"
+    },
+    "frontMatter.extends": {
+      "type": "array",
+      "markdownDescription": "Specify the list of paths/URLs to extend the Front Matter CMS config. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.extends)",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
     "frontMatter.content.autoUpdateDate": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to automatically update the modified date of your article/page. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.autoupdatedate)",
+      "markdownDescription": "Specify if you want to automatically update the modified date of your article/page (only content located in your content folder). [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.autoupdatedate)",
       "scope": "Content"
     },
     "frontMatter.content.defaultFileType": {
@@ -67,6 +81,10 @@
           "type": "string",
           "description": "Name of the field to use"
         },
+        "invert": {
+          "type": "boolean",
+          "description": "By default the draft field is set to true when the content is a draft. Set this to true to set it to false."
+        },
         "choices": {
           "type": "array",
           "description": "List of choices for the field",
@@ -90,6 +108,17 @@
       "markdownDescription": "Specify if you want to highlight the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.fmhighlight)",
       "scope": "Content"
     },
+    "frontMatter.content.hideFm": {
+      "type": "boolean",
+      "markdownDescription": "Specify if you want to hide the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefm)",
+      "scope": "Content"
+    },
+    "frontMatter.content.hideFmMessage": {
+      "type": "string",
+      "default": "Use the editor panel to make front matter changes",
+      "markdownDescription": "Specify the message to display when the Front Matter is hidden. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.content.hidefmMessage)",
+      "scope": "Content"
+    },
     "frontMatter.content.pageFolders": {
       "type": "array",
       "default": [],
@@ -109,6 +138,28 @@
             "type": "boolean",
             "default": false,
             "description": "Exclude sub-directories"
+          },
+          "previewPath": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "description": "Defines a custom preview path for the folder."
+          },
+          "filePrefix": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Defines a prefix for the file name."
+          },
+          "contentTypes": {
+            "type": "array",
+            "description": "Defines which content types can be used for the current location. If not defined, all content types will be available.",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false,
@@ -133,12 +184,18 @@
           "value": {
             "type": "string",
             "description": "The placeholder its value"
+          },
+          "script": {
+            "type": "string",
+            "description": "The script to execute to get the value of the placeholder"
+          },
+          "command": {
+            "$ref": "#scriptCommand"
           }
         },
         "additionalProperties": false,
         "required": [
-          "id",
-          "value"
+          "id"
         ]
       },
       "scope": "Content"
@@ -155,8 +212,7 @@
       "additionalProperties": {
         "type": "object",
         "required": [
-          "body",
-          "fields"
+          "body"
         ],
         "properties": {
           "body": {
@@ -168,6 +224,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "title": {
+            "description": "The snippet title.",
+            "type": "string"
           },
           "description": {
             "description": "The snippet description.",
@@ -185,6 +245,11 @@
             "description": "The snippet closing tags.",
             "type": "string",
             "default": "]]"
+          },
+          "isMediaSnippet": {
+            "description": "Specify if the snippet is to be used for media files.",
+            "type": "boolean",
+            "default": false
           }
         },
         "additionalProperties": false
@@ -222,7 +287,8 @@
             "default": "string",
             "enum": [
               "string",
-              "date"
+              "date",
+              "number"
             ],
             "description": "Type of the field value"
           }
@@ -262,6 +328,10 @@
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the script."
+          },
           "title": {
             "type": "string",
             "description": "Title you want to give to your script. Will be shown as the title of the button."
@@ -272,7 +342,7 @@
           },
           "nodeBin": {
             "type": "string",
-            "description": "Path to the node executable. This is required when using NVM, so that there is no confusion of which node version to use."
+            "description": "Path to the node executable. This is required when using NVM, so that there is no confusion of which node version to use. (deprecated: use the command property instead)"
           },
           "bulk": {
             "type": "boolean",
@@ -299,6 +369,55 @@
               "mediaFile"
             ],
             "description": "The type for which the script will be used."
+          },
+          "command": {
+            "$id": "#scriptCommand",
+            "type": "string",
+            "oneOf": [
+              {
+                "enum": [
+                  "node",
+                  "bash",
+                  "powershell",
+                  "python",
+                  "python3"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "The type of script you want to execute.",
+            "default": "node"
+          },
+          "hidden": {
+            "type": "boolean",
+            "description": "Hide the action from the UI",
+            "default": false
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "macos",
+                    "linux",
+                    "windows"
+                  ],
+                  "description": "The environment type for which the script needs to be used"
+                },
+                "script": {
+                  "type": "string",
+                  "description": "Path to the script to execute"
+                },
+                "command": {
+                  "$ref": "#scriptCommand"
+                }
+              }
+            }
           }
         },
         "additionalProperties": false,
@@ -309,10 +428,26 @@
       },
       "scope": "Custom scripts"
     },
+    "frontMatter.dashboard.content.pagination": {
+      "type": [
+        "boolean",
+        "number"
+      ],
+      "default": true,
+      "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.content.pagination)",
+      "scope": "Dashboard"
+    },
+    "frontMatter.dashboard.content.cardTags": {
+      "type": "string",
+      "default": "tags",
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Check in the docs](https://frontmatter.codes/docs/settings#frontMatter.dashboard.content.cardTags)",
+      "scope": "Dashboard"
+    },
     "frontMatter.dashboard.mediaSnippet": {
       "type": "array",
       "default": [],
       "markdownDescription": "Specify the a snippet for your custom media insert markup. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.mediasnippet)",
+      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please define your media snippet in the `frontMatter.content.snippet` setting.",
       "items": {
         "type": "string",
         "description": "Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information."
@@ -326,12 +461,6 @@
       ],
       "default": null,
       "markdownDescription": "Specify if you want to open the dashboard when you start VS Code.  [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.openonstart)",
-      "scope": "Dashboard"
-    },
-    "frontMatter.dashboard.contentTags": {
-      "type": "string",
-      "default": "tags",
-      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.dashboard.contenttags)",
       "scope": "Dashboard"
     },
     "frontMatter.data.files": {
@@ -356,7 +485,8 @@
           },
           "file": {
             "type": "string",
-            "description": "Path to the file to load. Only JSON or YAML files are supported."
+            "description": "Path to the file to load. Only JSON or YAML files are supported.",
+            "default": "[[workspace]]/"
           },
           "fileType": {
             "type": "string",
@@ -368,15 +498,48 @@
             "description": "Defines how you want to parse the file. JSON is the default."
           },
           "schema": {
+            "$id": "#dataFileSchema",
             "type": "object",
             "default": {},
             "description": "The JSON schema for your data which will be used to render the data form.",
-            "additionalProperties": true
+            "additionalProperties": true,
+            "required": [
+              "type",
+              "properties"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Title of the form."
+              },
+              "type": {
+                "type": "string",
+                "description": "Defines the type of the form. Default is 'object'.",
+                "default": "object"
+              },
+              "required": {
+                "type": "array",
+                "description": "Defines the required fields for the form.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "properties": {
+                "type": "object",
+                "description": "Defines the fields of the form.",
+                "additionalProperties": true
+              }
+            }
           },
           "type": {
             "type": "string",
             "default": "content",
             "description": "If you are using data types, you can specify your type ID."
+          },
+          "singleEntry": {
+            "type": "boolean",
+            "description": "If you want to use a single entry for your data file.",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -418,18 +581,21 @@
           },
           "path": {
             "type": "string",
-            "description": "Path to the folder to load files."
+            "description": "Path to the folder to load files.",
+            "default": "[[workspace]]/"
           },
           "schema": {
-            "type": "object",
-            "default": {},
-            "description": "The JSON schema for your data which will be used to render the data form.",
-            "additionalProperties": true
+            "$ref": "#dataFileSchema"
           },
           "type": {
             "type": "string",
             "default": "content",
             "description": "If you are using data types, you can specify your type ID."
+          },
+          "singleEntry": {
+            "type": "boolean",
+            "description": "If you want to use a single entry for your data files in the folder.",
+            "default": false
           }
         },
         "additionalProperties": false,
@@ -465,10 +631,7 @@
             "description": "Your unique ID you want to use for your data type."
           },
           "schema": {
-            "type": "object",
-            "default": {},
-            "description": "The JSON schema for your data which will be used to render the data form.",
-            "additionalProperties": true
+            "$ref": "#dataFileSchema"
           }
         },
         "required": [
@@ -496,6 +659,16 @@
       ],
       "default": null,
       "markdownDescription": "Specify the command you want to use to start your static site generator or framework. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.framework.startcommand)"
+    },
+    "frontMatter.git.enabled": {
+      "type": "boolean",
+      "markdownDescription": "Specify if you want to use the Git actions for your website. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.git.enabled)",
+      "default": false
+    },
+    "frontMatter.git.commitMessage": {
+      "type": "string",
+      "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.git.commitmessage)",
+      "default": "Synced by Front Matter"
     },
     "frontMatter.global.activeMode": {
       "type": [
@@ -528,12 +701,14 @@
                 "panel.globalSettings",
                 "panel.seo",
                 "panel.actions",
+                "panel.contentType",
                 "panel.metadata",
                 "panel.recentlyModified",
                 "panel.otherActions",
                 "dashboard.snippets.view",
                 "dashboard.snippets.manage",
-                "dashboard.data.view"
+                "dashboard.data.view",
+                "dashboard.taxonomy.view"
               ]
             }
           }
@@ -563,18 +738,13 @@
       "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.global.notifications)",
       "scope": "Templates"
     },
-    "frontMatter.media.supportedMimeTypes": {
+    "frontMatter.global.disabledNotificaitons": {
       "type": "array",
-      "default": [
-        "image/*",
-        "video/*",
-        "audio/*"
-      ],
-      "markdownDescription": "Specify the mime types to support for the media files. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.media.supportedMimeTypes)",
-      "items": {
-        "type": "string"
-      },
-      "scope": "Media"
+      "default": [],
+      "markdownDescription": "This is an array with the notifications types that can be disabled for Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.global.disablednotifications)",
+      "enum": [
+        "requiredFieldValidation"
+      ]
     },
     "frontMatter.media.defaultSorting": {
       "type": "string",
@@ -587,6 +757,19 @@
       ],
       "markdownDescription": "Specify the default sorting option for the media dashboard. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.media.defaultsorting)",
       "scope": "Content"
+    },
+    "frontMatter.media.supportedMimeTypes": {
+      "type": "array",
+      "default": [
+        "image/*",
+        "video/*",
+        "audio/*"
+      ],
+      "markdownDescription": "Specify the mime types to support for the media files. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.media.supportedMimeTypes)",
+      "items": {
+        "type": "string"
+      },
+      "scope": "Media"
     },
     "frontMatter.panel.freeform": {
       "type": "boolean",
@@ -674,6 +857,7 @@
                     "datetime",
                     "boolean",
                     "image",
+                    "file",
                     "choice",
                     "taxonomy",
                     "tags",
@@ -681,7 +865,12 @@
                     "draft",
                     "fields",
                     "json",
-                    "block"
+                    "block",
+                    "list",
+                    "dataFile",
+                    "slug",
+                    "divider",
+                    "heading"
                   ],
                   "description": "Define the type of field"
                 },
@@ -692,6 +881,10 @@
                 "title": {
                   "type": "string",
                   "description": "Title to show in the UI"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description to show in the UI"
                 },
                 "default": {
                   "type": [
@@ -732,6 +925,11 @@
                   "default": false,
                   "description": "Is a single line field"
                 },
+                "wysiwyg": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Is a WYSIWYG field (HTML output)"
+                },
                 "multiple": {
                   "type": "boolean",
                   "default": false,
@@ -750,7 +948,27 @@
                 "taxonomyId": {
                   "type": "string",
                   "default": "",
-                  "description": "The ID of your taxonomy field"
+                  "description": "The ID of your taxonomy field. It cannot contain the \"tags\" or \"categories\" value.",
+                  "not": {
+                    "anyOf": [
+                      {
+                        "const": ""
+                      },
+                      {
+                        "const": "tags"
+                      },
+                      {
+                        "const": "categories"
+                      }
+                    ]
+                  }
+                },
+                "fileExtensions": {
+                  "type": "array",
+                  "description": "Specify the file extensions to allow for the file picker",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "fields": {
                   "$ref": "#contenttypefield"
@@ -791,6 +1009,75 @@
                   "type": "boolean",
                   "default": false,
                   "description": "Specify if the field is the modified date field"
+                },
+                "dataFileId": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the ID of the data file to use for this field"
+                },
+                "dataFileKey": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the key of the data file to use for this field"
+                },
+                "dataFileValue": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the property name that will be used to show the value for the field"
+                },
+                "editable": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Specify if the field is editable"
+                },
+                "required": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the field is required"
+                },
+                "when": {
+                  "type": "object",
+                  "description": "Specify the conditions to show the field",
+                  "properties": {
+                    "fieldRef": {
+                      "type": "string",
+                      "description": "The field ID to use"
+                    },
+                    "operator": {
+                      "type": "string",
+                      "description": "The operator to use",
+                      "enum": [
+                        "eq",
+                        "neq",
+                        "contains",
+                        "notContains",
+                        "startsWith",
+                        "endsWith",
+                        "gt",
+                        "gte",
+                        "lt",
+                        "lte",
+                        "minimum",
+                        "maximum",
+                        "exlusiveMinimum",
+                        "exclusiveMaximum"
+                      ]
+                    },
+                    "value": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "array"
+                      ],
+                      "description": "The value to compare"
+                    },
+                    "caseSensitive": {
+                      "type": "boolean",
+                      "default": true,
+                      "description": "Specify if the comparison is case sensitive. Default: true"
+                    }
+                  }
                 }
               },
               "additionalProperties": false,
@@ -799,6 +1086,49 @@
                 "name"
               ],
               "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "divider"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "dataFile"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "dataFileId",
+                      "dataFileKey"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "file"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "fileExtensions"
+                    ]
+                  }
+                },
                 {
                   "if": {
                     "properties": {
@@ -884,6 +1214,28 @@
             ],
             "default": null,
             "description": "Defines a custom preview path for the content type."
+          },
+          "template": {
+            "type": "string",
+            "default": "",
+            "description": "An optional template that can be used for creating new content."
+          },
+          "postScript": {
+            "type": "string",
+            "default": "",
+            "description": "An optional post script that can be used after new content creation."
+          },
+          "filePrefix": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Defines a prefix for the file name."
+          },
+          "defaultFileName": {
+            "type": "string",
+            "default": "index",
+            "description": "Default file name to use when creating new content."
           }
         },
         "additionalProperties": false,
@@ -947,11 +1299,24 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "ID for your taxonomy field"
+            "description": "ID for your taxonomy field. It cannot contain the \"tags\" or \"categories\" value.",
+            "not": {
+              "anyOf": [
+                {
+                  "const": ""
+                },
+                {
+                  "const": "tags"
+                },
+                {
+                  "const": "categories"
+                }
+              ]
+            }
           },
           "options": {
             "type": "array",
-            "description": "Options from which you can pick",
+            "description": "Options from which you can pick.",
             "items": {
               "type": "string"
             }
@@ -987,13 +1352,17 @@
             "type": "string",
             "description": "The name of the field group"
           },
+          "labelField": {
+            "type": "string",
+            "description": "The name of the field to be used as display value"
+          },
           "fields": {
             "$ref": "#contenttypefield"
           }
         },
         "additionalProperties": false,
         "required": [
-          "name",
+          "id",
           "fields"
         ]
       }
@@ -1060,6 +1429,12 @@
       "markdownDescription": "Specifies the optimal slug length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.seoSlugLength)",
       "scope": "Taxonomy"
     },
+    "frontMatter.taxonomy.seoTitleField": {
+      "type": "string",
+      "default": "title",
+      "markdownDescription": "Specifies the name of the SEO title field for your page. Default is 'title'. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.taxonomy.seotitlefield)",
+      "scope": "Taxonomy"
+    },
     "frontMatter.taxonomy.seoTitleLength": {
       "type": "number",
       "default": 60,
@@ -1088,6 +1463,12 @@
       "type": "boolean",
       "default": false,
       "markdownDescription": "Specify if you want to disable the telemetry. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.telemetry.disable)"
+    },
+    "frontMatter.templates.enabled": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to use templates. [Check in the docs](https://frontmatter.codes/docs/settings#frontmatter.templates.enabled)",
+      "scope": "Templates"
     },
     "frontMatter.templates.folder": {
       "type": "string",

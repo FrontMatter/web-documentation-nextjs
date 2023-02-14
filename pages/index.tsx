@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Description, OtherMeta, Title } from '../components/Meta';
 import { CTA, Features, Generators, Hero, Layout } from '../components/Page';
+import { Pricing } from '../components/Pricing';
 import { Extension } from '../constants/extension';
 
 const Home: NextPage = () => {
@@ -25,10 +26,10 @@ const Home: NextPage = () => {
           description={(
             <>
               <p className="my-6 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                {strings(`hero_description`)}
+                {strings(`hero_description`) as string}
               </p>
               <p className="my-6 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                {strings(`hero_description_second`)}
+                {strings(`hero_description_second`) as string}
               </p>
             </>
           )}
@@ -52,6 +53,8 @@ const Home: NextPage = () => {
           className={`lg:-mt-16`} />
 
         <Features />
+
+        <Pricing />
       </Layout> 
     </>
   )

@@ -18,15 +18,15 @@ export default function Home({ title, content, description, date }: any) {
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
             <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{title}</h1>
-            
+
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{description}</p>
 
-            { pubDate && <p className="mt-3 text-whisper-900">Published: <time dateTime={format(pubDate, 'yyyy-MM-dd')}>{format(pubDate, 'MMM dd, yyyy')}</time></p> }
+            {pubDate && <p className="mt-3 text-whisper-900">Published: <time dateTime={format(pubDate, 'yyyy-MM-dd')}>{format(pubDate, 'MMM dd, yyyy')}</time></p>}
           </div>
 
           <div className={`changelog`}>
-            <Markdown content={content} />
-          </div>          
+            <Markdown content={content} slug={"home"} />
+          </div>
         </div>
       </Layout>
     </>

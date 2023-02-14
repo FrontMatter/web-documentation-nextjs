@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/content.placeholders.schema.json",
+  "description": "Defines the settings for Front Matter placeholder",
+  "lastModified": "2023-02-13T18:29:32.829Z",
+  "type": "object",
+  "title": "Front Matter - placeholder",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the placeholder, in your content type or template, use it as follows: {{placeholder}}"
+    },
+    "value": {
+      "type": "string",
+      "description": "The placeholder its value"
+    },
+    "script": {
+      "type": "string",
+      "description": "The script to execute to get the value of the placeholder"
+    },
+    "command": {
+      "$ref": "https://beta.frontmatter.codes/config/custom.scripts.schema.json#/properties/command"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}
