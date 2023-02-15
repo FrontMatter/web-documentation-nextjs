@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-22T07:41:47.344Z
+lastmod: 2023-02-13T18:50:42.237Z
 weight: 500
 ---
 
@@ -31,21 +31,57 @@ The content and media custom actions can be defined by using the `frontMatter.cu
 
 Custom actions can be configured with the following properties:
 
-| Title        | Description                                                                                                                                                                                                                                                                                        | Default        |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `id`         | The id of the custom action/script                                                                                                                                                                                                                                                                 | `""`             |
-| `title`      | The title of the custom action                                                                                                                                                                                                                                                                     | `""`             |
-| `script`     | The path to the script to execute                                                                                                                                                                                                                                                                  | `""`             |
-| `command`    | The command to execute (optional). Example: `node`, `path to your node executable`, `bash`, `python`, ...                                                                                                                                                                                          | `node`         |
-| `type`       | The type for which the script will be used (optional). <br /><br /> Use one of the following types: `content`, `mediaFile`, or `mediaFolder`.                                                                                                                                                      | `content`      |
-| `bulk`       | Run the script for one file or multiple files.                                                                                                                                                                                                                                                     | `false`        |
-| `output`     | Specifies the output type (optional). <br /><br /> Available values are: `notification` and `editor`. <br /><br /> `notification`: The output will be passed as a notification. <br /> `editor`: The output will be passed to the editor.                                                          | `notification` |
-| `outputType` | Specifies the output type (optional). <br /><br /> Available values the editor values from VS Code like: <br /><br /> `text`: The output will be passed as a text file. <br /> `html`: The output will be passed as an HTML file. <br /> `markdown`: The output will be passed as a Markdown file. | `text`         |
-| `hidden`     | Hide the action from the UI. This is mostly used when creating a content script that will be used to post process new content (optional).                                                                                                                                                          | `false`        |
+| Title          | Type                                    | Description                                                                                                                                                                                                                                                                                        | Default        |
+| -------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `id`           | `string`                                | The id of the custom action/script                                                                                                                                                                                                                                                                 | `""`           |
+| `title`        | `string`                                | The title of the custom action                                                                                                                                                                                                                                                                     | `""`           |
+| `script`       | `string`                                | The path to the script to execute                                                                                                                                                                                                                                                                  | `""`           |
+| `command`      | `string`                                | The command to execute (optional). Example: `node`, `path to your node executable`, `bash`, `python`, ...                                                                                                                                                                                          | `node`         |
+| `type`         | `<content \| mediaFile \| mediaFolder>` | The type for which the script will be used (optional). <br /><br /> Use one of the following types: `content`, `mediaFile`, or `mediaFolder`.                                                                                                                                                      | `content`      |
+| `bulk`         | `boolean`                               | Run the script for one file or multiple files.                                                                                                                                                                                                                                                     | `false`        |
+| `output`       | `<notification \| editor`               | Specifies the output type (optional). <br /><br /> Available values are: `notification` and `editor`. <br /><br /> `notification`: The output will be passed as a notification. <br /> `editor`: The output will be passed to the editor.                                                          | `notification` |
+| `outputType`   | `<text \| html>`                        | Specifies the output type (optional). <br /><br /> Available values the editor values from VS Code like: <br /><br /> `text`: The output will be passed as a text file. <br /> `html`: The output will be passed as an HTML file. <br /> `markdown`: The output will be passed as a Markdown file. | `text`         |
+| `hidden`       | `boolean`                               | Hide the action from the UI. This is mostly used when creating a content script that will be used to post process new content (optional).                                                                                                                                                          | `false`        |
+| `environments` | `environment`                           | The environments option allows you to specify in which environments the script should be executed (optional). <br /><br /> Available values are: `macos`, `linux`, or `windows`.                                                                                                                   | `undefined`    |
 
 > **Important**: Previously, you could define the `nodeBin` property to define the path to your node
 > executable. This path was needed when you are working with for instance `nvm` and have multiple
 > versions of node installed. You can now use the `command` property instead.
+
+### Environment type
+
+The environment option contains the following properties:
+
+| Title     | Type                          | Description                                                                                               | Default |
+| --------- | ----------------------------- | --------------------------------------------------------------------------------------------------------- | ------- |
+| `type`    | `<macos \| linux \| windows>` | The environment type for the script to run at.                                                            | `""`    |
+| `script`  | `string`                      | The path to the script to execute.                                                                        | `""`    |
+| `command` | `string`                      | The command to execute (optional). Example: `node`, `path to your node executable`, `bash`, `python`, ... | `node`  |
+
+#### Example of defining a custom action with an environment
+
+```json
+{
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Create image folder",
+      "id": "create-image-folder",
+      "script": "./.frontmatter/config/custom/scripts/create-image-folder.sh",
+      "command": "bash",
+      "environments": [
+        {
+          "type": "windows",
+          "script": "./.frontmatter/config/custom/scripts/create-image-folder.ps1",
+          "command": "powershell"
+        }
+      ]
+    }
+  ]
+}
+```
+
+> **Info**: The above sample would execute the bash script on macOS and Linux and the PowerShell for
+> Windows. In case the PowerShell script would fail, it would fallback to the bash script.
 
 ## Creating a content script
 

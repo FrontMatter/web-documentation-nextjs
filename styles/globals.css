@@ -233,7 +233,7 @@ table {
 
 .settings-overview {
   h3 {
-    @apply mt-16 !important;
+    @apply mt-8 pt-8 border-t border-vulcan-200  !important;
   }
 
   h2 + h3 {
