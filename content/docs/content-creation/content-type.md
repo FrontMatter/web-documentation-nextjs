@@ -116,17 +116,17 @@ The metadata section on the editor panel will render the following fields:
 
 For the content type you can configure the following properties:
 
-| Property          | Type                                     | Description                                                                                                                                                       | Default value                       |
-| ----------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------ |
-| `name`            | `string`                                 | Name of the content type                                                                                                                                          | `""`                                |
-| `fields`          | `array`                                  | Check the [supported field types][02]                                                                                                                             | `[]`                                |
-| `filePrefix`      | `string                                  | null`                                                                                                                                                             | Defines a prefix for the file name. | `null` |
-| `fileType`        | Enum: `md, mdx, markdown, <your choice>` | File type of for the content type you define. The type will be used to create the file when creating content.                                                     | `md`                                |
-| `defaultFileName` | `string`                                 | Default file name to use when creating new content.                                                                                                               | `index`                             |
-| `pageBundle`      | `boolean`                                | If set to `true`, the content will be created as a page bundle (folder).                                                                                          | `false`                             |
-| `previewPath`     | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [frontMatter.preview.pathName][03] setting will be used. | `null`                              |
-| `template`        | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type.                                                              | `null`                              |
-| `postScript`      | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04]. | `null`                              |
+| Property          | Type                                      | Description                                                  | Default value |
+| ----------------- | ----------------------------------------- | ------------------------------------------------------------ | ------------- |
+| `name`            | `string`                                  | Name of the content type                                     | `""`          |
+| `fields`          | `array`                                   | Check the [supported field types][02]                        | `[]`          |
+| `filePrefix`      | `string`                                  | Defines a prefix for the file name                           | `null`        |
+| `fileType`        | Enum: `md, mdx, markdown, <your choice\>` | File type of for the content type you define. The type will be used to create the file when creating content. | `md`          |
+| `defaultFileName` | `string`                                  | Default file name to use when creating new content           | `index`       |
+| `pageBundle`      | `boolean`                                 | If set to true, the content will be created as a page bundle (folder) | `false`       |
+| `previewPath`     | `string`                                  | Defines a custom preview path for the content type. When the preview path is not set, the value from the [`frontMatter.preview.pathName`][03] setting will be used | `null`        |
+| `template`        | `string`                                  | Specify a path to a template file that will be used when creating new content with the content type | `null`        |
+| `postScript`      | `string`                                  | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04] | `null`        |
 
 ## Define your own type
 
