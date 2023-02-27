@@ -133,7 +133,9 @@ show you a list of actions.
   tags/categories in the tag picker (when enabled, you will have the option to store them
   afterwards). Default: `true`.
 - `frontMatter.taxonomy.frontMatterType`: Specify which Front Matter language you want to use. The
-  extension supports `YAML` (default), `TOML`, and `JSON`. ## Recently modified
+  extension supports `YAML` (default), `TOML`, and `JSON`. 
+  
+## Recently modified
 
 Navigate quickly to a recently modified file. In the recently modified section, the latest 10
 modified files get shown.
