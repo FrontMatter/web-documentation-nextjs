@@ -35,7 +35,10 @@ can install this via:
 > **Info**: The BETA docs can be found on [beta.frontmatter.codes][03].
 
 > **Important**: As there can only be one version running of the extension, you will need to
-> uninstall the main version before installing the beta version.
+> either disable or uninstall the main version before installing the beta version. Disable 
+> both extensions globally and select "Enable (Workspace)" will enable the extension only in 
+> the currently loaded workspace. This way you can test the BETA version on some of your 
+> projects/workspaces and keep the main version installed and activated in other projects.
 
 ## Welcome screen
 
