@@ -12,7 +12,9 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      ScrollOut()
+      ScrollOut({
+        once: true
+      })
     }, 0);
   }, [])
 
