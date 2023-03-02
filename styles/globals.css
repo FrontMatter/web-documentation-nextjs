@@ -4,17 +4,20 @@
 
 @import "@docsearch/css";
 
-html, body {height: 100%;}
+html,
+body {
+  height: 100%;
+}
 
 @keyframes fadeIn {
   from {
-      opacity: 0.25;
-      transform: rotateY(-10deg);
+    opacity: 0.25;
+    transform: rotateY(-10deg);
   }
 
   to {
-      opacity: 1;
-      transform: rotateY(0deg);
+    opacity: 1;
+    transform: rotateY(0deg);
   }
 }
 
@@ -54,7 +57,8 @@ h5.header__offset {
     @apply list-disc pl-5 pb-8;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     @apply text-teal-500;
   }
 
@@ -66,7 +70,12 @@ h5.header__offset {
 .markdown {
   @apply space-y-4 text-whisper-900;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-whisper-500;
   }
 
@@ -106,7 +115,8 @@ h5.header__offset {
     @apply list-decimal pl-5 my-4;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     @apply text-teal-500;
   }
 
@@ -141,11 +151,11 @@ h5.header__offset {
 }
 
 .changelog .markdown h2:first-child {
-    @apply mt-0 !important;
+  @apply mt-0 !important;
 }
 
 /* DocSearch */
-html[data-theme=dark] {
+html[data-theme="dark"] {
   --docsearch-text-color: #f3eff5;
   --docsearch-logo-color: #f3eff5;
 
@@ -155,7 +165,7 @@ html[data-theme=dark] {
   --docsearch-muted-color: #cbc7cd;
 
   /* Overlap background */
-  --docsearch-container-background: rgba(54,59,71, 0.8);
+  --docsearch-container-background: rgba(54, 59, 71, 0.8);
 
   /* Modal */
   --docsearch-modal-background: #0e131f;
@@ -188,7 +198,8 @@ html[data-theme=dark] {
   }
 }
 
-.DocSearch-Button-Keys, .DocSearch-Button-Key {
+.DocSearch-Button-Keys,
+.DocSearch-Button-Key {
   @apply top-auto;
 }
 
@@ -208,7 +219,8 @@ table {
     @apply text-left;
   }
 
-  th, td {
+  th,
+  td {
     @apply border-b border-vulcan-50 p-4;
   }
 }
@@ -239,4 +251,38 @@ table {
   h2 + h3 {
     @apply mt-4 !important;
   }
+}
+
+/* main img {
+  --x: 0;
+  --y: 0;
+}
+
+main img {
+  translate: 0 0;
+  transition: translate 0.2s, opacity 0.2s;
+  opacity: var(--opacity, 0);
+} */
+
+[data-scroll] {
+  translate: var(--x, 0) 0;
+  transition: translate 0.2s, opacity 0.2s;
+  opacity: var(--opacity, 0);
+}
+
+.img-left[data-scroll="in"] {
+  --opacity: 1;
+  --x: 50;
+}
+.img-left[data-scroll="out"] {
+  --opacity: 0;
+  --x: -50%;
+}
+.img-right[data-scroll="in"] {
+  --opacity: 1;
+  --x: 0%;
+}
+.img-right[data-scroll="out"] {
+  --opacity: 0;
+  --x: 100%;
 }
