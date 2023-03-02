@@ -49,16 +49,17 @@ content-type to its own file. This allows you to easily manage the settings for 
 
 The following settings are supported to be split in multiple files:
 
-| Setting name                        | Folder path                                    | Information                                                | JSON Schema                                                          |
-| ----------------------------------- | ---------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------- |
-| `frontMatter.content.pageFolders`   | `./.frontmatter/config/content/pagefolders/`   |                                                            | `https://frontmatter.codes/config/content.pagefolders.schema.json`   |
-| `frontMatter.content.placeholders`  | `./.frontmatter/config/content/placeholders/`  |                                                            | `https://frontmatter.codes/config/content.placeholders.schema.json`  |
-| `frontMatter.content.snippets`      | `./.frontmatter/config/content/snippets/`      | The file name will be used as the ID/title of the snippet. | `https://frontmatter.codes/config/content.snippets.schema.json`      |
-| `frontMatter.custom.scripts`        | `./.frontmatter/config/custom/scripts/`        |                                                            | `https://frontmatter.codes/config/custom.scripts.schema.json`        |
-| `frontMatter.data.files`            | `./.frontmatter/config/data/files/`            |                                                            | `https://frontmatter.codes/config/data.files.schema.json`            |
-| `frontMatter.data.folders`          | `./.frontmatter/config/data/folders/`          |                                                            | `https://frontmatter.codes/config/data.folders.schema.json`          |
-| `frontMatter.data.types`            | `./.frontmatter/config/data/types/`            |                                                            | `https://frontmatter.codes/config/data.types.schema.json`            |
-| `frontMatter.taxonomy.contentTypes` | `./.frontmatter/config/taxonomy/contenttypes/` |                                                            | `https://frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
+| Setting name                        | Folder path                                    | JSON Schema                                                          |
+| ----------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------- |
+| `frontMatter.content.pageFolders`   | `./.frontmatter/config/content/pagefolders/`   | `https://frontmatter.codes/config/content.pagefolders.schema.json`   |
+| `frontMatter.content.placeholders`  | `./.frontmatter/config/content/placeholders/`  | `https://frontmatter.codes/config/content.placeholders.schema.json`  |
+| `frontMatter.content.snippets`      | `./.frontmatter/config/content/snippets/`      | `https://frontmatter.codes/config/content.snippets.schema.json`      |
+| `frontMatter.custom.scripts`        | `./.frontmatter/config/custom/scripts/`        | `https://frontmatter.codes/config/custom.scripts.schema.json`        |
+| `frontMatter.data.files`            | `./.frontmatter/config/data/files/`            | `https://frontmatter.codes/config/data.files.schema.json`            |
+| `frontMatter.data.folders`          | `./.frontmatter/config/data/folders/`          | `https://frontmatter.codes/config/data.folders.schema.json`          |
+| `frontMatter.data.types`            | `./.frontmatter/config/data/types/`            | `https://frontmatter.codes/config/data.types.schema.json`            |
+| `frontMatter.taxonomy.contentTypes` | `./.frontmatter/config/taxonomy/contenttypes/` | `https://frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
+| `frontMatter.taxonomy.fieldGroups`  | `./.frontmatter/config/taxonomy/fieldgroups/`  | `https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json`  |
 
 > **Important**: The folder path is relative to the root of your project/solution and you create the
 > files in their corresponding folder. The file name is the same as the `id` of the setting.
@@ -67,7 +68,7 @@ You can use the JSON schema to validate and get intellisense for the settings. U
 
 ```json
 {
-  "$schema": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json"
+  "$schema": "https://frontmatter.codes/config/content.pagefolders.schema.json"
 }
 ```
 
@@ -89,7 +90,7 @@ Contents of the `blog.json` file:
 
 ```json
 {
-  "$schema": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
+  "$schema": "https://frontmatter.codes/config/content.pagefolders.schema.json",
   "title": "blog",
   "path": "[[workspace]]/blog"
 }
@@ -113,7 +114,7 @@ Contents of the `baz.json` file:
 
 ```json
 {
-  "$schema": "https://beta.frontmatter.codes/config/data.types.schema.json",
+  "$schema": "https://frontmatter.codes/config/data.types.schema.json",
   "id": "hugo.params.baz",
   "schema": {
     "title": "Baz Site Parameters for hugo-toroidal",
