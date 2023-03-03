@@ -1,4 +1,14 @@
-[
+[{
+    "title": "VS Code Extension for Working with Frontmatter",
+    "link": "https://www.youtube.com/watch?v=Db_s_XTJMqE",
+    "author": {
+      "name": "James Q Quick",
+      "link": "https://www.jamesqquick.com/"
+    },
+    "preview": "/featured/james_q_quick_stream.jpg",
+    "type": "video",
+    "featured": true
+  },
   {
     "title": "OSS Maintainer Interview | Front Matter",
     "link": "https://www.youtube.com/watch?v=Db_s_XTJMqE",
@@ -29,7 +39,7 @@
     },
     "preview": "/featured/stackshare-top-100.jpg",
     "type": "article",
-    "featured": true
+    "featured": false
   },
   {
     "title": "Release Radar · January 2022 Edition",
