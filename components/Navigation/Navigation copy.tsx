@@ -22,7 +22,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
           <navigation.sponsor.icon className="inline-block h-6 w-6" aria-hidden="true" />
 
           {navigation.social.map((link) => (
-            <a key={link.name} href={link.href} title={link.title} className={`group flex items-center text-base font-medium text-whisper-500 hover:text-teal-500`} rel={`noopener noreferrer`}>
+            <a key={link.name} href={link.href} title={link.title} className={`group flex items-center text-base font-medium text-whisper-500 hover:text-teal-500`} target="_blank" rel={`noopener noreferrer`}>
               <span className="sr-only">{link.name}</span>
               <link.icon className="inline-block h-6 w-6" aria-hidden="true" />
             </a>
@@ -46,7 +46,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: Rea
         <navigation.sponsor.icon className="inline-block h-6 w-6" aria-hidden="true" />
 
         {navigation.social.map((link) => (
-          <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-whisper-900`} rel={`noopener noreferrer`}>
+          <a key={link.name} href={link.href} title={link.title} className={`text-base font-medium text-whisper-500 hover:text-whisper-900`} target="_blank" rel={`noopener noreferrer`}>
             <span className="sr-only">{link.name}</span>
             <link.icon className="inline-block h-6 w-6" aria-hidden="true" />
           </a>

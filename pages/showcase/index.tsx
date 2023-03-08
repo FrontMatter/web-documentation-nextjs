@@ -63,7 +63,7 @@ export default function Home({ showcases, featured }: any) {
               {allFeatured.sort(sortTitle).map((feature: any) => (
                 <div key={feature.title}>
                   <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
-                    <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
+                    <figure className={`relative overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
                       <Image 
                         className={`w-full object-cover object-left-top`} 
                         src={`${feature.preview}`}

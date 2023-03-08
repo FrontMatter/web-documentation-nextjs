@@ -22,7 +22,7 @@
     "gray-matter": "^4.0.3",
     "i18next": "^20.4.0",
     "i18next-browser-languagedetector": "^6.1.2",
-    "next": "^13.0.7",
+    "next": "^13.1.6",
     "node-fetch": "^2.6.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

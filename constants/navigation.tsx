@@ -106,6 +106,7 @@ export const navigation = {
       name: 'GitHub', 
       title: 'Check out our GitHub repository', 
       href: Extension.githubLink,
+      blank: true,
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -120,6 +121,7 @@ export const navigation = {
       name: 'Visual Studio Marketplace', 
       title: 'Checkout the extension on Visual Studio Marketplace', 
       href: Extension.reviewLink,
+      blank: true,
       icon: ({ className, ...rest}: any) => (
         <SiVisualstudiocode className={`${className} group-hover:fill-current`} {...rest} />
       )
@@ -128,6 +130,7 @@ export const navigation = {
       name: 'Twitter', 
       title: 'Follow us on Twitter', 
       href: Extension.twitter,
+      blank: true,
       icon: ({ className, ...rest}: any) => (
         <VscTwitter className={`${className} group-hover:fill-current`} {...rest} />
       )
@@ -136,6 +139,7 @@ export const navigation = {
       name: 'Discord', 
       title: 'Join us on Discord', 
       href: Extension.discord,
+      blank: true,
       icon: ({ className, ...rest}: any) => (
         <SiDiscord className={`${className} group-hover:fill-current`} {...rest} />
       )

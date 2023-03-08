@@ -1,4 +1,15 @@
 [{
+    "title": "James Q Quick - How I Manage My Markdown Blog",
+    "link": "https://www.youtube.com/watch?v=kLKgLoGOs1E",
+    "author": {
+      "name": "James Q Quick",
+      "link": "https://www.jamesqquick.com/"
+    },
+    "preview": "/featured/jamesqquick_astro_youtube.jpg",
+    "type": "video",
+    "featured": true
+  },
+  {
     "title": "VS Code Extension for Working with Frontmatter",
     "link": "https://www.youtube.com/watch?v=aCkkEDsJgL0",
     "author": {
@@ -28,7 +39,7 @@
     },
     "preview": "/featured/github-release-202203.jpg",
     "type": "article",
-    "featured": true
+    "featured": false
   },
   {
     "title": "Front Matter #49 in the Top 100+ Developer Tools 2021",
@@ -50,7 +61,7 @@
     },
     "preview": "/featured/github-release-202201.jpg",
     "type": "article",
-    "featured": true
+    "featured": false
   },
   {
     "title": "The Download: Log4j Madness and Top Picks of 2021",
