@@ -1,5 +1,5 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Dialog, Transition, } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import * as React from 'react';
 import { createContext, Fragment, useContext, useState } from 'react';
 import { Header } from '../Page/Header';
@@ -20,7 +20,7 @@ export function useIsInsideMobileNavigation() {
   return useContext(IsInsideMobileNavigationContext)
 }
 
-export const useMobileNavigationStore = create<{ isOpen: boolean, toggle: () => void, close: () => void}>((set) => ({
+export const useMobileNavigationStore = create<{ isOpen: boolean, toggle: () => void, close: () => void }>((set) => ({
   isOpen: false,
   open: () => set({ isOpen: true }),
   close: () => set({ isOpen: false }),
@@ -31,7 +31,7 @@ export const MobileNavigation: React.FunctionComponent<IMobileNavigationProps> =
   let { isOpen, toggle, close } = useMobileNavigationStore();
   let isInsideMobileNavigation = useIsInsideMobileNavigation();
 
-  let ToggleIcon = isOpen ? XIcon : MenuIcon;
+  let ToggleIcon = isOpen ? XMarkIcon : Bars3Icon;
 
   return (
     <IsInsideMobileNavigationContext.Provider value={true}>

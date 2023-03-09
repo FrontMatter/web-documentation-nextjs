@@ -1,15 +1,15 @@
-import { UserIcon } from '@heroicons/react/outline';
+import { UserIcon } from '@heroicons/react/24/outline';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Sponsor, SponsorData } from '../../models/SponsorData';
 import sponsors from '../../sponsors.json';
 
-export interface ISponsorsProps {}
+export interface ISponsorsProps { }
 
 export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.PropsWithChildren<ISponsorsProps>) => {
   const { t: strings } = useTranslation();
-  const [ individuals, setIndividuals ] = useState<any>(null);
+  const [individuals, setIndividuals] = useState<any>(null);
 
   useEffect(() => {
     const getSponsors = async () => {
@@ -28,7 +28,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
     getSponsors();
   }, []);
-  
+
   return (
     <div className="bg-vulcan-600">
       <div className="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8">
@@ -41,11 +41,11 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
             <div className="flex justify-center space-x-4 flex-wrap">
               {
                 individuals.map((sponsor: Sponsor) => (
-                  <a 
-                    key={sponsor.id} 
-                    target={`_blank`}  
-                    rel={`noopener noreferrer`} 
-                    href={sponsor.url} 
+                  <a
+                    key={sponsor.id}
+                    target={`_blank`}
+                    rel={`noopener noreferrer`}
+                    href={sponsor.url}
                     title={`Thanks ${sponsor.name}!`}>
                     {
                       sponsor.avatarUrl ? (
@@ -66,8 +66,8 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
             <div className="flex justify-center space-x-4 flex-wrap">
               {
                 sponsors.companies.map((sponsor) => (
-                  <a 
-                    key={sponsor.id} 
+                  <a
+                    key={sponsor.id}
                     target={`_blank`}
                     rel={`noopener noreferrer`}
                     href={sponsor.url}
