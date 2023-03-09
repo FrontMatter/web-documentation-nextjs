@@ -87,7 +87,7 @@ explorer panel from Visual Studio Code and selecting **Front Matter: Register fo
 
 ![Register a folder][06]
 
-> **Info**: Be default, the extension will include content from the current folder and its
+> **Info**: By default, the extension will include content from the current folder and its
 > sub-folders. If you wish to exclude the sub-folders, you can do this by updating the
 > [frontMatter.content.pageFolders][07] configuration setting and specifying the `excludeSubDir`
 > property with the value as `true`.
