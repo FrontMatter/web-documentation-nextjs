@@ -1,5 +1,5 @@
-import { MendableFloatingButton } from '@mendable/search';
 import * as React from 'react';
+import { MendableFloatingButton } from '@mendable/search';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Sidebar } from '../Docs/Sidebar';
 import { Navigation } from '../Navigation';
