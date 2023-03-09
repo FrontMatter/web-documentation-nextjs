@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: false,
+  env: {
+    MENDABLE_ANON_KEY: process.env.MENDABLE_ANON_KEY,
+  },
   async redirects() {
     return [
       {

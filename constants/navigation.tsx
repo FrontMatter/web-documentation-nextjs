@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import { HeartIcon, XIcon } from "@heroicons/react/outline";
+import { HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
@@ -16,11 +16,11 @@ export const navigation = {
   footer: [
     { name: 'Showcase', title: 'Showcase', href: '/showcase' },
   ],
-  sponsor: { 
-    name: 'Become a sponsor', 
-    title: 'Become a sponsor, and get mentioned', 
+  sponsor: {
+    name: 'Become a sponsor',
+    title: 'Become a sponsor, and get mentioned',
     href: Extension.sponsorLink,
-    icon: ({ btnClassName, className, title, ...rest}: any) => {
+    icon: ({ btnClassName, className, title, ...rest }: any) => {
       const [open, setOpen] = useState(false);
 
       const onSponsorClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -28,11 +28,11 @@ export const navigation = {
 
         setOpen(true);
       };
-    
+
       return (
         <>
           <button type="button" className={`${btnClassName || "group flex items-center"}`} onClick={onSponsorClick}>
-            <span className="mr-2 group-hover:text-rose-500">{ title || "Sponsor" }</span>
+            <span className="mr-2 group-hover:text-rose-500">{title || "Sponsor"}</span>
             <HeartIcon className={`${className} group-hover:text-rose-500 group-hover:fill-current`} {...rest} />
           </button>
 
@@ -47,10 +47,10 @@ export const navigation = {
                       onClick={() => setOpen(false)}
                     >
                       <span className="sr-only">Close</span>
-                      <XIcon className="h-6 w-6" aria-hidden="true" />
+                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-                    
+
                   <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-vulcan-300 bg-opacity-60">
                     <HeartIcon className="h-6 w-6 text-rose-900 fill-current" aria-hidden="true" />
                   </div>
@@ -102,9 +102,9 @@ export const navigation = {
     }
   },
   social: [
-    { 
-      name: 'GitHub', 
-      title: 'Check out our GitHub repository', 
+    {
+      name: 'GitHub',
+      title: 'Check out our GitHub repository',
       href: Extension.githubLink,
       blank: true,
       icon: (props: any) => (
@@ -117,30 +117,30 @@ export const navigation = {
         </svg>
       )
     },
-    { 
-      name: 'Visual Studio Marketplace', 
-      title: 'Checkout the extension on Visual Studio Marketplace', 
+    {
+      name: 'Visual Studio Marketplace',
+      title: 'Checkout the extension on Visual Studio Marketplace',
       href: Extension.reviewLink,
       blank: true,
-      icon: ({ className, ...rest}: any) => (
+      icon: ({ className, ...rest }: any) => (
         <SiVisualstudiocode className={`${className} group-hover:fill-current`} {...rest} />
       )
     },
-    { 
-      name: 'Twitter', 
-      title: 'Follow us on Twitter', 
+    {
+      name: 'Twitter',
+      title: 'Follow us on Twitter',
       href: Extension.twitter,
       blank: true,
-      icon: ({ className, ...rest}: any) => (
+      icon: ({ className, ...rest }: any) => (
         <VscTwitter className={`${className} group-hover:fill-current`} {...rest} />
       )
     },
-    { 
-      name: 'Discord', 
-      title: 'Join us on Discord', 
+    {
+      name: 'Discord',
+      title: 'Join us on Discord',
       href: Extension.discord,
       blank: true,
-      icon: ({ className, ...rest}: any) => (
+      icon: ({ className, ...rest }: any) => (
         <SiDiscord className={`${className} group-hover:fill-current`} {...rest} />
       )
     }

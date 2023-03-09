@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import { default as NextLink } from 'next/link';
 import * as React from 'react';
@@ -12,10 +12,10 @@ export interface IParentLinkProps {
   item: PageFrontMatter;
 }
 
-export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({title, link, item}: React.PropsWithChildren<IParentLinkProps>) => {
+export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({ title, link, item }: React.PropsWithChildren<IParentLinkProps>) => {
   const router = useRouter();
-  const [ hasChildren, setHasChildren ] = useState(false);
-  const [ showChildren, setShowChildren ] = useState(false);
+  const [hasChildren, setHasChildren] = useState(false);
+  const [showChildren, setShowChildren] = useState(false);
 
   const links = useMemo(() => {
     const { content } = item;
@@ -32,10 +32,10 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({title, li
       <ul className={`ml-4 mt-2 space-y-2`}>
         {links.map((link, index) => (
           <li key={index}>
-            <Link 
-              title={link.title} 
+            <Link
+              title={link.title}
               link={link.relPath}
-               />
+            />
           </li>
         ))}
       </ul>
@@ -81,20 +81,20 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({title, li
           <div>
             <div className='flex items-center' >
               <button onClick={onShowChildren} title={`Show children of ${title.toLowerCase()}`}>
-              {
-                showChildren ? (
-                  <ChevronDownIcon className='mr-2 h-4 -ml-1' />
-                ) : (
-                  <ChevronRightIcon className='mr-2 h-4 -ml-1' />
-                )
-              }
+                {
+                  showChildren ? (
+                    <ChevronDownIcon className='mr-2 h-4 -ml-1' />
+                  ) : (
+                    <ChevronRightIcon className='mr-2 h-4 -ml-1' />
+                  )
+                }
               </button>
 
               <Link
                 title={title}
                 link={link}
                 hideDot
-                  />
+              />
             </div>
 
             {
@@ -105,7 +105,7 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({title, li
           <Link
             title={title}
             link={link}
-              />
+          />
         )
       }
     </>
