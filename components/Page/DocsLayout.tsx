@@ -1,3 +1,4 @@
+import { MendableFloatingButton } from '@mendable/search';
 import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Sidebar } from '../Docs/Sidebar';
@@ -39,6 +40,8 @@ export const DocsLayout: React.FunctionComponent<React.PropsWithChildren<IDocsLa
         <GetStarted />
 
         <Sponsors />
+
+        <MendableFloatingButton style={{accentColor: "#15C2CB", darkMode: true }}  cmdShortcutKey='j' floatingButtonStyle={{backgroundColor: "#15C2CB", color:"#FFFFFF"}} anon_key={process.env.MENDABLE_ANON_KEY ?? ""} />
 
         <Footer />
       </div>
