@@ -17,6 +17,7 @@
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.16",
     "@mendable/search": "^0.0.41",
+    "@microsoft/fetch-event-source": "^2.0.1",
     "date-fns": "^2.23.0",
     "framer-motion": "^7.10.2",
     "glob": "^7.2.0",
