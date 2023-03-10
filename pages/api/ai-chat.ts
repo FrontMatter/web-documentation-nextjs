@@ -4,6 +4,11 @@ import fetch from "node-fetch";
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const aiUrl = process.env.MENDABLE_ANON_URL;
 
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+
   const chatData: { company: string; chatId: string; question: string } =
     req.body;
 
