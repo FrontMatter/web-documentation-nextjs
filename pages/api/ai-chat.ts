@@ -42,20 +42,24 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     for await (const chunk of response.body) {
-      let chunkString = chunk.toString();
-      if (chunkString.startsWith("data: ")) {
-        chunkString = chunkString.substring(6);
-      }
-      const chunkData = JSON.parse(chunkString);
+      try {
+        let chunkString = chunk.toString();
+        if (chunkString.startsWith("data: ")) {
+          chunkString = chunkString.substring(6);
+        }
+        const chunkData = JSON.parse(chunkString);
 
-      if (chunkData.chunk === "<|source|>" && chunkData.metadata) {
-        const metadata =
-          chunkData.metadata.map((m: any) => m.link) || ([] as string[]);
-        data.sources = metadata;
-      } else if (chunkData.chunk === "<|message_id|>" && chunkData.metadata) {
-        data.answerId = chunkData.metadata;
-      } else {
-        data.answer += chunkData.chunk;
+        if (chunkData.chunk === "<|source|>" && chunkData.metadata) {
+          const metadata =
+            chunkData.metadata.map((m: any) => m.link) || ([] as string[]);
+          data.sources = metadata;
+        } else if (chunkData.chunk === "<|message_id|>" && chunkData.metadata) {
+          data.answerId = chunkData.metadata;
+        } else {
+          data.answer += chunkData.chunk;
+        }
+      } catch (e) {
+        // noop
       }
     }
   } catch (err) {}
