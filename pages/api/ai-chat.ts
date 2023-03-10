@@ -1,66 +1,61 @@
-import { NextResponse } from "next/server";
-import type { NextFetchEvent, NextRequest } from "next/server";
-import { fetchEventSource } from "@microsoft/fetch-event-source";
+import type { NextApiRequest, NextApiResponse } from "next";
+import fetch from "node-fetch";
 
-export const config = {
-  runtime: "edge",
-};
-
-export default async function MyEdgeFunction(
-  request: NextRequest,
-  context: NextFetchEvent
-) {
+const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const aiUrl = process.env.MENDABLE_ANON_URL;
 
-  if (request.method !== "POST") {
-    return NextResponse.json(
-      {},
-      {
-        status: 405,
-        statusText: "Method Not Allowed",
-      }
-    );
-  }
-
   const chatData: { company: string; chatId: string; question: string } =
-    await new Response(request.body).json();
+    req.body;
+
   if (!chatData.chatId || !chatData.company || !chatData.question) {
-    return NextResponse.json(
-      {},
-      {
-        status: 400,
-        statusText: "Bad Request",
-      }
-    );
+    return res.status(400).json({ error: "Missing chat data" });
   }
 
-  const customReadable = new ReadableStream({
-    start(controller) {
-      fetchEventSource(`${aiUrl}/qaChat`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-        body: JSON.stringify({
-          company: chatData.company,
-          conversation_id: chatData.chatId,
-          history: [{ prompt: "", response: "", sources: [] }],
-          question: chatData.question,
-        }),
-        onmessage: (event) => {
-          const data = JSON.parse(event.data);
-
-          controller.enqueue({ data: JSON.stringify(data) });
-        },
-        onclose: () => {
-          controller.close();
-        },
-      });
+  const response = await fetch(`${aiUrl}/qaChat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      accept: "*",
     },
+    body: JSON.stringify({
+      company: chatData.company,
+      conversation_id: chatData.chatId,
+      history: [{ prompt: "", response: "", sources: [] }],
+      question: chatData.question,
+    }),
   });
 
-  return new Response(customReadable, {
-    headers: { "Content-Type": "text/event-stream" },
-  });
-}
+  if (!response.ok) {
+    throw new Error(`unexpected response ${response.statusText}`);
+  }
+
+  const data = {
+    sources: [],
+    answer: "",
+    answerId: undefined,
+  };
+
+  try {
+    for await (const chunk of response.body) {
+      let chunkString = chunk.toString();
+      if (chunkString.startsWith("data: ")) {
+        chunkString = chunkString.substring(6);
+      }
+      const chunkData = JSON.parse(chunkString);
+
+      if (chunkData.chunk === "<|source|>" && chunkData.metadata) {
+        const metadata =
+          chunkData.metadata.map((m: any) => m.link) || ([] as string[]);
+        data.sources = metadata;
+      } else if (chunkData.chunk === "<|message_id|>" && chunkData.metadata) {
+        data.answerId = chunkData.metadata;
+      } else {
+        data.answer += chunkData.chunk;
+      }
+    }
+  } catch (err) {}
+
+  res.status(200).send(data);
+};
+
+export default api;
