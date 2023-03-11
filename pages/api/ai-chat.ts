@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
+import { createClient } from "@supabase/supabase-js";
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const aiUrl = process.env.MENDABLE_ANON_URL;
@@ -14,6 +15,20 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (!chatData.chatId || !chatData.company || !chatData.question) {
     return res.status(400).json({ error: "Missing chat data" });
+  }
+
+  if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
+    console.log("Saving question to Supabase");
+    const supabase = createClient(
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_KEY
+    );
+
+    await supabase.from("frontmatter_ai_qa").insert([
+      {
+        question: chatData.question,
+      },
+    ]);
   }
 
   const response = await fetch(`${aiUrl}/qaChat`, {
