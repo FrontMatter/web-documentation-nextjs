@@ -17,6 +17,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const metrics: {
     name: string;
+    extName: string;
     version: string;
     properties: any;
   }[] = req.body;
@@ -36,6 +37,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
         .from("metrics")
         .select()
         .eq("name", metric.name)
+        .eq("extName", metric.extName)
         .eq("version", metric.version)
         .eq("date", new Date().toISOString().slice(0, 10))
         .single();
@@ -45,6 +47,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
         await supabase.from("metrics").insert([
           {
             name: metric.name,
+            extName: metric.extName,
             version: metric.version,
             date: new Date().toISOString().slice(0, 10),
             properties: metric.properties,
@@ -57,6 +60,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
           .from("metrics")
           .update({ count: record.data.count + 1 })
           .eq("name", metric.name)
+          .eq("extName", metric.extName)
           .eq("version", metric.version)
           .eq("date", new Date().toISOString().slice(0, 10));
       }
