@@ -61,7 +61,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
           if (!statistics.versions[record.version]) {
             statistics.versions[record.version] = 0;
           }
-          statistics.versions[record.version] = record.count;
+          statistics.versions[record.version] += record.count;
 
           // Record the number of beta/stable activations
           if (record.extName.includes("beta")) {
