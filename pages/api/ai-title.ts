@@ -3,11 +3,16 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { GitHubService } from "../../services/GithubService";
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!req.body.username || !req.body.title) {
+  if (!req.body.token || !req.body.title) {
     return res.status(403).send({});
   }
 
-  const { username, title, nrOfCharacters } = req.body;
+  const { token, title, nrOfCharacters } = req.body;
+
+  const username = await GitHubService.getUser(token);
+  if (!username) {
+    return res.status(403).send({});
+  }
 
   const sponsors = await GitHubService.getSponsors();
   const backers = (process.env.BACKERS || "").split(",");

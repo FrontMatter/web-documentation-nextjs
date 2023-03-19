@@ -1,6 +1,24 @@
 import fetch from "node-fetch";
 
 export class GitHubService {
+  public static async getUser(token: string) {
+    const response = await fetch(`https://api.github.com/graphql`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      return;
+    }
+
+    const data = await response.json();
+
+    return data.login;
+  }
+
   public static async getSponsors() {
     const response = await fetch(`https://api.github.com/graphql`, {
       method: "POST",
