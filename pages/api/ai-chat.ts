@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 import { createClient } from "@supabase/supabase-js";
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
+  const aiKey = process.env.MENDABLE_ANON_KEY;
   const aiUrl = process.env.MENDABLE_ANON_URL;
 
   if (req.method === "OPTIONS") {
@@ -10,15 +11,17 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  const chatData: { company: string; chatId: string; question: string } =
-    req.body;
+  if (!aiKey || !aiUrl) {
+    return res.status(500).json({ error: "Missing API data" });
+  }
 
-  if (!chatData.chatId || !chatData.company || !chatData.question) {
+  const chatData: { chatId: string; question: string } = req.body;
+
+  if (!chatData.chatId || !chatData.question) {
     return res.status(400).json({ error: "Missing chat data" });
   }
 
   if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
-    console.log("Saving question to Supabase");
     const supabase = createClient(
       process.env.SUPABASE_URL,
       process.env.SUPABASE_KEY
@@ -31,17 +34,17 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     ]);
   }
 
-  const response = await fetch(`${aiUrl}/qaChat`, {
+  const response = await fetch(`${aiUrl}/mendableChat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       accept: "*",
     },
     body: JSON.stringify({
-      company: chatData.company,
-      conversation_id: chatData.chatId,
-      history: [{ prompt: "", response: "", sources: [] }],
+      api_key: aiKey,
       question: chatData.question,
+      history: [{ prompt: "", response: "", sources: [] }],
+      conversation_id: chatData.chatId,
     }),
   });
 
