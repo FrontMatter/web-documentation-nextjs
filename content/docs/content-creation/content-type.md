@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2023-02-20T07:58:37.292Z
+lastmod: 2023-03-25T20:25:59.263Z
 weight: 200.1
 ---
 
@@ -258,7 +258,7 @@ you can use the `contentTypes` property on the `frontMatter.content.pageFolders`
 
 [01]: /assets/adapted-default-ct.png
 [02]: /docs/content-creation/fields#supported-field-types
-[03]: https://frontmatter.codes/docs/settings#frontmatter.preview.pathname
+[03]: /docs/settings/overview#frontmatter.preview.pathname
 [04]: /docs/custom-actions/#content-script
 [05]: /docs/content-creation/fields
 [06]: /docs/custom-actions

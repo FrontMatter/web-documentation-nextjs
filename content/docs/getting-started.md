@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-02-12T14:41:08.770Z
+lastmod: 2023-03-25T20:23:33.602Z
 weight: 100
 ---
 
@@ -35,9 +35,9 @@ can install this via:
 > **Info**: The BETA docs can be found on [beta.frontmatter.codes][03].
 
 > **Important**: As there can only be one version running of the extension, you will need to
-> either disable or uninstall the main version before installing the beta version. Disable 
-> both extensions globally and select "Enable (Workspace)" will enable the extension only in 
-> the currently loaded workspace. This way you can test the BETA version on some of your 
+> either disable or uninstall the main version before installing the beta version. Disable
+> both extensions globally and select "Enable (Workspace)" will enable the extension only in
+> the currently loaded workspace. This way you can test the BETA version on some of your
 > projects/workspaces and keep the main version installed and activated in other projects.
 
 ## Welcome screen
@@ -58,27 +58,30 @@ On the welcome screen, there are two tasks to complete before you can take full 
 
 ### Step 1: Initialize the project
 
-In this step, a `.frontmatter/templates` folder and `article.md` file template will be created in
-the current project.
-
-The `.frontmatter/templates` folder, is a folder that can be used to place all sort of Markdown
-templates. It will be used when you want to let Front Matter generate new pages/articles/...
+In this step, you will need to initialize the project. This will create a
+`frontmatter.json` file and a `.frontmatter` folder in the root of your
+project in which the media database and templates will be stored.
 
 ### Step 2: Configure the site-generator or framework you use
 
 In this step, you will need to configure the site-generator or framework you use. If your
-static-site-generator is known by Front Matter, it will automatically set some configuration
-options. If not, you will need to configure these settings manually. You can continue by selecting
+static-site generator is known by Front Matter, it will automatically set some configuration
+options.
+
+If your static-site generator or framework is not in the list, you will still be
+able to configure the settings manually. You can continue by selecting
 `other` from the dropdown.
 
 ### Step 3: Register content folder(s)
 
-As Front Matter is created to support many (or all) static site generator, you will need to specify
-where your Markdown/content lives. From the moment you register a folder, it will be used on the
-dashboard to show an overview of all files.
+As Front Matter is created to support many (or all) static-site generator, you will
+need to specify where your Markdown/content lives.
 
-Registering a folder can be done from the list of folders Front Matter has found that already
-contains supported files.
+From the moment you register a folder, it will be used on the dashboard to show
+an overview of all files.
+
+Registering a folder can be done from the list of folders Front Matter has
+found that already contains supported files.
 
 ![Content folders][05]
 
@@ -142,7 +145,7 @@ Follow the proposed steps from Visual Studio Code.
 [04]: /releases/v7.2.0/welcome-screen-7.2.0.png
 [05]: /releases/v7.2.0/content-list.png
 [06]: /assets/register-folder.png
-[07]: /docs/settings#frontmatter.content.pagefolders
+[07]: /docs/settings/overview#frontmatter.content.pagefolders
 [08]: /releases/v5.0.0/workspace-folder.png
 [09]: /releases/v6.0.0/support-links.png
 [10]: /releases/v6.0.0/support-links-hidden.png

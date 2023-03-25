@@ -3,7 +3,7 @@ title: Content view
 slug: content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2022-11-28T14:55:04.221Z
+lastmod: 2023-03-25T20:26:38.438Z
 weight: 300.1
 ---
 
@@ -60,8 +60,9 @@ By default, the content is paginated by 16 items. If you want, you can disable t
 setting the `frontMatter.dashboard.content.pagination` setting to `false`. In case you want to change the number of items per page, you can specify a number in the same setting.
 
 <!-- Link References -->
+
 [01]: /releases/v7.1.0/card-tags.png
 [02]: /releases/v7.1.0/draft-filters.png
 [03]: /docs/content-creation/fields#draft
 [04]: /releases/v5.3.0/draft-status.png
-[05]: /docs/settings#frontmatter.content.sorting
+[05]: /docs/settings/overview#frontmatter.content.sorting
