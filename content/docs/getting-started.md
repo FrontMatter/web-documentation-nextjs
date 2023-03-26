@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-03-25T20:23:33.602Z
+lastmod: 2023-03-26T16:36:08.910Z
 weight: 100
 ---
 
@@ -12,6 +12,8 @@ weight: 100
 ## Overview
 
 To get you started, you first need to install the extension in Visual Studio Code.
+
+<iframe width="560" height="315" style="margin: 2.25rem auto;" src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Installation
 
@@ -134,8 +136,6 @@ Matter** or launch the same flow by using the `Front Matter: Authenticate` comma
 Follow the proposed steps from Visual Studio Code.
 
 ## Enjoy using Front Matter
-
-<iframe src="https://player.vimeo.com/video/630150787?h=9988cff4f0&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=56727" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Front Matter - Installation"></iframe>
 
 <!-- Link References -->
 
