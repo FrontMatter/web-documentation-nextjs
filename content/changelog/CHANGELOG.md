@@ -6,20 +6,36 @@
 
 - External UI script support for dashboards
 - Visual Studio Code Theming support for the dashboards
+- Front matter AI 🤖
 
 > **Info**: To enable the experimental features you need to set the `frontMatter.experimental` setting to `true`.
 
+### 🙏 Sponsor only features
+
+- Title AI suggestions which you need to enable by setting the `frontMatter.sponsors.ai.titleEnabled` setting to `true`.
+
 ### ✨ New features
 
+- [#363](https://github.com/estruyf/vscode-front-matter/issues/363): Multiline support for the `string` field in data view
 - [#513](https://github.com/estruyf/vscode-front-matter/issues/513): Added support for external UI scripts to add custom HTML on the dashboard elements
+- [#530](https://github.com/estruyf/vscode-front-matter/issues/530): Implementation of the Front Matter AI 🤖 powered by [mendable.ai](https://mendable.ai)
+- [#537](https://github.com/estruyf/vscode-front-matter/issues/537): Allow to use the root path `/` as the public folder
+- [#541](https://github.com/estruyf/vscode-front-matter/issues/541): Add title AI suggestions for GitHub sponsors
 
 ### 🎨 Enhancements
 
+- Added an `unknown` field for uniforms when it has no type defined
+- [#512](https://github.com/estruyf/vscode-front-matter/issues/512): Added the `jsonc` file association for the `frontMatter.json` file. That way, you can use comments in the file.
 - [#522](https://github.com/estruyf/vscode-front-matter/issues/522): Configuration support added for [Astro](https://astro.build)
 - [#523](https://github.com/estruyf/vscode-front-matter/issues/523): Added support for `floating`/`decimal` numbers with a new number field property called `numberOptions`
 - [#524](https://github.com/estruyf/vscode-front-matter/issues/524): Removed the **Global settings** view from the panel. You can still get it back by configuring a [custom view mode](https://frontmatter.codes/docs/panel#view-modes).
+- [#535](https://github.com/estruyf/vscode-front-matter/issues/535): Retain the scroll position after selecting a media file
+- [#538](https://github.com/estruyf/vscode-front-matter/issues/538): Added support to encode emojis in the string field
 
 ### ⚡️ Optimizations
+
+- [#534](https://github.com/estruyf/vscode-front-matter/issues/534): Moved the `mediaDb.json` file to a `.frontmatter/database` folder instead of the `.frontmatter/content` folder
+- [#536](https://github.com/estruyf/vscode-front-matter/issues/536): Set the start location from the script to the root of the workspace
 
 ### 🐞 Fixes
 
@@ -27,6 +43,11 @@
 - [#520](https://github.com/estruyf/vscode-front-matter/issues/520): Add the URL protocol to the host on opening the preview if it's missing
 - [#521](https://github.com/estruyf/vscode-front-matter/issues/521): Fix empty snippets dashboard placeholder
 - [#526](https://github.com/estruyf/vscode-front-matter/issues/526): Fix card content menu
+- [#528](https://github.com/estruyf/vscode-front-matter/issues/528): Fix where the `.astro` code section `---` is seen as front matter
+- [#529](https://github.com/estruyf/vscode-front-matter/issues/529): Fix YAML parsing in Windows which added an extra carriage return
+- [#531](https://github.com/estruyf/vscode-front-matter/issues/531): Fix prettier update which caused data views to not render list items
+- [#539](https://github.com/estruyf/vscode-front-matter/issues/539): Fix the override of the default file prefix on content creation
+- [#543](https://github.com/estruyf/vscode-front-matter/issues/543): Fix JSON schema for script commands
 
 ## [8.3.0] - 2023-02-14 - [Release notes](https://beta.frontmatter.codes/updates/v8.3.0)
 

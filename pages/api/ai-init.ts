@@ -12,32 +12,13 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  const initResponse = await fetch(`${aiUrl}/initializeMendable`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      anon_key: aiKey,
-    }),
-  });
-
-  if (!initResponse.ok) {
-    return res.status(500).json({
-      error: "AI init failed",
-    });
-  }
-
-  const initJson: InitResponse = await initResponse.json();
-
   const newChatResponse = await fetch(`${aiUrl}/newConversation`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      anon_key: aiKey,
-      messages: [],
+      api_key: aiKey,
     }),
   });
 
@@ -50,7 +31,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const newChat: NewConversationResponse = await newChatResponse.json();
 
   res.status(200).send({
-    company: initJson.company.name,
+    company: "frontmatter",
     chatId: newChat.conversation_id,
   });
 };
