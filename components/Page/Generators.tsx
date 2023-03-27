@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export interface IGeneratorsProps {}
+export interface IGeneratorsProps { }
 
 export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: React.PropsWithChildren<IGeneratorsProps>) => {
   const { t: strings } = useTranslation();
@@ -25,9 +25,12 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
           }
         </h2>
 
-        <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-7">
           <div className="col-span-1 flex justify-center">
             <img className="h-12" src="/assets/logos/11ty.svg" alt="11ty" />
+          </div>
+          <div className="col-span-1 flex justify-center">
+            <img className="h-12" src="/assets/logos/astro-icon-dark.svg" alt="Astro" />
           </div>
           <div className="col-span-1 flex justify-center">
             <img className="h-12" src="/assets/logos/docusaurus.svg" alt="Docusaurus" />
