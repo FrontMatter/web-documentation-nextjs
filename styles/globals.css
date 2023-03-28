@@ -125,7 +125,7 @@ h5.header__offset {
   }
 
   blockquote {
-    @apply py-2 px-4 my-4 border-l-4 border-teal-500;
+    @apply py-2 px-4 my-4 border-l-4 border-teal-500 bg-vulcan-300;
   }
 
   blockquote.important {
