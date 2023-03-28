@@ -1,7 +1,12 @@
 import { Configuration, OpenAIApi } from "openai";
 
 export class OpenAiService {
-  public static async getCompletion(instruction: string) {
+  public static async getCompletion(
+    instruction: string,
+    nr: number = 5,
+    temperature: number = 0.8,
+    max_tokens: number = 30
+  ) {
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_TOKEN,
     });
@@ -11,9 +16,9 @@ export class OpenAiService {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${instruction}`,
-      temperature: 0.8,
-      max_tokens: 30,
-      n: 5,
+      temperature,
+      max_tokens,
+      n: nr,
       stop: null,
     });
 

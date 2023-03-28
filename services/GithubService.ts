@@ -1,6 +1,28 @@
 import fetch from "node-fetch";
 
 export class GitHubService {
+  public static async verifyUser(token: string) {
+    if (!token) {
+      return;
+    }
+
+    const username = await GitHubService.getUser(token);
+    if (!username) {
+      return;
+    }
+
+    const sponsors = await GitHubService.getSponsors();
+    const backers = (process.env.BACKERS || "").split(",");
+
+    const sponsor = sponsors.find((s: any) => s.login === username);
+
+    if (!backers?.includes(username) && !sponsor) {
+      return;
+    }
+
+    return username;
+  }
+
   public static async getUser(token: string) {
     const response = await fetch(`https://api.github.com/user`, {
       method: "GET",
