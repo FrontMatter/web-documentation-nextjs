@@ -10,7 +10,9 @@
     },
     {
       "title": "changelog",
-      "path": "[[workspace]]/content/changelog"
+      "path": "[[workspace]]/content/changelog",
+      "previewPath": null,
+      "contentTypes": ["changelog"]
     }
   ],
   "frontMatter.content.publicFolder": "public",
