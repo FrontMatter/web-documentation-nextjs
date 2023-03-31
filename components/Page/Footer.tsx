@@ -25,18 +25,18 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} rel={`noopener noreferrer`}>
+          <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} target="_blank" rel={`noopener noreferrer`}>
             <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt={`Visitors`} />
           </a>
           
-          <a href={Extension.extensionLink} title={`Extension installs`} rel={`noopener noreferrer`}>
+          <a href={Extension.extensionLink} title={`Extension installs`} target="_blank" rel={`noopener noreferrer`}>
             <img src={`https://vsmarketplacebadges.dev/installs-short/eliostruyf.vscode-front-matter.svg?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
           </a>
         </div>
         
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" rel={`noopener noreferrer`}>
+            <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel={`noopener noreferrer`}>
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>

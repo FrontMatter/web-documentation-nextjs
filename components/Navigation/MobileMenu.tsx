@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { Popover, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment } from 'react';
 import { Sidebar } from '../Docs/Sidebar';
 
@@ -9,7 +9,7 @@ export interface IMobileMenuProps {
   navItems?: PageFrontMatter[];
 }
 
-export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({navItems}: React.PropsWithChildren<IMobileMenuProps>) => {
+export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({ navItems }: React.PropsWithChildren<IMobileMenuProps>) => {
 
   if (!navItems || navItems.length === 0) {
     return null;
@@ -19,7 +19,7 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({navItems}
     <Popover className="relative bg-vulcan-200">
       <Popover.Button className="bg-vulcan-200 p-2 inline-flex items-center justify-center text-whisper-500 hover:text-whisper-600 hover:bg-vulcan-300 focus:outline-none">
         <span className="sr-only">Open menu</span>
-        <MenuIcon className="h-5 w-5" aria-hidden="true" />
+        <Bars3Icon className="h-5 w-5" aria-hidden="true" />
       </Popover.Button>
 
       <Transition
@@ -31,7 +31,7 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({navItems}
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel 
+        <Popover.Panel
           focus
           className="h-full fixed z-30 top-1 right-1 bottom-1 left-1 lg:hidden"
         >
@@ -41,7 +41,7 @@ export const MobileMenu: React.FunctionComponent<IMobileMenuProps> = ({navItems}
                 <div className="rounded-lg w-full h-full px-4 py-2 bg-vulcan-200">
                   <Popover.Button className="bg-vulcan-200 inline-flex items-center justify-center text-whisper-500 hover:text-whisper-600 hover:bg-vulcan-300 focus:outline-none">
                     <span className="sr-only">Close menu</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>

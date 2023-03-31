@@ -3,7 +3,7 @@ title: Troubleshooting
 slug: troubleshooting
 description: null
 date: 2021-12-21T09:53:30.176Z
-lastmod: 2022-03-07T10:44:47.318Z
+lastmod: 2023-03-25T20:24:17.797Z
 weight: 1000
 ---
 
@@ -81,6 +81,7 @@ When you already have a custom content type defined, you can set the `isPublishD
 `isModifiedDate` properties for the `datetime` fields.
 
 <!-- Link References -->
+
 [01]: /releases/v5.8.0/troubleshooting.png
 [02]: /releases/v5.8.0/troubleshooting-output.png
 [03]: /docs/commands#diagnostic-logging

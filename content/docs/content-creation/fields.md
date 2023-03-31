@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2022-09-21T07:27:52.012Z
+lastmod: 2023-03-25T20:26:26.174Z
 weight: 200.2
 ---
 
@@ -72,7 +72,7 @@ use if for the title, description, or any other text field.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 title: "My title"
 ---
@@ -91,7 +91,7 @@ content.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 weight: 1
 ---
@@ -113,7 +113,6 @@ other types of dates for you content.
 > The format of your date can be defined in the `frontMatter.taxonomy.dateFormat` setting. Check
 > [date-fns formating][04] for more information.
 
-
 ```json {{ "title": "Usage" }}
 {
   "title": "Publishing date",
@@ -129,7 +128,7 @@ other types of dates for you content.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 date: 2022-03-14T08:42:21.626Z
 lastmod: 2022-03-14T08:42:22.364Z
@@ -149,7 +148,7 @@ rendered as a toggle.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 isPublished: true
 ---
@@ -173,16 +172,11 @@ The `choice` field allows you to define a set of options.
   "title": "Choice",
   "name": "choice",
   "type": "choice",
-  "choices": [
-    "",
-    "Choice 1",
-    "Choice 2",
-    "Choice 3"
-  ]
+  "choices": ["", "Choice 1", "Choice 2", "Choice 3"]
 }
 ```
 
-```markdown {{ "title": "Outcome", "description": "Outcome when using string values" }}
+```yaml {{ "title": "Outcome", "description": "Outcome when using string values" }}
 ---
 choice: "Choice 1"
 ---
@@ -203,7 +197,7 @@ choice: "Choice 1"
 }
 ```
 
-```markdown {{ "title": "Outcome", "description": "Outcome when using id/title objects" }}
+```yaml {{ "title": "Outcome", "description": "Outcome when using id/title objects" }}
 ---
 choice: "1"
 ---
@@ -221,7 +215,7 @@ The `list` field allows you to add multiple text values.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 alias:
   - release-notes-v8
@@ -253,7 +247,7 @@ When using a custom draft status, the content dashboard will make use of it as w
 }
 ```
 
-```markdown {{ "title": "Outcome", "description": "Default draft field outcome" }}
+```yaml {{ "title": "Outcome", "description": "Default draft field outcome" }}
 ---
 draft: true
 ---
@@ -280,7 +274,7 @@ setting the `invert` property to `true`:
 }
 ```
 
-```markdown {{ "title": "Outcome", "description": "Outcome of using a inverted field value" }}
+```yaml {{ "title": "Outcome", "description": "Outcome of using a inverted field value" }}
 ---
 published: false
 ---
@@ -307,7 +301,7 @@ If you want to use your own status values, you can define it by specifying these
 }
 ```
 
-```markdown {{ "title": "Outcome", "description": "Outcome of using your own status values" }}
+```yaml {{ "title": "Outcome", "description": "Outcome of using your own status values" }}
 ---
 draft: "in progress"
 ---
@@ -336,7 +330,7 @@ The `image` field can be used to reference single or multiple images to your con
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 preview: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
 ---
@@ -363,11 +357,11 @@ The `file` field can be used to reference single or multiple files to your conte
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 attachments:
-- /uploads/file1.pdf
-- /uploads/file2.mp4
+  - /uploads/file1.pdf
+  - /uploads/file2.mp4
 ---
 ```
 
@@ -401,7 +395,7 @@ When the tag is created, you will be able to re-use it for other content.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 tags:
   - Development
@@ -429,7 +423,7 @@ The `categories` field is similar to the [tags][09] field. The difference is tha
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 categories:
   - Development
@@ -477,7 +471,7 @@ Here is an example of the custom taxonomy setting definition:
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 customTags:
   - custom-development
@@ -530,7 +524,7 @@ property.
 
 ![Multi-dimensional content type fields][11]
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 photo:
   title: "Photo 1"
@@ -599,7 +593,7 @@ data) in the `frontMatter.taxonomy.fieldGroups` setting.
 > **Important**: If you want, you can also create field groupings within the field grouping. This is
 > useful when you want to create sub-groups of data.
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 authors:
   - name: Elio Struyf
@@ -623,33 +617,32 @@ example of the authors sample:
 
 ```json {{ "title": "Data file definition" }}
 {
-  "frontMatter.data.files": [{
-    "id": "authors",
-    "title": "Authors",
-    "file": "[[workspace]]/data/authors.json", // Adapt to your needs
-    "schema": {
-      "title": "Author",
-      "type": "object",
-      "required": [
-        "name",
-        "url"
-      ],
-      "properties": {
-        "slug": {
-          "title": "slug",
-          "type": "string"
-        },
-        "name": {
-          "title": "name",
-          "type": "string"
-        },
-        "url": {
-          "title": "url",
-          "type": "string"
+  "frontMatter.data.files": [
+    {
+      "id": "authors",
+      "title": "Authors",
+      "file": "[[workspace]]/data/authors.json", // Adapt to your needs
+      "schema": {
+        "title": "Author",
+        "type": "object",
+        "required": ["name", "url"],
+        "properties": {
+          "slug": {
+            "title": "slug",
+            "type": "string"
+          },
+          "name": {
+            "title": "name",
+            "type": "string"
+          },
+          "url": {
+            "title": "url",
+            "type": "string"
+          }
         }
       }
     }
-  }]
+  ]
 }
 ```
 
@@ -680,7 +673,7 @@ example of the authors sample:
 ]
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 author:
   - dorothy-parker
@@ -708,7 +701,7 @@ The `slug` field allows you to create/update the slug of the current page.
 }
 ```
 
-```markdown {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome" }}
 ---
 slug: version-8-0-0-release-notes
 ---
@@ -761,11 +754,12 @@ want to group fields together.
 ![Section heading field][17]
 
 <!-- Link References -->
+
 [01]: /docs/content-creation/placeholders
-[02]: /docs/settings#frontmatter.global.disablednotifications
+[02]: /docs/settings/overview#frontmatter.global.disablednotifications
 [03]: /releases/v7.2.0/wysiwyg-controls.png
 [04]: https://date-fns.org/v2.0.1/docs/format
-[05]: /docs/settings#frontmatter.content.draftfield
+[05]: /docs/settings/overview#frontmatter.content.draftfield
 [06]: /releases/v5.3.0/draft-status.png
 [07]: /assets/tag-creation.png
 [08]: /assets/tags-limit.png

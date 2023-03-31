@@ -48,7 +48,11 @@ export default function Home({ content }: any) {
                 <div key={index} className={`p-4 shadow-lg bg-vulcan-100`}>
                   <h3 className={`text-2xl font-bold`}>{link.title}</h3>
                   <p className={`mt-2 text-base text-whisper-700`}>{link.description}</p>
-                  <a href={link.link} target={`_blank`} rel={`noopener noreferrer`} className={`mt-4 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium text-white bg-rose-900 hover:bg-rose-800 focus:outline-none`}>Go to {link.title}</a>
+                  <a 
+                    href={link.link} 
+                    target={`_blank`} 
+                    rel={`noopener noreferrer`} 
+                    className={`mt-4 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium text-white bg-rose-900 hover:bg-rose-800 focus:outline-none`}>Go to {link.title}</a>
                 </div>
               ))}
             </div>

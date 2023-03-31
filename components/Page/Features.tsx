@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { features } from '../../constants/features';
-import { CheckIcon } from '@heroicons/react/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Extension } from '../../constants/extension';
 
-export interface IFeaturesProps {}
+export interface IFeaturesProps { }
 
 export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.PropsWithChildren<IFeaturesProps>) => {
   const { t: strings } = useTranslation();
@@ -42,11 +42,11 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
             {strings(`features_cta_title`) as string}
           </p>
           <div className="mt-4">
-            <Link 
+            <Link
               href={Extension.featureLink}
               className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-opacity-70 sm:px-8`}
               target={`_blank`}
-              rel={`noopener noreferrer`}>                  
+              rel={`noopener noreferrer`}>
               {strings(`features_cta_button`) as string}
             </Link>
           </div>

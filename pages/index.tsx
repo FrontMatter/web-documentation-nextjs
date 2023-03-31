@@ -1,20 +1,29 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Description, OtherMeta, Title } from '../components/Meta';
 import { CTA, Features, Generators, Hero, Layout } from '../components/Page';
 import { Pricing } from '../components/Pricing';
 import { Extension } from '../constants/extension';
+const ScrollOut = require('scroll-out');
 
 const Home: NextPage = () => {
   const { t: strings } = useTranslation();
-  
+
+  useEffect(() => {
+    setTimeout(() => {
+      ScrollOut({
+        once: true
+      })
+    }, 0);
+  }, [])
+
   return (
     <>
       <Title value={Extension.home} />
       <Description value={Extension.description} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
-      
+
       <Layout>
         <CTA />
 
@@ -55,7 +64,7 @@ const Home: NextPage = () => {
         <Features />
 
         <Pricing />
-      </Layout> 
+      </Layout>
     </>
   )
 }

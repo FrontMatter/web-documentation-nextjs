@@ -1,4 +1,4 @@
-import { ClipboardCopyIcon } from "@heroicons/react/outline"
+import { ClipboardIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 
 export function CopyButton({ code }: any) {
@@ -30,7 +30,7 @@ export function CopyButton({ code }: any) {
         aria-hidden={copied}
         className={`pointer-events-none flex items-center gap-0.5 text-whisper-400 transition duration-300 ${copied && '-translate-y-1.5 opacity-0'}`}
       >
-        <ClipboardCopyIcon className="h-5 w-5 fill-whisper-500/20 stroke-whisper-500 transition-colors group-hover/button:stroke-whisper-400" />
+        <ClipboardIcon className="h-5 w-5 fill-whisper-500/20 stroke-whisper-500 transition-colors group-hover/button:stroke-whisper-400" />
         Copy
       </span>
       <span
