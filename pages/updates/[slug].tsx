@@ -15,7 +15,7 @@ export default function Home({ title, content, description, date }: any) {
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 xl:px-0 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
             <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{title}</h1>
 

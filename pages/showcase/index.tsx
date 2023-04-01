@@ -37,7 +37,7 @@ export default function Home({ showcases, featured }: any) {
 
   const allFeatured = featured.filter((f: any) => f.featured);
   const links = featured.filter((f: any) => !f.featured);
-  
+
   return (
     <>
       <Title value={strings(`showcase_title`)} />
@@ -45,10 +45,10 @@ export default function Home({ showcases, featured }: any) {
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 xl:px-0 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
             <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`showcase_page_title`) as string}</h1>
-            
+
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_page_description`) as string}</p>
 
             <div className="mt-8 text-sm">
@@ -64,21 +64,21 @@ export default function Home({ showcases, featured }: any) {
                 <div key={feature.title}>
                   <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
                     <figure className={`relative overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
-                      <Image 
-                        className={`w-full object-cover object-left-top`} 
+                      <Image
+                        className={`w-full object-cover object-left-top`}
                         src={`${feature.preview}`}
-                        alt={feature.title} 
+                        alt={feature.title}
                         loading={`lazy`}
                         placeholder="blur"
                         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
                         width={592}
                         height={400}
-                        />
+                      />
                     </figure>
 
                     <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{feature.title}</h2>
                   </a>
-                  
+
                   {
                     feature.author && (
                       <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
@@ -99,7 +99,7 @@ export default function Home({ showcases, featured }: any) {
 
           <div className='py-8'>
             <h3 className={`text-3xl xl:text-4xl tracking-tight font-extrabold sm:leading-none`}>Articles / videos / etc.</h3>
-              
+
             <ul className={`list-disc pl-6 mt-8`}>
               {
                 links.sort(sortTitle).map((feature: any) => (
@@ -127,21 +127,21 @@ export default function Home({ showcases, featured }: any) {
 
           <div>
             <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
-            
+
             <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
               {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (
                 <a key={showcase.title} className="group space-y-2 md:space-y-5 relative" href={showcase.link} title={showcase.title} target="_blank" rel={`noopener noreferrer`}>
                   <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
-                    <Image 
-                      className={`w-full object-cover object-left-top`} 
+                    <Image
+                      className={`w-full object-cover object-left-top`}
                       src={`/showcases/${showcase.image}`}
-                      alt={showcase.title} 
+                      alt={showcase.title}
                       loading={`lazy`}
                       placeholder="blur"
                       blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
                       width={592}
                       height={400}
-                      />
+                    />
                   </figure>
 
                   <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{showcase.title}</h2>
