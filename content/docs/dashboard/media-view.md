@@ -3,7 +3,7 @@ title: Media view
 slug: media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2022-11-28T14:55:04.221Z
+lastmod: 2023-04-01T13:53:45.580Z
 weight: 300.2
 ---
 
@@ -47,7 +47,7 @@ functionality makes it easier to insert your images to your content.
 > **Info**: Check the [Insert images section][03] for more information.
 
 > **Important**: Data is stored in a local JSON file which you can find under:
-> `<project>/.frontmatter/content/mediaDb.json`. Please do not remove this file, or you will lose
+> `<project>/.frontmatter/database/mediaDb.json`. Please do not remove this file, or you will lose
 > your metadata.
 <!-- markdownlint-enable MD028 -->
 

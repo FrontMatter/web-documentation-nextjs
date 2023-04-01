@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-03-25T20:26:26.174Z
+lastmod: 2023-04-01T13:38:44.449Z
 weight: 200.2
 ---
 
@@ -83,7 +83,18 @@ title: "My title"
 The `number` field allows you to insert integer values, like for instance setting the weight of your
 content.
 
-```json {{ "title": "Usage" }}
+### Properties
+
+The number field allows you to set the following properties:
+
+- `min (number)`: The minimum value for the field.
+- `max (number)`: The maximum value for the field.
+- `step (number)`: The step value for the field.
+- `isDecimal (boolean)`: When set to `true`, the field will allow decimal/floating values.
+
+### Example 1
+
+```json {{ "title": "Usage", "description": "Define number field without any special configuration" }}
 {
   "title": "Weight",
   "name": "weight",
@@ -94,6 +105,42 @@ content.
 ```yaml {{ "title": "Outcome" }}
 ---
 weight: 1
+---
+```
+
+### Example 2
+
+```json {{ "title": "Usage", "description": "Define number field with a minimum, maximum, and step value" }}
+{
+  "title": "Weight",
+  "name": "weight",
+  "type": "number",
+  "min": 1,
+  "max": 10,
+  "step": 1
+}
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+weight: 1
+---
+```
+
+### Example 3
+
+```json {{ "title": "Usage", "description": "Define number field with decimal values" }}
+{
+  "title": "Weight",
+  "name": "weight",
+  "type": "number",
+  "isDecimal": true
+}
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+weight: 1.5
 ---
 ```
 

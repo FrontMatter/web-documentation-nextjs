@@ -3,8 +3,8 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-04-01T11:48:34.392Z
-weight: 1100.1
+lastmod: 2023-04-01T13:55:47.063Z
+weight: 1100.2
 ---
 
 # Settings overview
@@ -357,6 +357,35 @@ Specify the commit message you want to use for the sync.
 - Type: `string`
 - Default: `Synced by Front Matter`
 
+### frontMatter.git.submodule.push
+
+Specify if you want to push the submodule changes to the remote repository.
+
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.git.submodule.pull
+
+Specify if you want to pull the submodule changes from the remote repository.
+
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.git.submodule.branch
+
+Specify the branch to use for the submodule. This will be the branch Front Matter CMS will try to
+checkout and sync.
+
+- Type: `string`
+- Default: `""`
+
+### frontMatter.git.submodule.folder
+
+Specify the folder where the submodule is located. This is handy when you have multiple submodules.
+
+- Type: `string`
+- Default: `""`
+
 ### frontMatter.global.activeMode
 
 Specify the activated mode of Front Matter.
@@ -440,6 +469,16 @@ field value.
 > **Important**: As the value will be formatted with the article's date, it will try to convert all
 > characters you enter. In case you want to skip some characters or all of them, you need to wrap
 > that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
+
+### frontMatter.projects
+
+Allows you to specify a list of projects you want to manage with Front Matter CMS. Each project
+can override the global configuration.
+
+- Type: `array<project>`
+- Default: `[]`
+
+> **Info**: More information on how to use it can be found in the [projects][18] section.
 
 ### frontMatter.site.baseURL
 
@@ -709,3 +748,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [15]: https://date-fns.org/v2.0.1/docs/format
 [16]: /docs/content-creation/fields#block
 [17]: /docs/sponsor-features#front-matter-ai
+[18]: /docs/settings/projects
