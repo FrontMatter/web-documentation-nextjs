@@ -12,7 +12,9 @@
       "title": "changelog",
       "path": "[[workspace]]/content/changelog",
       "previewPath": null,
-      "contentTypes": ["changelog"]
+      "contentTypes": [
+        "changelog"
+      ]
     }
   ],
   "frontMatter.content.publicFolder": "public",
@@ -188,6 +190,44 @@
       ],
       "openingTags": "{{",
       "closingTags": "}}"
+    },
+    "Codeblock": {
+      "description": "Codeblock with title and description",
+      "body": [
+        "```[[type]] {{ \"title\": \"[[&title]]\", \"description\": \"[[&description]]\" }}",
+        "[[&selection]]",
+        "```"
+      ],
+      "fields": [
+        {
+          "name": "type",
+          "title": "Type",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "title",
+          "title": "Title",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "description",
+          "title": "Description",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
     }
   }
 }
