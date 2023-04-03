@@ -22,7 +22,7 @@ const stickers = [
 
 export default function Home({ }: any) {
   const { t: strings } = useTranslation();
-  
+
   return (
     <>
       <Title value={strings(`swag_title`)} />
@@ -30,10 +30,10 @@ export default function Home({ }: any) {
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <Layout>
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 divide-y-2 divide-vulcan-200">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 xl:px-0 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
             <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`swag_page_title`) as string}</h1>
-            
+
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`swag_page_description`) as string}</p>
 
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Our stickers are provided by <a className={`italic text-rose-600 hover:text-rose-800`} href="https://pimpyourowndevice.com/categories/frontmatter/" title="PimpYourOwnDevice" target="_blank" rel="noopener noreferrer">PimpYourOwnDevice</a></p>
@@ -64,7 +64,7 @@ export default function Home({ }: any) {
                 ))
               }
             </div>
-          </div>       
+          </div>
         </div>
       </Layout>
     </>

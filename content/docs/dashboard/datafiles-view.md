@@ -3,7 +3,7 @@ title: Data files view
 slug: datafiles-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2022-11-28T14:55:04.221Z
+lastmod: 2023-04-01T09:56:59.435Z
 weight: 300.3
 ---
 
@@ -78,10 +78,54 @@ with url, name, and description as properties.
 <!-- markdownlint-disable MD028 -->
 > **Info**: Use the `[[workspace]]` placeholder to define the workspace folder. The extension will
 > automatically replace this with the workspace folder path.
-
-> **Important**: In the `schema` property we use the [JSON Schema][03] standard to define the
-> structure of the data file.
 <!-- markdownlint-enable MD028 -->
+
+### Defining a data schema
+
+The `schema` property is used to define the structure of the data file. The schema is defined using
+the [JSON Schema][03] standard.
+
+The following example shows a schema for a sponsor object:
+
+```json
+{
+  "title": "Sponsors",
+  "type": "object",
+  "required": [
+    "name",
+    "url"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "url": {
+      "type": "string",
+      "title": "URL"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "multiline": true
+    }
+  }
+}
+```
+
+#### Field types
+
+The following field types are supported:
+
+- `string`
+- `number`
+- `boolean`
+- `array`
+- `object`
+
+When you are using the `string` type, you can use the `multiline` property to define if the field is
+a multiline field.
+
 ## Re-using a data type for files or folders
 
 In some cases, you might want to re-use a data type for files or folders. You can do so by using the
@@ -137,7 +181,6 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 
 > **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files
 > in the folder.
-
 
 <!-- Link References -->
 [01]: /releases/v6.0.0/data-files-dashboard.png

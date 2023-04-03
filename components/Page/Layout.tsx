@@ -10,16 +10,20 @@ export interface ILayoutProps {
   navItems?: PageFrontMatter[];
 }
 
-export const Layout: React.FunctionComponent<React.PropsWithChildren<ILayoutProps>> = ({navItems, children}: React.PropsWithChildren<ILayoutProps>) => {
+export const Layout: React.FunctionComponent<React.PropsWithChildren<ILayoutProps>> = ({ navItems, children }: React.PropsWithChildren<ILayoutProps>) => {
 
   return (
     <div className={`flex flex-col h-full`}>
       <Header navItems={navItems} />
 
+
+
       <main className={`flex-grow pt-16 lg:pt-20`}>
+        <BetaBanner />
+
         {children}
       </main>
-      
+
       <GetStarted />
 
       <Sponsors />

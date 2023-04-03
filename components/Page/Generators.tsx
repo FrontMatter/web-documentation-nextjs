@@ -8,7 +8,7 @@ export const Generators: React.FunctionComponent<IGeneratorsProps> = (props: Rea
 
   return (
     <div className="bg-whisper-100">
-      <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-0">
         <h2 className="text-3xl lg:text-3xl xl:text-4xl font-extrabold sm:leading-none text-center mb-8">
           {
             strings(`generators_title`).split(` `).map(word => {

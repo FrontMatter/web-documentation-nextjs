@@ -42,31 +42,7 @@ h5.header__offset {
   }
 }
 
-.changelog {
-  @apply py-8 space-y-4;
-
-  h1 {
-    @apply hidden;
-  }
-
-  h2 {
-    @apply text-3xl text-whisper-900;
-  }
-
-  ul {
-    @apply list-disc pl-5 pb-8;
-  }
-
-  a,
-  a:visited {
-    @apply text-teal-500;
-  }
-
-  a:hover {
-    @apply text-teal-800;
-  }
-}
-
+.changelog,
 .markdown {
   @apply space-y-4 text-whisper-900;
 
@@ -148,6 +124,34 @@ h5.header__offset {
 
   pre.shiki {
     @apply my-0 p-4;
+  }
+}
+
+.changelog {
+  @apply py-8 space-y-4;
+
+  h1 {
+    @apply hidden;
+  }
+
+  h2 {
+    @apply text-3xl text-whisper-900 font-normal !important;
+
+    &:first-of-type {
+      @apply mt-0 !important;
+    }
+  }
+
+  h3 {
+    @apply mt-16 font-normal;
+  }
+
+  h4 {
+    @apply font-normal;
+  }
+
+  h5 {
+    @apply font-normal;
   }
 }
 

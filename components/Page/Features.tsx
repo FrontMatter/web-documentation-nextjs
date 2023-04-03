@@ -12,7 +12,7 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
 
   return (
     <div className={`bg-whisper-500 text-vulcan-500`}>
-      <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-0">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold">{strings(`features_title`) as string}</h2>
           <p className="mt-4 text-lg text-vulcan-300">

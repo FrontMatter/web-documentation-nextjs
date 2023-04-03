@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-03-26T16:36:08.910Z
+lastmod: 2023-04-01T11:27:59.661Z
 weight: 100
 ---
 
@@ -114,7 +114,7 @@ initiated yet), it will ask you to pick the folder.
 
 Once you selected the folder, it will create the `frontmatter.json` file and reload the workspace.
 
-## Backers & supporters
+## Backers & sponsors
 
 If you are one of the Front Matter supporters/backers, you can hide the support links from the UI.
 We know it is not much, but we want to give something small back, and what is better than a bit of
@@ -134,6 +134,20 @@ Matter** or launch the same flow by using the `Front Matter: Authenticate` comma
 ![Sign in with GitHub for Front Matter][11]
 
 Follow the proposed steps from Visual Studio Code.
+
+## Front Matter AI Assistant
+
+If you have a question on how you can configure Front Matter CMS, you can use the AI Assistant to
+get some help. The AI Assistant is available via the
+`Front Matter: Ask the Front Matter AI for help` command or via the chatbot icon in the
+Front Matter CMS panel or when the `frontmatter.json` file is opened.
+
+![Front Matter AI Assistent](/releases/v8.4.0/front-matter-ai-assisten.png)
+
+When you run the command, or click on the chatbot icon, the AI Assistant will open and you can
+start typing your question.
+
+![Front Matter AI Assistent](/releases/v8.4.0/front-matter-ai-assistent.png)
 
 ## Enjoy using Front Matter
 
