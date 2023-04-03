@@ -1,6 +1,6 @@
 # Change Log
 
-## [8.4.0] - 2023-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v8.4.0)
+## [8.4.0] - 2023-04-03 - [Release notes](https://beta.frontmatter.codes/updates/v8.4.0)
 
 ### 🧪 Experimental features
 
@@ -44,6 +44,8 @@ If you're not already a sponsor, now is a great time to consider supporting the 
 
 - [#534](https://github.com/estruyf/vscode-front-matter/issues/534): Moved the `mediaDb.json` file to a `.frontmatter/database` folder instead of the `.frontmatter/content` folder
 - [#536](https://github.com/estruyf/vscode-front-matter/issues/536): Set the start location from the script to the root of the workspace
+- [#555](https://github.com/estruyf/vscode-front-matter/issues/555): When generating a content-type from existing content, Front Matter will better detect the type of field
+- [#556](https://github.com/estruyf/vscode-front-matter/issues/556): Content values are aligned to the type of field
 
 ### 🐞 Fixes
 
@@ -58,6 +60,7 @@ If you're not already a sponsor, now is a great time to consider supporting the 
 - [#543](https://github.com/estruyf/vscode-front-matter/issues/543): Fix JSON schema for script commands
 - [#547](https://github.com/estruyf/vscode-front-matter/issues/547): Fix setting default value in a hidden group field (`block`)
 - [#552](https://github.com/estruyf/vscode-front-matter/issues/552): Fix for content retrieval in multi-root workspaces
+- [#557](https://github.com/estruyf/vscode-front-matter/issues/557): Fix for dropdown of the tag picker
 
 ## [8.3.0] - 2023-02-14 - [Release notes](https://beta.frontmatter.codes/updates/v8.3.0)
 
