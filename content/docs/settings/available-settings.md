@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-04-01T13:55:47.063Z
+lastmod: 2023-04-04T07:00:25.530Z
 weight: 1100.2
 ---
 
@@ -518,6 +518,7 @@ Specify the fields names that Front Matter should treat as a comma-separated arr
 
 - Type: `string[]`
 - Default: `[]`
+- Example: `["tags", "categories"]`
 
 > **Info**: As some site generators expect arrays in `YAML` to be comma-separated like Pelican. You
 > can use this setting to define which of the front matter properties should be treated as an
