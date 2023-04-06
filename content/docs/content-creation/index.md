@@ -3,7 +3,7 @@ title: Content creation
 slug: content-creation
 description: null
 date: 2021-09-17T07:36:26.654Z
-lastmod: 2023-04-06T11:39:27.725Z
+lastmod: 2023-04-06T11:48:41.237Z
 weight: 200
 tags:
   - documentation
@@ -11,9 +11,11 @@ tags:
 
 # Content creation
 
-<iframe width="560" height="315" style="margin: 1em auto;" src="https://www.youtube.com/embed/oA5ocNaiAtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 ## Overview
+
+<div class="iframe__wrapper">
+   <iframe src="https://www.youtube.com/embed/oA5ocNaiAtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 As each website is different, Front Matter allows you to create content by using content types or
 templates.
