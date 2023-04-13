@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2022-09-22T08:18:09.725Z
+lastmod: 2023-04-13T14:54:41.378Z
 weight: 850
 ---
 
@@ -14,6 +14,10 @@ weight: 850
 Snippets are a pre-defined chunk of code/text that can be used to insert in your content. It
 provides the editor an easy way to add various elements to the content that is defined for your
 project/website.
+
+<div class="iframe__wrapper">
+   <iframe src="https://www.youtube.com/embed/0J-StFyEbV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 All snippets can be found on the snippets dashboard.
 
