@@ -1,5 +1,4 @@
-[
-  {
+[{
     "title": "Elio Struyf",
     "link": "https://www.eliostruyf.com",
     "description": "Personal website/blog from Elio Struyf created with Hugo and Tailwind. Managed by Front Matter.",
@@ -11,6 +10,13 @@
     "link": "https://pimpyourowndevice.com",
     "description": "Pimp Your Own Device is created with Hugo and Bootstrap. Managed by Front Matter.",
     "image": "pimpyourowndevice.png",
+    "generator": "Hugo"
+  },
+  {
+    "title": "hTWOo",
+    "link": "https://lab.n8d.studio/htwoo/",
+    "description": "Fluent design for everyone and Microsoft 365 applications, created with Hugo and managed by Front Matter.",
+    "image": "lab.n8d.studio_htwoo_.png",
     "generator": "Hugo"
   },
   {
