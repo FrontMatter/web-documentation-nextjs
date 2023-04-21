@@ -4,13 +4,21 @@
 
 ### ✨ New features
 
+- [#424](https://github.com/estruyf/vscode-front-matter/issues/424): Snippet wrapping to allow easier updates or changes to previously set snippets in the content
+
 ### 🎨 Enhancements
+
+- [#566](https://github.com/estruyf/vscode-front-matter/issues/566): Keep the panel context on the live preview
+- [#568](https://github.com/estruyf/vscode-front-matter/issues/568): Update the preview URL if the slug changes
+- [#558](https://github.com/estruyf/vscode-front-matter/issues/558): Moved the tags and categories to a `.frontmatter/database/taxonomyDb.json` file
 
 ### ⚡️ Optimizations
 
 ### 🐞 Fixes
 
 - [#564](https://github.com/estruyf/vscode-front-matter/issues/564): Fix to only pass strings to the taxonomy dashboard
+- [#567](https://github.com/estruyf/vscode-front-matter/issues/567): Fix taxonomy filters that are incorrectly positioned
+- [#572](https://github.com/estruyf/vscode-front-matter/issues/572): Fix the media snippet placeholder link
 
 ## [8.4.0] - 2023-04-03 - [Release notes](https://beta.frontmatter.codes/updates/v8.4.0)
 

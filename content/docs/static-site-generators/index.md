@@ -3,7 +3,7 @@ title: Static Site Generators
 slug: ssg-and-frameworks
 description: null
 date: 2021-11-26T09:04:50.405Z
-lastmod: 2022-09-21T07:03:55.385Z
+lastmod: 2023-04-21T08:55:34.085Z
 weight: 600
 ---
 
@@ -31,6 +31,11 @@ just add these to the `frontMatter.content.supportedFileTypes` setting.
   "frontMatter.content.supportedFileTypes": [ "md", "markdown", "mdx", "svx" ]
 }
 ```
+
+### Astro
+
+To use Front Matter with Astro, you can check out the following guide on the Astro website:
+[Front Matter CMS & Astro][03]
 
 ### Hugo
 
@@ -71,3 +76,4 @@ _Are you using one which hasn't been referenced yet? Feel free to add it here._
 <!-- Link Reference -->
 [01]: /docs/ssg-and-frameworks/hugo-configuration
 [02]: https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md
+[03]: https://docs.astro.build/en/guides/cms/frontmatter-cms/
