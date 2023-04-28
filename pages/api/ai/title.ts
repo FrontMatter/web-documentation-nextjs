@@ -14,7 +14,7 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(403).send({});
   }
 
-  const instruction = `Generate enganging blog post title, with a maximum of ${
+  const instruction = `Generate engaging blog post title, with a maximum of ${
     nrOfCharacters || 60
   } characters.
   

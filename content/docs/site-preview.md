@@ -40,7 +40,7 @@ preview path/prefix. For instance, if you create blog articles, and you want to 
 
 > **Important**: The value used for the preview will be formatted with the article's date. This
 > means that the engine will try to convert all characters you enter to a date formatted string. In
-> case you wan to skip some characters or all of them to be converted, you need to wrap that part
+> case you want to skip some characters or all of them to be converted, you need to wrap that part
 > between **two single quotes**. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/11`.
 
 ### Usage of placeholders
