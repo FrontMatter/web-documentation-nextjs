@@ -3,7 +3,7 @@ title: UI extensibility
 slug: experimental/ui-extensibility
 description: UI extensibility in the Front Matter extension.
 date: 2023-04-01T10:16:59.392Z
-lastmod: 2023-05-26T06:53:27.259Z
+lastmod: 2023-05-26T06:55:21.667Z
 weight: 910.1
 ---
 
@@ -205,4 +205,5 @@ Example of a custom field rendering:
 
 ![Custom field](/releases/v8.4.0/custom-field.png)
 
+[01]: https://www.npmjs.com/package/@frontmatter/extensibility
 [02]: https://lit.dev/
