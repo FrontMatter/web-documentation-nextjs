@@ -3,7 +3,7 @@ title: UI extensibility
 slug: experimental/ui-extensibility
 description: UI extensibility in the Front Matter extension.
 date: 2023-04-01T10:16:59.392Z
-lastmod: 2023-04-01T11:04:38.879Z
+lastmod: 2023-05-26T06:53:27.259Z
 weight: 910.1
 ---
 
@@ -15,7 +15,7 @@ own custom elements and components which can be used in the Front Matter dashboa
 The approach we choose, is to let you register a JavaScript file which will be loaded in the
 dashboard and panel.
 
-## Extenibility points
+## Extensibility points
 
 Front Matter CMS allows you to extend the UI in the following places:
 
