@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Extension } from '../../constants/extension';
 import { navigation } from '../../constants/navigation';
 
-export interface IFooterProps {}
+export interface IFooterProps { }
 
 export const Footer: React.FunctionComponent<IFooterProps> = (props: React.PropsWithChildren<IFooterProps>) => {
   return (
@@ -28,12 +28,12 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} target="_blank" rel={`noopener noreferrer`}>
             <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt={`Visitors`} />
           </a>
-          
+
           <a href={Extension.extensionLink} title={`Extension installs`} target="_blank" rel={`noopener noreferrer`}>
-            <img src={`https://vsmarketplacebadges.dev/installs-short/eliostruyf.vscode-front-matter.svg?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
+            <img src={`https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-front-matter?style=for-the-badge&color=060A15&labelColor=060A15`} alt={`Installations of the extension`} />
           </a>
         </div>
-        
+
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel={`noopener noreferrer`}>
