@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-02-12T14:40:56.662Z
+lastmod: 2023-06-29T14:09:57.640Z
 weight: 1100
 ---
 
@@ -133,8 +133,8 @@ Contents of the `baz.json` file:
 
 ## Extending settings
 
-You can extend the settings of Front Matter by using the `frontMatter.extends` setting. This allows 
-you to extend the settings from a custom local or remote location. This can be useful if you want to 
+You can extend the settings of Front Matter by using the `frontMatter.extends` setting. This allows
+you to extend the settings from a custom local or remote location. This can be useful if you want to
 share a common set of settings across multiple projects.
 
 ### Example
@@ -156,10 +156,8 @@ You can inspect your composed settings with the [diagnostic logging][02] command
 the [Complete frontmatter.json config][03] in a virtual Markdown document. Use that output to verify
 that your split configuration settings are applied the way you expect.
 
-
 <!-- Link References -->
 
 [01]: /releases/v5.0.0/ask-to-promote-settings.png
 [02]: /docs/commands#diagnostic-logging
 [03]: /docs/troubleshooting#inspecting-configuration-behavior
-
