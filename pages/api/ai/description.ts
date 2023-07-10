@@ -24,11 +24,15 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     nrOfCharacters || 160
   } characters.
   
-  The topic of the blog post is: ${title}.
+  The topic of the blog post is: """
+  ${title}
+  """
 
-  The contents of the blog post are: ${articleContent}.
+  The contents of the blog post are: """
+  ${articleContent}
+  """.
   
-  Desired format: just a string without any line breaks or other formatting.`;
+  Desired format: just a string without any line breaks or other formatting. make sure it is a full sentence.`;
 
   const response = await OpenAiService.getCompletion(instruction, 1);
 
