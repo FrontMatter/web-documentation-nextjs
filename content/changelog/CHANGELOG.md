@@ -5,20 +5,31 @@
 ### ✨ New features
 
 - [#424](https://github.com/estruyf/vscode-front-matter/issues/424): Snippet wrapping to allow easier updates or changes to previously set snippets in the content
+- [#585](https://github.com/estruyf/vscode-front-matter/issues/585): New content relationship field type (`contentRelationship`)
 
 ### 🎨 Enhancements
 
+- [#558](https://github.com/estruyf/vscode-front-matter/issues/558): Moved the tags and categories to a `.frontmatter/database/taxonomyDb.json` file
 - [#566](https://github.com/estruyf/vscode-front-matter/issues/566): Keep the panel context on the live preview
 - [#568](https://github.com/estruyf/vscode-front-matter/issues/568): Update the preview URL if the slug changes
-- [#558](https://github.com/estruyf/vscode-front-matter/issues/558): Moved the tags and categories to a `.frontmatter/database/taxonomyDb.json` file
+- [#586](https://github.com/estruyf/vscode-front-matter/issues/586): Allow to specify the content card fields
+- [#588](https://github.com/estruyf/vscode-front-matter/issues/588): Added extensibility support to override card fields
+- [#591](https://github.com/estruyf/vscode-front-matter/issues/591): Support for date format in the `datetime` field
+- [#593](https://github.com/estruyf/vscode-front-matter/issues/593): Add support for date formatting in the preview path
 
 ### ⚡️ Optimizations
+
+- [#584](https://github.com/estruyf/vscode-front-matter/issues/584): - Ignore type field in content-type validation
 
 ### 🐞 Fixes
 
 - [#564](https://github.com/estruyf/vscode-front-matter/issues/564): Fix to only pass strings to the taxonomy dashboard
 - [#567](https://github.com/estruyf/vscode-front-matter/issues/567): Fix taxonomy filters that are incorrectly positioned
 - [#572](https://github.com/estruyf/vscode-front-matter/issues/572): Fix the media snippet placeholder link
+- [#577](https://github.com/estruyf/vscode-front-matter/issues/577): Fix in the `dataFile` field where data entries get overwritten
+- [#590](https://github.com/estruyf/vscode-front-matter/issues/590): Fix for image fields inside a sub-block
+- [#595](https://github.com/estruyf/vscode-front-matter/issues/595): Fix for media metadata now showing up
+- [#596](https://github.com/estruyf/vscode-front-matter/issues/596): Fix for number field in block data
 
 ## [8.4.0] - 2023-04-03 - [Release notes](https://beta.frontmatter.codes/updates/v8.4.0)
 

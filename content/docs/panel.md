@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-02-12T14:41:03.541Z
+lastmod: 2023-07-02T11:17:13.778Z
 weight: 400
 ---
 
@@ -201,7 +201,6 @@ Here is an example of a custom view mode:
     "id": "minimal",
     "features": [
       "panel.metadata",
-      "panel.globalSettings",
       "panel.seo",
       "dashboard.data.view",
       "dashboard.snippets.view"
@@ -232,5 +231,5 @@ Or in the status bar:
 [09]: /assets/recent-files.png
 [10]: /docs/getting-started
 [11]: /assets/other-actions.png
-[12]: /releases/v7.1.0/panel-mode-switch.png
+[12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
