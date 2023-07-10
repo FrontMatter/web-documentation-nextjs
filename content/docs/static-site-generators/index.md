@@ -3,7 +3,7 @@ title: Static Site Generators
 slug: ssg-and-frameworks
 description: null
 date: 2021-11-26T09:04:50.405Z
-lastmod: 2023-07-10T06:44:23.218Z
+lastmod: 2023-07-10T09:14:13.619Z
 weight: 600
 ---
 
@@ -42,6 +42,10 @@ To use Front Matter with Astro, you can check out the following guide on the Ast
 Check out our Hugo configuration documentation to get you started using Front Matter:
 [Front Matter configuration with Hugo][01].
 
+### Next.js
+
+Check out our Next.js configuration documentation to get you started using Front Matter: [Front Matter configuration with Next.js][04].
+
 ### Other static site generators
 
 In case you are using a static site generator which is not listed here, feel free to reach out
@@ -55,3 +59,4 @@ You can help us by adding the documentation for your static site generator to th
 [01]: /docs/ssg-and-frameworks/hugo-configuration
 [02]: https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md
 [03]: https://docs.astro.build/en/guides/cms/frontmatter-cms/
+[04]: /docs/ssg-and-frameworks/nextjs-configuration

@@ -12,10 +12,12 @@
 - [#558](https://github.com/estruyf/vscode-front-matter/issues/558): Moved the tags and categories to a `.frontmatter/database/taxonomyDb.json` file
 - [#566](https://github.com/estruyf/vscode-front-matter/issues/566): Keep the panel context on the live preview
 - [#568](https://github.com/estruyf/vscode-front-matter/issues/568): Update the preview URL if the slug changes
+- [#569](https://github.com/estruyf/vscode-front-matter/issues/569): Remove the page bundle folder on content removal
 - [#586](https://github.com/estruyf/vscode-front-matter/issues/586): Allow to specify the content card fields
 - [#588](https://github.com/estruyf/vscode-front-matter/issues/588): Added extensibility support to override card fields
 - [#591](https://github.com/estruyf/vscode-front-matter/issues/591): Support for date format in the `datetime` field
 - [#593](https://github.com/estruyf/vscode-front-matter/issues/593): Add support for date formatting in the preview path
+- [#599](https://github.com/estruyf/vscode-front-matter/issues/599): Add a placeholder when the base panel view is empty
 
 ### ⚡️ Optimizations
 
