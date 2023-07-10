@@ -3,7 +3,7 @@ title: Static Site Generators
 slug: ssg-and-frameworks
 description: null
 date: 2021-11-26T09:04:50.405Z
-lastmod: 2023-04-21T08:55:34.085Z
+lastmod: 2023-07-10T06:44:23.218Z
 weight: 600
 ---
 
@@ -42,34 +42,12 @@ To use Front Matter with Astro, you can check out the following guide on the Ast
 Check out our Hugo configuration documentation to get you started using Front Matter:
 [Front Matter configuration with Hugo][01].
 
-### Eleventy
+### Other static site generators
 
-_Are you up for the challenge of writing this part of the documentation?_
+In case you are using a static site generator which is not listed here, feel free to reach out
+to us to check how we can help you configure Front Matter CMS in your project.
 
-[Update the docs][02]
-
-### Gatsby
-
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
-### Next.js
-
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
-### SvelteKit
-
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
-<!-- markdownlint-disable-next-line MD026 -->
-### ...
-
-_Are you using one which hasn't been referenced yet? Feel free to add it here._
+You can help us by adding the documentation for your static site generator to this documentation.
 
 [Update the docs][02]
 
