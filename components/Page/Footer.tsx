@@ -2,13 +2,17 @@ import * as React from 'react';
 import { Extension } from '../../constants/extension';
 import { navigation } from '../../constants/navigation';
 import { useRouter } from 'next/router'
+import { useEffect } from 'react';
 
 export interface IFooterProps { }
 
 export const Footer: React.FunctionComponent<IFooterProps> = (props: React.PropsWithChildren<IFooterProps>) => {
   const router = useRouter()
+  const [path, setPath] = React.useState<string>()
 
-  console.log(router)
+  useEffect(() => {
+    setPath(router.pathname)
+  }, [router.pathname])
 
   return (
     <footer className="bg-vulcan-600">
@@ -30,7 +34,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          <img src={`https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Ffrontmatter.codes/daily/${router.pathname}&countColor=%23060A15&labelColor=%23060A15&label=daily`} alt={`Daily visitors`} />
+          <img src={`https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Ffrontmatter.codes/daily/${path}&countColor=%23060A15&labelColor=%23060A15&label=daily%20visitors`} alt={`Daily visitors`} />
 
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} target="_blank" rel={`noopener noreferrer`}>
             <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt={`Visitors`} />
