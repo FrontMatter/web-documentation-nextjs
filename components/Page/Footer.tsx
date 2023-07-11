@@ -11,7 +11,14 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
   const [path, setPath] = React.useState<string>()
 
   useEffect(() => {
-    setPath(router.asPath)
+    const crntPath = router.asPath;
+    if (crntPath === "/") {
+      setPath("")
+    } else if (crntPath.startsWith("/")) {
+      setPath(crntPath)
+    } else {
+      setPath(`/${crntPath}`)
+    }
   }, [router.asPath])
 
   return (
@@ -36,7 +43,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
         <div className="mt-8 flex justify-center space-x-6">
           {
             path && (
-              <img src={`https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Ffrontmatter.codes/daily/${path}&countColor=%23060A15&labelColor=%23060A15&label=daily`} alt={`Daily visitors`} />
+              <img src={`https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Ffrontmatter.codes/daily${path}&countColor=%23060A15&labelColor=%23060A15&label=daily`} alt={`Daily visitors`} />
             )
           }
 
