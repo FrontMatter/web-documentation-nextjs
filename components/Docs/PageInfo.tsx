@@ -11,7 +11,7 @@ export interface IPageInfoProps {
   page: PageFrontMatter | undefined;
 }
 
-export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}: React.PropsWithChildren<IPageInfoProps>) => {
+export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items }: React.PropsWithChildren<IPageInfoProps>) => {
 
   const prevPage = useMemo(() => {
     if (!page || items.length === 0) {
@@ -42,23 +42,23 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
     <>
       {
         (prevPage || nextPage) && (
-          <div className={`mt-16 w-full flex justify-between text-xl`}>
-            { (prevPage && prevPage.slug && prevPage.title) && (
-              <a href={`/docs/${(prevPage as PageFrontMatter).slug}`} 
-                 title={prevPage.title} 
-                 className={`items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
-                <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">&larr; Previous</span>
-                <span>{(prevPage as PageFrontMatter).title}</span>
+          <div className={`mt-16 w-full flex justify-between gap-16 text-xl`}>
+            {(prevPage && prevPage.slug && prevPage.title) && (
+              <a href={`/docs/${(prevPage as PageFrontMatter).slug}`}
+                title={prevPage.title}
+                className={`border border-vulcan-100 hover:border-teal-900 rounded-sm w-1/2 p-4 items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                <span className="text-base text-whisper-500">Previous</span>
+                <span>&larr; {(prevPage as PageFrontMatter).title}</span>
               </a>
-            ) }
-            { (nextPage && nextPage.slug && nextPage.title) && (
-              <a href={`/docs/${(nextPage as PageFrontMatter).slug}`} 
-                 title={nextPage.title} 
-                 className={`items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
-                 <span className="flex items-center justify-center px-2 py-1 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70">Next &rarr;</span>
-                <span>{(nextPage as PageFrontMatter).title}</span>
-              </a> 
-            ) }
+            )}
+            {(nextPage && nextPage.slug && nextPage.title) && (
+              <a href={`/docs/${(nextPage as PageFrontMatter).slug}`}
+                title={nextPage.title}
+                className={`border border-vulcan-100 hover:border-teal-900 rounded-sm w-1/2 p-4 items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                <span className="text-base text-whisper-500">Next</span>
+                <span>{(nextPage as PageFrontMatter).title} &rarr;</span>
+              </a>
+            )}
           </div>
         )
       }
@@ -76,7 +76,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({page, items}:
         </div> */}
 
         <div className={`my-4`}>
-          <Giscus 
+          <Giscus
             repo="FrontMatter/feedback"
             repoId="R_kgDOIo5HTQ"
             category="Comments"
