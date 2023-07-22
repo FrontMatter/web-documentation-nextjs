@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-07-22T22:52:01.523Z
+lastmod: 2023-07-22T23:03:40.370Z
 weight: 400
 ---
 
@@ -164,7 +164,7 @@ In this section of the panel, you can modify a couple of the useful settings to 
 > **Local server command**: If you already defined your framework or SSG via the
 > `frontMatter.framework.id` setting, we provide a default start command for you. You can override
 > this by providing your own start command. You can also change the start command in the 
-> [`frontMatter.framework.startCommand`][14] setting.
+> [frontMatter.framework.startCommand][14] setting.
 
 ## View modes
 
