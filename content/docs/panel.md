@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-07-02T11:17:13.778Z
+lastmod: 2023-07-22T22:52:01.523Z
 weight: 400
 ---
 
@@ -26,21 +26,6 @@ Once you installed the extension, you will notice a Front Matter icon on the act
 default on the left side). Clicking this icon will open the Front Matter panel.
 
 ![Activity bar action][01]
-
-## Global settings
-
-In this section of the panel, you can modify a couple of the useful settings to have close to hand.
-
-![Global settings][02]
-
-<!-- markdownlint-disable MD028 -->
-
-> **Info**: The global settings section will also be shown when you have the panel open on other
-> types of files.
-
-> **Local server command**: If you already defined your framework or SSG via the
-> `frontMatter.framework.id` setting, we provide a default start command for you. You can override
-> this by providing your own start command.
 
 ## SEO status
 
@@ -162,6 +147,25 @@ explorer/finder.
 > **Info**: The other actions section will also be shown when you have the panel open on other types
 > of files.
 
+## Global settings
+
+In this section of the panel, you can modify a couple of the useful settings to have close to hand.
+
+![Global settings][02]
+
+<!-- markdownlint-disable MD028 -->
+
+> **Important**: By default, the global settings section is hidden, you need to create a view mode 
+> which holds the `panel.globalSettings` panel ID to show it.
+
+> **Info**: The global settings section will also be shown when you have the panel open on other
+> types of files.
+
+> **Local server command**: If you already defined your framework or SSG via the
+> `frontMatter.framework.id` setting, we provide a default start command for you. You can override
+> this by providing your own start command. You can also change the start command in the 
+> [`frontMatter.framework.startCommand`][14] setting.
+
 ## View modes
 
 By default, Front Matter will show all its potential and functionalities to the end-user. As you do
@@ -233,3 +237,4 @@ Or in the status bar:
 [11]: /assets/other-actions.png
 [12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
+[14]: /docs/settings/overview#frontMatter.framework.startcommand
