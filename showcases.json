@@ -74,5 +74,12 @@
     "description": "We created \"The Chris and Andre Show \" with Pelican. Managed in part with Front Matter.",
     "image": "chrisandandreshow.com_.png",
     "generator": "Pelican"
+  },
+  {
+    "title": "What is wrong with your dog?",
+    "link": "https://whatiswrongwithyourdog.netlify.app",
+    "description": "A blog containing my writing on tech and other issues. Slightly salty at times.",
+    "image": "whatiswrongwithyourdog.netlify.app_.png",
+    "generator": "Hugo"
   }
 ]

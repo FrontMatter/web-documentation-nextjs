@@ -1,10 +1,26 @@
 import * as React from 'react';
 import { Extension } from '../../constants/extension';
 import { navigation } from '../../constants/navigation';
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
 
 export interface IFooterProps { }
 
 export const Footer: React.FunctionComponent<IFooterProps> = (props: React.PropsWithChildren<IFooterProps>) => {
+  const router = useRouter()
+  const [path, setPath] = React.useState<string>()
+
+  useEffect(() => {
+    const crntPath = router.asPath;
+    if (crntPath === "/") {
+      setPath("")
+    } else if (crntPath.startsWith("/")) {
+      setPath(crntPath)
+    } else {
+      setPath(`/${crntPath}`)
+    }
+  }, [router.asPath])
+
   return (
     <footer className="bg-vulcan-600">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
@@ -25,6 +41,12 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
           ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
+          {
+            path && (
+              <img src={`https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Ffrontmatter.codes/daily${path}&countColor=%23060A15&labelColor=%23060A15&label=daily`} alt={`Daily visitors`} />
+            )
+          }
+
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title={`Daily Front Matter visitors`} target="_blank" rel={`noopener noreferrer`}>
             <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt={`Visitors`} />
           </a>
