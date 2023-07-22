@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-07-22T22:51:31.316Z
+lastmod: 2023-07-22T23:05:17.306Z
 weight: 1100.2
 ---
 
@@ -345,7 +345,7 @@ Specify the ID of your static site generator or framework you are using for your
 - Type: `string`
 - Default: `""`
 
-### frontMatter.framework.startcommand
+### frontMatter.framework.startCommand
 
 Specify the command you want to use to start your static site generator or framework.
 

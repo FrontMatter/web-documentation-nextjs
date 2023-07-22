@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-07-22T23:03:40.370Z
+lastmod: 2023-07-22T23:05:06.251Z
 weight: 400
 ---
 
@@ -237,4 +237,4 @@ Or in the status bar:
 [11]: /assets/other-actions.png
 [12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
-[14]: /docs/settings/overview#frontMatter.framework.startcommand
+[14]: /docs/settings/overview#frontmatter.framework.startcommand
