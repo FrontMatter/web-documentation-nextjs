@@ -22,5 +22,5 @@ jobs:
         run: npm ci
       
       - name: Verify missing settings
-        run: node scripts/verify-settings.js ${{ github.ref }}
+        run: node scripts/verify-settings.js ${{ github.ref_name }}
 
