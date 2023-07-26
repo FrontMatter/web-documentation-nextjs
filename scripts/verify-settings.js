@@ -46,6 +46,6 @@ const core = require('@actions/core');
       .addRaw(`\n ${missingSettings.map(s => `- ${s}\n`).join("")}`)
       .write();
 
-    core.error(`Missing settings: ${missingSettings.join(", ")}`);
+    core.setFailed(`Missing settings: ${missingSettings.join(", ")}`);
   }
 })();

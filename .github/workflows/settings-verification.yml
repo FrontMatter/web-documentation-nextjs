@@ -13,13 +13,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          cache: 'npm'
 
       - name: Install the dependencies
-        run: npm i
+        run: npm ci
       
       - name: Verify missing settings
         run: node scripts/verify-settings.js ${{ github.ref }}
