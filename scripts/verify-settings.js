@@ -43,7 +43,7 @@ const core = require('@actions/core');
   if (missingSettings.length > 0) {
     core.summary
       .addHeading(`Missing settings`)
-      .addRaw(`\n ${missingSettings.map(s => `- ${s}\n`).join()}`)
+      .addRaw(`\n ${missingSettings.map(s => `- ${s}\n`).join("")}`)
       .write();
 
     core.error(`Missing settings: ${missingSettings.join(", ")}`);
