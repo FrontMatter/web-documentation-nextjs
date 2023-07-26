@@ -16,7 +16,7 @@
     "@giscus/react": "^2.2.6",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.16",
-    "@mendable/search": "^0.0.41",
+    "@mendable/search": "^0.0.93",
     "@supabase/supabase-js": "^2.10.0",
     "@vercel/edge": "^0.3.1",
     "date-fns": "^2.23.0",
@@ -43,6 +43,7 @@
     "zustand": "^4.1.5"
   },
   "devDependencies": {
+    "@actions/core": "^1.10.0",
     "@types/glob": "^7.2.0",
     "@types/node-fetch": "^2.5.12",
     "@types/react": "^18.0.26",

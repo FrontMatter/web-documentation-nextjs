@@ -2,9 +2,9 @@
 title: Hugo Configuration
 slug: ssg-and-frameworks/hugo-configuration
 description: ""
-date: '2022-02-22T08:43:49.364Z'
-lastmod: '2022-02-22T08:43:47.731Z'
-weight: 600.1
+date: 2022-02-22T08:43:49.364Z
+lastmod: 2023-04-21T09:02:35.736Z
+weight: 600.2
 ---
 
 # Hugo Configuration

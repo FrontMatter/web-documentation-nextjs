@@ -3,13 +3,17 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-02-13T18:50:42.237Z
+lastmod: 2023-04-28T09:19:34.217Z
 weight: 500
 ---
 
 # Custom actions
 
 ## Overview
+
+<div class="iframe__wrapper">
+  <iframe src="https://www.youtube.com/embed/wvH9Tn5LQ2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Not every website is the same. That is why we want to give you the ability to extend Front Matter
 and you can do this by adding your custom actions to the Front Matter panel. A custom action is

@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-04-01T11:27:59.661Z
+lastmod: 2023-04-06T11:48:22.383Z
 weight: 100
 ---
 
@@ -13,7 +13,9 @@ weight: 100
 
 To get you started, you first need to install the extension in Visual Studio Code.
 
-<iframe width="560" height="315" style="margin: 2.25rem auto;" src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="iframe__wrapper">
+  <iframe src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ## Installation
 

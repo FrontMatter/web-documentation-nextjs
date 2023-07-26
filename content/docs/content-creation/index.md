@@ -3,7 +3,7 @@ title: Content creation
 slug: content-creation
 description: null
 date: 2021-09-17T07:36:26.654Z
-lastmod: 2022-03-14T08:35:40.836Z
+lastmod: 2023-04-06T11:48:41.237Z
 weight: 200
 tags:
   - documentation
@@ -12,6 +12,10 @@ tags:
 # Content creation
 
 ## Overview
+
+<div class="iframe__wrapper">
+   <iframe src="https://www.youtube.com/embed/oA5ocNaiAtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 As each website is different, Front Matter allows you to create content by using content types or
 templates.
@@ -38,7 +42,7 @@ When using content types, the CMS will create the new content based on the follo
 
 ## How it works
 
-Behind the scenes, Front Matter uses the `frontMatter.taxonomy.contentTypes` setting 
+Behind the scenes, Front Matter uses the `frontMatter.taxonomy.contentTypes` setting
 (in the `frontmatter.json`) to understand which type of content you'll use for your website.
 
 Our default content type consists of the following fields:

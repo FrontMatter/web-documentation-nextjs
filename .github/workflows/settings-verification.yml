@@ -1,0 +1,26 @@
+name: Settings verification
+on:
+  push:
+    branches:
+      - dev
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build and release"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install the dependencies
+        run: npm ci
+      
+      - name: Verify missing settings
+        run: node scripts/verify-settings.js ${{ github.ref_name }}
+

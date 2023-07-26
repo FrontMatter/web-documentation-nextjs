@@ -3,7 +3,7 @@ title: Static Site Generators
 slug: ssg-and-frameworks
 description: null
 date: 2021-11-26T09:04:50.405Z
-lastmod: 2022-09-21T07:03:55.385Z
+lastmod: 2023-07-10T09:14:13.619Z
 weight: 600
 ---
 
@@ -32,42 +32,31 @@ just add these to the `frontMatter.content.supportedFileTypes` setting.
 }
 ```
 
+### Astro
+
+To use Front Matter with Astro, you can check out the following guide on the Astro website:
+[Front Matter CMS & Astro][03]
+
 ### Hugo
 
 Check out our Hugo configuration documentation to get you started using Front Matter:
 [Front Matter configuration with Hugo][01].
 
-### Eleventy
-
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
-### Gatsby
-
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
 ### Next.js
 
-_Are you up for the challenge of writing this part of the documentation?_
+Check out our Next.js configuration documentation to get you started using Front Matter: [Front Matter configuration with Next.js][04].
 
-[Update the docs][02]
+### Other static site generators
 
-### SvelteKit
+In case you are using a static site generator which is not listed here, feel free to reach out
+to us to check how we can help you configure Front Matter CMS in your project.
 
-_Are you up for the challenge of writing this part of the documentation?_
-
-[Update the docs][02]
-
-<!-- markdownlint-disable-next-line MD026 -->
-### ...
-
-_Are you using one which hasn't been referenced yet? Feel free to add it here._
+You can help us by adding the documentation for your static site generator to this documentation.
 
 [Update the docs][02]
 
 <!-- Link Reference -->
 [01]: /docs/ssg-and-frameworks/hugo-configuration
 [02]: https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md
+[03]: https://docs.astro.build/en/guides/cms/frontmatter-cms/
+[04]: /docs/ssg-and-frameworks/nextjs-configuration

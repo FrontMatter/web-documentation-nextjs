@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-04-04T07:00:25.530Z
+lastmod: 2023-07-26T01:50:13.594Z
 weight: 1100.2
 ---
 
@@ -163,7 +163,9 @@ folder.
 - Type: `string`
 - Default: `""`
 
-In case you are using Hexo in combinations with the [asset folders](https://hexo.io/docs/asset-folders), you can use the following settings:
+In case you are using Hexo in combinations with the
+[asset folders](https://hexo.io/docs/asset-folders),
+you can use the following settings:
 
 - `source/images`: If you want to use the default image location of Hexo;
 - `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
@@ -342,6 +344,13 @@ Specify the ID of your static site generator or framework you are using for your
 
 - Type: `string`
 - Default: `""`
+
+### frontMatter.framework.startCommand
+
+Specify the command you want to use to start your static site generator or framework.
+
+- Type: `string`
+- Default: `null` (when using a known framework, it will be set automatically)
 
 ### frontMatter.git.enabled
 
@@ -726,7 +735,7 @@ This setting is used to define the modified date field of your articles.
 ### frontMatter.dashboard.mediaSnippet
 
 This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
-Please define your media snippet in the `frontMatter.content.snippet` setting.
+Please define your media snippet in the `frontMatter.content.snippets` setting.
 
 ## Removed settings
 
@@ -736,6 +745,8 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 `frontMatter.content.pageFolders` setting.
 
 <!-- Link References -->
+[01]: /docs/settings#extending-settings
+[02]: /docs/experimental
 [04]: /docs/content-creation#before-you-start
 [05]: /releases/v8.1.0/hide-fm.png
 [06]: /docs/site-preview#configuration
@@ -743,6 +754,7 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [08]: /docs/custom-actions
 [09]: /docs/dashboard#card-tags
 [10]: /docs/dashboard#data-files-view
+[11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
 [12]: /docs/panel#define-view-modes
 [13]: /docs/content-creation/content-types#changing-the-default-content-type
 [14]: /docs/content-creation/fields#taxonomy
