@@ -8,6 +8,8 @@ const core = require('@actions/core');
   const branch = process.argv[process.argv.length-1];
   const production = branch.toLowerCase() === "main";
 
+  console.log(`Checking settings for branch: ${branch}`)
+
   const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.json`;
 
   const response = await fetch(pkgUrl);
@@ -41,7 +43,7 @@ const core = require('@actions/core');
   if (missingSettings.length > 0) {
     core.summary
       .addHeading(`Missing settings`)
-      .addRaw(missingSettings.map(s => `- ${s}\n`).join("\n"))
+      .addRaw(`\n ${missingSettings.map(s => `- ${s}\n`).join()}`)
       .write();
 
     core.warning(`Missing settings: ${missingSettings.join(", ")}`);
