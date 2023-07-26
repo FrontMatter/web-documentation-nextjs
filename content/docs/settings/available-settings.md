@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-07-22T23:05:17.306Z
+lastmod: 2023-07-26T01:50:13.594Z
 weight: 1100.2
 ---
 
@@ -735,7 +735,7 @@ This setting is used to define the modified date field of your articles.
 ### frontMatter.dashboard.mediaSnippet
 
 This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
-Please define your media snippet in the `frontMatter.content.snippet` setting.
+Please define your media snippet in the `frontMatter.content.snippets` setting.
 
 ## Removed settings
 
