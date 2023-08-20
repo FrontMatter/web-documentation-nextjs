@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2023-04-13T14:54:41.378Z
+lastmod: 2023-08-20T10:17:32.242Z
 weight: 850
 ---
 
@@ -149,11 +149,31 @@ your field:
 The following steps generate the following outcome in the content (based on the above snippet
 example):
 
-```markdown
+```go
 {{< highlight typescript "linenos=table,noclasses=false" >}}
   Selected text from content
 {{< / highlight >}}
 ```
+
+### Snippet wrapper
+
+The snippet wrapper functionality automatically wraps the inserted snippet in your content with the
+inserted data.
+
+For instance, in the above example, the following wrapper is added:
+
+<!-- markdownlint-disable MD013 -->
+```html
+<!-- FM:Snippet:Start data:{"id":"Highlight (single)","fields":[{"name":"type","value":"typescript"},{"name":"selection","value":"Selected text from content"}]} -->
+{{< highlight typescript "linenos=table,noclasses=false" >}}
+  Selected text from content
+{{< / highlight >}}
+<!-- FM:Snippet:End -->
+```
+<!-- markdownlint-enable MD013 -->
+
+> **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting. By default, it
+is enabled.
 
 ## Media snippets
 
