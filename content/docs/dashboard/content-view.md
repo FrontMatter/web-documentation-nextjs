@@ -3,19 +3,44 @@ title: Content view
 slug: content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2023-03-25T20:26:38.438Z
+lastmod: 2023-08-20T10:48:05.769Z
 weight: 300.1
 ---
 
 # Contents view
 
-## Card tags
+The contents view is the default view when you open the dashboard. It will show you all the pages in
+your project, and allow you to filter and sort them.
+
+## Card configuration
+
+### Card field configuration
+
+If you want to change the fields/values that are shown on the content card, you can do so by using
+the following settings:
+
+<!-- markdownlint-disable MD013 -->
+| Setting | Description | Default |
+| --- | --- | --- |
+| `frontMatter.dashboard.content.card.fields.title` | The field name to use for the title. | `""` |
+| `frontMatter.dashboard.content.card.fields.description` | The field name to use for the description. | `""` |
+| `frontMatter.dashboard.content.card.fields.state` | Show/hide the state/draft status. Set to `false` to hide it. | `true` |
+| `frontMatter.dashboard.content.card.fields.date` | Show/hide the date. Set to `false` to hide it. | `true` |
+<!-- markdownlint-enable MD013 -->
+
+### Card tags
 
 The tags underneath the content abstract/description is changable. By default, the card will show
 the value of the `tags` field, but you can update the field by specifying the value in the
 `frontMatter.dashboard.content.cardTags` setting.
 
 ![Card tags][01]
+
+### Card UI extensibility
+
+In case you want to take more control over the card UI, you can add your own custom code by using
+our extensibility library. More information about this can be found in the [UI extensibility][06]
+section.
 
 ## Draft status navigation
 
@@ -66,3 +91,4 @@ setting the `frontMatter.dashboard.content.pagination` setting to `false`. In ca
 [03]: /docs/content-creation/fields#draft
 [04]: /releases/v5.3.0/draft-status.png
 [05]: /docs/settings/overview#frontmatter.content.sorting
+[06]: /docs/experimental/ui-extensibility#registering-a-custom-ui-extension

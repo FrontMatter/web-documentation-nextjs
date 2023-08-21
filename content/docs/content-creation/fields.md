@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-04-01T13:38:44.449Z
+lastmod: 2023-08-21T09:19:31.587Z
 weight: 200.2
 ---
 
@@ -29,6 +29,8 @@ Front Matter supports the following fields to be used in the content-types:
 - [block](#block)
 - [dataFile](#data-file)
 - [slug](#slug)
+- [contentRelationship](#contentrelationship)
+- [customField](#customfield)
 
 There are also the following section fields:
 
@@ -156,8 +158,10 @@ other types of dates for you content.
 - `isModifiedDate`: Specifies if the field is a modified date. When using the
   `frontMatter.content.autoUpdateDate` setting to automatically update the modified date of the
   article, this field will be used.
+- `dateFormat`: Specifies the format of the date. By default it uses ISO format.
 
-> The format of your date can be defined in the `frontMatter.taxonomy.dateFormat` setting. Check
+> **Info**: The format of your date can be defined in the `frontMatter.taxonomy.dateFormat`
+> setting (globally), or with the `dateFormat` on the field level. To format the date, use the
 > [date-fns formating][04] for more information.
 
 ```json {{ "title": "Usage" }}
@@ -172,6 +176,13 @@ other types of dates for you content.
   "name": "lastmod",
   "type": "datetime",
   "isModifiedDate": true
+},
+{
+  "title": "Date formatting",
+  "name": "dateWithFormat",
+  "type": "datetime",
+  "default": "{{now}}",
+  "dateFormat": "yy-MM-dd"
 }
 ```
 
@@ -179,6 +190,7 @@ other types of dates for you content.
 ---
 date: 2022-03-14T08:42:21.626Z
 lastmod: 2022-03-14T08:42:22.364Z
+dateWithFormat: 23-07-16
 ---
 ```
 
@@ -414,7 +426,7 @@ attachments:
 
 ## Tags
 
-The `tags` field allows you to create or use tags from your `frontMatter.taxonomy.tags` setting (by
+The `tags` field allows you to create or use tags from your `.frontmatter/database/taxonomyDb.json` file (by
 default, none existing). When adding a tag which does not yet exist, you will have the option to
 create it.
 
@@ -454,8 +466,8 @@ tags:
 
 ## Categories
 
-The `categories` field is similar to the [tags][09] field. The difference is that it uses the
-`frontMatter.taxonomy.categories` setting (by default, none existing).
+The `categories` field is similar to the [tags][09] field. Categories are also stored in the
+`.frontmatter/database/taxonomyDb.json` file.
 
 ### Properties
 
@@ -757,6 +769,57 @@ slug: version-8-0-0-release-notes
 > **Info**: The slug is generated based on the title of the page. More information about it can be
 > found in the [generate slug][15] command section.
 
+## contentRelationship
+
+The `contentRelationship` field type allows you to create relationships between content. It can for
+instance be used to reference an author, or a related blog post.
+
+### Properties
+
+- `contentTypeName`: The name of the content-type to link.
+- `contentTypeValue`: The type of link/value you want to add. This can be `slug`, or `path`.
+
+```json {{ "title": "Usage" }}
+{
+  "title": "Session",
+  "name": "session",
+  "type": "contentRelationship",
+  "contentTypeName": "session",
+  "contentTypeValue": "slug"
+}
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+session: /session-slug/
+---
+```
+
+## customField
+
+The `customField` field type allows you to create and add your own fields to render.
+
+> **Important**: This is an experimental feature, and might change in the future.
+> To use it, you need to enable the exeperimental features, more information about it can be found
+> in the [experimental features][18] section.
+
+### Properties
+
+- `customType`: The name of the custom field type to use.
+
+```json {{ "title": "Usage" }}
+{
+  "title": "Custom field",
+  "name": "customField",
+  "type": "customField",
+  "customType": "customField"
+}
+```
+
+The outcome depends on your custom field implementation.
+
+> **Info**: Check out [registering a custom field][19] for a sample implementation.
+
 ## Divider
 
 The `divider` field type allows you to add a divider to your content type. This is useful when you
@@ -819,3 +882,5 @@ want to group fields together.
 [15]: /docs/commands#generate-slug-based-on-content-title
 [16]: /releases/v8.1.0/section-divider.png
 [17]: /releases/v8.1.0/section-heading.png
+[18]: /docs/experimental#enable-experimental-features
+[19]: /docs/experimental/ui-extensibility#registering-a-custom-field

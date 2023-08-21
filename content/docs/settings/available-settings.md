@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-07-26T01:50:13.594Z
+lastmod: 2023-08-20T11:42:01.202Z
 weight: 1100.2
 ---
 
@@ -160,8 +160,24 @@ Properties:
 Specify the folder name where all your assets are located. For instance in Hugo this is the `static`
 folder.
 
-- Type: `string`
+- Type: `string` or `object`
 - Default: `""`
+
+### Relative image paths
+
+In case the paths to your images need to be relative to the content file, you need to specify the
+following:
+
+```json
+{
+  "frontMatter.content.publicFolder": {
+    "path": "static",
+    "relative": true
+  }
+}
+```
+
+#### Hexo support
 
 In case you are using Hexo in combinations with the
 [asset folders](https://hexo.io/docs/asset-folders),
@@ -254,6 +270,36 @@ empty or null, it will hide the tags from the card.
 - Default: `tags`
 
 > **Info**: Check the [card tags][09] section for more information.
+
+### frontMatter.dashboard.content.card.fields.date
+
+Specify if you want to show the date on the content card view.
+
+- Type: `boolean`
+- Default: `true`
+
+### frontMatter.dashboard.content.card.fields.description
+
+Specify the name of the metadata field that will be used to show the description on the content card.
+When empty or null, it uses the `description` field.
+
+- Type: `string`
+- Default: `""`
+
+### frontMatter.dashboard.content.card.fields.state
+
+Specify if you want to show the state on the content card view.
+
+- Type: `boolean`
+- Default: `true`
+
+### frontMatter.dashboard.content.card.fields.title
+
+Specify the name of the metadata field that will be used to show the title on the content card. When
+empty or null, it uses the `title` field.
+
+- Type: `string`
+- Default: `""`
 
 ### frontMatter.dashboard.content.pagination
 
@@ -498,6 +544,15 @@ Specify the base URL of your site, this will be used for SEO checks.
 
 > **Info**: Example for this site it would be: `https://frontmatter.codes`.
 
+### frontMatter.snippets.wrapper.enabled
+
+Specify if you want to enable/disable the snippet wrapper functionality.
+
+- Type: `boolean`
+- Default: `true`
+
+> **Info**: More information on how to use it can be found in the [snippet wrapper][19] section.
+
 ### frontMatter.sponsors.ai.enabled
 
 Specify if you want to enable the AI suggestions for your project. This is a sponsor only feature.
@@ -520,6 +575,11 @@ Specifies the categories which can be used in the Front Matter.
 
 - Type: `string[]`
 - Default: `[]`
+
+> **Important**: Tags and categories are now moved to a separate database file
+> (`.frontmatter/database/taxonomyDb.json`).
+> The setting can still be used to predefine the categories.
+> Once the project gets initialized, the tags will be moved to the database file.
 
 ### frontMatter.taxonomy.commaSeparatedFields
 
@@ -678,6 +738,10 @@ Specifies the tags which can be used in the Front Matter.
 - Type: `string[]`
 - Default: `[]`
 
+> **Important**: Tags and categories are now moved to a separate database file
+> (`.frontmatter/database/taxonomyDb.json`). The setting can still be used to predefine the tags.
+> Once the project gets initialized, the tags will be moved to the database file.
+
 ### frontMatter.telemetry.disable
 
 Specify if you want to disable the telemetry.
@@ -762,3 +826,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [16]: /docs/content-creation/fields#block
 [17]: /docs/sponsor-features#front-matter-ai
 [18]: /docs/settings/projects
+[19]: /docs/snippets#snippet-wrapper

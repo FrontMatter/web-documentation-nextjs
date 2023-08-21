@@ -26,7 +26,7 @@ export const CodeBlock: React.FunctionComponent<ICodeBlockProps> = ({ className,
 
 const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<ICodeBlockProps>) => {
   const child = Children.only(children) as any;
-  
+
   const { title, description } = useMemo(() => {
     let data = { title: '', description: '' };
 
@@ -49,7 +49,7 @@ const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<I
       return child.props.children.toString();
     }
   }, [child])
-  
+
   return (
     <div className='code__wrapper group'>
       {
@@ -65,7 +65,7 @@ const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<I
         <pre>
           {children}
         </pre>
-        
+
         {
           code && <CopyButton code={code} />
         }
@@ -75,7 +75,7 @@ const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<I
 }
 
 export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> = ({ className, children, ...props }: React.PropsWithChildren<ICodeHighlightingProps>) => {
-  const [ code, setCode ] = React.useState('');
+  const [code, setCode] = React.useState('');
 
   React.useEffect(() => {
     if (className && children) {
@@ -83,12 +83,13 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
 
       shiki.setCDN(`../../`);
 
+      console.log(language);
+
       shiki.getHighlighter({
         langs: [language as any],
         theme: `the-unnamed`
       }).then((highlighter: shiki.Highlighter) => {
         let code = children.toString();
-
         if (code.endsWith(`\n`)) {
           code = code.slice(0, -1);
         }
@@ -98,11 +99,12 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
             lang: getLanguage(className)
           })
         );
-      }).then(() => {
-        if (location.hash) {
-          location.href = location.href;
-        }
-      });
+      })
+        .then(() => {
+          if (location.hash) {
+            location.href = location.href;
+          }
+        });
     }
   }, [className, children]);
 
@@ -132,6 +134,6 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
   }
 
   return (
-    <div dangerouslySetInnerHTML={{__html: code}} />
+    <div dangerouslySetInnerHTML={{ __html: code }} />
   );
 };

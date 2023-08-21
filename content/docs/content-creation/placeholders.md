@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-02-12T14:40:30.774Z
+lastmod: 2023-08-20T11:04:12.770Z
 weight: 200.4
 ---
 
@@ -39,7 +39,7 @@ automatically fill in values when creating a new content.
 
 Example of how you can use the special placeholders:
 
-```json
+```json {{ "title": "Using the special placeholders", "description": "" }}
 "frontMatter.content.pageFolders": [
   {
     "title": "post",
@@ -55,7 +55,7 @@ The preview path will generate the following path: `/post/2023/02/<slug>`.
 
 ### Example 2
 
-```json
+```json {{ "title": "Using the relative path token", "description": "" }}
 "frontMatter.content.pageFolders": [
   {
     "title": "post",
@@ -68,6 +68,26 @@ The preview path will generate the following path: `/post/2023/02/<slug>`.
 
 If a file would exist in: `./content/docs/settings.md`. The preview path will generate the following
 path: `/docs/settings/`.
+
+### Example 3: using field formatting
+
+In case of using the `{{fm.<field name>}}` placeholder, you can also use field formatting. Here is
+an example of how you can use field formatting:
+
+```json {{ "title": "Using field formatting", "description": "" }}
+"frontMatter.content.pageFolders": [
+  {
+    "title": "blog",
+    "filePrefix": null,
+    "previewPath": "'/{{fm.type}}/{{fm.pubDate|format:dd/MM/yy}}/'",
+    "path": "[[workspace]]/content"
+  }
+]
+```
+
+The above configuration results in the following path: `/blog/25/02/23/`.
+
+![Placeholder field formatting](/releases/v9.0.0/placeholder-formatting.png)
 
 ## Custom placeholders
 

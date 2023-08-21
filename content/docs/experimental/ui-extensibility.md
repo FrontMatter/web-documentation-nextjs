@@ -3,7 +3,7 @@ title: UI extensibility
 slug: experimental/ui-extensibility
 description: UI extensibility in the Front Matter extension.
 date: 2023-04-01T10:16:59.392Z
-lastmod: 2023-05-26T06:55:21.667Z
+lastmod: 2023-08-21T09:23:29.241Z
 weight: 910.1
 ---
 
@@ -20,8 +20,13 @@ dashboard and panel.
 Front Matter CMS allows you to extend the UI in the following places:
 
 - Content dashboard
-  - Card image
-  - Card footer
+  - Image
+  - Footer
+  - Draft status
+  - Date
+  - Title
+  - Description
+  - Tags
 
 - Panel
   - Custom panel view
@@ -82,10 +87,30 @@ registerCardImage(async (filePath, metadata) => {
 - The `filePath` parameter contains the path to the file which is being rendered in the card.
 - The `metadata` parameter contains the metadata (front matter) of the file which is
 being rendered in the card.
+  - On this metadata object, you can find the `fmPreviewImage` property which contains the webview
+  URL of the current project. You can use this property to render your own image located in the
+  project.
 
 Example of a custom image rendering:
 
 ![Custom card image](/releases/v8.4.0/custom-card-image.png)
+
+Example of using the `fmPreviewImage` property:
+
+```js {{ "title": "Using the fmPreviewImage property", "description": "" }}
+import { registerCardImage, enableDevelopmentMode } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+enableDevelopmentMode();
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardImage(async (filePath, metadata) => {
+    const image = metadata.fmPreviewImage ? metadata.fmPreviewImage : `${metadata.fmWebviewUrl}/relPath/to/fallback.jpg`;
+    return `<img src="${image}" alt="${metadata.title}" style="object-fit: cover;" class="h-36" />`;
+});
+```
 
 ### Registering a card footer
 
@@ -191,7 +216,7 @@ customElements.define("custom-field", CustomField);
  * @param {function} callback - The callback that will be used for rendering the
  * custom field
  */
-registerCustomField("customField", async (value, onChange) => {
+registerCustomField("customTextField", async (value, onChange) => {
   // Bind the event handler for the onChange evet
   CustomFieldValueChange = onChange;
   // Return the HTML of the custom field
@@ -199,6 +224,27 @@ registerCustomField("customField", async (value, onChange) => {
     <custom-field inputValue="${value || ""}"></custom-field>
   `;
 });
+```
+
+Once this script has been registered, you can use the `customField` type in your content-type.
+Register it as follows:
+
+```json {{ "title": "Configure your custom field in the content-type" }}
+{
+  "frontMatter.taxonomy.contentTypes": [{
+    "name": "default",
+    "pageBundle": false,
+    "fields": [
+      ...
+      {
+        "title": "Custom field",
+        "name": "customField",
+        "type": "customField",
+        "customType": "customTextField"
+      }
+    ]
+  }]
+}
 ```
 
 Example of a custom field rendering:

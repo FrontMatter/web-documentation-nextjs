@@ -3,7 +3,7 @@ title: Experimental features
 slug: experimental
 description: Experimental features in the Front Matter extension.
 date: 2023-02-12T14:39:58.691Z
-lastmod: 2023-02-12T15:41:37.698Z
+lastmod: 2023-08-21T08:13:43.748Z
 weight: 910
 ---
 
@@ -24,18 +24,7 @@ To enable the experimental features, you need to set the
 "frontMatter.experimental": true
 ```
 
-## Visual Studio Code theme support
+Currently the following experimental features are available:
 
-The dashboards will now adapt to the colors of your current theme used in Visual Studio Code.
-This feature is experimental because there are various themes and we want to make sure that
-we support most of the themes out there.
-
-<div style="display:flex;justify-items:center;">
-  <img src="/releases/v8.3.0/theme1.png" alt="Theme example 1" style="max-width:45%" />
-  <img src="/releases/v8.3.0/theme2.png" alt="Theme example 2" style="max-width:45%" />
-</div>
-
-<div style="display:flex;justify-items:center;">
-  <img src="/releases/v8.3.0/theme3.png" alt="Theme example 3" style="max-width:45%" />
-  <img src="/releases/v8.3.0/theme4.png" alt="Theme example 4" style="max-width:45%" />
-</div>
+- External UI scripts
+- Front matter AI (only available for GitHub sponsors)

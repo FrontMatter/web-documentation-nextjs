@@ -1,11 +1,25 @@
 # Change Log
 
-## [8.5.0] - 2023-xx-xx
+## [9.0.0] - 2023-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v9.0.0)
+
+### 🌎 Multilingual support
+
+- German (translated via OpenAI)
+- Japanese (thanks to [mayumihara](https://github.com/mayumih387))
+
+### 🧪 Experimental features
+
+- External UI script support for dashboards
+- Front matter AI 🤖
 
 ### ✨ New features
 
+- Added description AI suggestion for GitHub sponsors
+- The Visual Studio Code theme support is now released in the stable version
 - [#424](https://github.com/estruyf/vscode-front-matter/issues/424): Snippet wrapping to allow easier updates or changes to previously set snippets in the content
 - [#585](https://github.com/estruyf/vscode-front-matter/issues/585): New content relationship field type (`contentRelationship`)
+- [#598](https://github.com/estruyf/vscode-front-matter/issues/598): Multilingual support
+- [#615](https://github.com/estruyf/vscode-front-matter/issues/615): Added support for `astro:assets` - [Astro Assets](https://docs.astro.build/en/guides/assets/)
 
 ### 🎨 Enhancements
 
@@ -18,10 +32,13 @@
 - [#591](https://github.com/estruyf/vscode-front-matter/issues/591): Support for date format in the `datetime` field
 - [#593](https://github.com/estruyf/vscode-front-matter/issues/593): Add support for date formatting in the preview path
 - [#599](https://github.com/estruyf/vscode-front-matter/issues/599): Add a placeholder when the base panel view is empty
+- [#602](https://github.com/estruyf/vscode-front-matter/issues/602): Find content outside the Front Matter workspace folder
+- [#611](https://github.com/estruyf/vscode-front-matter/issues/611): Fix typo in the `frontMatter.global.disabledNotifications` setting
+- [#619](https://github.com/estruyf/vscode-front-matter/issues/619): Added the `fmWebviewUrl` property to be used in the `registerCardImage` extensibility library
 
 ### ⚡️ Optimizations
 
-- [#584](https://github.com/estruyf/vscode-front-matter/issues/584): - Ignore type field in content-type validation
+- [#584](https://github.com/estruyf/vscode-front-matter/issues/584): Ignore type field in content-type validation
 
 ### 🐞 Fixes
 
@@ -32,6 +49,11 @@
 - [#590](https://github.com/estruyf/vscode-front-matter/issues/590): Fix for image fields inside a sub-block
 - [#595](https://github.com/estruyf/vscode-front-matter/issues/595): Fix for media metadata now showing up
 - [#596](https://github.com/estruyf/vscode-front-matter/issues/596): Fix for number field in block data
+- [#603](https://github.com/estruyf/vscode-front-matter/issues/603): Fix problem with page bundles and path placeholders
+- [#616](https://github.com/estruyf/vscode-front-matter/issues/616): Fix content filtering
+- [#617](https://github.com/estruyf/vscode-front-matter/issues/617): Fix insert media snippet dialog by using a slideover instead of a dialog
+- [#620](https://github.com/estruyf/vscode-front-matter/issues/620): Fix in array field of data files
+- [#621](https://github.com/estruyf/vscode-front-matter/issues/621): Create data file if it does not exist yet
 
 ## [8.4.0] - 2023-04-03 - [Release notes](https://beta.frontmatter.codes/updates/v8.4.0)
 

@@ -1,5 +1,6 @@
 {
   "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.sponsors.ai.enabled": true,
   "frontMatter.templates.enabled": false,
   "frontMatter.content.autoUpdateDate": true,
   "frontMatter.site.baseURL": "https://frontmatter.codes",
@@ -72,6 +73,7 @@
       "name": "changelog",
       "previewPath": "'docs'",
       "template": "[[workspace]]/.frontmatter/templates/release-notes.md",
+      "filePrefix": null,
       "fields": [
         {
           "title": "Title",

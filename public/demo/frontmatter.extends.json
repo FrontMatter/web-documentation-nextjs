@@ -8,15 +8,12 @@
   "frontMatter.dashboard.contentTags": "tags",
   "frontMatter.content.wysiwyg": true,
   "frontMatter.preview.host": "http://localhost:3000",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "external",
-      "path": "[[workspace]]/external"
-    }
-  ],
+  "frontMatter.content.pageFolders": [{
+    "title": "external",
+    "path": "[[workspace]]/external"
+  }],
   "frontMatter.content.defaultSorting": "DateDesc",
-  "frontMatter.content.sorting": [
-    {
+  "frontMatter.content.sorting": [{
       "title": "Date (asc)",
       "name": "date",
       "order": "asc",
@@ -29,90 +26,84 @@
       "type": "date"
     }
   ],
-  "frontMatter.taxonomy.contentTypes": [
-    {
-      "name": "external",
-      "pageBundle": true,
-      "previewPath": null,
-      "fields": [
-        {
-          "title": "Title",
-          "name": "title",
-          "type": "string",
-          "required": true
-        },
-        {
-          "title": "Title (long)",
-          "name": "longTitle",
-          "type": "string"
-        },
-        {
-          "title": "Slug",
-          "name": "slug",
-          "type": "slug",
-          "required": true
-        },
-        {
-          "title": "Description",
-          "name": "description",
-          "type": "string",
-          "required": true
-        },
-        {
-          "title": "Publishing date",
-          "name": "date",
-          "type": "datetime",
-          "required": true
-        },
-        {
-          "title": "Modified date",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image",
-          "default": "{{ogImage}}",
-          "required": true
-        },
-        {
-          "title": "Is in draft",
-          "name": "draft",
-          "type": "draft",
-          "default": false
-        },
-        {
-          "title": "Comments",
-          "name": "comments",
-          "type": "boolean",
-          "default": true
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags",
-          "default": [],
-          "required": true
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string",
-          "default": "post",
-          "hidden": true
-        }
-      ]
-    }
-  ],
-  "frontMatter.content.placeholders": [
-    {
-      "id": "ogImage",
-      "value": "https://frontmatter.codes/{{slug}}"
-    }
-  ],
-  "frontMatter.custom.scripts": [
-    {
+  "frontMatter.taxonomy.contentTypes": [{
+    "name": "external",
+    "pageBundle": true,
+    "previewPath": null,
+    "fields": [{
+        "title": "Title",
+        "name": "title",
+        "type": "string",
+        "required": true
+      },
+      {
+        "title": "Title (long)",
+        "name": "longTitle",
+        "type": "string"
+      },
+      {
+        "title": "Slug",
+        "name": "slug",
+        "type": "slug",
+        "required": true
+      },
+      {
+        "title": "Description",
+        "name": "description",
+        "type": "string",
+        "required": true
+      },
+      {
+        "title": "Publishing date",
+        "name": "date",
+        "type": "datetime",
+        "required": true
+      },
+      {
+        "title": "Modified date",
+        "name": "lastmod",
+        "type": "datetime"
+      },
+      {
+        "title": "Content preview",
+        "name": "preview",
+        "type": "image",
+        "default": "{{ogImage}}",
+        "required": true
+      },
+      {
+        "title": "Is in draft",
+        "name": "draft",
+        "type": "draft",
+        "default": false
+      },
+      {
+        "title": "Comments",
+        "name": "comments",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "title": "Tags",
+        "name": "tags",
+        "type": "tags",
+        "default": [],
+        "required": true
+      },
+      {
+        "title": "type",
+        "name": "type",
+        "type": "string",
+        "default": "post",
+        "hidden": true
+      }
+    ]
+  }],
+  "frontMatter.content.placeholders": [{
+    "id": "ogImage",
+    "value": "https://frontmatter.codes/{{slug}}"
+  }],
+  "frontMatter.custom.scripts": [{
       "title": "Generate social image",
       "script": "./scripts/social-img.js",
       "command": "~/.nvm/versions/node/v16.11.1/bin/node"
@@ -141,15 +132,13 @@
     "dashboard",
     "editor-panel"
   ],
-  "frontMatter.taxonomy.customTaxonomy": [
-    {
-      "id": "customTags",
-      "options": [
-        "frontmatter",
-        "cms"
-      ]
-    }
-  ],
+  "frontMatter.taxonomy.customTaxonomy": [{
+    "id": "customTags",
+    "options": [
+      "frontmatter",
+      "cms"
+    ]
+  }],
   "frontMatter.content.snippets": {
     "Image snippet": {
       "body": "{{< image \"[[&mediaUrl]]\" \"[[caption]]\" >}}",

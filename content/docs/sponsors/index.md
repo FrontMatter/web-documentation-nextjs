@@ -3,7 +3,7 @@ title: Sponsor features
 slug: sponsor-features
 description: null
 date: 2023-04-01T11:23:17.352Z
-lastmod: 2023-04-01T11:42:21.422Z
+lastmod: 2023-08-21T08:17:32.401Z
 weight: 425
 ---
 
@@ -43,6 +43,13 @@ On the tags or categories field, you will get a new icon, when you click on it, 
 suggestions based on the title and description of the content.
 
 ![Front Matter AI - Tag suggestions](/releases/v8.4.0/front-matter-ai-tags.png)
+
+### Description suggestions
+
+When you have provided a title and content, the Front Matter AI can help you providing a description
+for you article. This can be useful when you want to share your content on social media.
+
+![AI Description Suggestion](/releases/v9.0.0/description-ai-suggestion.png)
 
 ## Becoming a sponsor
 
