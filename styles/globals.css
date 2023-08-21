@@ -79,6 +79,18 @@ h5.header__offset {
     @apply mx-auto my-8;
   }
 
+  figure {
+    @apply mx-auto my-8;
+
+    img {
+      @apply mx-auto my-0;
+    }
+
+    figcaption {
+      @apply text-center text-sm text-whisper-800;
+    }
+  }
+
   p {
     @apply my-4;
   }

@@ -3,7 +3,7 @@ title: UI extensibility
 slug: experimental/ui-extensibility
 description: UI extensibility in the Front Matter extension.
 date: 2023-04-01T10:16:59.392Z
-lastmod: 2023-08-20T10:54:45.068Z
+lastmod: 2023-08-21T09:23:29.241Z
 weight: 910.1
 ---
 
@@ -216,7 +216,7 @@ customElements.define("custom-field", CustomField);
  * @param {function} callback - The callback that will be used for rendering the
  * custom field
  */
-registerCustomField("customField", async (value, onChange) => {
+registerCustomField("customTextField", async (value, onChange) => {
   // Bind the event handler for the onChange evet
   CustomFieldValueChange = onChange;
   // Return the HTML of the custom field
@@ -224,6 +224,27 @@ registerCustomField("customField", async (value, onChange) => {
     <custom-field inputValue="${value || ""}"></custom-field>
   `;
 });
+```
+
+Once this script has been registered, you can use the `customField` type in your content-type.
+Register it as follows:
+
+```json {{ "title": "Configure your custom field in the content-type" }}
+{
+  "frontMatter.taxonomy.contentTypes": [{
+    "name": "default",
+    "pageBundle": false,
+    "fields": [
+      ...
+      {
+        "title": "Custom field",
+        "name": "customField",
+        "type": "customField",
+        "customType": "customTextField"
+      }
+    ]
+  }]
+}
 ```
 
 Example of a custom field rendering:

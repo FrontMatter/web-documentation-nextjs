@@ -13,7 +13,7 @@ const fetch = require('node-fetch');
  * @param {string} propertyName 
  * @param {{ value: string, ref: string } | undefined} reference 
  */
- const generateSchemaForArray = (vscodeProps, baseUrl, configFolder, schemaName, settingName, propertyName, reference) => {
+const generateSchemaForArray = (vscodeProps, baseUrl, configFolder, schemaName, settingName, propertyName, reference) => {
   const schemaObject = vscodeProps[settingName];
   if (schemaObject) {
     const schema = {
@@ -43,28 +43,47 @@ const fetch = require('node-fetch');
       fs.writeFileSync(path.join(configFolder, schemaName), schemaString);
     } else {
       fs.writeFileSync(path.join(configFolder, schemaName), JSON.stringify(schema, null, 2));
-    } 
+    }
   }
+}
+
+const escapeQuotes = (str) => {
+  return str.replace(/"/g, '\\"');
 }
 
 (async () => {
   const production = process.env.VERCEL_ENV === "production";
-  
+
   const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.json`;
-  
+  const pkgEnUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.nls.json`;
+
   const pkg = await fetch(pkgUrl);
-  if (!pkg.ok) {
+  const pkgLocale = await fetch(pkgEnUrl);
+  if (!pkg.ok || !pkgLocale.ok) {
     return;
   }
-  
+
   let pkgJson = await pkg.text();
+
+  let locale = await pkgLocale.text();
+  if (typeof locale === "string") {
+    locale = JSON.parse(locale);
+  }
+
+  // Find and replace the locale strings
+  if (pkgJson) {
+    for (const key of Object.keys(locale)) {
+      pkgJson = pkgJson.replace(new RegExp(`%${key}%`, "g"), escapeQuotes(locale[key]));
+    }
+  }
+
   if (typeof pkgJson === "string") {
     pkgJson = JSON.parse(pkgJson);
   }
-  
+
   if (pkgJson?.contributes?.configuration) {
     const baseUrl = `https://${production ? "" : "beta."}frontmatter.codes`;
-    
+
     // Create the main schema
     const mainSchemaName = "frontmatter.schema.json";
     const schema = {
@@ -76,7 +95,7 @@ const fetch = require('node-fetch');
       ...pkgJson.contributes.configuration,
       "title": "Front Matter - Team Settings"
     }
-    
+
     fs.writeFileSync(path.join(path.resolve('.'), `/public/${mainSchemaName}`), JSON.stringify(schema, null, 2));
 
     /**
@@ -99,20 +118,29 @@ const fetch = require('node-fetch');
 
     // Create the content type schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, ctSchemaName, "frontMatter.taxonomy.contentTypes", "content type", undefined);
-    
+
     // Create the custom script schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, customScriptsSchemaName, "frontMatter.custom.scripts", "custom script", undefined);
 
     // Create the page folders schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, pageFoldersSchemaName, "frontMatter.content.pageFolders", "page folder", undefined);
-    
+
     // Create the placeholder schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, placeholderSchemaName, "frontMatter.content.placeholders", "placeholder", { value: "#scriptCommand", ref: `${baseUrl}/config/${customScriptsSchemaName}#/properties/command` });
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, placeholderSchemaName, "frontMatter.content.placeholders", "placeholder", {
+      value: "#scriptCommand",
+      ref: `${baseUrl}/config/${customScriptsSchemaName}#/properties/command`
+    });
 
     // Create the data schemas
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFilesSchemaName, "frontMatter.data.files", "data file", undefined);
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFoldersSchemaName, "frontMatter.data.folders", "data folder", { value: "#dataFileSchema", ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema` });
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataTypesSchemaName, "frontMatter.data.types", "data type", { value: "#dataFileSchema", ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema` });
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFoldersSchemaName, "frontMatter.data.folders", "data folder", {
+      value: "#dataFileSchema",
+      ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema`
+    });
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataTypesSchemaName, "frontMatter.data.types", "data type", {
+      value: "#dataFileSchema",
+      ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema`
+    });
 
     // Create the snippet schema
     const snippetObject = pkgJson.contributes.configuration.properties[`frontMatter.content.snippets`];

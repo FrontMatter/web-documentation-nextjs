@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2023-02-13T18:29:32.828Z",
+  "lastModified": "2023-08-21T08:57:44.549Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -48,7 +48,9 @@
               "dataFile",
               "slug",
               "divider",
-              "heading"
+              "heading",
+              "customField",
+              "contentRelationship"
             ],
             "description": "Define the type of field"
           },
@@ -173,6 +175,32 @@
               "type": "string"
             }
           },
+          "numberOptions": {
+            "type": "object",
+            "description": "Specify the options for the number field",
+            "properties": {
+              "isDecimal": {
+                "type": "boolean",
+                "default": false,
+                "description": "Specify if the number is a decimal"
+              },
+              "min": {
+                "type": "number",
+                "default": 0,
+                "description": "The minimum value"
+              },
+              "max": {
+                "type": "number",
+                "default": 0,
+                "description": "The maximum value"
+              },
+              "step": {
+                "type": "number",
+                "default": 1,
+                "description": "The step value"
+              }
+            }
+          },
           "taxonomyLimit": {
             "type": "number",
             "default": 0,
@@ -208,10 +236,34 @@
             "default": true,
             "description": "Specify if the field is editable"
           },
+          "encodeEmoji": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the field should encode emoji"
+          },
+          "dateFormat": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the date format to use"
+          },
           "required": {
             "type": "boolean",
             "default": false,
             "description": "Specify if the field is required"
+          },
+          "contentTypeName": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the content type name to filter content for the contentRelationship field"
+          },
+          "contentTypeValue": {
+            "type": "string",
+            "enum": [
+              "path",
+              "slug"
+            ],
+            "default": "path",
+            "description": "Specify the value to insert for the contentRelationship field"
           },
           "when": {
             "type": "object",
@@ -318,6 +370,20 @@
             "then": {
               "required": [
                 "taxonomyId"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "contentRelationship"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "contentTypeName"
               ]
             }
           },

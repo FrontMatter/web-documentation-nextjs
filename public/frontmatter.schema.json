@@ -1,11 +1,46 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "$id": "#globalconfiguration",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2023-02-13T18:29:32.827Z",
+  "lastModified": "2023-08-21T08:57:44.549Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
+    "frontMatter.projects": {
+      "type": "array",
+      "markdownDescription": "Specify the list of projects to load in the Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.projects)",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "markdownDescription": "Specify the name of the project."
+          },
+          "default": {
+            "type": "boolean",
+            "markdownDescription": "Specify if this project is the default project to load."
+          },
+          "configuration": {
+            "$ref": "#globalconfiguration"
+          }
+        }
+      }
+    },
+    "frontMatter.sponsors.ai.enabled": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to enable AI suggestions. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.sponsors.ai.enabled)",
+      "scope": "Sponsors"
+    },
+    "frontMatter.extensibility.scripts": {
+      "type": "array",
+      "markdownDescription": "Specify the list of scripts to load in the Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.extensibility.scripts)",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
     "frontMatter.experimental": {
       "type": "boolean",
       "default": false,
@@ -58,7 +93,7 @@
           "type": "string"
         }
       ],
-      "markdownDescription": "Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.defaultSorting)",
+      "markdownDescription": "Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.defaultsorting)",
       "scope": "Content"
     },
     "frontMatter.content.draftField": {
@@ -201,9 +236,29 @@
       "scope": "Content"
     },
     "frontMatter.content.publicFolder": {
-      "type": "string",
+      "type": [
+        "string",
+        "object"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Specify the path of the assets folder"
+        },
+        "relative": {
+          "type": "boolean",
+          "description": "Defines if the path to your media files be relative to the content file?",
+          "default": false
+        }
+      },
       "default": "",
       "markdownDescription": "Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.publicfolder)",
+      "scope": "Content"
+    },
+    "frontMatter.snippets.wrapper.enabled": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Specify if you want to wrap the snippets. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.snippets.wrapper.enabled)",
       "scope": "Content"
     },
     "frontMatter.content.snippets": {
@@ -373,7 +428,7 @@
           "command": {
             "$id": "#scriptCommand",
             "type": "string",
-            "oneOf": [
+            "anyOf": [
               {
                 "enum": [
                   "node",
@@ -440,8 +495,34 @@
     "frontMatter.dashboard.content.cardTags": {
       "type": "string",
       "default": "tags",
-      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.cardTags)",
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.cardtags)",
       "scope": "Dashboard"
+    },
+    "frontMatter.dashboard.content.card.fields.state": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Specify if you want to show the state/draft status on the content card view. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.state)"
+    },
+    "frontMatter.dashboard.content.card.fields.date": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Specify if you want to show the date on the content card view. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.date)"
+    },
+    "frontMatter.dashboard.content.card.fields.description": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": "",
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the description on the content card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.description)"
+    },
+    "frontMatter.dashboard.content.card.fields.title": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": "",
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the title on the content card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.title)"
     },
     "frontMatter.dashboard.mediaSnippet": {
       "type": "array",
@@ -566,7 +647,7 @@
     "frontMatter.data.folders": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the data files you want to use for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.files)",
+      "markdownDescription": "Specify the data folders you want to use for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.folders)",
       "items": {
         "type": "object",
         "default": {},
@@ -670,6 +751,26 @@
       "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.commitmessage)",
       "default": "Synced by Front Matter"
     },
+    "frontMatter.git.submodule.pull": {
+      "type": "boolean",
+      "markdownDescription": "Specify if you want to pull submodules when syncing. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.pull)",
+      "default": false
+    },
+    "frontMatter.git.submodule.push": {
+      "type": "boolean",
+      "markdownDescription": "Specify if you want to push submodules when syncing. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.push)",
+      "default": false
+    },
+    "frontMatter.git.submodule.branch": {
+      "type": "string",
+      "markdownDescription": "Specify the submodule branch to checkout. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.branch)",
+      "default": ""
+    },
+    "frontMatter.git.submodule.folder": {
+      "type": "string",
+      "markdownDescription": "Specify the submodule folder of your content, this can be handy when you are using multiple submodules. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.folder)",
+      "default": ""
+    },
     "frontMatter.global.activeMode": {
       "type": [
         "string",
@@ -738,7 +839,7 @@
       "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.notifications)",
       "scope": "Templates"
     },
-    "frontMatter.global.disabledNotificaitons": {
+    "frontMatter.global.disabledNotifications": {
       "type": "array",
       "default": [],
       "markdownDescription": "This is an array with the notifications types that can be disabled for Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.disablednotifications)",
@@ -765,7 +866,7 @@
         "video/*",
         "audio/*"
       ],
-      "markdownDescription": "Specify the mime types to support for the media files. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.supportedMimeTypes)",
+      "markdownDescription": "Specify the mime types to support for the media files. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.supportedmimetypes)",
       "items": {
         "type": "string"
       },
@@ -811,7 +912,7 @@
     },
     "frontMatter.taxonomy.commaSeparatedFields": {
       "type": "array",
-      "markdownDescription": "Specify the fields names that Front Matter should treat as a comma-separated array. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.commaSeparatedFields)",
+      "markdownDescription": "Specify the fields names that Front Matter should treat as a comma-separated array. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.commaseparatedfields)",
       "items": {
         "type": "string",
         "description": "Name of the fields you want to use as comma-separated arrays."
@@ -823,7 +924,7 @@
         "array",
         "null"
       ],
-      "markdownDescription": "Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.contentTypes)",
+      "markdownDescription": "Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.contenttypes)",
       "items": {
         "type": "object",
         "description": "Define the content types you want to use in Front Matter.",
@@ -870,7 +971,9 @@
                     "dataFile",
                     "slug",
                     "divider",
-                    "heading"
+                    "heading",
+                    "customField",
+                    "contentRelationship"
                   ],
                   "description": "Define the type of field"
                 },
@@ -995,6 +1098,32 @@
                     "type": "string"
                   }
                 },
+                "numberOptions": {
+                  "type": "object",
+                  "description": "Specify the options for the number field",
+                  "properties": {
+                    "isDecimal": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "Specify if the number is a decimal"
+                    },
+                    "min": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The minimum value"
+                    },
+                    "max": {
+                      "type": "number",
+                      "default": 0,
+                      "description": "The maximum value"
+                    },
+                    "step": {
+                      "type": "number",
+                      "default": 1,
+                      "description": "The step value"
+                    }
+                  }
+                },
                 "taxonomyLimit": {
                   "type": "number",
                   "default": 0,
@@ -1030,10 +1159,34 @@
                   "default": true,
                   "description": "Specify if the field is editable"
                 },
+                "encodeEmoji": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the field should encode emoji"
+                },
+                "dateFormat": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the date format to use"
+                },
                 "required": {
                   "type": "boolean",
                   "default": false,
                   "description": "Specify if the field is required"
+                },
+                "contentTypeName": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the content type name to filter content for the contentRelationship field"
+                },
+                "contentTypeValue": {
+                  "type": "string",
+                  "enum": [
+                    "path",
+                    "slug"
+                  ],
+                  "default": "path",
+                  "description": "Specify the value to insert for the contentRelationship field"
                 },
                 "when": {
                   "type": "object",
@@ -1140,6 +1293,20 @@
                   "then": {
                     "required": [
                       "taxonomyId"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "contentRelationship"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "contentTypeName"
                     ]
                   }
                 },
@@ -1426,7 +1593,7 @@
     "frontMatter.taxonomy.seoSlugLength": {
       "type": "number",
       "default": 75,
-      "markdownDescription": "Specifies the optimal slug length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seoSlugLength)",
+      "markdownDescription": "Specifies the optimal slug length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seosluglength)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoTitleField": {
