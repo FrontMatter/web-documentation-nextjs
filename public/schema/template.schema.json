@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://frontmatter.codes/schema/template.schema.json",
+  "description": "Defines the schema for the Front Matter CMS Starter Templates",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "astro",
+        "11ty",
+        "gatsby",
+        "hugo",
+        "jekyll",
+        "next",
+        "nuxt",
+        "hexo"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "author",
+    "version",
+    "type"
+  ]
+}
