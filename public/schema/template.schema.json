@@ -16,6 +16,9 @@
     "version": {
       "type": "string"
     },
+    "url": {
+      "type": "string"
+    },
     "type": {
       "type": "string",
       "enum": [
@@ -34,6 +37,7 @@
     "name",
     "description",
     "author",
+    "url",
     "version",
     "type"
   ]
