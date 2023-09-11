@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-04-06T11:48:22.383Z
+lastmod: 2023-09-11T08:03:36.707Z
 weight: 100
 ---
 
@@ -75,6 +75,16 @@ options.
 If your static-site generator or framework is not in the list, you will still be
 able to configure the settings manually. You can continue by selecting
 `other` from the dropdown.
+
+### Step 2.1 (optional): Use a template
+
+For some of the static-site generators, Front Matter CMS has created some templates to get you
+started. You can select one of the templates from the list of available templates.
+
+![Front Matter CMS - Starter Templates][13]
+
+> **Info**: The templates are stored in the
+> [Front Matter CMS - Starter Templates][12] repository.
 
 ### Step 3: Register content folder(s)
 
@@ -166,3 +176,5 @@ start typing your question.
 [09]: /releases/v6.0.0/support-links.png
 [10]: /releases/v6.0.0/support-links-hidden.png
 [11]: /releases/v6.0.0/signin-github.png
+[12]: https://github.com/frontmatter/templates
+[13]: /releases/v9.2.0/templates.png
