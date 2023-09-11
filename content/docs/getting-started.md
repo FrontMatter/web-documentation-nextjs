@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-09-11T07:55:13.995Z
+lastmod: 2023-09-11T08:03:36.707Z
 weight: 100
 ---
 
@@ -84,7 +84,7 @@ started. You can select one of the templates from the list of available template
 ![Front Matter CMS - Starter Templates][13]
 
 > **Info**: The templates are stored in the
-> [Front Matter CMS - StarterTemplates][12] repository.
+> [Front Matter CMS - Starter Templates][12] repository.
 
 ### Step 3: Register content folder(s)
 
