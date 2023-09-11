@@ -1,4 +1,15 @@
 [{
+    "title": "Using the Front Matter CMS with Elio Struyf",
+    "link": "https://www.youtube.com/watch?v=YX4HBXHojOA",
+    "author": {
+      "name": "Code and Coffee",
+      "link": "https://www.youtube.com/@thecodeandcoffeeshow"
+    },
+    "preview": "/featured/code-and-coffee.jpg",
+    "type": "video",
+    "featured": true
+  },
+  {
     "title": "James Q Quick - How I Manage My Markdown Blog",
     "link": "https://www.youtube.com/watch?v=kLKgLoGOs1E",
     "author": {
