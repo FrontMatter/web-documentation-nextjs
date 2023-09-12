@@ -3,7 +3,7 @@ title: Commands
 slug: commands
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-02-12T15:41:40.983Z
+lastmod: 2023-09-11T07:58:42.087Z
 weight: 900
 ---
 
@@ -174,6 +174,13 @@ This command allows you to promote all local settings from within your `.vscode/
 to be promoted to the projects team configuration `frontmatter.json` file.
 
 ID: `frontMatter.promoteSettings`
+
+### Refresh the settings
+
+This command allows you to refresh the settings from the `frontmatter.json` file. This is useful
+when you have updated the settings manually and want to reload them.
+
+ID: `frontMatter.settings.refresh`
 
 ## Removed commands
 
