@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-08-21T09:19:31.587Z
+lastmod: 2023-09-12T18:17:25.997Z
 weight: 200.2
 ---
 
@@ -778,8 +778,11 @@ instance be used to reference an author, or a related blog post.
 
 - `contentTypeName`: The name of the content-type to link.
 - `contentTypeValue`: The type of link/value you want to add. This can be `slug`, or `path`.
+- `multiple`: Specify if you want to select one or multiple relationships (optional).
 
-```json {{ "title": "Usage" }}
+#### Example 1
+
+```json {{ "title": "Usage of single selection" }}
 {
   "title": "Session",
   "name": "session",
@@ -789,9 +792,30 @@ instance be used to reference an author, or a related blog post.
 }
 ```
 
-```yaml {{ "title": "Outcome" }}
+```yaml {{ "title": "Outcome of single selection" }}
 ---
 session: /session-slug/
+---
+```
+
+#### Example 2
+
+```json {{ "title": "Usage of multi-selection" }}
+{
+  "title": "Session",
+  "name": "session",
+  "type": "contentRelationship",
+  "contentTypeName": "session",
+  "contentTypeValue": "slug",
+  "multiple": true
+}
+```
+
+```yaml {{ "title": "Outcome of multi-selection" }}
+---
+session: 
+  - /session1-slug/
+  - /session2-slug/
 ---
 ```
 
