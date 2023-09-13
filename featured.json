@@ -113,6 +113,15 @@
     "type": "article"
   },
   {
+    "title": "Front Matter CMS - a bit different approach to content management",
+    "link": "https://maciekpalmowski.dev/front-matter-cms-a-bit-different-approach-to-content-management/",
+    "author": {
+      "name": "Maciek Palmowski",
+      "link": "https://maciekpalmowski.dev"
+    },
+    "type": "article"
+  },
+  {
     "title": "Front Matter CMS for VSCode",
     "link": "https://maximorlov.com/tips/front-matter-cms-for-vscode/",
     "author": {
