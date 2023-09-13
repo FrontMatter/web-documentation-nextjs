@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-08-20T11:42:01.202Z
+lastmod: 2023-09-13T14:02:36.428Z
 weight: 1100.2
 ---
 
@@ -775,6 +775,13 @@ Specify the prefix you want to add for your new article filenames.
 
 - Type: `string`
 - Default: `yyyy-MM-dd`
+
+### frontMatter.website.host
+
+Specify the host URL of your website.
+
+- Type: `string`
+- Default: `""`
 
 ## Deprecated settings
 

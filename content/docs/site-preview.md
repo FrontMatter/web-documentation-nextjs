@@ -3,7 +3,7 @@ title: Site preview
 slug: site-preview
 description: null
 date: 2021-08-31T08:24:02.613Z
-lastmod: 2023-02-12T15:48:22.708Z
+lastmod: 2023-09-13T14:07:55.874Z
 weight: 700
 ---
 
@@ -133,6 +133,14 @@ type level will override what is defined on page folder level and globally.
   }
 ]
 ```
+
+### Open on the website
+
+With the `frontMatter.website.host` setting, you can specify the host of your website. Once the
+setting is configured, you can click on the `Open on website` button to open the current page on
+your website.
+
+> **Info**: The `frontMatter.website.host` setting can be configured in the `frontmatter.json` file.
 
 <!-- Link References -->
 
