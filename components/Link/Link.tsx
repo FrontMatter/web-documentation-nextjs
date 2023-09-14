@@ -16,7 +16,7 @@ export const Link: React.FunctionComponent<ILinkProps> = ({ title, link, hideDot
   useEffect(() => {
     const crntPath = router.asPath.replace(/\/#/, '#');
     setIsActive(crntPath === link.replace(/\/#/, '#'));
-  }, [router.asPath]);
+  }, [link, router.asPath]);
 
   return (
     <NextLink

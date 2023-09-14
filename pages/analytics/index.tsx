@@ -99,7 +99,7 @@ const Charts = () => {
     });
 
     return result;
-  }, [stats?.activate]);
+  }, [stats]);
 
   const webviewsData = useMemo(() => {
     return processData(stats?.webviews);
@@ -137,7 +137,7 @@ const Charts = () => {
     });
 
     return results;
-  }, [stats?.events]);
+  }, [stats]);
 
   const getWebviewIds = useMemo(() => {
     return processKeys(webviewsData);

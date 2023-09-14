@@ -1,5 +1,24 @@
 # Change Log
 
+## [9.3.0] - 2023-xx-xx
+
+### ✨ New features
+
+### 🎨 Enhancements
+
+- [#638](https://github.com/estruyf/vscode-front-matter/issues/638): Add Hexo support for the `_drafts` folder
+- [#659](https://github.com/estruyf/vscode-front-matter/issues/659): Implement a filter for the taxonomy dashboard
+- [#662](https://github.com/estruyf/vscode-front-matter/issues/662): Always show the `all articles` tab with the page counter
+- [#663](https://github.com/estruyf/vscode-front-matter/issues/663): Make card tags clickable to filter the view
+
+### ⚡️ Optimizations
+
+### 🐞 Fixes
+
+- [#660](https://github.com/estruyf/vscode-front-matter/issues/660): Allow only to select unique content relationship values
+- [#661](https://github.com/estruyf/vscode-front-matter/issues/661): Fixing the dropdowns when used at the bottom of a collapsible group
+- [#664](https://github.com/estruyf/vscode-front-matter/issues/664): Fix for parsing draft status in Hexo and Jekyll
+
 ## [9.2.0] - 2023-09-11
 
 ### ✨ New features

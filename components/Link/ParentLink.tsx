@@ -40,7 +40,7 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({ title, l
         ))}
       </ul>
     );
-  }, [links, item]);
+  }, [links]);
 
   const onShowChildren = () => {
     setShowChildren((prev) => !prev);
@@ -72,7 +72,7 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({ title, l
     }
 
     setShowChildren(false);
-  }, [router.asPath, links]);
+  }, [router.asPath, links, link]);
 
   return (
     <>

@@ -1,13 +1,14 @@
-import type { NextPage } from 'next';
+import type { InferGetStaticPropsType, GetStaticProps } from 'next';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Description, OtherMeta, Title } from '../components/Meta';
-import { CTA, Features, Generators, Hero, Layout } from '../components/Page';
+import { CTA, Features, Generators, Hero, Layout, Testimonial } from '../components/Page';
 import { Pricing } from '../components/Pricing';
 import { Extension } from '../constants/extension';
+import { Review, Reviews } from '../models';
 const ScrollOut = require('scroll-out');
 
-const Home: NextPage = () => {
+const Home = ({ reviews }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t: strings } = useTranslation();
 
   useEffect(() => {
@@ -64,9 +65,21 @@ const Home: NextPage = () => {
         <Features />
 
         <Pricing />
+
+        <Testimonial reviews={reviews} />
       </Layout>
     </>
   )
 }
 
 export default Home
+
+export const getStaticProps = (async (context) => {
+  const res = await fetch('https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eliostruyf/extensions/vscode-front-matter/reviews?count=6&filterOptions=3')
+  const repo: Reviews = await res.json();
+  return {
+    props: {
+      reviews: repo.reviews,
+    },
+  };
+}) as GetStaticProps<{ reviews: Review[] }>;
