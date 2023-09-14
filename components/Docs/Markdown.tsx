@@ -41,7 +41,7 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({ content, slu
         elm.parentElement?.parentElement?.classList.add('important');
       }
     }
-  }, ['']);
+  }, []);
 
   if (!content) {
     return null;

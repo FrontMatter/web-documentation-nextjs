@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2023-08-21T08:57:44.549Z",
+  "lastModified": "2023-09-14T10:40:53.198Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -251,6 +251,16 @@
             "default": false,
             "description": "Specify if the field is required"
           },
+          "clearEmpty": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the empty values should be cleared."
+          },
+          "customType": {
+            "type": "string",
+            "default": "",
+            "description": "Specify the name of the custom field type to use."
+          },
           "contentTypeName": {
             "type": "string",
             "default": "",
@@ -342,6 +352,20 @@
               "required": [
                 "dataFileId",
                 "dataFileKey"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "customType"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "customType"
               ]
             }
           },

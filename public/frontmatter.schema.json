@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "#globalconfiguration",
+  "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2023-08-21T08:57:44.549Z",
+  "lastModified": "2023-09-14T10:40:53.197Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -22,7 +22,7 @@
             "markdownDescription": "Specify if this project is the default project to load."
           },
           "configuration": {
-            "$ref": "#globalconfiguration"
+            "$ref": "https://frontmatter.codes/frontmatter.schema.json"
           }
         }
       }
@@ -1174,6 +1174,16 @@
                   "default": false,
                   "description": "Specify if the field is required"
                 },
+                "clearEmpty": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if the empty values should be cleared."
+                },
+                "customType": {
+                  "type": "string",
+                  "default": "",
+                  "description": "Specify the name of the custom field type to use."
+                },
                 "contentTypeName": {
                   "type": "string",
                   "default": "",
@@ -1265,6 +1275,20 @@
                     "required": [
                       "dataFileId",
                       "dataFileKey"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "customType"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "customType"
                     ]
                   }
                 },
@@ -1648,6 +1672,10 @@
       "default": "yyyy-MM-dd",
       "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.prefix)",
       "scope": "Templates"
+    },
+    "frontMatter.website.host": {
+      "type": "string",
+      "markdownDescription": "Specify the host URL of your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.website.url)"
     }
   }
 }
