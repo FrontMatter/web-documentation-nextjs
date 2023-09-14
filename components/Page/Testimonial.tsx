@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Review } from '../../models';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { format, parseISO } from 'date-fns';
+import { VscQuote } from 'react-icons/vsc';
 
 export interface ITestimonialProps {
   reviews: Review[];
@@ -26,7 +27,15 @@ export const Testimonial: React.FunctionComponent<ITestimonialProps> = ({
         </div>
         <div className="mt-12 grid lg:mb-12 lg:grid-cols-2 bg-vulcan-400">
           {reviews.map((review, index) => (
-            <figure key={index} className={`flex flex-col justify-center items-center p-8 text-center border-b border-vulcan-200 md:p-12 ${index % 2 === 0 ? "lg:border-r" : ""} ${index > 3 ? "lg:border-b-0" : ""}`}>
+            <figure key={index} className={`flex flex-col p-8 text-center border-b border-vulcan-200 md:p-12 ${index % 2 === 0 ? "lg:border-r" : ""} ${index > 3 ? "lg:border-b-0" : ""}`}>
+              <figcaption className="flex mb-4 items-center space-x-3">
+                <img className="w-9 h-9 rounded-full" src={`https://marketplace.visualstudio.com/avatar?userid=${review.userId}`} alt="profile picture" />
+                <div className="space-y-0.5 font-medium text-whisper-300 text-left">
+                  <div>{review.userDisplayName}</div>
+                  <div className="text-xs text-whisper-900">{format(parseISO(review.updatedDate), "MM/dd/yyyy")}</div>
+                </div>
+              </figcaption>
+
               <div className={`stars mb-4 flex space-x-1`}>
                 {
                   review.rating && [...Array(review.rating)].map((_, index) => (
@@ -35,17 +44,9 @@ export const Testimonial: React.FunctionComponent<ITestimonialProps> = ({
                 }
               </div>
 
-              <blockquote className="mx-auto mb-4 max-w-2xl text-whisper-100">
-                <p className="my-4">&quot;{review.text}&quot;</p>
+              <blockquote className="max-w-2xl text-whisper-100">
+                <p className="text-left">{review.text}</p>
               </blockquote>
-
-              <figcaption className="flex justify-center items-center space-x-3">
-                <img className="w-9 h-9 rounded-full" src={`https://marketplace.visualstudio.com/avatar?userid=${review.userId}`} alt="profile picture" />
-                <div className="space-y-0.5 font-medium text-whisper-300 text-left">
-                  <div>{review.userDisplayName}</div>
-                  <div className="text-xs text-whisper-900">{format(parseISO(review.updatedDate), "MM/dd/yyyy")}</div>
-                </div>
-              </figcaption>
             </figure >
           ))}
         </div >
