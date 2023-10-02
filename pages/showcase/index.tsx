@@ -5,6 +5,7 @@ import { Layout } from '../../components/Page/Layout';
 import { Extension } from '../../constants/extension';
 import featured from '../../featured.json';
 import showcases from '../../showcases.json';
+import themes from '../../themes.json';
 import Image from 'next/image';
 
 const shimmer = (w: number, h: number) => `
@@ -51,7 +52,7 @@ export default function Home({ showcases, featured }: any) {
 
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`showcase_page_description`) as string}</p>
 
-            <div className="mt-8 text-sm">
+            <div className="mt-8 text-base">
               <p>Want to add your site or article/video/... to our showcase page? Great, open a showcase on <a className="text-teal-500 hover:text-teal-900" href={Extension.showcaseLink} target="_blank" rel="noopener noreferrer">Github</a>!</p>
             </div>
           </div>
@@ -59,10 +60,15 @@ export default function Home({ showcases, featured }: any) {
           <div>
             <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">{strings(`showcase_featured_title`) as string}</h2>
 
-            <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
+            <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16`}>
               {allFeatured.sort(sortTitle).map((feature: any) => (
                 <div key={feature.title}>
-                  <a className="group space-y-2 md:space-y-5 relative" href={feature.link} title={feature.title} target="_blank" rel={`noopener noreferrer`}>
+                  <a
+                    className="group space-y-2 md:space-y-5 relative hover:text-teal-700"
+                    href={feature.link}
+                    title={feature.title}
+                    target="_blank"
+                    rel={`noopener noreferrer`}>
                     <figure className={`relative overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
                       <Image
                         className={`w-full object-cover object-left-top`}
@@ -76,15 +82,15 @@ export default function Home({ showcases, featured }: any) {
                       />
                     </figure>
 
-                    <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{feature.title}</h2>
+                    <h2 className="text-xl lg:text-2xl tracking-tight font-extrabold sm:leading-none">{feature.title}</h2>
                   </a>
 
                   {
                     feature.author && (
-                      <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                      <p className="text-base text-whisper-700 mt-1">
                         {
                           feature.author?.link ? (
-                            <a className="text-teal-500 hover:text-teal-900" href={feature.author.link} title={feature.author.name} target="_blank" rel="noopener noreferrer">{feature.author.name}</a>
+                            <a className="text-whisper-900 hover:text-yellow-700" href={feature.author.link} title={feature.author.name} target="_blank" rel="noopener noreferrer">{feature.author.name}</a>
                           ) : (
                             feature.author.name
                           )
@@ -126,14 +132,22 @@ export default function Home({ showcases, featured }: any) {
           </div>
 
           <div>
-            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">Showcases</h2>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">
+              Websites managed by Front Matter CMS
+            </h2>
 
-            <div className={`py-8 grid grid-cols-1 lg:grid-cols-2 gap-8`}>
+            <div className={`py-8 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16`}>
               {showcases.filter((showcase: any) => showcase.image).sort(sortTitle).map((showcase: any) => (
-                <a key={showcase.title} className="group space-y-2 md:space-y-5 relative" href={showcase.link} title={showcase.title} target="_blank" rel={`noopener noreferrer`}>
-                  <figure className={`relative h-64 lg:h-[25rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
+                <a
+                  key={showcase.title}
+                  className="group relative hover:text-teal-700"
+                  href={showcase.link}
+                  title={showcase.title}
+                  target="_blank"
+                  rel={`noopener noreferrer`}>
+                  <figure className={`relative h-64 lg:h-[16rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
                     <Image
-                      className={`w-full object-cover object-left-top`}
+                      className={`w-full h-full object-cover object-left-top`}
                       src={`/showcases/${showcase.image}`}
                       alt={showcase.title}
                       loading={`lazy`}
@@ -144,9 +158,48 @@ export default function Home({ showcases, featured }: any) {
                     />
                   </figure>
 
-                  <h2 className="text-3xl tracking-tight font-extrabold sm:leading-none lg:text-3xl xl:text-4xl">{showcase.title}</h2>
+                  <h3 className="mt-2 text-xl tracking-tight font-extrabold sm:leading-none lg:text-xl xl:text-2xl">
+                    {showcase.title}
+                  </h3>
 
-                  <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{showcase.description}</p>
+                  <p className="mt-1 text-base text-whisper-700">{showcase.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-3xl xl:text-4xl mt-8 tracking-tight font-extrabold sm:leading-none">
+              Templates/themes with Front Matter CMS integration
+            </h2>
+
+            <div className={`py-8 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16`}>
+              {themes.filter((theme: any) => theme.image).sort(sortTitle).map((theme: any) => (
+                <a
+                  key={theme.title}
+                  className="group relative hover:text-teal-700"
+                  href={theme.link}
+                  title={theme.title}
+                  target="_blank"
+                  rel={`noopener noreferrer`}>
+                  <figure className={`relative h-64 lg:h-[16rem] overflow-hidden grayscale group-hover:grayscale-0 text-center`}>
+                    <Image
+                      className={`w-full h-full object-cover object-left-top`}
+                      src={`/showcases/themes/${theme.image}`}
+                      alt={theme.title}
+                      loading={`lazy`}
+                      placeholder="blur"
+                      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(592, 400))}`}
+                      width={592}
+                      height={400}
+                    />
+                  </figure>
+                  <h3 className="mt-2 text-xl tracking-tight font-extrabold sm:leading-none lg:text-xl xl:text-2xl">
+                    {theme.title}
+                  </h3>
+
+                  <p className="mt-1 text-base text-whisper-700">SSG: {theme.generator}</p>
+                  <p className="mt-1 text-base text-whisper-700">{theme.description}</p>
                 </a>
               ))}
             </div>
