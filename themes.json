@@ -1,8 +1,17 @@
 [{
-  "title": "Elva",
-  "link": "https://github.com/scottsweb/elva",
-  "description": "A multilingual, clean, green, 11ty starter theme.",
-  "generator": "11ty",
-  "author": "Scott Evans",
-  "image": "elva.png"
-}]
+    "title": "Pacamara",
+    "link": "https://github.com/palmiak/pacamara-astro",
+    "description": "Pacamara is a simple blog theme for Astro that uses md and mdx files to store your content.",
+    "generator": "Astro",
+    "author": "Maciek Palmowski",
+    "image": "pacamara.png"
+  },
+  {
+    "title": "Elva",
+    "link": "https://github.com/scottsweb/elva",
+    "description": "A multilingual, clean, green, 11ty starter theme.",
+    "generator": "11ty",
+    "author": "Scott Evans",
+    "image": "elva.png"
+  }
+]

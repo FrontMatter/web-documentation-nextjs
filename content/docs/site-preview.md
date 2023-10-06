@@ -3,7 +3,7 @@ title: Site preview
 slug: site-preview
 description: null
 date: 2021-08-31T08:24:02.613Z
-lastmod: 2023-09-13T14:07:55.874Z
+lastmod: 2023-10-06T13:38:27.563Z
 weight: 700
 ---
 
@@ -141,6 +141,15 @@ setting is configured, you can click on the `Open on website` button to open the
 your website.
 
 > **Info**: The `frontMatter.website.host` setting can be configured in the `frontmatter.json` file.
+
+### Support for Browse Lite extension
+
+In case you have the [Browse Lite](https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite)
+extension installed, Front Matter will use this extension to open the preview. The advantage of this
+extension is that it uses a real browser in the background to render the preview. For frameworks
+like Nuxt, this allows you to see the updates immediately.
+
+![Browse Lite extension support](/releases/v9.3.0/browse-lite-support.png)
 
 <!-- Link References -->
 

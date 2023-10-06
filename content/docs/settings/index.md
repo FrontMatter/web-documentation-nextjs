@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-06-29T14:09:57.640Z
+lastmod: 2023-10-06T13:23:18.535Z
 weight: 1100
 ---
 
@@ -13,6 +13,16 @@ weight: 1100
 
 Most of Front Matter is configurable to your needs. In this part of the documentation all settings
 are explained.
+
+## Settings view
+
+On the Front Matter CMS dashboard, you can find the settings view. This view allows you to configure
+the common settings of the CMS.
+
+![Settings view](/releases/v9.3.0/settings-view.png)
+
+> **Info**: You find also a link to get a full diagnostic of your settings. This is useful when you
+> want to troubleshoot your settings or know what the CMS is loading.
 
 ## Team settings and local settings
 
@@ -27,6 +37,9 @@ As you do not typically share your `.vscode/settings.json` configuration, we wen
 `frontmatter.json` file on the root of your project/solution. The settings you provide in this JSON
 file are the same as you can configure on a local level. This allows you to easily copy, move
 settings from team to local level and vice versa.
+
+> **Info**: The `frontmatter.json` file can be placed anywhere in your project/solution. The CMS
+> will automatically detect it.
 
 ## Migrate local settings to team settings
 
@@ -147,6 +160,38 @@ share a common set of settings across multiple projects.
      "./config/frontmatter.config.json"
   ],
   ...
+}
+```
+
+## Extending with code
+
+You can also extend the settings with a custom JavaScript module/file. This functionality allows you
+to extend the settings with more dynamic settings. For instance, you can use this to load settings
+based on the current machine.
+
+Create a new JavaScript file in your project. For instance, `frontmatter.config.js`.
+Here is an example of how you can extend the settings:
+
+<!-- markdownlint-disable-next-line MD013 -->
+```javascript {{ "title": "frontmatter.config.js", "description": "Example of integrating .env support" }}
+const path = require('path');
+require('dotenv').config({
+  path: path.join(__dirname, `.env`)
+});
+
+module.exports = async (config) => {
+  return {
+    ...config,
+    "frontMatter.preview.host": process.env.FRONTMATTER_PREVIEW_HOST
+  }
+}; 
+```
+
+Once the file has been created, you can reference it in your `frontmatter.json` file:
+
+```json {{ "title": "frontmatter.json" }}
+{
+  "frontMatter.config.dynamicFilePath": "[[workspace]]/frontmatter.config.js"
 }
 ```
 

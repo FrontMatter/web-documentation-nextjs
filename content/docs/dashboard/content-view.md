@@ -3,7 +3,7 @@ title: Content view
 slug: content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2023-08-20T10:48:05.769Z
+lastmod: 2023-10-06T13:36:12.765Z
 weight: 300.1
 ---
 
@@ -82,7 +82,15 @@ project, not for all of them.
 ## Content pagination
 
 By default, the content is paginated by 16 items. If you want, you can disable the pagination by
-setting the `frontMatter.dashboard.content.pagination` setting to `false`. In case you want to change the number of items per page, you can specify a number in the same setting.
+setting the `frontMatter.dashboard.content.pagination` setting to `false`.
+In case you want to change the number of items per page, you can specify a number in the same setting.
+
+## Content pinning
+
+In case you have content which you want to highlight, or use frequently. You can pin it to the top
+of the content view. This will allow you to quickly access.
+
+![Pin content to your dashboard](/releases/v9.3.0/content-pinning-light.png)
 
 <!-- Link References -->
 

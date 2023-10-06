@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-09-13T14:02:36.428Z
+lastmod: 2023-10-06T13:46:40.906Z
 weight: 1100.2
 ---
 
@@ -12,6 +12,17 @@ weight: 1100.2
 Here you can find an overview of all available settings.
 
 ## Available settings
+
+### frontMatter.config.dynamicFilePath
+
+Allows you to specify a dynamic config file path which will be used during the initialization of
+the extension. You can, for instance, use it to dynamically set the path of the preview host.
+
+- Type: `string`
+- Default: `""`
+
+> **Info**: More information on how to use it can be found in the
+> [extending settings with code][20] section.
 
 ### frontMatter.content.autoUpdateDate
 
@@ -112,6 +123,7 @@ Properties:
 | `previewPath`   | `string`   | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more.                              |         | Optional            |
 | `filePrefix`    | `string`   | Defines a prefix for the file name.                                                                                                                  |         | Optional            |
 | `contentTypes`  | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
+| `disableCreation` | `boolean` | Disables the creation of new content in this folder.                                                                                                 |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
@@ -497,6 +509,23 @@ Specify the mime types to support for the media files.
 - Type: `array`
 - Default: `image/*, video/*, audio/*`
 
+## frontMatter.panel.actions.disabled
+
+Specify the actions you want to disable in the panel.
+
+- Type: `array<string>`
+- Default: `[]`
+
+Options:
+
+- `openDashboard`
+- `createContent`
+- `optimizeSlug`
+- `preview`
+- `openOnWebsite`
+- `startStopServer`
+- `customActions`
+
 ### frontMatter.panel.freeform
 
 Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker
@@ -834,3 +863,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [17]: /docs/sponsor-features#front-matter-ai
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
+[20]: /docs/settings#extending-with-code

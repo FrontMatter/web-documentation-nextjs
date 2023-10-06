@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-09-11T08:03:36.707Z
+lastmod: 2023-10-06T14:38:00.539Z
 weight: 100
 ---
 
@@ -85,6 +85,20 @@ started. You can select one of the templates from the list of available template
 
 > **Info**: The templates are stored in the
 > [Front Matter CMS - Starter Templates][12] repository.
+
+### Step 2.2 (optional): Generate content types from Astro Content Collection(s)
+
+As in Astro you need to define the type of content you create with Content Collections, we have
+added a feature to generate the content types based on the Astro Content Collection(s) you have
+defined.
+
+During the initialization of Front Matter CMS, when you select Astro as your site generator, you
+will be able to select the Astro Content Collection(s) you want to use.
+
+![Astro Content Collection][14]
+
+> **Info**: When you select the Astro Content Collection(s), the CMS will automatically add the
+> corresponding folder to the `frontmatter.content.pageFolders` configuration setting.
 
 ### Step 3: Register content folder(s)
 
@@ -169,7 +183,7 @@ start typing your question.
 [02]: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter-beta
 [03]: https://beta.frontmatter.codes
 [04]: /releases/v7.2.0/welcome-screen-7.2.0.png
-[05]: /releases/v7.2.0/content-list.png
+[05]: /releases/v9.3.0/register-content-folders.png
 [06]: /assets/register-folder.png
 [07]: /docs/settings/overview#frontmatter.content.pagefolders
 [08]: /releases/v5.0.0/workspace-folder.png
@@ -177,4 +191,5 @@ start typing your question.
 [10]: /releases/v6.0.0/support-links-hidden.png
 [11]: /releases/v6.0.0/signin-github.png
 [12]: https://github.com/frontmatter/templates
-[13]: /releases/v9.2.0/templates.png
+[13]: /releases/v9.3.0/templates.png
+[14]: /releases/v9.3.0/astro-content-collections-light.png
