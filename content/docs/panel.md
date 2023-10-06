@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-07-22T23:05:06.251Z
+lastmod: 2023-10-06T13:47:51.482Z
 weight: 400
 ---
 
@@ -75,6 +75,25 @@ section, we provide you the most used/requested actions like:
 > **Info**: In version `3.2.0` a couple of actions were moved to the metadata section like changing
 > the draft state and date time properties.
 
+### Disable/hide actions
+
+In case you do not want to use all the actions, you can disable them by using the
+`frontMatter.panel.actions.disabled` setting.
+
+```json {{ "title": "Example configuration to disable all actions" }}
+{
+  "frontMatter.panel.actions.disabled": [
+    "openDashboard",
+    "createContent",
+    "optimizeSlug",
+    "preview",
+    "openOnWebsite",
+    "startStopServer",
+    "customActions"
+  ]
+}
+```
+
 ### Settings
 
 The following settings are related to these actions:
@@ -118,8 +137,8 @@ show you a list of actions.
   tags/categories in the tag picker (when enabled, you will have the option to store them
   afterwards). Default: `true`.
 - `frontMatter.taxonomy.frontMatterType`: Specify which Front Matter language you want to use. The
-  extension supports `YAML` (default), `TOML`, and `JSON`. 
-  
+  extension supports `YAML` (default), `TOML`, and `JSON`.
+
 ## Recently modified
 
 Navigate quickly to a recently modified file. In the recently modified section, the latest 10
@@ -155,7 +174,7 @@ In this section of the panel, you can modify a couple of the useful settings to 
 
 <!-- markdownlint-disable MD028 -->
 
-> **Important**: By default, the global settings section is hidden, you need to create a view mode 
+> **Important**: By default, the global settings section is hidden, you need to create a view mode
 > which holds the `panel.globalSettings` panel ID to show it.
 
 > **Info**: The global settings section will also be shown when you have the panel open on other
@@ -163,7 +182,7 @@ In this section of the panel, you can modify a couple of the useful settings to 
 
 > **Local server command**: If you already defined your framework or SSG via the
 > `frontMatter.framework.id` setting, we provide a default start command for you. You can override
-> this by providing your own start command. You can also change the start command in the 
+> this by providing your own start command. You can also change the start command in the
 > [frontMatter.framework.startCommand][14] setting.
 
 ## View modes

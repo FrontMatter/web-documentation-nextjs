@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-04-28T09:19:34.217Z
+lastmod: 2023-10-06T13:49:58.889Z
 weight: 500
 ---
 
@@ -47,6 +47,7 @@ Custom actions can be configured with the following properties:
 | `outputType`   | `<text \| html>`                        | Specifies the output type (optional). <br /><br /> Available values the editor values from VS Code like: <br /><br /> `text`: The output will be passed as a text file. <br /> `html`: The output will be passed as an HTML file. <br /> `markdown`: The output will be passed as a Markdown file. | `text`         |
 | `hidden`       | `boolean`                               | Hide the action from the UI. This is mostly used when creating a content script that will be used to post process new content (optional).                                                                                                                                                          | `false`        |
 | `environments` | `environment`                           | The environments option allows you to specify in which environments the script should be executed (optional). <br /><br /> Available values are: `macos`, `linux`, or `windows`.                                                                                                                   | `undefined`    |
+| `contentTypes` | `string[]`                              | The content types for which the script will be used (optional). <br /><br /> Example: `["post"]`                                                                                                                                                                                         | `undefined`    |
 
 > **Important**: Previously, you could define the `nodeBin` property to define the path to your node
 > executable. This path was needed when you are working with for instance `nvm` and have multiple

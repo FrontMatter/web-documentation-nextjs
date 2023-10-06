@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-09-12T18:17:25.997Z
+lastmod: 2023-10-06T12:02:44.400Z
 weight: 200.2
 ---
 
@@ -26,6 +26,7 @@ Front Matter supports the following fields to be used in the content-types:
 - [categories](#categories)
 - [taxonomy](#taxonomy)
 - [fields](#fields)
+- [fieldCollection](#fieldcollection)
 - [block](#block)
 - [dataFile](#data-file)
 - [slug](#slug)
@@ -589,6 +590,49 @@ photo:
   title: "Photo 1"
   url: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
 ---
+```
+
+## fieldCollection
+
+The `fieldCollection` field type allows you to reuse fields in multiple content types. This is
+especially useful when you have a lot of content types and want to reuse the same fields.
+
+### Prerequisites
+
+To work with the `fieldCollection` field type, you need to define a field group (a set of fields for
+your data) in the `frontMatter.taxonomy.fieldGroups` setting.
+
+```json {{ "title": "Field group definition to be used in the fieldCollection" }}
+"frontMatter.taxonomy.fieldGroups": [
+  {
+    "id": "GeneralFields",
+    "fields": [
+      {
+        "title": "Title",
+        "name": "title",
+        "type": "string",
+        "single": true
+      },
+      {
+        "title": "Description",
+        "name": "description",
+        "type": "string"
+      }
+    ]
+  }
+]
+```
+
+### Properties
+
+- `fieldGroup`: Define the field group that will be used to create a list of data.
+
+```json {{ "title": "Usage" }}
+{
+  "name": "fieldCollection",
+  "type": "fieldCollection",
+  "fieldGroup": "GeneralFields"
+}
 ```
 
 ## Block

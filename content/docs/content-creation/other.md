@@ -3,7 +3,7 @@ title: Additional configuration
 slug: content-creation/additional-config
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-02-12T14:40:40.022Z
+lastmod: 2023-10-06T13:30:33.717Z
 weight: 200.5
 ---
 
@@ -134,5 +134,23 @@ If you want to preserve the casing of the file name, you can set the
 ```json
 {
   "frontMatter.file.preserveCasing": true
+}
+```
+
+## Disable creation in specific folders
+
+If you want to disable the creation of new files in specific folders, you can do this by adding the
+`disableCreation` property to the page folder. Once this is added, the CMS will only use the folder
+to show the files.
+
+```json
+{
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Blog",
+      "path": "[[workspace]]/content/blog",
+      "disableCreation": true
+    }
+  ]
 }
 ```
