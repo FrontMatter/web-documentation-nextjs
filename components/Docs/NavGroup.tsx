@@ -3,6 +3,7 @@ import { Section } from '../Link/Section';
 import { PageFrontMatter } from '../../models';
 import { Link } from '../Link/Link';
 import { ParentLink } from '../Link/ParentLink';
+import { useRouter } from 'next/router';
 
 export interface INavGroupProps {
   items: PageFrontMatter[];
@@ -13,6 +14,9 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
   items,
   item
 }: React.PropsWithChildren<INavGroupProps>) => {
+  const router = useRouter();
+  const [hasActiveLink, setHasActiveLink] = React.useState<boolean>(false);
+
   const getLinks = React.useMemo(() => {
     const { content } = item;
     const links = Array.from(content.matchAll(/^## (.*$)/gim));
@@ -24,16 +28,25 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
       return null;
     }
 
+    const crntPath = router.asPath.replace(/\/#/, '#');
+    let activeLink = !!links.find(link => crntPath === link[1].replace(/\/#/, '#'));
+    if (!activeLink && subItems && subItems.length > 0) {
+      activeLink = !!subItems.find(link => crntPath === `/docs/${link.slug}`.replace(/\/#/, '#'));
+    }
+    setHasActiveLink(!!activeLink);
+
     return (
       <ul className={`mt-2 space-y-2`}>
-        {links.map((link, index) => (
-          <li key={index}>
-            <Link
-              title={link[1]}
-              link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
-            />
-          </li>
-        ))}
+        {links.map((link, index) => {
+          return (
+            <li key={index}>
+              <Link
+                title={link[1]}
+                link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
+              />
+            </li>
+          );
+        })}
 
         {subItems.map((subItem) => (
           <li key={subItem.slug} className={`group`}>
@@ -51,7 +64,8 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
   return (
     <Section
       title={item.title}
-      link={`/docs/${item.slug !== "index" ? item.slug : ''}`}>
+      link={`/docs/${item.slug !== "index" ? item.slug : ''}`}
+      hasActiveLink={hasActiveLink}>
       {getLinks}
     </Section>
   );
