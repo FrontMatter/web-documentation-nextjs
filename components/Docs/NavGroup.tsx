@@ -15,7 +15,6 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
   item
 }: React.PropsWithChildren<INavGroupProps>) => {
   const router = useRouter();
-  const [hasActiveLink, setHasActiveLink] = React.useState<boolean>(false);
 
   const getLinks = React.useMemo(() => {
     const { content } = item;
@@ -27,13 +26,6 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
     if ((!links || links.length === 0) && (!subItems || subItems.length === 0)) {
       return null;
     }
-
-    const crntPath = router.asPath.replace(/\/#/, '#');
-    let activeLink = !!links.find(link => crntPath === link[1].replace(/\/#/, '#'));
-    if (!activeLink && subItems && subItems.length > 0) {
-      activeLink = !!subItems.find(link => crntPath === `/docs/${link.slug}`.replace(/\/#/, '#'));
-    }
-    setHasActiveLink(!!activeLink);
 
     return (
       <ul className={`mt-2 space-y-2`}>
@@ -64,8 +56,7 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
   return (
     <Section
       title={item.title}
-      link={`/docs/${item.slug !== "index" ? item.slug : ''}`}
-      hasActiveLink={hasActiveLink}>
+      link={`/docs/${item.slug !== "index" ? item.slug : ''}`}>
       {getLinks}
     </Section>
   );

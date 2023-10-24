@@ -7,22 +7,29 @@ import { useEffect } from 'react';
 export interface ISectionProps {
   title: string;
   link: string;
-  hasActiveLink: boolean;
 }
 
 export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionProps>> = ({
   title,
   link,
-  hasActiveLink,
   children
 }: React.PropsWithChildren<ISectionProps>) => {
   const router = useRouter();
   const [isActive, setIsActive] = React.useState(false);
   const [showChildren, setShowChildren] = React.useState<boolean | undefined>(undefined);
+  const [hasActiveLink, setHasActiveLink] = React.useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const page = router.asPath;
-    setIsActive(page === link || link === `${page}/` || page.includes(`${link}#`) || page.includes(`${link}index`));
+    console.log(page, link);
+    // Remove the last slash
+    const crntLink = link.endsWith('/') ? link.slice(0, -1) : link;
+    console.log(page, crntLink);
+    setIsActive(page === crntLink || crntLink === `${page}/` || page.includes(`${crntLink}#`) || page.includes(`${crntLink}index`));
+
+    if (crntLink.split('/').length > 2) {
+      setHasActiveLink(page.includes(crntLink))
+    }
   }, [router.asPath, link]);
 
   return (
@@ -40,7 +47,11 @@ export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionPr
           title={`Show children of ${title.toLowerCase()}`}
           onClick={() => setShowChildren(prev => !prev)} >
           {
-            ((isActive && typeof showChildren === "undefined") || (hasActiveLink && typeof showChildren === "undefined") || showChildren) ? (
+            (
+              (isActive && typeof showChildren === "undefined") ||
+              (hasActiveLink && typeof showChildren === "undefined") ||
+              showChildren
+            ) ? (
               <ChevronDownIcon className='h-4' />
             ) : (
               <ChevronRightIcon className='h-4' />
@@ -52,8 +63,8 @@ export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionPr
       {
         (
           (isActive && typeof showChildren === "undefined") ||
-          (showChildren && typeof showChildren !== "undefined") ||
-          (hasActiveLink && typeof showChildren === "undefined")
+          (hasActiveLink && typeof showChildren === "undefined") ||
+          (showChildren && typeof showChildren !== "undefined")
         ) && children
       }
     </>
