@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2023-09-14T10:40:53.198Z",
+  "lastModified": "2023-10-24T09:09:01.211Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -18,6 +18,11 @@
         "mdx"
       ],
       "description": "Specifies the type of content you want to create."
+    },
+    "clearEmpty": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specify if the empty values should be cleared."
     },
     "fields": {
       "$id": "#contenttypefield",
@@ -50,7 +55,8 @@
               "divider",
               "heading",
               "customField",
-              "contentRelationship"
+              "contentRelationship",
+              "fieldCollection"
             ],
             "description": "Define the type of field"
           },
@@ -251,11 +257,6 @@
             "default": false,
             "description": "Specify if the field is required"
           },
-          "clearEmpty": {
-            "type": "boolean",
-            "default": false,
-            "description": "Specify if the empty values should be cleared."
-          },
           "customType": {
             "type": "string",
             "default": "",
@@ -444,6 +445,20 @@
               "properties": {
                 "type": {
                   "const": "block"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fieldGroup"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "fieldCollection"
                 }
               }
             },

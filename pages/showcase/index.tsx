@@ -198,7 +198,10 @@ export default function Home({ showcases, featured }: any) {
                     {theme.title}
                   </h3>
 
-                  <p className="mt-1 text-base text-whisper-700">SSG: {theme.generator}</p>
+                  <p className="mt-1 text-base text-whisper-900">
+                    Author: {theme.author} - SSG: {theme.generator}
+                  </p>
+
                   <p className="mt-1 text-base text-whisper-700">{theme.description}</p>
                 </a>
               ))}
