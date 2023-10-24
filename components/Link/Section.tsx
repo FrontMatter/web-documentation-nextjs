@@ -7,9 +7,15 @@ import { useEffect } from 'react';
 export interface ISectionProps {
   title: string;
   link: string;
+  hasActiveLink: boolean;
 }
 
-export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionProps>> = ({ title, link, children }: React.PropsWithChildren<ISectionProps>) => {
+export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionProps>> = ({
+  title,
+  link,
+  hasActiveLink,
+  children
+}: React.PropsWithChildren<ISectionProps>) => {
   const router = useRouter();
   const [isActive, setIsActive] = React.useState(false);
   const [showChildren, setShowChildren] = React.useState<boolean | undefined>(undefined);
@@ -34,7 +40,7 @@ export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionPr
           title={`Show children of ${title.toLowerCase()}`}
           onClick={() => setShowChildren(prev => !prev)} >
           {
-            ((isActive && typeof showChildren === "undefined") || showChildren) ? (
+            ((isActive && typeof showChildren === "undefined") || (hasActiveLink && typeof showChildren === "undefined") || showChildren) ? (
               <ChevronDownIcon className='h-4' />
             ) : (
               <ChevronRightIcon className='h-4' />
@@ -46,7 +52,8 @@ export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionPr
       {
         (
           (isActive && typeof showChildren === "undefined") ||
-          (showChildren && typeof showChildren !== "undefined")
+          (showChildren && typeof showChildren !== "undefined") ||
+          (hasActiveLink && typeof showChildren === "undefined")
         ) && children
       }
     </>

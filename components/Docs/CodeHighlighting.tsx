@@ -83,8 +83,6 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
 
       shiki.setCDN(`../../`);
 
-      console.log(language);
-
       shiki.getHighlighter({
         langs: [language as any],
         theme: `the-unnamed`
