@@ -12,7 +12,9 @@ weight: 500
 ## Overview
 
 <div class="iframe__wrapper">
-  <iframe src="https://www.youtube.com/embed/wvH9Tn5LQ2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/wvH9Tn5LQ2c" title="YouTube video player"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+   picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 Not every website is the same. That is why we want to give you the ability to extend Front Matter

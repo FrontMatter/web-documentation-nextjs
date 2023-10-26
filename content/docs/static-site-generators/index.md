@@ -44,7 +44,8 @@ Check out our Hugo configuration documentation to get you started using Front Ma
 
 ### Next.js
 
-Check out our Next.js configuration documentation to get you started using Front Matter: [Front Matter configuration with Next.js][04].
+Check out our Next.js configuration documentation to get you started using Front Matter:
+ [Front Matter configuration with Next.js][04].
 
 ### Other static site generators
 

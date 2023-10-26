@@ -14,7 +14,9 @@ weight: 100
 To get you started, you first need to install the extension in Visual Studio Code.
 
 <div class="iframe__wrapper">
-  <iframe src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+    picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## Installation

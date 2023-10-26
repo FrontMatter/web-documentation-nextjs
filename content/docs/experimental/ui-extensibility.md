@@ -108,7 +108,8 @@ enableDevelopmentMode();
  */
 registerCardImage(async (filePath, metadata) => {
     const image = metadata.fmPreviewImage ? metadata.fmPreviewImage : `${metadata.fmWebviewUrl}/relPath/to/fallback.jpg`;
-    return `<img src="${image}" alt="${metadata.title}" style="object-fit: cover;" class="h-36" />`;
+    return `<img src="${image}" alt="${metadata.title}" style="object-fit: 
+    cover;" class="h-36" />`;
 });
 ```
 

@@ -46,5 +46,3 @@ There are the following commands to open the dashboards:
 [01]: /releases/v7.1.0/dashboard-7.1.0.png
 [02]: /releases/v7.1.0/dashboard-media.png
 [03]: /docs/getting-started
-
-

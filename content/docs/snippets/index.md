@@ -16,7 +16,9 @@ provides the editor an easy way to add various elements to the content that is d
 project/website.
 
 <div class="iframe__wrapper">
-   <iframe src="https://www.youtube.com/embed/0J-StFyEbV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe src="https://www.youtube.com/embed/0J-StFyEbV0" title="YouTube video player"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+   picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 All snippets can be found on the snippets dashboard.
@@ -172,7 +174,8 @@ For instance, in the above example, the following wrapper is added:
 ```
 <!-- markdownlint-enable MD013 -->
 
-> **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting. By default, it
+> **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting.
+ By default, it
 is enabled.
 
 ## Media snippets
