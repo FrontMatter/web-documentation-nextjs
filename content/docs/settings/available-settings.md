@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-10-06T13:46:40.906Z
+lastmod: 2023-10-27T07:02:42.637Z
 weight: 1100.2
 ---
 
@@ -509,7 +509,7 @@ Specify the mime types to support for the media files.
 - Type: `array`
 - Default: `image/*, video/*, audio/*`
 
-## frontMatter.panel.actions.disabled
+### frontMatter.panel.actions.disabled
 
 Specify the actions you want to disable in the panel.
 
