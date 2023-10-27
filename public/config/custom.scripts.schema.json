@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/custom.scripts.schema.json",
   "description": "Defines the settings for Front Matter custom script",
-  "lastModified": "2023-09-14T10:40:53.198Z",
+  "lastModified": "2023-10-24T09:28:57.205Z",
   "type": "object",
   "title": "Front Matter - custom script",
   "properties": {
@@ -95,6 +95,13 @@
             "$ref": "#scriptCommand"
           }
         }
+      }
+    },
+    "contentTypes": {
+      "type": "array",
+      "description": "Define the content types for which the script will be used. If none are defined, it will be available to all types.",
+      "items": {
+        "type": "string"
       }
     }
   },

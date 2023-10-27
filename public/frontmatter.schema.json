@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2023-09-14T10:40:53.197Z",
+  "lastModified": "2023-10-24T09:28:57.204Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -53,6 +53,11 @@
       "items": {
         "type": "string"
       }
+    },
+    "frontMatter.config.dynamicFilePath": {
+      "type": "string",
+      "markdownDescription": "Specify the path to the dynamic config file (ex: [[workspace]]/config.js). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.config.dynamicfilepath)",
+      "default": ""
     },
     "frontMatter.content.autoUpdateDate": {
       "type": "boolean",
@@ -195,6 +200,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "disableCreation": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable the creation of new content in the folder."
           }
         },
         "additionalProperties": false,
@@ -472,6 +482,13 @@
                   "$ref": "#scriptCommand"
                 }
               }
+            }
+          },
+          "contentTypes": {
+            "type": "array",
+            "description": "Define the content types for which the script will be used. If none are defined, it will be available to all types.",
+            "items": {
+              "type": "string"
             }
           }
         },
@@ -878,6 +895,20 @@
       "markdownDescription": "Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: true. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.freeform)",
       "scope": "Panel"
     },
+    "frontMatter.panel.actions.disabled": {
+      "type": "array",
+      "default": [],
+      "markdownDescription": "%setting.frontMatter.panel.actions.disabeld.markdownDescription%",
+      "enum": [
+        "openDashboard",
+        "createContent",
+        "optimizeSlug",
+        "preview",
+        "openOnWebsite",
+        "startStopServer",
+        "customActions"
+      ]
+    },
     "frontMatter.preview.host": {
       "type": "string",
       "default": "",
@@ -942,6 +973,11 @@
             ],
             "description": "Specifies the type of content you want to create."
           },
+          "clearEmpty": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the empty values should be cleared."
+          },
           "fields": {
             "$id": "#contenttypefield",
             "type": "array",
@@ -973,7 +1009,8 @@
                     "divider",
                     "heading",
                     "customField",
-                    "contentRelationship"
+                    "contentRelationship",
+                    "fieldCollection"
                   ],
                   "description": "Define the type of field"
                 },
@@ -1173,11 +1210,6 @@
                   "type": "boolean",
                   "default": false,
                   "description": "Specify if the field is required"
-                },
-                "clearEmpty": {
-                  "type": "boolean",
-                  "default": false,
-                  "description": "Specify if the empty values should be cleared."
                 },
                 "customType": {
                   "type": "string",
@@ -1380,6 +1412,20 @@
                   "if": {
                     "properties": {
                       "type": {
+                        "const": "fieldCollection"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "fieldGroup"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
                         "const": "json"
                       }
                     }
@@ -1534,7 +1580,7 @@
     },
     "frontMatter.taxonomy.fieldGroups": {
       "type": "array",
-      "markdownDescription": "Define the field groups you want to use for your block fields. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.fieldgroups)",
+      "markdownDescription": "Define the field groups you want to use for your block fields or collection fields. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.fieldgroups)",
       "default": [],
       "items": {
         "type": "object",
