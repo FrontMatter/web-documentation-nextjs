@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2022-09-22T06:31:23.818Z
 weight: 300
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Dashboard
 
 ## Overview
@@ -47,4 +47,4 @@ There are the following commands to open the dashboards:
 [02]: /releases/v7.1.0/dashboard-media.png
 [03]: /docs/getting-started
 
-
+<!-- markdownlint-enable MD013 -->

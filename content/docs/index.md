@@ -6,21 +6,21 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-03-27T08:12:48.985Z
 weight: 1
 ---
-
+<!-- markdownlint-disable MD013  -->
 # Introduction
 
 ## Overview
 
-Are you tired of managing your markdown articles manually? Do you want to simplify 
-the process of content creation and management? Look no further than the Front Matter 
+Are you tired of managing your markdown articles manually? Do you want to simplify
+the process of content creation and management? Look no further than the Front Matter
 extension for Visual Studio Code.
 
-Designed for developers and content creators, Front Matter gives you the power and 
-control of a full-blown CMS, without the hassle of dealing with servers, websites, or APIs. 
-With Front Matter, you can create and manage your content directly in Visual Studio Code, 
+Designed for developers and content creators, Front Matter gives you the power and
+control of a full-blown CMS, without the hassle of dealing with servers, websites, or APIs.
+With Front Matter, you can create and manage your content directly in Visual Studio Code,
 using your favorite tools and workflows.
 
-The extension supports several static-site generators and frameworks, including 
+The extension supports several static-site generators and frameworks, including
 Astro, Hugo, Jekyll, Hexo, NextJs, Gatsby, and more.
 
 ![Welcome screen to configure your website][01]
@@ -77,3 +77,5 @@ the next level.
 [02]: https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png
 [03]: https://twitter.com/eliostruyf
 [04]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2022-09-22T09:31:04.413Z
 lastmod: 2023-04-01T13:50:42.582Z
 weight: 450
 ---
-
+<!-- markdownlint-disable MD013 -->
 # GIT Integration
 
 If you are using git to manage your content, Front Matter can be used to sync your changes from and
@@ -40,3 +40,5 @@ following settings:
 
 <!-- Link References -->
 [01]: /releases/v8.1.0/git-integration.png
+
+<!-- markdownlint-enable MD013 -->

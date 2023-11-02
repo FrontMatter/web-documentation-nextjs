@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-09-11T07:58:42.087Z
 weight: 900
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Commands
 
 ## Overview
@@ -189,3 +189,5 @@ ID: `frontMatter.settings.refresh`
 This command has been removed, as it became obsolete since the introduction of Content Types.
 
 ID: `frontMatter.setDate`
+
+<!-- markdownlint-enable MD013 MD033 -->

@@ -6,7 +6,7 @@ date: 2023-04-01T12:41:24.675Z
 lastmod: 2023-04-01T13:00:21.325Z
 weight: 1100.1
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Projects
 
 Projects are useful when managing multiple sites or when you want to separate your content
@@ -71,7 +71,7 @@ when you open the Front Matter CMS - dashboard. When you switch between projects
 the settings will be reloaded, but also the last used project will be remembered.
 
 > **Important**: In the `configuration` object, you can use all of the Front Matter CMS - settings.
-Be aware that it overrides what has been defined on global level. It will not merge the settings.
+> Be aware that it overrides what has been defined on global level. It will not merge the settings.
 
 ## Switching projects
 
@@ -79,3 +79,5 @@ You can switch between projects by using the **Front Matter: Switch project** co
 panel project switch action, or the project dropdown on the dashboard.
 
 ![Project switching](/releases/v8.4.0/project-support.png)
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2022-03-04T14:40:10.952Z
 lastmod: 2023-11-02T15:00:05.728Z
 weight: 850
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Snippets
 
 ## Overview
@@ -17,7 +17,9 @@ project/website.
 
 <!-- markdownlint-disable MD013 MD033 -->
 <div class="iframe__wrapper">
-   <iframe src="https://www.youtube.com/embed/0J-StFyEbV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe src="https://www.youtube.com/embed/0J-StFyEbV0" title="YouTube video player"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+   picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <!-- markdownlint-enable MD013 MD033 -->
 
@@ -164,7 +166,6 @@ inserted data.
 
 For instance, in the above example, the following wrapper is added:
 
-<!-- markdownlint-disable MD013 -->
 ```html
 <!-- FM:Snippet:Start data:{"id":"Highlight (single)","fields":[{"name":"type","value":"typescript"},{"name":"selection","value":"Selected text from content"}]} -->
 {{< highlight typescript "linenos=table,noclasses=false" >}}
@@ -172,10 +173,9 @@ For instance, in the above example, the following wrapper is added:
 {{< / highlight >}}
 <!-- FM:Snippet:End -->
 ```
-<!-- markdownlint-enable MD013 -->
 
-> **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting. By default, it
-is enabled.
+> **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting.
+> By default, it is enabled.
 
 ## Media snippets
 
@@ -214,8 +214,7 @@ The available placeholders for your media snippets are the following:
 - `filename`: Name of the file.
 - `title`: Title of the file.
 
-> **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to
-> use from your snippet.
+> **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
 
 ### Fields
 
@@ -240,7 +239,6 @@ shown when you insert the snippet into your content.
   }
 }
 ```
-<!-- markdownlint-enable MD013 -->
 
 <!-- Link References -->
 [01]: /releases/v7.0.0/snippet-dashboard.png
@@ -249,3 +247,5 @@ shown when you insert the snippet into your content.
 [04]: /releases/v7.0.0/insert-snippet.png
 [05]: /releases/v7.0.0/insert-snippet-form.png
 [06]: /releases/v7.3.0/media-snippets.png
+
+<!-- markdownlint-enable MD013 -->

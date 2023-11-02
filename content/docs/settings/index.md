@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-10-06T13:23:18.535Z
 weight: 1100
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Settings
 
 ## Overview
@@ -206,3 +206,5 @@ that your split configuration settings are applied the way you expect.
 [01]: /releases/v5.0.0/ask-to-promote-settings.png
 [02]: /docs/commands#diagnostic-logging
 [03]: /docs/troubleshooting#inspecting-configuration-behavior
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2021-08-31T05:59:58.852Z
 lastmod: 2022-09-22T08:07:15.584Z
 weight: 800
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Markdown features
 
 ## Overview
@@ -117,3 +117,5 @@ hidden and the Front Matter panel needs to be used to edit the metadata of your 
 [06]: /assets/folding.png
 [07]: /assets/fm-highlight.png
 [08]: /releases/v8.1.0/hide-fm.png
+
+<!-- markdownlint-enable MD013 -->

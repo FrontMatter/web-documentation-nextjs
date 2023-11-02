@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-10-06T13:47:51.482Z
 weight: 400
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Editor panel
 
 ## Overview
@@ -71,7 +71,6 @@ section, we provide you the most used/requested actions like:
 
 > **Important**: You are able to add your own actions, more information about this you can read in
 > our [custom actions][05] section.
-
 > **Info**: In version `3.2.0` a couple of actions were moved to the metadata section like changing
 > the draft state and date time properties.
 
@@ -148,7 +147,6 @@ modified files get shown.
 
 > **Important**: In order to use this functionality, a registered content folder needs to be
 > present. More information in our [getting started][10] section.
-
 > **Info**: The recently modified section will also be shown when you have the panel open on other
 > types of files.
 
@@ -162,7 +160,6 @@ explorer/finder.
 > **Info**: The `writing settings enabled / enable write settings` action allows you to make
 > Markdown specific changes to optimize the writing of your articles. It will change settings like
 > the `fontSize`, `lineHeight`, `wordWrap`, `lineNumbers` and more.
-
 > **Info**: The other actions section will also be shown when you have the panel open on other types
 > of files.
 
@@ -257,3 +254,5 @@ Or in the status bar:
 [12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
 [14]: /docs/settings/overview#frontmatter.framework.startcommand
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-11-02T15:02:12.533Z
 weight: 100
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Getting started
 
 ## Overview
@@ -15,7 +15,9 @@ To get you started, you first need to install the extension in Visual Studio Cod
 
 <!-- markdownlint-disable MD013 MD033 -->
 <div class="iframe__wrapper">
-  <iframe src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/xb6pZiier_E" title="YouTube video player"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+    picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <!-- markdownlint-enable MD013 MD033 -->
 
@@ -85,8 +87,7 @@ started. You can select one of the templates from the list of available template
 
 ![Front Matter CMS - Starter Templates][13]
 
-> **Info**: The templates are stored in the
-> [Front Matter CMS - Starter Templates][12] repository.
+> **Info**: The templates are stored in the [Front Matter CMS - Starter Templates][12] repository.
 
 ### Step 2.2 (optional): Generate content types from Astro Content Collection(s)
 
@@ -195,3 +196,5 @@ start typing your question.
 [12]: https://github.com/frontmatter/templates
 [13]: /releases/v9.3.0/templates.png
 [14]: /releases/v9.3.0/astro-content-collections-light.png
+
+<!-- markdownlint-enable MD013 MD033 -->

@@ -6,7 +6,7 @@ date: 2022-11-28T14:55:04.221Z
 lastmod: 2023-10-06T13:36:12.765Z
 weight: 300.1
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Contents view
 
 The contents view is the default view when you open the dashboard. It will show you all the pages in
@@ -19,14 +19,12 @@ your project, and allow you to filter and sort them.
 If you want to change the fields/values that are shown on the content card, you can do so by using
 the following settings:
 
-<!-- markdownlint-disable MD013 -->
 | Setting | Description | Default |
 | --- | --- | --- |
 | `frontMatter.dashboard.content.card.fields.title` | The field name to use for the title. | `""` |
 | `frontMatter.dashboard.content.card.fields.description` | The field name to use for the description. | `""` |
 | `frontMatter.dashboard.content.card.fields.state` | Show/hide the state/draft status. Set to `false` to hide it. | `true` |
 | `frontMatter.dashboard.content.card.fields.date` | Show/hide the date. Set to `false` to hide it. | `true` |
-<!-- markdownlint-enable MD013 -->
 
 ### Card tags
 
@@ -100,3 +98,5 @@ of the content view. This will allow you to quickly access.
 [04]: /releases/v5.3.0/draft-status.png
 [05]: /docs/settings/overview#frontmatter.content.sorting
 [06]: /docs/experimental/ui-extensibility#registering-a-custom-ui-extension
+
+<!-- markdownlint-enable MD013 -->

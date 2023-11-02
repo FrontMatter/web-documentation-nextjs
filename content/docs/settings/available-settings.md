@@ -6,7 +6,7 @@ date: 2023-02-13T16:44:09.618Z
 lastmod: 2023-10-27T07:02:42.637Z
 weight: 1100.2
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Settings overview
 
 Here you can find an overview of all available settings.
@@ -668,8 +668,7 @@ Define the field groups you want to use for your block fields.
 - Type: `array[object]`
 - Default: `[]`
 
-> More information on how to use this setting can be found on the [block field][16] section of
-> content creation.
+> More information on how to use this setting can be found on the [block field][16] section of content creation.
 
 ### frontMatter.taxonomy.frontMatterType
 
@@ -795,8 +794,7 @@ Specify the folder to use for your article templates.
 - Type: `string`
 - Default: `.frontmatter/templates`
 
-> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to
-> `.frontmatter/templates`.
+> **Important**: In version 5 of Front Matter, we moved the default location from `.templates` to `.frontmatter/templates`.
 
 ### frontMatter.templates.prefix
 
@@ -864,3 +862,5 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
+
+<!-- markdownlint-enable MD013 -->

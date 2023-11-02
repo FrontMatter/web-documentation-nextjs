@@ -5,8 +5,7 @@
 ### ✨ New features
 
 ### 🎨 Enhancements
-
-- [#273](https://github.com/estruyf/vscode-front-matter/issues/273): Allow single value arrays to be set as a string with the `singleValueAsString` field property
+<!-- markdownlint-disable MD013 -->
 - [#686](https://github.com/estruyf/vscode-front-matter/issues/686): Allow script authors to ask questions during script execution
 - [#688](https://github.com/estruyf/vscode-front-matter/issues/688): Allow to show the scheduled articles in the content dashboard (filter and group)
 
@@ -18,8 +17,6 @@
 
 - [#685](https://github.com/estruyf/vscode-front-matter/issues/685): Fix when using non-string values in the tag picker
 - [#691](https://github.com/estruyf/vscode-front-matter/issues/691): Silent authentication retrieval for GitHub sponsors
-- [#694](https://github.com/estruyf/vscode-front-matter/issues/694): Start terminal session from the folder where the `frontmatter.json` file is located
-- [#696](https://github.com/estruyf/vscode-front-matter/issues/696): Close the local server terminal on restart
 
 ## [9.3.0] - 2023-10-06 - [Release notes](https://beta.frontmatter.codes/updates/v9.3.0)
 
@@ -173,7 +170,7 @@
 
 We're excited to announce a brand new feature exclusively available to sponsors of Front Matter CMS. With this update, we've added Front Matter AI to the project, which provides helpful suggestions for creating new content such as title suggestions and tag/category suggestions.
 
-> **Important**: To access the Front Matter AI feature, you will need to sign-in ([backers & supports sign-in instructions](https://frontmatter.codes/docs/getting-started#backers-&-supporters)) and set the `frontMatter.sponsors.ai.enabled` setting to `true` and you're good to go! We put it behind a setting to not automatically enable it and let you decide if you want to use it or not.
+> **Important**: To access the Front Matter AI feature, you will need to sign-in ([backers & supports sign-in instructions]>(<https://frontmatter.codes/docs/getting-started#backers-&-supporters>)) and set the `frontMatter.sponsors.ai.enabled` setting to `true` and you're good to go! We put it behind a setting to not automatically enable it and let you decide if you want to use it or not.
 
 If you're not already a sponsor, now is a great time to consider supporting the project. By becoming a sponsor, you not only gain access to exclusive features like Front Matter AI, but also help to support the ongoing development and maintenance of the project. You can become a sponsor by visiting the [GitHub sponsor page](https://github.com/sponsors/estruyf).
 
@@ -1019,3 +1016,5 @@ As from this version onwards, the extension will be published to [open-vsx.org](
 ## [0.0.1] - 2019-08-26
 
 - Initial beta version
+
+<!-- markdownlint-enable MD013 -->
