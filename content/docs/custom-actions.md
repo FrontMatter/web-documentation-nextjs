@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-10-06T13:49:58.889Z
+lastmod: 2023-11-02T15:02:24.382Z
 weight: 500
 ---
 
@@ -11,9 +11,11 @@ weight: 500
 
 ## Overview
 
+<!-- markdownlint-disable MD013 MD033 -->
 <div class="iframe__wrapper">
   <iframe src="https://www.youtube.com/embed/wvH9Tn5LQ2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+<!-- markdownlint-enable MD013 MD033 -->
 
 Not every website is the same. That is why we want to give you the ability to extend Front Matter
 and you can do this by adding your custom actions to the Front Matter panel. A custom action is
