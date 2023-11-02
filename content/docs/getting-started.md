@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-10-06T14:38:00.539Z
 weight: 100
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Getting started
 
 ## Overview
@@ -195,3 +195,5 @@ start typing your question.
 [12]: https://github.com/frontmatter/templates
 [13]: /releases/v9.3.0/templates.png
 [14]: /releases/v9.3.0/astro-content-collections-light.png
+
+<!-- markdownlint-enable MD013 MD033 -->

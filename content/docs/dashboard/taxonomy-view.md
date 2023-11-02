@@ -6,8 +6,8 @@ date: 2022-11-28T14:55:04.221Z
 lastmod: 2022-11-28T14:55:04.221Z
 weight: 300.4
 ---
-
-# Taxonomies view
+<!-- markdownlint-disable MD013 MD041-->
+## Taxonomies view
 
 The taxonomies view is a powerful way to manage your taxonomy like categories, tags, or any other
 taxonomy.
@@ -35,3 +35,4 @@ You can perform the following actions on the taxonomies view:
 <!-- Link References -->
 [01]: /releases/v8.1.0/taxonomies-view.png
 [02]: /releases/v8.0.0/taxonomy-actions.png
+<!-- markdownlint-enable MD013 MD041-->

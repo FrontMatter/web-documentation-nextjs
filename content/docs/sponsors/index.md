@@ -6,7 +6,7 @@ date: 2023-04-01T11:23:17.352Z
 lastmod: 2023-08-21T08:17:32.401Z
 weight: 425
 ---
-
+<!-- markdownlint-disable MD013 MD029-->
 # Sponsor features
 
 ## Front Matter AI
@@ -75,3 +75,5 @@ as we need to make sure you are allowed to use the AI.
 [01]: /docs/getting-started#backers-&-sponsors
 [02]: https://github.com/sponsors/estruyf
 [03]: https://github.com/FrontMatter/web-documentation-nextjs/blob/main/pages/api/ai
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2022-03-04T14:40:10.952Z
 lastmod: 2023-08-20T10:17:32.242Z
 weight: 850
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Snippets
 
 ## Overview
@@ -164,7 +164,6 @@ inserted data.
 
 For instance, in the above example, the following wrapper is added:
 
-<!-- markdownlint-disable MD013 -->
 ```html
 <!-- FM:Snippet:Start data:{"id":"Highlight (single)","fields":[{"name":"type","value":"typescript"},{"name":"selection","value":"Selected text from content"}]} -->
 {{< highlight typescript "linenos=table,noclasses=false" >}}
@@ -172,7 +171,6 @@ For instance, in the above example, the following wrapper is added:
 {{< / highlight >}}
 <!-- FM:Snippet:End -->
 ```
-<!-- markdownlint-enable MD013 -->
 
 > **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting.
  By default, it
@@ -215,8 +213,7 @@ The available placeholders for your media snippets are the following:
 - `filename`: Name of the file.
 - `title`: Title of the file.
 
-> **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to
-> use from your snippet.
+> **Info**: All placeholders are optional, so you can leave out the placeholders you do not want to use from your snippet.
 
 ### Fields
 
@@ -241,7 +238,6 @@ shown when you insert the snippet into your content.
   }
 }
 ```
-<!-- markdownlint-enable MD013 -->
 
 <!-- Link References -->
 [01]: /releases/v7.0.0/snippet-dashboard.png
@@ -250,3 +246,5 @@ shown when you insert the snippet into your content.
 [04]: /releases/v7.0.0/insert-snippet.png
 [05]: /releases/v7.0.0/insert-snippet-form.png
 [06]: /releases/v7.3.0/media-snippets.png
+
+<!-- markdownlint-enable MD013 -->

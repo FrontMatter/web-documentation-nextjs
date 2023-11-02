@@ -6,8 +6,8 @@ date: 2023-04-01T10:16:59.392Z
 lastmod: 2023-08-21T09:23:29.241Z
 weight: 910.1
 ---
-
-# UI extensibility
+<!-- markdownlint-disable MD013 MD041-->
+## UI extensibility
 
 As every user has different needs, the Front Matter extension allows you to extend the UI with your
 own custom elements and components which can be used in the Front Matter dashboards and the panel.
@@ -254,3 +254,5 @@ Example of a custom field rendering:
 
 [01]: https://www.npmjs.com/package/@frontmatter/extensibility
 [02]: https://lit.dev/
+
+<!-- markdownlint-enable MD013 MD041-->

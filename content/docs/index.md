@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-03-27T08:12:48.985Z
 weight: 1
 ---
-
+<!-- markdownlint-disable MD013  -->
 # Introduction
 
 ## Overview
@@ -77,3 +77,5 @@ the next level.
 [02]: https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png
 [03]: https://twitter.com/eliostruyf
 [04]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
+
+<!-- markdownlint-enable MD013 -->

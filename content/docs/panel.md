@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-10-06T13:47:51.482Z
 weight: 400
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Editor panel
 
 ## Overview
@@ -254,3 +254,5 @@ Or in the status bar:
 [12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
 [14]: /docs/settings/overview#frontmatter.framework.startcommand
+
+<!-- markdownlint-enable MD013 -->

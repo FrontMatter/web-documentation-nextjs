@@ -6,7 +6,7 @@ date: 2023-07-10T08:34:06.858Z
 lastmod: 2023-07-10T09:13:22.369Z
 weight: 600.3
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Next.js Configuration
 
 ## Creating the Next.js project
@@ -173,3 +173,4 @@ dashboard of Front Matter.
 
 You have successfully configured Front Matter CMS for your Next.js project. You can now start
 creating content and managing your website via Front Matter CMS.
+<!-- markdownlint-enable MD013 -->

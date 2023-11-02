@@ -6,7 +6,7 @@ date: 2021-12-21T09:53:30.176Z
 lastmod: 2023-03-25T20:24:17.797Z
 weight: 1000
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Troubleshooting
 
 ## Overview
@@ -87,3 +87,5 @@ When you already have a custom content type defined, you can set the `isPublishD
 [03]: /docs/commands#diagnostic-logging
 [04]: /docs/settings#splitting-your-settings-in-multiple-files
 [05]: /docs/content-creation/content-types#changing-the-default-content-type
+
+<!-- markdownlint-enable MD013 -->

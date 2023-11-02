@@ -6,7 +6,7 @@ date: 2022-11-28T14:55:04.221Z
 lastmod: 2023-04-01T09:56:59.435Z
 weight: 300.3
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Data files view
 
 Data files/folders are pieces of content that do not belong to any markdown content, but live on
@@ -186,3 +186,5 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 [01]: /releases/v6.0.0/data-files-dashboard.png
 [02]: /releases/v6.0.0/data-dashboard-sample.png
 [03]: https://json-schema.org/
+
+<!-- markdownlint-enable MD013 -->

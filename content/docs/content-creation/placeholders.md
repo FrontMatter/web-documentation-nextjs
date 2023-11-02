@@ -6,7 +6,7 @@ date: 2022-03-14T08:42:21.626Z
 lastmod: 2023-08-20T11:04:12.770Z
 weight: 200.4
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Placeholders
 
 Placeholders can be used in content type fields or templates. The placeholders allow you to
@@ -189,3 +189,5 @@ follows:
 <!-- Link References -->
 
 [01]: /docs/custom-actions/#content-script
+
+<!-- markdownlint-enable MD013 -->

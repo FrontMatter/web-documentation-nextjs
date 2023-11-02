@@ -6,7 +6,7 @@ date: 2022-02-22T08:43:49.364Z
 lastmod: 2023-04-21T09:02:35.736Z
 weight: 600.2
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Hugo Configuration
 
 ## Setting up Front Matter for your Hugo site
@@ -103,3 +103,5 @@ documentation what you can do: [documentation][11]
 [09]: /hugo-configuration/hugo-configuration8.png
 [10]: /hugo-configuration/hugo-configuration9.png
 [11]: /docs
+
+<!-- markdownlint-enable MD013 -->

@@ -6,7 +6,7 @@ date: 2021-08-30T16:13:00.546Z
 lastmod: 2023-10-06T13:49:58.889Z
 weight: 500
 ---
-
+<!-- markdownlint-disable MD013 MD033 -->
 # Custom actions
 
 ## Overview
@@ -340,3 +340,5 @@ const arguments = process.argv;
 [04]: /assets/custom-action-output.png
 [05]: /releases/v5.6.0/media-file-custom-script.png
 [06]: /releases/v5.6.0/media-folder-custom-script.png
+
+<!-- markdownlint-enable MD013 MD033 -->

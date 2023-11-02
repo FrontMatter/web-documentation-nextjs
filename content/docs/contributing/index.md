@@ -6,7 +6,7 @@ date: 2023-08-20T11:51:04.814Z
 lastmod: 2023-08-20T12:09:56.533Z
 weight: 1200
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Contributing to Front Matter CMS
 
 There are many ways you can contribute to Front Matter CMS. You can help us by:
@@ -55,3 +55,4 @@ with the default values
 [02]: https://github.com/FrontMatter/web-documentation-nextjs
 [03]: https://github.com/estruyf/vscode-front-matter
 [04]: https://code.visualstudio.com/docs/getstarted/locales#_available-locales
+<!-- markdownlint-enable MD013 -->

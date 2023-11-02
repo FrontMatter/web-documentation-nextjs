@@ -6,7 +6,7 @@ date: 2021-11-26T09:04:50.405Z
 lastmod: 2023-07-10T09:14:13.619Z
 weight: 600
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Static Site Generator and Frameworks
 
 ## Overview
@@ -61,3 +61,5 @@ You can help us by adding the documentation for your static site generator to th
 [02]: https://github.com/FrontMatter/web-documentation-nextjs/edit/main/content/docs/ssg.md
 [03]: https://docs.astro.build/en/guides/cms/frontmatter-cms/
 [04]: /docs/ssg-and-frameworks/nextjs-configuration
+
+<!-- markdownlint-enable MD013 -->

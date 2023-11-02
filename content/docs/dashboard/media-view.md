@@ -6,8 +6,8 @@ date: 2022-11-28T14:55:04.221Z
 lastmod: 2023-04-01T13:53:45.580Z
 weight: 300.2
 ---
-
-# Media view
+<!-- markdownlint-disable MD013 MD041-->
+## Media view
 
 The media view has been created to make it easier to look at all media files available for your
 articles. When you click on an image, it will show a lightbox, so that it is easier to glance at
@@ -83,3 +83,5 @@ your explorer/finder window into one of your folders.
 [04]: /releases/v5.9.0/media-deletion.png
 [05]: /docs/custom-actions#creating-a-media-script
 [06]: /releases/v5.9.0/media-upload.png
+
+<!-- markdownlint-enable MD013 -->

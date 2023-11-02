@@ -6,7 +6,7 @@ date: 2022-03-14T08:43:17.483Z
 lastmod: 2023-09-11T07:47:18.146Z
 weight: 200.1
 ---
-
+<!-- markdownlint-disable MD013-->
 # Content types
 
 ## Changing the default content type
@@ -263,3 +263,5 @@ you can use the `contentTypes` property on the `frontMatter.content.pageFolders`
 [04]: /docs/custom-actions/#content-script
 [05]: /docs/content-creation/fields
 [06]: /docs/custom-actions
+
+<!-- markdownlint-enable MD013-->

@@ -6,7 +6,7 @@ date: 2023-02-13T16:44:09.618Z
 lastmod: 2023-10-27T07:02:42.637Z
 weight: 1100.2
 ---
-
+<!-- markdownlint-disable MD013 -->
 # Settings overview
 
 Here you can find an overview of all available settings.
@@ -864,3 +864,5 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
+
+<!-- markdownlint-enable MD013 -->
