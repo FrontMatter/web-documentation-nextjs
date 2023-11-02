@@ -179,8 +179,7 @@ In the `frontMatter.data.files` and/or `frontMatter.data.folders` settings, inst
 ]
 ```
 
-> **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files
-> in the folder.
+> **Important**: when using data folders, the extension searches for `yml`, `yaml`, and `json` files in the folder.
 
 <!-- Link References -->
 [01]: /releases/v6.0.0/data-files-dashboard.png

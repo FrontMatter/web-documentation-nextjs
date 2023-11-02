@@ -12,8 +12,7 @@ weight: 910
 This page contains all the experimental features in the Front Matter CMS.
 
 > **Important**: These features are not yet fully tested and might not work as expected.
-> If you find any issues,
-> please [open an issue](https://github.com/estruyf/vscode-front-matter/issues).
+> If you find any issues, please [open an issue](https://github.com/estruyf/vscode-front-matter/issues).
 
 ## Enable experimental features
 

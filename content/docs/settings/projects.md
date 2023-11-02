@@ -71,7 +71,7 @@ when you open the Front Matter CMS - dashboard. When you switch between projects
 the settings will be reloaded, but also the last used project will be remembered.
 
 > **Important**: In the `configuration` object, you can use all of the Front Matter CMS - settings.
-Be aware that it overrides what has been defined on global level. It will not merge the settings.
+> Be aware that it overrides what has been defined on global level. It will not merge the settings.
 
 ## Switching projects
 

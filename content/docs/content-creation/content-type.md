@@ -140,8 +140,7 @@ you to specify the `name` and `fields`.
 
 > **Important**: The `name` property value needs to be equal to the `type` value you set in your
 > Markdown front matter. You best define it via a template so that it's always defined. A default
-> template will be available when initializing Front Matter in your project in the
-> `.frontmatter/templates` folder.
+> template will be available when initializing Front Matter in your project in the `.frontmatter/templates` folder.
 
 Sample:
 

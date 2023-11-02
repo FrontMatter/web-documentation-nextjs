@@ -173,8 +173,7 @@ For instance, in the above example, the following wrapper is added:
 ```
 
 > **Important**: The wrapper can be disabled with the `frontMatter.snippets.wrapper.enabled` setting.
- By default, it
-is enabled.
+> By default, it is enabled.
 
 ## Media snippets
 

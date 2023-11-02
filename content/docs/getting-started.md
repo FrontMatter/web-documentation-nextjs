@@ -85,8 +85,7 @@ started. You can select one of the templates from the list of available template
 
 ![Front Matter CMS - Starter Templates][13]
 
-> **Info**: The templates are stored in the
-> [Front Matter CMS - Starter Templates][12] repository.
+> **Info**: The templates are stored in the [Front Matter CMS - Starter Templates][12] repository.
 
 ### Step 2.2 (optional): Generate content types from Astro Content Collection(s)
 
