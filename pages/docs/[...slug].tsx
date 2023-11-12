@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '../../components/Docs/Page';
 import { Markdown } from '../../components/Docs/Markdown';
 import { DocsLayout } from '../../components/Page/DocsLayout';
+import { pageProcessing } from '../../utils/pageProcessing';
 
 export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
@@ -20,7 +21,7 @@ export default function Documentation({ page, pages, title }: any) {
       <Title value={page.title} />
       <Description value={page.description || strings(`documentation_description`)} />
       <OtherMeta image={`/assets/frontmatter-social.png`} />
-      
+
       <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
           <Markdown content={page?.content} slug={page.slug.replace(/\//g, '-')} />
@@ -40,7 +41,7 @@ export async function getStaticProps({ params }: any) {
     'weight',
     'content',
     'fileName'
-  ]);
+  ]).map(pageProcessing);
 
   const article: any = pages.find((b: any) => b.slug === params.slug.join('/'));
 

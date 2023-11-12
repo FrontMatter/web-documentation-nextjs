@@ -6,11 +6,10 @@ import { Description, OtherMeta, Title } from '../../components/Meta';
 import { DocsLayout } from '../../components/Page/DocsLayout';
 import { getAllPosts } from '../../lib/api';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
+import { pageProcessing } from '../../utils/pageProcessing';
 
-export default function Home({ pages }: { pages: PageFrontMatter[] }) {
+export default function Home({ pages, page }: { pages: PageFrontMatter[]; page: PageFrontMatter; }) {
   const { t: strings } = useTranslation();
-
-  const welcome = pages?.find(p => p.slug === "index");
 
   return (
     <>
@@ -19,8 +18,8 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
       <OtherMeta image={`/assets/frontmatter-social.png`} />
 
       <DocsLayout navItems={pages} >
-        <Page items={pages} page={welcome}>
-          <Markdown content={welcome?.content} slug={welcome?.slug} />
+        <Page items={pages} page={page}>
+          <Markdown content={page?.content} slug={page?.slug} />
         </Page>
       </DocsLayout>
     </>
@@ -28,7 +27,7 @@ export default function Home({ pages }: { pages: PageFrontMatter[] }) {
 }
 
 export const getStaticProps = async () => {
-  const pages = getAllPosts('docs', [
+  let pages = getAllPosts('docs', [
     'title',
     'slug',
     'description',
@@ -39,7 +38,11 @@ export const getStaticProps = async () => {
     'fileName'
   ]);
 
+  const welcome = Object.assign({}, pages?.find(p => p.slug === "index"));
+
+  pages = pages.map(pageProcessing);
+
   return {
-    props: { pages },
+    props: { pages, page: welcome },
   }
 }

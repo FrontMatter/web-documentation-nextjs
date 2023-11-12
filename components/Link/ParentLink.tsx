@@ -1,6 +1,5 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
-import { default as NextLink } from 'next/link';
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
@@ -18,12 +17,11 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({ title, l
   const [showChildren, setShowChildren] = useState(false);
 
   const links = useMemo(() => {
-    const { content } = item;
-    const matches = Array.from(content.matchAll(/^## (.*$)/gim));
-    return matches.map(match => ({
-      title: match[1],
-      link: match[1].toLowerCase().replace(/\s/g, '-'),
-      relPath: `/docs/${item.slug !== "index" ? item.slug : ''}#${match[1].toLowerCase().replace(/\s/g, '-')}`
+    const { links } = item;
+    return links.map(match => ({
+      title: match,
+      link: match.toLowerCase().replace(/\s/g, '-'),
+      relPath: `/docs/${item.slug !== "index" ? item.slug : ''}#${match.toLowerCase().replace(/\s/g, '-')}`
     }));
   }, [item]);
 
@@ -47,8 +45,7 @@ export const ParentLink: React.FunctionComponent<IParentLinkProps> = ({ title, l
   };
 
   useEffect(() => {
-    const { content } = item;
-    const links = Array.from(content.matchAll(/^## (.*$)/gim));
+    const { links } = item;
     if (links && links.length > 0) {
       setHasChildren(true);
       return;

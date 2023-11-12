@@ -27,13 +27,25 @@
         },
         {
           "include": "#type-ctor"
+        },
+        {
+          "begin": "!\\(",
+          "end": "\\)",
+          "patterns": [
+            {
+              "include": "#type"
+            },
+            {
+              "include": "#expression"
+            }
+          ]
         }
       ]
     },
     "base-type": {
       "patterns": [
         {
-          "match": "\\b(auto|bool|byte|ubyte|short|ushort|int|uint|long|ulong|char|wchar|dchar|float|double|real|ifloat|idouble|ireal|cfloat|cdouble|creal|void)\\b",
+          "match": "\\b(auto|bool|byte|ubyte|short|ushort|int|uint|long|ulong|char|wchar|dchar|float|double|real|ifloat|idouble|ireal|cfloat|cdouble|creal|void|noreturn)\\b",
           "name": "storage.type.basic-type.d"
         },
         {
@@ -44,6 +56,10 @@
     },
     "extended-type": {
       "patterns": [
+        {
+          "match": "\\b((\\.\\s*)?[_\\w][_\\d\\w]*)(\\s*\\.\\s*[_\\w][_\\d\\w]*)*\\b",
+          "name": "entity.name.type.d"
+        },
         {
           "begin": "\\[",
           "beginCaptures": {
@@ -198,7 +214,7 @@
       "patterns": [
         {
           "match": "\\s(\\?|:)\\s",
-          "name": "keyword.operator.expression.d"
+          "name": "keyword.operator.ternary.d"
         }
       ]
     },
@@ -257,7 +273,7 @@
       "patterns": [
         {
           "match": "\\^\\^|\\+\\+|--|(?<!/)\\+(?!/)|-|~|(?<!/)\\*(?!/)|(?<![+*/])/(?![+*/])|%",
-          "name": "keyword.operator.add.d"
+          "name": "keyword.operator.numeric.d"
         }
       ]
     },
@@ -280,21 +296,27 @@
     "cast-expression": {
       "patterns": [
         {
-          "begin": "\\bcast\\s*\\(",
+          "begin": "\\b(cast)\\s*(\\()",
           "beginCaptures": {
-            "0": {
-              "name": "support.type.cast.begin.d"
+            "1": {
+              "name": "keyword.operator.cast.d"
+            },
+            "2": {
+              "name": "keyword.operator.cast.begin.d"
             }
           },
           "end": "\\)",
           "endCaptures": {
             "0": {
-              "name": "support.type.cast.end.d"
+              "name": "keyword.operator.cast.end.d"
             }
           },
           "patterns": [
             {
               "include": "#type"
+            },
+            {
+              "include": "#extended-type"
             }
           ]
         }
@@ -320,20 +342,13 @@
     "function-literal": {
       "patterns": [
         {
-          "include": "#lambda-expression"
-        },
-        {
           "match": "=>",
           "name": "keyword.operator.lambda.d"
         },
         {
           "match": "\\b(function|delegate)\\b",
           "name": "keyword.other.function-literal.d"
-        }
-      ]
-    },
-    "lambda-expression": {
-      "patterns": [
+        },
         {
           "begin": "\\b([_\\w][_\\d\\w]*)\\s*(=>)",
           "end": "(?=[\\);,\\]}])",
@@ -345,6 +360,23 @@
               "name": "meta.lexical.token.symbolic.d"
             }
           },
+          "patterns": [
+            {
+              "include": "source.d"
+            }
+          ]
+        },
+        {
+          "begin": "(?<=\\)|\\()(\\s*)({)",
+          "beginCaptures": {
+            "1": {
+              "name": "source.d"
+            },
+            "2": {
+              "name": "source.d"
+            }
+          },
+          "end": "}",
           "patterns": [
             {
               "include": "source.d"
@@ -555,6 +587,12 @@
           "include": "#for-statement"
         },
         {
+          "include": "#static-foreach"
+        },
+        {
+          "include": "#static-foreach-reverse"
+        },
+        {
           "include": "#foreach-statement"
         },
         {
@@ -634,7 +672,7 @@
     "labeled-statement": {
       "patterns": [
         {
-          "match": "\\b(?!abstract|alias|align|asm|assert|auto|body|bool|break|byte|case|cast|catch|cdouble|cent|cfloat|char|class|const|continue|creal|dchar|debug|default|delegate|delete|deprecated|do|double|else|enum|export|extern|false|final|finally|float|for|foreach|foreach_reverse|function|goto|idouble|if|ifloat|immutable|import|in|inout|int|interface|invariant|ireal|is|lazy|long|macro|mixin|module|new|nothrow|null|out|override|package|pragma|private|protected|public|pure|real|ref|return|scope|shared|short|static|struct|super|switch|synchronized|template|this|throw|true|try|typedef|typeid|typeof|ubyte|ucent|uint|ulong|union|unittest|ushort|version|void|volatile|wchar|while|with|__FILE__|__MODULE__|__LINE__|__FUNCTION__|__PRETTY_FUNCTION__|__gshared|__traits|__vector|__parameters)[a-zA-Z_][a-zA-Z_0-9]*\\s*:",
+          "match": "\\b(?!abstract|alias|align|asm|assert|auto|bool|break|byte|case|cast|catch|cdouble|cent|cfloat|char|class|const|continue|creal|dchar|debug|default|delegate|delete|deprecated|do|double|else|enum|export|extern|false|final|finally|float|for|foreach|foreach_reverse|function|goto|idouble|if|ifloat|immutable|import|in|inout|int|interface|invariant|ireal|is|lazy|long|macro|mixin|module|new|nothrow|noreturn|null|out|override|package|pragma|private|protected|public|pure|real|ref|return|scope|shared|short|static|struct|super|switch|synchronized|template|this|throw|true|try|typedef|typeid|typeof|ubyte|ucent|uint|ulong|union|unittest|ushort|version|void|volatile|wchar|while|with|__FILE__|__MODULE__|__LINE__|__FUNCTION__|__PRETTY_FUNCTION__|__gshared|__traits|__vector|__parameters)[a-zA-Z_][a-zA-Z_0-9]*\\s*:",
           "name": "entity.name.d"
         }
       ]
@@ -746,6 +784,10 @@
               "end": "\\)",
               "patterns": [
                 {
+                  "match": ";",
+                  "name": "keyword.operator.semi-colon.d"
+                },
+                {
                   "include": "source.d"
                 }
               ]
@@ -769,6 +811,10 @@
               "begin": "\\(",
               "end": "\\)",
               "patterns": [
+                {
+                  "match": ";",
+                  "name": "keyword.operator.semi-colon.d"
+                },
                 {
                   "include": "source.d"
                 }
@@ -1337,9 +1383,6 @@
         },
         {
           "include": "#function-prelude"
-        },
-        {
-          "include": "#function-parameters"
         }
       ]
     },
@@ -1348,17 +1391,6 @@
         {
           "match": "(?!typeof|typeid)((\\.\\s*)?[_\\w][_\\d\\w]*)(\\s*\\.\\s*[_\\w][_\\d\\w]*)*\\s*(?=\\()",
           "name": "entity.name.function.d"
-        }
-      ]
-    },
-    "function-parameters": {
-      "begin": "\\((?=.*\\)\\s*(\\{|=>))",
-      "beginCaptures": "entity.name.function.d",
-      "end": "\\)",
-      "endCaptures": "entity.name.function.d",
-      "patterns": [
-        {
-          "include": "#parameters"
         }
       ]
     },
@@ -1384,56 +1416,6 @@
         },
         {
           "include": "#member-function-attribute"
-        }
-      ]
-    },
-    "parameters": {
-      "patterns": [
-        {
-          "match": ",",
-          "name": "keyword.operator.comma.d"
-        },
-        {
-          "include": "#comment"
-        },
-        {
-          "include": "#parameter"
-        }
-      ]
-    },
-    "parameter": {
-      "patterns": [
-        {
-          "include": "#in-out"
-        },
-        {
-          "include": "#type"
-        },
-        {
-          "include": "#function-literal"
-        },
-        {
-          "match": "\\.\\.\\.",
-          "name": "support.type.tuple.d"
-        },
-        {
-          "match": "\\b[R-Z]([0-9])?\\b",
-          "name": "variable.parameter.d"
-        },
-        {
-          "match": "\\b(\\.?[_\\w][_\\d\\w]*)+\\b",
-          "name": "variable.parameter.d"
-        },
-        {
-          "include": "#lexical"
-        }
-      ]
-    },
-    "in-out": {
-      "patterns": [
-        {
-          "match": "\\b(auto|final|in|out|lazy|ref|scope)\\b",
-          "name": "storage.type.modifier.inout.d"
         }
       ]
     },
@@ -1463,9 +1445,6 @@
         },
         {
           "include": "#out-statement"
-        },
-        {
-          "include": "#body-statement"
         },
         {
           "include": "#block-statement"
@@ -1507,14 +1486,6 @@
         }
       ]
     },
-    "body-statement": {
-      "patterns": [
-        {
-          "match": "\\bbody\\b",
-          "name": "keyword.control.body.d"
-        }
-      ]
-    },
     "constructor": {
       "patterns": [
         {
@@ -1544,14 +1515,6 @@
         {
           "match": "\\binvariant\\s*\\(\\s*\\)",
           "name": "entity.name.class.invariant.d"
-        }
-      ]
-    },
-    "unit-test": {
-      "patterns": [
-        {
-          "match": "\\bunittest\\b",
-          "name": "entity.name.function.unit-test.d"
         }
       ]
     },
@@ -1665,26 +1628,33 @@
     "enum-declaration": {
       "patterns": [
         {
-          "match": "\\b(enum)(?:\\s+([A-Za-z_][\\w_\\d]*))?\\b",
-          "captures": {
+          "begin": "\\b(enum)\\b\\s+(?=.*[=;])",
+          "end": "([A-Za-z_][\\w_\\d]*)\\s*(?=;|=|\\()(;)?",
+          "beginCaptures": {
             "1": {
               "name": "storage.type.enum.d"
-            },
-            "2": {
-              "name": "entity.name.type.enum.d"
             }
-          }
-        },
-        {
-          "match": "\\b(enum)\\b\\s+([A-Za-z_][\\w_\\d]*)\\s*(?=;|=)",
-          "captures": {
+          },
+          "endCaptures": {
             "1": {
-              "name": "storage.type.enum.d"
+              "name": "entity.name.type.enum.d"
             },
             "2": {
-              "name": "entity.name.type.enum.d"
+              "name": "meta.enum.end.d"
             }
-          }
+          },
+          "patterns": [
+            {
+              "include": "#type"
+            },
+            {
+              "include": "#extended-type"
+            },
+            {
+              "match": "=(?![=>])",
+              "name": "keyword.operator.equal.alias.d"
+            }
+          ]
         }
       ]
     },
@@ -2050,6 +2020,62 @@
         }
       ]
     },
+    "static-foreach": {
+      "patterns": [
+        {
+          "begin": "\\b(static\\s+foreach)\\b\\s*",
+          "captures": {
+            "1": {
+              "name": "keyword.control.static-foreach.d"
+            }
+          },
+          "end": "(?<=\\))",
+          "patterns": [
+            {
+              "begin": "\\(",
+              "end": "\\)",
+              "patterns": [
+                {
+                  "match": ";",
+                  "name": "keyword.operator.semi-colon.d"
+                },
+                {
+                  "include": "source.d"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "static-foreach-reverse": {
+      "patterns": [
+        {
+          "begin": "\\b(static\\s+foreach_reverse)\\b\\s*",
+          "captures": {
+            "1": {
+              "name": "keyword.control.static-foreach.d"
+            }
+          },
+          "end": "(?<=\\))",
+          "patterns": [
+            {
+              "begin": "\\(",
+              "end": "\\)",
+              "patterns": [
+                {
+                  "match": ";",
+                  "name": "keyword.operator.semi-colon.d"
+                },
+                {
+                  "include": "source.d"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "module": {
       "packages": [
         {
@@ -2171,12 +2197,8 @@
     "semi-colon": {
       "patterns": [
         {
-          "match": ";\\s*$",
-          "name": "meta.statement.end.d"
-        },
-        {
           "match": ";",
-          "name": "keyword.operator.semi-colon.d"
+          "name": "meta.statement.end.d"
         }
       ]
     },
@@ -2661,6 +2683,9 @@
           ]
         },
         {
+          "include": "#comment"
+        },
+        {
           "include": "#tokens"
         }
       ]
@@ -2716,10 +2741,6 @@
         {
           "match": "\\bauto\\b",
           "name": "keyword.token.auto.d"
-        },
-        {
-          "match": "\\bbody\\b",
-          "name": "keyword.token.body.d"
         },
         {
           "match": "\\bbool\\b",

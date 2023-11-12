@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as shiki from 'shiki';
 import { Children, useMemo } from 'react';
 import { CopyButton } from './CopyButton';
+import { ShikiService } from '../../services/ShikiService';
 
 export interface ICodeHighlightingProps {
   className?: string;
@@ -77,32 +77,33 @@ const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<I
 export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> = ({ className, children, ...props }: React.PropsWithChildren<ICodeHighlightingProps>) => {
   const [code, setCode] = React.useState('');
 
+  const fetchHighlighter = async (className: string, children: React.ReactNode) => {
+    const language = className.split('-')[1];
+    const highlighter = await ShikiService.getHighlighter();
+
+    if (highlighter && children) {
+      let code = children.toString();
+      if (code.endsWith(`\n`)) {
+        code = code.slice(0, -1);
+      }
+
+      setCode(
+        highlighter.codeToHtml(code, {
+          lang: getLanguage(className)
+        })
+      );
+
+      if (location.hash) {
+        location.href = location.href;
+      }
+
+      return;
+    }
+  };
+
   React.useEffect(() => {
     if (className && children) {
-      const language = className.split('-')[1];
-
-      shiki.setCDN(`../../`);
-
-      shiki.getHighlighter({
-        langs: [language as any],
-        theme: `the-unnamed`
-      }).then((highlighter: shiki.Highlighter) => {
-        let code = children.toString();
-        if (code.endsWith(`\n`)) {
-          code = code.slice(0, -1);
-        }
-
-        setCode(
-          highlighter.codeToHtml(code, {
-            lang: getLanguage(className)
-          })
-        );
-      })
-        .then(() => {
-          if (location.hash) {
-            location.href = location.href;
-          }
-        });
+      fetchHighlighter(className, children);
     }
   }, [className, children]);
 

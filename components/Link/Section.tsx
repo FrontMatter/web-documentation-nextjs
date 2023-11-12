@@ -21,10 +21,8 @@ export const Section: React.FunctionComponent<React.PropsWithChildren<ISectionPr
 
   useEffect(() => {
     const page = router.asPath;
-    console.log(page, link);
     // Remove the last slash
     const crntLink = link.endsWith('/') ? link.slice(0, -1) : link;
-    console.log(page, crntLink);
     setIsActive(page === crntLink || crntLink === `${page}/` || page.includes(`${crntLink}#`) || page.includes(`${crntLink}index`));
 
     if (crntLink.split('/').length > 2) {
