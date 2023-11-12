@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { CodeBlock, CodeHighlighting } from './CodeHighlighting';
 import { mdxAnnotations } from 'mdx-annotations';
+import { ShikiService } from '../../services/ShikiService';
 
 export interface IMarkdownProps {
   content: string | undefined;
@@ -14,6 +15,7 @@ export interface IMarkdownProps {
 }
 
 export const Markdown: React.FunctionComponent<IMarkdownProps> = ({ content, slug }: React.PropsWithChildren<IMarkdownProps>) => {
+  const [isReady, setIsReady] = React.useState<boolean>(false);
 
   const getTitle = (props: any) => {
     const title = props?.children.length > 0 ? `${props?.children[0] as string}` : "";
@@ -34,6 +36,14 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({ content, slu
   };
 
   useEffect(() => {
+    if (content) {
+      ShikiService.getHighlighter().then((highlighter) => {
+        setIsReady(true);
+      });
+    }
+  }, [content])
+
+  useEffect(() => {
     const elms = document.querySelectorAll('blockquote > p > strong');
     for (let i = 0; i < elms.length; i++) {
       const elm = elms[i];
@@ -43,7 +53,8 @@ export const Markdown: React.FunctionComponent<IMarkdownProps> = ({ content, slu
     }
   }, []);
 
-  if (!content) {
+
+  if (!content || !isReady) {
     return null;
   }
 

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2023-10-24T09:28:57.204Z",
+  "lastModified": "2023-11-12T01:41:30.152Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -898,7 +898,7 @@
     "frontMatter.panel.actions.disabled": {
       "type": "array",
       "default": [],
-      "markdownDescription": "%setting.frontMatter.panel.actions.disabeld.markdownDescription%",
+      "markdownDescription": "Specify the actions you want to disable in the panel. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.actions.disabled)",
       "enum": [
         "openDashboard",
         "createContent",
@@ -1165,6 +1165,11 @@
                   "type": "number",
                   "default": 0,
                   "description": "Limit the number of taxonomies to select. Set to 0 to allow unlimited."
+                },
+                "singleValueAsString": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Specify if you want to store a single array value as a string instead of an array."
                 },
                 "isPublishDate": {
                   "type": "boolean",

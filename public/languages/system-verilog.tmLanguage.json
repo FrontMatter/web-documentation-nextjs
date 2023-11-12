@@ -208,7 +208,7 @@
       "name": "meta.definition.systemverilog"
     },
     {
-      "match": "\\b(property)\\s+(\\w+)",
+      "match": "\\b(asset|cover)\\s(property)\\s+(\\w+)",
       "captures": {
         "1": {
           "name": "keyword.sva.systemverilog"
@@ -310,7 +310,7 @@
           }
         },
         {
-          "match": "\\b(property)\\s+(\\w+)",
+          "match": "\\b(asset|cover)\\s+(property)\\s+(\\w+)",
           "captures": {
             "1": {
               "name": "keyword.psl.systemverilog"
@@ -382,6 +382,18 @@
       },
       "match": "^\\s*(`define)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
       "name": "meta.define.systemverilog"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "constant.other.undef.systemverilog"
+        },
+        "2": {
+          "name": "entity.name.type.undef.systemverilog"
+        }
+      },
+      "match": "^\\s*(`undef)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+      "name": "meta.undef.systemverilog"
     },
     {
       "include": "#comments"
