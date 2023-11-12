@@ -1,9 +1,9 @@
 import { format, parseJSON } from 'date-fns';
 import React from 'react';
-import { Markdown } from '../../components/Docs/Markdown';
 import { Description, OtherMeta, Title } from '../../components/Meta';
 import { Layout } from '../../components/Page/Layout';
 import { getAllPosts, getPostByFilename } from '../../lib/api';
+import markdownToHtml from '../../utils/markdownToHtml';
 
 export default function Home({ title, content, description, date }: any) {
   const pubDate = date ? parseJSON(date) : '';
@@ -25,7 +25,11 @@ export default function Home({ title, content, description, date }: any) {
           </div>
 
           <div className={`changelog`}>
-            <Markdown content={content} slug={"home"} />
+            {/* <Markdown content={content} slug={"home"} /> */}
+            <div
+              className={`changelog home`}
+              dangerouslySetInnerHTML={{ __html: content }}>
+            </div>
           </div>
         </div>
       </Layout>
@@ -35,6 +39,7 @@ export default function Home({ title, content, description, date }: any) {
 
 export const getStaticProps = async ({ params }: any) => {
   const changes = getPostByFilename('changelog', `${params.slug}.md`, ['title', 'content', 'description', 'date']);
+  changes.content = await markdownToHtml(changes.content || '');
 
   return {
     props: { ...changes }
