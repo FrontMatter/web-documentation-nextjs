@@ -4,7 +4,8 @@ export interface PageFrontMatter {
   description: string;
   date: string;
   lastmod: string;
-  content: string;
+  links: string[];
   fileName: string;
   weight?: number;
+  content?: string;
 }

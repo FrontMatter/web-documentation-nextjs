@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2023-11-12T01:41:30.153Z",
+  "lastModified": "2023-11-12T03:21:43.076Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {

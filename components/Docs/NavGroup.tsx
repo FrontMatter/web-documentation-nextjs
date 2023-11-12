@@ -17,8 +17,7 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
   const router = useRouter();
 
   const getLinks = React.useMemo(() => {
-    const { content } = item;
-    const links = Array.from(content.matchAll(/^## (.*$)/gim));
+    const { links } = item;
 
     const crntWeight = item.weight || 99;
     const subItems = items.filter(i => i.weight && i.weight > crntWeight && i.weight < crntWeight + 1);
@@ -29,12 +28,12 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
 
     return (
       <ul className={`mt-2 space-y-2`}>
-        {links.map((link, index) => {
+        {(links && links.length > 0) && links.map((link, index) => {
           return (
             <li key={index}>
               <Link
-                title={link[1]}
-                link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link[1].toLowerCase().replace(/\s/g, '-')}`}
+                title={link}
+                link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link.toLowerCase().replace(/\s/g, '-')}`}
               />
             </li>
           );
