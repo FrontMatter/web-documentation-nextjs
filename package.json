@@ -25,6 +25,8 @@
     "gray-matter": "^4.0.3",
     "i18next": "^20.4.0",
     "i18next-browser-languagedetector": "^6.1.2",
+    "image-size": "^1.0.2",
+    "lqip": "^2.1.0",
     "next": "^13.1.6",
     "node-fetch": "^2.6.9",
     "openai": "^3.2.1",

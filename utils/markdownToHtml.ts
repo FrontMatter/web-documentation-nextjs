@@ -121,6 +121,49 @@ const remarkFm = ({
   };
 };
 
+const remarkImage = () => async (tree: any) => {
+  const promises: Promise<any>[] = [];
+
+  const getImgWidth = (filePath: string) => {
+    return new Promise((resolve) => {
+      require("image-size")(
+        filePath,
+        (err: string, dimensions: { width: number; height: number }) => {
+          resolve(dimensions.width);
+        }
+      );
+    });
+  };
+
+  visit(tree, "element", (node) => {
+    if (node.tagName === "img") {
+      const imgPath = node.properties.src;
+      if (imgPath.startsWith("http")) return;
+
+      const absImgPath = path.join(process.cwd(), "public", imgPath);
+      if (fs.existsSync(absImgPath)) {
+        const promise = require("lqip")
+          .base64(absImgPath)
+          .then((lqip: any) => {
+            if (lqip) {
+              node.properties[`data-src`] = node.properties.src;
+              node.properties[`src`] = lqip;
+              node.properties[`class`] = "lazyload";
+            }
+
+            return getImgWidth(absImgPath);
+          })
+          .then((width: number) => {
+            node.properties[`width`] = width;
+          });
+        promises.push(promise);
+      }
+    }
+  });
+
+  await Promise.all(promises);
+};
+
 export default async function markdownToHtml(markdown: string) {
   const highlighter = await ShikiFm.get();
 
@@ -130,6 +173,7 @@ export default async function markdownToHtml(markdown: string) {
   parser.use(remarkFm, { highlighter });
   parser.use(remarkRehype, { allowDangerousHtml: true, passThrough: [] });
   parser.use(rehypeRaw);
+  parser.use(remarkImage);
   parser.use(rehypeStringify, { allowDangerousHtml: true });
 
   return (await parser.process(markdown)).toString();
