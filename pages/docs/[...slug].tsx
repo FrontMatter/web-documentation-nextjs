@@ -8,6 +8,14 @@ import { DocsLayout } from '../../components/Page/DocsLayout';
 import { pageProcessing } from '../../utils/pageProcessing';
 import markdownToHtml from '../../utils/markdownToHtml';
 
+type Params = {
+  params: {
+    slug: string[];
+    fileName: string;
+  }
+}
+
+
 export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
   const router = useRouter();
@@ -34,7 +42,7 @@ export default function Documentation({ page, pages, title }: any) {
   )
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: Params) {
   const pages = getAllPosts('docs', [
     'title',
     'slug',
@@ -59,14 +67,11 @@ export async function getStaticProps({ params }: any) {
     'fileName'
   ]);
 
-  const content = await markdownToHtml(doc.content || '');
+  doc.content = await markdownToHtml(doc.content || '');
 
   return {
     props: {
-      page: {
-        ...doc,
-        content
-      },
+      page: doc,
       pages
     }
   }
