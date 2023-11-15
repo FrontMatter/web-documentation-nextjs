@@ -1,5 +1,4 @@
 {
-  "frontMatter.preview.host": "http://localhost:3000",
   "reflowMarkdown.preferredLineLength": 100,
   "[markdown]": {
     "editor.rulers": [76, 80, 96, 100]

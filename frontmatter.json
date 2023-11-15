@@ -3,6 +3,7 @@
   "frontMatter.sponsors.ai.enabled": true,
   "frontMatter.templates.enabled": false,
   "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.site.baseURL": "https://frontmatter.codes",
   "frontMatter.content.pageFolders": [
     {
