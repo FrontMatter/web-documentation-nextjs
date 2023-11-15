@@ -125,6 +125,10 @@ h5.header__offset {
     padding: 2px 4px;
   }
 
+  .code__wrapper {
+    @apply border border-vulcan-200;
+  }
+
   pre {
     @apply p-[1px] my-0 bg-vulcan-200 break-all whitespace-pre-wrap;
 

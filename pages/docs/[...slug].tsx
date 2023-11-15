@@ -4,9 +4,17 @@ import { useRouter } from 'next/router';
 import { Description, OtherMeta, Title } from '../../components/Meta';
 import { useTranslation } from 'react-i18next';
 import { Page } from '../../components/Docs/Page';
-import { Markdown } from '../../components/Docs/Markdown';
 import { DocsLayout } from '../../components/Page/DocsLayout';
 import { pageProcessing } from '../../utils/pageProcessing';
+import markdownToHtml from '../../utils/markdownToHtml';
+
+type Params = {
+  params: {
+    slug: string[];
+    fileName: string;
+  }
+}
+
 
 export default function Documentation({ page, pages, title }: any) {
   const { t: strings } = useTranslation();
@@ -24,14 +32,17 @@ export default function Documentation({ page, pages, title }: any) {
 
       <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
-          <Markdown content={page?.content} slug={page.slug.replace(/\//g, '-')} />
+          <div
+            className={`markdown ${page.slug.replace(/\//g, '-')}`}
+            dangerouslySetInnerHTML={{ __html: page.content }}>
+          </div>
         </Page>
       </DocsLayout>
     </>
   )
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: Params) {
   const pages = getAllPosts('docs', [
     'title',
     'slug',
@@ -56,11 +67,11 @@ export async function getStaticProps({ params }: any) {
     'fileName'
   ]);
 
+  doc.content = await markdownToHtml(doc.content || '');
+
   return {
     props: {
-      page: {
-        ...doc
-      },
+      page: doc,
       pages
     }
   }

@@ -1,10 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
 import { Description, OtherMeta, Title } from '../../components/Meta';
 import { Layout } from '../../components/Page/Layout';
 import { getPostByFilename } from '../../lib/api';
+import markdownToHtml from '../../utils/markdownToHtml';
 
 export default function Home({ content }: any) {
   const { t: strings } = useTranslation();
@@ -25,7 +24,7 @@ export default function Home({ content }: any) {
 
           <div className={`changelog`}>
             {/* eslint-disable react/no-children-prop */}
-            <ReactMarkdown
+            {/* <ReactMarkdown
               components={{
                 a: ({ node, ...props }) => {
                   const url = props?.href || "";
@@ -35,7 +34,9 @@ export default function Home({ content }: any) {
                 }
               }}
               rehypePlugins={[rehypeRaw]}
-              children={content} />
+              children={content} /> */}
+
+            <div dangerouslySetInnerHTML={{ __html: content || "" }}></div>
           </div>
         </div>
       </Layout>
@@ -45,8 +46,9 @@ export default function Home({ content }: any) {
 
 export const getStaticProps = async () => {
   const changes = getPostByFilename('changelog', "CHANGELOG.md", ['content']);
+  const content = await markdownToHtml(changes.content || '');
 
   return {
-    props: { content: changes.content }
+    props: { content }
   }
 }
