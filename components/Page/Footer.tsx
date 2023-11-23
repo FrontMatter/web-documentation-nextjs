@@ -11,7 +11,9 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
   const [path, setPath] = React.useState<string>()
 
   useEffect(() => {
-    const crntPath = router.asPath;
+    let crntPath = router.asPath;
+    crntPath = crntPath.split("#")[0];
+
     if (crntPath === "/") {
       setPath("")
     } else if (crntPath.startsWith("/")) {
