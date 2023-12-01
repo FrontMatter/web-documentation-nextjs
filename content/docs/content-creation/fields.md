@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-11-12T12:58:00.539Z
+lastmod: 2023-12-01T09:24:51.920Z
 weight: 200.2
 ---
 
@@ -88,7 +88,8 @@ content.
 
 ### Properties
 
-The number field allows you to set the following properties:
+To configure the number field, you can specify the following properties in the `numberOptions`
+field property:
 
 - `min (number)`: The minimum value for the field.
 - `max (number)`: The maximum value for the field.
@@ -118,9 +119,11 @@ weight: 1
   "title": "Weight",
   "name": "weight",
   "type": "number",
-  "min": 1,
-  "max": 10,
-  "step": 1
+  "numberOptions": {
+    "min": 1,
+    "max": 10,
+    "step": 1
+  }
 }
 ```
 
@@ -137,7 +140,9 @@ weight: 1
   "title": "Weight",
   "name": "weight",
   "type": "number",
-  "isDecimal": true
+  "numberOptions": {
+    "isDecimal": true
+  }
 }
 ```
 
