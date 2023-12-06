@@ -37,6 +37,11 @@ const remarkFm = ({
   highlighter: shiki.Highlighter | undefined;
 }) => {
   return async (tree: any) => {
+    // Log all elements
+    // visit(tree, (node) => {
+    //   console.log(node);
+    // });
+
     visit(tree, "code", (node) => {
       if (highlighter) {
         const lang = node.lang || "";
@@ -82,11 +87,35 @@ const remarkFm = ({
       if (lastChild && lastChild.type === "text") {
         let string = lastChild.value.replace(/ +$/, "");
         const hId = string.toLowerCase().replace(/\s/g, "-");
-        if (!node.data) node.data = {};
-        if (!node.data.hProperties) node.data.hProperties = {};
+
+        if (!node.data) {
+          node.data = {};
+        }
+
+        if (!node.data.hProperties) {
+          node.data.hProperties = {};
+        }
+
         node.data.id = node.data.hProperties.id = hId;
         node.data.class = node.data.hProperties.class =
           "header__offset scroll-mt-24 group";
+
+        node.children.push({
+          type: "link",
+          title: string,
+          url: `#${hId}`,
+          data: {
+            hProperties: {
+              class: "hidden group-hover:inline-block",
+            },
+          },
+          children: [
+            {
+              type: "html",
+              value: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-4 h-6 inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>`,
+            },
+          ],
+        });
       }
     });
 

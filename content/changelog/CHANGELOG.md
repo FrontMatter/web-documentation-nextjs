@@ -13,6 +13,10 @@
 - [#688](https://github.com/estruyf/vscode-front-matter/issues/688): Allow to show the scheduled articles in the content dashboard (filter and group)
 - [#690](https://github.com/estruyf/vscode-front-matter/issues/690): Added the ability to filter values in the `contentRelationship` field
 - [#700](https://github.com/estruyf/vscode-front-matter/issues/700): Added the `{{pathToken.relPath}}` placeholder for the `previewPath` property
+- [#706](https://github.com/estruyf/vscode-front-matter/issues/706): Show the error of scripts failing in the Front Matter output panel
+- [#709](https://github.com/estruyf/vscode-front-matter/issues/709): Take "where clause" into account on content creation
+- [#710](https://github.com/estruyf/vscode-front-matter/issues/710): Hide child field when parent field its "when clause" is not met, also remove the fields from the content
+- [#713](https://github.com/estruyf/vscode-front-matter/issues/713): Add the ability to always use quotes around string values in front matter
 
 ### ⚡️ Optimizations
 
@@ -29,6 +33,11 @@
 - [#699](https://github.com/estruyf/vscode-front-matter/issues/699): Changing border theme variable for the dashboard header
 - [#703](https://github.com/estruyf/vscode-front-matter/issues/703): Fix retrieval of Astro Collections for `pnpm` projects
 - [#704](https://github.com/estruyf/vscode-front-matter/issues/704): Fix `zod` schema script for optional fields
+- [#707](https://github.com/estruyf/vscode-front-matter/issues/707): Fix `clearEmpty` issue with `draft` and `boolean` fields which are by default set to `true`
+- [#711](https://github.com/estruyf/vscode-front-matter/issues/711): Fix in character mapping in the slug field
+- [#712](https://github.com/estruyf/vscode-front-matter/issues/712): Keep the search context when deleting media files
+- [#714](https://github.com/estruyf/vscode-front-matter/issues/714): Fix for taxonomy filtering from taxonomy view to content view
+- [#718](https://github.com/estruyf/vscode-front-matter/issues/718): Fix JSON schema for the `frontMatter.panel.actions.disabled` setting
 
 ## [9.3.1] - 2023-10-27
 
