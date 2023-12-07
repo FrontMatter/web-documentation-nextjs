@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-11-02T15:02:24.382Z
+lastmod: 2023-12-07T16:37:05.124Z
 weight: 500
 ---
 
@@ -93,7 +93,27 @@ The environment option contains the following properties:
 ## Creating a content script
 
 Create a folder in your project where you want to store all your custom scripts, and create a new
-JavaScript file. The sample content of this file looks like this:
+JavaScript file.
+
+> **Info**: You can also use another language like Python, Bash, ... for your script. Examples are
+> provided at the end of this page.
+
+### Installing the extensibility package (optional)
+
+When using JavaScript, you can make use of the
+[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility) package.
+
+```bash
+npm i @frontmatter/extensibility
+```
+
+With this `@frontmatter/extensibility` dependency,
+you can easily get the arguments and ask questions to the user.
+
+### Creating a script without the extensibility package
+
+When you do not want to use the `@frontmatter/extensibility` package, you can create a script as
+follows:
 
 ```javascript
 const arguments = process.argv;
@@ -107,8 +127,6 @@ if (arguments && arguments.length > 0) {
 }
 ```
 
-> **Info**: The sample script can be found here [sample-script.js][03]
-
 The current workspace-, file-path, and front matter data will be passed as a arguments. Like you can
 see in the above sample script, you can fetch these argument values as follows:
 
@@ -116,7 +134,21 @@ see in the above sample script, you can fetch these argument values as follows:
 - `arguments[3]`: The file path (Markdown file)
 - `arguments[4]`: The front matter data as object
 
-In order to use this functionality, you will need to configure the `frontMatter.custom.scripts`
+### Creating a script with the extensibility package
+
+When you want to use the `@frontmatter/extensibility` package, you can create a script as follows:
+
+```javascript
+import { ContentScript } from "@frontmatter/extensibility";
+
+const { workspacePath, filePath, frontMatter, answers } = ContentScript.getArguments();
+
+ContentScript.done("The content returned for your notification.");
+```
+
+### Configure the script
+
+To use this functionality, you will need to configure the `frontMatter.custom.scripts`
 setting for your project as follows:
 
 ```json
@@ -124,8 +156,8 @@ setting for your project as follows:
   "frontMatter.custom.scripts": [
     {
       "title": "Generate social image",
-      "script": "./scripts/social-img.js",
-      "command": "~/.nvm/versions/node/v14.15.5/bin/node"
+      "script": "./scripts/social-img.mjs",
+      "command": "~/.nvm/versions/node/v18.17.1/bin/node"
     }
   ]
 }
@@ -142,7 +174,7 @@ useful when you generate additional content.
 
 ![Custom action output][04]
 
-### Updating the front matter
+### Updating the front matter of your content
 
 By default, once a custom action executed, it will show the output in a notification. In case you
 want to update the front matter of your content, you need to provide the data in the following JSON
@@ -152,23 +184,31 @@ format.
 { "frontmatter": { "<field name>": "field value" } }
 ```
 
-Example:
+Example when you want to update the title without the `@frontmatter/extensibility` dependency:
 
-```javascript
+```javascript {{ "title": "Update without the extensibility dependency" }}
 (async () => {
     // Your script logic
 
     // Finally, update the front matter of your content by passing the data
     // in the following format
     const output = JSON.stringify({
-      "frontmatter": {
-        "title": "My new title"
+      frontmatter: {
+        title: "My new title"
       }
     });
 
     console.log(output);
   }
 })();
+```
+
+Example when you want to update the title with the `@frontmatter/extensibility` dependency:
+
+```javascript {{ "title": "Update with the extensibility dependency" }}
+import { ContentScript } from "@frontmatter/extensibility";
+
+ContentScript.updateFrontMatter({ title: "My new title" })
 ```
 
 When data is passed in the above format, it will automatically get parse the JSON data and the file
@@ -230,10 +270,18 @@ Here is a sample on how you can define a media script:
 }
 ```
 
-The current workspace-, file/folder-path will be passed as a arguments.
+The script will provide you the following arguments:
 
 - `arguments[2]`: The workspace path
 - `arguments[3]`: The file or folder path. This depends on the type of script.
+
+When using the `@frontmatter/extensibility` package, you can get the arguments as follows:
+
+```javascript
+import { MediaScript } from "@frontmatter/extensibility";
+
+const { workspacePath, mediaPath, answers } = MediaScript.getArguments();
+```
 
 ### Media file script
 
@@ -248,6 +296,65 @@ When you defined a media folder script, you will be able to execute it for all m
 menu next to the **create new folder** button.
 
 ![Custom action for a media folder][06]
+
+## Asking questions to users
+
+When you want to ask questions to the user, you can use the `askQuestions` function from the
+`@frontmatter/extensibility` package. This functionality can be used in both content and media
+scripts.
+
+To get started, you need to know that you have to check if the `answers` property is available in
+the arguments. If it is not available, you can ask the questions to the user. Once the user has
+answered the questions, the answers will be passed to the script.
+
+Here is a sample on how you can ask questions to the user:
+
+```javascript {{ "title": "Sample script with questions to the user" }}
+import { MediaScript } from '@frontmatter/extensibility';
+import { Image } from 'image-js';
+
+(async () => {
+  const mediaScriptArgs = MediaScript.getArguments();
+
+  if (!mediaScriptArgs) {
+    MediaScript.done(`No arguments found`);
+    return;
+  }
+  
+  const imagePath = mediaScriptArgs.mediaPath;
+  const answers = mediaScriptArgs.answers;
+
+  let image = await Image.load(imagePath);
+
+  if (!answers) {
+    MediaScript.askQuestions([{
+      name: "width",
+      message: "What is the width of the image?",
+      default: image.width
+    }]);
+    return;
+  }
+
+  const width = answers.width;
+
+  if (!width) {
+    MediaScript.done(`No width provided`);
+    return;
+  }
+
+  await image.resize({ width: parseInt(width) }).save(imagePath);
+
+  MediaScript.done(`Image resized to ${width}px`);
+})();
+```
+
+How the above script works:
+
+1. It will check if the `answers` property is available in the arguments. If it is not available,
+we create a new question for the user and return the script without any output.
+1. Once the user has answered the question, the script will be executed again, but this time the
+`answers` property will be available in the arguments.
+1. We will fetch the width from the answers and resize the image accordingly.
 
 ## Sample scripts
 
@@ -336,7 +443,6 @@ const arguments = process.argv;
 
 [01]: /assets/custom-action.png
 [02]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
-[03]: https://github.com/estruyf/vscode-front-matter/blob/HEAD/sample/script-sample.js
 [04]: /assets/custom-action-output.png
 [05]: /releases/v5.6.0/media-file-custom-script.png
-[06]: /releases/v5.6.0/media-folder-custom-script.png
+[06]: /releases/v9.4.0/media-folder-script.png
