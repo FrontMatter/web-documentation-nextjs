@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-10-27T07:02:42.637Z
+lastmod: 2023-12-08T09:03:00.096Z
 weight: 1100.2
 ---
 
@@ -770,6 +770,13 @@ Specifies the tags which can be used in the Front Matter.
 > **Important**: Tags and categories are now moved to a separate database file
 > (`.frontmatter/database/taxonomyDb.json`). The setting can still be used to predefine the tags.
 > Once the project gets initialized, the tags will be moved to the database file.
+
+### frontMatter.taxonomy.quoteStringValues
+
+Specify if you always want to wrap string values in quotes.
+
+- Type: `boolean`
+- Default: `false`
 
 ### frontMatter.telemetry.disable
 

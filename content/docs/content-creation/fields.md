@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-12-01T09:24:51.920Z
+lastmod: 2023-12-08T08:57:08.344Z
 weight: 200.2
 ---
 
@@ -447,6 +447,8 @@ When the tag is created, you will be able to re-use it for other content.
 
 - `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
   which allows unlimited items to be selected.
+- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
+of an array.
 
 > **Info**: When a limit is defined, this will get reflected in the UI as well:
 
@@ -479,6 +481,8 @@ The `categories` field is similar to the [tags][09] field. Categories are also s
 
 - `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
   which allows unlimited items to be selected.
+- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
+of an array.
 
 ```json {{ "title": "Usage" }}
 {
@@ -506,6 +510,8 @@ taxonomy values and structure.
   which allows unlimited items to be selected.
 - `taxonomyId`: Set the id of your custom taxonomy definition defined in the
   `frontMatter.taxonomy.customTaxonomy` setting.
+- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
+of an array.
 
 ### Custom taxonomy
 
