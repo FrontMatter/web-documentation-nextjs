@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2023-09-11T07:47:18.146Z
+lastmod: 2023-12-08T09:13:41.283Z
 weight: 200.1
 ---
 
@@ -128,6 +128,8 @@ For the content type you can configure the following properties:
 | `postScript`      | `string`                                 | An optional post script that can be used after new content creation. In order to use this, you will have to set the value to the ID of your [content script][04]   | `null`        |
 | `previewPath`     | `string`                                 | Defines a custom preview path for the content type. When the preview path is not set, the value from the [`frontMatter.preview.pathName`][03] setting will be used | `null`        |
 | `template`        | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type                                                                | `null`        |
+| `allowAsSubContent` | `boolean`                              | Allow the content type to be used as sub-content                                                                                                                   | `false`       |
+| `isSubContent`    | `boolean`                                | Defines the content type as sub-content                                                                                                                            | `false`       |
 
 ## Define your own type
 
@@ -179,6 +181,61 @@ type: documentation
 ```
 
 > **Fields**: Check out the [fields][05] section to learn which fields are supported.
+
+## Creating sub-content
+
+By default, when you create new content, it will always be created in one of your defined folders
+in the `frontMatter.content.pageFolders` setting.
+
+In some cases, you want to create a hierarchy of content. For example, you want to create a
+documentation site, where each topic has its own folder. The starting point is a page bundle which
+contains the `index.md` file and all the related topics are created as separate files in the same
+folder.
+
+To support this, you can now make use of the `allowAsSubContent` and `isSubContent` properties on
+your content type.
+
+### Allow as sub-content
+
+The `allowAsSubContent` property is intended to be used for content types with a page bundle
+(`pageBundle: true`). When you set this property to `true`, during the content creation, you will be
+able to choose if you want to create content as parent or sub-content.
+
+```json {{ "title": "Using the allowAsSubContent property" }}
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "parent",
+      "pageBundle": true,
+      "allowAsSubContent": true,
+      "fields": [
+        ...
+      ]
+    }
+  ]
+}
+```
+
+### Is sub-content
+
+The `isSubContent` property is intended to be used for content types which will always be created as
+sub-content. When you set this property to `true`, during the content creation, you be able to
+select the parent folder.
+
+```json {{ "title": "Using the isSubContent property" }}
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "child",
+      "pageBundle": true,
+      "isSubContent": true,
+      "fields": [
+        ...
+      ]
+    }
+  ]
+}
+```
 
 ## Using a template with the content type
 

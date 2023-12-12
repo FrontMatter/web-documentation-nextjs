@@ -1,6 +1,6 @@
 # Change Log
 
-## [9.4.0] - 2023-xx-xx
+## [9.4.0] - 2023-12-12 - [Release notes](https://beta.frontmatter.codes/updates/v9.4.0)
 
 ### ✨ New features
 
@@ -17,6 +17,7 @@
 - [#709](https://github.com/estruyf/vscode-front-matter/issues/709): Take "where clause" into account on content creation
 - [#710](https://github.com/estruyf/vscode-front-matter/issues/710): Hide child field when parent field its "when clause" is not met, also remove the fields from the content
 - [#713](https://github.com/estruyf/vscode-front-matter/issues/713): Add the ability to always use quotes around string values in front matter
+- [#722](https://github.com/estruyf/vscode-front-matter/issues/722): Allow to create sub-content which shows a dialog to select the parent folder
 
 ### ⚡️ Optimizations
 
@@ -37,7 +38,9 @@
 - [#711](https://github.com/estruyf/vscode-front-matter/issues/711): Fix in character mapping in the slug field
 - [#712](https://github.com/estruyf/vscode-front-matter/issues/712): Keep the search context when deleting media files
 - [#714](https://github.com/estruyf/vscode-front-matter/issues/714): Fix for taxonomy filtering from taxonomy view to content view
+- [#717](https://github.com/estruyf/vscode-front-matter/issues/717): Fix in loading yaml data files
 - [#718](https://github.com/estruyf/vscode-front-matter/issues/718): Fix JSON schema for the `frontMatter.panel.actions.disabled` setting
+- [#719](https://github.com/estruyf/vscode-front-matter/issues/719): Fix styling on data view with objects views
 
 ## [9.3.1] - 2023-10-27
 
