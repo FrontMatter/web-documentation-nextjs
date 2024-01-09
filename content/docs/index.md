@@ -3,7 +3,7 @@ title: Introduction
 slug: ""
 description: Create, edit, and preview your pages within Visual Studio Code/Gitpod/... Front Matter allows you to keep control of your static site without any external tools.
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-12-06T13:23:17.866Z
+lastmod: 2024-01-09T14:32:31.894Z
 weight: 1
 ---
 
@@ -74,6 +74,6 @@ the next level.
 
 <!-- Link References -->
 [01]: /releases/v7.2.0/welcome-screen-7.2.0.png
-[02]: https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png
+[02]: /releases/v9.4.0/preview-9.4.0.png
 [03]: https://twitter.com/eliostruyf
 [04]: https://www.eliostruyf.com/generate-open-graph-preview-image-code-front-matter/
