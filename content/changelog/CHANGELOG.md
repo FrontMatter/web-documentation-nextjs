@@ -1,6 +1,6 @@
 # Change Log
 
-## [9.4.0] - 2023-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v9.4.0)
+## [9.4.0] - 2023-12-12 - [Release notes](https://beta.frontmatter.codes/updates/v9.4.0)
 
 ### ✨ New features
 
@@ -38,7 +38,9 @@
 - [#711](https://github.com/estruyf/vscode-front-matter/issues/711): Fix in character mapping in the slug field
 - [#712](https://github.com/estruyf/vscode-front-matter/issues/712): Keep the search context when deleting media files
 - [#714](https://github.com/estruyf/vscode-front-matter/issues/714): Fix for taxonomy filtering from taxonomy view to content view
+- [#717](https://github.com/estruyf/vscode-front-matter/issues/717): Fix in loading yaml data files
 - [#718](https://github.com/estruyf/vscode-front-matter/issues/718): Fix JSON schema for the `frontMatter.panel.actions.disabled` setting
+- [#719](https://github.com/estruyf/vscode-front-matter/issues/719): Fix styling on data view with objects views
 
 ## [9.3.1] - 2023-10-27
 
