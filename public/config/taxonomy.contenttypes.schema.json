@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2023-11-13T14:57:38.568Z",
+  "lastModified": "2024-01-26T09:08:14.039Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -23,6 +23,16 @@
       "type": "boolean",
       "default": false,
       "description": "Specify if the empty values should be cleared."
+    },
+    "allowAsSubContent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specify if the content type can be used as sub content."
+    },
+    "isSubContent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specify if the content type is sub content."
     },
     "fields": {
       "$id": "#contenttypefield",

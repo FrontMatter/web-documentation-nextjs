@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "description": "Defines the settings for Front Matter field groups",
+  "lastModified": "2024-01-26T09:08:14.040Z",
+  "type": "object",
+  "title": "Front Matter - field groups",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The name of the field group"
+    },
+    "labelField": {
+      "type": "string",
+      "description": "The name of the field to be used as display value"
+    },
+    "fields": {
+      "$ref": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json#/properties/fields"
+    }
+  },
+  "required": [
+    "id",
+    "fields"
+  ]
+}
