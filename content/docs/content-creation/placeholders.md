@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-08-20T11:04:12.770Z
+lastmod: 2024-01-31T16:17:03.272Z
 weight: 200.4
 ---
 
@@ -140,26 +140,30 @@ Here is an example of a dynamic `uniqueId` placeholder:
 "frontMatter.content.placeholders": [
   {
     "id": "uniqueId",
-    "script": "./scripts/uniqueId.js",
-    "command": "~/.nvm/versions/node/v16.13.1/bin/node"
+    "script": "./scripts/uniqueId.mjs",
+    "command": "~/.nvm/versions/node/v18.17.1/bin/node"
   }
 ]
 ```
 
 #### Placeholder script
 
-The base script looks like this:
+To get started, you first need to install the
+[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility) 
+dependency.
+
+```bash
+npm i @frontmatter/extensibility
+```
+
+Once installed, you can use the following example:
 
 ```javascript
-const arguments = process.argv;
+import { PlaceholderScript } from "@frontmatter/extensibility";
 
-if (arguments && arguments.length > 0) {
-  const workspaceArg = arguments[2]; // The workspace path
-  const filePath = arguments[3]; // The path of the file
-  const title = arguments[4]; // Title of the page
+const { workspacePath, filePath, title, answers } = PlaceholderScript.getArguments();
 
-  console.log(Math.random().toString(36).substring(2, 15));
-}
+PlaceholderScript.done(Math.random().toString(36).substring(2, 15));
 ```
 
 > **Info**: Like the other content scripts, you can use other types of scripts like Python, Bash,
@@ -171,6 +175,38 @@ that the file is still not completely processed, and not all front matter fields
 
 > **Important**: In case you need to retrieve the whole front matter object, you can make use of the
 > `postScript` property on your content type in combination with a [content script][01].
+
+You can also ask additional input/questions during the placeholder script execution.
+For instance, if you want to pick between a category upon content creation, you can use the
+`PlaceholderScript.askQuestions` method.
+
+```javascript
+import { PlaceholderScript } from "@frontmatter/extensibility";
+
+(async () => {
+  const { answers } =
+    PlaceholderScript.getArguments();
+
+  if (!answers) {
+    PlaceholderScript.askQuestions([
+      {
+        name: "category",
+        message: "What category do you want to use for this article?"
+      },
+    ]);
+    return;
+  }
+
+  const { category } = answers;
+
+  if (!category) {
+    PlaceholderScript.done(undefined);
+    return;
+  }
+
+  PlaceholderScript.done(category);
+})();
+```
 
 #### Placeholder usage
 
