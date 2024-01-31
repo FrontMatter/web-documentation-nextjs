@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-01-31T16:17:03.272Z
+lastmod: 2024-01-31T16:32:05.190Z
 weight: 200.4
 ---
 
@@ -191,7 +191,16 @@ import { PlaceholderScript } from "@frontmatter/extensibility";
     PlaceholderScript.askQuestions([
       {
         name: "category",
-        message: "What category do you want to use for this article?"
+        message: "What category do you want to use for this article?",
+        options: [
+          "Uncategorized",
+          "Getting Started",
+          "Configuration",
+          "Customization",
+          "Deployment",
+          "Troubleshooting",
+          "Other",
+        ],
       },
     ]);
     return;
