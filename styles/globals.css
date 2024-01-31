@@ -159,7 +159,15 @@ h5.header__offset {
   }
 
   h3 {
-    @apply mt-16 font-normal;
+    @apply mt-4 font-normal;
+  }
+
+  h1,
+  h2,
+  h3 {
+    svg {
+      display: none;
+    }
   }
 
   h4 {

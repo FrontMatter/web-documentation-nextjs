@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2023-11-13T14:57:38.566Z",
+  "lastModified": "2024-01-26T09:08:14.039Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -899,15 +899,18 @@
       "type": "array",
       "default": [],
       "markdownDescription": "Specify the actions you want to disable in the panel. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.actions.disabled)",
-      "enum": [
-        "openDashboard",
-        "createContent",
-        "optimizeSlug",
-        "preview",
-        "openOnWebsite",
-        "startStopServer",
-        "customActions"
-      ]
+      "items": {
+        "type": "string",
+        "enum": [
+          "openDashboard",
+          "createContent",
+          "optimizeSlug",
+          "preview",
+          "openOnWebsite",
+          "startStopServer",
+          "customActions"
+        ]
+      }
     },
     "frontMatter.preview.host": {
       "type": "string",
@@ -977,6 +980,16 @@
             "type": "boolean",
             "default": false,
             "description": "Specify if the empty values should be cleared."
+          },
+          "allowAsSubContent": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the content type can be used as sub content."
+          },
+          "isSubContent": {
+            "type": "boolean",
+            "default": false,
+            "description": "Specify if the content type is sub content."
           },
           "fields": {
             "$id": "#contenttypefield",
@@ -1636,6 +1649,12 @@
       "default": "lastmod",
       "markdownDescription": "This setting is used to define the modified date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.modifiedfield)",
       "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please use the new `isModifiedDate` settings instead in your content types date fields."
+    },
+    "frontMatter.taxonomy.quoteStringValues": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specify if you want to quote string values in the front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.quotestringvalues)",
+      "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.noPropertyValueQuotes": {
       "type": "array",
