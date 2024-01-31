@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/data.types.schema.json",
   "description": "Defines the settings for Front Matter data type",
-  "lastModified": "2023-11-13T14:57:38.569Z",
+  "lastModified": "2024-01-26T09:08:14.040Z",
   "type": "object",
   "title": "Front Matter - data type",
   "properties": {

@@ -1,7 +1,6 @@
 // @ts-check
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 
 /**
  * 
@@ -108,6 +107,7 @@ const escapeQuotes = (str) => {
 
     // Sub-schema's filenames
     const ctSchemaName = "taxonomy.contenttypes.schema.json";
+    const fieldGroupsSchemaName = "taxonomy.fieldgroups.schema.json";
     const pageFoldersSchemaName = "content.pagefolders.schema.json";
     const snippetSchemaName = "content.snippets.schema.json";
     const placeholderSchemaName = "content.placeholders.schema.json";
@@ -118,6 +118,12 @@ const escapeQuotes = (str) => {
 
     // Create the content type schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, ctSchemaName, "frontMatter.taxonomy.contentTypes", "content type", undefined);
+
+    // Create the field groups schema
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, fieldGroupsSchemaName, "frontMatter.taxonomy.fieldGroups", "field groups", {
+      value: "#contenttypefield",
+      ref: `${baseUrl}/config/${ctSchemaName}#/properties/fields`
+    });
 
     // Create the custom script schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, customScriptsSchemaName, "frontMatter.custom.scripts", "custom script", undefined);
