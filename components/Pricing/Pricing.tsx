@@ -21,7 +21,7 @@ export const Pricing: React.FunctionComponent<IPricingProps> = (props: React.Pro
 
           <navigation.sponsor.icon
             title={strings(`pricing_cta_title`)}
-            btnClassName={`group mt-4 inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-vulcan-500 sm:px-8`}
+            btnClassName={`group mt-4 inline-block px-4 py-3 border border-transparent rounded text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-vulcan-500 sm:px-8`}
             className="inline-block h-6 w-6"
             aria-hidden="true" />
         </div>

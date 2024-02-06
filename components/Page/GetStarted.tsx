@@ -15,10 +15,10 @@ export const GetStarted: React.FunctionComponent<IGetStartedProps> = (props: Rea
           <span className="block">Ready to get started?</span>
         </h2>
         <div className="mt-6 lg:mt-auto space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
-          <a href={isProduction() ? Extension.installLink : Extension.installBetaLink} title={`Read our documentation`} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8">
+          <a href={isProduction() ? Extension.installLink : Extension.installBetaLink} title={`Read our documentation`} className="flex items-center justify-center px-4 py-3 border border-transparent rounded text-base font-medium shadow-sm text-white bg-teal-500 hover:bg-opacity-70 sm:px-8">
             {strings(`cta_button_bottom_primary`) as string}
           </a>
-          <a href={`/docs/getting-started`} className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70 sm:px-8">
+          <a href={`/docs/getting-started`} className="flex items-center justify-center px-4 py-3 border border-transparent rounded text-base font-medium shadow-sm text-vulcan-500 bg-whisper-500 hover:bg-opacity-70 sm:px-8">
             {strings(`cta_button_bottom_secondary`) as string}
           </a>
         </div>
