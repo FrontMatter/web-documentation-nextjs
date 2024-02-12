@@ -77,7 +77,7 @@ const CodePanel = ({ annotation, children, ...props }: React.PropsWithChildren<I
 export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> = ({ className, children, ...props }: React.PropsWithChildren<ICodeHighlightingProps>) => {
   const [code, setCode] = React.useState('');
 
-  const fetchHighlighter = async (className: string, children: React.ReactNode) => {
+  const fetchHighlighter = React.useCallback(async (className: string, children: React.ReactNode) => {
     const language = className.split('-')[1];
     const highlighter = await ShikiService.getHighlighter();
 
@@ -99,13 +99,13 @@ export const CodeHighlighting: React.FunctionComponent<ICodeHighlightingProps> =
 
       return;
     }
-  };
+  }, []);
 
   React.useEffect(() => {
     if (className && children) {
       fetchHighlighter(className, children);
     }
-  }, [className, children]);
+  }, [className, children, fetchHighlighter]);
 
   const getLanguage = (className: string) => {
     const language = className.split('-')[1];

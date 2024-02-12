@@ -50,7 +50,7 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
         ))}
       </ul>
     );
-  }, [item, items, router.asPath]);
+  }, [item, items]);
 
   return (
     <Section

@@ -31,9 +31,9 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
   
   Desired format: just a string, e.g. "My first blog post"`;
 
-  const response = await OpenAiService.getCompletion(instruction);
+  const choices = await OpenAiService.getCompletion(instruction);
 
-  const results: string[] = response.choices.map((choice: any) => {
+  const results: string[] = choices.map((choice: any) => {
     let title = choice.text.trim();
     if (title.startsWith("1. ")) {
       title = title.substring(2, title.length);
