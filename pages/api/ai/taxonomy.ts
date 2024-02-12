@@ -32,9 +32,9 @@ You are allowed to suggest new ${type} if you think they are relevant.
 
 The result should be a comma separated list of ${type}.`;
 
-  const response = await OpenAiService.getCompletion(instruction, 1, 0.5, 500);
+  const choices = await OpenAiService.getCompletion(instruction, 1, 0.5, 500);
 
-  const result: string = response.choices
+  const result: string = choices
     .map((choice: any) => {
       let title = choice.text.trim();
       if (title.startsWith("1. ")) {

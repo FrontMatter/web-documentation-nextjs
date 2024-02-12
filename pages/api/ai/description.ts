@@ -34,9 +34,9 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
   
   Desired format: just a string without any line breaks or other formatting. make sure it is a full sentence.`;
 
-  const response = await OpenAiService.getCompletion(instruction, 1);
+  const choices = await OpenAiService.getCompletion(instruction, 1);
 
-  const results: string[] = response.choices.map((choice: any) => {
+  const results: string[] = choices.map((choice: any) => {
     let title = choice.text.trim();
     if (title.startsWith("1. ")) {
       title = title.substring(2, title.length);
