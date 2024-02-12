@@ -46,7 +46,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
             {(prevPage && prevPage.slug && prevPage.title) && (
               <a href={`/docs/${(prevPage as PageFrontMatter).slug}`}
                 title={prevPage.title}
-                className={`border border-vulcan-100 hover:border-teal-900 rounded-sm w-1/2 p-4 items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                className={`border border-vulcan-100 hover:border-teal-900 rounded w-1/2 p-4 items-start flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
                 <span className="text-base text-whisper-500">Previous</span>
                 <span>&larr; {(prevPage as PageFrontMatter).title}</span>
               </a>
@@ -54,7 +54,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
             {(nextPage && nextPage.slug && nextPage.title) && (
               <a href={`/docs/${(nextPage as PageFrontMatter).slug}`}
                 title={nextPage.title}
-                className={`border border-vulcan-100 hover:border-teal-900 rounded-sm w-1/2 p-4 items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
+                className={`border border-vulcan-100 hover:border-teal-900 rounded w-1/2 p-4 items-end ml-auto flex flex-col gap-2 text-teal-500 hover:text-teal-900`}>
                 <span className="text-base text-whisper-500">Next</span>
                 <span>{(nextPage as PageFrontMatter).title} &rarr;</span>
               </a>

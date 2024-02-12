@@ -3,7 +3,7 @@ title: Custom actions
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-12-07T16:37:05.124Z
+lastmod: 2024-01-31T12:48:37.504Z
 weight: 500
 ---
 
@@ -116,12 +116,12 @@ When you do not want to use the `@frontmatter/extensibility` package, you can cr
 follows:
 
 ```javascript
-const arguments = process.argv;
+const args = process.argv;
 
-if (arguments && arguments.length > 0) {
-  const workspaceArg = arguments[2]; // The workspace path
-  const fileArg = arguments[3]; // The file path
-  const frontMatterArg = arguments[4]; // Front matter data
+if (args && args.length > 0) {
+  const workspaceArg = args[2]; // The workspace path
+  const fileArg = args[3]; // The file path
+  const frontMatterArg = args[4]; // Front matter data
 
   console.log(`The content returned for your notification.`);
 }
@@ -130,9 +130,9 @@ if (arguments && arguments.length > 0) {
 The current workspace-, file-path, and front matter data will be passed as a arguments. Like you can
 see in the above sample script, you can fetch these argument values as follows:
 
-- `arguments[2]`: The workspace path
-- `arguments[3]`: The file path (Markdown file)
-- `arguments[4]`: The front matter data as object
+- `args[2]`: The workspace path
+- `args[3]`: The file path (Markdown file)
+- `args[4]`: The front matter data as object
 
 ### Creating a script with the extensibility package
 
@@ -272,8 +272,8 @@ Here is a sample on how you can define a media script:
 
 The script will provide you the following arguments:
 
-- `arguments[2]`: The workspace path
-- `arguments[3]`: The file or folder path. This depends on the type of script.
+- `args[2]`: The workspace path
+- `args[3]`: The file or folder path. This depends on the type of script.
 
 When using the `@frontmatter/extensibility` package, you can get the arguments as follows:
 
@@ -383,15 +383,15 @@ print(f'frontMatterArg: {sys.argv[3]}')
 ```javascript
 const path = require("path");
 
-const arguments = process.argv;
+const args = process.argv;
 
 (async () => {
-  if (arguments && arguments.length > 0) {
+  if (args && args.length > 0) {
     const imagemin = (await import("imagemin")).default;
     const imageminJpegtran = (await import("imagemin-jpegtran")).default;
     const imageminPngquant = (await import("imagemin-pngquant")).default;
 
-    const fileArg = arguments[3]; // The file path
+    const fileArg = args[3]; // The file path
 
     await imagemin([fileArg], {
       destination: path.dirname(fileArg),
@@ -413,16 +413,16 @@ const arguments = process.argv;
 ```javascript
 const path = require("path");
 
-const arguments = process.argv;
+const args = process.argv;
 
 (async () => {
-  if (arguments && arguments.length > 0) {
+  if (args && args.length > 0) {
     const imagemin = (await import("imagemin")).default;
     const imageminJpegtran = (await import("imagemin-jpegtran")).default;
     const imageminPngquant = (await import("imagemin-pngquant")).default;
 
-    const workspaceArg = arguments[2]; // The workspace path
-    const folderArg = arguments[3]; // The folder path
+    const workspaceArg = args[2]; // The workspace path
+    const folderArg = args[3]; // The folder path
 
     const files = await imagemin([path.join(folderArg, "*.{jpg,png}")], {
       destination: folderArg,

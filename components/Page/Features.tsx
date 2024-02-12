@@ -44,7 +44,7 @@ export const Features: React.FunctionComponent<IFeaturesProps> = (props: React.P
           <div className="mt-4">
             <Link
               href={Extension.featureLink}
-              className={`inline-block px-4 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-opacity-70 sm:px-8`}
+              className={`inline-block px-4 py-3 border border-transparent rounded text-base font-medium shadow-sm text-white bg-vulcan-50 hover:bg-opacity-70 sm:px-8`}
               target={`_blank`}
               rel={`noopener noreferrer`}>
               {strings(`features_cta_button`) as string}
