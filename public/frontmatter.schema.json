@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-02-13T08:42:31.683Z",
+  "lastModified": "2024-02-13T08:52:45.937Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -941,22 +941,25 @@
           "fields": {
             "type": "array",
             "description": "Define the fields of the media content type",
-            "properties": {
-              "title": {
-                "type": "string",
-                "description": "Title to show in the UI"
-              },
-              "name": {
-                "type": "string",
-                "description": "Name of the field to use"
-              },
-              "type": {
-                "type": "string",
-                "description": "Define the type of field"
-              },
-              "single": {
-                "type": "boolean",
-                "description": "Is a single line field"
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title to show in the UI"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Name of the field to use"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Define the type of field"
+                },
+                "single": {
+                  "type": "boolean",
+                  "description": "Is a single line field"
+                }
               }
             }
           }
