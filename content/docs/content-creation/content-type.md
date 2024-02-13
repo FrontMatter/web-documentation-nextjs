@@ -3,7 +3,7 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2023-12-08T09:13:41.283Z
+lastmod: 2024-02-13T09:20:18.028Z
 weight: 200.1
 ---
 
@@ -130,6 +130,7 @@ For the content type you can configure the following properties:
 | `template`        | `string`                                 | Specify a path to a template file that will be used when creating new content with the content type                                                                | `null`        |
 | `allowAsSubContent` | `boolean`                              | Allow the content type to be used as sub-content                                                                                                                   | `false`       |
 | `isSubContent`    | `boolean`                                | Defines the content type as sub-content                                                                                                                            | `false`       |
+| `slugTemplate`    | `boolean`                                | Defines the template for the `slug`                                                                                                                                | `{{title}}`   |
 
 ## Define your own type
 

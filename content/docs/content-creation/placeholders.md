@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-01-31T16:32:05.190Z
+lastmod: 2024-02-13T09:22:26.586Z
 weight: 200.4
 ---
 
@@ -31,7 +31,7 @@ automatically fill in values when creating a new content.
 
 | Placeholder             | Description                                                | Works for                                             |
 | ----------------------- | ---------------------------------------------------------- | ----------------------------------------------------- |
-| `{{fm.<field name>}}`   | The value of the field in the front matter                 | `previewPath` on the page folder or the content-type. |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                 | `slugTemplate` and `previewPath` properties.          |
 | `{{pathToken.<index>}}` | The value of the path token at the index                   | `previewPath` on the page folder or the content-type. |
 | `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type. |
 
@@ -149,7 +149,7 @@ Here is an example of a dynamic `uniqueId` placeholder:
 #### Placeholder script
 
 To get started, you first need to install the
-[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility) 
+[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility)
 dependency.
 
 ```bash

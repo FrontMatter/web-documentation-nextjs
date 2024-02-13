@@ -3,7 +3,7 @@ title: Commands
 slug: commands
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-09-11T07:58:42.087Z
+lastmod: 2024-02-13T09:43:12.442Z
 weight: 900
 ---
 
@@ -133,26 +133,7 @@ ID: `frontMatter.createContent`
 This command generates a clean slug for your content. It removes known stop words, punctuations, and
 special characters.
 
-Example:
-
-```yaml
----
-title: Just a sample page with a title
-slug: sample-page-title
----
-```
-
-You can also specify a prefix and suffix, which can be added to the slug if you want. Use the
-following settings to do this: `frontMatter.taxonomy.slugPrefix` and
-`frontMatter.taxonomy.slugSuffix`.
-
-By default, both prefix and suffix settings are not provided, which mean it would not add anything
-extra to the slug.
-
-Another setting is to allow you to sync the filename with the generated slug. The setting you need
-to turn on enable for this is `frontMatter.taxonomy.alignFilename`.
-
-> **Info**: At the moment, the extension only supports English stopwords.
+> **Info**: You can read more about the slug in the [slug documentation](/docs/content-creation/slug).
 
 ID: `frontMatter.generateSlug`
 

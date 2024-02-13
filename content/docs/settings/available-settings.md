@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-12-08T09:03:00.096Z
+lastmod: 2024-02-13T09:17:07.601Z
 weight: 1100.2
 ---
 
@@ -424,6 +424,20 @@ Specify the commit message you want to use for the sync.
 - Type: `string`
 - Default: `Synced by Front Matter`
 
+### frontMatter.git.disableOnBranches
+
+Specify the branches on which you want to disable the Git actions.
+
+- Type: `array`
+- Default: `[]`
+
+### frontMatter.git.requiresCommitMessage
+
+Specify the branches on which you want to require a commit message.
+
+- Type: `array`
+- Default: `[]`
+
 ### frontMatter.git.submodule.push
 
 Specify if you want to push the submodule changes to the remote repository.
@@ -759,6 +773,14 @@ Specify a suffix for the slug.
 
 - Type: `string`
 - Default: `""`
+
+### frontMatter.taxonomy.slugTemplate
+
+Specify the template for the slug. If you use `{{title}}`, it will create a clean slug based on the
+title.
+
+- Type: `string`
+- Default: `{{title}}`
 
 ### frontMatter.taxonomy.tags
 

@@ -20,7 +20,7 @@ export const DocsLayout: React.FunctionComponent<React.PropsWithChildren<IDocsLa
   return (
     <div className={`lg:ml-72 xl:ml-80`}>
 
-      <aside className={`fixed inset-y-0 left-0 z-40 contents w-72 overflow-y-auto px-6 pt-4 pb-8 lg:block xl:w-80 lg:pr-8 lg:border-r lg:border-vulcan-300`}>
+      <aside className={`fixed bg-vulcan-600 inset-y-0 left-0 z-40 contents w-72 overflow-y-auto px-6 pt-4 pb-8 lg:block xl:w-80 lg:pr-8 lg:border-r lg:border-vulcan-300`}>
         <div className='ml-auto'>
           <Header navItems={navItems} />
         </div>
