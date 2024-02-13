@@ -5,11 +5,11 @@ import { Extension } from '../../constants/extension';
 import { StarService } from '../../services/StarService';
 import { GitHub } from '../Images/GitHub';
 
-export interface IStargazersProps {}
+export interface IStargazersProps { }
 
 export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: React.PropsWithChildren<IStargazersProps>) => {
-  const [ stars, setStars ] = useState<number | null>(null);
-  const [ calling, setCalling ] = useState<boolean>(false);
+  const [stars, setStars] = useState<number | null>(null);
+  const [calling, setCalling] = useState<boolean>(false);
 
   useEffect(() => {
     const getStars = async () => {
@@ -23,10 +23,10 @@ export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: Rea
   }, [calling]);
 
   return (
-    <div className={`stargazers group flex items-center`} style={{height:"36px"}}>
-      <Link 
+    <div className={`stargazers group flex items-center`} style={{ height: "36px" }}>
+      <Link
         href={Extension.githubLink}
-        className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`} 
+        className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700 rounded`}
         title={`Give the project a star on GitHub`}>
         <GitHub className={`h-4 w-4 mr-1`} />
         <span>Star</span>
@@ -41,7 +41,7 @@ export const Stargazers: React.FunctionComponent<IStargazersProps> = (props: Rea
 
             <Link
               href={Extension.stars}
-              className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700`}
+              className={`h-full flex items-center bg-whisper-500 text-vulcan-500 p-2 text-xs font-bold group-hover:bg-whisper-700 rounded`}
               title={`Give the project a star on GitHub`}>
               {stars}
             </Link>

@@ -40,7 +40,7 @@ export const navigation = {
             open && (
               <Modal isOpen={open} onClose={() => setOpen(false)}>
                 <div className="relative">
-                  <div className="hidden sm:block absolute top-0 right-0 pr-4">
+                  <div className="hidden sm:block absolute top-0 right-0">
                     <button
                       type="button"
                       className="bg-vulcan-50 rounded-md text-whisper-900 hover:text-whisper-300 focus:outline-none"
@@ -67,7 +67,7 @@ export const navigation = {
                 </div>
                 <div className="mt-5 sm:mt-6 space-y-4">
                   <a
-                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500  focus:outline-none sm:text-sm"
+                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500  focus:outline-none sm:text-sm rounded"
                     onClick={() => setOpen(false)}
                     href={Extension.sponsorLink}
                     target={`_blank`}
@@ -76,7 +76,7 @@ export const navigation = {
                     GitHub Sponsor
                   </a>
                   <a
-                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm"
+                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm rounded"
                     onClick={() => setOpen(false)}
                     href={Extension.sponsorOpenCollective}
                     target={`_blank`}
@@ -85,7 +85,7 @@ export const navigation = {
                     Open Collective
                   </a>
                   <a
-                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm"
+                    className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm rounded"
                     onClick={() => setOpen(false)}
                     href={Extension.sponsorCoffee}
                     target={`_blank`}

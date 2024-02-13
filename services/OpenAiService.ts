@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAI } from "openai";
 
 export class OpenAiService {
   public static async getCompletion(
@@ -7,14 +7,12 @@ export class OpenAiService {
     temperature: number = 0.8,
     max_tokens: number = 30
   ) {
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: process.env.OPENAI_TOKEN,
     });
 
-    const openai = new OpenAIApi(configuration);
-
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
+    const response = await openai.completions.create({
+      model: "gpt-3.5-turbo-instruct",
       prompt: `${instruction}`,
       temperature,
       max_tokens,
@@ -22,15 +20,10 @@ export class OpenAiService {
       stop: null,
     });
 
-    if (
-      !response ||
-      !response.data ||
-      !response.data.choices ||
-      !response.data.choices[0]
-    ) {
+    if (!response || !response.choices || !response.choices[0]) {
       throw new Error("No response from OpenAI");
     }
 
-    return response.data;
+    return response.choices;
   }
 }

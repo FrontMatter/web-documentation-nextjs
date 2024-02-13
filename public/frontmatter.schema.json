@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-01-26T09:08:14.039Z",
+  "lastModified": "2024-02-12T08:58:26.060Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -385,6 +385,31 @@
       "default": true,
       "markdownDescription": "Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.wysiwyg)",
       "scope": "Content"
+    },
+    "frontMatter.content.filters": {
+      "type": "array",
+      "default": [
+        "pageFolders",
+        "tags",
+        "categories"
+      ],
+      "markdownDescription": "Specify the filters you want to use for your content dashboard. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.filters)",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      ]
     },
     "frontMatter.custom.scripts": {
       "type": "array",

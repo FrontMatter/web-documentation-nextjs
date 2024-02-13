@@ -45,14 +45,14 @@ export default function Home({ content }: any) {
 
             <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 mt-8`}>
               {communityLinks.map((link, index) => (
-                <div key={index} className={`p-4 shadow-lg bg-vulcan-100`}>
+                <div key={index} className={`p-4 shadow-lg bg-vulcan-100 rounded`}>
                   <h3 className={`text-2xl font-bold`}>{link.title}</h3>
                   <p className={`mt-2 text-base text-whisper-700`}>{link.description}</p>
                   <a
                     href={link.link}
                     target={`_blank`}
                     rel={`noopener noreferrer`}
-                    className={`mt-4 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium text-white bg-rose-900 hover:bg-rose-800 focus:outline-none`}>Go to {link.title}</a>
+                    className={`mt-4 inline-flex items-center px-4 py-2 border border-transparent rounded text-base font-medium text-white bg-rose-900 hover:bg-rose-800 focus:outline-none`}>Go to {link.title}</a>
                 </div>
               ))}
             </div>
