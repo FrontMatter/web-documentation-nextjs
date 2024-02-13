@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2024-02-12T08:58:26.061Z",
+  "lastModified": "2024-02-13T08:42:31.685Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -512,6 +512,14 @@
       ],
       "default": null,
       "description": "Defines a custom preview path for the content type."
+    },
+    "slugTemplate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "description": "%setting.frontMatter.content.pageFolders.items.properties.slugTemplate.description%"
     },
     "template": {
       "type": "string",

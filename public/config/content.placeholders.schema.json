@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/content.placeholders.schema.json",
   "description": "Defines the settings for Front Matter placeholder",
-  "lastModified": "2024-02-12T08:58:26.062Z",
+  "lastModified": "2024-02-13T08:42:31.685Z",
   "type": "object",
   "title": "Front Matter - placeholder",
   "properties": {

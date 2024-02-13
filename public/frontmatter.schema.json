@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-02-12T08:58:26.060Z",
+  "lastModified": "2024-02-13T08:42:31.683Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -793,6 +793,22 @@
       "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.commitmessage)",
       "default": "Synced by Front Matter"
     },
+    "frontMatter.git.disableOnBranches": {
+      "type": "array",
+      "markdownDescription": "Specify the branches on which you want to disable the Git actions. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.disableonbranches)",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "frontMatter.git.requiresCommitMessage": {
+      "type": "array",
+      "markdownDescription": "Specify if you want to require a commit message when publishing your changes for a specified branch. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.requirescommitmessage)",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
     "frontMatter.git.submodule.pull": {
       "type": "boolean",
       "markdownDescription": "Specify if you want to pull submodules when syncing. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.pull)",
@@ -900,6 +916,76 @@
       ],
       "markdownDescription": "Specify the default sorting option for the media dashboard. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.defaultsorting)",
       "scope": "Content"
+    },
+    "frontMatter.media.contentTypes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "markdownDescription": "Specify the media content types you want to use in Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.contenttypes)",
+      "items": {
+        "type": "object",
+        "description": "Define the media content types you want to use in Front Matter.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the media content type"
+          },
+          "fileTypes": {
+            "type": "array",
+            "description": "Specify the file types to allow for the media content type",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fields": {
+            "type": "array",
+            "description": "Define the fields of the media content type",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Title to show in the UI"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the field to use"
+              },
+              "type": {
+                "type": "string",
+                "description": "Define the type of field"
+              },
+              "single": {
+                "type": "boolean",
+                "description": "Is a single line field"
+              }
+            }
+          }
+        }
+      },
+      "default": [
+        {
+          "name": "default",
+          "fileTypes": null,
+          "fields": [
+            {
+              "title": "Title",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "title": "Caption",
+              "name": "caption",
+              "type": "string"
+            },
+            {
+              "title": "Alt text",
+              "name": "alt",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "scope": "Media"
     },
     "frontMatter.media.supportedMimeTypes": {
       "type": "array",
@@ -1495,6 +1581,14 @@
             "default": null,
             "description": "Defines a custom preview path for the content type."
           },
+          "slugTemplate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "description": "%setting.frontMatter.content.pageFolders.items.properties.slugTemplate.description%"
+          },
           "template": {
             "type": "string",
             "default": "",
@@ -1735,6 +1829,11 @@
     "frontMatter.taxonomy.slugSuffix": {
       "type": "string",
       "markdownDescription": "Specify a suffix for the slug. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugsuffix)",
+      "scope": "Taxonomy"
+    },
+    "frontMatter.taxonomy.slugTemplate": {
+      "type": "string",
+      "markdownDescription": "Defines a custom slug template for the content you will create. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugtemplate)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.tags": {

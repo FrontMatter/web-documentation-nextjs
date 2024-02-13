@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://beta.frontmatter.codes/config/media.contentTypes.schema.json",
+  "description": "Defines the settings for Front Matter content type",
+  "lastModified": "2024-02-13T08:42:31.685Z",
+  "type": "object",
+  "title": "Front Matter - content type",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the media content type"
+    },
+    "fileTypes": {
+      "type": "array",
+      "description": "Specify the file types to allow for the media content type",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fields": {
+      "type": "array",
+      "description": "Define the fields of the media content type",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title to show in the UI"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the field to use"
+        },
+        "type": {
+          "type": "string",
+          "description": "Define the type of field"
+        },
+        "single": {
+          "type": "boolean",
+          "description": "Is a single line field"
+        }
+      }
+    }
+  }
+}
