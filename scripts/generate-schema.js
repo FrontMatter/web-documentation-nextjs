@@ -121,7 +121,7 @@ const escapeQuotes = (/** @type {string} */ str) => {
         types: "data.types.schema.json"
       },
       media: {
-        contentTypes: "media.contentTypes.schema.json"
+        contentTypes: "media.contenttypes.schema.json"
       },
       taxonomy: {
         contentTypes: "taxonomy.contenttypes.schema.json",

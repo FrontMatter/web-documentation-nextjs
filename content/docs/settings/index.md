@@ -3,7 +3,7 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-10-06T13:23:18.535Z
+lastmod: 2024-02-13T08:44:01.601Z
 weight: 1100
 ---
 
@@ -71,6 +71,7 @@ The following settings are supported to be split in multiple files:
 | `frontMatter.data.files`            | `./.frontmatter/config/data/files/`            | `https://frontmatter.codes/config/data.files.schema.json`            |
 | `frontMatter.data.folders`          | `./.frontmatter/config/data/folders/`          | `https://frontmatter.codes/config/data.folders.schema.json`          |
 | `frontMatter.data.types`            | `./.frontmatter/config/data/types/`            | `https://frontmatter.codes/config/data.types.schema.json`            |
+| `frontMatter.media.contentTypes`    | `./.frontmatter/config/meda/contenttypes/`     | `https://frontmatter.codes/config/media.contenttypes.schema.json`    |
 | `frontMatter.taxonomy.contentTypes` | `./.frontmatter/config/taxonomy/contenttypes/` | `https://frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
 | `frontMatter.taxonomy.fieldGroups`  | `./.frontmatter/config/taxonomy/fieldgroups/`  | `https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json`  |
 
