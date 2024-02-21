@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/data.folders.schema.json",
   "description": "Defines the settings for Front Matter data folder",
-  "lastModified": "2024-02-13T08:52:45.939Z",
+  "lastModified": "2024-02-21T09:52:54.399Z",
   "type": "object",
   "title": "Front Matter - data folder",
   "properties": {
