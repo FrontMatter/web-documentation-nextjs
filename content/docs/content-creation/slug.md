@@ -3,8 +3,8 @@ title: Slug
 slug: content-creation/slug
 description: null
 date: 2024-02-13T09:28:37.205Z
-lastmod: 2024-02-13T09:48:46.199Z
-weight: 200.5
+lastmod: 2024-02-21T09:12:52.450Z
+weight: 200.61
 ---
 
 # Slug

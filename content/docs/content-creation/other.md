@@ -3,8 +3,8 @@ title: Additional configuration
 slug: content-creation/additional-config
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-10-06T13:30:33.717Z
-weight: 200.5
+lastmod: 2024-02-21T09:43:39.296Z
+weight: 200.81
 ---
 
 # Additional configuration
@@ -16,11 +16,13 @@ For more information on how to use the preview path, see the
 
 ## File prefixes
 
-By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix. You can change this per page folder or per content-type.
+By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix.
+You can change this per page folder or per content-type.
 
 ### Page folder level
 
-To change the file prefix for a specific page folder, you can add the `filePrefix` property to your page folder in the `frontMatter.content.pageFolders` setting.
+To change the file prefix for a specific page folder, you can add the `filePrefix`
+property to your page folder in the `frontMatter.content.pageFolders` setting.
 
 ```json
 {
@@ -36,9 +38,11 @@ To change the file prefix for a specific page folder, you can add the `filePrefi
 
 ### Content-type level
 
-Similarly, you can change the file prefix for a specific content type by adding the `filePrefix` property to your content type in the `frontMatter.taxonomy.contentTypes` setting.
+Similarly, you can change the file prefix for a specific content type by adding the `filePrefix`
+property to your content type in the `frontMatter.taxonomy.contentTypes` setting.
 
-> **Important**: The `filePrefix` from the content-type will override the `filePrefix` property from the page folder.
+> **Important**: The `filePrefix` from the content-type will override the `filePrefix`
+property from the page folder.
 
 ```json
 {

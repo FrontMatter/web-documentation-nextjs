@@ -3,11 +3,14 @@ title: Content types
 slug: content-creation/content-types
 description: null
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2024-02-13T09:20:18.028Z
-weight: 200.1
+lastmod: 2024-02-21T09:44:40.433Z
+weight: 200.21
 ---
 
 # Content types
+
+Content types are a way to define the structure of your content. Each content type can have its own
+set of fields.
 
 ## Changing the default content type
 

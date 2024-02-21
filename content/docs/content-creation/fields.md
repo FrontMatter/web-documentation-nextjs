@@ -3,8 +3,8 @@ title: Fields
 slug: content-creation/fields
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-13T09:46:22.485Z
-weight: 200.2
+lastmod: 2024-02-21T09:11:43.854Z
+weight: 200.31
 ---
 
 # Fields overview

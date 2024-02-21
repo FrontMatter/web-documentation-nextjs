@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-13T09:17:07.601Z
+lastmod: 2024-02-21T09:22:54.273Z
 weight: 1100.2
 ---
 
@@ -113,45 +113,7 @@ running the create article command.
 - Type: `object[]`
 - Default: `[]`
 
-Properties:
-
-| Title           | Type       | Description                                                                                                                                          | Default | Required / Optional |
-| --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
-| `title`         | `string`   | A title for the content folder path                                                                                                                  | `""`    | Optional            |
-| `path`          | `string`   | The path to the content folder, important is to use the `[[workspace]]` placeholder. You can also make use of placeholder to generate dynamic paths. | `""`    | Required            |
-| `excludeSubdir` | `boolean`  | Exclude subdirectories from the content folder                                                                                                       |         | Optional            |
-| `previewPath`   | `string`   | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more.                              |         | Optional            |
-| `filePrefix`    | `string`   | Defines a prefix for the file name.                                                                                                                  |         | Optional            |
-| `contentTypes`  | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
-| `disableCreation` | `boolean` | Disables the creation of new content in this folder.                                                                                                 |         | Optional            |
-
-> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
-> path. The reason why we choose to use this, is because some do not keep the original folder name.
-
-Sample:
-
-```json
-{
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "Pages",
-      "path": "[[workspace]]/content",
-      "excludeSubdir": true,
-      "previewPath": "post" // Prefixes all files with "/post/" for the page preview
-    },
-    {
-      "title": "Blog posts",
-      "path": "[[workspace]]/content/posts"
-    },
-    {
-      "title": "docs",
-      "path": "[[workspace]]/docs",
-      "filePrefix": "",
-      "contentTypes": ["doc"]
-    }
-  ]
-}
-```
+> **Info**: More information on how to use it can be found in the [content folders][06] section.
 
 ### frontMatter.content.placeholders
 
@@ -878,7 +840,7 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [02]: /docs/experimental
 [04]: /docs/content-creation#before-you-start
 [05]: /releases/v8.1.0/hide-fm.png
-[06]: /docs/site-preview#configuration
+[06]: /docs/content-creation/content-folders
 [07]: /docs/content-creation/placeholders
 [08]: /docs/custom-actions
 [09]: /docs/dashboard#card-tags

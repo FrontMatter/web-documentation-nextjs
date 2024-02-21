@@ -3,13 +3,13 @@ title: Field conditions
 slug: content-creation/field-conditions
 description: null
 date: 2022-12-08T15:30:17.335Z
-lastmod: 2022-12-08T15:30:17.335Z
-weight: 200.3
+lastmod: 2024-02-21T09:11:46.147Z
+weight: 200.41
 ---
 
 # Field conditions
 
-Field conditions allow you to show or hide fields based on the value of another field. 
+Field conditions allow you to show or hide fields based on the value of another field.
 This is useful when you want to show a field only when a specific value is selected or provided.
 
 ## Show or hide fields

@@ -3,8 +3,8 @@ title: Placeholders
 slug: content-creation/placeholders
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-13T09:22:26.586Z
-weight: 200.4
+lastmod: 2024-02-21T09:11:54.094Z
+weight: 200.51
 ---
 
 # Placeholders
