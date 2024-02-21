@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-21T09:22:54.273Z
+lastmod: 2024-02-21T16:01:09.014Z
 weight: 1100.2
 ---
 
@@ -104,6 +104,15 @@ Specify the message to display when the Front Matter is hidden.
 - Default: `""`
 
 ![Hide front matter from the content][05]
+
+### frontMatter.content.i18n
+
+Specify the locales for the entire workspace.
+
+- Type: `object[]`
+- Default: `[]`
+
+> **Info**: More information on how to use it can be found in the [multilingual][21] section.
 
 ### frontMatter.content.pageFolders
 
@@ -855,3 +864,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
+[21]: /docs/content-creation/multilingual
