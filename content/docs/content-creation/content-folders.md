@@ -3,22 +3,24 @@ title: Content folders
 slug: content-creation/content-folders
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-21T09:43:59.593Z
+lastmod: 2024-02-21T14:56:03.901Z
 weight: 200.11
 ---
 
 # Content Folders
 
 Content folders are a way to organize your pages/files. Most of the time,
-this location is defined by the Static Site Generator (SSG) you are using.
+the static site generator (SSG) you are using defines the location where
+you store your content.
 
-To make sure that Front Matter CMS can find your content, and create the
+To make sure that Front Matter CMS can find your content and create the
 content in the correct place, you need to register the content/page folders.
 
 ## Registering content folders
 
-The registration of the page folders is normally done during the setup of
-the CMS: [Step 3: Register content folder(s)][01].
+The registration of the page folders is typically performed during the setup of
+the CMS: [Step 3: Register content folder(s)][01],
+but you can perform changes at any time.
 
 Content folders are stored in the [frontMatter.content.pageFolders][02] setting.
 
@@ -73,7 +75,27 @@ Content folders are stored in the [frontMatter.content.pageFolders][02] setting.
 }
 ```
 
-Once the content folders are registered, you can start creating content with Front Matter CMS.
+Once the content folders are registered, you can create content with Front Matter CMS.
+
+## Register a new content folder
+
+### Settings view
+
+You can make use of the settings view to easily add a new content folder.
+
+To open the settings view, click on the gear icon in the top right corner in any of our dashboards.
+
+1. Click on the "Content folders" tab.
+1. Click on the folders which you want to add as a content folder.
+
+![Add a new content folder](/releases/v9.3.0/content-folders.png)
+
+### Explorer view
+
+You can also add a new content folder by right-clicking on a folder in the explorer view
+and clicking on `Register folder` under the Front Matter CMS context menu.
+
+![Register a new content folder](/releases/v9.3.0/register-folder.png)
 
 ## Properties
 

@@ -82,6 +82,30 @@ const remarkFm = ({
       }
     });
 
+    visit(tree, "blockquote", (node) => {
+      if (node.children.length > 0) {
+        const firstChild = node.children[0];
+        if (firstChild.type === "paragraph") {
+          const hasImportant = node.children.some((c: any) => {
+            const firstChild = c.children[0];
+            if (!firstChild) return false;
+            return (
+              firstChild.type === "strong" &&
+              firstChild.children[0].value.toLowerCase() === "important"
+            );
+          });
+
+          if (hasImportant) {
+            node.data = {
+              hProperties: {
+                class: "important",
+              },
+            };
+          }
+        }
+      }
+    });
+
     visit(tree, "heading", (node) => {
       let lastChild = node.children[node.children.length - 1];
       if (lastChild && lastChild.type === "text") {
