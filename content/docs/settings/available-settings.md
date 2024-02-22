@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-22T10:16:24.290Z
+lastmod: 2024-02-22T11:12:35.358Z
 weight: 1100.2
 ---
 
@@ -455,6 +455,15 @@ Specifies which type of notifications you want to see or which you want to hide.
 - Type: `array<string>`
 - Default: `["info", "warning", "error"]`
 
+### frontMatter.media.contentTypes
+
+Specify the content types you want to use for your media files.
+
+- Type: `array`
+- Default: ``
+
+> **Info**: More information on how to use it can be found in the [media content types][24] section.
+
 ### frontMatter.media.defaultSorting
 
 Specify the default sorting option for the media dashboard.
@@ -849,3 +858,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [21]: /docs/content-creation/multilingual
 [22]: /docs/content-view#sorting
 [23]: /docs/content-view#filters
+[24]: /docs/media-view#metadata
