@@ -21,8 +21,8 @@ export const OtherMeta: React.FunctionComponent<IOtherMetaProps> = ({ image, typ
       <meta property="twitter:url" content={`${publicUrl()}${router?.asPath || ""}`} />
       <meta property="og:url" content={`${publicUrl()}${router?.asPath || ""}`} />
 
-      <meta property="og:image" content={`${publicUrl()}/${image}`} />
-      <meta property="twitter:image" content={`${publicUrl()}/${image}`} />
+      <meta property="og:image" content={`${publicUrl()}${image}`} />
+      <meta property="twitter:image" content={`${publicUrl()}${image}`} />
 
       <meta property="og:type" content="website" />
       <meta property="twitter:domain" content="beta.frontmatter.codes" />
