@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-22T07:27:04.206Z
+lastmod: 2024-02-22T07:31:02.562Z
 weight: 200.71
 ---
 
@@ -47,6 +47,14 @@ You can define the locales on two levels:
 - **Content folder level**: When using the `locales` property on the
   `frontMatter.content.pageFolders` setting, you can define the locales for a
   specific content folder.
+
+#### Properties
+
+| Property | Description | Required |
+| --- | --- | --- |
+| `title` | The title of the locale | No |
+| `locale` | The locale code | Yes |
+| `path` | The path to the locale and relative to the path of the content folder. | No |
 
 #### Global level
 
