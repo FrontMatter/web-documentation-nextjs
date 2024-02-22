@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-22T09:02:18.228Z
+lastmod: 2024-02-22T14:41:02.138Z
 weight: 200.71
 ---
 
@@ -177,11 +177,30 @@ then you can use any of the following methods to create a new translation:
 ## Automatic language translation
 
 By default, the multilingual feature does not include automatic language translation of
-content. However, you can make use of [DeepL](https://www.deepl.com/) for automatic
-language translation.
+content. However, you can make use of [DeepL](https://www.deepl.com/) or
+[Azure AI Translator](https://azure.microsoft.com/en-us/products/ai-services/ai-translator)
+for automatic language translation.
 
-To enable automatic language translation, you need to provide your authentication key
-from DeepL.
+To enable automatic language translation, you need to configure the authentication
+settings for the translation service.
+
+### Configure Azure AI Translator
+
+Follow the next steps in order to configure the Azure AI Translator authentication key:
+
+- Go to the [Azure Portal](https://portal.azure.com/)
+- Go to your `Azure AI Translator` resource
+- Click on the `Keys and Endpoint` menu item
+- Copy the `Key 1` or `Key 2` and the `Region` values
+- Back in Visual Studio Code, open the Front Matter CMS dashboard
+- Click on the gear icon in the top right corner to open the settings view
+- Click on the `Integration` tab
+- Paste the `Key 1` or `Key 2` in the `Subscription key` field
+- Paste the `Region` in the `Region` field
+
+![Azure AI Translator Configuration](/releases/v10.0.0/azure-translator-config.png)
+
+- Save the settings and start creating translations
 
 ### Configure DeepL
 
@@ -194,7 +213,15 @@ Follow the next steps in order to configure the DeepL authentication key:
 - Click on the `Integration` tab
 - Paste the `Authentication Key for DeepL API` in the `Authentication key` field
 
-![DeepL Authentication Key](/releases/v10.0.0/deepl-authentication-key.png)
+![DeepL Authentication Key Configuration](/releases/v10.0.0/deepl-authentication-config.png)
 
-Once you provided the authentication key, when you create a new translation, the
-content will be automatically translated to the target language.
+- Save the settings and start creating translations
+
+### Start translating
+
+Once you configured Deepl or Azure AI Translator, when you [create a new translation](docs/content-creation/multilingual#create-a-translation),
+the CMS will automatically submit the article title, description, and content to the
+translation service.
+
+> **Important**: If anything goes wrong with the translation. The CMS will show an error message
+> and create a copy of the original content in the target locale folder.

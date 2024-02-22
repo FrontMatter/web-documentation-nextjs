@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
-import { PageActions } from './PageActions';
 import { PageInfo } from './PageInfo';
 
 export interface IPageProps {
@@ -13,8 +12,6 @@ export const Page: React.FunctionComponent<React.PropsWithChildren<IPageProps>> 
   return (
     <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
       <div className={`relative my-16 min-w-0 w-full flex-auto lg:max-h-full`} style={{ marginLeft: '-1px' }}>
-        <PageActions page={page} />
-
         {children}
 
         <PageInfo page={page} items={items} />
