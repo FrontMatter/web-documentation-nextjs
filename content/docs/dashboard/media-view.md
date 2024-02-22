@@ -1,9 +1,9 @@
 ---
 title: Media view
-slug: media-view
+slug: dashboard/media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T12:11:35.782Z
+lastmod: 2024-02-22T12:23:07.490Z
 weight: 300.2
 ---
 

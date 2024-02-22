@@ -1,9 +1,9 @@
 ---
 title: Content view
-slug: content-view
+slug: dashboard/content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T10:46:27.387Z
+lastmod: 2024-02-22T12:24:21.051Z
 weight: 300.1
 ---
 

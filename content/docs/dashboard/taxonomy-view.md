@@ -1,9 +1,9 @@
 ---
 title: Taxonomy view
-slug: taxonomy-view
+slug: dashboard/taxonomy-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T10:00:42.445Z
+lastmod: 2024-02-22T12:23:10.461Z
 weight: 300.4
 ---
 

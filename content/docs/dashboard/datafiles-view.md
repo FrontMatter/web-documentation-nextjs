@@ -1,9 +1,9 @@
 ---
 title: Data files view
-slug: datafiles-view
+slug: dashboard/datafiles-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2023-04-01T09:56:59.435Z
+lastmod: 2024-02-22T12:23:03.653Z
 weight: 300.3
 ---
 

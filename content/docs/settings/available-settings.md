@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-22T12:11:12.333Z
+lastmod: 2024-02-22T12:27:07.174Z
 weight: 1100.2
 ---
 
@@ -824,8 +824,8 @@ This setting is used to define the modified date field of your articles.
 [06]: /docs/content-creation/content-folders
 [07]: /docs/content-creation/placeholders
 [08]: /docs/custom-actions
-[09]: /docs/dashboard#card-tags
-[10]: /docs/dashboard#data-files-view
+[09]: /docs/dashboard/content-view#card-tags
+[10]: /docs/dashboard/content-view#data-files-view
 [11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
 [12]: /docs/panel#define-view-modes
 [13]: /docs/content-creation/content-types#changing-the-default-content-type
@@ -837,7 +837,7 @@ This setting is used to define the modified date field of your articles.
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
 [21]: /docs/content-creation/multilingual
-[22]: /docs/content-view#sorting
-[23]: /docs/content-view#filters
-[24]: /docs/media-view#metadata
-[25]: /docs/media-view#define-the-media-folder
+[22]: /docs/dashboard/content-view#sorting
+[23]: /docs/dashboard/content-view#filters
+[24]: /docs/dashboard/media-view#metadata
+[25]: /docs/dashboard/media-view#define-the-media-folder
