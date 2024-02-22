@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-22T07:31:02.562Z
+lastmod: 2024-02-22T09:02:18.228Z
 weight: 200.71
 ---
 
@@ -29,13 +29,17 @@ property on the `frontMatter.content.pageFolders` setting.
   "frontMatter.content.pageFolders": [
     {
       "title": "Multilingual",
-      "path": "[[workspace]]/docs/en",
+      "path": "[[workspace]]/docs",
       "filePrefix": "",
       "defaultLocale": "en" // This value needs to map to the locale defined in the i18n setting
     }
   ]
 }
 ```
+
+> **Important**: The path for the default locale is defined by the content folder path
+> and the i18n locale path. For example, if the content folder path is `[[workspace]]/docs` and
+> the i18n locale path is `en`, the default locale path will be `[[workspace]]/docs/en`.
 
 ### Define the locales
 
@@ -54,7 +58,7 @@ You can define the locales on two levels:
 | --- | --- | --- |
 | `title` | The title of the locale | No |
 | `locale` | The locale code | Yes |
-| `path` | The path to the locale and relative to the path of the content folder. | No |
+| `path` | The path to for the locale. This path value is used in combination with the content folder's path. | Yes |
 
 #### Global level
 
@@ -67,24 +71,60 @@ setting.
     {
       "title": "English",
       "locale": "en",
-      "path": "."
+      "path": "en"
     },
     {
       "title": "German",
       "locale": "de",
-      "path": "../de"
+      "path": "de"
     },
     {
-      "title": "Nederlands",
+      "title": "Dutch",
       "locale": "nl",
-      "path": "../nl"
+      "path": "nl"
     }
   ]
 }
 ```
 
-> **Important**: The default locale (like the **English** locale) does not
-> require to define a `path` as it is defined by the content folder configuration.
+In combination with the above content folder configuration, the contents will be
+stored in the following paths:
+
+- English: `[[workspace]]/docs/en`
+- German: `[[workspace]]/docs/de`
+- Dutch: `[[workspace]]/docs/nl`
+
+If you want, you can also create the default content in the root of the content folder.
+You can use use the `.` value for the `path` property.
+
+```json {{ "title": "Example of the global i18n configuration with default content in the root" }}
+{
+  "frontMatter.content.i18n": [
+    {
+      "title": "English",
+      "locale": "en",
+      "path": "."
+    },
+    {
+      "title": "German",
+      "locale": "de",
+      "path": "de"
+    },
+    {
+      "title": "Dutch",
+      "locale": "nl",
+      "path": "nl"
+    }
+  ]
+}
+```
+
+In combination with the above content folder configuration, the contents will be
+stored in the following paths:
+
+- English: `[[workspace]]/docs`
+- German: `[[workspace]]/docs/de`
+- Dutch: `[[workspace]]/docs/nl`
 
 #### Content folder level
 
@@ -96,18 +136,19 @@ override the global locales for a specific content folder.
   "frontMatter.content.pageFolders": [
     {
       "title": "Multilingual",
-      "path": "[[workspace]]/docs/en",
+      "path": "[[workspace]]/docs",
       "filePrefix": "",
       "defaultLocale": "en",
       "locales": [
         {
           "title": "English",
-          "locale": "en"
+          "locale": "en",
+          "path": "en"
         },
         {
           "title": "Nederlands",
           "locale": "nl",
-          "path": "../nl"
+          "path": "nl"
         }
       ]
     }
@@ -120,7 +161,7 @@ override the global locales for a specific content folder.
 Once the multilingual settings are configured, you can create content in multiple
 languages with Front Matter CMS.
 
-You can create content translations by starting from the default locale content and
+You can create content translations by starting from the locale content and
 then you can use any of the following methods to create a new translation:
 
 - Use the `Front Matter: Create new translation` command from the command palette

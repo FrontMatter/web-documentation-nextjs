@@ -3,7 +3,7 @@ title: Content folders
 slug: content-creation/content-folders
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-21T14:56:03.901Z
+lastmod: 2024-02-22T08:54:27.654Z
 weight: 200.11
 ---
 
@@ -108,8 +108,8 @@ and clicking on `Register folder` under the Front Matter CMS context menu.
 | `filePrefix`      | `string`   | Defines a prefix for the file name.                                                                                                                  |         | Optional            |
 | `contentTypes`    | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
 | `disableCreation` | `boolean`  | Disables the creation of new content in this folder.                                                                                                 | `false` | Optional            |
-| `defaultLocale`   | `string`   | Set the default locale ID for the page folder. More information can be found in the [Multilingual][04] section.                              |         | Optional            |
-| `locales`         | `array`    | Multilingual configuration on page folder level. More information can be found in the [Multilingual][04] section.                            |         | Optional            |
+| `defaultLocale`   | `string`   | Set the default locale ID for the page folder. More information can be found in the [Multilingual][04] section.                                      |         | Optional            |
+| `locales`         | `array`    | Multilingual configuration on page folder level. More information can be found in the [Multilingual][04] section.                                    |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
