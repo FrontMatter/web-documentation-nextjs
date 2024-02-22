@@ -232,5 +232,13 @@
         }
       ]
     }
-  }
+  },
+  "frontMatter.custom.scripts": [
+    {
+      "title": "Convert to webp",
+      "script": "./scripts/convert-webp.mjs",
+      "command": "~/.nvm/versions/node/v18.17.1/bin/node",
+      "type": "mediaFile"
+    }
+  ]
 }

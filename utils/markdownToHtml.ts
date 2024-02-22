@@ -194,7 +194,11 @@ const remarkImage = () => async (tree: any) => {
       if (imgPath.startsWith("http")) return;
 
       const absImgPath = path.join(process.cwd(), "public", imgPath);
-      if (fs.existsSync(absImgPath) && !absImgPath.endsWith(".gif")) {
+      if (
+        fs.existsSync(absImgPath) &&
+        !absImgPath.endsWith(".gif") &&
+        !absImgPath.endsWith(".webp")
+      ) {
         const promise = require("lqip")
           .base64(absImgPath)
           .then((lqip: any) => {
