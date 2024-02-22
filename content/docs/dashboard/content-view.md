@@ -3,7 +3,7 @@ title: Content view
 slug: content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2023-10-06T13:36:12.765Z
+lastmod: 2024-02-22T10:46:27.387Z
 weight: 300.1
 ---
 
@@ -55,21 +55,91 @@ If you want to use other statuses, you can do so by specifying your own draft fi
 
 ![Draft filters][04]
 
-## Supported filters
+## Filters
 
+By default, the content view will show all your pages, but you can filter them by using the following
+filter:
+
+- Content folder (when you have multiple registered)
 - Tag filter
 - Category filter
-- Content folder (when you have multiple registered)
 
-## Supported sorting
+You can change the default filters, or configure your own by updating the `frontMatter.content.filters`
+setting.
+
+### Configure filters
+
+The default filter configuration is as follows:
+
+```json {{ "title": "Default content filters configuration" }}
+{
+  "frontMatter.content.filters": [
+    "contentFolders", 
+    "tags", 
+    "categories",
+  ]
+}
+```
+
+You can change the default filters, or configure your own by updating the `frontMatter.content.filters`
+setting as follows:
+
+```json {{ "title": "Example of adding custom filters" }}
+{
+  "frontMatter.content.filters": [
+    "contentFolders",
+    "tags",
+    {
+      "title": "My custom filter",
+      "name": "field-name",
+    }
+  ]
+}
+```
+
+> **Info**: The `name` property should be the name of the front matter field you want to filter by.
+
+## Sorting
+
+By default, the content is sorted by the following options:
 
 - Last modified
 - Filename (asc/desc)
 
-> **Info**: You can define custom sorting options by specifying these within the
-> [frontMatter.content.sorting][05] setting.
+You can change the sorting options by specifying the `frontMatter.content.sorting` setting. This
+setting allows you to define the sorting options for the content view.
 
-You are also able to define your default sorting options by setting the
+### Configure sorting options
+
+| Property | Description | Default |
+| --- | --- | --- |
+| `title` | The title of the sorting option | `""` |
+| `name` | The name of the field to sort by (needs to be present in your content its front matter) | `""` |
+| `order` | The order of the sorting (ascending or descending). Option values to use: `asc` or `desc`. | `""` |
+| `type` | The type of field value. Option values to use: `string`, `date`, and `number`. | `""` |
+
+```json {{ "title": "Example of adding custom sorting options" }}
+{
+  "frontMatter.content.sorting": [
+    {
+      "title": "Date (asc)",
+      "name": "date",
+      "order": "asc",
+      "type": "date"
+    },
+    {
+      "title": "Date (desc)",
+      "name": "date",
+      "order": "desc",
+      "type": "date"
+    }
+  ]
+}
+```
+
+### Default sorting
+
+To define your default sorting options by setting the
 `frontMatter.content.defaultSorting` setting for the content view, and the
 `frontMatter.media.defaultSorting` setting for the media view.
 
@@ -98,5 +168,4 @@ of the content view. This will allow you to quickly access.
 [02]: /releases/v7.1.0/draft-filters.png
 [03]: /docs/content-creation/fields#draft
 [04]: /releases/v5.3.0/draft-status.png
-[05]: /docs/settings/overview#frontmatter.content.sorting
 [06]: /docs/experimental/ui-extensibility#registering-a-custom-ui-extension

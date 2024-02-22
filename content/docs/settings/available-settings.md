@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-21T16:01:09.014Z
+lastmod: 2024-02-22T10:16:24.290Z
 weight: 1100.2
 ---
 
@@ -169,6 +169,15 @@ you can use the following settings:
 - `source/images`: If you want to use the default image location of Hexo;
 - `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
 
+### frontMatter.content.filters
+
+Specify the filters you want to use for your content dashboard.
+
+- Type: `object[]`
+- Default: `["contentFolders", "tags", "categories"]`
+
+> **Info**: More information on how to use it can be found in the [Content View - Filters][23] section.
+
 ### frontMatter.content.sorting
 
 Define the sorting options for your dashboard content.
@@ -176,34 +185,7 @@ Define the sorting options for your dashboard content.
 - Type: `object[]`
 - Default: `[]`
 
-Properties:
-
-- `title`: The title of the sorting option
-- `name`: The name of the field to sort by (needs to be present in your content its front matter)
-- `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or
-  `desc`.
-- `type`: The type of field value. Option values to use: `string`, `date`, and `number`.
-
-Sample:
-
-```json
-{
-  "frontMatter.content.sorting": [
-    {
-      "title": "Date (asc)",
-      "name": "date",
-      "order": "asc",
-      "type": "date"
-    },
-    {
-      "title": "Date (desc)",
-      "name": "date",
-      "order": "desc",
-      "type": "date"
-    }
-  ]
-}
-```
+> **Info**: More information on how to use it can be found in the [Content View - Sorting][22] section.
 
 ### frontMatter.content.supportedFileTypes
 
@@ -865,3 +847,5 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
 [21]: /docs/content-creation/multilingual
+[22]: /docs/content-view#sorting
+[23]: /docs/content-view#filters
