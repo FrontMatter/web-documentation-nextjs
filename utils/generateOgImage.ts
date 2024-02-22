@@ -90,7 +90,7 @@ const html = `
 </html>
 `;
 
-import nodeHtmlToImage from "node-html-to-image";
+// import nodeHtmlToImage from "node-html-to-image";
 import { existsSync } from "fs";
 import { join } from "path";
 
@@ -103,7 +103,6 @@ export default async function generateOgImage(
   }
 
   // Check if the image already exists
-  console.log("Generating OG Image for", title);
   const fileName = `${title
     .toLowerCase()
     .replace(/ /g, "-")
@@ -115,17 +114,19 @@ export default async function generateOgImage(
     return filePath;
   }
 
-  const parsedHtml = html
-    .replace(`{title}`, title)
-    .replace(`{description}`, description || "");
+  // const parsedHtml = html
+  //   .replace(`{title}`, title)
+  //   .replace(`{description}`, description || "");
 
-  try {
-    await nodeHtmlToImage({
-      output: absImgPath,
-      html: parsedHtml,
-    });
-    return filePath;
-  } catch (error) {
-    return;
-  }
+  // try {
+  //   await nodeHtmlToImage({
+  //     output: absImgPath,
+  //     html: parsedHtml,
+  //   });
+  //   return filePath;
+  // } catch (error) {
+  //   return;
+  // }
+
+  return;
 }

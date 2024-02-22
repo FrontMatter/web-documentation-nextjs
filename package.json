@@ -62,7 +62,6 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
     "mdx-annotations": "^0.1.0",
-    "node-html-to-image": "^4.0.0",
     "postcss": "^8.3.6",
     "postcss-nested": "^5.0.6",
     "remark": "14.0.1",
