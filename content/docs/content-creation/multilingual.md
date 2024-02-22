@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: null
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-21T15:47:40.601Z
+lastmod: 2024-02-22T07:27:04.206Z
 weight: 200.71
 ---
 
@@ -58,7 +58,8 @@ setting.
   "frontMatter.content.i18n": [
     {
       "title": "English",
-      "locale": "en"
+      "locale": "en",
+      "path": "."
     },
     {
       "title": "German",
