@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-22T11:12:35.358Z
+lastmod: 2024-02-22T12:11:12.333Z
 weight: 1100.2
 ---
 
@@ -146,28 +146,7 @@ folder.
 - Type: `string` or `object`
 - Default: `""`
 
-### Relative image paths
-
-In case the paths to your images need to be relative to the content file, you need to specify the
-following:
-
-```json
-{
-  "frontMatter.content.publicFolder": {
-    "path": "static",
-    "relative": true
-  }
-}
-```
-
-#### Hexo support
-
-In case you are using Hexo in combinations with the
-[asset folders](https://hexo.io/docs/asset-folders),
-you can use the following settings:
-
-- `source/images`: If you want to use the default image location of Hexo;
-- `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
+> **Info**: More information on how to use it can be found in the [media dashboard][25] section.
 
 ### frontMatter.content.filters
 
@@ -805,6 +784,20 @@ Specify the host URL of your website.
 
 ## Deprecated settings
 
+---
+
+## Removed settings
+
+### frontMatter.content.folders
+
+This setting has been deprecated since version `3.1.0` in favour of the newly introduced
+`frontMatter.content.pageFolders` setting.
+
+### frontMatter.dashboard.mediaSnippet
+
+This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
+Please define your media snippet in the `frontMatter.content.snippets` setting.
+
 ### frontMatter.taxonomy.dateField
 
 This setting is used to define the publishing date field of your articles.
@@ -822,18 +815,6 @@ This setting is used to define the modified date field of your articles.
 - Default: `lastmod`
 
 > **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
-
-### frontMatter.dashboard.mediaSnippet
-
-This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
-Please define your media snippet in the `frontMatter.content.snippets` setting.
-
-## Removed settings
-
-### frontMatter.content.folders
-
-This setting has been deprecated since version `3.1.0` in favour of the newly introduced
-`frontMatter.content.pageFolders` setting.
 
 <!-- Link References -->
 [01]: /docs/settings#extending-settings
@@ -859,3 +840,4 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [22]: /docs/content-view#sorting
 [23]: /docs/content-view#filters
 [24]: /docs/media-view#metadata
+[25]: /docs/media-view#define-the-media-folder

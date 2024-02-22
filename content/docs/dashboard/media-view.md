@@ -3,7 +3,7 @@ title: Media view
 slug: media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T11:23:12.499Z
+lastmod: 2024-02-22T12:11:35.782Z
 weight: 300.2
 ---
 
@@ -14,6 +14,40 @@ articles. When you click on an image, it will show a lightbox, so that it is eas
 small images.
 
 ![Media dashboard][01]
+
+## Define the media folder
+
+You can use the `frontMatter.content.publicFolder` setting to define the location of your media
+files. By default, it is unset, and will show all folders and files starting from the root of your
+project.
+
+```json {{ "title": "Example of defining the media folder" }}
+{
+  "frontMatter.content.publicFolder": "public"
+}
+```
+
+### Relative paths
+
+In case the paths to your images need to be relative to the content file, you need to specify the
+following:
+
+```json
+{
+  "frontMatter.content.publicFolder": {
+    "path": "src/static",
+    "relative": true
+  }
+}
+```
+
+### Hexo support
+
+In case you are using Hexo in combinations with the [asset folders](https://hexo.io/docs/asset-folders),
+you can use the following settings:
+
+- `source/images`: If you want to use the default image location of Hexo;
+- `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
 
 ## Supported files
 
