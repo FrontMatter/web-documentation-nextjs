@@ -7,15 +7,16 @@ import { getAllPosts } from '../../lib/api';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { pageProcessing } from '../../utils/pageProcessing';
 import markdownToHtml from '../../utils/markdownToHtml';
+import generateOgImage from '../../utils/generateOgImage';
 
-export default function Home({ pages, page }: { pages: PageFrontMatter[]; page: PageFrontMatter; }) {
+export default function Home({ pages, page, ogImage }: { pages: PageFrontMatter[]; page: PageFrontMatter; ogImage?: string }) {
   const { t: strings } = useTranslation();
 
   return (
     <>
       <Title value={strings(`documentation_title`)} />
       <Description value={strings(`documentation_description`)} />
-      <OtherMeta image={`/assets/frontmatter-social.png`} />
+      <OtherMeta image={ogImage || `/assets/frontmatter-social.png`} />
 
       <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
@@ -44,9 +45,11 @@ export const getStaticProps = async () => {
   const welcome = Object.assign({}, pages?.find(p => p.slug === "index"));
   welcome.content = await markdownToHtml(welcome.content || '');
 
+  const ogImage = await generateOgImage(welcome.title, welcome.description);
+
   pages = pages.map(pageProcessing);
 
   return {
-    props: { pages, page: welcome },
+    props: { pages, page: welcome, ogImage },
   }
 }

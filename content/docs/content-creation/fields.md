@@ -1,9 +1,9 @@
 ---
 title: Fields
 slug: content-creation/fields
-description: null
+description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-21T09:11:43.854Z
+lastmod: 2024-02-22T17:35:59.797Z
 weight: 200.31
 ---
 

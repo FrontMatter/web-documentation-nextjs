@@ -1,9 +1,9 @@
 ---
 title: Content types
 slug: content-creation/content-types
-description: null
+description: Learn how to define content types in Front Matter CMS
 date: 2022-03-14T08:43:17.483Z
-lastmod: 2024-02-21T09:44:40.433Z
+lastmod: 2024-02-22T17:36:18.884Z
 weight: 200.21
 ---
 

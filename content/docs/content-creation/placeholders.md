@@ -1,9 +1,9 @@
 ---
 title: Placeholders
 slug: content-creation/placeholders
-description: null
+description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-21T09:11:54.094Z
+lastmod: 2024-02-22T17:35:26.291Z
 weight: 200.51
 ---
 

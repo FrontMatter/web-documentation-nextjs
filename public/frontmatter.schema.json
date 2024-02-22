@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-02-21T15:28:35.425Z",
+  "lastModified": "2024-02-22T17:40:26.978Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -205,11 +205,51 @@
             "type": "boolean",
             "default": false,
             "description": "Disable the creation of new content in the folder."
+          },
+          "defaultLocale": {
+            "type": "string",
+            "description": "Set the default locale ID for the page folder. All content from this folder is translatable to the languages defined in the `frontMatter.content.i18n` setting."
+          },
+          "locales": {
+            "type": "array",
+            "description": "Define the locales for the page folder. This will be used for the translation of the content.",
+            "items": {
+              "$ref": "#i18n"
+            }
           }
         },
         "additionalProperties": false,
         "required": [
           "title",
+          "path"
+        ]
+      },
+      "scope": "Content"
+    },
+    "frontMatter.content.i18n": {
+      "type": "array",
+      "default": [],
+      "markdownDescription": "Specify the locales you want to use for your website. This setting can be overwritten on page folder level. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.i18n)",
+      "items": {
+        "$id": "#i18n",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the locale"
+          },
+          "locale": {
+            "type": "string",
+            "description": "Locale code"
+          },
+          "path": {
+            "type": "string",
+            "description": "Relative path of the locale folder"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "locale",
           "path"
         ]
       },
@@ -389,14 +429,19 @@
     "frontMatter.content.filters": {
       "type": "array",
       "default": [
-        "pageFolders",
+        "contentFolders",
         "tags",
         "categories"
       ],
       "markdownDescription": "Specify the filters you want to use for your content dashboard. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.filters)",
       "items": [
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "contentFolders",
+            "tags",
+            "categories"
+          ]
         },
         {
           "type": "object",
@@ -565,17 +610,6 @@
       ],
       "default": "",
       "markdownDescription": "Specify the name of the metadata field that will be used to show the title on the content card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.title)"
-    },
-    "frontMatter.dashboard.mediaSnippet": {
-      "type": "array",
-      "default": [],
-      "markdownDescription": "Specify the a snippet for your custom media insert markup. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.mediasnippet)",
-      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please define your media snippet in the `frontMatter.content.snippet` setting.",
-      "items": {
-        "type": "string",
-        "description": "Use the `{mediaUrl}`, `{caption}`, `{alt}`, `{filename}`, `{mediaHeight}`, and `{mediaWidth}` placeholders in your snippet to automatically insert the media information."
-      },
-      "scope": "dashboard"
     },
     "frontMatter.dashboard.openOnStart": {
       "type": [
@@ -1710,12 +1744,6 @@
       },
       "scope": "Taxonomy"
     },
-    "frontMatter.taxonomy.dateField": {
-      "type": "string",
-      "default": "date",
-      "markdownDescription": "This setting is used to define the publishing date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.datefield)",
-      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please use the new `isPublishDate` settings instead in your content types date fields."
-    },
     "frontMatter.taxonomy.dateFormat": {
       "type": "string",
       "markdownDescription": "Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.dateformat)",
@@ -1768,12 +1796,6 @@
       "default": true,
       "markdownDescription": "Specify if arrays in front matter are indented. Default: true. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.indentarrays)",
       "scope": "Taxonomy"
-    },
-    "frontMatter.taxonomy.modifiedField": {
-      "type": "string",
-      "default": "lastmod",
-      "markdownDescription": "This setting is used to define the modified date field of your articles. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.modifiedfield)",
-      "deprecationMessage": "This setting is deprecated and will be removed in the next major version. Please use the new `isModifiedDate` settings instead in your content types date fields."
     },
     "frontMatter.taxonomy.quoteStringValues": {
       "type": "boolean",

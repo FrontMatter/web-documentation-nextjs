@@ -1,9 +1,9 @@
 ---
 title: Field conditions
 slug: content-creation/field-conditions
-description: null
+description: Learn how to show or hide fields based on the value of another field
 date: 2022-12-08T15:30:17.335Z
-lastmod: 2024-02-21T09:11:46.147Z
+lastmod: 2024-02-22T17:36:07.737Z
 weight: 200.41
 ---
 

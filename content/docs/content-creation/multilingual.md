@@ -1,9 +1,9 @@
 ---
 title: Multilingual
 slug: content-creation/multilingual
-description: null
+description: Learn how to use multilingual content in Front Matter CMS
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-22T14:41:02.138Z
+lastmod: 2024-02-22T17:35:19.585Z
 weight: 200.71
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Slug
 slug: content-creation/slug
-description: null
+description: Learn how you can dynamically generate slugs for your pages in Front Matter CMS
 date: 2024-02-13T09:28:37.205Z
-lastmod: 2024-02-21T09:12:52.450Z
+lastmod: 2024-02-22T17:35:42.410Z
 weight: 200.61
 ---
 

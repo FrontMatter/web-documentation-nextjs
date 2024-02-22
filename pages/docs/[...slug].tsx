@@ -7,6 +7,7 @@ import { Page } from '../../components/Docs/Page';
 import { DocsLayout } from '../../components/Page/DocsLayout';
 import { pageProcessing } from '../../utils/pageProcessing';
 import markdownToHtml from '../../utils/markdownToHtml';
+import generateOgImage from '../../utils/generateOgImage';
 
 type Params = {
   params: {
@@ -16,7 +17,7 @@ type Params = {
 }
 
 
-export default function Documentation({ page, pages, title }: any) {
+export default function Documentation({ page, pages, ogImage }: any) {
   const { t: strings } = useTranslation();
   const router = useRouter();
 
@@ -28,7 +29,7 @@ export default function Documentation({ page, pages, title }: any) {
     <>
       <Title value={page.title} />
       <Description value={page.description || strings(`documentation_description`)} />
-      <OtherMeta image={`/assets/frontmatter-social.png`} />
+      <OtherMeta image={ogImage || `/assets/frontmatter-social.png`} />
 
       <DocsLayout navItems={pages} >
         <Page items={pages} page={page}>
@@ -69,10 +70,15 @@ export async function getStaticProps({ params }: Params) {
 
   doc.content = await markdownToHtml(doc.content || '');
 
+  const ogImage = await generateOgImage(doc.title, doc.description);
+
+  console.log('ogImage', ogImage);
+
   return {
     props: {
       page: doc,
-      pages
+      pages,
+      ogImage
     }
   }
 }
