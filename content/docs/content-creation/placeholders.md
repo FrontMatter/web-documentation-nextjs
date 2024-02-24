@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-22T17:35:26.291Z
+lastmod: 2024-02-24T13:18:09.798Z
 weight: 200.51
 ---
 
@@ -29,11 +29,12 @@ automatically fill in values when creating a new content.
 
 ## Special placeholders
 
-| Placeholder             | Description                                                | Works for                                             |
-| ----------------------- | ---------------------------------------------------------- | ----------------------------------------------------- |
-| `{{fm.<field name>}}`   | The value of the field in the front matter                 | `slugTemplate` and `previewPath` properties.          |
-| `{{pathToken.<index>}}` | The value of the path token at the index                   | `previewPath` on the page folder or the content-type. |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type. |
+| Placeholder             | Description                                                                                                        | Works for                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section.                 | `slugTemplate` properties.                            |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                                                                         | `slugTemplate` and `previewPath` properties.          |
+| `{{pathToken.<index>}}` | The value of the path token at the index                                                                           | `previewPath` on the page folder or the content-type. |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path                                                         | `previewPath` on the page folder or the content-type. |
 
 ### Example 1
 
@@ -234,3 +235,4 @@ follows:
 <!-- Link References -->
 
 [01]: /docs/custom-actions/#content-script
+[02]: /docs/content-creation/slug

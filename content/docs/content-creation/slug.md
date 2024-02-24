@@ -3,7 +3,7 @@ title: Slug
 slug: content-creation/slug
 description: Learn how you can dynamically generate slugs for your pages in Front Matter CMS
 date: 2024-02-13T09:28:37.205Z
-lastmod: 2024-02-22T17:35:42.410Z
+lastmod: 2024-02-24T13:14:13.333Z
 weight: 200.61
 ---
 
@@ -29,6 +29,10 @@ slug: sample-page-title
 
 > **Info**: The extension only supports English stopwords.
 
+> **Important**: If you do not define a slug in the content type, the slug will be
+> derived from the `frontMatter.taxonomy.slugTemplate` setting. If the setting is
+> not defined, the page name will be used as the slug.
+
 ## Custom slug
 
 You can define a custom slug for your pages and it can be defined on global
@@ -46,8 +50,9 @@ actual values when creating a new page.
 }
 ```
 
-> **Info**: The `{{title}}` placeholder in the slug template will be replaced with
-> what you typically get from the default slug.
+> **Info**: When using the `{{title}}` placeholder in the slug template it will be
+> automatically converted to lowercase and spaces will be replaced with hyphens.
+> To have a SEO friendly URL, you can use the `{{seoTitle}}` placeholder instead.
 
 ### Per content type
 

@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-22T12:27:07.174Z
+lastmod: 2024-02-24T13:16:18.482Z
 weight: 1100.2
 ---
 
@@ -717,11 +717,12 @@ Specify a suffix for the slug.
 
 ### frontMatter.taxonomy.slugTemplate
 
-Specify the template for the slug. If you use `{{title}}`, it will create a clean slug based on the
-title.
+Specify the template for the slug.
 
 - Type: `string`
-- Default: `{{title}}`
+- Default: ``
+
+> **Info**: More information on how to use it can be found in the [slug][26] section.
 
 ### frontMatter.taxonomy.tags
 
@@ -841,3 +842,4 @@ This setting is used to define the modified date field of your articles.
 [23]: /docs/dashboard/content-view#filters
 [24]: /docs/dashboard/media-view#metadata
 [25]: /docs/dashboard/media-view#define-the-media-folder
+[26]: /docs/content-creation/slug
