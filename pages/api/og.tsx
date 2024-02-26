@@ -50,20 +50,27 @@ export default async function (request: NextRequest) {
               style={{
                 color: '#f3eff5',
                 fontSize: '3.75rem',
-                fontWeight: '700',
+                fontWeight: '800',
                 marginTop: '4rem',
+                marginBottom: '0',
+                fontFamily: "Open Sans"
               }}>
               {title}
             </h1>
 
             <p tw="text-2xl" style={{
               marginTop: '1rem',
-              color: '#f3eff5',
               fontSize: '1.5rem',
+              fontFamily: "Open Sans",
+              color: '#cbc7cd',
             }}>
               {description}
             </p>
+          </section>
 
+          <div style={{
+            display: 'flex',
+          }}>
             <span tw="uppercase text-base rounded" style={{
               marginTop: '1rem',
               alignItems: 'center',
@@ -72,13 +79,16 @@ export default async function (request: NextRequest) {
               fontWeight: '500',
               backgroundColor: '#29d6df',
               padding: '0.5rem 1rem',
+              fontFamily: "Open Sans"
             }}>
               Docs
             </span>
-          </section>
+          </div>
         </div>
 
-        <div tw="h-8 bg-teal-300 w-full absolute bottom-0"></div>
+        <div tw="h-8 w-full absolute bottom-0" style={{
+          backgroundColor: '#29d6df',
+        }}></div>
       </div>
     ),
     {
