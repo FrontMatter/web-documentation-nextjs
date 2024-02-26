@@ -40,7 +40,7 @@ const core = require("@actions/core");
   for (const key of commandKeys) {
     const cp = commandPalette.find((c) => c.command === key);
 
-    if (cp.when === "false") {
+    if (cp && cp.when === "false") {
       continue;
     }
 
