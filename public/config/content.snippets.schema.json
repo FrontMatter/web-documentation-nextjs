@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/content.snippets.schema.json",
   "description": "Defines the settings for Front Matter snippet",
-  "lastModified": "2024-02-22T17:40:26.980Z",
+  "lastModified": "2024-02-26T08:25:55.925Z",
   "type": "object",
   "title": "Front Matter - snippet",
   "required": [
