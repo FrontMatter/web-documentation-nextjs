@@ -45,7 +45,11 @@ export const getStaticProps = async () => {
   const welcome = Object.assign({}, pages?.find(p => p.slug === "index"));
   welcome.content = await markdownToHtml(welcome.content || '');
 
-  const ogImage = await generateOgImage(welcome.title, welcome.description);
+  let ogImage = `/api/og?title=${encodeURIComponent(welcome.title)}`;
+  if (welcome.description) {
+    ogImage += `&description=${encodeURIComponent(welcome.description)}`;
+  }
+
 
   pages = pages.map(pageProcessing);
 
