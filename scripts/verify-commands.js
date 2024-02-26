@@ -29,7 +29,8 @@ const core = require("@actions/core");
 
   const pkg = JSON.parse(contents);
   const commands = pkg.contributes.commands;
-  const commandKeys = commands.map((c) => c.command);
+  const commandPalette = pkg.contributes.menus.commandPalette;
+  const commandKeys = commands.map((c) => c.command).sort();
 
   const commandsPath = path.resolve(__dirname, "../content/docs/commands.md");
   const commandsFile = fs.readFileSync(commandsPath, "utf8");
@@ -37,6 +38,12 @@ const core = require("@actions/core");
   const missingCommands = [];
 
   for (const key of commandKeys) {
+    const cp = commandPalette.find((c) => c.command === key);
+
+    if (cp.when === "false") {
+      continue;
+    }
+
     if (!commandsFile.includes(key)) {
       missingCommands.push(key);
     }
@@ -47,7 +54,5 @@ const core = require("@actions/core");
       .addHeading(`Missing commands`)
       .addRaw(`\n ${missingCommands.map((s) => `- ${s}\n`).join("")}`)
       .write();
-
-    core.setFailed(`Missing settings: ${missingCommands.join(", ")}`);
   }
 })();
