@@ -3,8 +3,8 @@ title: Commands
 slug: commands
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-02-13T09:43:12.442Z
-weight: 900
+lastmod: 2024-02-26T17:54:13.589Z
+weight: 1100
 ---
 
 # Commands

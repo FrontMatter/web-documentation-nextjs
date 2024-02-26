@@ -3,8 +3,8 @@ title: Projects
 slug: settings/projects
 description: Projects are useful when managing multiple sites or when you want to separate your content into different environments.
 date: 2023-04-01T12:41:24.675Z
-lastmod: 2023-04-01T13:00:21.325Z
-weight: 1100.1
+lastmod: 2024-02-26T17:54:08.454Z
+weight: 1000.1
 ---
 
 # Projects

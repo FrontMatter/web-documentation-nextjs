@@ -3,8 +3,8 @@ title: Experimental features
 slug: experimental
 description: Experimental features in the Front Matter extension.
 date: 2023-02-12T14:39:58.691Z
-lastmod: 2023-08-21T08:13:43.748Z
-weight: 910
+lastmod: 2024-02-26T17:52:13.588Z
+weight: 900
 ---
 
 # Experimental features

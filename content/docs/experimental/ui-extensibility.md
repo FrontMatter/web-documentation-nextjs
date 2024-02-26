@@ -3,8 +3,8 @@ title: UI extensibility
 slug: experimental/ui-extensibility
 description: UI extensibility in the Front Matter extension.
 date: 2023-04-01T10:16:59.392Z
-lastmod: 2023-08-21T09:23:29.241Z
-weight: 910.1
+lastmod: 2024-02-26T17:52:22.334Z
+weight: 900.1
 ---
 
 # UI extensibility

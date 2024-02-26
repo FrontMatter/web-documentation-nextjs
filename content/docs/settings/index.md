@@ -3,8 +3,8 @@ title: Settings
 slug: settings
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-02-13T08:44:01.601Z
-weight: 1100
+lastmod: 2024-02-26T17:53:54.854Z
+weight: 1000
 ---
 
 # Settings
