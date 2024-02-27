@@ -3,7 +3,7 @@ title: Commands
 slug: commands
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-02-26T18:39:22.844Z
+lastmod: 2024-02-27T08:47:18.318Z
 weight: 1100
 ---
 
@@ -33,7 +33,7 @@ Some of the commands do also have a default keyboard binding for quick access.
   - Mac: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>P</kbd>
 - Use one of the following commands
 
-## Available commands
+## Useful commands
 
 ### Initialize project
 
@@ -85,13 +85,9 @@ Allows you to quickly insert a snippet in the Markdown file.
 
 ID: `frontMatter.insertSnippet`
 
-### Create new content from defined content type or template
+### Create new content
 
-With this command, you can easily create content in your project from the defined content types or
-templates.
-
-> **Info**: The command will use the `frontMatter.templates.prefix` setting in order to add a prefix
-> (default: `yyyy-MM-dd`) on the filename.
+With this command, you can easily create content in your project from the defined content types.
 
 ID: `frontMatter.createContent`
 
