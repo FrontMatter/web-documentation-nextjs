@@ -1,13 +1,13 @@
 ---
-title: Custom actions
+title: Custom actions/scripts
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-01-31T12:48:37.504Z
+lastmod: 2024-02-21T09:06:16.403Z
 weight: 500
 ---
 
-# Custom actions
+# Custom actions and scripts
 
 ## Overview
 

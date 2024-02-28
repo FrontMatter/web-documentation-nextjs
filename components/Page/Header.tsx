@@ -12,19 +12,19 @@ export interface IHeaderProps {
   navItems?: PageFrontMatter[];
 }
 
-const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: React.PropsWithChildren<IHeaderProps>, ref: ForwardedRef<HTMLElement>
-  ) => {
+const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({ navItems }: React.PropsWithChildren<IHeaderProps>, ref: ForwardedRef<HTMLElement>
+) => {
   const router = useRouter();
 
   const isDocs = useMemo(() => {
     return router.pathname.startsWith('/docs');
   }, [router.pathname]);
-  
+
   return (
     <>
       <header
-        ref={ref} 
-        className={`fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-lg ${isDocs ? "right-0 lg:left-72 xl:left-80" : ""}`}>
+        ref={ref}
+        className={`fixed inset-x-0 top-0 z-50 flex h-16 lg:h-20 items-center justify-between px-4 transition sm:px-6 lg:z-30 lg:px-8 bg-vulcan-500/80 backdrop-blur-lg ${isDocs ? "right-0 lg:left-72 xl:left-96" : ""}`}>
 
         <div className="flex items-center justify-between lg:hidden w-full">
           <Home className='h-12' />
@@ -35,12 +35,12 @@ const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: Re
 
           <div className={`flex items-center gap-4`}>
             <Searchbox />
-            
+
             <MobileNavigation navItems={navItems} />
           </div>
         </div>
 
-        <div className={`hidden lg:flex items-center w-full ${ isDocs ? "" : "max-w-7xl mx-auto"}`}>
+        <div className={`hidden lg:flex items-center w-full ${isDocs ? "" : "max-w-7xl mx-auto"}`}>
           <div className="flex items-center justify-between w-full">
             {
               !isDocs && (
@@ -49,8 +49,8 @@ const Header: React.FunctionComponent<IHeaderProps> = forwardRef(({navItems}: Re
             }
 
             <div className="flex items-center gap-6 ml-auto">
-              <GlobalNavigation 
-                listClassName='flex gap-6'/>
+              <GlobalNavigation
+                listClassName='flex gap-6' />
 
               <SocialNavigation />
 

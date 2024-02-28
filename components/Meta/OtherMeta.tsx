@@ -14,15 +14,18 @@ export const OtherMeta: React.FunctionComponent<IOtherMetaProps> = ({ image, typ
   return (
     <Head>
       <link rel="canonical" href={`${publicUrl()}${router?.asPath || ""}`} />
-      
+
       <meta property="og:type" content={type || "website"} />
       <meta property="twitter:card" content="summary_large_image" />
 
       <meta property="twitter:url" content={`${publicUrl()}${router?.asPath || ""}`} />
       <meta property="og:url" content={`${publicUrl()}${router?.asPath || ""}`} />
 
-      <meta property="og:image" content={`${publicUrl()}/${image}`} />
-      <meta property="twitter:image" content={`${publicUrl()}/${image}`} />
+      <meta property="og:image" content={`${publicUrl()}${image}`} />
+      <meta property="twitter:image" content={`${publicUrl()}${image}`} />
+
+      <meta property="og:type" content="website" />
+      <meta property="twitter:domain" content="beta.frontmatter.codes" />
     </Head>
   );
 };

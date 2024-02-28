@@ -3,8 +3,8 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2023-12-08T09:03:00.096Z
-weight: 1100.2
+lastmod: 2024-02-26T17:54:04.814Z
+weight: 1000.2
 ---
 
 # Settings overview
@@ -105,6 +105,15 @@ Specify the message to display when the Front Matter is hidden.
 
 ![Hide front matter from the content][05]
 
+### frontMatter.content.i18n
+
+Specify the locales for the entire workspace.
+
+- Type: `object[]`
+- Default: `[]`
+
+> **Info**: More information on how to use it can be found in the [multilingual][21] section.
+
 ### frontMatter.content.pageFolders
 
 This array of folders defines where the extension can find your content and create new content by
@@ -113,45 +122,7 @@ running the create article command.
 - Type: `object[]`
 - Default: `[]`
 
-Properties:
-
-| Title           | Type       | Description                                                                                                                                          | Default | Required / Optional |
-| --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------- |
-| `title`         | `string`   | A title for the content folder path                                                                                                                  | `""`    | Optional            |
-| `path`          | `string`   | The path to the content folder, important is to use the `[[workspace]]` placeholder. You can also make use of placeholder to generate dynamic paths. | `""`    | Required            |
-| `excludeSubdir` | `boolean`  | Exclude subdirectories from the content folder                                                                                                       |         | Optional            |
-| `previewPath`   | `string`   | Allows you to set a prefix path for the page preview. Check the [preview path configuration][06] section to learn more.                              |         | Optional            |
-| `filePrefix`    | `string`   | Defines a prefix for the file name.                                                                                                                  |         | Optional            |
-| `contentTypes`  | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
-| `disableCreation` | `boolean` | Disables the creation of new content in this folder.                                                                                                 |         | Optional            |
-
-> **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
-> path. The reason why we choose to use this, is because some do not keep the original folder name.
-
-Sample:
-
-```json
-{
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "Pages",
-      "path": "[[workspace]]/content",
-      "excludeSubdir": true,
-      "previewPath": "post" // Prefixes all files with "/post/" for the page preview
-    },
-    {
-      "title": "Blog posts",
-      "path": "[[workspace]]/content/posts"
-    },
-    {
-      "title": "docs",
-      "path": "[[workspace]]/docs",
-      "filePrefix": "",
-      "contentTypes": ["doc"]
-    }
-  ]
-}
-```
+> **Info**: More information on how to use it can be found in the [content folders][06] section.
 
 ### frontMatter.content.placeholders
 
@@ -175,28 +146,16 @@ folder.
 - Type: `string` or `object`
 - Default: `""`
 
-### Relative image paths
+> **Info**: More information on how to use it can be found in the [media dashboard][25] section.
 
-In case the paths to your images need to be relative to the content file, you need to specify the
-following:
+### frontMatter.content.filters
 
-```json
-{
-  "frontMatter.content.publicFolder": {
-    "path": "static",
-    "relative": true
-  }
-}
-```
+Specify the filters you want to use for your content dashboard.
 
-#### Hexo support
+- Type: `object[]`
+- Default: `["contentFolders", "tags", "categories"]`
 
-In case you are using Hexo in combinations with the
-[asset folders](https://hexo.io/docs/asset-folders),
-you can use the following settings:
-
-- `source/images`: If you want to use the default image location of Hexo;
-- `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
+> **Info**: More information on how to use it can be found in the [Content View - Filters][23] section.
 
 ### frontMatter.content.sorting
 
@@ -205,34 +164,7 @@ Define the sorting options for your dashboard content.
 - Type: `object[]`
 - Default: `[]`
 
-Properties:
-
-- `title`: The title of the sorting option
-- `name`: The name of the field to sort by (needs to be present in your content its front matter)
-- `order`: The order of the sorting (ascending or descending). Option values to use: `asc` or
-  `desc`.
-- `type`: The type of field value. Option values to use: `string`, `date`, and `number`.
-
-Sample:
-
-```json
-{
-  "frontMatter.content.sorting": [
-    {
-      "title": "Date (asc)",
-      "name": "date",
-      "order": "asc",
-      "type": "date"
-    },
-    {
-      "title": "Date (desc)",
-      "name": "date",
-      "order": "desc",
-      "type": "date"
-    }
-  ]
-}
-```
+> **Info**: More information on how to use it can be found in the [Content View - Sorting][22] section.
 
 ### frontMatter.content.supportedFileTypes
 
@@ -424,6 +356,20 @@ Specify the commit message you want to use for the sync.
 - Type: `string`
 - Default: `Synced by Front Matter`
 
+### frontMatter.git.disableOnBranches
+
+Specify the branches on which you want to disable the Git actions.
+
+- Type: `array`
+- Default: `[]`
+
+### frontMatter.git.requiresCommitMessage
+
+Specify the branches on which you want to require a commit message.
+
+- Type: `array`
+- Default: `[]`
+
 ### frontMatter.git.submodule.push
 
 Specify if you want to push the submodule changes to the remote repository.
@@ -487,6 +433,15 @@ Specifies which type of notifications you want to see or which you want to hide.
 
 - Type: `array<string>`
 - Default: `["info", "warning", "error"]`
+
+### frontMatter.media.contentTypes
+
+Specify the content types you want to use for your media files.
+
+- Type: `array`
+- Default: ``
+
+> **Info**: More information on how to use it can be found in the [media content types][24] section.
 
 ### frontMatter.media.defaultSorting
 
@@ -760,6 +715,15 @@ Specify a suffix for the slug.
 - Type: `string`
 - Default: `""`
 
+### frontMatter.taxonomy.slugTemplate
+
+Specify the template for the slug.
+
+- Type: `string`
+- Default: ``
+
+> **Info**: More information on how to use it can be found in the [slug][26] section.
+
 ### frontMatter.taxonomy.tags
 
 Specifies the tags which can be used in the Front Matter.
@@ -821,6 +785,20 @@ Specify the host URL of your website.
 
 ## Deprecated settings
 
+---
+
+## Removed settings
+
+### frontMatter.content.folders
+
+This setting has been deprecated since version `3.1.0` in favour of the newly introduced
+`frontMatter.content.pageFolders` setting.
+
+### frontMatter.dashboard.mediaSnippet
+
+This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
+Please define your media snippet in the `frontMatter.content.snippets` setting.
+
 ### frontMatter.taxonomy.dateField
 
 This setting is used to define the publishing date field of your articles.
@@ -839,28 +817,16 @@ This setting is used to define the modified date field of your articles.
 
 > **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
 
-### frontMatter.dashboard.mediaSnippet
-
-This setting is deprecated in version 7.3.0 and and will be removed in the next major version.
-Please define your media snippet in the `frontMatter.content.snippets` setting.
-
-## Removed settings
-
-### frontMatter.content.folders
-
-This setting has been deprecated since version `3.1.0` in favour of the newly introduced
-`frontMatter.content.pageFolders` setting.
-
 <!-- Link References -->
 [01]: /docs/settings#extending-settings
 [02]: /docs/experimental
 [04]: /docs/content-creation#before-you-start
 [05]: /releases/v8.1.0/hide-fm.png
-[06]: /docs/site-preview#configuration
+[06]: /docs/content-creation/content-folders
 [07]: /docs/content-creation/placeholders
 [08]: /docs/custom-actions
-[09]: /docs/dashboard#card-tags
-[10]: /docs/dashboard#data-files-view
+[09]: /docs/dashboard/content-view#card-tags
+[10]: /docs/dashboard/content-view#data-files-view
 [11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
 [12]: /docs/panel#define-view-modes
 [13]: /docs/content-creation/content-types#changing-the-default-content-type
@@ -871,3 +837,9 @@ This setting has been deprecated since version `3.1.0` in favour of the newly in
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code
+[21]: /docs/content-creation/multilingual
+[22]: /docs/dashboard/content-view#sorting
+[23]: /docs/dashboard/content-view#filters
+[24]: /docs/dashboard/media-view#metadata
+[25]: /docs/dashboard/media-view#define-the-media-folder
+[26]: /docs/content-creation/slug

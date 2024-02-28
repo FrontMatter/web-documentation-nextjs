@@ -3,8 +3,8 @@ title: Commands
 slug: commands
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-09-11T07:58:42.087Z
-weight: 900
+lastmod: 2024-02-27T08:47:18.318Z
+weight: 1100
 ---
 
 # Commands
@@ -33,7 +33,7 @@ Some of the commands do also have a default keyboard binding for quick access.
   - Mac: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>P</kbd>
 - Use one of the following commands
 
-## Available commands
+## Useful commands
 
 ### Initialize project
 
@@ -49,11 +49,29 @@ the welcome screen will be shown.
 
 ID: `frontMatter.dashboard`
 
-### Diagnostic logging
+### Open media dashboard
 
-Opens a virtual Markdown document with detailed information about your Front Matter configuration.
+Opens the media dashboard with all your media files.
 
-ID: `frontMatter.diagnostics`
+ID: `frontMatter.dashboard.media`
+
+### Open snippet dashboard
+
+Opens the snippet dashboard with all your snippets.
+
+ID: `frontMatter.dashboard.snippets`
+
+### Open data dashboard
+
+Opens the data dashboard with all your data files.
+
+ID: `frontMatter.dashboard.data`
+
+### Open taxonomy dashboard
+
+Opens the taxonomy dashboard with all your categories and tags.
+
+ID: `frontMatter.dashboard.taxonomy`
 
 ### Insert media into your content
 
@@ -67,92 +85,28 @@ Allows you to quickly insert a snippet in the Markdown file.
 
 ID: `frontMatter.insertSnippet`
 
-### Create category
+### Create new content
 
-Creates a new category and allows you to include it into your post automatically.
-
-ID: `frontMatter.createCategory`
-
-### Create tag
-
-Creates a new tag and allows you to include it into your post automatically.
-
-ID: `frontMatter.createTag`
-
-### Insert categories
-
-Inserts a selected categories into the front matter of your article/post/... - When using this
-command, the Front Matter panel opens and focuses on the specified type.
-
-ID: `frontMatter.insertCategories`
-
-### Insert tags
-
-Inserts a selected tags into the front matter of your article/post/... - When using this command,
-the Front Matter panel opens and focuses on the specified type.
-
-ID: `frontMatter.insertTags`
-
-### Export all tags & categories to your settings
-
-Export all the already used tags & categories in your articles/posts/... to your user settings.
-
-ID: `frontMatter.exportTaxonomy`
-
-### Remap or remove tag/category in all articles
-
-This command helps you quickly update/remap or delete a tag or category in your markdown files. The
-extension will ask you to select the taxonomy type (tag or category), the old taxonomy value, and
-the new one (leave the input field blank to remove the tag/category).
-
-> **Info**: Once the remapping/deleting process completes, your VS Code settings update with all new
-> taxonomy tags/categories.
-
-ID: `frontMatter.remap`
-
-### Create a template from current file
-
-This command allows you to create a new template from the current open Markdown file. It will ask
-you for the name of the template and if you want to keep the current file its content in the
-template.
-
-ID: `frontMatter.createTemplate`
-
-### Create new content from defined content type or template
-
-With this command, you can easily create content in your project from the defined content types or
-templates.
-
-> **Info**: The command will use the `frontMatter.templates.prefix` setting in order to add a prefix
-> (default: `yyyy-MM-dd`) on the filename.
+With this command, you can easily create content in your project from the defined content types.
 
 ID: `frontMatter.createContent`
+
+### Create new translation
+
+This command allows you to create a new translation for the current content if the
+multilingual feature is enabled.
+
+> **Info**: More information about the multilingual feature can be found in the
+> [multilingual documentation](/docs/content-creation/multilingual).
+
+ID: `frontMatter.i18n.create`
 
 ### Generate slug based on content title
 
 This command generates a clean slug for your content. It removes known stop words, punctuations, and
 special characters.
 
-Example:
-
-```yaml
----
-title: Just a sample page with a title
-slug: sample-page-title
----
-```
-
-You can also specify a prefix and suffix, which can be added to the slug if you want. Use the
-following settings to do this: `frontMatter.taxonomy.slugPrefix` and
-`frontMatter.taxonomy.slugSuffix`.
-
-By default, both prefix and suffix settings are not provided, which mean it would not add anything
-extra to the slug.
-
-Another setting is to allow you to sync the filename with the generated slug. The setting you need
-to turn on enable for this is `frontMatter.taxonomy.alignFilename`.
-
-> **Info**: At the moment, the extension only supports English stopwords.
+> **Info**: You can read more about the slug in the [slug documentation](/docs/content-creation/slug).
 
 ID: `frontMatter.generateSlug`
 
@@ -168,13 +122,6 @@ Open the site preview of your content in VS Code.
 
 ID: `frontMatter.preview`
 
-### Promote settings from local to team level
-
-This command allows you to promote all local settings from within your `.vscode/settings.json` file
-to be promoted to the projects team configuration `frontmatter.json` file.
-
-ID: `frontMatter.promoteSettings`
-
 ### Refresh the settings
 
 This command allows you to refresh the settings from the `frontmatter.json` file. This is useful
@@ -182,10 +129,15 @@ when you have updated the settings manually and want to reload them.
 
 ID: `frontMatter.settings.refresh`
 
-## Removed commands
+### Clear cache
 
-### Set current date
+Clears the CMS cache, this removes all processed pages and data from the cache so that
+the whole cache can be rebuilt.
 
-This command has been removed, as it became obsolete since the introduction of Content Types.
+ID: `frontMatter.cache.clear`
 
-ID: `frontMatter.setDate`
+### Diagnostic logging
+
+Opens a virtual Markdown document with detailed information about your Front Matter configuration.
+
+ID: `frontMatter.diagnostics`

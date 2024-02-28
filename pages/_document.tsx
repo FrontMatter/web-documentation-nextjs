@@ -20,7 +20,8 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-          <script dangerouslySetInnerHTML={{__html: `
+          <script dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -33,7 +34,7 @@ class MyDocument extends Document {
 
         <body className={`fadeIn bg-vulcan-500 text-whisper-500`}>
           <Main />
-          
+
           <NextScript />
         </body>
       </Html>

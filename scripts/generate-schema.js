@@ -46,7 +46,7 @@ const generateSchemaForArray = (vscodeProps, baseUrl, configFolder, schemaName, 
   }
 }
 
-const escapeQuotes = (str) => {
+const escapeQuotes = (/** @type {string} */ str) => {
   return str.replace(/"/g, '\\"');
 }
 
@@ -106,46 +106,62 @@ const escapeQuotes = (str) => {
     }
 
     // Sub-schema's filenames
-    const ctSchemaName = "taxonomy.contenttypes.schema.json";
-    const fieldGroupsSchemaName = "taxonomy.fieldgroups.schema.json";
-    const pageFoldersSchemaName = "content.pagefolders.schema.json";
-    const snippetSchemaName = "content.snippets.schema.json";
-    const placeholderSchemaName = "content.placeholders.schema.json";
-    const customScriptsSchemaName = "custom.scripts.schema.json";
-    const dataFilesSchemaName = "data.files.schema.json";
-    const dataFoldersSchemaName = "data.folders.schema.json";
-    const dataTypesSchemaName = "data.types.schema.json";
+    const schemas = {
+      content: {
+        pageFolders: "content.pagefolders.schema.json",
+        snippets: "content.snippets.schema.json",
+        placeholders: "content.placeholders.schema.json"
+      },
+      custom: {
+        scripts: "custom.scripts.schema.json"
+      },
+      data: {
+        files: "data.files.schema.json",
+        folders: "data.folders.schema.json",
+        types: "data.types.schema.json"
+      },
+      media: {
+        contentTypes: "media.contenttypes.schema.json"
+      },
+      taxonomy: {
+        contentTypes: "taxonomy.contenttypes.schema.json",
+        fieldGroups: "taxonomy.fieldgroups.schema.json"
+      },
+    }
 
     // Create the content type schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, ctSchemaName, "frontMatter.taxonomy.contentTypes", "content type", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.taxonomy.contentTypes, "frontMatter.taxonomy.contentTypes", "content type", undefined);
 
     // Create the field groups schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, fieldGroupsSchemaName, "frontMatter.taxonomy.fieldGroups", "field groups", {
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.taxonomy.fieldGroups, "frontMatter.taxonomy.fieldGroups", "field groups", {
       value: "#contenttypefield",
-      ref: `${baseUrl}/config/${ctSchemaName}#/properties/fields`
+      ref: `${baseUrl}/config/${schemas.taxonomy.contentTypes}#/properties/fields`
     });
 
+    // Create the media content type schema
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.media.contentTypes, "frontMatter.media.contentTypes", "content type", undefined);
+
     // Create the custom script schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, customScriptsSchemaName, "frontMatter.custom.scripts", "custom script", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.custom.scripts, "frontMatter.custom.scripts", "custom script", undefined);
 
     // Create the page folders schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, pageFoldersSchemaName, "frontMatter.content.pageFolders", "page folder", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.content.pageFolders, "frontMatter.content.pageFolders", "page folder", undefined);
 
     // Create the placeholder schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, placeholderSchemaName, "frontMatter.content.placeholders", "placeholder", {
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.content.placeholders, "frontMatter.content.placeholders", "placeholder", {
       value: "#scriptCommand",
-      ref: `${baseUrl}/config/${customScriptsSchemaName}#/properties/command`
+      ref: `${baseUrl}/config/${schemas.custom.scripts}#/properties/command`
     });
 
     // Create the data schemas
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFilesSchemaName, "frontMatter.data.files", "data file", undefined);
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataFoldersSchemaName, "frontMatter.data.folders", "data folder", {
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.data.files, "frontMatter.data.files", "data file", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.data.folders, "frontMatter.data.folders", "data folder", {
       value: "#dataFileSchema",
-      ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema`
+      ref: `${baseUrl}/config/${schemas.data.files}#/properties/schema`
     });
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, dataTypesSchemaName, "frontMatter.data.types", "data type", {
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.data.types, "frontMatter.data.types", "data type", {
       value: "#dataFileSchema",
-      ref: `${baseUrl}/config/${dataFilesSchemaName}#/properties/schema`
+      ref: `${baseUrl}/config/${schemas.data.files}#/properties/schema`
     });
 
     // Create the snippet schema
@@ -153,7 +169,7 @@ const escapeQuotes = (str) => {
     if (snippetObject) {
       const snippetSchema = {
         "$schema": "http://json-schema.org/draft-07/schema",
-        "$id": `${baseUrl}/config/${snippetSchemaName}`,
+        "$id": `${baseUrl}/config/${schemas.content.snippets}`,
         "description": "Defines the settings for Front Matter snippet",
         "lastModified": new Date().toISOString(),
         "type": "object",
@@ -163,9 +179,9 @@ const escapeQuotes = (str) => {
 
       let schemaString = JSON.stringify(snippetSchema, null, 2);
       // Replace the #contenttypefield reference
-      schemaString = schemaString.replace(/#contenttypefield/g, `${baseUrl}/config/${ctSchemaName}#/properties/fields`);
+      schemaString = schemaString.replace(/#contenttypefield/g, `${baseUrl}/config/${schemas.media.contentTypes}#/properties/fields`);
 
-      fs.writeFileSync(path.join(configFolderPath, snippetSchemaName), schemaString);
+      fs.writeFileSync(path.join(configFolderPath, schemas.content.snippets), schemaString);
     }
   }
 })();

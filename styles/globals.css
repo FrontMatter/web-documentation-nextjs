@@ -96,7 +96,7 @@ h5.header__offset {
   }
 
   ul {
-    @apply list-disc pl-5 my-4;
+    @apply list-disc pl-5 my-4 space-y-1;
   }
 
   ol {

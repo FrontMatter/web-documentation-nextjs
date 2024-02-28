@@ -1,10 +1,10 @@
 ---
 title: Placeholders
 slug: content-creation/placeholders
-description: null
+description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-01-31T16:17:03.272Z
-weight: 200.4
+lastmod: 2024-02-24T13:18:09.798Z
+weight: 200.51
 ---
 
 # Placeholders
@@ -29,11 +29,12 @@ automatically fill in values when creating a new content.
 
 ## Special placeholders
 
-| Placeholder             | Description                                                | Works for                                             |
-| ----------------------- | ---------------------------------------------------------- | ----------------------------------------------------- |
-| `{{fm.<field name>}}`   | The value of the field in the front matter                 | `previewPath` on the page folder or the content-type. |
-| `{{pathToken.<index>}}` | The value of the path token at the index                   | `previewPath` on the page folder or the content-type. |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type. |
+| Placeholder             | Description                                                                                                        | Works for                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section.                 | `slugTemplate` properties.                            |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                                                                         | `slugTemplate` and `previewPath` properties.          |
+| `{{pathToken.<index>}}` | The value of the path token at the index                                                                           | `previewPath` on the page folder or the content-type. |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path                                                         | `previewPath` on the page folder or the content-type. |
 
 ### Example 1
 
@@ -149,7 +150,7 @@ Here is an example of a dynamic `uniqueId` placeholder:
 #### Placeholder script
 
 To get started, you first need to install the
-[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility) 
+[@frontmatter/extensibility](https://www.npmjs.com/package/@frontmatter/extensibility)
 dependency.
 
 ```bash
@@ -191,7 +192,16 @@ import { PlaceholderScript } from "@frontmatter/extensibility";
     PlaceholderScript.askQuestions([
       {
         name: "category",
-        message: "What category do you want to use for this article?"
+        message: "What category do you want to use for this article?",
+        options: [
+          "Uncategorized",
+          "Getting Started",
+          "Configuration",
+          "Customization",
+          "Deployment",
+          "Troubleshooting",
+          "Other",
+        ],
       },
     ]);
     return;
@@ -225,3 +235,4 @@ follows:
 <!-- Link References -->
 
 [01]: /docs/custom-actions/#content-script
+[02]: /docs/content-creation/slug

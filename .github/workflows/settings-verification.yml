@@ -12,15 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
-          cache: 'npm'
+          node-version: 18
+          cache: "npm"
 
       - name: Install the dependencies
         run: npm ci
-      
+
       - name: Verify missing settings
         run: node scripts/verify-settings.js ${{ github.ref_name }}
 
+      - name: Verify missing commands
+        run: node scripts/verify-commands.js ${{ github.ref_name }}

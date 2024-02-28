@@ -1,10 +1,10 @@
 ---
 title: Fields
 slug: content-creation/fields
-description: null
+description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2023-12-08T08:57:08.344Z
-weight: 200.2
+lastmod: 2024-02-22T17:35:59.797Z
+weight: 200.31
 ---
 
 # Fields overview
@@ -822,7 +822,7 @@ slug: version-8-0-0-release-notes
 ```
 
 > **Info**: The slug is generated based on the title of the page. More information about it can be
-> found in the [generate slug][15] command section.
+> found in the [slug documentation][15] section.
 
 ## contentRelationship
 
@@ -958,7 +958,7 @@ want to group fields together.
 [12]: /assets/block-field-type.png
 [13]: /releases/v7.3.0/datafile-field.png
 [14]: /releases/v8.0.0/slug-field.png
-[15]: /docs/commands#generate-slug-based-on-content-title
+[15]: /docs/content-creation/slug
 [16]: /releases/v8.1.0/section-divider.png
 [17]: /releases/v8.1.0/section-heading.png
 [18]: /docs/experimental#enable-experimental-features

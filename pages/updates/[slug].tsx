@@ -5,14 +5,14 @@ import { Layout } from '../../components/Page/Layout';
 import { getAllPosts, getPostByFilename } from '../../lib/api';
 import markdownToHtml from '../../utils/markdownToHtml';
 
-export default function Home({ title, content, description, date }: any) {
+export default function Home({ title, content, description, date, ogImage }: any) {
   const pubDate = date ? parseJSON(date) : '';
 
   return (
     <>
       <Title value={title} />
       <Description value={title} />
-      <OtherMeta image={`/assets/frontmatter-social.png`} />
+      <OtherMeta image={ogImage || `/assets/frontmatter-social.png`} />
 
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 xl:px-0 divide-y-2 divide-vulcan-200">
@@ -41,8 +41,16 @@ export const getStaticProps = async ({ params }: any) => {
   const changes = getPostByFilename('changelog', `${params.slug}.md`, ['title', 'content', 'description', 'date']);
   changes.content = await markdownToHtml(changes.content || '');
 
+  let ogImage = `/api/og?type=Updates&title=${encodeURIComponent(changes.title)}`;
+  if (changes.description) {
+    ogImage += `&description=${encodeURIComponent(changes.description)}`;
+  }
+
   return {
-    props: { ...changes }
+    props: {
+      ...changes,
+      ogImage
+    }
   }
 }
 

@@ -1,9 +1,9 @@
 ---
 title: Media view
-slug: media-view
+slug: dashboard/media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2023-04-01T13:53:45.580Z
+lastmod: 2024-02-22T12:23:07.490Z
 weight: 300.2
 ---
 
@@ -13,7 +13,41 @@ The media view has been created to make it easier to look at all media files ava
 articles. When you click on an image, it will show a lightbox, so that it is easier to glance at
 small images.
 
-![Dashboard - Media view - Lightbox][01]
+![Media dashboard][01]
+
+## Define the media folder
+
+You can use the `frontMatter.content.publicFolder` setting to define the location of your media
+files. By default, it is unset, and will show all folders and files starting from the root of your
+project.
+
+```json {{ "title": "Example of defining the media folder" }}
+{
+  "frontMatter.content.publicFolder": "public"
+}
+```
+
+### Relative paths
+
+In case the paths to your images need to be relative to the content file, you need to specify the
+following:
+
+```json
+{
+  "frontMatter.content.publicFolder": {
+    "path": "src/static",
+    "relative": true
+  }
+}
+```
+
+### Hexo support
+
+In case you are using Hexo in combinations with the [asset folders](https://hexo.io/docs/asset-folders),
+you can use the following settings:
+
+- `source/images`: If you want to use the default image location of Hexo;
+- `hexo:post_asset_folder`: If you want to use the post asset folder functionality.
 
 ## Supported files
 
@@ -31,12 +65,69 @@ If you want that the media dashboard supports additional file types, you can def
 ]
 ```
 
+## Metadata
+
+The media dashboard supports metadata for images. By default, the following metadata is supported:
+
+- Title
+- Caption
+- Alternate text
+
+Since version `10.0.0`, you can define your own metadata fields by defining media content types.
+
+### Media content types
+
+Media content types are defined in the `frontMatter.media.contentTypes` setting. This setting allows
+you to define your own metadata fields for your media files.
+
+#### Media content type properties
+
+| Property | Type | Description | Default |
+| --- | --- | --- | --- |
+| `name` | `string` | The name of the content type. | `""` |
+| `fileTypes` | `string[]` | The file extensions that should be associated with this content type. | `[]` |
+| `fields` | `field[]` | The fields that should be shown for this content type. | `[]` |
+
+#### Media field properties
+
+| Property | Type | Description | Default |
+| --- | --- | --- | --- |
+| `title` | `string` | The title of the field. | `""` |
+| `name` | `string` | The name of the field. | `""` |
+| `type` | `string` | The type of the field (`string`). | `""` |
+| `single` | `boolean` | If the field is a single line value. | `true` |
+
+```json {{ "title": "Example of defining media content types" }}
+{
+  "frontMatter.media.contentTypes": [{
+    "name": "default",
+    "fileTypes": ["png", "jpg", "jpeg", "gif"],
+    "fields": [{
+        "title": "Title",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "title": "Author",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "title": "Alt text",
+        "name": "alt",
+        "type": "string"
+      }
+    ]
+  }]
+}
+```
+
 ## Media actions
 
 On the image card, there are actions like setting metadata, copying the relative path, and deleting
 the media file.
 
-### Setting metadata
+### Updating metadata
 
 Setting metadata got introduced so that you can set the description and alt tag of your images. This
 functionality makes it easier to insert your images to your content.
@@ -77,9 +168,9 @@ your explorer/finder window into one of your folders.
 ![Dashboard - Upload media file][06]
 
 <!-- Link References -->
-[01]: /releases/v5.9.0/media-lightbox.png
-[02]: /releases/v5.0.0/metadata-media.png
+[01]: /releases/v10.0.0/media-dashboard.png
+[02]: /releases/v10.0.0/metadata-update.png
 [03]: /docs/markdown#insert-images
-[04]: /releases/v5.9.0/media-deletion.png
+[04]: /releases/v10.0.0/delete-media.png
 [05]: /docs/custom-actions#creating-a-media-script
-[06]: /releases/v5.9.0/media-upload.png
+[06]: /releases/v10.0.0/media-upload.png
