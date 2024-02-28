@@ -3,8 +3,8 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-24T13:16:18.482Z
-weight: 1100.2
+lastmod: 2024-02-26T17:54:04.814Z
+weight: 1000.2
 ---
 
 # Settings overview
