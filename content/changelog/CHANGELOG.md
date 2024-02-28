@@ -1,6 +1,6 @@
 # Change Log
 
-## [10.0.0] - 2024-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v10.0.0)
+## [10.0.0] - 2024-02-28 - [Release notes](https://beta.frontmatter.codes/updates/v10.0.0)
 
 ### ✨ New features
 
@@ -19,6 +19,7 @@
 - [#747](https://github.com/estruyf/vscode-front-matter/issues/747): The `@frontmatter/extensibility` dependency now supports scripts for placeholders
 - [#752](https://github.com/estruyf/vscode-front-matter/issues/752): Placeholder support in default `list` field values
 - Support for using the `fieldCollection` field in a `block` field
+- Updated the list of commands which are available in the command palette
 
 ### 🐞 Fixes
 

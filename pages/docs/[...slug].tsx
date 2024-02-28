@@ -70,7 +70,7 @@ export async function getStaticProps({ params }: Params) {
 
   doc.content = await markdownToHtml(doc.content || '');
 
-  let ogImage = `/api/og?title=${encodeURIComponent(doc.title)}`;
+  let ogImage = `/api/og?type=Docs&title=${encodeURIComponent(doc.title)}`;
   if (doc.description) {
     ogImage += `&description=${encodeURIComponent(doc.description)}`;
   }

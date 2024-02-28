@@ -8,6 +8,9 @@ export const config = {
 export default async function (request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
+  const hasType = searchParams.has('type');
+  const type = hasType ? searchParams.get('type') : '';
+
   // ?title=<title>
   const hasTitle = searchParams.has('title');
   const title = hasTitle ? searchParams.get('title') : '';
@@ -68,22 +71,27 @@ export default async function (request: NextRequest) {
             </p>
           </section>
 
-          <div style={{
-            display: 'flex',
-          }}>
-            <span tw="uppercase text-base rounded" style={{
-              marginTop: '1rem',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '1rem',
-              fontWeight: '500',
-              backgroundColor: '#29d6df',
-              padding: '0.5rem 1rem',
-              fontFamily: "Open Sans"
-            }}>
-              Docs
-            </span>
-          </div>
+          {
+            type && (
+              <div style={{
+                display: 'flex',
+              }}>
+                <span tw="uppercase text-base rounded" style={{
+                  marginTop: '1rem',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1rem',
+                  fontWeight: '500',
+                  backgroundColor: '#29d6df',
+                  padding: '0.5rem 1rem',
+                  fontFamily: "Open Sans"
+                }}>
+                  {type}
+                </span>
+              </div>
+            )
+          }
+
         </div>
 
         <div tw="h-8 w-full absolute bottom-0" style={{
