@@ -47,7 +47,7 @@ In case you want to change the SEO settings, you can use the following settings:
 
 | Setting                                     | Description                                                                                                                                                             | Default       |
 | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `frontMatter.taxonomy.seoContentLengh`      | Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off). | `1760`        |
+| `frontMatter.taxonomy.seoContentLength`     | Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off). | `1760`        |
 | `frontMatter.taxonomy.seoDescriptionField`  | Specifies the name of the SEO description field for your page.                                                                                                          | `description` |
 | `frontMatter.taxonomy.seoDescriptionLength` | Specifies the optimal description length for SEO (set to `-1` to turn it off).                                                                                          | `160`         |
 | `frontMatter.taxonomy.seoSlugLength`        | Specifies the optimal title length for SEO (set to `-1` to turn it off).                                                                                                | `75`          |
