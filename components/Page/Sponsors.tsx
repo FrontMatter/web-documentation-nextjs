@@ -63,7 +63,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
         {
           sponsors && sponsors.companies && sponsors.companies.length > 0 && (
-            <div className="flex justify-center space-x-4 flex-wrap">
+            <div className="flex justify-center space-x-8 flex-wrap">
               {
                 sponsors.companies.map((sponsor) => (
                   <a
