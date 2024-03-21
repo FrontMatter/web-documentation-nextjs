@@ -71,7 +71,7 @@ The following settings are supported to be split in multiple files:
 | `frontMatter.data.files`            | `./.frontmatter/config/data/files/`            | `https://frontmatter.codes/config/data.files.schema.json`            |
 | `frontMatter.data.folders`          | `./.frontmatter/config/data/folders/`          | `https://frontmatter.codes/config/data.folders.schema.json`          |
 | `frontMatter.data.types`            | `./.frontmatter/config/data/types/`            | `https://frontmatter.codes/config/data.types.schema.json`            |
-| `frontMatter.media.contentTypes`    | `./.frontmatter/config/meda/contenttypes/`     | `https://frontmatter.codes/config/media.contenttypes.schema.json`    |
+| `frontMatter.media.contentTypes`    | `./.frontmatter/config/medIa/contenttypes/`    | `https://frontmatter.codes/config/media.contenttypes.schema.json`    |
 | `frontMatter.taxonomy.contentTypes` | `./.frontmatter/config/taxonomy/contenttypes/` | `https://frontmatter.codes/config/taxonomy.contenttypes.schema.json` |
 | `frontMatter.taxonomy.fieldGroups`  | `./.frontmatter/config/taxonomy/fieldgroups/`  | `https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json`  |
 
