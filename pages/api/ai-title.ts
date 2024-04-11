@@ -23,13 +23,9 @@ const api = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(403).send({});
   }
 
-  const instruction = `Generate enganging blog post title, with a maximum of ${
+  const instruction = `Come up with a better title for my blog post that has the working title "${title}". It should not be more than ${
     nrOfCharacters || 60
-  } characters.
-  
-  The topic of the blog post is: ${title}.
-  
-  Desired format: just a string, e.g. "My first blog post"`;
+  } characters in total. The desired format should be just a string, e.g. "My first blog post"`;
 
   const choices = await OpenAiService.getCompletion(instruction);
 

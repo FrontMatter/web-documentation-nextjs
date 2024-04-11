@@ -1,6 +1,5 @@
 {
-  "individuals": [
-    {
+  "individuals": [{
       "url": "https://github.com/timschps",
       "name": "Tim Schaeps",
       "avatar": "https://avatars.githubusercontent.com/u/13098307"
@@ -21,7 +20,13 @@
       "avatar": "https://avatars.githubusercontent.com/u/1969515"
     }
   ],
-  "companies": [
+  "companies": [{
+      "url": "https://run.events/?utm_source=frontmatter&utm_campaign=oss",
+      "title": "run.events",
+      "image": "/assets/sponsors/runevents.svg",
+      "id": "run.events",
+      "alt": "run.events - Event Management Platform"
+    },
     {
       "url": "https://vercel.com/?utm_source=vscode-frontmatter&utm_campaign=oss",
       "title": "Powered by Vercel",
