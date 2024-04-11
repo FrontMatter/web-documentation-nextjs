@@ -3,7 +3,7 @@ title: Content folders
 slug: content-creation/content-folders
 description: Learn how to let Front Matter CMS know where to find and create your content
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-02-22T17:36:42.825Z
+lastmod: 2024-04-11T15:12:19.769Z
 weight: 200.11
 ---
 
@@ -36,6 +36,10 @@ Content folders are stored in the [frontMatter.content.pageFolders][02] setting.
     {
       "title": "Blog posts",
       "path": "[[workspace]]/content/posts"
+    },
+    {
+      "title": "Glob pattern support",
+      "path": "[[workspace]]/content/**/docs"
     },
     {
       "title": "docs",

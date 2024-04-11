@@ -3,7 +3,7 @@ title: Custom actions/scripts
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-02-21T09:06:16.403Z
+lastmod: 2024-04-11T15:09:14.745Z
 weight: 500
 ---
 
@@ -355,6 +355,49 @@ we create a new question for the user and return the script without any output.
 1. Once the user has answered the question, the script will be executed again, but this time the
 `answers` property will be available in the arguments.
 1. We will fetch the width from the answers and resize the image accordingly.
+
+## Open a file or webpage from a custom script
+
+If you want to open a file or webpage from a custom script, you can use the `ContentScript.open`
+function from the `@frontmatter/extensibility` package.
+
+Here is a sample on how you can open a file or webpage from a custom script:
+
+```javascript {{ "title": "Sample script where at the end a webpage is opened" }}
+import { ContentScript } from '@frontmatter/extensibility';
+
+(() => {
+  const contentScriptArgs = ContentScript.getArguments();
+  if (contentScriptArgs) {
+    const { frontMatter: { title, slug }, answers } = contentScriptArgs;
+
+    if (!answers) {
+      ContentScript.askQuestions([{
+        name: "platform",
+        message: "Where do you want to share the article?",
+        options: ["Twitter", "LinkedIn"]
+      }]);
+      return;
+    }
+
+    const platform = answers.platform;
+    if (!platform) {
+      ContentScript.done(`No platform provided`);
+      return;
+    }
+
+    const url = `https://www.eliostruyf.com${slug.startsWith("/") ? slug : `/${slug}`}`;
+    let shareUrl = "";
+    if (platform === "Twitter") {
+      shareUrl = `http://twitter.com/share?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+    } else if (platform === "LinkedIn") {
+      shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}`;
+    }
+
+    ContentScript.open(shareUrl);
+  }
+})();
+```
 
 ## Sample scripts
 
