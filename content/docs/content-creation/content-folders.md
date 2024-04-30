@@ -3,7 +3,7 @@ title: Content folders
 slug: content-creation/content-folders
 description: Learn how to let Front Matter CMS know where to find and create your content
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-04-11T15:12:19.769Z
+lastmod: 2024-04-30T08:06:48.062Z
 weight: 200.11
 ---
 
@@ -120,7 +120,7 @@ and clicking on `Register folder` under the Front Matter CMS context menu.
 
 <!-- Links -->
 
-[01]: "/docs/getting-started#step-3:-register-content-folder(s)"
+[01]: /docs/getting-started#step-3:-register-content-folder(s)
 [02]: /docs/settings/overview#frontmatter.content.pagefolders
 [03]: /docs/site-preview#configuration
 [04]: /docs/content-creation/multilingual
