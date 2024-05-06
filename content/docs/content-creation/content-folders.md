@@ -3,7 +3,7 @@ title: Content folders
 slug: content-creation/content-folders
 description: Learn how to let Front Matter CMS know where to find and create your content
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-04-11T15:12:19.769Z
+lastmod: 2024-04-30T08:06:48.062Z
 weight: 200.11
 ---
 
