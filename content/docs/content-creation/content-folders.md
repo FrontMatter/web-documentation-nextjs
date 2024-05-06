@@ -19,7 +19,7 @@ content in the correct place, you need to register the content/page folders.
 ## Registering content folders
 
 The registration of the page folders is typically performed during the setup of
-the CMS: [Step 3: Register content folder(s)][01],
+the CMS: [Step 3: Register content folder(s)](/docs/getting-started#step-3:-register-content-folder(s)),
 but you can perform changes at any time.
 
 Content folders are stored in the [frontMatter.content.pageFolders][02] setting.
@@ -120,7 +120,6 @@ and clicking on `Register folder` under the Front Matter CMS context menu.
 
 <!-- Links -->
 
-[01]: "/docs/getting-started#step-3:-register-content-folder(s)"
 [02]: /docs/settings/overview#frontmatter.content.pagefolders
 [03]: /docs/site-preview#configuration
 [04]: /docs/content-creation/multilingual

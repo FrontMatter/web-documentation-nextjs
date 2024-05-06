@@ -219,7 +219,7 @@ Follow the next steps in order to configure the DeepL authentication key:
 
 ### Start translating
 
-Once you configured Deepl or Azure AI Translator, when you [create a new translation](docs/content-creation/multilingual#create-a-translation),
+Once you configured Deepl or Azure AI Translator, when you [create a new translation](/docs/content-creation/multilingual#create-a-translation),
 the CMS will automatically submit the article title, description, and content to the
 translation service.
 
