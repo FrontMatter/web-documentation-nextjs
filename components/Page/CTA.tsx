@@ -44,8 +44,8 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
         </div>
       </div>
 
-      <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
-        <div className={`py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2`}>
+      <div className="-mx-4 sm:mx-auto sm:max-w-3xl sm:px-6">
+        <div className={`py-10 sm:py-16 sm:relative lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2`}>
           <div className={`relative sm:mx-auto sm:max-w-3xl sm:px-0 lg:-mr-40 lg:max-w-none lg:h-full lg:pl-12`}>
             <img
               className={`w-full lg:h-full lg:w-auto lg:max-w-none`}
