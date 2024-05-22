@@ -3,7 +3,7 @@ import { HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
-import { VscTwitter } from "react-icons/vsc";
+import { FaXTwitter } from "react-icons/fa6";
 import { SiDiscord, SiVisualstudiocode } from "react-icons/si";
 
 export const navigation = {
@@ -132,7 +132,7 @@ export const navigation = {
       href: Extension.twitter,
       blank: true,
       icon: ({ className, ...rest }: any) => (
-        <VscTwitter className={`${className} group-hover:fill-current`} {...rest} />
+        <FaXTwitter className={`${className} group-hover:fill-current`} {...rest} />
       )
     },
     {
