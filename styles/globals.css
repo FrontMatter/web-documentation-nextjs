@@ -293,7 +293,7 @@ main img {
   opacity: var(--opacity, 0);
 } */
 
-[data-scroll] {
+/* [data-scroll] {
   translate: var(--x, 0) 0;
   transition: translate 0.2s, opacity 0.2s;
   opacity: var(--opacity, 0);
@@ -314,7 +314,7 @@ main img {
 .img-right[data-scroll="out"] {
   --opacity: 0;
   --x: 100%;
-}
+} */
 
 .iframe__wrapper {
   position: relative;
