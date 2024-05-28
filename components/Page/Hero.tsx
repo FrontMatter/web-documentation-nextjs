@@ -45,15 +45,14 @@ export const Hero: React.FunctionComponent<IHeroProps> = ({ view, title, descrip
         </div>
       </div>
 
-      <div className={`sm:mx-auto sm:max-w-3xl sm:px-6`}>
-        <div className={`py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:w-1/2 ${view === "left" ? `lg:left-0` : `lg:right-0`}`}>
+      <div className={`-mx-4 sm:mx-auto sm:max-w-3xl sm:px-6`}>
+        <div className={`py-10 sm:py-16 sm:relative lg:absolute lg:inset-y-0 lg:w-1/2 ${view === "left" ? `lg:left-0` : `lg:right-0`}`}>
           <div className={`relative sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full ${view === "left" ? `` : `lg:-mr-40 lg:pl-12`}`}>
             <img
               className={`w-full lg:h-full lg:w-auto lg:max-w-none ${view === "left" ? `lg:absolute lg:right-0 img-left` : 'img-right'}`}
               src={imgSrc}
               alt={imgAlt}
-              loading={`lazy`}
-              data-scroll />
+              loading={`lazy`} />
           </div>
         </div>
       </div>

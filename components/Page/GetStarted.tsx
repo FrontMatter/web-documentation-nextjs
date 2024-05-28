@@ -10,7 +10,7 @@ export const GetStarted: React.FunctionComponent<IGetStartedProps> = (props: Rea
 
   return (
     <div className="bg-vulcan-600">
-      <div className="max-w-4xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-0 lg:max-w-7xl lg:flex lg:items-center lg:justify-between">
+      <div className="max-w-4xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8 lg:max-w-7xl lg:flex lg:items-center lg:justify-between">
         <h2 className="text-4xl font-extrabold tracking-tight text-whisper-500 sm:text-4xl">
           <span className="block">Ready to get started?</span>
         </h2>

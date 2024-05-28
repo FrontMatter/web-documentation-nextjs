@@ -1,5 +1,66 @@
 # Change Log
 
+## [10.2.0] - 2024-xx-xx
+
+### ✨ New features
+
+- [#797](https://github.com/estruyf/vscode-front-matter/issues/797): Adding common actions at the bottom of the snippet cards
+
+### 🎨 Enhancements
+
+- [#798](https://github.com/estruyf/vscode-front-matter/issues/798): Changed dialog to slide-over for the snippet forms
+- [#799](https://github.com/estruyf/vscode-front-matter/issues/799): Added `frontMatter.logging` setting to define the logging output. Options are `info`, `warn`, `error`, and `verbose`. Default is `info`.
+- [#800](https://github.com/estruyf/vscode-front-matter/issues/800): Add colors for the Front Matter CMS output
+- [#810](https://github.com/estruyf/vscode-front-matter/issues/810): Update the tab title based on the view
+
+### ⚡️ Optimizations
+
+- [#802](https://github.com/estruyf/vscode-front-matter/issues/802): Update `glob` to the latest version and remove the sync method
+
+### 🐞 Fixes
+
+- [#796](https://github.com/estruyf/vscode-front-matter/issues/796): Fix issue in retrieving folders/files on dashboard load
+- [#801](https://github.com/estruyf/vscode-front-matter/issues/801): Faster folder processing on updates
+- [#804](https://github.com/estruyf/vscode-front-matter/issues/804): Fix blinking of the front matter content area
+- [#806](https://github.com/estruyf/vscode-front-matter/issues/804): Fix preview URL for `index.md` files in root of the page folder path
+- [#809](https://github.com/estruyf/vscode-front-matter/issues/809): Fix retrieving the `filePrefix` when updating the file name on slug change
+
+## [10.1.0] - 2024-04-11 - [Release notes](https://beta.frontmatter.codes/updates/v10.1.0)
+
+### ✨ New features
+
+- [#671](https://github.com/estruyf/vscode-front-matter/issues/671): Command bar for contents and media dashboard
+
+### 🎨 Enhancements
+
+- [#773](https://github.com/estruyf/vscode-front-matter/issues/773): Added the ability to rename content files
+- [#777](https://github.com/estruyf/vscode-front-matter/issues/777): Show an error in the metadata panel if something went wrong while parsing the front matter
+- [#778](https://github.com/estruyf/vscode-front-matter/issues/778): Added the ability to open a file or webpage when custom scripts is completed
+- [#783](https://github.com/estruyf/vscode-front-matter/issues/783): Always show the custom panel view
+- [#785](https://github.com/estruyf/vscode-front-matter/issues/785): Adding common actions at the bottom of the content and media cards
+- [#787](https://github.com/estruyf/vscode-front-matter/issues/787): Support for glob patterns in the page folder paths
+- [#790](https://github.com/estruyf/vscode-front-matter/pull/790): Updated Japanese translations thanks to [mayumihara](https://github.com/mayumih387)
+
+### 🐞 Fixes
+
+- [#716](https://github.com/estruyf/vscode-front-matter/issues/716): Fix `dataFile` dropdown class
+- [#768](https://github.com/estruyf/vscode-front-matter/issues/768): Update broken link to the documentation
+- [#771](https://github.com/estruyf/vscode-front-matter/issues/771): Fix lowercase `data` tab label
+- [#782](https://github.com/estruyf/vscode-front-matter/issues/782): Fix for setting the correct view when inserting media or snippets
+- [#786](https://github.com/estruyf/vscode-front-matter/issues/786): Remove on startup as VSCode now triggers on known commands
+
+## [10.0.2] - 2024-03-01
+
+### 🐞 Fixes
+
+- [#769](https://github.com/estruyf/vscode-front-matter/issues/769): Fix to remove internal properties for content folders
+
+## [10.0.1] - 2024-02-28
+
+### 🐞 Fixes
+
+- [#766](https://github.com/estruyf/vscode-front-matter/issues/766): Fix for snippet placeholder retrieval
+
 ## [10.0.0] - 2024-02-28 - [Release notes](https://beta.frontmatter.codes/updates/v10.0.0)
 
 ### ✨ New features
