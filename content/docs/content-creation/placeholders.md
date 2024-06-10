@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-06-10T09:46:20.253Z
+lastmod: 2024-06-10T13:21:59.465Z
 weight: 200.51
 ---
 
@@ -92,7 +92,7 @@ The above configuration results in the following path: `/blog/25/02/23/`.
 
 ![Placeholder field formatting](/releases/v9.0.0/placeholder-formatting.png)
 
-### Example 4: using the `{{date|<format>}}` placeholder
+### Example 4: using the {{date\|\<format\>}} placeholder
 
 The `{{date|<format>}}` placeholder can be used in the `previewPath` property and uses the field
 with the name `date` or a date field where the `isPublishDate` property is set to `true`.
@@ -110,7 +110,7 @@ with the name `date` or a date field where the `isPublishDate` property is set t
 
 The above configuration results in the following path: `/blog/2024/`.
 
-### Example 5: using the `{{locale}}` placeholder
+### Example 5: using the {{locale}} placeholder
 
 The `{{locale}}` placeholder will return the locale of the page when you have
 a [multi-language setup](/docs/content-creation/multilingual).
