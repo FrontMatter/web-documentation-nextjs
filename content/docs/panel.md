@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-10-06T13:47:51.482Z
+lastmod: 2024-06-10T08:24:04.381Z
 weight: 400
 ---
 
@@ -200,6 +200,7 @@ You define a mode with an `id` and a set of features. The allowed features are t
 ### Panel
 
 - `panel.globalSettings`: Show the global settings section.
+- `panel.gitActions`: Show the git actions section.
 - `panel.seo`: Show the SEO status section.
 - `panel.actions`: Show the actions section.
 - `panel.metadata`: Show the metadata section.

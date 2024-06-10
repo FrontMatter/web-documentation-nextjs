@@ -65,14 +65,17 @@ h5.header__offset {
 
   h3 {
     @apply tracking-tight font-extrabold sm:leading-none text-xl xl:text-2xl break-all;
+    @apply mt-8 !important;
   }
 
   h4 {
     @apply tracking-tight font-extrabold sm:leading-none text-lg xl:text-xl;
+    @apply mt-8 !important;
   }
 
   h5 {
     @apply tracking-tight font-extrabold sm:leading-none text-lg;
+    @apply mt-8 !important;
   }
 
   img {
@@ -121,8 +124,8 @@ h5.header__offset {
   }
 
   code {
-    @apply bg-vulcan-300 rounded text-yellow-900;
-    padding: 2px 4px;
+    @apply bg-vulcan-100 rounded text-whisper-700;
+    padding: 0.125rem 0.375rem;
   }
 
   .code__wrapper {
