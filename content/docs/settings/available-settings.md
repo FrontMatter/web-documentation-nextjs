@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-02-26T17:54:04.814Z
+lastmod: 2024-06-10T09:13:40.409Z
 weight: 1000.2
 ---
 
@@ -12,6 +12,23 @@ weight: 1000.2
 Here you can find an overview of all available settings.
 
 ## Available settings
+
+### frontMatter.logging
+
+Specify the logging level you want to use for the extension.
+
+- Type: `string`
+- Default: `info`
+
+Options:
+
+- `verbose`
+- `info`
+- `warning`
+- `error`
+
+> **Info**: More information on how to use it can be found in the
+> [troubleshooting - logging](/docs/troubleshooting#logging) section.
 
 ### frontMatter.config.dynamicFilePath
 
@@ -508,6 +525,13 @@ field value.
 > **Important**: As the value will be formatted with the article's date, it will try to convert all
 > characters you enter. In case you want to skip some characters or all of them, you need to wrap
 > that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
+
+### frontMatter.preview.trailingSlash
+
+Specify if you want to add a trailing slash to the preview URL.
+
+- Type: `boolean`
+- Default: `false`
 
 ### frontMatter.projects
 

@@ -3,7 +3,7 @@ title: Troubleshooting
 slug: troubleshooting
 description: null
 date: 2021-12-21T09:53:30.176Z
-lastmod: 2024-02-26T17:53:05.362Z
+lastmod: 2024-06-10T08:21:47.433Z
 weight: 950
 ---
 
@@ -16,6 +16,18 @@ to the fact that there are misconfigurations, issues parsing your content, or bu
 constantly working to improve the extension and fix any issues you may encounter. In this section
 you can read what you can do to help you troubleshoot your Front Matter configuration.
 
+## Logging
+
+The extension logs information, warnings, and errors into the Visual Studio Code output tab. You can
+find the log stream by selecting the `vscode-front-matter` or `vscode-front-matter-beta` extension
+from the output dropdown.
+
+![Troubleshooting - Show the output of what the extension has been performing][02]
+
+The logging level can be adjusted in the `frontMatter.logging` settings.
+The default level is `info`, but you can set it to `verbose`, `info`, `warning`, or `error`
+to get more/less detailed information.
+
 ## Content and front matter parsing
 
 One of the main issues you may encounter is that there is something wrong in your markdown its front
@@ -26,14 +38,6 @@ the extension would spot an error during the content parsing, it will highlight 
 and on the problems tab.
 
 ![Troubleshooting - Informing you of a parsing issue in the front matter of your article][01]
-
-## Looking what is happening behind the scenes
-
-The extension logs information, warnings, and errors into the Visual Studio Code output tab. You can
-find the log stream by selecting the `vscode-front-matter` or `vscode-front-matter-beta` extension
-from the output dropdown.
-
-![Troubleshooting - Show the output of what the extension has been performing][02]
 
 ## Inspecting configuration behavior
 
@@ -83,7 +87,7 @@ When you already have a custom content type defined, you can set the `isPublishD
 <!-- Link References -->
 
 [01]: /releases/v5.8.0/troubleshooting.png
-[02]: /releases/v5.8.0/troubleshooting-output.png
+[02]: /releases/v10.2.0/logging-levels.webp
 [03]: /docs/commands#diagnostic-logging
 [04]: /docs/settings#splitting-your-settings-in-multiple-files
 [05]: /docs/content-creation/content-types#changing-the-default-content-type

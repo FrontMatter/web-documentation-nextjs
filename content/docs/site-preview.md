@@ -3,7 +3,7 @@ title: Site preview
 slug: site-preview
 description: null
 date: 2021-08-31T08:24:02.613Z
-lastmod: 2023-10-06T13:38:27.563Z
+lastmod: 2024-06-10T09:40:47.779Z
 weight: 700
 ---
 
@@ -12,7 +12,7 @@ weight: 700
 ## Overview
 
 The Markdown preview is not consistently delivering the same result as the one you will see on your
-site. The Front Matter extension provides you a way to show the actual site instead.
+site. The Front Matter CMS extension provides you a way to show the actual site instead.
 
 ![Site preview][01]
 
@@ -21,120 +21,183 @@ site. The Front Matter extension provides you a way to show the actual site inst
 
 ## Configuration
 
-In order to use the site preview, you will first have to set the `frontMatter.preview.host` setting.
-You can set it via the `Global Settings` section in the Front Matter panel or in your
-`frontmatter.json` file.
+To use the site preview, you will first have to set the `frontMatter.preview.host` setting which
+you can define in the `frontmatter.json` file.
 
-For example, with Hugo, the local server spins up on `http://localhost:1313`. When you set this URL
-as the value of the `frontMatter.preview.host` setting. You can click on the open preview button and
-the site preview will be shown.
+For example, with Hugo SSG, the local server spins up on `http://localhost:1313`.
+When you set this URL as the value of the `frontMatter.preview.host` setting.
+You can click on the open preview button and the site preview will be shown.
 
-### Prefix or section configuration
+### Configuration levels
 
-As Front Matter tries to support as many Static-Site Generators as possible, we made the choice to
-use settings that can be changed on various levels: global, per page folder, and per content type.
+To support as many Static-Site Generators and frameworks as possible, the configuration can be set
+on different levels:
 
-When you want to show the live site/page previews in Visual Studio Code, you can specify a custom
-preview path/prefix. For instance, if you create blog articles, and you want to prefix it with
-`blog/2021/11`, you can set this with the `previewPath` property.
+#### Globally
 
-> **Important**: The value used for the preview will be formatted with the article's date. This
-> means that the engine will try to convert all characters you enter to a date formatted string. In
-> case you want to skip some characters or all of them to be converted, you need to wrap that part
-> between **two single quotes**. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/11`.
+On the global level, you have the following settings available:
 
-### Usage of placeholders
+```json {{ "title": "Global settings" }}
+{
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.preview.pathName": "",
+  "frontMatter.preview.trailingSlash": false
+}
+```
+
+##### frontMatter.preview.host
+
+The `frontMatter.preview.host` setting is used to specify the host of your website. This setting is
+required to open the preview.
+
+##### frontMatter.preview.pathName
+
+The `frontMatter.preview.pathName` setting is used to specify the path that you want to add after the
+`frontMatter.preview.host` setting value and before your slug.
+
+This setting can be used for instance to include include a global prefix: `/docs`.
+
+```json {{ "title": "Path name example" }}
+{
+  "frontMatter.preview.pathName": "docs"
+}
+```
+
+When you open the preview, the URL will be: `<preview host URL>/docs/<slug>`.
+
+##### frontMatter.preview.trailingSlash
+
+The `frontMatter.preview.trailingSlash` setting is used to specify if you want to add a trailing
+slash to the preview URL.
+
+```json {{ "title": "Trailing slash example" }}
+{
+  "frontMatter.preview.trailingSlash": true
+}
+```
+
+When you open the preview, the URL will be: `<preview host URL>/<slug>/`.
+
+#### Page folder
+
+On the page folder level, you have the following related preview settings:
+
+```json {{ "title": "Page folder preview settings" }}
+{
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/src/content/blog",
+      "previewPath": "/blog",
+      "trailingSlash": false
+    }
+  ]
+}
+```
+
+##### previewPath on page folder
+
+The `previewPath` property on the `frontMatter.content.pageFolders` setting, will override what is
+defined globally and can be used to specify a preview path per page folder. It works the same as the
+`frontMatter.preview.pathName` setting.
+
+##### trailingSlash on page folder
+
+The `trailingSlash` property on the `frontMatter.content.pageFolders` setting, will override what is
+defined globally and can be used to specify if you want to add a trailing slash to the preview URL.
+
+#### Content type
+
+On the content type level, you have the following related preview settings:
+
+```json {{ "title": "Content type preview settings" }}
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "doc",
+    "pageBundle": false,
+    "previewPath": "/docs",
+    "trailingSlash": true,
+    "fields": []
+  }
+]
+```
+
+##### previewPath on content type
+
+Similar to the `previewPath` on the page folder level, the `previewPath` property on the content
+type level will override what is defined on page folder level and globally.
+
+##### trailingSlash on content type
+
+Similar to the `trailingSlash` on the page folder level, the `trailingSlash` property on the content
+type level will override what is defined on page folder level and globally.
+
+## Placeholder support
 
 Since version `8.3.0`, the you can use placeholders in the `previewPath` property and there are a
 couple of additional placeholders available which can be used for your preview paths.
 
 > **Info**: You can find these placeholders in the [placeholders section](/docs/content-creation/placeholders#special-placeholders).
 
-#### Usage of a placeholder
+### Examples
 
-```json
+#### Usage of front matter field and path values
+
+```json {{ "title": "Example 1: Usage of front matter field and path values" }}
 "frontMatter.content.pageFolders": [
   {
     "title": "post",
-    "filePrefix": null,
-    "previewPath": "/{{fm.type}}/{{pathToken.3}}/{{pathToken.4}}",
     "path": "[[workspace]]/content/{{year}}/{{month}}",
+    "previewPath": "/{{fm.type}}/{{pathToken.3}}/{{pathToken.4}}",
+    "trailingSlash": true,
     "contentTypes": ["post"]
   }
 ]
 ```
 
-The preview path will generate the following path: `/post/2023/02/<slug>`.
+The preview path will generate the following path: `/post/2024/06/<slug>/`.
 
-#### Usage of a placeholder with the publishing date
+#### Use the publishing date in your preview path
 
-```json
+```json {{ "title": "Example 2: Use the publishing date in your preview path" }}
 "frontMatter.content.pageFolders": [
   {
-    "title": "post",
-    "filePrefix": null,
-    "previewPath": "'/{{fm.type}}/'yyyy",
-    "contentTypes": ["post"]
+    "title": "blog",
+    "path": "[[workspace]]/src/content/blog",
+    "previewPath": "/{{fm.type}}/{{date|yyyy}}",
+    "trailingSlash": true,
+    "contentTypes": ["blog"]
   }
 ]
 ```
 
-The preview path will generate the following path: `/post/2023/<slug>`.
+The preview path will generate the following path: `/blog/2024/<slug>/`.
 
-### Configuration levels
+> **Info**: When using the `{{date|<format>}}` placeholder in the `previewPath` property,
+> it looks for a field with the name `date` in the front matter, or for a `date` field where the
+> `isPublishDate` property is set to `true`.
 
-#### Globally
+#### Use the locale in your preview path
 
-On the global level, you can use the `frontMatter.preview.pathName` setting to specify the global
-path that you want to add after the `frontMatter.preview.host` setting value and before your slug.
-
-This setting can be used for instance to include the year/month like: `yyyy/MM`. The date will be
-generated based on the article its date field value.
-
-```json
-{
-  "frontMatter.preview.pathName": "'blog/'yyyy/MM"
-}
-```
-
-#### Page folder
-
-The `previewPath` property on the `frontMatter.content.pageFolders` setting, will override what is
-defined globally and can be used to specify a preview path per page folder.
-
-```json
-{
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "post",
-      "path": "[[workspace]]/content/post",
-      "previewPath": "'blog/'yyyy/MM"
-    }
-  ]
-}
-```
-
-> **Info**: The `previewPath` property can contain
-
-#### Content type
-
-Similar to the `previewPath` on the page folder level, the `previewPath` property on the content
-type level will override what is defined on page folder level and globally.
-
-```json
-"frontMatter.taxonomy.contentTypes": [
+```json {{ "title": "Example 3: Use the locale in your preview path" }}
+"frontMatter.content.pageFolders": [
   {
-    "name": "default",
-    "previewPath": "'blog/'yyyy/MM",
-    "pageBundle": false,
-    "fields": [
-      ...
-    ]
+    "title": "blog",
+    "path": "[[workspace]]/src/content/blog",
+    "previewPath": "/{{locale|ignore:en}}",
+    "trailingSlash": true,
+    "contentTypes": ["blog"]
   }
 ]
 ```
 
-### Open on the website
+The preview path will generate the following path for English content: `/<slug>/`. For other locales,
+the preview path will generate the following path: `/<locale>/<slug>/` (e.g. `/nl/<slug>/`).
+
+> **Info**: The `{{locale}}` placeholder will return the locale of the page when you have
+> a [multi-language setup](/docs/content-creation/multilingual).
+
+## Open on the website
 
 With the `frontMatter.website.host` setting, you can specify the host of your website. Once the
 setting is configured, you can click on the `Open on website` button to open the current page on
@@ -142,7 +205,7 @@ your website.
 
 > **Info**: The `frontMatter.website.host` setting can be configured in the `frontmatter.json` file.
 
-### Support for Browse Lite extension
+## Support for Browse Lite extension
 
 In case you have the [Browse Lite](https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite)
 extension installed, Front Matter will use this extension to open the preview. The advantage of this

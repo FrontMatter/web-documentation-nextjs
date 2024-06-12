@@ -110,7 +110,8 @@ const remarkFm = ({
       let lastChild = node.children[node.children.length - 1];
       if (lastChild && lastChild.type === "text") {
         let string = lastChild.value.replace(/ +$/, "");
-        const hId = string.toLowerCase().replace(/\s/g, "-");
+        let hId = string.toLowerCase().replace(/\s/g, "-");
+        hId = hId.replace(/[^a-z0-9-]/g, "");
 
         if (!node.data) {
           node.data = {};

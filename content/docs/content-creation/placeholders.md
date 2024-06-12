@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-24T13:18:09.798Z
+lastmod: 2024-06-10T13:21:59.465Z
 weight: 200.51
 ---
 
@@ -29,12 +29,14 @@ automatically fill in values when creating a new content.
 
 ## Special placeholders
 
-| Placeholder             | Description                                                                                                        | Works for                                             |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
-| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section.                 | `slugTemplate` properties.                            |
-| `{{fm.<field name>}}`   | The value of the field in the front matter                                                                         | `slugTemplate` and `previewPath` properties.          |
-| `{{pathToken.<index>}}` | The value of the path token at the index                                                                           | `previewPath` on the page folder or the content-type. |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path                                                         | `previewPath` on the page folder or the content-type. |
+| Placeholder | Description | Works for |
+| --- | --- | --- |
+| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section. | `slugTemplate` properties |
+| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `/blog/{{date\|yyyy-MM}}` | `previewPath` property |
+| `{{locale}}`            | The locale of the page. | `previewPath` property |
+| `{{fm.<field name>}}`   | The value of the field in the front matter | `slugTemplate` and `previewPath` properties |
+| `{{pathToken.<index>}}` | The value of the path token at the index | `previewPath` on the page folder or the content-type |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type |
 
 ### Example 1
 
@@ -89,6 +91,59 @@ an example of how you can use field formatting:
 The above configuration results in the following path: `/blog/25/02/23/`.
 
 ![Placeholder field formatting](/releases/v9.0.0/placeholder-formatting.png)
+
+### Example 4: using the {{date\|\<format\>}} placeholder
+
+The `{{date|<format>}}` placeholder can be used in the `previewPath` property and uses the field
+with the name `date` or a date field where the `isPublishDate` property is set to `true`.
+
+```json {{ "title": "Using the date placeholder", "description": "" }}
+"frontMatter.content.pageFolders": [
+  {
+    "title": "blog",
+    "filePrefix": null,
+    "previewPath": "/{{fm.type}}/{{date|yyyy}}",
+    "path": "[[workspace]]/content"
+  }
+]
+```
+
+The above configuration results in the following path: `/blog/2024/`.
+
+### Example 5: using the {{locale}} placeholder
+
+The `{{locale}}` placeholder will return the locale of the page when you have
+a [multi-language setup](/docs/content-creation/multilingual).
+
+```json {{ "title": "Using the locale placeholder", "description": "" }}
+"frontMatter.content.pageFolders": [
+  {
+    "title": "blog",
+    "filePrefix": null,
+    "previewPath": "/{{locale}}",
+    "path": "[[workspace]]/content"
+  }
+]
+```
+
+The above configuration results in the following path for English content: `/en/<slug>/`.
+
+You can also ignore a specific locale by using the `ignore:<locale>` option.
+
+```json {{ "title": "Ignoring a specific locale", "description": "" }}
+"frontMatter.content.pageFolders": [
+  {
+    "title": "blog",
+    "filePrefix": null,
+    "previewPath": "/{{locale|ignore:en}}",
+    "path": "[[workspace]]/content"
+  }
+]
+```
+
+The above configuration results in the following path for English content: `/<slug>/`.
+For other locales, the preview path will generate the following path:
+`/<locale>/<slug>/` (e.g. `/nl/<slug>/`).
 
 ## Custom placeholders
 
