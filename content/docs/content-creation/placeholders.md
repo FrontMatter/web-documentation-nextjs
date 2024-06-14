@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-06-10T13:21:59.465Z
+lastmod: 2024-06-14T09:26:58.102Z
 weight: 200.51
 ---
 
@@ -120,6 +120,7 @@ a [multi-language setup](/docs/content-creation/multilingual).
   {
     "title": "blog",
     "filePrefix": null,
+    "defaultLocale": "en",
     "previewPath": "/{{locale}}",
     "path": "[[workspace]]/content"
   }
@@ -135,6 +136,7 @@ You can also ignore a specific locale by using the `ignore:<locale>` option.
   {
     "title": "blog",
     "filePrefix": null,
+    "defaultLocale": "en",
     "previewPath": "/{{locale|ignore:en}}",
     "path": "[[workspace]]/content"
   }
