@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-05-06T15:25:19.670Z",
+  "lastModified": "2024-06-14T08:51:59.140Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -186,6 +186,10 @@
             ],
             "default": null,
             "description": "Defines a custom preview path for the folder."
+          },
+          "trailingSlash": {
+            "type": "boolean",
+            "description": "Specify if you want to add a trailing slash to the preview URL."
           },
           "filePrefix": {
             "type": [
@@ -1075,6 +1079,12 @@
       "markdownDescription": "Specify the path you want to add after the host and before your slug. This can be used for instance to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date field value. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.pathname)",
       "scope": "Site preview"
     },
+    "frontMatter.preview.trailingSlash": {
+      "type": "boolean",
+      "default": "",
+      "markdownDescription": "Specify if you want to add a trailing slash to the preview URL. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.trailingslash)",
+      "scope": "Site preview"
+    },
     "frontMatter.site.baseURL": {
       "type": "string",
       "default": "",
@@ -1620,6 +1630,10 @@
             ],
             "default": null,
             "description": "Defines a custom preview path for the content type."
+          },
+          "trailingSlash": {
+            "type": "boolean",
+            "description": "Specify if you want to add a trailing slash to the preview URL."
           },
           "slugTemplate": {
             "type": [

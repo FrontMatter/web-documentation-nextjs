@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
+export const config = {
+  runtime: "edge",
+};
+
 const mockData = {
   data: {
     viewer: {

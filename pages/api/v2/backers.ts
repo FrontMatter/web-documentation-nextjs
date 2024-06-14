@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import fetch from "node-fetch";
 import { GitHubService } from "../../../services/GithubService";
+
+export const config = {
+  runtime: "edge",
+};
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const { token } = req.body;

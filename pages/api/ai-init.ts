@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
-import { InitResponse, NewConversationResponse } from "../../models";
+import { NewConversationResponse } from "../../models";
+
+export const config = {
+  runtime: "edge",
+};
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const aiKey = process.env.MENDABLE_ANON_KEY;

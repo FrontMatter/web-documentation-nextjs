@@ -5,6 +5,8 @@ import { useMobileNavigationStore } from '../components/Navigation/MobileNavigat
 import { Router } from 'next/router';
 import Script from 'next/script';
 
+export const runtime = "experimental-edge";
+
 function onRouteChange() {
   useMobileNavigationStore.getState().close()
 }

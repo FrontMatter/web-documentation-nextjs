@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge',
 };
 
-export default async function (request: NextRequest) {
+const og = async function (request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
   const hasType = searchParams.has('type');
@@ -105,3 +105,5 @@ export default async function (request: NextRequest) {
     },
   );
 }
+
+export default og;

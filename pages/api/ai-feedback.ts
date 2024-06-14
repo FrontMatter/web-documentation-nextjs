@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
+export const config = {
+  runtime: "edge",
+};
+
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const aiUrl = process.env.MENDABLE_ANON_URL;
 

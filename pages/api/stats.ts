@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "@supabase/supabase-js";
 
+export const config = {
+  runtime: "edge",
+};
+
 interface Database {
   public: {
     Tables: {
