@@ -8,8 +8,7 @@
     "lint": "next lint",
     "changelog": "node scripts/copy-changelog.js",
     "sitemap": "node scripts/generate-sitemap.js",
-    "schema": "node scripts/generate-schema.js",
-    "cloudflare:build": "npx @cloudflare/next-on-pages@1"
+    "schema": "node scripts/generate-schema.js"
   },
   "dependencies": {
     "@antfu/shiki": "^0.6.2",
@@ -52,7 +51,6 @@
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",
-    "@cloudflare/next-on-pages": "^1.11.3",
     "@frontmatter/extensibility": "^0.0.14",
     "@types/glob": "^7.2.0",
     "@types/node-fetch": "^2.5.12",
