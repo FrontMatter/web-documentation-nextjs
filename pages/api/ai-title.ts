@@ -2,10 +2,6 @@ import { OpenAiService } from "./../../services/OpenAiService";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { GitHubService } from "../../services/GithubService";
 
-export const config = {
-  runtime: "edge",
-};
-
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.body.token || !req.body.title) {
     return res.status(403).send({});

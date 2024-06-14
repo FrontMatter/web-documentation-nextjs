@@ -1,10 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
-export const config = {
-  runtime: "edge",
-};
-
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   let headers = {};
 

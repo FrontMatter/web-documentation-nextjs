@@ -1,9 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export const config = {
-  runtime: "edge",
-};
-
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const backers = process.env.BACKERS;
   const { query } = req;
