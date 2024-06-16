@@ -111,7 +111,7 @@ const remarkFm = ({
       if (lastChild && lastChild.type === "text") {
         let string = lastChild.value.replace(/ +$/, "");
         let hId = string.toLowerCase().replace(/\s/g, "-");
-        hId = hId.replace(/[^a-z0-9-]/g, "");
+        hId = hId.replace(/[^a-zA-Z0-9.]/g, "");
 
         if (!node.data) {
           node.data = {};
