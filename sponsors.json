@@ -22,17 +22,17 @@
   ],
   "companies": [{
       "url": "https://run.events/?utm_source=frontmatter&utm_campaign=oss",
-      "title": "run.events",
+      "title": "Supported by run.events",
       "image": "/assets/sponsors/runevents.svg",
       "id": "run.events",
       "alt": "run.events - Event Management Platform"
     },
     {
-      "url": "https://vercel.com/?utm_source=vscode-frontmatter&utm_campaign=oss",
-      "title": "Powered by Vercel",
-      "image": "/assets/sponsors/powered-by-vercel.svg",
-      "id": "Vercel",
-      "alt": "Vercel"
+      "url": "https://netlify.com?utm_source=vscode-frontmatter&utm_campaign=oss",
+      "title": "Deploys by Netlify",
+      "image": "/assets/sponsors/netlify-dark.png",
+      "id": "Netlify",
+      "alt": "Netlify"
     },
     {
       "url": "http://bejs.io",
