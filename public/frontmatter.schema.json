@@ -2,13 +2,13 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-06-14T08:51:59.140Z",
+  "lastModified": "2024-06-17T07:38:00.913Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
     "frontMatter.projects": {
       "type": "array",
-      "markdownDescription": "Specify the list of projects to load in the Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.projects)",
+      "markdownDescription": "Specify the list of projects to load in the Front Matter CMS. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.projects) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.projects%22%5D)",
       "default": [],
       "items": {
         "type": "object",
@@ -30,12 +30,12 @@
     "frontMatter.sponsors.ai.enabled": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to enable AI suggestions. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.sponsors.ai.enabled)",
+      "markdownDescription": "Specify if you want to enable AI suggestions. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.sponsors.ai.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.sponsors.ai.enabled%22%5D)",
       "scope": "Sponsors"
     },
     "frontMatter.extensibility.scripts": {
       "type": "array",
-      "markdownDescription": "Specify the list of scripts to load in the Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.extensibility.scripts)",
+      "markdownDescription": "Specify the list of scripts to load in the Front Matter CMS. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.extensibility.scripts) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.extensibility.scripts%22%5D)",
       "default": [],
       "items": {
         "type": "string"
@@ -44,11 +44,11 @@
     "frontMatter.experimental": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to enable the experimental features. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.experimental)"
+      "markdownDescription": "Specify if you want to enable the experimental features. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.experimental) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.experimental%22%5D)"
     },
     "frontMatter.extends": {
       "type": "array",
-      "markdownDescription": "Specify the list of paths/URLs to extend the Front Matter CMS config. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.extends)",
+      "markdownDescription": "Specify the list of paths/URLs to extend the Front Matter CMS config. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.extends) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.extends%22%5D)",
       "default": [],
       "items": {
         "type": "string"
@@ -56,13 +56,13 @@
     },
     "frontMatter.config.dynamicFilePath": {
       "type": "string",
-      "markdownDescription": "Specify the path to the dynamic config file (ex: [[workspace]]/config.js). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.config.dynamicfilepath)",
+      "markdownDescription": "Specify the path to the dynamic config file (ex: [[workspace]]/config.js). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.config.dynamicfilepath) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.config.dynamicfilepath%22%5D)",
       "default": ""
     },
     "frontMatter.content.autoUpdateDate": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to automatically update the modified date of your article/page (only content located in your content folder). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.autoupdatedate)",
+      "markdownDescription": "Specify if you want to automatically update the modified date of your article/page (only content located in your content folder). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.autoupdatedate) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.autoupdatedate%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.defaultFileType": {
@@ -79,7 +79,7 @@
           "type": "string"
         }
       ],
-      "markdownDescription": "Specify the default file type for the content to create. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.defaultfiletype)",
+      "markdownDescription": "Specify the default file type for the content to create. [Docs](https://frontmatter.codes/docs/settings/overview%23frontmatter.content.defaultfiletype) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.defaultfiletype%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.defaultSorting": {
@@ -98,12 +98,12 @@
           "type": "string"
         }
       ],
-      "markdownDescription": "Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.defaultsorting)",
+      "markdownDescription": "Specify the default sorting option for the content dashboard. You can use one of the values from the enum or define your own ID. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.defaultsorting) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.defaultsorting%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.draftField": {
       "type": "object",
-      "markdownDescription": "Define the draft field you want to use to manage your content. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.draftfield)",
+      "markdownDescription": "Define the draft field you want to use to manage your content. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.draftfield) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.draftfield%22%5D)",
       "default": {
         "name": "draft",
         "type": "boolean"
@@ -145,24 +145,24 @@
     "frontMatter.content.fmHighlight": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specify if you want to highlight the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.fmhighlight)",
+      "markdownDescription": "Specify if you want to highlight the Front Matter in the Markdown file. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.fmhighlight) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.fmhighlight%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.hideFm": {
       "type": "boolean",
-      "markdownDescription": "Specify if you want to hide the Front Matter in the Markdown file. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.hidefm)",
+      "markdownDescription": "Specify if you want to hide the Front Matter in the Markdown file. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.hidefm) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.hidefm%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.hideFmMessage": {
       "type": "string",
       "default": "Use the editor panel to make front matter changes",
-      "markdownDescription": "Specify the message to display when the Front Matter is hidden. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.hidefmMessage)",
+      "markdownDescription": "Specify the message to display when the Front Matter is hidden. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.hidefmMessage) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.hidefmMessage%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.pageFolders": {
       "type": "array",
       "default": [],
-      "markdownDescription": "This array of folders defines where the extension can retrieve or create new pages. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.pagefolders)",
+      "markdownDescription": "This array of folders defines where the extension can retrieve or create new pages. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.pagefolders) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.pagefolders%22%5D)",
       "items": {
         "type": "object",
         "properties": {
@@ -233,7 +233,7 @@
     "frontMatter.content.i18n": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the locales you want to use for your website. This setting can be overwritten on page folder level. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.i18n)",
+      "markdownDescription": "Specify the locales you want to use for your website. This setting can be overwritten on page folder level. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.i18n) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.i18n%22%5D)",
       "items": {
         "$id": "#i18n",
         "type": "object",
@@ -262,7 +262,7 @@
     "frontMatter.content.placeholders": {
       "type": "array",
       "default": [],
-      "markdownDescription": "This array of placeholders defines the placeholders that you can use in your content types and templates for automatically populating your content its front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.placeholders)",
+      "markdownDescription": "This array of placeholders defines the placeholders that you can use in your content types and templates for automatically populating your content its front matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.placeholders) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.placeholders%22%5D)",
       "items": {
         "type": "object",
         "properties": {
@@ -306,18 +306,18 @@
         }
       },
       "default": "",
-      "markdownDescription": "Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.publicfolder)",
+      "markdownDescription": "Specify the folder name where all your assets are located. For instance in Hugo this is the `static` folder. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.publicfolder) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.publicfolder%22%5D)",
       "scope": "Content"
     },
     "frontMatter.snippets.wrapper.enabled": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specify if you want to wrap the snippets. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.snippets.wrapper.enabled)",
+      "markdownDescription": "Specify if you want to wrap the snippets. [Docs](https://frontmatter.codes/docs/settings/overview#frontMatter.snippets.wrapper.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontMatter.snippets.wrapper.enabled%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.snippets": {
       "type": "object",
-      "markdownDescription": "Define the snippets you want to use in your content. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.snippets)",
+      "markdownDescription": "Define the snippets you want to use in your content. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.snippets) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.snippets%22%5D)",
       "additionalProperties": {
         "type": "object",
         "required": [
@@ -367,7 +367,7 @@
     "frontMatter.content.sorting": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Define the sorting options for your dashboard content. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.sorting)",
+      "markdownDescription": "Define the sorting options for your dashboard content. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.sorting) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.sorting%22%5D)",
       "items": {
         "type": "object",
         "properties": {
@@ -418,7 +418,7 @@
         "mdx",
         "markdown"
       ],
-      "markdownDescription": "Specify the file types that you want to use in Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.supportedfiletypes)",
+      "markdownDescription": "Specify the file types that you want to use in Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.supportedfiletypes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.supportedfiletypes%22%5D)",
       "items": {
         "type": "string"
       },
@@ -427,7 +427,7 @@
     "frontMatter.content.wysiwyg": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.wysiwyg)",
+      "markdownDescription": "Specifies if you want to enable/disable the What You See, Is What You Get (WYSIWYG) markdown controls. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.wysiwyg) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.wysiwyg%22%5D)",
       "scope": "Content"
     },
     "frontMatter.content.filters": {
@@ -437,7 +437,7 @@
         "tags",
         "categories"
       ],
-      "markdownDescription": "Specify the filters you want to use for your content dashboard. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.filters)",
+      "markdownDescription": "Specify the filters you want to use for your content dashboard. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.filters) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.filters%22%5D)",
       "items": [
         {
           "type": "string",
@@ -463,7 +463,7 @@
     "frontMatter.custom.scripts": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the path to a Node.js script to execute. The current file path will be provided as an argument. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.custom.scripts)",
+      "markdownDescription": "Specify the path to a Node.js script to execute. The current file path will be provided as an argument. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.custom.scripts) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.custom.scripts%22%5D)",
       "items": {
         "type": "object",
         "properties": {
@@ -580,24 +580,24 @@
         "number"
       ],
       "default": true,
-      "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.pagination)",
+      "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.pagination) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.dashboard.content.pagination%22%5D)",
       "scope": "Dashboard"
     },
     "frontMatter.dashboard.content.cardTags": {
       "type": "string",
       "default": "tags",
-      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.cardtags)",
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the tags on the content card. When empty or null, it will hide the tags from the card. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.cardtags) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.dashboard.content.cardtags%22%5D)",
       "scope": "Dashboard"
     },
     "frontMatter.dashboard.content.card.fields.state": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specify if you want to show the state/draft status on the content card view. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.state)"
+      "markdownDescription": "Specify if you want to show the state/draft status on the content card view. [Docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.state) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontMatter.dashboard.content.card.fields.state%22%5D)"
     },
     "frontMatter.dashboard.content.card.fields.date": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specify if you want to show the date on the content card view. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.date)"
+      "markdownDescription": "Specify if you want to show the date on the content card view. [Docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.date) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontMatter.dashboard.content.card.fields.date%22%5D)"
     },
     "frontMatter.dashboard.content.card.fields.description": {
       "type": [
@@ -605,7 +605,7 @@
         "string"
       ],
       "default": "",
-      "markdownDescription": "Specify the name of the metadata field that will be used to show the description on the content card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.description)"
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the description on the content card. [Docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.description) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontMatter.dashboard.content.card.fields.description%22%5D)"
     },
     "frontMatter.dashboard.content.card.fields.title": {
       "type": [
@@ -613,7 +613,7 @@
         "string"
       ],
       "default": "",
-      "markdownDescription": "Specify the name of the metadata field that will be used to show the title on the content card. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.title)"
+      "markdownDescription": "Specify the name of the metadata field that will be used to show the title on the content card. [Docs](https://frontmatter.codes/docs/settings/overview#frontMatter.dashboard.content.card.fields.title) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontMatter.dashboard.content.card.fields.title%22%5D)"
     },
     "frontMatter.dashboard.openOnStart": {
       "type": [
@@ -621,13 +621,13 @@
         "null"
       ],
       "default": null,
-      "markdownDescription": "Specify if you want to open the dashboard when you start VS Code.  [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.openonstart)",
+      "markdownDescription": "Specify if you want to open the dashboard when you start VS Code.  [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.openonstart) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.dashboard.openonstart%22%5D)",
       "scope": "Dashboard"
     },
     "frontMatter.data.files": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the data files you want to use for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.files)",
+      "markdownDescription": "Specify the data files you want to use for your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.files) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.data.files%22%5D)",
       "items": {
         "type": "object",
         "default": {},
@@ -727,7 +727,7 @@
     "frontMatter.data.folders": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the data folders you want to use for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.folders)",
+      "markdownDescription": "Specify the data folders you want to use for your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.folders) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.data.folders%22%5D)",
       "items": {
         "type": "object",
         "default": {},
@@ -782,7 +782,7 @@
     "frontMatter.data.types": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the data types. These types can be used in for your data files. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.types)",
+      "markdownDescription": "Specify the data types. These types can be used in for your data files. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.data.types) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.data.types%22%5D)",
       "items": {
         "type": "object",
         "default": {},
@@ -805,13 +805,13 @@
     "frontMatter.file.preserveCasing": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to preserve the casing of your file names from the title. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.file.preservecasing)",
+      "markdownDescription": "Specify if you want to preserve the casing of your file names from the title. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.file.preservecasing) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.file.preservecasing%22%5D)",
       "scope": "File"
     },
     "frontMatter.framework.id": {
       "type": "string",
       "default": "",
-      "markdownDescription": "Specify the ID of your static site generator or framework you are using for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.framework.id)"
+      "markdownDescription": "Specify the ID of your static site generator or framework you are using for your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.framework.id) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.framework.id%22%5D)"
     },
     "frontMatter.framework.startCommand": {
       "type": [
@@ -819,21 +819,21 @@
         "null"
       ],
       "default": null,
-      "markdownDescription": "Specify the command you want to use to start your static site generator or framework. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.framework.startcommand)"
+      "markdownDescription": "Specify the command you want to use to start your static site generator or framework. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.framework.startcommand) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.framework.startcommand%22%5D)"
     },
     "frontMatter.git.enabled": {
       "type": "boolean",
-      "markdownDescription": "Specify if you want to use the Git actions for your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.enabled)",
+      "markdownDescription": "Specify if you want to use the Git actions for your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.enabled%22%5D)",
       "default": false
     },
     "frontMatter.git.commitMessage": {
       "type": "string",
-      "markdownDescription": "Specify the commit message you want to use for the sync. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.commitmessage)",
+      "markdownDescription": "Specify the commit message you want to use for the sync. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.commitmessage) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.commitmessage%22%5D)",
       "default": "Synced by Front Matter"
     },
     "frontMatter.git.disableOnBranches": {
       "type": "array",
-      "markdownDescription": "Specify the branches on which you want to disable the Git actions. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.disableonbranches)",
+      "markdownDescription": "Specify the branches on which you want to disable the Git actions. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.disableonbranches) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.disableonbranches%22%5D)",
       "default": [],
       "items": {
         "type": "string"
@@ -841,7 +841,7 @@
     },
     "frontMatter.git.requiresCommitMessage": {
       "type": "array",
-      "markdownDescription": "Specify if you want to require a commit message when publishing your changes for a specified branch. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.requirescommitmessage)",
+      "markdownDescription": "Specify if you want to require a commit message when publishing your changes for a specified branch. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.requirescommitmessage) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.requirescommitmessage%22%5D)",
       "default": [],
       "items": {
         "type": "string"
@@ -849,22 +849,22 @@
     },
     "frontMatter.git.submodule.pull": {
       "type": "boolean",
-      "markdownDescription": "Specify if you want to pull submodules when syncing. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.pull)",
+      "markdownDescription": "Specify if you want to pull submodules when syncing. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.pull) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.submodule.pull%22%5D)",
       "default": false
     },
     "frontMatter.git.submodule.push": {
       "type": "boolean",
-      "markdownDescription": "Specify if you want to push submodules when syncing. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.push)",
+      "markdownDescription": "Specify if you want to push submodules when syncing. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.push) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.submodule.push%22%5D)",
       "default": false
     },
     "frontMatter.git.submodule.branch": {
       "type": "string",
-      "markdownDescription": "Specify the submodule branch to checkout. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.branch)",
+      "markdownDescription": "Specify the submodule branch to checkout. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.branch) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.submodule.branch%22%5D)",
       "default": ""
     },
     "frontMatter.git.submodule.folder": {
       "type": "string",
-      "markdownDescription": "Specify the submodule folder of your content, this can be handy when you are using multiple submodules. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.folder)",
+      "markdownDescription": "Specify the submodule folder of your content, this can be handy when you are using multiple submodules. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.git.submodule.folder) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.git.submodule.folder%22%5D)",
       "default": ""
     },
     "frontMatter.global.activeMode": {
@@ -873,13 +873,13 @@
         "null"
       ],
       "default": "",
-      "markdownDescription": "Specify the activated mode of Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.activemode)",
+      "markdownDescription": "Specify the activated mode of Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.activemode) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.global.activemode%22%5D)",
       "scope": "Global"
     },
     "frontMatter.global.modes": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the modes you want to use for Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.modes)",
+      "markdownDescription": "Specify the modes you want to use for Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.modes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.global.modes%22%5D)",
       "items": {
         "type": "object",
         "default": {},
@@ -932,13 +932,13 @@
         "warning",
         "error"
       ],
-      "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.notifications)",
+      "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.notifications) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.global.notifications%22%5D)",
       "scope": "Templates"
     },
     "frontMatter.global.disabledNotifications": {
       "type": "array",
       "default": [],
-      "markdownDescription": "This is an array with the notifications types that can be disabled for Front Matter CMS. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.disablednotifications)",
+      "markdownDescription": "This is an array with the notifications types that can be disabled for Front Matter CMS. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.disablednotifications) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.global.disablednotifications%22%5D)",
       "enum": [
         "requiredFieldValidation"
       ]
@@ -952,7 +952,7 @@
         "FileNameAsc",
         "FileNameDesc"
       ],
-      "markdownDescription": "Specify the default sorting option for the media dashboard. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.defaultsorting)",
+      "markdownDescription": "Specify the default sorting option for the media dashboard. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.defaultsorting) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.defaultsorting%22%5D)",
       "scope": "Content"
     },
     "frontMatter.media.contentTypes": {
@@ -960,7 +960,7 @@
         "array",
         "null"
       ],
-      "markdownDescription": "Specify the media content types you want to use in Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.contenttypes)",
+      "markdownDescription": "Specify the media content types you want to use in Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.contenttypes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.contenttypes%22%5D)",
       "items": {
         "type": "object",
         "description": "Define the media content types you want to use in Front Matter.",
@@ -1038,7 +1038,7 @@
         "video/*",
         "audio/*"
       ],
-      "markdownDescription": "Specify the mime types to support for the media files. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.supportedmimetypes)",
+      "markdownDescription": "Specify the mime types to support for the media files. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.supportedmimetypes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.supportedmimetypes%22%5D)",
       "items": {
         "type": "string"
       },
@@ -1047,13 +1047,13 @@
     "frontMatter.panel.freeform": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: true. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.freeform)",
+      "markdownDescription": "Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: true. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.freeform) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.panel.freeform%22%5D)",
       "scope": "Panel"
     },
     "frontMatter.panel.actions.disabled": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the actions you want to disable in the panel. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.actions.disabled)",
+      "markdownDescription": "Specify the actions you want to disable in the panel. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.actions.disabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.panel.actions.disabled%22%5D)",
       "items": {
         "type": "string",
         "enum": [
@@ -1070,36 +1070,36 @@
     "frontMatter.preview.host": {
       "type": "string",
       "default": "",
-      "markdownDescription": "Specify the host URL (example: http://localhost:1313) to be used when opening the preview. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.host)",
+      "markdownDescription": "Specify the host URL (example: http://localhost:1313) to be used when opening the preview. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.host) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.preview.host%22%5D)",
       "scope": "Site preview"
     },
     "frontMatter.preview.pathName": {
       "type": "string",
       "default": "",
-      "markdownDescription": "Specify the path you want to add after the host and before your slug. This can be used for instance to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date field value. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.pathname)",
+      "markdownDescription": "Specify the path you want to add after the host and before your slug. This can be used for instance to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date field value. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.pathname) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.preview.pathname%22%5D)",
       "scope": "Site preview"
     },
     "frontMatter.preview.trailingSlash": {
       "type": "boolean",
       "default": "",
-      "markdownDescription": "Specify if you want to add a trailing slash to the preview URL. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.trailingslash)",
+      "markdownDescription": "Specify if you want to add a trailing slash to the preview URL. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.preview.trailingslash) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.preview.trailingslash%22%5D)",
       "scope": "Site preview"
     },
     "frontMatter.site.baseURL": {
       "type": "string",
       "default": "",
-      "markdownDescription": "Specify the base URL of your site, this will be used for SEO checks. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.site.baseurl)",
+      "markdownDescription": "Specify the base URL of your site, this will be used for SEO checks. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.site.baseurl) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.site.baseurl%22%5D)",
       "scope": "Site"
     },
     "frontMatter.taxonomy.alignFilename": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Align the filename with the new slug when it gets generated. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.alignfilename)",
+      "markdownDescription": "Align the filename with the new slug when it gets generated. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.alignfilename) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.alignfilename%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.categories": {
       "type": "array",
-      "markdownDescription": "Specifies the categories which can be used in the Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.categories)",
+      "markdownDescription": "Specifies the categories which can be used in the Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.categories) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.categories%22%5D)",
       "items": {
         "type": "string"
       },
@@ -1107,7 +1107,7 @@
     },
     "frontMatter.taxonomy.commaSeparatedFields": {
       "type": "array",
-      "markdownDescription": "Specify the fields names that Front Matter should treat as a comma-separated array. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.commaseparatedfields)",
+      "markdownDescription": "Specify the fields names that Front Matter should treat as a comma-separated array. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.commaseparatedfields) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.commaseparatedfields%22%5D)",
       "items": {
         "type": "string",
         "description": "Name of the fields you want to use as comma-separated arrays."
@@ -1119,7 +1119,7 @@
         "array",
         "null"
       ],
-      "markdownDescription": "Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.contenttypes)",
+      "markdownDescription": "Specify the type of contents you want to use for your articles/pages/etc. Make sure the `type` is correctly set in your front matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.contenttypes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.contenttypes%22%5D)",
       "items": {
         "type": "object",
         "description": "Define the content types you want to use in Front Matter.",
@@ -1721,7 +1721,7 @@
     },
     "frontMatter.taxonomy.customTaxonomy": {
       "type": "array",
-      "markdownDescription": "Specify the custom taxonomy field data. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.tags)",
+      "markdownDescription": "Specify the custom taxonomy field data. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.tags) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.tags%22%5D)",
       "items": {
         "type": "object",
         "properties": {
@@ -1760,12 +1760,12 @@
     },
     "frontMatter.taxonomy.dateFormat": {
       "type": "string",
-      "markdownDescription": "Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.dateformat)",
+      "markdownDescription": "Specify the date format for your articles. Check [date-fns formating](https://date-fns.org/v2.0.1/docs/format) for more information. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.dateformat) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.dateformat%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.fieldGroups": {
       "type": "array",
-      "markdownDescription": "Define the field groups you want to use for your block fields or collection fields. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.fieldgroups)",
+      "markdownDescription": "Define the field groups you want to use for your block fields or collection fields. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.fieldgroups) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.fieldgroups%22%5D)",
       "default": [],
       "items": {
         "type": "object",
@@ -1797,7 +1797,7 @@
         "TOML",
         "JSON"
       ],
-      "markdownDescription": "Specify the type of Front Matter to use. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.frontmattertype)",
+      "markdownDescription": "Specify the type of Front Matter to use. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.frontmattertype) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.frontmattertype%22%5D)",
       "enumDescriptions": [
         "Specifies you want to use YAML markup for the front matter (default)",
         "Specifies you want to use TOML markup for the front matter",
@@ -1808,19 +1808,19 @@
     "frontMatter.taxonomy.indentArrays": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specify if arrays in front matter are indented. Default: true. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.indentarrays)",
+      "markdownDescription": "Specify if arrays in front matter are indented. Default: true. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.indentarrays) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.indentarrays%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.quoteStringValues": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to quote string values in the front matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.quotestringvalues)",
+      "markdownDescription": "Specify if you want to quote string values in the front matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.quotestringvalues) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.quotestringvalues%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.noPropertyValueQuotes": {
       "type": "array",
       "default": [],
-      "markdownDescription": "Specify the properties from which quotes need to be removed. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.nopropertyvaluequotes)",
+      "markdownDescription": "Specify the properties from which quotes need to be removed. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.nopropertyvaluequotes) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.nopropertyvaluequotes%22%5D)",
       "items": {
         "type": "string",
         "description": "Name of the properties you want to remove quotes from."
@@ -1830,57 +1830,57 @@
     "frontMatter.taxonomy.seoContentLengh": {
       "type": "number",
       "default": 1760,
-      "markdownDescription": "Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seocontentlengh)",
+      "markdownDescription": "Specifies the optimal minimum length for your articles. Between 1,760 words – 2,400 is the absolute ideal article length for SEO in 2021. (set to `-1` to turn it off). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seocontentlengh) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seocontentlengh%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoDescriptionField": {
       "type": "string",
       "default": "description",
-      "markdownDescription": "Specifies the name of the SEO description field for your page. Default is 'description'. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seodescriptionfield)",
+      "markdownDescription": "Specifies the name of the SEO description field for your page. Default is 'description'. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seodescriptionfield) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seodescriptionfield%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoDescriptionLength": {
       "type": "number",
       "default": 160,
-      "markdownDescription": "Specifies the optimal description length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seodescriptionlength)",
+      "markdownDescription": "Specifies the optimal description length for SEO (set to `-1` to turn it off). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seodescriptionlength) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seodescriptionlength%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoSlugLength": {
       "type": "number",
       "default": 75,
-      "markdownDescription": "Specifies the optimal slug length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seosluglength)",
+      "markdownDescription": "Specifies the optimal slug length for SEO (set to `-1` to turn it off). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seosluglength) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seosluglength%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoTitleField": {
       "type": "string",
       "default": "title",
-      "markdownDescription": "Specifies the name of the SEO title field for your page. Default is 'title'. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seotitlefield)",
+      "markdownDescription": "Specifies the name of the SEO title field for your page. Default is 'title'. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seotitlefield) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seotitlefield%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.seoTitleLength": {
       "type": "number",
       "default": 60,
-      "markdownDescription": "Specifies the optimal title length for SEO (set to `-1` to turn it off). [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seotitlelength)",
+      "markdownDescription": "Specifies the optimal title length for SEO (set to `-1` to turn it off). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.seotitlelength) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.seotitlelength%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.slugPrefix": {
       "type": "string",
-      "markdownDescription": "Specify a prefix for the slug. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugprefix)",
+      "markdownDescription": "Specify a prefix for the slug. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugprefix) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.slugprefix%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.slugSuffix": {
       "type": "string",
-      "markdownDescription": "Specify a suffix for the slug. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugsuffix)",
+      "markdownDescription": "Specify a suffix for the slug. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugsuffix) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.slugsuffix%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.slugTemplate": {
       "type": "string",
-      "markdownDescription": "Defines a custom slug template for the content you will create. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugtemplate)",
+      "markdownDescription": "Defines a custom slug template for the content you will create. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugtemplate) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.slugtemplate%22%5D)",
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.tags": {
       "type": "array",
-      "markdownDescription": "Specifies the tags which can be used in the Front Matter. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.tags)",
+      "markdownDescription": "Specifies the tags which can be used in the Front Matter. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.tags) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.tags%22%5D)",
       "items": {
         "type": "string"
       },
@@ -1889,29 +1889,29 @@
     "frontMatter.telemetry.disable": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to disable the telemetry. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.telemetry.disable)"
+      "markdownDescription": "Specify if you want to disable the telemetry. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.telemetry.disable) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.telemetry.disable%22%5D)"
     },
     "frontMatter.templates.enabled": {
       "type": "boolean",
       "default": false,
-      "markdownDescription": "Specify if you want to use templates. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.enabled)",
+      "markdownDescription": "Specify if you want to use templates. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.templates.enabled%22%5D)",
       "scope": "Templates"
     },
     "frontMatter.templates.folder": {
       "type": "string",
       "default": ".frontmatter/templates",
-      "markdownDescription": "Specify the folder to use for your article templates. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.folder)",
+      "markdownDescription": "Specify the folder to use for your article templates. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.folder) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.templates.folder%22%5D)",
       "scope": "Templates"
     },
     "frontMatter.templates.prefix": {
       "type": "string",
       "default": "yyyy-MM-dd",
-      "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.prefix)",
+      "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.prefix) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.templates.prefix%22%5D)",
       "scope": "Templates"
     },
     "frontMatter.website.host": {
       "type": "string",
-      "markdownDescription": "Specify the host URL of your website. [Check in the docs](https://frontmatter.codes/docs/settings/overview#frontmatter.website.url)"
+      "markdownDescription": "Specify the host URL of your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.website.url) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.website.url%22%5D)"
     },
     "frontMatter.logging": {
       "type": "string",

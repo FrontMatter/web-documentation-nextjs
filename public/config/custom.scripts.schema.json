@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/custom.scripts.schema.json",
   "description": "Defines the settings for Front Matter custom script",
-  "lastModified": "2024-06-14T08:51:59.142Z",
+  "lastModified": "2024-06-17T07:38:00.915Z",
   "type": "object",
   "title": "Front Matter - custom script",
   "properties": {
