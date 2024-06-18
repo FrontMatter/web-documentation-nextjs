@@ -13,7 +13,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
   useEffect(() => {
     const getSponsors = async () => {
-      const response = await fetch('/api/sponsors');
+      const response = await fetch('https://fontmatter-fncs.azurewebsites.net/api/sponsors');
 
       if (!response.ok) {
         setIndividuals(null);

@@ -15,7 +15,7 @@ const Charts = () => {
   const [stats, setStats] = useState<Analytics | null>(null);
 
   const getStats = async () => {
-    const res = await fetch('/api/stats');
+    const res = await fetch('https://fontmatter-fncs.azurewebsites.net/api/stats');
     const json = await res.json();
     setStats(json);
   };
