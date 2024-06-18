@@ -1,3 +1,5 @@
+import { CONFIG } from "../constants";
+
 export class StarService {
   private static stars: number | undefined;
   private static starCaller: Promise<Response> | undefined;
@@ -8,9 +10,7 @@ export class StarService {
     }
 
     if (!StarService.starCaller) {
-      StarService.starCaller = fetch(
-        "https://fontmatter-fncs.azurewebsites.net/api/stars"
-      );
+      StarService.starCaller = fetch(`${CONFIG.apiUrl}/api/stars`);
     }
 
     const response = await StarService.starCaller;

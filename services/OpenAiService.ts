@@ -1,4 +1,5 @@
 import { OpenAI } from "openai";
+import { CONFIG } from "../constants";
 
 export class OpenAiService {
   public static async getCompletion(
@@ -8,7 +9,7 @@ export class OpenAiService {
     max_tokens: number = 30
   ) {
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_TOKEN,
+      apiKey: CONFIG.openAi.token,
     });
 
     const response = await openai.completions.create({

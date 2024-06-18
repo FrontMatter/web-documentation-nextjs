@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { CONFIG } from "../constants";
 
 export class GitHubService {
   public static async verifyUser(token: string) {
@@ -12,7 +13,7 @@ export class GitHubService {
     }
 
     const sponsors = await GitHubService.getSponsors();
-    const backers = (process.env.BACKERS || "").split(",");
+    const backers = (CONFIG.sponsors || "").split(",");
 
     const sponsor = sponsors.find((s: any) => s.login === username);
 
@@ -47,7 +48,7 @@ export class GitHubService {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `token ${process.env.GITHUB_AUTH}`,
+        Authorization: `token ${CONFIG.github.token}`,
       },
       body: JSON.stringify({
         query: `query SponsorQuery {

@@ -1,7 +1,9 @@
+import { CONFIG } from "../constants";
+
 export function publicUrl() {
-  if (process.env.NEXT_PUBLIC_VERCEL_ENV === "production") {
+  if (CONFIG.environment === "production") {
     return `https://frontmatter.codes`;
-  } else if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
+  } else if (CONFIG.environment === "preview") {
     return `https://beta.frontmatter.codes`;
   } else {
     return `http://localhost:3000`;

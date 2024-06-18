@@ -10,12 +10,13 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { Analytics } from '../../models';
+import { CONFIG } from '../../constants';
 
 const Charts = () => {
   const [stats, setStats] = useState<Analytics | null>(null);
 
   const getStats = async () => {
-    const res = await fetch('https://fontmatter-fncs.azurewebsites.net/api/stats');
+    const res = await fetch(`${CONFIG.apiUrl}/api/stats`);
     const json = await res.json();
     setStats(json);
   };

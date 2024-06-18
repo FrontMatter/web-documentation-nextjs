@@ -1,3 +1,3 @@
+import { CONFIG } from "../constants";
 
-
-export const isProduction = () => process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
+export const isProduction = () => CONFIG.environment === "production";
