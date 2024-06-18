@@ -1,9 +1,11 @@
 export const CONFIG = {
-  apiUrl: "https://fontmatter-fncs.azurewebsites.net",
-  environment: process.env.NEXT_PUBLIC_VERCEL_ENV,
-  openAi: {
-    token: process.env.OPENAI_TOKEN,
+  urls: {
+    api: process.env.NEXT_PUBLIC_API_URL,
+    production: "https://frontmatter.codes",
+    preview: process.env.CF_PAGES_URL,
+    local: "http://localhost:3000",
   },
+  environment: process.env.NEXT_PUBLIC_VERCEL_ENV,
   github: {
     token: process.env.GITHUB_AUTH,
   },

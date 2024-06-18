@@ -14,7 +14,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
   useEffect(() => {
     const getSponsors = async () => {
-      const response = await fetch(`${CONFIG.apiUrl}/api/sponsors`);
+      const response = await fetch(`${CONFIG.urls.api}/api/sponsors`);
 
       if (!response.ok) {
         setIndividuals(null);

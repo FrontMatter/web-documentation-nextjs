@@ -2,10 +2,10 @@ import { CONFIG } from "../constants";
 
 export function publicUrl() {
   if (CONFIG.environment === "production") {
-    return `https://frontmatter.codes`;
+    return CONFIG.urls.production;
   } else if (CONFIG.environment === "preview") {
-    return `https://beta.frontmatter.codes`;
+    return CONFIG.urls.preview;
   } else {
-    return `http://localhost:3000`;
+    return CONFIG.urls.local;
   }
 }

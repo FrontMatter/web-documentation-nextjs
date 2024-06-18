@@ -10,7 +10,7 @@ export class StarService {
     }
 
     if (!StarService.starCaller) {
-      StarService.starCaller = fetch(`${CONFIG.apiUrl}/api/stars`);
+      StarService.starCaller = fetch(`${CONFIG.urls.api}/api/stars`);
     }
 
     const response = await StarService.starCaller;
