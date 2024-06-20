@@ -3,8 +3,8 @@ title: Taxonomy view
 slug: dashboard/taxonomy-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T12:23:10.461Z
-weight: 300.4
+lastmod: 2024-06-20T08:29:12.633Z
+weight: 300.5
 ---
 
 # Taxonomies view
@@ -14,6 +14,12 @@ taxonomy.
 
 On the taxonomies view, you can create, edit, delete, and move taxonomy terms from one type to
 another.
+
+<!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open taxonomy dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard.taxonomy"},{"name":"title","value":"Open taxonomy dashboard in VS Code"}]} -->
+<a class="open_vscode" title="Open taxonomy dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard.taxonomy'>
+  Open taxonomy dashboard in VS Code
+</a>
+<!-- FM:Snippet:End -->
 
 ![Taxonomies view][01]
 

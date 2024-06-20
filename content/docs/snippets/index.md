@@ -3,7 +3,7 @@ title: Snippets
 slug: snippets
 description: null
 date: 2022-03-04T14:40:10.952Z
-lastmod: 2023-11-02T15:00:05.728Z
+lastmod: 2024-06-20T08:45:46.463Z
 weight: 850
 ---
 
@@ -243,7 +243,7 @@ shown when you insert the snippet into your content.
 <!-- markdownlint-enable MD013 -->
 
 <!-- Link References -->
-[01]: /releases/v7.0.0/snippet-dashboard.png
+[01]: /releases/v10.2.0/snippets-view.png
 [02]: /docs/content-creation/content-types#define-your-own-type
 [03]: /docs/content-creation/placeholders
 [04]: /releases/v7.0.0/insert-snippet.png
