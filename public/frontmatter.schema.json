@@ -2,13 +2,13 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-06-17T07:38:00.913Z",
+  "lastModified": "2024-06-28T10:11:20.572Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
     "frontMatter.projects": {
       "type": "array",
-      "markdownDescription": "Specify the list of projects to load in the Front Matter CMS. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.projects) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.projects%22%5D)",
+      "markdownDescription": "Specify the list of projects to load in the Front Matter CMS. [Local](https://file%2B.vscode-resource.vscode-cdn.net/Users/eliostruyf/nodejs/frontmatter-test-projects/astro-blog/test.html) - [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.projects) - [View in VS Code](vscode://simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.projects%22%5D)",
       "default": [],
       "items": {
         "type": "object",
@@ -465,6 +465,7 @@
       "default": [],
       "markdownDescription": "Specify the path to a Node.js script to execute. The current file path will be provided as an argument. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.custom.scripts) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.custom.scripts%22%5D)",
       "items": {
+        "$id": "#customscript",
         "type": "object",
         "properties": {
           "id": {
@@ -1452,6 +1453,9 @@
                       "description": "Specify if the comparison is case sensitive. Default: true"
                     }
                   }
+                },
+                "action": {
+                  "$ref": "#customscript"
                 }
               },
               "additionalProperties": false,
@@ -1922,6 +1926,11 @@
         "info",
         "verbose"
       ]
+    },
+    "frontMatter.copilot.family": {
+      "type": "string",
+      "default": "gpt-3.5-turbo",
+      "markdownDescription": "Specify the LLM family of the Copilot you want to use. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.copilot.family) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.copilot.family%22%5D)"
     }
   }
 }

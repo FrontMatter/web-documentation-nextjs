@@ -130,7 +130,10 @@ const escapeQuotes = (/** @type {string} */ str) => {
     }
 
     // Create the content type schema
-    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.taxonomy.contentTypes, "frontMatter.taxonomy.contentTypes", "content type", undefined);
+    generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.taxonomy.contentTypes, "frontMatter.taxonomy.contentTypes", "content type", {
+      value: "#customscript",
+      ref: `${baseUrl}/config/${schemas.custom.scripts}#/properties`
+    });
 
     // Create the field groups schema
     generateSchemaForArray(pkgJson.contributes.configuration.properties, baseUrl, configFolderPath, schemas.taxonomy.fieldGroups, "frontMatter.taxonomy.fieldGroups", "field groups", {

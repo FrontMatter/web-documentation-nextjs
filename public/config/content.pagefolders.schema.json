@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
   "description": "Defines the settings for Front Matter page folder",
-  "lastModified": "2024-06-17T07:38:00.915Z",
+  "lastModified": "2024-06-28T10:11:20.574Z",
   "type": "object",
   "title": "Front Matter - page folder",
   "properties": {
