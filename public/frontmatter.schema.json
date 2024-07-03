@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-06-28T10:11:20.572Z",
+  "lastModified": "2024-07-03T10:03:25.968Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -1454,8 +1454,12 @@
                     }
                   }
                 },
-                "action": {
-                  "$ref": "#customscript"
+                "actions": {
+                  "type": "array",
+                  "description": "Specify the field custom actions",
+                  "items": {
+                    "$ref": "#customscript"
+                  }
                 }
               },
               "additionalProperties": false,
