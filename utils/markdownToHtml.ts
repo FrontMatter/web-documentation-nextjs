@@ -8,6 +8,7 @@ import { visit } from "unist-util-visit";
 import * as shiki from "shiki";
 import fs from "fs";
 import path from "path";
+import { getHeadingLink } from "./getHeadingLink";
 
 class ShikiFm {
   public static highlighter: shiki.Highlighter | undefined = undefined;
@@ -110,8 +111,7 @@ const remarkFm = ({
       let lastChild = node.children[node.children.length - 1];
       if (lastChild && lastChild.type === "text") {
         let string = lastChild.value.replace(/ +$/, "");
-        let hId = string.toLowerCase().replace(/\s/g, "-");
-        hId = hId.replace(/[^a-zA-Z0-9.]/g, "");
+        let hId = getHeadingLink(string);
 
         if (!node.data) {
           node.data = {};
