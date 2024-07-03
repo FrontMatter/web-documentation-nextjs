@@ -4,6 +4,7 @@ import { PageFrontMatter } from '../../models';
 import { Link } from '../Link/Link';
 import { ParentLink } from '../Link/ParentLink';
 import { useRouter } from 'next/router';
+import { getHeadingLink } from '../../utils/getHeadingLink';
 
 export interface INavGroupProps {
   items: PageFrontMatter[];
@@ -33,7 +34,7 @@ export const NavGroup: React.FunctionComponent<INavGroupProps> = ({
             <li key={index}>
               <Link
                 title={link}
-                link={`/docs/${item.slug !== "index" ? item.slug : ''}#${link.toLowerCase().replace(/\s/g, '-')}`}
+                link={`/docs/${item.slug !== "index" ? item.slug : ''}#${getHeadingLink(link)}`}
               />
             </li>
           );
