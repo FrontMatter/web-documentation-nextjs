@@ -52,8 +52,9 @@ export const CTA: React.FunctionComponent<ICTAProps> = (props: React.PropsWithCh
               // src={`https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631871148/frontmatter/preview-3.2.0.png`}
               // src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649328023/frontmatter/7.1.0/panel-preview-light.png"}
               // src={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649335002/frontmatter/7.1.0/fm-doc-screenshot.png"}
-              src={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/fm-doc-screenshot"}
-              alt={`Front Matter - Headless CMS - Live page preview`}
+              // src={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/fm-doc-screenshot"}
+              src={"/assets/homepage/content-dashboard.webp"}
+              alt={`Front Matter - Headless CMS - Content Dashboard`}
               loading={`lazy`} />
           </div>
         </div>
