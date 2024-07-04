@@ -66,7 +66,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-whisper-900">&copy; 2023 {Extension.name}. All rights reserved.</p>
+        <p className="mt-8 text-center text-base text-whisper-900">&copy; 2024 {Extension.name}. All rights reserved.</p>
       </div>
     </footer>
   );
