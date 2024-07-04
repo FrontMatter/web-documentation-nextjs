@@ -84,7 +84,7 @@ export const navigation = {
                   >
                     Open Collective
                   </a>
-                  <a
+                  {/* <a
                     className="inline-flex justify-center w-full px-4 py-2 bg-whisper-600 text-base font-medium text-vulcan-500 hover:bg-rose-900 hover:text-whisper-500 focus:outline-none sm:text-sm rounded"
                     onClick={() => setOpen(false)}
                     href={Extension.sponsorCoffee}
@@ -92,7 +92,7 @@ export const navigation = {
                     rel={`noopener noreferrer`}
                   >
                     Buy us a coffee or LEGO
-                  </a>
+                  </a> */}
                 </div>
               </Modal>
             )
