@@ -19,11 +19,14 @@
       ]
     }
   ],
+  "frontMatter.extensibility.scripts": [
+    "[[workspace]]/.frontmatter/ui/ogimage.js"
+  ],
   "frontMatter.content.publicFolder": "public",
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
-      "previewPath": "'docs'",
+      "previewPath": "docs",
       "fields": [
         {
           "title": "Title",
@@ -72,7 +75,7 @@
     },
     {
       "name": "changelog",
-      "previewPath": "'docs'",
+      "previewPath": "docs",
       "template": "[[workspace]]/.frontmatter/templates/release-notes.md",
       "filePrefix": null,
       "fields": [

@@ -31,6 +31,16 @@ const Home = ({ reviews }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Generators />
 
         <Hero
+          view={"right"}
+          title={strings(`hero_editing_title`)}
+          description={strings(`hero_editing_description`)}
+          imgSrc={"/assets/homepage/article-editing.webp"}
+          imgAlt={"Front Matter CMS - Article editing and front matter management in VS Code"}
+          link={`/docs/panel`}
+          linkText={strings(`hero_editing_button_primary`)}
+          className={`lg:-mt-16`} />
+
+        <Hero
           view={"left"}
           title={strings(`hero_title`)}
           description={(
@@ -45,7 +55,8 @@ const Home = ({ reviews }: InferGetStaticPropsType<typeof getStaticProps>) => {
           )}
           // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1631520508/frontmatter/dashboard.png"}
           // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649326998/frontmatter/7.1.0/dashboard.png"}
-          imgSrc={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/dashboard"}
+          // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/dashboard"}
+          imgSrc={"/assets/homepage/content-dashboard.webp"}
           imgAlt={"Front Matter CMS editor dashboard of your static site content"}
           link={`/docs/getting-started`}
           linkText={strings(`hero_button_primary`)} />
@@ -58,7 +69,8 @@ const Home = ({ reviews }: InferGetStaticPropsType<typeof getStaticProps>) => {
           // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1633417514/frontmatter/media_dashboard_v5.0.0.png"}
           // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1641373114/frontmatter/media-dashboard-5.9.0.png"}
           // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/w_1256/v1649326999/frontmatter/7.1.0/media-dashboard.png"}
-          imgSrc={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/l9hu0nchrssvemjqlr6d"}
+          // imgSrc={"https://res.cloudinary.com/estruyf/image/upload/h_914/v1/frontmatter/10.1.0/l9hu0nchrssvemjqlr6d"}
+          imgSrc={"/assets/homepage/media-dashboard.webp"}
           imgAlt={"Front Matter CMS - media management was never easier in VS Code"}
           link={`/docs/dashboard`}
           linkText={strings(`hero_media_button_primary`)}
