@@ -5,6 +5,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
+import { JSDOM } from "jsdom";
 import * as shiki from "shiki";
 import fs from "fs";
 import path from "path";
@@ -87,16 +88,46 @@ const remarkFm = ({
       if (node.children.length > 0) {
         const firstChild = node.children[0];
         if (firstChild.type === "paragraph") {
-          const hasImportant = node.children.some((c: any) => {
+          let tag: string = "";
+          node.children.forEach((c: any) => {
             const firstChild = c.children[0];
-            if (!firstChild) return false;
-            return (
-              firstChild.type === "strong" &&
-              firstChild.children[0].value.toLowerCase() === "important"
-            );
+            if (!firstChild) return;
+
+            if (firstChild.type === "strong" && firstChild.children[0].value) {
+              tag = firstChild.children[0].value;
+
+              if (c.children[1]) {
+                const secondChild = c.children[1];
+                if (secondChild.value.startsWith(": ")) {
+                  secondChild.value = secondChild.value.substring(2);
+                }
+              }
+
+              firstChild.children.splice(0, 1);
+              return;
+            }
+
+            return;
           });
 
-          if (hasImportant) {
+          const isImportant = tag && tag.toLowerCase() === "important";
+          if (tag) {
+            node.children.unshift({
+              type: "div",
+              data: {
+                hProperties: {
+                  class: `tag`,
+                },
+              },
+              children: [
+                {
+                  value: tag,
+                },
+              ],
+            });
+          }
+
+          if (isImportant) {
             node.data = {
               hProperties: {
                 class: "important",
@@ -160,6 +191,7 @@ const remarkFm = ({
       parent.children.splice(index, 1, wrapper);
     });
 
+    // Links
     visit(tree, "html", (node) => {
       let value = node.value;
 
@@ -170,6 +202,25 @@ const remarkFm = ({
         // Replace href value with data-vscode value
         value = value.replace(/href="([^"]*)"/, `href="${dataVscodeValue}"`);
         node.value = value;
+      }
+
+      if (value.includes(`open_vscode`)) {
+        const document = new JSDOM(
+          `<div id="temp"><div class="vscode_wrapper">${value}</div><div>`
+        ).window.document;
+
+        const divElm = document.querySelector(`#temp`);
+        const anchorElm = divElm?.querySelector(`a`);
+        if (anchorElm) {
+          const text = anchorElm.innerHTML;
+
+          anchorElm.innerHTML = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" class="h-6 w-6 group-hover:fill-current" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" /></svg>
+
+          <span>${text}</span>
+          `;
+        }
+
+        node.value = divElm?.innerHTML;
       }
     });
   };

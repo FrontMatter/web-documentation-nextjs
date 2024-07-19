@@ -1,4 +1,4 @@
-
+import { CONFIG } from "../constants";
 
 export class StarService {
   private static stars: number | undefined;
@@ -10,7 +10,7 @@ export class StarService {
     }
 
     if (!StarService.starCaller) {
-      StarService.starCaller = fetch('/api/stars');
+      StarService.starCaller = fetch(`${CONFIG.urls.api}/api/stars`);
     }
 
     const response = await StarService.starCaller;

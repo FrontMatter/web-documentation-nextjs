@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2023-11-12T12:57:55.076Z
+lastmod: 2024-06-20T08:19:27.260Z
 weight: 100
 ---
 
@@ -53,10 +53,13 @@ reloaded.
 
 ![Welcome screen to configure your website][04]
 
-> **Important**: Front Matter supports light and dark mode. It will be automatically detected based
-> on the theme you are using.
-
 > **Info**: The welcome screen will also be shown when Front Matter is not yet fully configured.
+
+<!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard"},{"name":"title","value":"Open dashboard in VS Code"}]} -->
+<a class="open_vscode" title="Open dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard'>
+  Open dashboard in VS Code
+</a>
+<!-- FM:Snippet:End -->
 
 ## Required configuration
 

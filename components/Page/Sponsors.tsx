@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Sponsor, SponsorData } from '../../models/SponsorData';
 import sponsors from '../../sponsors.json';
+import { CONFIG } from '../../constants';
 
 export interface ISponsorsProps { }
 
@@ -13,7 +14,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
 
   useEffect(() => {
     const getSponsors = async () => {
-      const response = await fetch('/api/sponsors');
+      const response = await fetch(`${CONFIG.urls.api}/api/sponsors`);
 
       if (!response.ok) {
         setIndividuals(null);

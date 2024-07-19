@@ -234,6 +234,37 @@
           "default": "FM_SELECTED_TEXT"
         }
       ]
+    },
+    "Open in VS Code": {
+      "description": "Trigger a VS Code command",
+      "body": [
+        "<a class=\"open_vscode\" title=\"[[&title]]\" href='vscode://eliostruyf.execcommand?command=[[command]]'>",
+        "  [[&title]]",
+        "</a>"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "title": "title",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "command",
+          "title": "command",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "title",
+          "title": "title",
+          "type": "string",
+          "single": true,
+          "default": ""
+        }
+      ]
     }
   },
   "frontMatter.custom.scripts": [

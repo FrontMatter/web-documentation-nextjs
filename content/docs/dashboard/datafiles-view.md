@@ -3,8 +3,8 @@ title: Data files view
 slug: dashboard/datafiles-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T12:23:03.653Z
-weight: 300.3
+lastmod: 2024-06-20T08:29:08.737Z
+weight: 300.4
 ---
 
 # Data files view
@@ -13,9 +13,20 @@ Data files/folders are pieces of content that do not belong to any markdown cont
 their own. Most of the time, these data files are used to store additional information about your
 project/blog/website that will be used to render the content.
 
-For example: navigation, social media links, contacts, etc.
+For example: 
+
+- navigation
+- social media links
+- contacts
+- etc.
 
 The data files dashboard allows you to quickly manage your data files.
+
+<!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open data dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard.data"},{"name":"title","value":"Open data dashboard in VS Code"}]} -->
+<a class="open_vscode" title="Open data dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard.data'>
+  Open data dashboard in VS Code
+</a>
+<!-- FM:Snippet:End -->
 
 ![Data files dashboard][01]
 

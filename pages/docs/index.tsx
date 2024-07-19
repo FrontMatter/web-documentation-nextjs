@@ -7,7 +7,6 @@ import { getAllPosts } from '../../lib/api';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import { pageProcessing } from '../../utils/pageProcessing';
 import markdownToHtml from '../../utils/markdownToHtml';
-import generateOgImage from '../../utils/generateOgImage';
 
 export default function Home({ pages, page, ogImage }: { pages: PageFrontMatter[]; page: PageFrontMatter; ogImage?: string }) {
   const { t: strings } = useTranslation();

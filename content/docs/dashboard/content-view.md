@@ -3,7 +3,7 @@ title: Content view
 slug: dashboard/content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T12:24:21.051Z
+lastmod: 2024-06-20T08:31:20.651Z
 weight: 300.1
 ---
 
@@ -11,6 +11,14 @@ weight: 300.1
 
 The contents view is the default view when you open the dashboard. It will show you all the pages in
 your project, and allow you to filter and sort them.
+
+<!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard"},{"name":"title","value":"Open dashboard in VS Code"}]} -->
+<a class="open_vscode" title="Open content dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard'>
+  Open content dashboard in VS Code
+</a>
+<!-- FM:Snippet:End -->
+
+![Dashboard - Contents view][07]
 
 ## Card configuration
 
@@ -169,3 +177,4 @@ of the content view. This will allow you to quickly access.
 [03]: /docs/content-creation/fields#draft
 [04]: /releases/v5.3.0/draft-status.png
 [06]: /docs/experimental/ui-extensibility#registering-a-custom-ui-extension
+[07]: /releases/v7.1.0/dashboard-7.1.0.png

@@ -3,7 +3,7 @@ title: Media view
 slug: dashboard/media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-02-22T12:23:07.490Z
+lastmod: 2024-06-20T08:23:13.876Z
 weight: 300.2
 ---
 
@@ -12,6 +12,12 @@ weight: 300.2
 The media view has been created to make it easier to look at all media files available for your
 articles. When you click on an image, it will show a lightbox, so that it is easier to glance at
 small images.
+
+<!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open media dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard.media"},{"name":"title","value":"Open media dashboard in VS Code"}]} -->
+<a class="open_vscode" title="Open media dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard.media'>
+  Open media dashboard in VS Code
+</a>
+<!-- FM:Snippet:End -->
 
 ![Media dashboard][01]
 
