@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-06-20T08:19:27.260Z
+lastmod: 2024-08-07T12:33:01.744Z
 weight: 100
 ---
 
@@ -56,7 +56,7 @@ reloaded.
 > **Info**: The welcome screen will also be shown when Front Matter is not yet fully configured.
 
 <!-- FM:Snippet:Start data:{"id":"Open in VS Code","fields":[{"name":"title","value":"Open dashboard in VS Code"},{"name":"command","value":"frontMatter.dashboard"},{"name":"title","value":"Open dashboard in VS Code"}]} -->
-<a class="open_vscode" title="Open dashboard in VS Code" href='vscode://eliostruyf.execcommand?command=frontMatter.dashboard'>
+<a class="open_vscode" title="Open dashboard in VS Code" href='vscode://eliostruyf.vscode-front-matter?command=frontMatter.dashboard'>
   Open dashboard in VS Code
 </a>
 <!-- FM:Snippet:End -->

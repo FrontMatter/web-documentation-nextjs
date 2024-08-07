@@ -238,7 +238,7 @@
     "Open in VS Code": {
       "description": "Trigger a VS Code command",
       "body": [
-        "<a class=\"open_vscode\" title=\"[[&title]]\" href='vscode://eliostruyf.execcommand?command=[[command]]'>",
+        "<a class=\"open_vscode\" title=\"[[&title]]\" href='vscode://eliostruyf.vscode-front-matter?command=[[command]]'>",
         "  [[&title]]",
         "</a>"
       ],
