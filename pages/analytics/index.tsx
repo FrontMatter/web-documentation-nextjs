@@ -16,7 +16,7 @@ const Charts = () => {
   const [stats, setStats] = useState<Analytics | null>(null);
 
   const getStats = async () => {
-    const res = await fetch(`${CONFIG.urls.api}/api/stats`);
+    const res = await fetch(`${CONFIG.urls.api}${CONFIG.api.stats}`);
     const json = await res.json();
     setStats(json);
   };

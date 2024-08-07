@@ -5,6 +5,11 @@ export const CONFIG = {
     preview: "https://cloudflare.front-matter-docs.pages.dev",
     local: "http://localhost:3000",
   },
+  api: {
+    sponsors: "/sponsors",
+    stats: "/stats",
+    stars: "/stars",
+  },
   environment: process.env.NEXT_PUBLIC_VERCEL_ENV,
   github: {
     token: process.env.GITHUB_AUTH,
