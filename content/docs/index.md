@@ -3,7 +3,7 @@ title: Introduction
 slug: ""
 description: Create, edit, and preview your pages within Visual Studio Code/Gitpod/... Front Matter allows you to keep control of your static site without any external tools
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-04-26T14:01:49.210Z
+lastmod: 2024-06-20T09:01:22.580Z
 weight: 1
 tags:
   - intro
@@ -71,8 +71,7 @@ We recognize that each website is different. That is why you can upload your cus
 scripts will display as actions in the Front Matter panel and take your content material control to
 the next level.
 
-> **Example**:
-> [Generate open graph preview image in Code with Front Matter][04]
+> **Example**: [Generate open graph preview image in Code with Front Matter][04]
 
 <!-- Link References -->
 [01]: /releases/v7.2.0/welcome-screen-7.2.0.png

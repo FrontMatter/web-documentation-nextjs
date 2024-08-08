@@ -5,6 +5,7 @@ import { Extension } from '../../constants/extension';
 import { PageFrontMatter } from '../../models/PageFrontMatter';
 import Giscus from "@giscus/react";
 import { PageActions } from './PageActions';
+import { CONFIG } from '../../constants';
 
 export interface IPageInfoProps {
   items: PageFrontMatter[];
@@ -36,7 +37,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
   }
 
   const date = parseJSON(page.lastmod);
-  // const feedbackUrl = `${Extension.issueLink}/new?title=Feedback:%20&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section*%0A%0A*%20ID%3A%20${page.fileName}%0A*%20URL%3A%20${`${process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? Extension.mainSite : Extension.betaSite}/docs/${page.fileName}`}%0A*%20Content%20Source%3A%20${encodeURIComponent(`/content/docs/${page.fileName}.md`)}`;
+  // const feedbackUrl = `${Extension.issueLink}/new?title=Feedback:%20&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section*%0A%0A*%20ID%3A%20${page.fileName}%0A*%20URL%3A%20${`${CONFIG.environment === "production" ? Extension.mainSite : Extension.betaSite}/docs/${page.fileName}`}%0A*%20Content%20Source%3A%20${encodeURIComponent(`/content/docs/${page.fileName}.md`)}`;
 
   return (
     <>
@@ -88,7 +89,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
             reactionsEnabled="0"
             emitMetadata="0"
             inputPosition="top"
-            theme={process.env.NEXT_PUBLIC_GISCUS_THEME}
+            theme={CONFIG.giscus.theme}
             lang="en"
             loading="lazy" />
         </div>
@@ -102,7 +103,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
         }
 
         <div className="mt-2 text-sm">
-          <p>Did you spot an issue in our documentation, or want to contribute? Edit this page on <a className={`text-teal-500 hover:text-teal-900`} href={`${Extension.githubDocs}/edit/${process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "main" : "dev"}/content/docs/${page.fileName}.md`} target="_blank" rel={`noopener noreferrer`}>Github</a>!</p>
+          <p>Did you spot an issue in our documentation, or want to contribute? Edit this page on <a className={`text-teal-500 hover:text-teal-900`} href={`${Extension.githubDocs}/edit/${CONFIG.environment === "production" ? "main" : "dev"}/content/docs/${page.fileName}.md`} target="_blank" rel={`noopener noreferrer`}>Github</a>!</p>
         </div>
       </div>
     </>

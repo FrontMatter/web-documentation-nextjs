@@ -9,6 +9,7 @@ import { Header } from './Header';
 import { Home } from './Home';
 import { Sponsors } from './Sponsors';
 import { AiOutlineRobot } from 'react-icons/ai';
+import { CONFIG } from '../../constants';
 
 export interface IDocsLayoutProps {
   navItems?: PageFrontMatter[];
@@ -69,7 +70,7 @@ export const DocsLayout: React.FunctionComponent<React.PropsWithChildren<IDocsLa
               backgroundColor: "transparent",
               color: "transparent"
             }}
-            anon_key={process.env.MENDABLE_ANON_KEY ?? ""} />
+            anon_key={CONFIG.mendable.key ?? ""} />
         </div>
 
         <Footer />

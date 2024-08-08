@@ -42,6 +42,22 @@ h5.header__offset {
   }
 }
 
+.vscode_wrapper {
+  @apply flex justify-center;
+
+  a,
+  a:visited {
+    &.open_vscode {
+      display: none !important;
+      @apply inline-flex w-auto gap-4 mx-auto items-center justify-center px-4 py-3 border border-transparent rounded text-base font-medium text-white bg-[#0066b8] hover:bg-opacity-70;
+
+      &:hover {
+        @apply text-white;
+      }
+    }
+  }
+}
+
 .changelog,
 .markdown {
   @apply space-y-4 text-whisper-900;
@@ -116,11 +132,19 @@ h5.header__offset {
   }
 
   blockquote {
-    @apply py-2 px-4 my-4 border-l-4 border-teal-500 bg-vulcan-300;
-  }
+    @apply p-4 my-4 border-l-4 border-teal-500 bg-vulcan-300 space-y-4;
 
-  blockquote.important {
-    @apply border-red-500;
+    .tag {
+      @apply inline-block px-2 py-1 rounded bg-teal-500 text-vulcan-300;
+    }
+
+    &.important {
+      @apply border-red-500;
+
+      .tag {
+        @apply bg-red-500 text-whisper-500;
+      }
+    }
   }
 
   code {

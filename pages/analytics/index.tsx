@@ -10,12 +10,13 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { Analytics } from '../../models';
+import { CONFIG } from '../../constants';
 
 const Charts = () => {
   const [stats, setStats] = useState<Analytics | null>(null);
 
   const getStats = async () => {
-    const res = await fetch('/api/stats');
+    const res = await fetch(`${CONFIG.urls.api}${CONFIG.api.stats}`);
     const json = await res.json();
     setStats(json);
   };

@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-06-10T09:13:40.409Z
+lastmod: 2024-07-11T07:36:03.458Z
 weight: 1000.2
 ---
 
@@ -516,15 +516,11 @@ Specify the host URL (example: `http://localhost:1313`) to be used when opening 
 ### frontMatter.preview.pathName
 
 Specify the path you want to add after the host and before your slug. This can be used for instance
-to include the year/month like: `yyyy/MM`. The date will be generated based on the article its date
-field value.
+to include the year/month like: `{{date\|yyyy-MM}}`. The date will be generated based on the article
+its date field value.
 
 - Type: `string`
 - Default: `""`
-
-> **Important**: As the value will be formatted with the article's date, it will try to convert all
-> characters you enter. In case you want to skip some characters or all of them, you need to wrap
-> that part between two single quotes. Example: `"'blog/'yyyy/MM"` will result in: `blog/2021/08`.
 
 ### frontMatter.preview.trailingSlash
 

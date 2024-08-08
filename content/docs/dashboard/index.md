@@ -3,7 +3,7 @@ title: Dashboard
 slug: dashboard
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2022-09-22T06:31:23.818Z
+lastmod: 2024-06-20T08:21:12.684Z
 weight: 300
 ---
 
@@ -30,7 +30,7 @@ can find your pages. Be sure to follow our [getting started][03] guide.
 > `publicFolder` where the extension can find them. For instance, in Hugo, this is the static
 > folder. You can configure this by updating the `frontMatter.content.publicFolder` setting.
 
-## Commands
+## Types of dashboards
 
 There are the following commands to open the dashboards:
 
