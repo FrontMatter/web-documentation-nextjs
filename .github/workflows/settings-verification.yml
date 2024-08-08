@@ -2,7 +2,7 @@ name: Settings verification
 on:
   push:
     branches:
-      - dev
+      - beta
       - main
   workflow_dispatch:
 
