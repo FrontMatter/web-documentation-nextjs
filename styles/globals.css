@@ -48,6 +48,7 @@ h5.header__offset {
   a,
   a:visited {
     &.open_vscode {
+      display: none !important;
       @apply inline-flex w-auto gap-4 mx-auto items-center justify-center px-4 py-3 border border-transparent rounded text-base font-medium text-white bg-[#0066b8] hover:bg-opacity-70;
 
       &:hover {

@@ -3,7 +3,7 @@ title: Getting started
 slug: getting-started
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-08-07T12:33:01.744Z
+lastmod: 2024-08-08T08:22:22.889Z
 weight: 100
 ---
 
