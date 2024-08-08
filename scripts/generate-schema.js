@@ -51,10 +51,10 @@ const escapeQuotes = (/** @type {string} */ str) => {
 }
 
 (async () => {
-  const production = process.env.VERCEL_ENV === "production";
+  const production = process.env.NEXT_PUBLIC_VERCEL_ENV === "production";
 
-  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.json`;
-  const pkgEnUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.nls.json`;
+  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "beta"}/package.json`;
+  const pkgEnUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "beta"}/package.nls.json`;
 
   const pkg = await fetch(pkgUrl);
   const pkgLocale = await fetch(pkgEnUrl);

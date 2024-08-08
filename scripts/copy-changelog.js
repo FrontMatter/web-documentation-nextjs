@@ -4,11 +4,10 @@ const fetch = require("node-fetch");
 
 (async () => {
   try {
-    const production = process.env.VERCEL_ENV === "production";
+    const production = process.env.NEXT_PUBLIC_VERCEL_ENV === "production";
 
-    const changelogUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${
-      production ? "main" : "dev"
-    }/CHANGELOG.md`;
+    const changelogUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "beta"
+      }/CHANGELOG.md`;
 
     const response = await fetch(changelogUrl);
     if (!response.ok) {
