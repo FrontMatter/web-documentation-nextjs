@@ -10,6 +10,9 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "schema": "node scripts/generate-schema.js"
   },
+  "engines": {
+    "node": ">=18.7.0"
+  },
   "dependencies": {
     "@antfu/shiki": "^0.6.2",
     "@docsearch/js": "^3.3.0",
