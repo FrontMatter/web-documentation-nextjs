@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/giscus/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "https://giscus.app"
