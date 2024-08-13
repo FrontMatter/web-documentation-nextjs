@@ -1,5 +1,0 @@
-[[headers]]
-  # CORS for Giscus
-  for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "https://giscus.app"
