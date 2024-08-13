@@ -3,7 +3,7 @@ title: Custom actions/scripts
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-04-11T15:09:14.745Z
+lastmod: 2024-08-12T14:39:36.251Z
 weight: 500
 ---
 
@@ -31,7 +31,7 @@ nothing more than a Node.js script which is referenced from within your project.
 
 <!-- markdownlint-enable MD028 -->
 
-## The custom action setting
+## Settings
 
 The content and media custom actions can be defined by using the `frontMatter.custom.scripts` setting.
 
@@ -481,6 +481,37 @@ const args = process.argv;
 **Prerequisites**:
 
 - `npm i imagemin imagemin-jpegtran imagemin-pngquant`
+
+### Convert image to webp (media file script)
+
+The following script converts an image to the webp format, copies the metadata, and deletes the original file.
+
+```javascript
+import { MediaScript } from '@frontmatter/extensibility';
+import sharp from 'sharp';
+
+(async () => {
+  const mediaScriptArgs = MediaScript.getArguments();
+
+  if (!mediaScriptArgs) {
+    MediaScript.done(`No arguments found`);
+    return;
+  }
+
+  const imagePath = mediaScriptArgs.mediaPath;
+
+  let image = sharp(imagePath);
+  const extension = imagePath.split(`.`).pop();
+  let newFilePath = imagePath.replace(`.${extension}`, `.webp`);
+
+  await image.toFormat("webp").toFile(newFilePath);
+  MediaScript.copyMetadataAndDelete(imagePath, newFilePath);
+})();
+```
+
+**Prerequisites**:
+
+- `npm i sharp`
 
 <!-- Link References -->
 

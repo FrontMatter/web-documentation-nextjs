@@ -9,7 +9,7 @@ import sharp from 'sharp';
     MediaScript.done(`No arguments found`);
     return;
   }
-  
+
   const imagePath = mediaScriptArgs.mediaPath;
 
   let image = sharp(imagePath);
@@ -17,5 +17,5 @@ import sharp from 'sharp';
   let newFilePath = imagePath.replace(`.${extension}`, `.webp`);
 
   await image.toFormat("webp").toFile(newFilePath);
-  MediaScript.done(`Converted to webp`);
+  MediaScript.copyMetadataAndDelete(imagePath, newFilePath);
 })();
