@@ -55,7 +55,7 @@ const remarkFm = ({
         if (meta) {
           meta = meta.replace(/{{/, "{");
           meta = meta.replace(/}}/, "}");
-          let parsed = {};
+          let parsed: { title?: string; description?: string } = {};
 
           try {
             parsed = JSON.parse(meta);
