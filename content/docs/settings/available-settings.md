@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-07-11T07:36:03.458Z
+lastmod: 2024-08-13T11:22:00.716Z
 weight: 1000.2
 ---
 
@@ -221,6 +221,16 @@ Sample:
 ```
 
 > **Info**: Check the [create your own custom scripts][08] section for more information.
+
+### frontMatter.copilot.family
+
+Specify the family of the GitHub Copilot AI model you want to use for your project.
+
+- Type: `string`
+- Default: `gpt-3.5-turbo`
+- Options: `gpt-3.5-turbo`, `gpt-4-turbo`
+
+> **Info**: More information on how to use it can be found in the [AI features][27] section.
 
 ### frontMatter.dashboard.content.cardTags
 
@@ -863,3 +873,4 @@ This setting is used to define the modified date field of your articles.
 [24]: /docs/dashboard/media-view#metadata
 [25]: /docs/dashboard/media-view#define-the-media-folder
 [26]: /docs/content-creation/slug
+[27]: /docs/ai-features

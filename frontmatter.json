@@ -279,6 +279,12 @@
       "script": "./scripts/optimize.mjs",
       "command": "~/.nvm/versions/node/v18.17.1/bin/node",
       "type": "mediaFile"
-    }
+    },
+    {
+      "title": "Resize media",
+      "script": "./scripts/resize.mjs",
+      "command": "~/.nvm/versions/node/v18.17.1/bin/node",
+      "type": "mediaFile"
+    },
   ]
 }

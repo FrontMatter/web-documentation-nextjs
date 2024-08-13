@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-22T17:35:59.797Z
+lastmod: 2024-08-13T10:01:56.392Z
 weight: 200.31
 ---
 
@@ -51,6 +51,7 @@ All fields share the following field properties:
 | `default`     | `string`  | Defines the default value for the field when creating the content type. You can also use placeholders like `{{title}}`, `{{slug}}` or `{{now}}`. Check for more information under [placeholders][01].                         | _Optional_          |
 | `required`    | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications][02] setting. | _Optional_          |
 | `hidden`      | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.                                                                                                               | _Optional_          |
+| `actions`     | `object`  | Defines the custom actions/scripts that you can execute to populate the field value                                                                                                                                           | _Optional_          |
 
 ## String
 

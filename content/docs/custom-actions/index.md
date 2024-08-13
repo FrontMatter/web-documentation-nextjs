@@ -3,7 +3,7 @@ title: Custom actions/scripts
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-08-12T14:58:47.310Z
+lastmod: 2024-08-13T10:00:03.598Z
 weight: 500
 ---
 
@@ -19,7 +19,7 @@ weight: 500
 
 Not every website is the same. That is why we want to give you the ability to extend Front Matter
 and you can do this by adding your custom actions to the Front Matter panel. A custom action is
-nothing more than a Node.js script which is referenced from within your project.
+nothing more than a script which is referenced from within your project.
 
 ![Custom action][01]
 
@@ -103,4 +103,4 @@ you can easily get the arguments and ask questions to the user.
 
 <!-- Link References -->
 
-[01]: /assets/custom-action.png
+[01]: /releases/v10.3.0/custom-action.png
