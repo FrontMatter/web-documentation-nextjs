@@ -2,7 +2,7 @@ export const CONFIG = {
   urls: {
     api: process.env.NEXT_PUBLIC_API_URL,
     production: "https://frontmatter.codes",
-    preview: "https://cloudflare.front-matter-docs.pages.dev",
+    preview: "https://beta.frontmatter.codes",
     local: "http://localhost:3000",
   },
   api: {
