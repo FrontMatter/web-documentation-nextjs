@@ -1,10 +1,29 @@
 # Change Log
 
-## [10.3.0] - 2024-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v10.3.0)
+## [10.4.0] - 2024-xx-xx
 
 ### ✨ New features
 
-- [#823](https://github.com/estruyf/vscode-front-matter/issues/823): Integrated GitHub Copilot support for titles, descriptions, and tags
+- [#844](https://github.com/estruyf/vscode-front-matter/issues/844): New `{{filePrefix.index}}` placeholder to add the index number of the file in the folder
+
+### 🎨 Enhancements
+
+- [#833](https://github.com/estruyf/vscode-front-matter/issues/833): Added support for Asciidoc files
+- [#834](https://github.com/estruyf/vscode-front-matter/issues/834): Added the ability to create new data files for a data folder
+- [#841](https://github.com/estruyf/vscode-front-matter/issues/841): Enable placeholders for file prefixes
+- [#846](https://github.com/estruyf/vscode-front-matter/issues/846): Added GitHub Copilot action for title field
+- [#848](https://github.com/estruyf/vscode-front-matter/issues/848): Set the default GitHub Copilot model to `gpt-4o-mini`
+
+### 🐞 Fixes
+
+- [#842](https://github.com/estruyf/vscode-front-matter/issues/842): Allow to set the `frontMatter.taxonomy.slugTemplate` setting to an empty string
+- [#845](https://github.com/estruyf/vscode-front-matter/issues/845): Fix empty values for number fields
+
+## [10.3.0] - 2024-08-13 - [Release notes](https://beta.frontmatter.codes/updates/v10.3.0)
+
+### ✨ New features
+
+- [#823](https://github.com/estruyf/vscode-front-matter/issues/823): Integrated GitHub Copilot support for titles, descriptions, and taxonomy field suggestions
 - [#824](https://github.com/estruyf/vscode-front-matter/issues/824): Added the ability to link custom actions to fields
 
 ### 🎨 Enhancements

@@ -3,16 +3,20 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-06-14T09:26:58.102Z
+lastmod: 2024-09-16T12:13:56.139Z
 weight: 200.51
 ---
 
 # Placeholders
 
-Placeholders can be used in content type fields or templates. The placeholders allow you to
-automatically fill in values when creating a new content.
+Placeholders can be used in fields, slug templates, preview paths, and file prefix settings.
+These placeholders allow you to generate dynamic values based on the front matter fields or other
+values.
 
 ## Default placeholders
+
+The following placeholders can be used in the fields `default` property,
+`slugTemplate`, `previewPath`, and `filePrefix`:
 
 | Placeholder  | Description                                                                                      |
 | ------------ | ------------------------------------------------------------------------------------------------ |
@@ -27,20 +31,48 @@ automatically fill in values when creating a new content.
 | `{{ampm}}`   | Show AM/PM                                                                                       |
 | `{{minute}}` | Current minute                                                                                   |
 
-## Special placeholders
+## Slug placeholders
 
-| Placeholder | Description | Works for |
-| --- | --- | --- |
-| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section. | `slugTemplate` properties |
-| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `/blog/{{date\|yyyy-MM}}` | `previewPath` property |
-| `{{locale}}`            | The locale of the page. | `previewPath` property |
-| `{{fm.<field name>}}`   | The value of the field in the front matter | `slugTemplate` and `previewPath` properties |
-| `{{pathToken.<index>}}` | The value of the path token at the index | `previewPath` on the page folder or the content-type |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path | `previewPath` on the page folder or the content-type |
+The slug placeholders are used to generate a slug based on the title of the page. The following
+placeholders can be used in the `slugTemplate` property:
 
-### Example 1
+| Placeholder | Description |
+| --- | --- |
+| `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section. |
+| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}` |
+| `{{fm.<field name>}}`   | The value of the field in the front matter |
+| `{{pathToken.<index>}}` | The value of the path token at the index |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path |
 
-Example of how you can use the special placeholders:
+## Preview path placeholders
+
+The preview path placeholders are used to generate a dynamic preview path based on the front matter
+fields or other values. The following placeholders can be used in the `previewPath` property:
+
+| Placeholder | Description |
+| --- | --- |
+| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `/blog/{{date\|yyyy-MM}}` |
+| `{{locale}}`            | The locale of the page. |
+| `{{fm.<field name>}}`   | The value of the field in the front matter |
+| `{{pathToken.<index>}}` | The value of the path token at the index |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path |
+
+## File prefix placeholders
+
+The file prefix placeholders are used to generate a dynamic file prefix. The following placeholders
+can be used in the `filePrefix` property:
+
+| Placeholder | Description |
+| --- | --- |
+| `{{filePrefix.index\|<zeros:nr>}}` | The index number of the file in the folder |
+| `{{date\|<format>}}` | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}` |
+| `{{locale}}` | The locale of the page. |
+
+## Using placeholders
+
+### Example 1: general usage
+
+Example of how you can use the placeholders in the `previewPath` and `path` property:
 
 ```json {{ "title": "Using the special placeholders", "description": "" }}
 "frontMatter.content.pageFolders": [
@@ -54,9 +86,14 @@ Example of how you can use the special placeholders:
 ]
 ```
 
-The preview path will generate the following path: `/post/2023/02/<slug>`.
+When you create a new content item, the path will be generated based on the `path` property. In this
+case, it will be: `[[workspace]]/content/2024/09`.
 
-### Example 2
+The preview path will generate the following path: `/post/2024/09/<slug>`.
+
+### Example 2: using the relative path placeholder
+
+Example of how you can use the `{{pathToken.relPath}}` placeholder:
 
 ```json {{ "title": "Using the relative path token", "description": "" }}
 "frontMatter.content.pageFolders": [
@@ -82,20 +119,19 @@ an example of how you can use field formatting:
   {
     "title": "blog",
     "filePrefix": null,
-    "previewPath": "'/{{fm.type}}/{{fm.pubDate|format:dd/MM/yy}}/'",
+    "previewPath": "/{{fm.fmContentType}}/{{fm.date|format:dd/MM/yy}}/",
     "path": "[[workspace]]/content"
   }
 ]
 ```
 
-The above configuration results in the following path: `/blog/25/02/23/`.
+The above configuration results in the following path: `/blog/16/09/24/`.
 
-![Placeholder field formatting](/releases/v9.0.0/placeholder-formatting.png)
+![Define the preview URL with placeholders](/releases/v10.4.0/define-preview-url.webp)
 
 ### Example 4: using the {{date\|\<format\>}} placeholder
 
-The `{{date|<format>}}` placeholder can be used in the `previewPath` property and uses the field
-with the name `date` or a date field where the `isPublishDate` property is set to `true`.
+The `{{date|<format>}}` placeholder uses the publishing date and can be used as follows:
 
 ```json {{ "title": "Using the date placeholder", "description": "" }}
 "frontMatter.content.pageFolders": [
@@ -146,6 +182,36 @@ You can also ignore a specific locale by using the `ignore:<locale>` option.
 The above configuration results in the following path for English content: `/<slug>/`.
 For other locales, the preview path will generate the following path:
 `/<locale>/<slug>/` (e.g. `/nl/<slug>/`).
+
+### Example 6: using the {{filePrefix.index}} placeholder
+
+The `{{filePrefix.index}}` placeholder returns the index number of the file in the folder.
+
+```json {{ "title": "Using the file prefix index placeholder" }}
+{
+  "frontMatter.content.pageFolders": [{
+    "title": "articles",
+    "path": "[[workspace]]/content/prefixes/",
+    "filePrefix": "{{filePrefix.index}}"
+  }]
+}
+```
+
+The above configuration results in the following file names: `001-article.md`, `002-article.md`, ...
+
+The `zeros` parameter is optional and allows you to specify the leading zeros to add before the
+index number. The default value is `3`. You can change this value by adding the number of zeros you
+want to add.
+
+```json {{ "title": "Using the file prefix index placeholder with leading zeros" }}
+{
+  "frontMatter.content.pageFolders": [{
+    "title": "articles",
+    "path": "[[workspace]]/content/prefixes/",
+    "filePrefix": "{{filePrefix.index|zeros:4}}"
+  }]
+}
+```
 
 ## Custom placeholders
 
