@@ -3,7 +3,7 @@ title: AI features
 slug: ai-features
 description: null
 date: 2024-08-13T07:26:50.054Z
-lastmod: 2024-08-13T11:34:21.076Z
+lastmod: 2024-09-16T12:28:36.834Z
 weight: 880
 ---
 
@@ -27,12 +27,12 @@ The AI features are available in the following places:
 - Description suggestions based on the title and content
 - Taxonomy suggestions based on the title, content, and available tags
 
-By default the `gpt-3.5-turbo` model is used to generate the suggestions. You can change the model
+By default the `gpt-4o-mini` model is used to generate the suggestions. You can change the model
 by updating the `frontMatter.copilot.family` setting in your `frontmatter.json` file.
 
 ```json {{ "title": "Change GitHub Copilot's AI model" }}
 {
-  "frontMatter.copilot.family": "gpt-4.0-turbo"
+  "frontMatter.copilot.family": "gpt-4o-mini"
 }
 ```
 

@@ -3,7 +3,7 @@ title: Additional configuration
 slug: content-creation/additional-config
 description: null
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-02-21T09:43:39.296Z
+lastmod: 2024-09-16T12:23:31.690Z
 weight: 200.81
 ---
 
@@ -16,8 +16,12 @@ For more information on how to use the preview path, see the
 
 ## File prefixes
 
-By default, Front Matter will use the `yyyy-MM-dd` date format for the file prefix.
+By default, Front Matter CMS uses the date placeholder with the `yyyy-MM-dd`
+format (`{{date|yyyy-MM-dd}}`) for the file prefix.
 You can change this per page folder or per content-type.
+
+> **Info**: You can use other placeholders for the file prefix as well. For more information, see the
+> [file prefix placeholders](/docs/content-creation/placeholders#file-prefix-placeholders) documentation.
 
 ### Page folder level
 
@@ -30,7 +34,7 @@ property to your page folder in the `frontMatter.content.pageFolders` setting.
     {
       "title": "Blog",
       "path": "[[workspace]]/content/blog",
-      "filePrefix": "yyyy"
+      "filePrefix": "{{date|yyyy}}"
     }
   ]
 }
@@ -49,7 +53,7 @@ property from the page folder.
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
-      "filePrefix": "yyyy-MM",
+      "filePrefix": "{{date|yyyy-MM}}",
       "fields": [
         ...
       ]

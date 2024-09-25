@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-08-13T11:22:00.716Z
+lastmod: 2024-09-16T12:24:01.177Z
 weight: 1000.2
 ---
 
@@ -804,7 +804,7 @@ Specify the folder to use for your article templates.
 Specify the prefix you want to add for your new article filenames.
 
 - Type: `string`
-- Default: `yyyy-MM-dd`
+- Default: `{{date|yyyy-MM-dd}}`
 
 ### frontMatter.website.host
 

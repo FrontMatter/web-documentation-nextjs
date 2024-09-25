@@ -3,7 +3,7 @@ title: Site preview
 slug: site-preview
 description: null
 date: 2021-08-31T08:24:02.613Z
-lastmod: 2024-06-10T09:40:47.779Z
+lastmod: 2024-09-16T12:12:27.295Z
 weight: 700
 ---
 
@@ -137,7 +137,7 @@ type level will override what is defined on page folder level and globally.
 Since version `8.3.0`, the you can use placeholders in the `previewPath` property and there are a
 couple of additional placeholders available which can be used for your preview paths.
 
-> **Info**: You can find these placeholders in the [placeholders section](/docs/content-creation/placeholders#special-placeholders).
+> **Info**: You can find these placeholders in the [placeholders section](/docs/content-creation/placeholders#preview-path-placeholders).
 
 ### Examples
 
