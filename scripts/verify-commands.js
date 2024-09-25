@@ -11,9 +11,8 @@ const core = require("@actions/core");
 
   console.log(`Checking commands for branch: ${branch}`);
 
-  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${
-    production ? "main" : "dev"
-  }/package.json`;
+  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "beta"
+    }/package.json`;
 
   const response = await fetch(pkgUrl);
   if (!response.ok) {
