@@ -103,7 +103,7 @@ export const PageInfo: React.FunctionComponent<IPageInfoProps> = ({ page, items 
         }
 
         <div className="mt-2 text-sm">
-          <p>Did you spot an issue in our documentation, or want to contribute? Edit this page on <a className={`text-teal-500 hover:text-teal-900`} href={`${Extension.githubDocs}/edit/${CONFIG.environment === "production" ? "main" : "dev"}/content/docs/${page.fileName}.md`} target="_blank" rel={`noopener noreferrer`}>Github</a>!</p>
+          <p>Did you spot an issue in our documentation, or want to contribute? Edit this page on <a className={`text-teal-500 hover:text-teal-900`} href={`${Extension.githubDocs}/edit/${CONFIG.environment === "production" ? "main" : "beta"}/content/docs/${page.fileName}.md`} target="_blank" rel={`noopener noreferrer`}>Github</a>!</p>
         </div>
       </div>
     </>

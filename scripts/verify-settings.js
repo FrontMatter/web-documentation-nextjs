@@ -5,16 +5,16 @@ const { exit } = require('process');
 const core = require('@actions/core');
 
 (async () => {
-  const branch = process.argv[process.argv.length-1];
+  const branch = process.argv[process.argv.length - 1];
   const production = branch.toLowerCase() === "main";
 
   console.log(`Checking settings for branch: ${branch}`)
 
-  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "dev"}/package.json`;
+  const pkgUrl = `https://raw.githubusercontent.com/estruyf/vscode-front-matter/${production ? "main" : "beta"}/package.json`;
 
   const response = await fetch(pkgUrl);
   if (!response.ok) {
-      return;
+    return;
   }
 
   let contents = await response.text();
