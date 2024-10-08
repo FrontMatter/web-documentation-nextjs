@@ -1,6 +1,27 @@
 # Change Log
 
-## [10.4.0] - 2024-xx-xx
+## [10.5.0] - 2024-xx-xx
+
+### ✨ New features
+
+### 🎨 Enhancements
+
+- [#840](https://github.com/estruyf/vscode-front-matter/issues/840): Added the `excludePaths` option for the content folder settings
+- [#850](https://github.com/estruyf/vscode-front-matter/issues/850): Extended the i18n/language button to open or create new language files (thanks to [Dennis Zoma](https://github.com/wottpal))
+- [#851](https://github.com/estruyf/vscode-front-matter/issues/851): Added `sameContentLocale` option to `contentRelationship` field (thanks to [Dennis Zoma](https://github.com/wottpal))
+
+### ⚡️ Optimizations
+
+### 🐞 Fixes
+
+- [#858](https://github.com/estruyf/vscode-front-matter/issues/858): Fix button styling on the data screen
+- [#860](https://github.com/estruyf/vscode-front-matter/issues/860): Fix typo on the data screen
+
+## [10.4.1] - 2024-09-27
+
+- [#855](https://github.com/estruyf/vscode-front-matter/issues/855): Fix in panel sections
+
+## [10.4.0] - 2024-09-25 - [Release notes](https://beta.frontmatter.codes/updates/v10.4.0)
 
 ### ✨ New features
 
@@ -18,6 +39,12 @@
 
 - [#842](https://github.com/estruyf/vscode-front-matter/issues/842): Allow to set the `frontMatter.taxonomy.slugTemplate` setting to an empty string
 - [#845](https://github.com/estruyf/vscode-front-matter/issues/845): Fix empty values for number fields
+- [#849](https://github.com/estruyf/vscode-front-matter/issues/849): Show fields which are not empty in the metadata panel
+- [#853](https://github.com/estruyf/vscode-front-matter/issues/853): Allow empty values in date fields
+
+### 🚧 Work in progress
+
+- [#837](https://github.com/estruyf/vscode-front-matter/issues/837): Replacing the VSCode Webview UI Toolkit with [vscrui](https://github.com/estruyf/vscrui) due to the deprecation of the VSCode Webview UI Toolkit library
 
 ## [10.3.0] - 2024-08-13 - [Release notes](https://beta.frontmatter.codes/updates/v10.3.0)
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Sponsor, SponsorData } from '../../models/SponsorData';
 import sponsors from '../../sponsors.json';
+import contributors from '../../contributors.json';
 import { CONFIG } from '../../constants';
 
 export interface ISponsorsProps { }
@@ -81,6 +82,27 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
             </div>
           )
         }
+      </div>
+
+      <div className="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8 xl:px-0">
+        <p className="text-center text-sm font-semibold uppercase text-whisper-900 tracking-wide">
+          {strings(`contributors_title`) as string}
+          <div className="flex justify-center space-x-4 flex-wrap">
+            {
+              contributors.map((contributor) => (
+                <a
+                  key={contributor.id}
+                  target={`_blank`}
+                  rel={`noopener noreferrer`}
+                  href={contributor.url}
+                  title={contributor.name}
+                  className="mt-6 col-span-1 flex justify-center">
+                  <img className="h-12 rounded-full border-[2px] border-white" src={contributor.avatar} alt={contributor.name} />
+                </a>
+              ))
+            }
+          </div>
+        </p>
       </div>
     </div>
   );
