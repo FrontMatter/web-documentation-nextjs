@@ -88,6 +88,9 @@ export const strings = {
   // Sponsors
   sponsors_title: "Special thanks to our backers & sponsors",
 
+  // Contributors
+  contributors_title: "Contributors",
+
   // Documentation
   documentation_title: "Documentation",
   documentation_description: `Get to know more about how you can use ${Extension.name} with our documentation.`,
