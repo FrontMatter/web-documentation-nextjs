@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-08-13T10:01:56.392Z
+lastmod: 2024-10-21T14:10:31.132Z
 weight: 200.31
 ---
 
@@ -60,10 +60,10 @@ use if for the title, description, or any other text field.
 
 ### Properties
 
-- `single (boolean)`: When you picked the `string` field type, you can specify if it is a single
-  line. By default it will render as a multiline field (optional).
-- `wysiwyg (boolean)`: When you set this value to `true`, the field will be rendered as a WYSIWYG
-  editor. The output of the WYSIWYG editor will be HTML.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `single` | `boolean` | When set to `true`, the field will be rendered as a single line. | _Optional_ | `false` |
+| `wysiwyg` | `boolean`, `html` or `markdown` | When set to `true`, the field will be rendered as a WYSIWYG editor and output HTML. You can also provide `html` or `markdown` its value to define the field's output. | _Optional_ | `false` |
 
 ![WYSIWYG controls][03]
 
@@ -92,10 +92,12 @@ content.
 To configure the number field, you can specify the following properties in the `numberOptions`
 field property:
 
-- `min (number)`: The minimum value for the field.
-- `max (number)`: The maximum value for the field.
-- `step (number)`: The step value for the field.
-- `isDecimal (boolean)`: When set to `true`, the field will allow decimal/floating values.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `min` | `number` | The minimum value for the field. | _Optional_ | |
+| `max` | `number` | The maximum value for the field. | _Optional_ | |
+| `step` | `number` | The step value for the field. | _Optional_ | |
+| `isDecimal` | `boolean` | When set to `true`, the field will allow decimal/floating values. | _Optional_ | `false` |
 
 ### Example 1
 
@@ -160,12 +162,11 @@ other types of dates for you content.
 
 ### Properties
 
-- `isPublishDate`: Specifies if the field is a publish date. When set to `true`, the field will be
-  used to set the publish date for the content (this will be reflected on the content dashboard).
-- `isModifiedDate`: Specifies if the field is a modified date. When using the
-  `frontMatter.content.autoUpdateDate` setting to automatically update the modified date of the
-  article, this field will be used.
-- `dateFormat`: Specifies the format of the date. By default it uses ISO format.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `isPublishDate` | `boolean` | Specifies if the field is a publish date. When set to `true`, the field will be used to set the publish date for the content (this will be reflected on the content dashboard). | _Optional_ | `false` |
+| `isModifiedDate` | `boolean` | Specifies if the field is a modified date. When using the `frontMatter.content.autoUpdateDate` setting to automatically update the modified date of the article, this field will be used. | _Optional_ | `false` |
+| `dateFormat` | `string` | Specifies the format of the date. By default it uses ISO format. | _Optional_ | |
 
 > **Info**: The format of your date can be defined in the `frontMatter.taxonomy.dateFormat`
 > setting (globally), or with the `dateFormat` on the field level. To format the date, use the
@@ -226,10 +227,10 @@ The `choice` field allows you to define a set of options.
 
 ### Properties
 
-- `choices (string[] | { id: string; title: string; })`: When you picked the `choice` field type,
-  you need to return an array of choices.
-- `multiple (boolean)`: Define if you want to allow multiple choice selection. By default this is
-  `false`.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `choices` | `string[]` or `{ id: string; title: string; }[]` | Define the choices for the field. | **Required** | |
+| `multiple` | `boolean` | Define if you want to allow multiple choice selection. | _Optional_ | `false` |
 
 #### Example 1
 
@@ -379,11 +380,10 @@ The `image` field can be used to reference single or multiple images to your con
 
 ### Properties
 
-- `isPreviewImage (boolean)`: Allows you to specify a custom preview image for your article. When
-  you set this to `true` for an image field in your content type, it will be adopted in the
-  dashboard.
-- `multiple (boolean)`: Define if you want to allow to select multiple images. By default this is
-  `false`.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `isPreviewImage` | `boolean` | Allows you to specify a custom preview image for your article. When you set this to `true` for an image field in your content type, it will be adopted in the dashboard. | _Optional_ | `false` |
+| `multiple` | `boolean` | Define if you want to allow to select multiple images. | _Optional_ | `false` |
 
 > **Important**: You can only set this on one image field per content type.
 
@@ -408,10 +408,10 @@ The `file` field can be used to reference single or multiple files to your conte
 
 ### Properties
 
-- `multiple (boolean)`: Define if you want to allow to select multiple files. By default this is
-  `false`.
-- `fileExtensions (string array)`: Define the file extensions that are allowed to be selected. By
-  default this is an empty array `[]`.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `multiple` | `boolean` | Define if you want to allow to select multiple files. | _Optional_ | `false` |
+| `fileExtensions` | `string[]` | Define the file extensions that are allowed to be selected. | _Optional_ | `[]` |
 
 ```json {{ "title": "Usage" }}
 {
@@ -446,10 +446,10 @@ When the tag is created, you will be able to re-use it for other content.
 
 ### Properties
 
-- `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
-  which allows unlimited items to be selected.
-- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
-of an array.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `taxonomyLimit` | `number` | Defines the maximum number of items that can be selected. By default set to `0` which allows unlimited items to be selected. | _Optional_ | `0` |
+| `singleValueAsString` | `boolean` | When set to `true`, a single value will be added as a string value instead of an array. | _Optional_ | `false` |
 
 > **Info**: When a limit is defined, this will get reflected in the UI as well:
 
@@ -480,10 +480,10 @@ The `categories` field is similar to the [tags][09] field. Categories are also s
 
 ### Properties
 
-- `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
-  which allows unlimited items to be selected.
-- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
-of an array.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `taxonomyLimit` | `number` | Defines the maximum number of items that can be selected. By default set to `0` which allows unlimited items to be selected. | _Optional_ | `0` |
+| `singleValueAsString` | `boolean` | When set to `true`, a single value will be added as a string value instead of an array. | _Optional_ | `false` |
 
 ```json {{ "title": "Usage" }}
 {
@@ -507,12 +507,11 @@ taxonomy values and structure.
 
 ### Properties
 
-- `taxonomyLimit`: Defines the maximum number of items that can be selected. By default set to `0`
-  which allows unlimited items to be selected.
-- `taxonomyId`: Set the id of your custom taxonomy definition defined in the
-  `frontMatter.taxonomy.customTaxonomy` setting.
-- `singleValueAsString`: When set to `true`, a single value will be added as a string value instead
-of an array.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `taxonomyLimit` | `number` | Defines the maximum number of items that can be selected. By default set to `0` which allows unlimited items to be selected. | _Optional_ | `0` |
+| `taxonomyId` | `string` | Set the id of your custom taxonomy definition defined in the `frontMatter.taxonomy.customTaxonomy` setting. | **Required** | |
+| `singleValueAsString` | `boolean` | When set to `true`, a single value will be added as a string value instead of an array. | _Optional_ | `false` |
 
 ### Custom taxonomy
 
@@ -561,7 +560,9 @@ property.
 
 ### Properties
 
-- `fields`: Define the sub-fields of your content type. All the above types are supported.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `fields` | `object[]` | Define the sub-fields of your content type. All the above types are supported. | **Required** | |
 
 ```json {{ "title": "Usage" }}
 {
@@ -637,15 +638,9 @@ your data) in the `frontMatter.taxonomy.fieldGroups` setting.
 
 ### Properties
 
-- `fieldGroup`: Define the field group that will be used to create a list of data.
-
-```json {{ "title": "Usage" }}
-{
-  "name": "fieldCollection",
-  "type": "fieldCollection",
-  "fieldGroup": "GeneralFields"
-}
-```
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `fieldGroup` | `string` | Define the field group that will be used to create a list of data. | **Required** | |
 
 ## Block
 
@@ -685,7 +680,9 @@ data) in the `frontMatter.taxonomy.fieldGroups` setting.
 
 ### Properties
 
-- `fieldGroup`: Define the field group(s) that will be used to create a list of data.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `fieldGroup` | `string[]` | Define the field group(s) that will be used to create a list of data. | **Required** | |
 
 ```json {{ "title": "Usage" }}
 "frontMatter.taxonomy.contentTypes": [
@@ -763,11 +760,12 @@ example of the authors sample:
 
 ### Properties
 
-- `dataFileId`: Specify the ID of the data file to use for this field (required).
-- `dataFileKey`: Specify the key of the data file to use for this field (required).
-- `dataFileValue`: Specify the property name that will be used to show the value for the field
-  (optional).
-- `multiple`: Specify if you want to select one or multiple records (optional).
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `dataFileId` | `string` | Specify the ID of the data file to use for this field. | **Required** | |
+| `dataFileKey` | `string` | Specify the key of the data file to use for this field. | **Required** | |
+| `dataFileValue` | `string` | Specify the property name that will be used to show the value for the field. | _Optional_ | |
+| `multiple` | `boolean` | Specify if you want to select one or multiple records. | _Optional_ | `false` |
 
 ```json {{ "title": "Usage" }}
 "frontMatter.taxonomy.contentTypes": [
@@ -803,8 +801,9 @@ The `slug` field allows you to create/update the slug of the current page.
 
 ### Properties
 
-- `editable`: Specify if you allow manual changes, or if the slug is generated automatically
-  (optional - default: `true`).
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `editable` | `boolean` | Specify if you allow manual changes, or if the slug is generated automatically. | _Optional_ | `true` |
 
 ```json {{ "title": "Usage" }}
 {
@@ -832,9 +831,12 @@ instance be used to reference an author, or a related blog post.
 
 ### Properties
 
-- `contentTypeName`: The name of the content-type to link.
-- `contentTypeValue`: The type of link/value you want to add. This can be `slug`, or `path`.
-- `multiple`: Specify if you want to select one or multiple relationships (optional).
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `contentTypeName` | `string` | The name of the content-type to link. | **Required** | |
+| `contentTypeValue` | `string` | The type of link/value you want to add. This can be `slug`, or `path`. | **Required** | |
+| `sameContentLocale` | `boolean` | Specify if you want to use the same content's locale for the relationship field. | _Optional_ | `true` |
+| `multiple` | `boolean` | Specify if you want to select one or multiple relationships. | _Optional_ | `false` |
 
 #### Example 1
 
@@ -885,7 +887,9 @@ The `customField` field type allows you to create and add your own fields to ren
 
 ### Properties
 
-- `customType`: The name of the custom field type to use.
+| Property | Type | Description | Required | Default |
+| -------- | ---- | ----------- | -------- | ------- |
+| `customType` | `string` | The name of the custom field type to use. | **Required** | |
 
 ```json {{ "title": "Usage" }}
 {

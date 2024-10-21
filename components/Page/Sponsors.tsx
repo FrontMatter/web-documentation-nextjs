@@ -85,7 +85,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
       </div>
 
       <div className="max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:px-8 xl:px-0">
-        <p className="text-center text-sm font-semibold uppercase text-whisper-900 tracking-wide">
+        <div className="text-center text-sm font-semibold uppercase text-whisper-900 tracking-wide">
           {strings(`contributors_title`) as string}
           <div className="flex justify-center space-x-4 flex-wrap">
             {
@@ -102,7 +102,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
               ))
             }
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );
