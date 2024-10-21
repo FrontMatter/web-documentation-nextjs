@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: Learn how to use multilingual content in Front Matter CMS
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-04-30T08:08:05.114Z
+lastmod: 2024-10-21T13:49:02.195Z
 weight: 200.71
 ---
 
@@ -164,13 +164,21 @@ languages with Front Matter CMS.
 You can create content translations by starting from the locale content and
 then you can use any of the following methods to create a new translation:
 
-- Use the `Front Matter: Create new translation` command from the command palette
-- Use the `Create new translation` button in the content editor toolbar
+### Command palette
+
+- Use the `Front Matter: Create new translation` command
+- Use the `Front Matter: Create or open translation` command
+
+### Content editor toolbar
+
+Use the `Create or open translation` button in the content editor toolbar
 
 ![Create translation action](/releases/v10.0.0/create-translation.png)
 
-- On the content dashboard, you can use the `create translation` action from the
-  content item menu
+### Content dashboard
+
+On the content dashboard, you can use the `create translation` action from the
+content item menu
 
 ![Create translation on content card](/releases/v10.0.0/card-create-translation-action.png)
 

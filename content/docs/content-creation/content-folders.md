@@ -3,7 +3,7 @@ title: Content folders
 slug: content-creation/content-folders
 description: Learn how to let Front Matter CMS know where to find and create your content
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-04-30T08:06:48.062Z
+lastmod: 2024-10-21T13:36:56.850Z
 weight: 200.11
 ---
 
@@ -45,7 +45,11 @@ Content folders are stored in the [frontMatter.content.pageFolders][02] setting.
       "title": "docs",
       "path": "[[workspace]]/docs",
       "filePrefix": "",
-      "contentTypes": ["doc"]
+      "contentTypes": ["doc"],
+      "excludePaths": [
+        "api", // Exclude the api folder
+        "_*.*" // Exclude all files starting with an underscore
+      ]
     },
     {
       "title": "archive",
@@ -113,7 +117,8 @@ and clicking on `Register folder` under the Front Matter CMS context menu.
 | `contentTypes`    | `string[]` | An array of content types to use for this folder. If not specified, all content types are used.                                                      |         | Optional            |
 | `disableCreation` | `boolean`  | Disables the creation of new content in this folder.                                                                                                 | `false` | Optional            |
 | `defaultLocale`   | `string`   | Set the default locale ID for the page folder. More information can be found in the [Multilingual][04] section.                                      |         | Optional            |
-| `locales`         | `array`    | Multilingual configuration on page folder level. More information can be found in the [Multilingual][04] section.                                    |         | Optional            |
+| `locales`         | `string[]`    | Multilingual configuration on page folder level. More information can be found in the [Multilingual][04] section.                                    |         | Optional            |
+| `excludePaths`         | `string[]`    | List of folders/files which you want to exclude. You can use wildcards like `*.mdx`, `_*.*`, etc.                                   |         | Optional            |
 
 > **Important**: `[[workspace]]` is a placeholder that the extension uses to replace the workspace
 > path. The reason why we choose to use this, is because some do not keep the original folder name.
