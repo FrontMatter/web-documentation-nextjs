@@ -176,5 +176,5 @@ of the content view. This will allow you to quickly access.
 [02]: /releases/v7.1.0/draft-filters.png
 [03]: /docs/content-creation/fields#draft
 [04]: /releases/v5.3.0/draft-status.png
-[06]: /docs/experimental/ui-extensibility#registering-a-custom-ui-extension
+[06]: /docs/ui-extensibility
 [07]: /releases/v7.1.0/dashboard-7.1.0.png
