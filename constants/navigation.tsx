@@ -3,7 +3,7 @@ import { HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Modal } from "../components/modal/Modal";
 import { Extension } from "./extension";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaBluesky } from "react-icons/fa6";
 import { SiDiscord, SiVisualstudiocode } from "react-icons/si";
 
 export const navigation = {
@@ -126,13 +126,22 @@ export const navigation = {
         <SiVisualstudiocode className={`${className} group-hover:fill-current`} {...rest} />
       )
     },
+    // {
+    //   name: 'Twitter',
+    //   title: 'Follow us on Twitter',
+    //   href: Extension.twitter,
+    //   blank: true,
+    //   icon: ({ className, ...rest }: any) => (
+    //     <FaXTwitter className={`${className} group-hover:fill-current`} {...rest} />
+    //   )
+    // },
     {
-      name: 'Twitter',
-      title: 'Follow us on Twitter',
-      href: Extension.twitter,
+      name: 'Bluesky',
+      title: 'Follow us on Bluesky',
+      href: Extension.bluesky,
       blank: true,
       icon: ({ className, ...rest }: any) => (
-        <FaXTwitter className={`${className} group-hover:fill-current`} {...rest} />
+        <FaBluesky className={`${className} group-hover:fill-current`} {...rest} />
       )
     },
     {
