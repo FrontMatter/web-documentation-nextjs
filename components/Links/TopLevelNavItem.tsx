@@ -13,7 +13,7 @@ export const TopLevelNavItem: React.FunctionComponent<React.PropsWithChildren<IT
       <Link
         href={href}
         title={title}
-        className="text-base font-medium text-whisper-500 hover:text-whisper-900"
+        className="text-base font-medium text-whisper-500 hover:text-teal-500"
         rel={blank ? "noopener noreferrer" : ""}
         target={blank ? "_blank" : "_self"}
       >
