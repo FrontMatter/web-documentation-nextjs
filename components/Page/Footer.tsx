@@ -29,14 +29,14 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a href={item.href} title={item.title} className="text-base text-gray-400 hover:text-gray-500">
+              <a href={item.href} title={item.title} className="text-base text-gray-400 hover:text-teal-500">
                 {item.name}
               </a>
             </div>
           ))}
           {navigation.footer.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a href={item.href} title={item.title} className="text-base text-gray-400 hover:text-gray-500">
+              <a href={item.href} title={item.title} className="text-base text-gray-400 hover:text-teal-500">
                 {item.name}
               </a>
             </div>
@@ -60,7 +60,7 @@ export const Footer: React.FunctionComponent<IFooterProps> = (props: React.Props
 
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel={`noopener noreferrer`}>
+            <a key={item.name} title={item.title} href={item.href} className="text-gray-400 hover:text-teal-500" target="_blank" rel={`noopener noreferrer`}>
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>

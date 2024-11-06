@@ -2,7 +2,7 @@ import * as React from 'react';
 import { navigation } from '../../constants/navigation';
 import { Stargazers } from '../GitHub/Stargazers';
 
-export interface ISocialNavigationProps {}
+export interface ISocialNavigationProps { }
 
 export const SocialNavigation: React.FunctionComponent<ISocialNavigationProps> = (props: React.PropsWithChildren<ISocialNavigationProps>) => {
   return (
@@ -15,11 +15,11 @@ export const SocialNavigation: React.FunctionComponent<ISocialNavigationProps> =
       <ul className='flex justify-center gap-6'>
         {navigation.social.map((item) => (
           <li key={item.name}>
-            <a 
-              title={item.title} 
-              href={item.href} 
-              className="text-base font-medium text-whisper-500 hover:text-whisper-900" 
-              target="_blank" 
+            <a
+              title={item.title}
+              href={item.href}
+              className="text-base font-medium text-whisper-500 hover:text-teal-500"
+              target="_blank"
               rel={`noopener noreferrer`}>
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -27,7 +27,7 @@ export const SocialNavigation: React.FunctionComponent<ISocialNavigationProps> =
           </li>
         ))}
       </ul>
-      
+
       <Stargazers />
     </nav>
   );
