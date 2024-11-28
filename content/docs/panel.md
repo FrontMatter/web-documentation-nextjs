@@ -1,9 +1,9 @@
 ---
 title: Editor panel
 slug: panel
-description: null
+description: Learn how to use the Front Matter panel to perform most of the extension actions with just a click on the button.
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-06-10T08:24:04.381Z
+lastmod: 2024-11-28T17:17:50.602Z
 weight: 400
 ---
 
@@ -244,17 +244,17 @@ Or in the status bar:
 
 <!-- Link References -->
 
-[01]: /assets/activitybar-action.png
+[01]: /releases/v10.7.0/fm-activity-bar-action.webp
 [02]: /releases/v6.0.0/local-server.png
-[03]: /releases/v5.3.0/seo-status.png
-[04]: /releases/v6.0.0/local-server-start.png
+[03]: /releases/v10.7.0/fm-seo-status.webp
+[04]: /releases/v10.7.0/fm-actions.webp
 [05]: /docs/custom-actions
 [06]: /assets/metadata.png
 [07]: /docs/content-creation
 [08]: /releases/v7.2.0/content-type-actions.png
-[09]: /assets/recent-files.png
+[09]: /releases/v10.7.0/recently-modified.webp
 [10]: /docs/getting-started
-[11]: /assets/other-actions.png
+[11]: /releases/v10.7.0/fm-other-actions.webp
 [12]: /releases/v7.1.0/panel-mode-switch-updated.png
 [13]: /releases/v7.1.0/status-bar-mode-switch.png
 [14]: /docs/settings/overview#frontmatter.framework.startcommand
