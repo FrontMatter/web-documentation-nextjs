@@ -38,8 +38,15 @@
       "url": "http://bejs.io",
       "title": "Supported by the BEJS Community",
       "image": "/assets/sponsors/bejs-community.png",
-      "id": "BEJS Community",
+      "id": "BEJS-Community",
       "alt": "BEJS Community"
+    },
+    {
+      "url": "http://struyfconsulting.com",
+      "title": "Hire Elio Struyf via Struyf Consulting",
+      "image": "/struyf-consulting.webp",
+      "id": "Struyf-Consulting",
+      "alt": "Struyf Consulting"
     }
   ]
 }
