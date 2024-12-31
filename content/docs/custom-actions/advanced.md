@@ -3,7 +3,7 @@ title: Advanced script actions
 slug: custom-actions/advanced
 description: null
 date: 2024-08-12T14:42:34.817Z
-lastmod: 2024-08-13T07:50:28.315Z
+lastmod: 2024-12-31T13:02:57.576Z
 weight: 500.3
 ---
 
@@ -54,6 +54,42 @@ When you run the script, the user will be prompted with the question "Where do y
 article?" and can select either "Twitter" or "LinkedIn".
 
 ![Ask a question via the extensibility library][01]
+
+## Prompting GitHub Copilot
+
+If you are using GitHub Copilot, you can also prompt Copilot with your custom scripts.
+For example, you could use it to generate a social message which you want to
+share on X, or Bluesky.
+
+```javascript {{ "title": "Prompting GitHub Copilot" }}
+import { ContentScript } from "@frontmatter/extensibility";
+
+(() => {
+  const contentScriptArgs = ContentScript.getArguments();
+  if (contentScriptArgs) {
+    const {
+      frontMatter: { title, description, slug },
+      promptResponse
+  } = contentScriptArgs;
+
+  if (!promptResponse) {
+    ContentScript.promptCopilot(`Create me a social message for sharing this article on Bluesky.
+  To generate the post, please use the following information:
+
+  Title: """${title}"""
+  Description: """${description}"""
+
+  The output should be plain text and should not include any markdown or HTML tags.
+  You are free to add hashtags.
+
+  IMPORTANT: Please make sure to keep the post under 265 characters.`);
+    return;
+  }
+
+  const shareUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(promptResponse)}%20${encodeURIComponent(url)}`;
+  ContentScript.open(shareUrl);
+})();
+```
 
 ## Bulk execution
 

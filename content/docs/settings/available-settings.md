@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-09-16T12:24:01.177Z
+lastmod: 2024-12-31T14:06:08.094Z
 weight: 1000.2
 ---
 
@@ -105,6 +105,13 @@ Specify if you want to highlight the Front Matter in the Markdown file.
 
 - Type: `boolean`
 - Default: `true`
+
+### frontMatter.content.grouping
+
+Specify the grouping options you want to use for your content dashboard.
+
+- Type: `{ title: string; name: string; }[]`
+- Default: `[]`
 
 ### frontMatter.content.hideFm
 
@@ -460,6 +467,13 @@ Specifies which type of notifications you want to see or which you want to hide.
 
 - Type: `array<string>`
 - Default: `["info", "warning", "error"]`
+
+### frontMatter.global.timezone
+
+Specify the timezone you want to use for your date formatting.
+
+- Type: `string`
+- Default: `UTC`
 
 ### frontMatter.media.contentTypes
 
