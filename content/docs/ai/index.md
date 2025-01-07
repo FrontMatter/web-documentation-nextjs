@@ -3,7 +3,7 @@ title: AI features
 slug: ai-features
 description: null
 date: 2024-08-13T07:26:50.054Z
-lastmod: 2024-09-16T12:28:36.834Z
+lastmod: 2025-01-07T20:39:16.936Z
 weight: 880
 ---
 
@@ -17,9 +17,6 @@ you title, description, and taxonomy suggestions.
 In the July 2024 release of Visual Studio Code, extension developers are able to make use of the GitHub
 Copilot's Large Language Model (LLM). Front Matter CMS took advantage of this feature to provide you
 with the ability to provide title, description, and tags suggestions.
-
-> **Important**: This feature is only available when you have the GitHub Copilot extension installed
-> and a valid license.
 
 The AI features are available in the following places:
 
