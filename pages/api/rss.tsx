@@ -30,8 +30,8 @@ const rssFeed = async function (_: NextApiRequest, res: NextApiResponse) {
 
     items.push({
       title: data.title,
-      description: markdownContent,
-      url: `${publicUrl()}/changelog/${file.replace('.md', '')}`,
+      description: data.description,
+      url: `${publicUrl()}/updates/${data.slug}`,
       date: data.date,
     });
   }
