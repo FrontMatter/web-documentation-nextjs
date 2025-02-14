@@ -1,6 +1,25 @@
 # Change Log
 
-## [10.7.0] - 2024-xx-xx
+## [10.8.0] - 2025-02-xx
+
+### ✨ New features
+
+### 🎨 Enhancements
+
+- [#915](https://github.com/estruyf/vscode-front-matter/issues/915): Added a new setting `frontMatter.panel.openOnSupportedFile` which allows you to open the panel view on supported files
+- [#921](https://github.com/estruyf/vscode-front-matter/issues/921): Improve the filename sanitization
+
+### ⚡️ Optimizations
+
+### 🐞 Fixes
+
+- Fix for media folder parsing on Windows
+- Refresh button was not available on the media dashboard when having custom scripts defined
+- [#909](https://github.com/estruyf/vscode-front-matter/issues/909): Schema fix for the view modes
+- [#913](https://github.com/estruyf/vscode-front-matter/issues/913): Fix for relative media paths in page bundles
+- [#914](https://github.com/estruyf/vscode-front-matter/issues/914): Fix sanitizing of default filenames with an `_` in it
+
+## [10.7.0] - 2024-12-31 - [Release notes](https://beta.frontmatter.codes/updates/v10.7.0)
 
 ### 🎨 Enhancements
 
