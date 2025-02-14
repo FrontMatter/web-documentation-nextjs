@@ -4,6 +4,7 @@ import { Description, OtherMeta, Title } from '../../components/Meta';
 import { Layout } from '../../components/Page/Layout';
 import { getPostByFilename } from '../../lib/api';
 import markdownToHtml from '../../utils/markdownToHtml';
+import { RssIcon } from '@heroicons/react/24/solid';
 
 export default function Home({ content }: any) {
   const { t: strings } = useTranslation();
@@ -17,7 +18,15 @@ export default function Home({ content }: any) {
       <Layout>
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 xl:px-0 divide-y-2 divide-vulcan-200">
           <div className="pb-8 space-y-2 md:space-y-5 ">
-            <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`changelog_page_title`) as string}</h1>
+            <div className='flex justify-between items-center'>
+              <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`changelog_page_title`) as string}</h1>
+
+              <a href="/api/rss" className="text-whisper-700 hover:text-whisper-900 inline-flex items-center space-x-2">
+                <span>Changelog RSS Feed</span>
+
+                <RssIcon className="h-5 w-5 text-whisper-500" />
+              </a>
+            </div>
 
             <p className="mt-3 text-base text-whisper-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">{strings(`changelog_page_description`) as string}</p>
           </div>
@@ -39,7 +48,7 @@ export default function Home({ content }: any) {
             <div dangerouslySetInnerHTML={{ __html: content || "" }}></div>
           </div>
         </div>
-      </Layout>
+      </Layout >
     </>
   )
 }
