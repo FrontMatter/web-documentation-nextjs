@@ -3,7 +3,7 @@ title: Content view
 slug: dashboard/content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-08-07T12:33:01.757Z
+lastmod: 2024-12-31T14:10:03.642Z
 weight: 300.1
 ---
 
@@ -150,6 +150,34 @@ setting allows you to define the sorting options for the content view.
 To define your default sorting options by setting the
 `frontMatter.content.defaultSorting` setting for the content view, and the
 `frontMatter.media.defaultSorting` setting for the media view.
+
+## Grouping
+
+By default, you can group your content by the following options:
+
+- Year
+- Draft status
+
+You can change the grouping options by specifying the `frontMatter.content.grouping` setting.
+This setting allows you to define the grouping options for the content view.
+
+### Configure grouping options
+
+| Property | Description | Default |
+| --- | --- | --- |
+| `title` | The title of the grouping option | `""` |
+| `name` | The name of the field to group by (needs to be present in your content its front matter) | `""` |
+
+```json {{ "title": "Example of adding custom grouping options" }}
+{
+  "frontMatter.content.grouping": [
+    {
+      "title": "Content Type",
+      "name": "fmContentType"
+    }
+  ]
+}
+```
 
 ## Show on startup
 
