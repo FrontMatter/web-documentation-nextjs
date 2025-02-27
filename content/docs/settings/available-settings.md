@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2024-12-31T14:06:08.094Z
+lastmod: 2025-02-27T11:01:03.822Z
 weight: 1000.2
 ---
 
@@ -332,7 +332,7 @@ Specify the list of scripts to load in the Front Matter CMS.
 - Default: `[]`
 
 > **Info**: More information on how to use it can be found in the
-[UI extensibility](/docs/experimental/ui-extensibility) section.
+> [UI extensibility](/docs/experimental/ui-extensibility) section.
 
 ### frontMatter.experimental
 
@@ -529,6 +529,13 @@ Specifies if you want to allow yourself from entering unknown tags/categories in
 
 - Type: `boolean`
 - Default: `true`
+
+### frontMatter.panel.openOnSupportedFile
+
+Specifies if you want to open the panel when opening a supported file.
+
+- Type: `boolean`
+- Default: `false`
 
 ### frontMatter.preview.host
 
@@ -862,6 +869,7 @@ This setting is used to define the modified date field of your articles.
 > **Important**: Use the new `isModifiedDate` datetime field setting for content types instead.
 
 <!-- Link References -->
+
 [01]: /docs/settings#extending-settings
 [02]: /docs/experimental
 [04]: /docs/content-creation#before-you-start

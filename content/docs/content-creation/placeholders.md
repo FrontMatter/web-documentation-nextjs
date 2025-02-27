@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-09-16T12:13:56.139Z
+lastmod: 2025-02-27T11:05:16.924Z
 weight: 200.51
 ---
 
@@ -36,37 +36,39 @@ The following placeholders can be used in the fields `default` property,
 The slug placeholders are used to generate a slug based on the title of the page. The following
 placeholders can be used in the `slugTemplate` property:
 
-| Placeholder | Description |
-| --- | --- |
+| Placeholder             | Description                                                                                        |
+| ----------------------- | -------------------------------------------------------------------------------------------------- |
 | `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section. |
-| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}` |
-| `{{fm.<field name>}}`   | The value of the field in the front matter |
-| `{{pathToken.<index>}}` | The value of the path token at the index |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path |
+| `{{fileName}}`          | The filename of the file.                                                                          |
+| `{{sluggedFileName}}`   | The slugged version of the filename.                                                               |
+| `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}`           |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                                                         |
+| `{{pathToken.<index>}}` | The value of the path token at the index                                                           |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path                                         |
 
 ## Preview path placeholders
 
 The preview path placeholders are used to generate a dynamic preview path based on the front matter
 fields or other values. The following placeholders can be used in the `previewPath` property:
 
-| Placeholder | Description |
-| --- | --- |
+| Placeholder             | Description                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------- |
 | `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `/blog/{{date\|yyyy-MM}}` |
-| `{{locale}}`            | The locale of the page. |
-| `{{fm.<field name>}}`   | The value of the field in the front matter |
-| `{{pathToken.<index>}}` | The value of the path token at the index |
-| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path |
+| `{{locale}}`            | The locale of the page.                                                                        |
+| `{{fm.<field name>}}`   | The value of the field in the front matter                                                     |
+| `{{pathToken.<index>}}` | The value of the path token at the index                                                       |
+| `{{pathToken.relPath}}` | The relative value path staring from the page folder' path                                     |
 
 ## File prefix placeholders
 
 The file prefix placeholders are used to generate a dynamic file prefix. The following placeholders
 can be used in the `filePrefix` property:
 
-| Placeholder | Description |
-| --- | --- |
-| `{{filePrefix.index\|<zeros:nr>}}` | The index number of the file in the folder |
-| `{{date\|<format>}}` | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}` |
-| `{{locale}}` | The locale of the page. |
+| Placeholder                        | Description                                                                              |
+| ---------------------------------- | ---------------------------------------------------------------------------------------- |
+| `{{filePrefix.index\|<zeros:nr>}}` | The index number of the file in the folder                                               |
+| `{{date\|<format>}}`               | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}` |
+| `{{locale}}`                       | The locale of the page.                                                                  |
 
 ## Using placeholders
 
@@ -189,11 +191,13 @@ The `{{filePrefix.index}}` placeholder returns the index number of the file in t
 
 ```json {{ "title": "Using the file prefix index placeholder" }}
 {
-  "frontMatter.content.pageFolders": [{
-    "title": "articles",
-    "path": "[[workspace]]/content/prefixes/",
-    "filePrefix": "{{filePrefix.index}}"
-  }]
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "articles",
+      "path": "[[workspace]]/content/prefixes/",
+      "filePrefix": "{{filePrefix.index}}"
+    }
+  ]
 }
 ```
 
@@ -205,11 +209,13 @@ want to add.
 
 ```json {{ "title": "Using the file prefix index placeholder with leading zeros" }}
 {
-  "frontMatter.content.pageFolders": [{
-    "title": "articles",
-    "path": "[[workspace]]/content/prefixes/",
-    "filePrefix": "{{filePrefix.index|zeros:4}}"
-  }]
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "articles",
+      "path": "[[workspace]]/content/prefixes/",
+      "filePrefix": "{{filePrefix.index|zeros:4}}"
+    }
+  ]
 }
 ```
 
@@ -285,7 +291,8 @@ Once installed, you can use the following example:
 ```javascript
 import { PlaceholderScript } from "@frontmatter/extensibility";
 
-const { workspacePath, filePath, title, answers } = PlaceholderScript.getArguments();
+const { workspacePath, filePath, title, answers } =
+  PlaceholderScript.getArguments();
 
 PlaceholderScript.done(Math.random().toString(36).substring(2, 15));
 ```
@@ -308,8 +315,7 @@ For instance, if you want to pick between a category upon content creation, you 
 import { PlaceholderScript } from "@frontmatter/extensibility";
 
 (async () => {
-  const { answers } =
-    PlaceholderScript.getArguments();
+  const { answers } = PlaceholderScript.getArguments();
 
   if (!answers) {
     PlaceholderScript.askQuestions([
