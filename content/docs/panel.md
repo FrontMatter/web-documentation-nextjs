@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: Learn how to use the Front Matter panel to perform most of the extension actions with just a click on the button.
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-11-28T17:17:50.602Z
+lastmod: 2025-02-27T11:02:41.931Z
 weight: 400
 ---
 
@@ -184,6 +184,16 @@ In this section of the panel, you can modify a couple of the useful settings to 
 > `frontMatter.framework.id` setting, we provide a default start command for you. You can override
 > this by providing your own start command. You can also change the start command in the
 > [frontMatter.framework.startCommand][14] setting.
+
+## Open the panel on supported files
+
+With the setting `frontMatter.panel.openOnSupportedFile`, you can now configure if the Front Matter CMS panel view should open automatically when you open a supported file. The default value is `false`.
+
+```json
+{
+  "frontMatter.panel.openOnSupportedFile": true
+}
+```
 
 ## View modes
 
