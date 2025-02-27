@@ -23,6 +23,7 @@ export default function Home({ content }: any) {
               <h1 className="text-5xl tracking-tight font-extrabold sm:leading-none lg:text-5xl xl:text-6xl">{strings(`changelog_page_title`) as string}</h1>
 
               <Link href="/api/rss" className="text-whisper-700 hover:text-whisper-900 inline-flex items-center space-x-2">
+                <RssIcon className="h-6 w-6" />
                 <span>Changelog RSS Feed</span>
               </Link>
             </div>
