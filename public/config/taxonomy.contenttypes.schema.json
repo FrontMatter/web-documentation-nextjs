@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2024-07-03T10:03:25.970Z",
+  "lastModified": "2025-02-27T11:19:35.723Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -13,9 +13,16 @@
     "fileType": {
       "type": "string",
       "default": "",
-      "enum": [
-        "md",
-        "mdx"
+      "oneOf": [
+        {
+          "enum": [
+            "md",
+            "mdx"
+          ]
+        },
+        {
+          "type": "string"
+        }
       ],
       "description": "Specifies the type of content you want to create."
     },
@@ -122,9 +129,16 @@
             "description": "Is a single line field"
           },
           "wysiwyg": {
-            "type": "boolean",
+            "type": [
+              "boolean",
+              "string"
+            ],
+            "enum": [
+              "html",
+              "markdown"
+            ],
             "default": false,
-            "description": "Is a WYSIWYG field (HTML output)"
+            "description": "Is a WYSIWYG field. You can set it to markdown or HTML."
           },
           "multiple": {
             "type": "boolean",
@@ -290,6 +304,11 @@
             ],
             "default": "path",
             "description": "Specify the value to insert for the contentRelationship field"
+          },
+          "sameContentLocale": {
+            "type": "boolean",
+            "default": true,
+            "description": "Specify if you only want to show the content with the same locale"
           },
           "when": {
             "type": "object",

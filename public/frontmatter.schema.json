@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2024-07-03T10:03:25.968Z",
+  "lastModified": "2025-02-27T11:19:35.721Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -178,6 +178,14 @@
             "type": "boolean",
             "default": false,
             "description": "Exclude sub-directories"
+          },
+          "excludePaths": {
+            "type": "array",
+            "default": false,
+            "description": "Exclude paths (e.g. api, _*.*)",
+            "items": {
+              "type": "string"
+            }
           },
           "previewPath": {
             "type": [
@@ -363,6 +371,34 @@
         },
         "additionalProperties": false
       }
+    },
+    "frontMatter.content.grouping": {
+      "type": "array",
+      "default": [],
+      "markdownDescription": "Specify the grouping options for your dashboard content. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.content.grouping) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.content.grouping%22%5D)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the grouping option."
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the grouping which will be shown in the UI."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the content-type field to group by."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "name"
+        ]
+      },
+      "scope": "Content"
     },
     "frontMatter.content.sorting": {
       "type": "array",
@@ -758,6 +794,20 @@
             "type": "boolean",
             "description": "If you want to use a single entry for your data files in the folder.",
             "default": false
+          },
+          "enableFileCreation": {
+            "type": "boolean",
+            "description": "Enable the creation of new data files in the folder.",
+            "default": false
+          },
+          "fileType": {
+            "type": "string",
+            "default": "json",
+            "enum": [
+              "json",
+              "yaml"
+            ],
+            "description": "Defines the file type for when the file creation is enabled. JSON is the default."
           }
         },
         "additionalProperties": false,
@@ -899,8 +949,9 @@
                 "panel.globalSettings",
                 "panel.seo",
                 "panel.actions",
-                "panel.contentType",
                 "panel.metadata",
+                "panel.contentType",
+                "panel.gitActions",
                 "panel.recentlyModified",
                 "panel.otherActions",
                 "dashboard.snippets.view",
@@ -934,7 +985,7 @@
         "error"
       ],
       "markdownDescription": "Specifies the notifications you want to see. By default, all notifications types will be shown. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.global.notifications) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.global.notifications%22%5D)",
-      "scope": "Templates"
+      "scope": "Global"
     },
     "frontMatter.global.disabledNotifications": {
       "type": "array",
@@ -943,6 +994,12 @@
       "enum": [
         "requiredFieldValidation"
       ]
+    },
+    "frontMatter.global.timezone": {
+      "default": "UTC",
+      "type": "string",
+      "markdownDescription": "Specify the timezone for your date formatting. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.datetimezone) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.datetimezone%22%5D)",
+      "scope": "Global"
     },
     "frontMatter.media.defaultSorting": {
       "type": "string",
@@ -1045,6 +1102,12 @@
       },
       "scope": "Media"
     },
+    "frontMatter.panel.openOnSupportedFile": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "Specifies if you want to open the panel when opening a supported file. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.openonsupportedfile) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.panel.openonsupportedfile%22%5D)",
+      "scope": "Dashboard"
+    },
     "frontMatter.panel.freeform": {
       "type": "boolean",
       "default": true,
@@ -1132,9 +1195,16 @@
           "fileType": {
             "type": "string",
             "default": "",
-            "enum": [
-              "md",
-              "mdx"
+            "oneOf": [
+              {
+                "enum": [
+                  "md",
+                  "mdx"
+                ]
+              },
+              {
+                "type": "string"
+              }
             ],
             "description": "Specifies the type of content you want to create."
           },
@@ -1241,9 +1311,16 @@
                   "description": "Is a single line field"
                 },
                 "wysiwyg": {
-                  "type": "boolean",
+                  "type": [
+                    "boolean",
+                    "string"
+                  ],
+                  "enum": [
+                    "html",
+                    "markdown"
+                  ],
                   "default": false,
-                  "description": "Is a WYSIWYG field (HTML output)"
+                  "description": "Is a WYSIWYG field. You can set it to markdown or HTML."
                 },
                 "multiple": {
                   "type": "boolean",
@@ -1409,6 +1486,11 @@
                   ],
                   "default": "path",
                   "description": "Specify the value to insert for the contentRelationship field"
+                },
+                "sameContentLocale": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Specify if you only want to show the content with the same locale"
                 },
                 "when": {
                   "type": "object",
@@ -1882,7 +1964,11 @@
       "scope": "Taxonomy"
     },
     "frontMatter.taxonomy.slugTemplate": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null,
       "markdownDescription": "Defines a custom slug template for the content you will create. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.taxonomy.slugtemplate) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.taxonomy.slugtemplate%22%5D)",
       "scope": "Taxonomy"
     },
@@ -1893,11 +1979,6 @@
         "type": "string"
       },
       "scope": "Taxonomy"
-    },
-    "frontMatter.telemetry.disable": {
-      "type": "boolean",
-      "default": false,
-      "markdownDescription": "Specify if you want to disable the telemetry. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.telemetry.disable) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.telemetry.disable%22%5D)"
     },
     "frontMatter.templates.enabled": {
       "type": "boolean",
@@ -1913,7 +1994,7 @@
     },
     "frontMatter.templates.prefix": {
       "type": "string",
-      "default": "yyyy-MM-dd",
+      "default": "{{date|yyyy-MM-dd}}",
       "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.prefix) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.templates.prefix%22%5D)",
       "scope": "Templates"
     },
@@ -1933,7 +2014,7 @@
     },
     "frontMatter.copilot.family": {
       "type": "string",
-      "default": "gpt-3.5-turbo",
+      "default": "gpt-4o-mini",
       "markdownDescription": "Specify the LLM family of the Copilot you want to use. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.copilot.family) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.copilot.family%22%5D)"
     }
   }

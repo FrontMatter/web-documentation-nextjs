@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/content.pagefolders.schema.json",
   "description": "Defines the settings for Front Matter page folder",
-  "lastModified": "2024-07-03T10:03:25.970Z",
+  "lastModified": "2025-02-27T11:19:35.724Z",
   "type": "object",
   "title": "Front Matter - page folder",
   "properties": {
@@ -18,6 +18,14 @@
       "type": "boolean",
       "default": false,
       "description": "Exclude sub-directories"
+    },
+    "excludePaths": {
+      "type": "array",
+      "default": false,
+      "description": "Exclude paths (e.g. api, _*.*)",
+      "items": {
+        "type": "string"
+      }
     },
     "previewPath": {
       "type": [
