@@ -67,7 +67,7 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
           sponsors && sponsors.companies && sponsors.companies.length > 0 && (
             <div className="flex justify-center items-center space-x-8 flex-wrap">
               {
-                sponsors.companies.map((sponsor) => (
+                sponsors.companies.filter(s => s.active).map((sponsor) => (
                   <a
                     key={sponsor.id}
                     target={`_blank`}
