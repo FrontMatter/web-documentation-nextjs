@@ -1,5 +1,6 @@
 {
-  "individuals": [{
+  "individuals": [
+    {
       "url": "https://github.com/timschps",
       "name": "Tim Schaeps",
       "avatar": "https://avatars.githubusercontent.com/u/13098307"
@@ -20,33 +21,38 @@
       "avatar": "https://avatars.githubusercontent.com/u/1969515"
     }
   ],
-  "companies": [{
+  "companies": [
+    {
       "url": "https://run.events/?utm_source=frontmatter&utm_campaign=oss",
       "title": "Supported by run.events",
       "image": "/assets/sponsors/runevents.svg",
       "id": "run.events",
-      "alt": "run.events - Event Management Platform"
+      "alt": "run.events - Event Management Platform",
+      "active": false
     },
     {
       "url": "https://netlify.com?utm_source=vscode-frontmatter&utm_campaign=oss",
       "title": "Deploys by Netlify",
       "image": "/assets/sponsors/netlify-dark.png",
       "id": "Netlify",
-      "alt": "Netlify"
+      "alt": "Netlify",
+      "active": true
     },
     {
       "url": "http://bejs.io",
       "title": "Supported by the BEJS Community",
       "image": "/assets/sponsors/bejs-community.png",
       "id": "BEJS-Community",
-      "alt": "BEJS Community"
+      "alt": "BEJS Community",
+      "active": false
     },
     {
       "url": "http://struyfconsulting.com",
       "title": "Hire Elio Struyf via Struyf Consulting",
       "image": "/struyf-consulting.webp",
       "id": "Struyf-Consulting",
-      "alt": "Struyf Consulting"
+      "alt": "Struyf Consulting",
+      "active": true
     }
   ]
 }
