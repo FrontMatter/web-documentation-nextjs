@@ -3,7 +3,7 @@ title: Placeholders
 slug: content-creation/placeholders
 description: Learn how to use placeholders in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2025-02-27T11:05:16.924Z
+lastmod: 2025-07-01T07:25:48.353Z
 weight: 200.51
 ---
 
@@ -40,7 +40,7 @@ placeholders can be used in the `slugTemplate` property:
 | ----------------------- | -------------------------------------------------------------------------------------------------- |
 | `{{seoTitle}}`          | This creates a SEO friendly slug from the title. More info can be found in the [slug][02] section. |
 | `{{fileName}}`          | The filename of the file.                                                                          |
-| `{{sluggedFileName}}`   | The slugged version of the filename.                                                               |
+| `{{slugifiedFileName}}` | The slugged version of the filename.                                                               |
 | `{{date\|<format>}}`    | Use the publishing date of your article in the preview URL. Example: `{{date\|yyyy-MM}}`           |
 | `{{fm.<field name>}}`   | The value of the field in the front matter                                                         |
 | `{{pathToken.<index>}}` | The value of the path token at the index                                                           |
