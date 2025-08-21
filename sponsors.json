@@ -28,7 +28,7 @@
       "image": "/assets/sponsors/coderabbit-dark.svg",
       "id": "CodeRabbit",
       "alt": "CodeRabbit - AI Code Reviews",
-      "class": "h-[35px]",
+      "height": "35px",
       "active": true
     },
     {
@@ -61,7 +61,7 @@
       "image": "/struyf-consulting.webp",
       "id": "Struyf-Consulting",
       "alt": "Struyf Consulting",
-      "class": "h-[25px]",
+      "height": "25px",
       "active": true
     }
   ]

@@ -75,7 +75,9 @@ export const Sponsors: React.FunctionComponent<ISponsorsProps> = (props: React.P
                     href={sponsor.url}
                     title={sponsor.title}
                     className="mt-6 col-span-1 flex justify-center">
-                    <img className={sponsor.class || "h-12"} src={sponsor.image} alt={sponsor.alt} />
+                    <img className={sponsor.height ? "" : "h-12"} style={{
+                      height: sponsor.height || undefined
+                    }} src={sponsor.image} alt={sponsor.alt} />
                   </a>
                 ))
               }
