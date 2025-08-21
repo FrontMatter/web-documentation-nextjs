@@ -23,6 +23,15 @@
   ],
   "companies": [
     {
+      "url": "https://www.coderabbit.ai/?utm_source=frontmatter&utm_campaign=oss",
+      "title": "Supported by CodeRabbit",
+      "image": "/assets/sponsors/coderabbit-dark.svg",
+      "id": "CodeRabbit",
+      "alt": "CodeRabbit - AI Code Reviews",
+      "class": "h-[35px]",
+      "active": true
+    },
+    {
       "url": "https://run.events/?utm_source=frontmatter&utm_campaign=oss",
       "title": "Supported by run.events",
       "image": "/assets/sponsors/runevents.svg",
@@ -52,6 +61,7 @@
       "image": "/struyf-consulting.webp",
       "id": "Struyf-Consulting",
       "alt": "Struyf Consulting",
+      "class": "h-[25px]",
       "active": true
     }
   ]
