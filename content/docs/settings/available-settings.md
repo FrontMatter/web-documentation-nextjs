@@ -588,15 +588,6 @@ Specify if you want to enable/disable the snippet wrapper functionality.
 
 > **Info**: More information on how to use it can be found in the [snippet wrapper][19] section.
 
-### frontMatter.sponsors.ai.enabled
-
-Specify if you want to enable the AI suggestions for your project. This is a sponsor only feature.
-
-- Type: `boolean`
-- Default: `false`
-
-> **Info**: More information on how to use it can be found on our [Front Matter AI][17] section.
-
 ### frontMatter.taxonomy.alignFilename
 
 Align the filename with the new slug when it gets generated.
@@ -827,6 +818,13 @@ Specify the prefix you want to add for your new article filenames.
 - Type: `string`
 - Default: `{{date|yyyy-MM-dd}}`
 
+### frontMatter.validation.enabled
+
+Specify if you want to enable front matter validation. When enabled, the extension validates your front matter against the active content type schema.
+
+- Type: `boolean`
+- Default: `true`
+
 ### frontMatter.website.host
 
 Specify the host URL of your website.
@@ -877,6 +875,15 @@ This setting is used to define the modified date field of your articles.
 [06]: /docs/content-creation/content-folders
 [07]: /docs/content-creation/placeholders
 [08]: /docs/custom-actions
+### frontMatter.sponsors.ai.enabled
+
+This setting was removed in version `10.10.0`. Sponsor AI functionality has been discontinued.
+
+- Type: `boolean`
+- Default: `false`
+
+> **Info**: This setting was previously used to enable AI suggestions for sponsors. It is no longer supported.
+
 [09]: /docs/dashboard/content-view#card-tags
 [10]: /docs/dashboard/content-view#data-files-view
 [11]: /docs/content-creation/additional-config#preserve-casing-of-file-names
@@ -885,7 +892,6 @@ This setting is used to define the modified date field of your articles.
 [14]: /docs/content-creation/fields#taxonomy
 [15]: https://date-fns.org/v2.0.1/docs/format
 [16]: /docs/content-creation/fields#block
-[17]: /docs/sponsor-features#front-matter-ai
 [18]: /docs/settings/projects
 [19]: /docs/snippets#snippet-wrapper
 [20]: /docs/settings#extending-with-code

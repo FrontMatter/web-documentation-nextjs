@@ -166,20 +166,6 @@ Matter** or launch the same flow by using the `Front Matter: Authenticate` comma
 
 Follow the proposed steps from Visual Studio Code.
 
-## Front Matter AI Assistant
-
-If you have a question on how you can configure Front Matter CMS, you can use the AI Assistant to
-get some help. The AI Assistant is available via the
-`Front Matter: Ask the Front Matter AI for help` command or via the chatbot icon in the
-Front Matter CMS panel or when the `frontmatter.json` file is opened.
-
-![Front Matter AI Assistent](/releases/v8.4.0/front-matter-ai-assisten.png)
-
-When you run the command, or click on the chatbot icon, the AI Assistant will open and you can
-start typing your question.
-
-![Front Matter AI Assistent](/releases/v8.4.0/front-matter-ai-assistent.png)
-
 ## Enjoy using Front Matter
 
 <!-- Link References -->

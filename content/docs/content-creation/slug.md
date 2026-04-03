@@ -112,6 +112,25 @@ setting you need to turn on enable for this is `frontMatter.taxonomy.alignFilena
 When you update the slug of the page, the filename will be automatically
 updated to match the slug.
 
+### Smart rename action
+
+Starting with version `10.10.0`, Front Matter CMS also provides a **Smart rename** action.
+This action allows you to manually re-sync a filename with your front matter data.
+
+You can trigger Smart rename from:
+
+- The Front Matter panel action bar
+- The content dashboard actions menu
+
+Smart rename:
+
+- Uses the configured title field to generate the target filename
+- Applies file prefix logic if configured
+- Works for regular content files and page bundles
+- Prevents overwriting when the target path already exists
+
+> **Info**: Use `frontMatter.taxonomy.alignFilename` for automatic filename updates during slug generation, and Smart rename when you want to sync existing files on demand.
+
 <!-- Link References -->
 
 [01]: /docs/content-creation/placeholders
