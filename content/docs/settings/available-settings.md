@@ -827,6 +827,13 @@ Specify the prefix you want to add for your new article filenames.
 - Type: `string`
 - Default: `{{date|yyyy-MM-dd}}`
 
+### frontMatter.validation.enabled
+
+Specify if you want to enable front matter validation. When enabled, the extension validates your front matter against the active content type schema.
+
+- Type: `boolean`
+- Default: `true`
+
 ### frontMatter.website.host
 
 Specify the host URL of your website.
