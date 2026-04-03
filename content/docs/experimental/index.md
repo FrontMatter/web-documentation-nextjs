@@ -28,4 +28,3 @@ To enable the experimental features, you need to set the
 Currently the following experimental features are available:
 
 - External UI scripts
-- Front matter AI (only available for GitHub sponsors)
