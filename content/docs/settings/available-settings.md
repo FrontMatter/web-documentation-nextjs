@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2025-02-27T11:01:03.822Z
+lastmod: 2026-05-12T07:10:30.093Z
 weight: 1000.2
 ---
 
@@ -361,6 +361,13 @@ Specify if you want to preserve the casing of your file names from the title.
 
 > **Info**: More information on how to use it can be found in the
 > [preserve the casing for your file names][11] section.
+
+### frontMatter.file.slugSeparator
+
+Specify the separator character used between words when generating slugs and file names from titles.
+
+- Type: `string`
+- Default: `-`
 
 ### frontMatter.framework.id
 

@@ -3,7 +3,7 @@ title: Content creation
 slug: content-creation
 description: null
 date: 2021-09-17T07:36:26.654Z
-lastmod: 2023-11-02T15:02:01.791Z
+lastmod: 2026-05-12T07:09:46.490Z
 weight: 200
 tags:
    - documentation
