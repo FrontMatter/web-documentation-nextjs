@@ -3,7 +3,7 @@ title: Slug
 slug: content-creation/slug
 description: Learn how you can dynamically generate slugs for your pages in Front Matter CMS
 date: 2024-02-13T09:28:37.205Z
-lastmod: 2024-02-24T13:14:13.333Z
+lastmod: 2026-05-12T07:10:30.096Z
 weight: 200.61
 ---
 
@@ -51,7 +51,8 @@ actual values when creating a new page.
 ```
 
 > **Info**: When using the `{{title}}` placeholder in the slug template it will be
-> automatically converted to lowercase and spaces will be replaced with hyphens.
+> automatically converted to lowercase and spaces will be replaced with the separator
+> specified in the `frontMatter.file.slugSeparator` setting (default: `-`).
 > To have a SEO friendly URL, you can use the `{{seoTitle}}` placeholder instead.
 
 ### Per content type
@@ -97,6 +98,30 @@ slug: /sample-page-title/
 
 By default, both prefix and suffix settings are not provided, which mean it would
 not add anything extra to the slug.
+
+### Slug separator
+
+You can customize the separator character used when generating slugs from titles using the
+`frontMatter.file.slugSeparator` setting. By default, hyphens (`-`) are used as separators
+between words, but you can change this to underscores or any other character.
+
+```json {{ "title": "Example of the slug separator setting" }}
+{
+  "frontMatter.file.slugSeparator": "_"
+}
+```
+
+```yaml {{ "title": "Example slug using underscores as separator" }}
+---
+title: Just a sample page with a title
+slug: just_a_sample_page_with_a_title
+---
+```
+
+This setting affects:
+- Slug generation from page titles
+- File name generation when creating new content
+- The `{{title}}` placeholder in slug templates
 
 ### Align filename with slug
 
