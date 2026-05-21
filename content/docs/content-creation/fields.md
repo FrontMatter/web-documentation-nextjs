@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2026-05-21T18:04:12.834Z
+lastmod: 2026-05-21T18:12:04.282Z
 weight: 200.31
 ---
 
@@ -555,16 +555,21 @@ The `fields` field, allows you to create multi-dimensional content type fields (
 useful when you want to create a complex content type. In case you want to define a list data, you
 will have to use the [block][10] field.
 
-When you specify the field type as `fields`, you need to define sub-fields within the `fields`
-property.
+When you specify the field type as `fields`, you can define sub-fields in one of two ways:
+
+- Inline, using the `fields` property directly on the field definition.
+- By reference, using the `fieldGroup` property to point to a reusable field group defined in `frontMatter.taxonomy.fieldGroups`.
 
 ### Properties
 
 | Property | Type | Description | Required | Default |
 | -------- | ---- | ----------- | -------- | ------- |
-| `fields` | `object[]` | Define the sub-fields of your content type. All the above types are supported. | **Required** | |
+| `fields` | `object[]` | Define the sub-fields inline. All the above types are supported. | _Required if `fieldGroup` is not set_ | |
+| `fieldGroup` | `string` | Reference a field group defined in `frontMatter.taxonomy.fieldGroups` to use as sub-fields. | _Required if `fields` is not set_ | |
 
-```json {{ "title": "Usage" }}
+### Example 1 - Inline sub-fields
+
+```json {{ "title": "Usage", "description": "Define sub-fields inline using the fields property" }}
 {
   "frontMatter.taxonomy.contentTypes": [
     {
@@ -602,6 +607,58 @@ property.
 photo:
   title: "Photo 1"
   url: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
+---
+```
+
+### Example 2 - Reusable field group
+
+```json {{ "title": "Usage", "description": "Reference a reusable field group using the fieldGroup property" }}
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "field group test",
+      "pageBundle": true,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Dates",
+          "type": "fields",
+          "name": "dates",
+          "fieldGroup": "startAndEndFields"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "startAndEndFields",
+      "fields": [
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "All Day",
+          "name": "allDay",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+dates:
+  date: 2024-01-01T00:00:00.000Z
+  allDay: true
 ---
 ```
 
