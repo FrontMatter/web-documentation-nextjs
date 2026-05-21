@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2024-10-21T14:10:31.132Z
+lastmod: 2026-05-21T18:04:12.834Z
 weight: 200.31
 ---
 
@@ -605,7 +605,7 @@ photo:
 ---
 ```
 
-## fieldCollection
+## FieldCollection
 
 The `fieldCollection` field type allows you to reuse fields in multiple content types. This is
 especially useful when you have a lot of content types and want to reuse the same fields.
@@ -618,7 +618,7 @@ your data) in the `frontMatter.taxonomy.fieldGroups` setting.
 ```json {{ "title": "Field group definition to be used in the fieldCollection" }}
 "frontMatter.taxonomy.fieldGroups": [
   {
-    "id": "GeneralFields",
+    "id": "generalFields",
     "fields": [
       {
         "title": "Title",
@@ -641,6 +641,32 @@ your data) in the `frontMatter.taxonomy.fieldGroups` setting.
 | Property | Type | Description | Required | Default |
 | -------- | ---- | ----------- | -------- | ------- |
 | `fieldGroup` | `string` | Define the field group that will be used to create a list of data. | **Required** | |
+
+### Example
+
+```json {{ "title": "Usage" }}
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "custom page",
+    "pageBundle": true,
+    "fields": [
+      {
+        "title": "General",
+        "name": "general",
+        "type": "fieldCollection",
+        "fieldGroup": "generalFields"
+      }
+    ]
+  }
+]
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+title: "My page"
+description: "Page description"
+---
+```
 
 ## Block
 
