@@ -3,7 +3,7 @@ title: Content view
 slug: dashboard/content-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-12-31T14:10:03.642Z
+lastmod: 2026-06-04T13:00:00.000Z
 weight: 300.1
 ---
 
@@ -74,6 +74,9 @@ filter:
 
 You can change the default filters, or configure your own by updating the `frontMatter.content.filters`
 setting.
+
+If you want the dashboard to open with predefined filter values, use the
+`frontMatter.dashboard.content.defaults.filters` setting.
 
 ### Configure filters
 
@@ -151,6 +154,9 @@ To define your default sorting options by setting the
 `frontMatter.content.defaultSorting` setting for the content view, and the
 `frontMatter.media.defaultSorting` setting for the media view.
 
+If you want the contents dashboard to open with a specific sort selection, use
+`frontMatter.dashboard.content.defaults.sorting`.
+
 ## Grouping
 
 By default, you can group your content by the following options:
@@ -160,6 +166,9 @@ By default, you can group your content by the following options:
 
 You can change the grouping options by specifying the `frontMatter.content.grouping` setting.
 This setting allows you to define the grouping options for the content view.
+
+If you want the contents dashboard to open with a specific grouping applied, use
+`frontMatter.dashboard.content.defaults.grouping`.
 
 ### Configure grouping options
 
@@ -178,6 +187,43 @@ This setting allows you to define the grouping options for the content view.
   ]
 }
 ```
+
+## Default opening state
+
+You can define how the contents dashboard opens by configuring the
+`frontMatter.dashboard.content.defaults` setting. This lets you preselect a sorting option,
+grouping mode, and one or more filters.
+
+```json {{ "title": "Example contents dashboard defaults" }}
+{
+  "frontMatter.dashboard.content.defaults": {
+    "sorting": "LastModifiedDesc",
+    "grouping": "Year",
+    "filters": {
+      "contentFolders": "docs",
+      "tags": "AI",
+      "categories": "guides"
+    }
+  }
+}
+```
+
+Supported filter keys:
+
+- `contentFolders`
+- `tags`
+- `categories`
+- Any custom filter field you configured via `frontMatter.content.filters`
+
+Built-in grouping values:
+
+- `Year`
+- `Draft`
+- `None`
+
+For sorting, use one of the built-in sort IDs such as `LastModifiedDesc`, `LastModifiedAsc`,
+`PublishedDesc`, `PublishedAsc`, `FileNameAsc`, or `FileNameDesc`, or use a custom sorting ID from
+your `frontMatter.content.sorting` configuration.
 
 ## Show on startup
 

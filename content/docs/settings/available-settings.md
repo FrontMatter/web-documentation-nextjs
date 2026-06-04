@@ -289,6 +289,41 @@ Specify if you want to enable/disable pagination for your content.
 - Default: `true`
 - Maximum: `52`
 
+### frontMatter.dashboard.content.defaults
+
+Configure the default opening state of the contents dashboard, including sorting, grouping, and
+filters.
+
+- Type: `object`
+- Default: `{}`
+
+Properties:
+
+- `sorting`: The default sorting option for the contents dashboard. Use a built-in sort ID like
+  `LastModifiedDesc` or a custom sorting option ID from `frontMatter.content.sorting`.
+- `grouping`: The default grouping for the contents dashboard. Use `Year`, `Draft`, `None`, or a
+  custom grouping field name from `frontMatter.content.grouping`.
+- `filters`: The default filter values for the contents dashboard. Keys can be `contentFolders`,
+  `tags`, `categories`, or the name of a custom filter.
+
+```json {{ "title": "Example dashboard defaults" }}
+{
+  "frontMatter.dashboard.content.defaults": {
+    "sorting": "LastModifiedDesc",
+    "grouping": "Year",
+    "filters": {
+      "contentFolders": "docs",
+      "tags": "release",
+      "categories": "guides",
+      "fmContentType": "documentation"
+    }
+  }
+}
+```
+
+> **Info**: These defaults are applied to the contents dashboard when it opens, making it easier to
+> start from a preferred view.
+
 ### frontMatter.dashboard.openOnStart
 
 Specify if you want to open the dashboard when you start VS Code.
