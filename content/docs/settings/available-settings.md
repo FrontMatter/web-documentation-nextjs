@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2026-05-12T07:10:30.093Z
+lastmod: 2026-06-04T12:46:45.662Z
 weight: 1000.2
 ---
 
@@ -76,6 +76,8 @@ Options:
 - LastModifiedDesc
 - FileNameAsc
 - FileNameDesc
+- PublishedAsc
+- PublishedDesc
 - `ID of your custom sorting option`
 
 ### frontMatter.content.draftField
