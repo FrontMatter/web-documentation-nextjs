@@ -3,7 +3,7 @@ title: Editor panel
 slug: panel
 description: Learn how to use the Front Matter panel to perform most of the extension actions with just a click on the button.
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2025-02-27T11:02:41.931Z
+lastmod: 2026-06-05T09:00:00.000Z
 weight: 400
 ---
 
@@ -56,6 +56,31 @@ In case you want to change the SEO settings, you can use the following settings:
 
 To discover your internal links, you can specify your base URL with the `frontMatter.site.baseURL`
 setting.
+
+## Content Health
+
+The Content Health section helps you review writing quality and link integrity directly in the panel.
+
+It includes:
+
+- Readability analysis (Flesch Reading Ease)
+- Broken internal link detection
+- Broken external link detection (optional)
+- Freshness warning when content is older than your configured threshold
+
+When GitHub Copilot is enabled, you also get quick actions to improve readability suggestions for long
+sentences and complex words.
+
+### Settings
+
+Use these settings to configure Content Health:
+
+- `frontMatter.contentHealth.enabled`: Enable or disable the section. Default: `true`.
+- `frontMatter.contentHealth.checkExternalLinks`: Validate external links via HTTP `HEAD` requests. Default: `false`.
+- `frontMatter.contentHealth.freshnessThreshold`: Number of days before content is considered stale. Set to `0` to disable. Default: `180`.
+- `frontMatter.contentHealth.minReadability`: Minimum readability score threshold (0-100). Set to `0` to disable. Default: `0`.
+
+> **Info**: Internal link validation is currently part of the experimental feature set and follows the `frontMatter.experimental` setting.
 
 ## Actions
 
@@ -216,6 +241,7 @@ You define a mode with an `id` and a set of features. The allowed features are t
 - `panel.metadata`: Show the metadata section.
 - `panel.contentType`: Show the content type create, update, and set actions underneath the metadata
   panel section.
+- `panel.contentHealth`: Show the Content Health section.
 - `panel.recentlyModified`: Show the recently modified files section.
 - `panel.otherActions`: Show the other actions section.
 

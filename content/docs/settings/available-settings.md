@@ -207,6 +207,42 @@ controls.
 - Type: `boolean`
 - Default: `true`
 
+### frontMatter.contentHealth.enabled
+
+Enable or disable the Content Health section in the editor panel.
+
+- Type: `boolean`
+- Default: `true`
+
+### frontMatter.contentHealth.checkExternalLinks
+
+Enable external link validation in Content Health.
+
+When enabled, Front Matter performs HTTP `HEAD` requests for external URLs. This can slow down panel
+updates for articles with many external links.
+
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.contentHealth.freshnessThreshold
+
+Define after how many days content should be flagged as stale in Content Health.
+
+Set this to `0` to disable freshness warnings.
+
+- Type: `number`
+- Default: `180`
+
+### frontMatter.contentHealth.minReadability
+
+Define the minimum Flesch Reading Ease score (0-100) before Content Health shows a readability
+warning.
+
+Set this to `0` to disable readability threshold warnings.
+
+- Type: `number`
+- Default: `0`
+
 ### frontMatter.custom.scripts
 
 Specify the path to a Node.js script to execute. The current file path will be provided as an
