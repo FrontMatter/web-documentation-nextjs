@@ -267,13 +267,22 @@ Sample:
 
 > **Info**: Check the [create your own custom scripts][08] section for more information.
 
+### frontMatter.copilot.enabled
+
+Specify if you want to enable GitHub Copilot AI suggestions. This requires the GitHub Copilot
+extension to be installed.
+
+- Type: `boolean`
+- Default: `true`
+
+> **Info**: More information on how to use it can be found in the [AI features][27] section.
+
 ### frontMatter.copilot.family
 
-Specify the family of the GitHub Copilot AI model you want to use for your project.
+Specify the LLM family of the GitHub Copilot model you want to use for your project.
 
 - Type: `string`
-- Default: `gpt-3.5-turbo`
-- Options: `gpt-3.5-turbo`, `gpt-4-turbo`
+- Default: `gpt-5-mini`
 
 > **Info**: More information on how to use it can be found in the [AI features][27] section.
 
@@ -604,11 +613,16 @@ Options:
 
 ### frontMatter.panel.freeform
 
-Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker
-(when enabled, you will have the option to store them afterwards).
+Specifies whether the tag picker should allow unknown tags and categories. When enabled, you can
+enter new values and save them afterward.
 
 - Type: `boolean`
 - Default: `true`
+
+> **Info**: This setting also controls front matter validation for `tags` and `categories`. When
+> freeform is enabled (the default), values that are not part of your known taxonomy are allowed and
+> will not be flagged as validation errors. When disabled, the generated schema restricts these
+> fields to the known taxonomy values.
 
 ### frontMatter.panel.openOnSupportedFile
 
