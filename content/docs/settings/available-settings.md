@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2026-05-12T07:10:30.093Z
+lastmod: 2026-06-04T12:46:45.662Z
 weight: 1000.2
 ---
 
@@ -76,6 +76,8 @@ Options:
 - LastModifiedDesc
 - FileNameAsc
 - FileNameDesc
+- PublishedAsc
+- PublishedDesc
 - `ID of your custom sorting option`
 
 ### frontMatter.content.draftField
@@ -205,6 +207,42 @@ controls.
 - Type: `boolean`
 - Default: `true`
 
+### frontMatter.contentHealth.enabled
+
+Enable or disable the Content Health section in the editor panel.
+
+- Type: `boolean`
+- Default: `true`
+
+### frontMatter.contentHealth.checkExternalLinks
+
+Enable external link validation in Content Health.
+
+When enabled, Front Matter performs HTTP `HEAD` requests for external URLs. This can slow down panel
+updates for articles with many external links.
+
+- Type: `boolean`
+- Default: `false`
+
+### frontMatter.contentHealth.freshnessThreshold
+
+Define after how many days content should be flagged as stale in Content Health.
+
+Set this to `0` to disable freshness warnings.
+
+- Type: `number`
+- Default: `180`
+
+### frontMatter.contentHealth.minReadability
+
+Define the minimum Flesch Reading Ease score (0-100) before Content Health shows a readability
+warning.
+
+Set this to `0` to disable readability threshold warnings.
+
+- Type: `number`
+- Default: `0`
+
 ### frontMatter.custom.scripts
 
 Specify the path to a Node.js script to execute. The current file path will be provided as an
@@ -229,13 +267,22 @@ Sample:
 
 > **Info**: Check the [create your own custom scripts][08] section for more information.
 
+### frontMatter.copilot.enabled
+
+Specify if you want to enable GitHub Copilot AI suggestions. This requires the GitHub Copilot
+extension to be installed.
+
+- Type: `boolean`
+- Default: `true`
+
+> **Info**: More information on how to use it can be found in the [AI features][27] section.
+
 ### frontMatter.copilot.family
 
-Specify the family of the GitHub Copilot AI model you want to use for your project.
+Specify the LLM family of the GitHub Copilot model you want to use for your project.
 
 - Type: `string`
-- Default: `gpt-3.5-turbo`
-- Options: `gpt-3.5-turbo`, `gpt-4-turbo`
+- Default: `gpt-5-mini`
 
 > **Info**: More information on how to use it can be found in the [AI features][27] section.
 
@@ -286,6 +333,41 @@ Specify if you want to enable/disable pagination for your content.
 - Type: `boolean` or `number`
 - Default: `true`
 - Maximum: `52`
+
+### frontMatter.dashboard.content.defaults
+
+Configure the default opening state of the contents dashboard, including sorting, grouping, and
+filters.
+
+- Type: `object`
+- Default: `{}`
+
+Properties:
+
+- `sorting`: The default sorting option for the contents dashboard. Use a built-in sort ID like
+  `LastModifiedDesc` or a custom sorting option ID from `frontMatter.content.sorting`.
+- `grouping`: The default grouping for the contents dashboard. Use `Year`, `Draft`, `None`, or a
+  custom grouping field name from `frontMatter.content.grouping`.
+- `filters`: The default filter values for the contents dashboard. Keys can be `contentFolders`,
+  `tags`, `categories`, or the name of a custom filter.
+
+```json {{ "title": "Example dashboard defaults" }}
+{
+  "frontMatter.dashboard.content.defaults": {
+    "sorting": "LastModifiedDesc",
+    "grouping": "Year",
+    "filters": {
+      "contentFolders": "docs",
+      "tags": "release",
+      "categories": "guides",
+      "fmContentType": "documentation"
+    }
+  }
+}
+```
+
+> **Info**: These defaults are applied to the contents dashboard when it opens, making it easier to
+> start from a preferred view.
 
 ### frontMatter.dashboard.openOnStart
 
@@ -531,11 +613,16 @@ Options:
 
 ### frontMatter.panel.freeform
 
-Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker
-(when enabled, you will have the option to store them afterwards).
+Specifies whether the tag picker should allow unknown tags and categories. When enabled, you can
+enter new values and save them afterward.
 
 - Type: `boolean`
 - Default: `true`
+
+> **Info**: This setting also controls front matter validation for `tags` and `categories`. When
+> freeform is enabled (the default), values that are not part of your known taxonomy are allowed and
+> will not be flagged as validation errors. When disabled, the generated schema restricts these
+> fields to the known taxonomy values.
 
 ### frontMatter.panel.openOnSupportedFile
 

@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2026-05-21T18:04:12.834Z
+lastmod: 2026-06-24T09:44:34.371Z
 weight: 200.31
 ---
 
@@ -555,16 +555,21 @@ The `fields` field, allows you to create multi-dimensional content type fields (
 useful when you want to create a complex content type. In case you want to define a list data, you
 will have to use the [block][10] field.
 
-When you specify the field type as `fields`, you need to define sub-fields within the `fields`
-property.
+When you specify the field type as `fields`, you can define sub-fields in one of two ways:
+
+- Inline, using the `fields` property directly on the field definition.
+- By reference, using the `fieldGroup` property to point to a reusable field group defined in `frontMatter.taxonomy.fieldGroups`.
 
 ### Properties
 
 | Property | Type | Description | Required | Default |
 | -------- | ---- | ----------- | -------- | ------- |
-| `fields` | `object[]` | Define the sub-fields of your content type. All the above types are supported. | **Required** | |
+| `fields` | `object[]` | Define the sub-fields inline. All the above types are supported. | _Required if `fieldGroup` is not set_ | |
+| `fieldGroup` | `string` | Reference a field group defined in `frontMatter.taxonomy.fieldGroups` to use as sub-fields. | _Required if `fields` is not set_ | |
 
-```json {{ "title": "Usage" }}
+### Example 1 - Inline sub-fields
+
+```json {{ "title": "Usage", "description": "Define sub-fields inline using the fields property" }}
 {
   "frontMatter.taxonomy.contentTypes": [
     {
@@ -602,6 +607,58 @@ property.
 photo:
   title: "Photo 1"
   url: /social/400285cf-4928-4c07-8ca5-158f249a3bc1.png
+---
+```
+
+### Example 2 - Reusable field group
+
+```json {{ "title": "Usage", "description": "Reference a reusable field group using the fieldGroup property" }}
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "field group test",
+      "pageBundle": true,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Dates",
+          "type": "fields",
+          "name": "dates",
+          "fieldGroup": "startAndEndFields"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "startAndEndFields",
+      "fields": [
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "All Day",
+          "name": "allDay",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+dates:
+  date: 2024-01-01T00:00:00.000Z
+  allDay: true
 ---
 ```
 
@@ -791,6 +848,7 @@ example of the authors sample:
 | `dataFileId` | `string` | Specify the ID of the data file to use for this field. | **Required** | |
 | `dataFileKey` | `string` | Specify the key of the data file to use for this field. | **Required** | |
 | `dataFileValue` | `string` | Specify the property name that will be used to show the value for the field. | _Optional_ | |
+| `dataFileAdditionalFields` | `string[]` | Specify additional field names from the data record to store alongside the key field. When set, the frontmatter value will be an object instead of a plain string. | _Optional_ | |
 | `multiple` | `boolean` | Specify if you want to select one or multiple records. | _Optional_ | `false` |
 
 ```json {{ "title": "Usage" }}
@@ -816,6 +874,49 @@ example of the authors sample:
 ---
 author:
   - dorothy-parker
+---
+```
+
+### Storing multiple fields as an object
+
+By default, only the `dataFileKey` value (e.g. the slug) is stored in the frontmatter. If you need to store multiple fields from the data record as an object, use `dataFileAdditionalFields` to specify which extra fields to include.
+
+```json {{ "title": "Usage with dataFileAdditionalFields" }}
+"frontMatter.taxonomy.contentTypes": [
+  {
+    "name": "page",
+    "fields": [
+      {
+        "title": "Author",
+        "name": "author",
+        "type": "dataFile",
+        "dataFileId": "authors",
+        "dataFileKey": "name",
+        "dataFileValue": "name",
+        "dataFileAdditionalFields": ["slug"]
+      },
+      ...
+  }
+]
+```
+
+```yaml {{ "title": "Outcome" }}
+---
+author:
+  name: Elio Struyf
+  slug: elio-struyf
+---
+```
+
+When `multiple` is also enabled, each selected entry will be stored as an object in the array:
+
+```yaml {{ "title": "Outcome with multiple" }}
+---
+authors:
+  - name: Elio Struyf
+    slug: elio-struyf
+  - name: John Doe
+    slug: john-doe
 ---
 ```
 
