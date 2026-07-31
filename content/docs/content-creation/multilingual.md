@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: Learn how to use multilingual content in Front Matter CMS
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2024-10-21T13:49:02.195Z
+lastmod: 2026-07-31T13:52:00.000Z
 weight: 200.71
 ---
 
@@ -233,3 +233,74 @@ translation service.
 
 > **Important**: If anything goes wrong with the translation. The CMS will show an error message
 > and create a copy of the original content in the target locale folder.
+
+### Define the fields to translate
+
+By default, only the title, description, and the content of your article are submitted to the
+translation service. If you want other front matter fields to be translated as well, like a
+`summary`, `ogTitle`, or the fields of your own content types, you can set the `translate`
+property to `true` on the field of your content type.
+
+```json {{ "title": "Example of a content type with translatable fields" }}
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "review",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Verdict",
+          "name": "verdict",
+          "type": "string",
+          "translate": true
+        },
+        {
+          "title": "Pros",
+          "name": "pros",
+          "type": "list",
+          "translate": true
+        },
+        {
+          "title": "Cons",
+          "name": "cons",
+          "type": "list",
+          "translate": true
+        }
+      ]
+    }
+  ]
+}
+```
+
+The title and description fields, which are defined by the
+[frontMatter.taxonomy.seoTitleField](/docs/settings/overview#frontmatter.taxonomy.seotitlefield) and
+[frontMatter.taxonomy.seoDescriptionField](/docs/settings/overview#frontmatter.taxonomy.seodescriptionfield)
+settings, are translated by default. If you do not want them to be translated, you can set the
+`translate` property to `false` on these fields.
+
+```json {{ "title": "Example of a field which should not be translated" }}
+{
+  "title": "Title",
+  "name": "title",
+  "type": "string",
+  "translate": false
+}
+```
+
+The `translate` property can be used on the fields of your content types, on the fields nested in a
+`fields` field, and on the fields of the [field groups](/docs/content-creation/fields#block) used by
+a `block` field. When the value of a field is a list of values, each of the values is translated.
+
+> **Info**: The field types which do not hold text, like `boolean`, `choice`,
+> `contentRelationship`, `dataFile`, `datetime`, `divider`, `draft`, `file`, `heading`, `image`,
+> `json`, and `number`, are never translated.

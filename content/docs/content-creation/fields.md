@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2026-06-24T09:44:34.371Z
+lastmod: 2026-07-31T13:52:00.000Z
 weight: 200.31
 ---
 
@@ -52,6 +52,7 @@ All fields share the following field properties:
 | `required`    | `boolean` | Defines if the field is required or not. If set to true, and the user does not define a value, a notification will appear. You can disable this notification with the [frontMatter.global.disabledNotifications][02] setting. | _Optional_          |
 | `hidden`      | `boolean` | Specifies if you want to hide the field from the metadata section, but still have it available in Front Matter.                                                                                                               | _Optional_          |
 | `actions`     | `object`  | Defines the custom actions/scripts that you can execute to populate the field value                                                                                                                                           | _Optional_          |
+| `translate`   | `boolean` | Defines if the field value needs to be machine translated when creating a translation of your content. Check for more information under [automatic language translation][20].                                                 | _Optional_          |
 
 ## String
 
@@ -1095,3 +1096,4 @@ want to group fields together.
 [17]: /releases/v8.1.0/section-heading.png
 [18]: /docs/experimental#enable-experimental-features
 [19]: /docs/experimental/ui-extensibility#registering-a-custom-field
+[20]: /docs/content-creation/multilingual#define-the-fields-to-translate
