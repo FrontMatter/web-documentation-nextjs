@@ -39,6 +39,7 @@ export default defineConfig({
       lastUpdated: true,
       customCss: ['./src/styles/docs.css'],
       components: {
+        Head: './src/components/DocsHead.astro',
         Banner: './src/components/DocsBanner.astro',
         Footer: './src/components/DocsFooter.astro',
       },

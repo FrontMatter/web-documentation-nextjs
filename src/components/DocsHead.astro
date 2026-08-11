@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+
+// Point each docs page at its build-time OG card (/og/<entry-id>.png).
+const { id } = Astro.locals.starlightRoute.entry;
+const ogImage = new URL(`/og/${id}.png`, Astro.site).href;
+---
+<Default />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content={ogImage} />

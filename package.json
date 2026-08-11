@@ -21,6 +21,8 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/starlight": "^0.41.7",
     "astro": "^7.2.0",
+    "astro-og-canvas": "^0.13.0",
+    "canvaskit-wasm": "^0.41.1",
     "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.1",
     "mdast-util-to-string": "^4.0.0",
