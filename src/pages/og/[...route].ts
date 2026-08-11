@@ -7,14 +7,23 @@ import { getCollection } from 'astro:content';
 const docs = await getCollection('docs');
 const changelog = await getCollection('changelog', ({ data }) => Boolean(data.title));
 
+// Every card must have a title and a description; fall back to a brand tagline
+// for pages that don't define one.
+const DEFAULT_DOCS_DESCRIPTION =
+  'Front Matter CMS — the headless CMS that runs inside Visual Studio Code.';
+
 const pages: Record<string, { title: string; description: string }> = {};
 for (const entry of docs) {
-  pages[entry.id] = { title: entry.data.title, description: entry.data.description ?? '' };
+  pages[entry.id] = {
+    title: entry.data.title,
+    description: entry.data.description?.trim() || DEFAULT_DOCS_DESCRIPTION,
+  };
 }
 for (const entry of changelog) {
   pages[`updates/${entry.id}`] = {
     title: entry.data.title ?? entry.id,
-    description: entry.data.description ?? '',
+    description:
+      entry.data.description?.trim() || `Release notes for Front Matter CMS ${entry.id}.`,
   };
 }
 
@@ -26,7 +35,7 @@ export const { getStaticPaths, GET } = await OGImageRoute({
     bgGradient: [[14, 19, 31]], // vulcan-500 #0e131f
     border: { color: [41, 214, 223], width: 24, side: 'block-end' }, // teal-300 accent bar
     padding: 70,
-    logo: { path: './public/android-chrome-512x512.png', size: [96] },
+    logo: { path: './src/assets/frontmatter-logo.png', size: [120] },
     font: {
       title: { color: [243, 239, 245], size: 64, weight: 'ExtraBold', families: ['Open Sans'] },
       description: { color: [180, 182, 197], size: 30, families: ['Open Sans'] },
