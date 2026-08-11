@@ -21,12 +21,15 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/starlight": "^0.41.7",
     "astro": "^7.2.0",
+    "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.1",
     "mdast-util-to-string": "^4.0.0",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@actions/core": "^1.11.1",
     "@astrojs/check": "^0.9.10",
+    "node-fetch": "^2.7.0",
     "typescript": "^6.0.3"
   }
 }
