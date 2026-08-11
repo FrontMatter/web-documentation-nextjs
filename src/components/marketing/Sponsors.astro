@@ -2,7 +2,11 @@
 import sponsors from '../../../sponsors.json';
 import contributors from '../../../contributors.json';
 
-const individuals = (sponsors as any).individuals ?? [];
+// Individuals are fetched live from `${PUBLIC_API_URL}/sponsors` (same as the
+// legacy Sponsors component); the static sponsors.json individuals are rendered
+// as an initial fallback and replaced once the live list loads.
+const apiUrl = import.meta.env.PUBLIC_API_URL ?? 'https://api.frontmatter.codes';
+const fallbackIndividuals = (sponsors as any).individuals ?? [];
 const companies = ((sponsors as any).companies ?? []).filter((c: any) => c.active);
 const contributorList = contributors as any[];
 ---
@@ -10,15 +14,13 @@ const contributorList = contributors as any[];
   <div class="container">
     <p class="sponsors-heading">Special thanks to our backers &amp; sponsors</p>
 
-    {individuals.length > 0 && (
-      <div class="sponsor-avatars">
-        {individuals.map((s: any) => (
-          <a href={s.url} title={s.name} target="_blank" rel="noopener noreferrer">
-            <img src={s.avatar} alt={s.name} width="48" height="48" loading="lazy" />
-          </a>
-        ))}
-      </div>
-    )}
+    <div class="sponsor-avatars" id="sponsor-avatars" data-api={apiUrl}>
+      {fallbackIndividuals.map((s: any) => (
+        <a href={s.url} title={`Thanks ${s.name}!`} target="_blank" rel="noopener noreferrer">
+          <img src={s.avatar} alt={s.name} width="48" height="48" loading="lazy" />
+        </a>
+      ))}
+    </div>
 
     {companies.length > 0 && (
       <div class="sponsor-companies">
@@ -44,3 +46,41 @@ const contributorList = contributors as any[];
     )}
   </div>
 </section>
+
+<script>
+  // Load the full, live list of individual sponsors and replace the fallback.
+  const container = document.getElementById('sponsor-avatars');
+  const api = container?.getAttribute('data-api');
+  const isHttps = (v: unknown): v is string => typeof v === 'string' && v.startsWith('https://');
+
+  if (container && api) {
+    fetch(`${api}/sponsors`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!Array.isArray(data) || data.length === 0) return;
+        const frag = document.createDocumentFragment();
+        for (const sponsor of data) {
+          if (!isHttps(sponsor?.avatarUrl)) continue; // skip entries without a usable avatar
+          const link = document.createElement('a');
+          if (isHttps(sponsor.url)) {
+            link.href = sponsor.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
+          link.title = `Thanks ${sponsor.name ?? 'sponsor'}!`;
+          const img = document.createElement('img');
+          img.src = sponsor.avatarUrl;
+          img.alt = sponsor.name ?? '';
+          img.width = 48;
+          img.height = 48;
+          img.loading = 'lazy';
+          link.appendChild(img);
+          frag.appendChild(link);
+        }
+        if (frag.childNodes.length > 0) {
+          container.replaceChildren(frag);
+        }
+      })
+      .catch(() => {});
+  }
+</script>
