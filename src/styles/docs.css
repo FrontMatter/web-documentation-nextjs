@@ -1,0 +1,93 @@
+/* Front Matter brand accent (teal) — overrides Starlight's default blue so the
+   docs match the product's look and feel. Dark theme values on :root, light on
+   :root[data-theme='light']. */
+:root {
+  --sl-color-accent-low: #06373a;
+  --sl-color-accent: #15c2cb; /* teal-500 */
+  --sl-color-accent-high: #b3eef1;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #c6f1f4;
+  --sl-color-accent: #008b93;
+  --sl-color-accent-high: #00363a;
+}
+
+/* Ported legacy docs styles (from styles/globals.css) that Starlight defaults
+   don't provide: callouts, responsive iframe embeds, and VS Code deep links. */
+
+/* --- Callouts (bold-prefixed blockquotes, see remark-callouts.mjs) --- */
+.sl-markdown-content blockquote {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #15c2cb; /* teal-500 */
+  background: var(--sl-color-gray-6);
+  border-radius: 0.25rem;
+}
+.sl-markdown-content blockquote > * + * {
+  margin-top: 1rem;
+}
+.sl-markdown-content blockquote .tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background: #15c2cb; /* teal-500 */
+  color: #0e131f; /* vulcan-500 */
+  font-weight: 600;
+  font-size: var(--sl-text-xs);
+}
+.sl-markdown-content blockquote.important {
+  border-left-color: #fe4a49; /* red-500 */
+}
+.sl-markdown-content blockquote.important .tag {
+  background: #fe4a49; /* red-500 */
+  color: #f3eff5; /* whisper-500 */
+}
+
+/* --- Responsive iframe embeds (raw HTML `<div class="iframe__wrapper">`) --- */
+.sl-markdown-content .iframe__wrapper {
+  position: relative;
+  width: 80%;
+  height: 0;
+  padding-bottom: 46.25%;
+  margin: 0 auto 1em;
+}
+.sl-markdown-content .iframe__wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 50rem) {
+  .sl-markdown-content .iframe__wrapper {
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+}
+
+/* --- VS Code deep links (raw HTML, see rehype-vscode-links.mjs) --- */
+.sl-markdown-content .vscode_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.sl-markdown-content a.open_vscode {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  color: #fff;
+  background: #0066b8;
+  text-decoration: none;
+}
+.sl-markdown-content a.open_vscode:hover {
+  color: #fff;
+  background: rgba(0, 102, 184, 0.7);
+}
+.sl-markdown-content a.open_vscode .vscode-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}

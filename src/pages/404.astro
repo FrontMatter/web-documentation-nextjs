@@ -1,0 +1,18 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+<MarketingLayout title="Page not found" showGetStarted={false}>
+  <div class="container notfound">
+    <h1>Page not found</h1>
+    <p>Sorry, we couldn't find the page you were looking for.</p>
+    <p><a class="btn btn-primary" href="/">Back to home</a> <a class="btn btn-secondary" href="/docs">Go to the docs</a></p>
+    <img src="/assets/404.png" alt="Page not found" width="1216" height="825" loading="lazy" />
+  </div>
+</MarketingLayout>
+
+<style>
+  .notfound { text-align: center; padding: 3rem 0; }
+  .notfound h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin: 0 0 1rem; }
+  .notfound p { color: var(--whisper-700); margin: 0.75rem 0; }
+  .notfound img { max-width: 720px; width: 100%; margin: 2rem auto 0; border-radius: 0.75rem; }
+</style>

@@ -1,0 +1,27 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+
+const communityLinks = [
+  { title: 'Discord', description: 'Join the Front Matter Discord server to chat with the community and the team.', link: 'https://discord.gg/JBVtNMsJFB' },
+  { title: 'Twitter', description: 'Follow the Front Matter Twitter account to get the latest news and updates.', link: 'https://twitter.com/frontmattercms' },
+  { title: 'GitHub', description: 'Contribute to the Front Matter project on GitHub.', link: 'https://github.com/estruyf/vscode-front-matter' },
+];
+---
+<MarketingLayout title="Join our community" description="Join our community and get to know more about Front Matter.">
+  <div class="container">
+    <div class="page-header">
+      <h1>Join our community</h1>
+      <p>Join our community and get to know more about Front Matter.</p>
+    </div>
+    <h2 class="subhead">Get in touch</h2>
+    <div class="card-grid">
+      {communityLinks.map((link) => (
+        <div class="card">
+          <h3>{link.title}</h3>
+          <p>{link.description}</p>
+          <a class="btn btn-primary" href={link.link} target="_blank" rel="noopener noreferrer">Go to {link.title}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</MarketingLayout>

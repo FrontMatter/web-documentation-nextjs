@@ -1,0 +1,235 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import IconVSCode from '../components/marketing/IconVSCode.astro';
+
+const INSTALL = 'vscode:extension/eliostruyf.vscode-front-matter';
+const SPONSOR = 'https://github.com/sponsors/estruyf';
+const FEATURE_REQUEST =
+  'https://github.com/estruyf/vscode-front-matter/issues/new?assignees=&labels=&template=feature_request.md&title=Enhancement%3A+';
+
+const generators = [
+  { src: '/assets/logos/11ty.svg', alt: '11ty' },
+  { src: '/assets/logos/astro-icon-dark.svg', alt: 'Astro' },
+  { src: '/assets/logos/docusaurus.svg', alt: 'Docusaurus' },
+  { src: '/assets/logos/gatsby.svg', alt: 'Gatsby' },
+  { src: '/assets/logos/hugo.svg', alt: 'Hugo' },
+  { src: '/assets/logos/jekyll.svg', alt: 'Jekyll' },
+  { src: '/assets/logos/nextjs.svg', alt: 'Next.js' },
+];
+
+const heroes = [
+  {
+    view: 'right',
+    title: 'Editing your articles made easy',
+    body: "With Front Matter, you can easily manage your articles, front matter, and metadata right from within your editor. Our platform seamlessly integrates with your editor, so you can create, edit, and preview your content in real-time. Say goodbye to switching between tools - Front Matter makes it easy to manage your content in one place. Get started today and see how Front Matter can streamline your content creation process.",
+    img: '/assets/homepage/article-editing.webp',
+    alt: 'Front Matter CMS - Article editing and front matter management in VS Code',
+    link: '/docs/panel',
+    linkText: 'Learn more',
+  },
+  {
+    view: 'left',
+    title: 'Bringing the CMS to your editor',
+    body: "Why waste time switching between tools when you can do it all in one place? With Front Matter, you can stay in your preferred editor and easily create, manage, and publish content. Our unique features transform your editor into a powerful content management system, so you can focus on what matters most - creating great content.",
+    img: '/assets/homepage/content-dashboard.webp',
+    alt: 'Front Matter CMS editor dashboard of your static site content',
+    link: '/docs/getting-started',
+    linkText: 'Get started',
+  },
+  {
+    view: 'right',
+    title: 'Managing your media was never easier',
+    body: "With Front Matter's media dashboard, it's easy to access and manage all your media files right from within Visual Studio Code. Quickly browse your content folders, insert media into your articles, and perform various media actions - all with just a few clicks. Keep your media organized and at your fingertips with Front Matter's intuitive media dashboard.",
+    img: '/assets/homepage/media-dashboard.webp',
+    alt: 'Front Matter CMS - media management was never easier in VS Code',
+    link: '/docs/dashboard',
+    linkText: 'See what it can do',
+  },
+];
+
+const features = [
+  { title: '100% secure CMS', body: "Front Matter is a content management system that's built right into Visual Studio Code - no need for separate accounts or dependencies on websites or APIs. Plus, you can work offline and commit your changes when you're online. As we are not an online service, your content is protected from DDoS attacks and other threats." },
+  { title: 'Content Types', body: "Front Matter gives you the power to define and customize your content types to fit your specific needs. Our platform comes with a default content mapping, but you have the flexibility to extend or alter it. With Front Matter, you're in control of your content." },
+  { title: 'Full site/page preview', body: 'Preview your site and pages directly within Visual Studio Code - no need to switch to a separate browser window. Our seamless integration allows you to see your changes in real-time and make adjustments on the fly.' },
+  { title: 'Content, media, snippets, and data dashboard', body: "Front Matter's dashboard is your one-stop-shop for managing all your content, media, snippets, and data files. Easily filter by your content folders and perform quick actions to keep everything organized and accessible." },
+  { title: 'SEO Checks', body: "Front Matter's SEO checks help you create better, more optimized articles. Get in-depth information about your title, description, content, keywords, and more, so you can make informed decisions about how to improve your SEO." },
+  { title: 'Use it the way you want it', body: 'Front Matter is fully configurable to your needs. Customize your editor experience, and if you have specific needs, our custom scripting capability lets you add your own actions and hooks - for example, to generate preview images or automate other processes.' },
+];
+
+// Build-time fetch of the VS Code Marketplace reviews (same source as the old site).
+let reviews: any[] = [];
+try {
+  const res = await fetch(
+    'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eliostruyf/extensions/vscode-front-matter/reviews?count=6&filterOptions=3'
+  );
+  if (res.ok) {
+    const data = await res.json();
+    reviews = Array.isArray(data?.reviews) ? data.reviews : [];
+  }
+} catch {
+  reviews = [];
+}
+---
+<MarketingLayout title="Headless CMS right in your code editor">
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-grid">
+      <div class="cta-copy">
+        <h1>
+          <span class="gradient-text">Front Matter</span>
+          <span>Headless CMS right in your code editor</span>
+        </h1>
+        <p>Experience the best of both worlds with Front Matter, the CMS that runs within Visual Studio Code, GitPod, and many more. Get control over your static generator's content by bringing in the CMS features from Front Matter. Start creating and previewing content in real-time - no complicated setup.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="/docs/getting-started">Get started</a>
+          <a class="btn btn-secondary" href={INSTALL}><IconVSCode /> Install the extension</a>
+        </div>
+      </div>
+      <div class="cta-image">
+        <img src="/assets/homepage/content-dashboard.webp" alt="Front Matter - Headless CMS - Content Dashboard" loading="eager" width="1256" height="785" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Generators -->
+  <section class="section section-tint">
+    <div class="container">
+      <h2 class="section-title">A CMS that works <span class="gradient-text rose">seamlessly</span> with any static site generator</h2>
+      <ul class="generator-grid">
+        {generators.map((g) => (
+          <li><img src={g.src} alt={g.alt} loading="lazy" /></li>
+        ))}
+      </ul>
+      <p class="section-lead" style="margin-bottom:0.25rem">and many more...</p>
+      <p class="section-lead">Pick your generator and start managing your static site in minutes</p>
+    </div>
+  </section>
+
+  <!-- Heroes -->
+  {heroes.map((h) => (
+    <section class="section hero">
+      <div class:list={["container", "hero-grid", h.view === 'left' && 'reverse']}>
+        <div class="hero-copy">
+          <h2 class="gradient-text">{h.title}</h2>
+          <p>{h.body}</p>
+          <a class="btn btn-primary" href={h.link}>{h.linkText}</a>
+        </div>
+        <div class="hero-image">
+          <img src={h.img} alt={h.alt} loading="lazy" />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Features -->
+  <section class="section section-tint">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <p class="section-lead">Check out our main features which help you manage your static-site</p>
+      <div class="feature-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="feature-cta">
+        <p>Missing a feature?</p>
+        <a class="btn btn-secondary" href={FEATURE_REQUEST} target="_blank" rel="noopener">Tell us what you need</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container pricing">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-lead">
+        Front Matter CMS is a <strong>free</strong> and <strong>open-source</strong> platform, dedicated to making it one of the best CMSs for your static site generator. If you'd like to support our efforts, consider becoming one of our sponsors.
+      </p>
+      <div class="pricing-actions">
+        <a class="btn btn-primary" href={SPONSOR} target="_blank" rel="noopener">Become a sponsor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  {reviews.length > 0 && (
+    <section class="section section-tint">
+      <div class="container">
+        <h2 class="section-title gradient-text">What people are saying</h2>
+        <p class="section-lead">Explore reviews from Front Matter CMS users</p>
+        <div class="review-grid">
+          {reviews.map((r) => (
+            <figure class="review-card">
+              <div class="review-head">
+                <img class="review-avatar" src={`https://marketplace.visualstudio.com/avatar?userid=${r.userId}`} alt="" loading="lazy" width="40" height="40" />
+                <div>
+                  <figcaption>{r.userDisplayName}</figcaption>
+                  <div class="review-stars" aria-label={`${r.rating} out of 5`}>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span class:list={["star", i < r.rating && 'on']}>★</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <blockquote>{r.text}</blockquote>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</MarketingLayout>
+
+<style>
+  /* CTA */
+  .cta { padding: 4rem 0 2rem; }
+  .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .cta-copy h1 { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.1; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.25rem; }
+  .cta-copy p { color: var(--whisper-700); font-size: 1.125rem; margin: 0 0 1.75rem; }
+  .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .cta-image img { border-radius: 0.75rem; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+
+  /* Generators — logos sit in white chips so both light- and dark-drawn logos
+     (11ty, Astro, Jekyll, Next.js are dark) stay visible on the dark band. */
+  .generator-grid { list-style: none; margin: 0 auto 2rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 1.25rem; max-width: 60rem; }
+  .generator-grid li { background: #fff; border-radius: 0.75rem; height: 5rem; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .generator-grid img { height: 2.5rem; width: auto; max-width: 100%; object-fit: contain; }
+
+  /* Hero */
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .hero-grid.reverse .hero-copy { order: 2; }
+  .hero-copy h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; margin: 0 0 1rem; }
+  .hero-copy p { color: var(--whisper-700); margin: 0 0 1.5rem; }
+  .hero-image img { border-radius: 0.75rem; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+
+  /* Features */
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .feature-card { background: var(--vulcan-300); border: 1px solid var(--vulcan-200); border-radius: 0.75rem; padding: 1.5rem; }
+  .feature-card h3 { color: var(--teal-300); font-size: 1.15rem; margin: 0 0 0.75rem; }
+  .feature-card p { color: var(--whisper-700); margin: 0; font-size: 0.95rem; }
+  .feature-cta { text-align: center; margin-top: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .feature-cta p { font-weight: 600; margin: 0; }
+
+  /* Pricing */
+  .pricing { text-align: center; }
+  .pricing-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* Testimonials */
+  .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .review-card { background: var(--vulcan-300); border: 1px solid var(--vulcan-200); border-radius: 0.75rem; padding: 1.5rem; margin: 0; }
+  .review-head { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; }
+  .review-avatar { border-radius: 999px; }
+  .review-card figcaption { font-weight: 700; }
+  .review-stars .star { color: var(--vulcan-100); }
+  .review-stars .star.on { color: var(--yellow-500); }
+  .review-card blockquote { margin: 0; color: var(--whisper-700); font-size: 0.95rem; }
+
+  @media (max-width: 60rem) {
+    .cta-grid, .hero-grid, .hero-grid.reverse { grid-template-columns: 1fr; }
+    .hero-grid.reverse .hero-copy { order: 0; }
+    .feature-grid, .review-grid { grid-template-columns: 1fr; }
+  }
+</style>

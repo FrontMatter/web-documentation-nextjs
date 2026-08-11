@@ -5,15 +5,17 @@
 /.pnp
 .pnp.js
 
+# build output
+/dist
+/.astro
+
+# generated docs collection + sidebar manifest (produced from content/docs by
+# scripts/migrate-docs.mjs during dev/build)
+/src/content/docs/
+/scripts/docs-manifest.json
+
 # testing
 /coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
 
 # misc
 .DS_Store
@@ -25,10 +27,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# vercel
+# vercel / netlify
 .vercel
+.netlify
