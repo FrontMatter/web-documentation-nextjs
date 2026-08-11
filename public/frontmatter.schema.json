@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/frontmatter.schema.json",
   "description": "Defines the settings for Front Matter",
-  "lastModified": "2025-02-27T11:19:35.721Z",
+  "lastModified": "2026-08-11T09:16:13.103Z",
   "type": "object",
   "title": "Front Matter - Team Settings",
   "properties": {
@@ -26,12 +26,6 @@
           }
         }
       }
-    },
-    "frontMatter.sponsors.ai.enabled": {
-      "type": "boolean",
-      "default": false,
-      "markdownDescription": "Specify if you want to enable AI suggestions. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.sponsors.ai.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.sponsors.ai.enabled%22%5D)",
-      "scope": "Sponsors"
     },
     "frontMatter.extensibility.scripts": {
       "type": "array",
@@ -620,6 +614,28 @@
       "markdownDescription": "Specify if you want to enable/disable pagination for your content. You can define your page number up to 52. Default items per page is `16`. Disabling the pagination can be done by setting it to `false`. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.dashboard.content.pagination) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.dashboard.content.pagination%22%5D)",
       "scope": "Dashboard"
     },
+    "frontMatter.dashboard.content.defaults": {
+      "type": "object",
+      "markdownDescription": "Configure the default opening state of the contents dashboard, including sorting, grouping, and filters.",
+      "scope": "Dashboard",
+      "properties": {
+        "sorting": {
+          "type": "string",
+          "description": "The default sorting option for the contents dashboard. Use a built-in sort ID (e.g. LastModifiedDesc) or a custom sorting option ID."
+        },
+        "grouping": {
+          "type": "string",
+          "description": "The default grouping for the contents dashboard. Use Year, Draft, None, or a custom grouping name."
+        },
+        "filters": {
+          "type": "object",
+          "description": "The default filter values for the contents dashboard. Keys can be contentFolders, tags, categories, or a custom filter name.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "frontMatter.dashboard.content.cardTags": {
       "type": "string",
       "default": "tags",
@@ -857,6 +873,12 @@
       "type": "boolean",
       "default": false,
       "markdownDescription": "Specify if you want to preserve the casing of your file names from the title. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.file.preservecasing) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.file.preservecasing%22%5D)",
+      "scope": "File"
+    },
+    "frontMatter.file.slugSeparator": {
+      "type": "string",
+      "default": "-",
+      "markdownDescription": "Specify the separator character used between words when generating slugs and file names from titles. Default is `-` (hyphen). Use `_` for underscores.",
       "scope": "File"
     },
     "frontMatter.framework.id": {
@@ -1102,6 +1124,33 @@
       },
       "scope": "Media"
     },
+    "frontMatter.media.pasteBehavior": {
+      "type": "string",
+      "default": "dashboard",
+      "enum": [
+        "dashboard",
+        "auto",
+        "disabled"
+      ],
+      "enumDescriptions": [
+        "Open the media dashboard to pick the folder and fill in the metadata before inserting.",
+        "Save the image to the page bundle or public folder and insert it straight away.",
+        "Let Visual Studio Code handle the paste."
+      ],
+      "markdownDescription": "Specify what happens when you paste an image into a content file. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.pastebehavior) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.pastebehavior%22%5D)",
+      "scope": "Media"
+    },
+    "frontMatter.media.pasteFolder": {
+      "type": "string",
+      "markdownDescription": "Specify the folder to store pasted images in. Relative to the workspace, and supports the `[[workspace]]` placeholder. When left empty, the page bundle folder or the public folder is used. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.pastefolder) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.pastefolder%22%5D)",
+      "scope": "Media"
+    },
+    "frontMatter.media.pasteFileName": {
+      "type": "string",
+      "default": "image-{date}-{time}",
+      "markdownDescription": "Specify the file name to use for pasted images, without the extension. Supports the `{filename}`, `{date}`, and `{time}` placeholders. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.media.pastefilename) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.media.pastefilename%22%5D)",
+      "scope": "Media"
+    },
     "frontMatter.panel.openOnSupportedFile": {
       "type": "boolean",
       "default": false,
@@ -1111,7 +1160,7 @@
     "frontMatter.panel.freeform": {
       "type": "boolean",
       "default": true,
-      "markdownDescription": "Specifies if you want to allow yourself from entering unknown tags/categories in the tag picker (when enabled, you will have the option to store them afterwards). Default: true. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.freeform) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.panel.freeform%22%5D)",
+      "markdownDescription": "Specifies whether the tag picker should allow unknown tags and categories. When enabled, you can enter new values and save them afterward. Default: true. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.panel.freeform) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.panel.freeform%22%5D)",
       "scope": "Panel"
     },
     "frontMatter.panel.actions.disabled": {
@@ -1448,6 +1497,14 @@
                   "default": "",
                   "description": "Specify the property name that will be used to show the value for the field"
                 },
+                "dataFileAdditionalFields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": [],
+                  "description": "Specify additional field names from the data record to include when storing the value. When set, the frontmatter value will be an object containing the dataFileKey field plus these additional fields."
+                },
                 "editable": {
                   "type": "boolean",
                   "default": true,
@@ -1457,6 +1514,10 @@
                   "type": "boolean",
                   "default": false,
                   "description": "Specify if the field should encode emoji"
+                },
+                "translate": {
+                  "type": "boolean",
+                  "description": "Specify if the field value should be machine translated when creating a translation of the content. The title and description fields are translated by default, set it to `false` to exclude them."
                 },
                 "dateFormat": {
                   "type": "string",
@@ -1998,6 +2059,36 @@
       "markdownDescription": "Specify the prefix you want to add for your new article filenames. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.templates.prefix) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.templates.prefix%22%5D)",
       "scope": "Templates"
     },
+    "frontMatter.validation.enabled": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Specify if you want to enable front matter validation. When enabled, the extension will validate your front matter against the content type schema. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.validation.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.validation.enabled%22%5D)",
+      "scope": "Validation"
+    },
+    "frontMatter.contentHealth.enabled": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Enable the Content Health panel that shows readability scores, broken links, and freshness warnings.",
+      "scope": "ContentHealth"
+    },
+    "frontMatter.contentHealth.checkExternalLinks": {
+      "type": "boolean",
+      "default": false,
+      "markdownDescription": "When enabled, Front Matter will also perform HTTP HEAD requests to validate external links (may slow down the panel on articles with many external links).",
+      "scope": "ContentHealth"
+    },
+    "frontMatter.contentHealth.freshnessThreshold": {
+      "type": "number",
+      "default": 180,
+      "markdownDescription": "Number of days after which content is considered stale and a freshness warning is shown (0 disables the warning).",
+      "scope": "ContentHealth"
+    },
+    "frontMatter.contentHealth.minReadability": {
+      "type": "number",
+      "default": 0,
+      "markdownDescription": "Minimum Flesch Reading Ease score (0–100) before a readability warning is shown (0 disables the threshold).",
+      "scope": "ContentHealth"
+    },
     "frontMatter.website.host": {
       "type": "string",
       "markdownDescription": "Specify the host URL of your website. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.website.url) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.website.url%22%5D)"
@@ -2014,8 +2105,13 @@
     },
     "frontMatter.copilot.family": {
       "type": "string",
-      "default": "gpt-4o-mini",
+      "default": "gpt-5-mini",
       "markdownDescription": "Specify the LLM family of the Copilot you want to use. [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.copilot.family) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.copilot.family%22%5D)"
+    },
+    "frontMatter.copilot.enabled": {
+      "type": "boolean",
+      "default": true,
+      "markdownDescription": "Specify if you want to enable GitHub Copilot AI suggestions (requires GitHub Copilot extension). [Docs](https://frontmatter.codes/docs/settings/overview#frontmatter.copilot.enabled) - [View in VS Code](command:simpleBrowser.show?%5B%22https://frontmatter.codes/docs/settings/overview%23frontmatter.copilot.enabled%22%5D)"
     }
   }
 }

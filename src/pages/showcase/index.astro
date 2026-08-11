@@ -1,0 +1,85 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import featured from '../../../featured.json';
+import showcases from '../../../showcases.json';
+import themes from '../../../themes.json';
+
+const SHOWCASE_CTA =
+  'https://github.com/estruyf/vscode-front-matter/issues/new?assignees=&labels=&template=showcase.md&title=Showcase%3A+';
+
+const featuredItems = (featured as any[])
+  .filter((f) => f.featured)
+  .sort((a, b) => a.title.localeCompare(b.title));
+const articles = (featured as any[]).filter((f) => !f.featured);
+const sites = (showcases as any[]).filter((s) => s.image);
+const themeList = themes as any[];
+---
+<MarketingLayout title="Featured & showcases" description="Check out where Front Matter got featured and for which sites it's used.">
+  <div class="container">
+    <div class="page-header">
+      <h1>Featured &amp; showcases</h1>
+      <p>Check out where Front Matter got featured and for which sites it's used.</p>
+      <p style="margin-top:1rem">
+        <a class="btn btn-secondary" href={SHOWCASE_CTA} target="_blank" rel="noopener noreferrer">Open a showcase</a>
+      </p>
+    </div>
+
+    <h2 class="subhead">Featured</h2>
+    <div class="card-grid">
+      {featuredItems.map((item) => (
+        <div class="card">
+          {item.preview && <img src={item.preview} alt={item.title} loading="lazy" />}
+          <h3>{item.title}</h3>
+          {item.author?.name && (
+            <p>
+              by {item.author.link
+                ? <a href={item.author.link} target="_blank" rel="noopener noreferrer">{item.author.name}</a>
+                : item.author.name}
+            </p>
+          )}
+          <a class="btn btn-primary" href={item.link} target="_blank" rel="noopener noreferrer">View</a>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="subhead">Articles &amp; videos</h2>
+    <ul class="link-list">
+      {articles.map((item) => (
+        <li>
+          <a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a>
+          {item.author?.name && <span class="by"> — {item.author.name}</span>}
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="subhead">Websites managed by Front Matter</h2>
+    <div class="card-grid">
+      {sites.map((s) => (
+        <div class="card">
+          <img src={`/showcases/${s.image}`} alt={s.title} loading="lazy" />
+          <h3>{s.title}</h3>
+          <p>{s.description}</p>
+          <a class="btn btn-primary" href={s.link} target="_blank" rel="noopener noreferrer">Visit</a>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="subhead">Templates &amp; themes</h2>
+    <div class="card-grid">
+      {themeList.map((t) => (
+        <div class="card">
+          {t.image && <img src={`/showcases/themes/${t.image}`} alt={t.title} loading="lazy" />}
+          <h3>{t.title}</h3>
+          <p>{t.description}</p>
+          <a class="btn btn-primary" href={t.link} target="_blank" rel="noopener noreferrer">View theme</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</MarketingLayout>
+
+<style>
+  .link-list { list-style: none; padding: 0; margin: 0; }
+  .link-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--vulcan-300); }
+  .link-list .by { color: var(--whisper-900); }
+</style>

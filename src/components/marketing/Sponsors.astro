@@ -1,0 +1,46 @@
+---
+import sponsors from '../../../sponsors.json';
+import contributors from '../../../contributors.json';
+
+const individuals = (sponsors as any).individuals ?? [];
+const companies = ((sponsors as any).companies ?? []).filter((c: any) => c.active);
+const contributorList = contributors as any[];
+---
+<section class="sponsors-band">
+  <div class="container">
+    <p class="sponsors-heading">Special thanks to our backers &amp; sponsors</p>
+
+    {individuals.length > 0 && (
+      <div class="sponsor-avatars">
+        {individuals.map((s: any) => (
+          <a href={s.url} title={s.name} target="_blank" rel="noopener noreferrer">
+            <img src={s.avatar} alt={s.name} width="48" height="48" loading="lazy" />
+          </a>
+        ))}
+      </div>
+    )}
+
+    {companies.length > 0 && (
+      <div class="sponsor-companies">
+        {companies.map((c: any) => (
+          <a href={c.url} title={c.title} target="_blank" rel="noopener noreferrer">
+            <img src={c.image} alt={c.alt} style={`height:${c.height ?? '35px'}`} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    )}
+
+    {contributorList.length > 0 && (
+      <div class="contributors">
+        <p class="sponsors-heading">Contributors</p>
+        <div class="sponsor-avatars">
+          {contributorList.map((c: any) => (
+            <a href={c.url} title={c.name} target="_blank" rel="noopener noreferrer">
+              <img src={c.avatar} alt={c.name} width="48" height="48" loading="lazy" />
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>

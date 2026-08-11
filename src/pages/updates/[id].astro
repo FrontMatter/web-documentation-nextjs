@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+
+export async function getStaticPaths() {
+  // Only individual release notes (which have a frontmatter title); the aggregate
+  // CHANGELOG.md has none and is served at /updates.
+  const entries = await getCollection('changelog', ({ data }) => Boolean(data.title));
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, date } = entry.data;
+const published = date
+  ? new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })
+  : null;
+
+---
+<MarketingLayout title={title ?? 'Update'} description={description}>
+  <section class="section">
+    <div class="container">
+      <article class="prose">
+        <header class="update-head">
+          <h1>{title}</h1>
+          {description && <p class="update-desc">{description}</p>}
+          {published && <p class="update-date">Published: {published}</p>}
+        </header>
+        <Content />
+      </article>
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  .update-head { border-bottom: 1px solid var(--vulcan-300); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  .update-head h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; margin: 0 0 0.5rem; color: var(--whisper-500); }
+  .update-desc { color: var(--whisper-700); margin: 0.25rem 0; }
+  .update-date { color: var(--whisper-900); font-size: 0.9rem; margin: 0.25rem 0 0; }
+</style>

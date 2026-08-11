@@ -1,0 +1,456 @@
+/* Shared styles for the marketing pages (homepage, updates, showcase, community,
+   swag, 404). Uses the legacy brand palette ported from tailwind.config.js. */
+:root {
+  --vulcan-600: #040915;
+  --vulcan-500: #0e131f;
+  --vulcan-400: #181d29;
+  --vulcan-300: #222733;
+  --vulcan-200: #2c313d;
+  --vulcan-100: #363b47;
+  --whisper-500: #f3eff5;
+  --whisper-700: #dfdbe1;
+  --whisper-900: #cbc7cd;
+  --teal-300: #29d6df;
+  --teal-500: #15c2cb;
+  --teal-800: #00a4ad;
+  --rose-500: #f141a8;
+  --red-500: #fe4a49;
+  --yellow-500: #ffe45e;
+
+  --mkt-max: 1200px;
+  --mkt-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+.marketing {
+  margin: 0;
+  background: var(--vulcan-500);
+  color: var(--whisper-500);
+  font-family: var(--mkt-font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.marketing *,
+.marketing *::before,
+.marketing *::after {
+  box-sizing: border-box;
+}
+.marketing a {
+  color: var(--teal-300);
+  text-decoration: none;
+}
+.marketing a:hover {
+  color: var(--teal-500);
+}
+.marketing img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--mkt-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--teal-300), var(--teal-800));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text.rose {
+  background: linear-gradient(90deg, var(--rose-500), var(--teal-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Buttons --- */
+.marketing .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+.marketing .btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.marketing .btn-primary {
+  background: var(--teal-500);
+  color: var(--vulcan-500);
+}
+.marketing .btn-primary:hover {
+  background: var(--teal-300);
+  color: var(--vulcan-500);
+}
+.marketing .btn-secondary {
+  border-color: var(--vulcan-100);
+  color: var(--whisper-500);
+  background: transparent;
+}
+.marketing .btn-secondary:hover {
+  background: var(--vulcan-300);
+  color: var(--whisper-500);
+}
+
+/* --- Section rhythm --- */
+.section {
+  padding: 4rem 0;
+}
+.section-tint {
+  background: var(--vulcan-400);
+}
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+.section-lead {
+  text-align: center;
+  color: var(--whisper-700);
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+}
+
+/* --- Header --- */
+.mkt-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 19, 31, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--vulcan-300);
+}
+.mkt-header .container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 4rem;
+}
+.mkt-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--whisper-500);
+}
+.mkt-logo img {
+  height: 2rem;
+  width: auto;
+}
+.mkt-nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: auto;
+  align-items: center;
+}
+.mkt-nav a {
+  color: var(--whisper-500);
+  font-weight: 500;
+}
+.mkt-nav a:hover {
+  color: var(--teal-300);
+}
+.mkt-social {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+.mkt-social a {
+  color: var(--whisper-700);
+  display: inline-flex;
+}
+.mkt-social a:hover {
+  color: var(--teal-300);
+}
+.mkt-social svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.mkt-sponsor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--rose-500) !important;
+  font-weight: 600;
+}
+.mkt-sponsor:hover {
+  color: var(--rose-500) !important;
+  opacity: 0.85;
+}
+.mkt-sponsor svg {
+  width: 1rem;
+  height: 1rem;
+}
+.mkt-star[hidden] {
+  display: none;
+}
+.mkt-star {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--vulcan-100);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.mkt-star .star-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--vulcan-300);
+  color: var(--whisper-500) !important;
+  padding: 0.35rem 0.55rem;
+}
+.mkt-star .star-label svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+.mkt-star .star-count {
+  background: var(--vulcan-100);
+  color: var(--whisper-500);
+  padding: 0.35rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 48rem) {
+  .mkt-nav a.nav-hide-mobile,
+  .mkt-star {
+    display: none;
+  }
+}
+
+/* Inner marketing pages (community/showcase/swag/analytics/404) put their
+   content directly in a .container — give it breathing room before the footer. */
+main > .container {
+  padding-bottom: 4rem;
+}
+
+/* --- Sponsors band --- */
+.sponsors-band {
+  background: var(--vulcan-500);
+  padding: 3rem 0 1rem;
+  text-align: center;
+  border-top: 1px solid var(--vulcan-300);
+}
+.sponsors-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  color: var(--whisper-900);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+.sponsor-avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.sponsor-avatars img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: var(--vulcan-300);
+}
+.sponsor-companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.sponsor-companies img {
+  width: auto;
+  max-width: 100%;
+}
+.contributors {
+  margin-top: 1.5rem;
+}
+.contributors .sponsor-avatars {
+  margin-bottom: 0.5rem;
+}
+.contributors .sponsor-avatars img {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+/* --- Footer badges --- */
+.footer-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.footer-badges img {
+  height: 1.6rem;
+  width: auto;
+}
+
+/* --- Footer --- */
+.mkt-footer {
+  background: var(--vulcan-600);
+  border-top: 1px solid var(--vulcan-300);
+  padding: 3rem 0;
+}
+.mkt-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.mkt-footer .footer-links a {
+  color: var(--whisper-700);
+  font-weight: 500;
+}
+.mkt-footer .footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.mkt-footer .footer-social svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.mkt-footer .copyright {
+  text-align: center;
+  color: var(--whisper-900);
+  font-size: 0.875rem;
+}
+
+/* --- Prose (changelog / long-form marketing content) --- */
+.prose {
+  max-width: 52rem;
+  margin: 0 auto;
+  color: var(--whisper-700);
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--whisper-500);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 2rem 0 1rem;
+}
+.prose h1 { font-size: 1.875rem; }
+.prose h2 { font-size: 1.5rem; border-bottom: 1px solid var(--vulcan-300); padding-bottom: 0.35rem; }
+.prose h3 { font-size: 1.2rem; }
+.prose p { margin: 1rem 0; }
+.prose ul,
+.prose ol { margin: 1rem 0; padding-left: 1.5rem; }
+.prose li { margin: 0.35rem 0; }
+.prose a { color: var(--teal-300); }
+.prose a:hover { color: var(--teal-500); }
+.prose code {
+  background: var(--vulcan-300);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.9em;
+}
+.prose img { border-radius: 0.5rem; margin: 1rem 0; }
+.prose blockquote {
+  border-left: 4px solid var(--teal-500);
+  background: var(--vulcan-400);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+.prose .tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--teal-500);
+  color: var(--vulcan-500);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.prose blockquote.important { border-left-color: var(--red-500); }
+.prose blockquote.important .tag { background: var(--red-500); color: var(--whisper-500); }
+
+/* --- Generic page header + cards --- */
+.page-header {
+  padding: 3rem 0 1rem;
+  border-bottom: 1px solid var(--vulcan-300);
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+.page-header p {
+  color: var(--whisper-700);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 46rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--vulcan-300);
+  border: 1px solid var(--vulcan-200);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+.card p {
+  color: var(--whisper-700);
+  margin: 0 0 1rem;
+}
+.card img {
+  border-radius: 0.5rem;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.subhead {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 2.5rem 0 1.25rem;
+}
+
+/* --- Get started band --- */
+.get-started {
+  background: var(--vulcan-600);
+  padding: 4rem 0;
+  text-align: center;
+}
+.get-started h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+}
+.get-started .actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

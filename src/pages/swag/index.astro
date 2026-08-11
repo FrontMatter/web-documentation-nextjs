@@ -1,0 +1,27 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+
+const STORE = 'https://pimpyourowndevice.com/categories/frontmatter/';
+const stickers = [
+  { title: 'Magenta', image: '/assets/stickers/frontmatter-magenta.png' },
+  { title: 'Teal', image: '/assets/stickers/frontmatter-teal.png' },
+  { title: 'White', image: '/assets/stickers/frontmatter-white.png' },
+];
+---
+<MarketingLayout title="Swag" description="Get your Front Matter swag and support the project.">
+  <div class="container">
+    <div class="page-header">
+      <h1>Front Matter swag</h1>
+      <p>Show your support and grab some Front Matter stickers. Available from our friends at Pimp Your Own Device.</p>
+    </div>
+    <div class="card-grid">
+      {stickers.map((s) => (
+        <div class="card">
+          <img src={s.image} alt={`Front Matter ${s.title} sticker`} loading="lazy" style="object-fit:contain;background:var(--vulcan-400)" />
+          <h3>{s.title}</h3>
+          <a class="btn btn-primary" href={STORE} target="_blank" rel="noopener noreferrer">Get it</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</MarketingLayout>

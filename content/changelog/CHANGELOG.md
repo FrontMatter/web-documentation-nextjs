@@ -1,6 +1,45 @@
 # Change Log
 
-## [10.10.0] - 2026-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v10.10.0)
+## [10.12.0] - 2026-xx-xx - [Release notes](https://beta.frontmatter.codes/updates/v10.12.0)
+
+### 🎨 Enhancements
+
+- [#1053](https://github.com/estruyf/vscode-front-matter/issues/1053): Support pasting images directly into Markdown/MDX files
+- [#1055](https://github.com/estruyf/vscode-front-matter/issues/1055): Added the `translate` property on content type fields to define which front matter fields need to be machine translated. The title and description fields are translated by default, set `translate: false` to exclude them
+
+### 🐞 Fixes
+
+- [#1043](https://github.com/estruyf/vscode-front-matter/issues/1043): Fix issue with last modified date in content health freshness checks
+- [#1054](https://github.com/estruyf/vscode-front-matter/issues/1054): Fix the "Could not retrieve the locale for the current file" error for multilingual content nested in subfolders (ex. `content/de/posts/2024/07/my-post/index.md`). Translations are now created with the same folder structure as the source file
+
+## [10.11.0] - 2026-07-02 - [Release notes](https://beta.frontmatter.codes/updates/v10.11.0)
+
+### 🎨 Enhancements
+
+- Support `fieldGroup` as a single value on `fields` fields
+- Added the new content health feature to the Front Matter panel with readability scoring, link checks, and freshness warnings (`frontMatter.contentHealth.enabled`, `frontMatter.contentHealth.checkExternalLinks`, `frontMatter.contentHealth.freshnessThreshold`, `frontMatter.contentHealth.minReadability`)
+- [#409](https://github.com/estruyf/vscode-front-matter/issues/409): Added the ability to output multiple properties from a data file in the `dataFile` field type
+- [#1030](https://github.com/estruyf/vscode-front-matter/pull/1030): Add `frontMatter.file.slugSeparator` setting
+- [#1033](https://github.com/estruyf/vscode-front-matter/issues/1033): Support freeform tags and categories in the front matter validation
+- [#1036](https://github.com/estruyf/vscode-front-matter/issues/1036): Default filter, sorting, and grouping configuration for the `contents` dashboard
+
+### 🐞 Fixes
+
+- [#905](https://github.com/estruyf/vscode-front-matter/issues/905): Fix Hugo framework detection for sites using `hugo.toml`, `hugo.yaml`, `hugo.yml`, or `hugo.json` (the default config filename since Hugo v0.110)
+- Fix number fields not being saved to front matter when used inside block field groups
+- [#920](https://github.com/estruyf/vscode-front-matter/issues/920): Fix `metadata.fmRelFilePath` returning an absolute path on Windows by normalizing the workspace folder path before stripping it
+- [#963](https://github.com/estruyf/vscode-front-matter/issues/963): Prevent infinite update loops for fields when using Hugo partials as values in the front matter
+- [#1041](https://github.com/estruyf/vscode-front-matter/issues/1041): Fix in image page when using page bundles
+
+## [10.10.1] - 2026-04-23
+
+### 🐞 Fixes
+
+- Fix Git detection when Git is configured via VS Code `git.path` and not installed globally on the system
+- [#1023](https://github.com/estruyf/vscode-front-matter/issues/1023): Fix validation errors for image, file, and keywords fields
+- [#1024](https://github.com/estruyf/vscode-front-matter/issues/1024): Re-add the `frontMatter.copilot.enabled` setting to allow users to disable the GitHub Copilot integration
+
+## [10.10.0] - 2026-04-03 - [Release notes](https://beta.frontmatter.codes/updates/v10.10.0)
 
 - Removed the chatbot command and all related code and references
 - [#983](https://github.com/estruyf/vscode-front-matter/issues/983): Removal of the `frontMatter.sponsors.ai.enabled` features

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://beta.frontmatter.codes/config/taxonomy.contenttypes.schema.json",
   "description": "Defines the settings for Front Matter content type",
-  "lastModified": "2025-02-27T11:19:35.723Z",
+  "lastModified": "2026-08-11T09:16:13.105Z",
   "type": "object",
   "title": "Front Matter - content type",
   "properties": {
@@ -266,6 +266,14 @@
             "default": "",
             "description": "Specify the property name that will be used to show the value for the field"
           },
+          "dataFileAdditionalFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [],
+            "description": "Specify additional field names from the data record to include when storing the value. When set, the frontmatter value will be an object containing the dataFileKey field plus these additional fields."
+          },
           "editable": {
             "type": "boolean",
             "default": true,
@@ -275,6 +283,10 @@
             "type": "boolean",
             "default": false,
             "description": "Specify if the field should encode emoji"
+          },
+          "translate": {
+            "type": "boolean",
+            "description": "Specify if the field value should be machine translated when creating a translation of the content. The title and description fields are translated by default, set it to `false` to exclude them."
           },
           "dateFormat": {
             "type": "string",
