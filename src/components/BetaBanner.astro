@@ -1,0 +1,40 @@
+---
+// Beta notice, shown on any host that isn't the production site (i.e. localhost,
+// beta.frontmatter.codes, preview deploys). Hidden by default and revealed
+// client-side so the production build never flashes it. Mirrors the legacy
+// components/Page/BetaBanner.tsx behaviour.
+---
+<div class="beta-banner" hidden>
+  <a href="https://frontmatter.codes" title="Go to main release documentation">
+    You are currently viewing the BETA version of Front Matter documentation. Click on the banner to go to the main release documentation.
+  </a>
+</div>
+
+<script>
+  (() => {
+    const PROD_HOSTS = ['frontmatter.codes', 'www.frontmatter.codes'];
+    if (!PROD_HOSTS.includes(location.hostname)) {
+      document.querySelectorAll('.beta-banner').forEach((el) => el.removeAttribute('hidden'));
+    }
+  })();
+</script>
+
+<style>
+  .beta-banner {
+    background: #ffe45e;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+  .beta-banner[hidden] {
+    display: none;
+  }
+  .beta-banner a {
+    color: #0e131f;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .beta-banner a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+</style>

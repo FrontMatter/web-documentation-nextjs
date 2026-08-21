@@ -1,0 +1,177 @@
+---
+import '../styles/marketing.css';
+import IconGitHub from '../components/marketing/IconGitHub.astro';
+import IconDiscord from '../components/marketing/IconDiscord.astro';
+import IconBluesky from '../components/marketing/IconBluesky.astro';
+import IconVSCode from '../components/marketing/IconVSCode.astro';
+import IconHeart from '../components/marketing/IconHeart.astro';
+import Sponsors from '../components/marketing/Sponsors.astro';
+import BetaBanner from '../components/BetaBanner.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  showGetStarted?: boolean;
+}
+
+const {
+  title,
+  description = "Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.",
+  image = '/assets/frontmatter-social.png',
+  showGetStarted = true,
+} = Astro.props;
+
+const fullTitle = `${title} | Front Matter`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+
+const INSTALL = 'vscode:extension/eliostruyf.vscode-front-matter';
+const GITHUB = 'https://github.com/estruyf/vscode-front-matter';
+const STARGAZERS = 'https://github.com/estruyf/vscode-front-matter/stargazers';
+const SPONSOR = 'https://github.com/sponsors/estruyf';
+const DISCORD = 'https://discord.gg/JBVtNMsJFB';
+const BLUESKY = 'https://bsky.app/profile/did:plc:5bb7t7bwr53rrku6vr7osqy2';
+const MARKETPLACE =
+  'https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter&ssr=false#review-details';
+const EXTENSION_PAGE =
+  'https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter';
+
+// Live star count is fetched client-side from the backend proxy (same as the
+// legacy StarService: `${PUBLIC_API_URL}/stars` -> { stars: number }).
+const apiUrl = import.meta.env.PUBLIC_API_URL ?? 'https://api.frontmatter.codes';
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title="Front Matter changelog" href="/api/rss" />
+
+    <!-- Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0LYNEJ7HFT"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-0LYNEJ7HFT', { anonymize_ip: true });
+    </script>
+  </head>
+  <body class="marketing">
+    <BetaBanner />
+    <header class="mkt-header">
+      <div class="container">
+        <a href="/" class="mkt-logo">
+          <img src="/frontmatter.svg" alt="" width="32" height="32" />
+          <span>Front Matter</span>
+        </a>
+        <nav class="mkt-nav">
+          <a href="/docs">Docs</a>
+          <a href="/community" class="nav-hide-mobile">Community</a>
+          <a href="/updates" class="nav-hide-mobile">Changelog</a>
+          <a href={SPONSOR} class="mkt-sponsor" target="_blank" rel="noopener"><IconHeart /> Sponsor</a>
+        </nav>
+        <a
+          class="mkt-star"
+          id="gh-star"
+          href={STARGAZERS}
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub stars"
+          data-api={apiUrl}
+          hidden
+        >
+          <span class="star-label"><IconGitHub /> Star</span>
+          <span class="star-count" id="gh-star-count"></span>
+        </a>
+        <div class="mkt-social">
+          <a href={GITHUB} aria-label="GitHub" target="_blank" rel="noopener"><IconGitHub /></a>
+          <a href={DISCORD} aria-label="Discord" target="_blank" rel="noopener"><IconDiscord /></a>
+          <a href={BLUESKY} aria-label="Bluesky" target="_blank" rel="noopener"><IconBluesky /></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    {showGetStarted && (
+      <section class="get-started">
+        <div class="container">
+          <h2>Ready to get started?</h2>
+          <div class="actions">
+            <a class="btn btn-primary" href={INSTALL}><IconVSCode /> Install Front Matter</a>
+            <a class="btn btn-secondary" href="/docs/getting-started">Learn more</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <Sponsors />
+
+    <footer class="mkt-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="/docs">Docs</a>
+          <a href="/community">Community</a>
+          <a href="/updates">Changelog</a>
+          <a href="/showcase">Showcase</a>
+          <a href="/swag">Swag</a>
+        </div>
+        <div class="footer-badges">
+          <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title="Daily Front Matter visitors" target="_blank" rel="noopener noreferrer">
+            <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt="Visitors" />
+          </a>
+          <a href={EXTENSION_PAGE} title="Extension installs" target="_blank" rel="noopener noreferrer">
+            <img src="https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-front-matter?style=for-the-badge&color=060A15&labelColor=060A15" alt="Installations of the extension" />
+          </a>
+        </div>
+        <div class="footer-social">
+          <a href={GITHUB} aria-label="GitHub" target="_blank" rel="noopener"><IconGitHub /></a>
+          <a href={MARKETPLACE} aria-label="Visual Studio Marketplace" target="_blank" rel="noopener"><IconVSCode /></a>
+          <a href={BLUESKY} aria-label="Bluesky" target="_blank" rel="noopener"><IconBluesky /></a>
+          <a href={DISCORD} aria-label="Discord" target="_blank" rel="noopener"><IconDiscord /></a>
+        </div>
+        <p class="copyright">© {new Date().getFullYear()} Front Matter. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Live GitHub star count via the backend proxy (legacy StarService parity).
+      const starEl = document.getElementById('gh-star');
+      const countEl = document.getElementById('gh-star-count');
+      const api = starEl?.getAttribute('data-api');
+      if (starEl && countEl && api) {
+        fetch(`${api}/stars`)
+          .then((res) => (res.ok ? res.json() : null))
+          .then((data) => {
+            if (data && typeof data.stars === 'number') {
+              countEl.textContent = data.stars.toLocaleString('en-US');
+              starEl.hidden = false;
+            }
+          })
+          .catch(() => {});
+      }
+    </script>
+  </body>
+</html>

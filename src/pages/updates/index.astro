@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+
+// The aggregate CHANGELOG.md is the only changelog entry without a frontmatter title.
+const entries = await getCollection('changelog');
+const entry = entries.find((e) => !e.data.title);
+if (!entry) throw new Error('Aggregate CHANGELOG entry not found in the changelog collection.');
+const { Content } = await render(entry);
+---
+<MarketingLayout
+  title="Latest updates"
+  description="An overview of all updates from the Front Matter extension"
+>
+  <section class="section">
+    <div class="container">
+      <header class="updates-header">
+        <h1>Latest updates</h1>
+        <a class="rss-link" href="/api/rss" title="RSS feed" aria-label="RSS feed">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4 11a9 9 0 0 1 9 9h2.5A11.5 11.5 0 0 0 4 8.5V11Zm0 4a5 5 0 0 1 5 5h2.5A7.5 7.5 0 0 0 4 12.5V15Zm1.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg>
+        </a>
+      </header>
+      <div class="prose changelog-body">
+        <Content />
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  .updates-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .updates-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin: 0;
+  }
+  .rss-link { color: var(--yellow-500); display: inline-flex; }
+  /* CHANGELOG.md opens with its own "# Change Log" heading — hide the duplicate. */
+  .changelog-body :global(h1:first-child) { display: none; }
+</style>
