@@ -3,7 +3,7 @@ title: Multilingual
 slug: content-creation/multilingual
 description: Learn how to use multilingual content in Front Matter CMS
 date: 2024-02-21T09:10:16.640Z
-lastmod: 2026-07-31T13:52:00.000Z
+lastmod: 2026-08-21T09:00:00.000Z
 weight: 200.71
 ---
 
@@ -181,6 +181,13 @@ On the content dashboard, you can use the `create translation` action from the
 content item menu
 
 ![Create translation on content card](/releases/v10.0.0/card-create-translation-action.png)
+
+### Where the translation is created
+
+The translation is created in the folder of the locale you translate to, and keeps the same folder
+structure as the source file. When your content lives in subfolders, like
+`content/en/posts/2024/07/my-post/index.md`, the German translation is created as
+`content/de/posts/2024/07/my-post/index.md`.
 
 ## Automatic language translation
 

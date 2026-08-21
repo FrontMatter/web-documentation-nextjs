@@ -3,7 +3,7 @@ title: Media view
 slug: dashboard/media-view
 description: null
 date: 2022-11-28T14:55:04.221Z
-lastmod: 2024-08-07T12:33:01.748Z
+lastmod: 2026-08-21T09:00:00.000Z
 weight: 300.2
 ---
 
@@ -146,6 +146,10 @@ functionality makes it easier to insert your images to your content.
 > **Important**: Data is stored in a local JSON file which you can find under:
 > `<project>/.frontmatter/database/mediaDb.json`. Please do not remove this file, or you will lose
 > your metadata.
+
+> **Info**: Since version `10.12.0`, the files in the `.frontmatter/database` folder are written in
+> a human readable format with sorted keys, so that Git can merge them line by line. Existing files
+> are reformatted once, when the extension activates.
 <!-- markdownlint-enable MD028 -->
 
 ### Deleting a media file
@@ -173,6 +177,57 @@ your explorer/finder window into one of your folders.
 
 ![Dashboard - Upload media file][06]
 
+## Pasting images
+
+Since version `10.12.0`, you can paste an image straight from your clipboard into a Markdown, MDX, or
+any other of your [supported content files][07]. Front Matter CMS stores the image in your project
+and inserts the markup for you, instead of leaving you with a screenshot you first have to save
+somewhere.
+
+The `frontMatter.media.pasteBehavior` setting defines what happens on paste:
+
+- `dashboard` (default): opens the media dashboard, where you pick the folder to store the image in,
+  fill in its metadata, and choose the [media snippet][08] to insert it with.
+- `auto`: stores the image and inserts the markup right away, without any prompts.
+- `disabled`: leaves the paste to Visual Studio Code.
+
+```json {{ "title": "Example of the paste settings" }}
+{
+  "frontMatter.media.pasteBehavior": "auto",
+  "frontMatter.media.pasteFolder": "[[workspace]]/public/uploads",
+  "frontMatter.media.pasteFileName": "{filename}-{date}-{time}"
+}
+```
+
+### Where the image is stored
+
+When `frontMatter.media.pasteFolder` is set, the image is stored in that folder. The path is relative
+to your workspace and supports the `[[workspace]]` placeholder.
+
+When the setting is left empty, Front Matter CMS picks the folder for you:
+
+- For a [page bundle][09], the folder of the content file itself
+- For Hexo, the asset folder next to the post
+- For all other projects, your [public folder][10]
+
+### Naming the pasted image
+
+Images pasted from the clipboard carry no file name of their own, so the
+`frontMatter.media.pasteFileName` setting defines the name to use. The default is
+`image-{date}-{time}`, and the following placeholders are supported:
+
+| Placeholder  | Description                                             |
+| ------------ | ------------------------------------------------------- |
+| `{filename}` | The name of the content file you are pasting into       |
+| `{date}`     | The current date, formatted as `YYYYMMDD`               |
+| `{time}`     | The current time, formatted as `HHmmss`                 |
+
+The extension is added automatically, based on the type of image on your clipboard. When you paste a
+file which does have a name, like an image copied from your explorer/finder window, that name is
+kept.
+
+> **Info**: The paste functionality requires Visual Studio Code version `1.97.0` or higher.
+
 <!-- Link References -->
 [01]: /releases/v10.0.0/media-dashboard.png
 [02]: /releases/v10.0.0/metadata-update.png
@@ -180,3 +235,7 @@ your explorer/finder window into one of your folders.
 [04]: /releases/v10.0.0/delete-media.png
 [05]: /docs/custom-actions#creating-a-media-script
 [06]: /releases/v10.0.0/media-upload.png
+[07]: /docs/settings/overview#frontmatter.content.supportedfiletypes
+[08]: /docs/snippets#media-snippets
+[09]: /docs/content-creation/additional-config#page-and-leaf-bundles
+[10]: /docs/dashboard/media-view#define-the-media-folder

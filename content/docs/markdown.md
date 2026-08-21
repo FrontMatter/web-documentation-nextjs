@@ -3,7 +3,7 @@ title: Markdown
 slug: markdown
 description: null
 date: 2021-08-31T05:59:58.852Z
-lastmod: 2022-09-22T08:07:15.584Z
+lastmod: 2026-08-21T09:00:00.000Z
 weight: 800
 ---
 
@@ -67,6 +67,13 @@ triggered with the image icon in the editor title bar (Markdown files only).
 > **Info**: You can also use media snippets to insert your images. More information can be found in
 > the [Media Snippets][05] section.
 
+### Pasting images
+
+Since version `10.12.0`, you can also paste an image from your clipboard into your content. Front
+Matter CMS stores the image in your project and inserts the markup for you.
+
+> **Info**: Check the [pasting images][09] section for more information.
+
 ## Front matter folding
 
 If you want to focus on the content of your page, you have the ability to fold the Front Matter
@@ -117,3 +124,4 @@ hidden and the Front Matter panel needs to be used to edit the metadata of your 
 [06]: /assets/folding.png
 [07]: /assets/fm-highlight.png
 [08]: /releases/v8.1.0/hide-fm.png
+[09]: /docs/dashboard/media-view#pasting-images

@@ -3,7 +3,7 @@ title: Settings overview
 slug: settings/overview
 description: null
 date: 2023-02-13T16:44:09.618Z
-lastmod: 2026-06-04T12:46:45.662Z
+lastmod: 2026-08-21T09:00:00.000Z
 weight: 1000.2
 ---
 
@@ -587,6 +587,41 @@ Options:
 - FileNameAsc
 - FileNameDesc
 
+### frontMatter.media.pasteBehavior
+
+Specify what happens when you paste an image into a content file.
+
+- Type: `string`
+- Default: `dashboard`
+
+Options:
+
+- `dashboard`: Open the media dashboard to pick the folder and fill in the metadata before inserting.
+- `auto`: Save the image to the page bundle or public folder and insert it straight away.
+- `disabled`: Let Visual Studio Code handle the paste.
+
+> **Info**: More information on how to use it can be found in the [pasting images][28] section.
+
+### frontMatter.media.pasteFileName
+
+Specify the file name to use for pasted images, without the extension. The `{filename}`, `{date}`,
+and `{time}` placeholders are supported.
+
+- Type: `string`
+- Default: `image-{date}-{time}`
+
+> **Info**: More information on how to use it can be found in the [pasting images][28] section.
+
+### frontMatter.media.pasteFolder
+
+Specify the folder to store pasted images in. The path is relative to your workspace and supports the
+`[[workspace]]` placeholder. When left empty, the page bundle folder or the public folder is used.
+
+- Type: `string`
+- Default: `""`
+
+> **Info**: More information on how to use it can be found in the [pasting images][28] section.
+
 ### frontMatter.media.supportedMimeTypes
 
 Specify the mime types to support for the media files.
@@ -969,6 +1004,7 @@ This setting is used to define the modified date field of your articles.
 [06]: /docs/content-creation/content-folders
 [07]: /docs/content-creation/placeholders
 [08]: /docs/custom-actions
+
 ### frontMatter.sponsors.ai.enabled
 
 This setting was removed in version `10.10.0`. Sponsor AI functionality has been discontinued.
@@ -996,3 +1032,4 @@ This setting was removed in version `10.10.0`. Sponsor AI functionality has been
 [25]: /docs/dashboard/media-view#define-the-media-folder
 [26]: /docs/content-creation/slug
 [27]: /docs/ai-features
+[28]: /docs/dashboard/media-view#pasting-images
