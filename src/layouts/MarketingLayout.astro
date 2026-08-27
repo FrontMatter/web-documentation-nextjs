@@ -7,6 +7,7 @@ import IconVSCode from '../components/marketing/IconVSCode.astro';
 import IconHeart from '../components/marketing/IconHeart.astro';
 import Sponsors from '../components/marketing/Sponsors.astro';
 import BetaBanner from '../components/BetaBanner.astro';
+import VisitorBadge from '../components/VisitorBadge.astro';
 
 export interface Props {
   title: string;
@@ -139,9 +140,7 @@ const apiUrl = import.meta.env.PUBLIC_API_URL ?? 'https://api.frontmatter.codes'
           <a href="/swag">Swag</a>
         </div>
         <div class="footer-badges">
-          <a href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes" title="Daily Front Matter visitors" target="_blank" rel="noopener noreferrer">
-            <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Ffrontmatter.codes&countColor=%23060A15&labelColor=%23060A15" alt="Visitors" />
-          </a>
+          <VisitorBadge />
           <a href={EXTENSION_PAGE} title="Extension installs" target="_blank" rel="noopener noreferrer">
             <img src="https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-front-matter?style=for-the-badge&color=060A15&labelColor=060A15" alt="Installations of the extension" />
           </a>
