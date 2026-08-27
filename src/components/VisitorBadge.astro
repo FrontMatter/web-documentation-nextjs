@@ -1,0 +1,26 @@
+---
+// Visitor badge (visitorbadge.io), ported from the legacy Next.js footer.
+// The counter is scoped per page through the `slug` query parameter, so every
+// docs page keeps its own count while still rolling up under the site path.
+interface Props {
+  /** Page identifier for the counter. Defaults to the current pathname. */
+  slug?: string;
+}
+
+const { slug } = Astro.props;
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
+const pageSlug = slug ?? (pathname === '' ? 'home' : pathname.replace(/^\//, ''));
+
+const badgeUrl = `https://api.visitorbadge.io/api/visitors?path=${encodeURIComponent(
+  'https://frontmatter.codes'
+)}&countColor=%23060A15&labelColor=%23060A15&slug=${encodeURIComponent(pageSlug)}`;
+---
+<a
+  class="visitor-badge"
+  href="https://visitorbadge.io/status?path=https%3A%2F%2Ffrontmatter.codes"
+  title="Daily Front Matter visitors"
+  target="_blank"
+  rel="noopener noreferrer">
+  <img src={badgeUrl} alt="Visitors" loading="lazy" decoding="async" />
+</a>

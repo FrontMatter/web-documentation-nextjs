@@ -1,6 +1,22 @@
 ---
 import Default from '@astrojs/starlight/components/Footer.astro';
 import Giscus from './Giscus.astro';
+import VisitorBadge from './VisitorBadge.astro';
 ---
 <Default {...Astro.props}><slot /></Default>
 <Giscus />
+<div class="docs-visitor-badge not-content">
+  <VisitorBadge />
+</div>
+
+<style>
+  .docs-visitor-badge {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .docs-visitor-badge :global(img) {
+    height: 1.6rem;
+    width: auto;
+  }
+</style>
