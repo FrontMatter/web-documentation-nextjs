@@ -91,6 +91,26 @@ try {
     </div>
   </section>
 
+  <!-- Promo video -->
+  <section class="section promo">
+    <div class="container">
+      <h2 class="section-title">See it in <span class="gradient-text">30 seconds</span></h2>
+      <p class="section-lead">The dashboard, and a draft edited and published from the panel, recorded in VS Code.</p>
+      <video
+        class="promo-video"
+        src="/assets/video/promo.mp4"
+        poster="/assets/video/promo-poster.jpg"
+        width="1920"
+        height="1080"
+        controls
+        muted
+        playsinline
+        preload="none"
+      ></video>
+      <p class="promo-more">Want every screen? <a href="/docs#take-the-tour">Take the 90-second tour</a>.</p>
+    </div>
+  </section>
+
   <!-- Generators -->
   <section class="section section-tint">
     <div class="container">
@@ -191,6 +211,13 @@ try {
   .cta-copy p { color: var(--whisper-700); font-size: 1.125rem; margin: 0 0 1.75rem; }
   .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .cta-image img { border-radius: 0.75rem; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+
+  /* Promo video — silent, so `muted` only lets browsers play it inline.
+     `aspect-ratio` holds its space before the poster loads. */
+  .promo { padding-top: 1rem; }
+  .promo-video { display: block; width: 100%; max-width: 64rem; height: auto; aspect-ratio: 16 / 9; margin: 0 auto; border-radius: 0.75rem; box-shadow: 0 20px 60px rgba(0,0,0,0.45); background: var(--vulcan-300); }
+  .promo-more { text-align: center; color: var(--whisper-700); margin: 1.25rem 0 0; }
+  .promo-more a { color: var(--teal-300); }
 
   /* Generators — logos sit in white chips so both light- and dark-drawn logos
      (11ty, Astro, Jekyll, Next.js are dark) stay visible on the dark band. */
