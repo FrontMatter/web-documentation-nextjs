@@ -27,6 +27,14 @@ Astro, Hugo, Jekyll, Hexo, NextJs, Gatsby, and more.
 
 ![Welcome screen to configure your website][01]
 
+## Take the tour
+
+Ninety seconds, every screen: the content dashboard, editing a post in the panel, content
+health, creating a new post, media, snippets, data files, and taxonomies. It is recorded in
+Visual Studio Code on a demo site, and has no sound.
+
+<video src="/assets/video/tour.mp4" poster="/assets/video/tour-poster.jpg" width="1280" height="720" controls muted playsinline preload="none" style="width:100%;height:auto;aspect-ratio:16/9;border-radius:0.5rem"></video>
+
 ## Features
 
 Front Matter comes packed with a range of powerful features, including:
