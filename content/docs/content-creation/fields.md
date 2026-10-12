@@ -3,7 +3,7 @@ title: Fields
 slug: content-creation/fields
 description: Learn which kind of fields you can use in Front Matter CMS
 date: 2022-03-14T08:42:21.626Z
-lastmod: 2026-07-31T13:52:00.000Z
+lastmod: 2026-10-12T09:00:00.000Z
 weight: 200.31
 ---
 
@@ -232,6 +232,7 @@ The `choice` field allows you to define a set of options.
 | -------- | ---- | ----------- | -------- | ------- |
 | `choices` | `string[]` or `{ id: string; title: string; }[]` | Define the choices for the field. | **Required** | |
 | `multiple` | `boolean` | Define if you want to allow multiple choice selection. | _Optional_ | `false` |
+| `searchable` | `boolean` | Show a searchable input instead of a dropdown. Typing filters the choices on their title and ID. Useful when you have many choices. | _Optional_ | `false` |
 
 #### Example 1
 
@@ -268,6 +269,32 @@ choice: "Choice 1"
 ```yaml {{ "title": "Outcome", "description": "Outcome when using id/title objects" }}
 ---
 choice: "1"
+---
+```
+
+#### Example 3
+
+When your field has a long list of choices, set the `searchable` property to `true`. Instead of a
+dropdown, the field shows an input in which you can type to filter the choices on their title or ID.
+
+```json {{ "title": "Usage", "description": "Example of a searchable choice field" }}
+{
+  "title": "Country",
+  "name": "country",
+  "type": "choice",
+  "searchable": true,
+  "choices": [
+    { "id": "be", "title": "Belgium" },
+    { "id": "nl", "title": "Netherlands" },
+    { "id": "fr", "title": "France" },
+    { "id": "de", "title": "Germany" }
+  ]
+}
+```
+
+```yaml {{ "title": "Outcome", "description": "Outcome when selecting a value in a searchable choice field" }}
+---
+country: "be"
 ---
 ```
 
