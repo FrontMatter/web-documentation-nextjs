@@ -3,7 +3,7 @@ title: Custom actions/scripts
 slug: custom-actions
 description: null
 date: 2021-08-30T16:13:00.546Z
-lastmod: 2024-08-13T10:00:03.598Z
+lastmod: 2026-11-11T09:00:00.000Z
 weight: 500
 ---
 
@@ -46,6 +46,12 @@ Custom actions can be configured with the following properties:
 > **Important**: Previously, you could define the `nodeBin` property to define the path to your node
 > executable. This path was needed when you are working with for instance `nvm` and have multiple
 > versions of node installed. You can now use the `command` property instead.
+
+> **Important**: Since version 10.14.0, the arguments are passed to your script without going
+> through a shell. On Windows, this means that `.cmd` and `.bat` commands like `npx`, `npm`, `yarn`,
+> or `pnpm` can no longer be used as the `command`, and environment variables like `%USERPROFILE%`
+> are not resolved. Use `node` (or another executable) with the path to your JavaScript file as the
+> `script`, and use full paths in the `command`.
 
 ### Environment type
 
